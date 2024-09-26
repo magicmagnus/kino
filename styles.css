@@ -13,11 +13,16 @@ header {
     color: white;
 }
 
+.theater-header h2 {
+    margin: 5%;
+}
+
 .day-buttons button {
     margin-right: 5px;
     padding: 10px;
     background-color: #555;
     border: none;
+    border-radius: 5px;
     color: white;
     cursor: pointer;
 }
@@ -27,26 +32,38 @@ header {
 }
 
 .schedule-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    margin: 8px
 }
 
 .column {
-    border: 1px solid #ccc;
-    padding: 10px;
+    position: relative; /* Allows absolute positioning inside */
+    flex: 1; /* Columns take equal space */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 8px;
+    height: 800px;
+    overflow: hidden; /* Hide overflow */
 }
 
 .movie-block {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #eee;
-    border-left: 5px solid #333;
+    background-color: #dddddd; /* Light blue background */
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 0px;
+    margin: 5%;
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    width: 90%;
 }
 
 .movie-block h3 {
-    margin: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 16px;
 }
 

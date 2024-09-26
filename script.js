@@ -3,6 +3,33 @@ const movieDataUrl = './movie_data.json'; // Path to your JSON file
 // Fetch and display current date
 document.querySelector('.current-date').textContent = new Date().toLocaleDateString();
 
+// Function to format dates to YYYY-MM-DD
+function formatDate(date) {
+    return date.toISOString().split('T')[0]; // This ensures date is in YYYY-MM-DD format
+}
+
+// Function to add leading zeros to months and days for consistent comparison
+function normalizeDate(dateString) {
+    const [year, month, day] = dateString.split('-');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`; // Ensure both month and day have leading zeros
+}
+
+// Convert time (HH:MM) to a number of minutes since 14:00
+function timeToMinutes(time) {
+    const [hours, minutes] = time.split(':').map(Number);
+    const totalMinutes = (hours * 60) + minutes;
+
+    // We need to normalize to a 14:00 start time (840 minutes) and calculate from there
+    const minutesSinceStart = totalMinutes - (12 * 60); // Start at 14:00 (14 * 60 = 840)
+    return minutesSinceStart;
+}
+
+// Calculate block height based on movie duration
+function durationToMinutes(duration) {
+    return parseInt(duration.split(' ')[0]);
+}
+
+
 // Function to calculate the end time of a movie based on start time + duration
 function calculateEndTime(startTime, duration) {
     const [hours, minutes] = startTime.split(':').map(Number);
@@ -19,7 +46,7 @@ for (let i = 0; i < 7; i++) {
     const date = new Date(today);
     date.setDate(today.getDate() + i);
     const button = document.createElement('button');
-    button.textContent = date.toISOString().split('T')[0]; // YYYY-MM-DD
+    button.textContent = formatDate(date); // Format date to YYYY-MM-DD
     button.addEventListener('click', () => loadSchedule(button.textContent));
     if (i === 0) button.classList.add('active'); // Mark today as active initially
     dayButtons.appendChild(button);
@@ -45,21 +72,38 @@ function loadSchedule(selectedDate) {
             theaters.forEach(theater => {
                 const column = document.createElement('div');
                 column.classList.add('column');
-                column.innerHTML = `<h2>${theater}</h2>`;
+                column.innerHTML = `
+                    <div class="theater-header">
+                        <h2>${theater}</h2>
+                    </div>
+                `;
                 scheduleGrid.appendChild(column);
 
                 // Check showtimes for the selected date and theater
                 let theaterHasShows = false;
                 data.forEach(movie => {
                     movie.showtimes.forEach(showtime => {
-                        if (showtime.date === selectedDate) {
-                            console.log(`Date match found: ${selectedDate}`);
+                        if (normalizeDate(showtime.date) === selectedDate) {
                             showtime.shows.forEach(show => {
                                 if (show.theater === theater) {
-                                    console.log(`Found show for theater ${theater}: ${movie.title} at ${show.time}`);
                                     const movieBlock = document.createElement('div');
                                     movieBlock.classList.add('movie-block');
+
+                                    // Calculate top position based on start time
+                                    const startTimeInMinutes = timeToMinutes(show.time);
+                                    const durationInMinutes = durationToMinutes(movie.duration);
                                     const endTime = calculateEndTime(show.time, movie.duration);
+
+                                    // Set block's position and height based on time and duration
+                                    const totalMinutesInDay = (13 * 60); // 14:00 to 01:00 is 11 hours or 660 minutes
+                                    const topPercentage = (startTimeInMinutes / totalMinutesInDay) * 100;
+                                    const heightPercentage = (durationInMinutes / totalMinutesInDay) * 100;
+
+                                    movieBlock.style.position = 'absolute';
+                                    movieBlock.style.top = `${topPercentage}%`;  // Position based on start time
+                                    movieBlock.style.height = `${heightPercentage}%`;  // Height based on movie duration
+
+                                    // Movie block content
                                     movieBlock.innerHTML = `
                                         <h3>${movie.title} (${show.time} - ${endTime})</h3>
                                         <p>${show.attributes.join(', ')}</p>
@@ -74,7 +118,6 @@ function loadSchedule(selectedDate) {
 
                 // If the theater has no shows for that day, display a message
                 if (!theaterHasShows) {
-                    console.log(`No shows for theater ${theater} on ${selectedDate}`);
                     column.innerHTML += `<p>No shows for today.</p>`;
                 }
             });
@@ -84,5 +127,8 @@ function loadSchedule(selectedDate) {
         });
 }
 
+
+
+
 // Load the schedule for today initially
-loadSchedule(today.toISOString().split('T')[0]);
+loadSchedule(formatDate(today));
