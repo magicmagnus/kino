@@ -1,0 +1,57 @@
+/* Basic styling for header and layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.day-buttons button {
+    margin-right: 5px;
+    padding: 10px;
+    background-color: #555;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.day-buttons button.active {
+    background-color: #f90;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.column {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.movie-block {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #eee;
+    border-left: 5px solid #333;
+}
+
+.movie-block h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.movie-block p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #777;
+}
