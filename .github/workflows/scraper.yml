@@ -1,44 +1,32 @@
-name: Run Scraper Every Wednesday
+name: Weekly Web Scraper
 
 on:
   schedule:
-    # Run at 01:00 AM UTC every Wednesday (which is 3 AM in Berlin during daylight saving time)
-    - cron: '0 1 * * 3'
-  workflow_dispatch:  # Allows manual triggering of the workflow
+    # Runs at 3 PM Berlin time (1 PM UTC) every Wednesday
+    - cron: '0 13 * * 3'
 
 jobs:
   run-scraper:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
-        node-version: '16'  # Specify Node.js version
+        node-version: '14'
 
-    - name: Install dependencies including Puppeteer
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Run web scraper
+      run: node scraper.js
+
+    - name: Commit and push if it changed
       run: |
-        npm install
-        # Install Chrome if Puppeteer cannot find it
-        npx puppeteer browsers install chrome
-
-    - name: Install Chromium dependencies for Puppeteer
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libnss3 libxss1 libasound2 fonts-liberation libappindicator3-1 libatk-bridge2.0-0 libcups2 libdrm2 libgbm1 libxkbcommon0
-
-    - name: Run scraper with Puppeteer
-      run: node scraper.js  # Run the scraper script
-
-    - name: Commit and Push JSON changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config user.name github-actions
+        git config user.email github-actions@github.com
         git add movie_data.json
-        git commit -m "Auto-update movie_data.json from scraper"
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub will provide the token automatically
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Update movie_data.json" && git push)
