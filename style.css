@@ -1,0 +1,108 @@
+/* Flex container for bottom part (showtimes) */
+#theater-container {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+
+/* Add this style for the theater container */
+.theater-row {
+    display: flex;              /* Use flexbox for layout */
+    flex-direction: column;    /* Ensure items are in a column */
+    align-items: flex-start;   /* Align items to the start horizontally */
+    position: relative;        /* Allows absolute positioning of theater name */
+    border-top: 1px solid #ccc;    /* Optional: add a border around each theater row */
+}
+
+/* Add this style for the theater rows */
+.theater-content {
+    height: 200px;             /* Fixed height to ensure space for movie blocks */
+    margin-bottom: 0px;       /* Space between theater rows */
+    margin-left: 30px;        /* Space between theater name and movie blocks */
+    overflow-x: auto;         /* Make content horizontally scrollable */
+    flex-grow: 1;             /* Allow content to take up remaining space */
+}
+
+/* Add this style for the theater name */
+.theater-name {
+    position:static;  /* Change to sticky positioning */
+    top: 0;           /* Position at the top of the container */
+    transform: translateY(50%); /* Shift up by the height of the theater name */
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: bold;
+    z-index: 1;    
+}
+
+/* General styling for movie blocks */
+.movie-block {
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 8px;
+    margin: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%; /* Position the top edge in the middle of the container */
+    transform: translateY(-50%); /* Shift the block up by half its own height */
+    height: 90%; /* Full width of the container */
+}
+
+.movie-block-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    
+}
+
+/* Flex container for top part (poster + title) */
+.movie-block-info {
+    display: flex;
+    width: 100%;
+}
+
+
+/* Ensure the poster and title are aligned properly */
+.movie-block img {
+    width:65px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.movie-block strong {
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.movie-block p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+#current-time-line {
+    position: absolute;
+    height: 1400px;
+    width: 2px;
+    background-color: rgb(0, 81, 255);
+    display: none; /* Initially hidden */
+}
+
+#current-time-line::before {
+    content: "Now";
+    position: absolute;
+    top: -45px;
+    transform: translateX(-50%);
+    /* bootstrap colors */
+    background-color:rgb(0, 81, 255); 
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+

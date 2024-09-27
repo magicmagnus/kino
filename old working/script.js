@@ -14,13 +14,13 @@ function normalizeDate(dateString) {
     return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`; // Ensure both month and day have leading zeros
 }
 
-// Convert time (HH:MM) to a number of minutes since 14:00
+// Convert time (HH:MM) to a number of minutes since 12:00
 function timeToMinutes(time) {
     const [hours, minutes] = time.split(':').map(Number);
     const totalMinutes = (hours * 60) + minutes;
 
-    // We need to normalize to a 14:00 start time (840 minutes) and calculate from there
-    const minutesSinceStart = totalMinutes - (12 * 60); // Start at 14:00 (14 * 60 = 840)
+    // Normalize to a 12:00 start time (12 * 60 = 720 minutes)
+    const minutesSinceStart = totalMinutes - (12 * 60); // Start at 12:00 (720 minutes)
     return minutesSinceStart;
 }
 
@@ -95,7 +95,7 @@ function loadSchedule(selectedDate) {
                                     const endTime = calculateEndTime(show.time, movie.duration);
 
                                     // Set block's position and height based on time and duration
-                                    const totalMinutesInDay = (13 * 60); // 14:00 to 01:00 is 11 hours or 660 minutes
+                                    const totalMinutesInDay = (13 * 60); // 12:00 to 01:00 is 13 hours or 780 minutes
                                     const topPercentage = (startTimeInMinutes / totalMinutesInDay) * 100;
                                     const heightPercentage = (durationInMinutes / totalMinutesInDay) * 100;
 
