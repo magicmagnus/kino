@@ -4,6 +4,7 @@ on:
   schedule:
     # Runs at 3 PM Berlin time (1 PM UTC) every Wednesday
     - cron: '0 13 * * 3'
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
   run-scraper:
