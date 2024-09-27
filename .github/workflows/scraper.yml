@@ -12,17 +12,17 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '20.17.0' # Matches your local Node.js version
 
     - name: Create package.json if it doesn't exist
       run: |
         if [ ! -f package.json ]; then
-          echo '{"name": "kino", "version": "1.0.0", "dependencies": {"puppeteer": "^23.4.1"}}' > package.json
+          echo '{"name": "web-scraper", "version": "1.0.0", "dependencies": {"puppeteer": "^22.0.0"}}' > package.json
         fi
 
     - name: Install dependencies
