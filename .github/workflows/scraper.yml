@@ -19,10 +19,15 @@ jobs:
       with:
         node-version: '16'  # Specify Node.js version
 
-    - name: Install dependencies
+    - name: Install dependencies including Puppeteer
       run: npm install
 
-    - name: Run scraper
+    - name: Install Chromium dependencies for Puppeteer
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libnss3 libxss1 libasound2 fonts-liberation libappindicator3-1 libatk-bridge2.0-0 libcups2 libdrm2 libgbm1 libxkbcommon0
+
+    - name: Run scraper with Puppeteer
       run: node scraper.js  # Run the scraper script
 
     - name: Commit and Push JSON changes
