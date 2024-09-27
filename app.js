@@ -1,5 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineContainers = document.querySelectorAll('.timeline-container');
     
+    timelineContainers.forEach(container => {
+        container.addEventListener('scroll', function() {
+            const scrollLeft = this.scrollLeft;
+            timelineContainers.forEach(otherContainer => {
+                if (otherContainer !== this) {
+                    otherContainer.scrollLeft = scrollLeft;
+                }
+            });
+        });
+    });
+
     const dayButtons = document.querySelectorAll('.btn');
 
     const today = new Date();  // Get current date
@@ -17,6 +29,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
             button.textContent = date.toLocaleDateString('de-DE', options);  // Format like "Fr., 27.9."
         }
+
+        button.addEventListener('click', () => {
+            // Create a new date for the day this button represents
+            const date = new Date();
+            date.setDate(date.getDate() + index);
+
+            // clear existing schedule
+            clearSchedule();
+    
+            // Load the schedule for this day
+            loadScheduleForDay(date, index);
+        });
     });
 
     // Initial load for day 1
@@ -75,11 +99,13 @@ function loadScheduleForDay(date, dayIndex) {
                     showtimes.shows.forEach(show => {
                         const movieBlock = document.createElement('div');
                         movieBlock.classList.add('movie-block');
-                        movieBlock.style.width = `${calculateWidth(movie.duration)}px`;
-                        movieBlock.style.left = `${calculateLeft(show.time)}px`;
-            
-                        // Calculate end time based on start time and duration
+                        console.log(movie.title, show.time);
+                        // the left position of the movie block is the percentage of the way through the day
+                        movieBlock.style.left = `${calculateLeft(show.time)}%`;
+                        
                         const endTime = calculateEndTime(show.time, movie.duration);
+                        const right = calculateLeft(endTime);
+                        movieBlock.style.width = `${right - calculateLeft(show.time)}%`;
             
                         // Fetch movie poster
                         $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + movie.title + "&callback=?", function(json) {
@@ -99,6 +125,7 @@ function loadScheduleForDay(date, dayIndex) {
                                         <strong>${movie.title}</strong>
                                     </div>
                                 `;
+                                
                                 theaters[show.theater].appendChild(movieBlock);
                             }
                         });
@@ -108,16 +135,53 @@ function loadScheduleForDay(date, dayIndex) {
         });
 }
 
+function clearSchedule() {
+    const theaters = {
+        "Saal Tarantino": document.getElementById('saal-tarantino'),
+        "Saal Spielberg": document.getElementById('saal-spielberg'),
+        "Saal Kubrick": document.getElementById('saal-kubrick'),
+        "Saal Almodóvar": document.getElementById('saal-almodovar'),
+        "Saal Arsenal": document.getElementById('saal-arsenal'),
+        "Saal Coppola": document.getElementById('saal-coppola'),
+        "Atelier": document.getElementById('atelier'),
+    };
 
-function calculateWidth(duration) {
-    const minutes = parseInt(duration.split(' ')[0], 10);
-    return (minutes / 60) * 100;  // Scale width to fit a 100px wide container
+    Object.values(theaters).forEach(theater => {
+        theater.innerHTML = '';
+    });
 }
 
 function calculateLeft(time) {
+    // the parent container is timeline-content, we need to get its width,
+    const container = document.querySelector('.timeline-content');
+    const containerWidth = container.offsetWidth;
+    console.log("containerWidth: " + containerWidth + "px");
+    // the minutes between 12pm and 01pm (next day) are our total minutes, and our timeline from 0 to 100%
+    const totalMinutes = 60 * 13; // 780 
+    // the current time is our offset
     const [hours, minutes] = time.split(':').map(Number);
-    return ((hours - 12) * 100) + (minutes / 60 * 100);  // Calculate left position based on time
+    const currentMinutes = hours * 60 + minutes; 
+    // to get the current minutes in relation to 12pm, we need to subtract 12pm from the current time
+    const offset = currentMinutes - 12 * 60;
+    // the percentage of the way through the day is the offset divided by the total minutes
+    const percentage = (offset / totalMinutes) * 100;
+    console.log("offset: " + offset + " minutes", "percentage: " + percentage + "%");
+    // the left position of the movie block is the percentage of the way through the day
+
+    return percentage;
+
+
+    
+    
 }
+
+
+function calculateWidth(duration) {
+    
+
+}
+
+
 
 function calculateEndTime(startTime, duration) {
     const [startHours, startMinutes] = startTime.split(':').map(Number);
@@ -130,4 +194,3 @@ function calculateEndTime(startTime, duration) {
     
     return `${endHours}:${endMinutes}`;
 }
-
