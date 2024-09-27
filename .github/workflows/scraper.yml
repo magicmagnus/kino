@@ -20,7 +20,10 @@ jobs:
         node-version: '16'  # Specify Node.js version
 
     - name: Install dependencies including Puppeteer
-      run: npm install
+      run: |
+        npm install
+        # Install Chrome if Puppeteer cannot find it
+        npx puppeteer browsers install chrome
 
     - name: Install Chromium dependencies for Puppeteer
       run: |
