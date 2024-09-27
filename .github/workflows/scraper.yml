@@ -1,0 +1,36 @@
+name: Run Scraper Every Wednesday
+
+on:
+  schedule:
+    # Run at 01:00 AM UTC every Wednesday (which is 3 AM in Berlin during daylight saving time)
+    - cron: '0 1 * * 3'
+  workflow_dispatch:  # Allows manual triggering of the workflow
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Specify Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run scraper
+      run: node scraper.js  # Run the scraper script
+
+    - name: Commit and Push JSON changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add movie_data.json
+        git commit -m "Auto-update movie_data.json from scraper"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub will provide the token automatically

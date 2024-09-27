@@ -113,18 +113,24 @@ function loadScheduleForDay(date, dayIndex) {
                                 const posterUrl = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
 
                                 // Build movie block HTML
-                                movieBlock.innerHTML = `
-                                    <div class="movie-block-inner">
-                                        <div class="movie-block-info">
+                                if (posterUrl) {
+                                    movieBlock.innerHTML = `
+                                        <div class="movie-block-inner">
                                             <img src="${posterUrl}" alt="${movie.title} poster">
-                                            <div>
-                                                <p>${show.time} - ${endTime}</p>
-                                                <p>${show.attributes.join(', ')}</p>
+                                            <div class="movie-block-info">
+                                                <strong>${movie.title}</strong>
+                                                <div>
+                                                    <div class="show-time">${show.time} - ${endTime}</div>
+                                                    ${show.attributes[1] ? `<div class="omdu">OmdU</div>` : ''}
+                                                </div>
                                             </div>
                                         </div>
-                                        <strong>${movie.title}</strong>
-                                    </div>
-                                `;
+                                    `;
+                                } 
+                                
+                                if (show.attributes[1] === "OMdU") {
+                                    movieBlock.style.backgroundColor = "#9eeaf9";
+                                }
                                 
                                 theaters[show.theater].appendChild(movieBlock);
                             }
