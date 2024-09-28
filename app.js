@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
             // Load the schedule for this day
             loadScheduleForDay(date, index);
+
+            
         });
     });
 
@@ -52,19 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     console.log(now, start, end);
 
-    // Check if the current time is between 12pm and 1pm
-    if (now >= start && now <= end) {
-        var currentTimeLine = document.getElementById('current-time-line');
-
-        // Calculate the percentage of the way through the time window
-        var percentage = ((now - start) / (end - start)) * 100;
-
-        // Adjust the position of the line
-        currentTimeLine.style.left = percentage + '%';
-
-        // Show the line
-        currentTimeLine.style.display = 'block';
-    }
+    
 });
 
 function loadScheduleForDay(date, dayIndex) {
@@ -84,10 +74,14 @@ function loadScheduleForDay(date, dayIndex) {
     const day = date.getDate();
     const formattedDate = `${year}-${month}-${day}`;
 
-    // // Clear existing schedule
-    // Object.values(theaters).forEach(theater => {
-    //     theater.innerHTML = '';
-    // });
+    // if the date is today, we need to update the current time line
+    if (dayIndex === 0) {
+        showCurrentTimeLine(theaters);
+    }
+    
+        
+
+    
 
     // Fetch movie data from movie_data.json
     fetch('movie_data.json')
@@ -152,8 +146,20 @@ function clearSchedule() {
         "Atelier": document.getElementById('atelier'),
     };
 
+    // Clear existing schedule
     Object.values(theaters).forEach(theater => {
-        theater.innerHTML = '';
+        // first grab all the movie blocks
+        const movieBlocks = theater.querySelectorAll('.movie-block');
+        // then remove them all
+        movieBlocks.forEach(block => block.remove());
+
+        // then grab all the elements with the class "current-time" and "current-time-text"
+        const currentTimeLines = theater.querySelectorAll('.current-time');
+        const currentTimeText = theater.querySelectorAll('.current-time-text');
+        // then hide them
+        currentTimeLines.forEach(line => line.style.display = 'none');
+        currentTimeText.forEach(text => text.style.display = 'none');
+
     });
 }
 
@@ -200,3 +206,60 @@ function calculateEndTime(startTime, duration) {
     
     return `${endHours}:${endMinutes}`;
 }
+
+function updateCurrentTimeLine() {
+    const currentTimeLines = {
+        currTimeline1: document.getElementById('current-time-line-1'),
+        currTimeline2: document.getElementById('current-time-line-2'),
+        currTimeline3: document.getElementById('current-time-line-3'),
+        currTimeline4: document.getElementById('current-time-line-4'),
+        currTimeline5: document.getElementById('current-time-line-5'),
+        currTimeline6: document.getElementById('current-time-line-6'),
+        currTimeline7: document.getElementById('current-time-line-7'),
+    };
+
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    // only show the current time line if it is between 12pm and 1am
+    if (hours < 12 || hours >= 25) {
+        Object.values(currentTimeLines).forEach(line => {
+            line.style.display = 'none';
+        });
+        return;
+    }
+
+    const left = calculateLeft(`${hours}:${minutes}`);
+    const percentage = left + '%';
+    
+    Object.values(currentTimeLines).forEach(line => {
+        line.style.left = percentage;
+        line.style.display = 'block';
+    });
+
+    // Update the current time text
+    const currentTimeText = document.getElementById('current-time-text');
+    currentTimeText.textContent = `Now: ${hours}:${minutes}`;
+    currentTimeText.style.display = 'block';
+    currentTimeText.style.left = percentage;    
+    
+}
+
+function showCurrentTimeLine(theaters) {    
+    Object.values(theaters).forEach(theater => {
+        //show the current time line
+        const currentTimeLines = theater.querySelectorAll('.current-time');
+        const currentTimeText = theater.querySelectorAll('.current-time-text');
+        currentTimeLines.forEach(line => line.style.display = 'block');
+        currentTimeText.forEach(text => text.style.display = 'block');
+
+    });
+}
+
+
+// Call this function when the page loads
+updateCurrentTimeLine();
+
+// And every minute thereafter
+setInterval(updateCurrentTimeLine, 60000);

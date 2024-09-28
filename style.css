@@ -1,3 +1,9 @@
+/* General styling */
+:root {
+    --color-header: #353535;
+    --color-secondary: #0000ff;
+    --color-tertiary: #00ff00;
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -9,7 +15,7 @@ body, html {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #353535;
+    background-color: var(--color-header);
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -29,7 +35,8 @@ body, html {
     margin-right: 10px;
 }
 .content {
-    margin-top: 75px; /* Adjust based on header height */
+    margin-top: 70px; /* Adjust based on header height */
+    
     height: calc(100% - 60px);
     overflow-y: auto;
 }
@@ -42,8 +49,24 @@ body, html {
     display: flex;
     margin-bottom: 0px;
     height: 200px; /* Fixed height for schedule */
-    border-top: 1px solid #ccc;;
+    border-top: 1px solid #ccc;
 }
+/* only to make space for the time labels */
+#first-schedule {
+    height: 260px;
+    border-top: 0px;
+}
+#first-timeline-container {
+    padding-top: 56px;
+}
+#first-schedule-name {
+    margin-top: 56px;
+    border-top: 1px solid #ccc;
+}
+#saal-tarantino {
+    border-top: 1px solid #ccc;
+}
+/* until here */
 .schedule-name {
     width: 50px;
     padding: 10px;
@@ -78,21 +101,48 @@ body, html {
 }
 .timeline-container {
     overflow-x: auto;
+    overflow-y: hidden;
     width: calc(100% - 50px);
     z-index: 100;
 }
  
 .timeline {
-    width: 2200px /* Fixed length for timeline */
-    /* background-color: #fc3131;
-    padding: 10px;
-    white-space: normal; Allow text to wrap */
+    width: 2200px; /* Fixed length for timeline */
+    background-image: linear-gradient(to right, #000 1px, black 1px);
+    background-size: 2200px 100%; /* Adjust this value based on your timeline scale */
 }
 .timeline-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+
+}
+
+.current-time {
+    position: absolute;
+    top: -12px;
+    bottom: 0;
+    width: 3px;
+    height: 220px;
+    background-color: red; /* Or any color you prefer */    
+}
+.current-time-text{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    border-radius: 7px;
+
+   
 }
 .timeline-item {
     width: 180px;
