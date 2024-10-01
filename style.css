@@ -148,6 +148,7 @@ body, html {
     background-color: red; /* Or any color you prefer */   
     align-items: center;
     transform: translateX(-50%); 
+    z-index: 1000;
 }
 .current-time-text{
     position: absolute;
@@ -228,6 +229,7 @@ body, html {
     display: flex;
     flex-direction: column;
     width: 100%;
+    
 }
 
 
@@ -242,6 +244,9 @@ body, html {
 .movie-block strong {
     font-size: 1rem;
     margin-top: 0;
+    margin-bottom: 0;
+    line-height: normal;
+    font-weight: 700;
     overflow-wrap: anywhere;
 }
 
@@ -251,6 +256,6 @@ body, html {
 }
 .omdu {
     font-size: 1rem;
-    margin-top: 3px;
+    margin-top: 0px;
     font-weight: bold;
 }
