@@ -41,19 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Load the schedule for this day
             loadScheduleForDay(date, index);
 
+            // set the button to active
+            dayButtons.forEach(b => b.classList.remove('active'));
+            button.classList.add('active');
+
             
         });
     });
 
     // Initial load for day 1
     loadScheduleForDay(today, 0);
-
-    var now = new Date();
-    var start = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 12, 0, 0, 0);
-    var end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 25, 0, 0, 0);
-
-    console.log(now, start, end);
-
+    // set the button to active
+    dayButtons[0].classList.add('active');
+    
     
 });
 
@@ -187,11 +187,6 @@ function calculateLeft(time) {
     
 }
 
-
-function calculateWidth(duration) {
-    
-
-}
 
 
 

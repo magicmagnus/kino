@@ -3,7 +3,11 @@
     --color-header: #353535;
     --color-secondary: #0000ff;
     --color-tertiary: #00ff00;
+    --timeline-height: 150px;
+    --timeline-width: 1920px;
+    --curr-time-text-height: 55px;
 }
+    
 body, html {
     margin: 0;
     padding: 0;
@@ -35,8 +39,8 @@ body, html {
     margin-right: 10px;
 }
 .content {
-    margin-top: 70px; /* Adjust based on header height */
-    
+    margin-top: 66px; /* Adjust based on header height */
+    /* margin-right: 50px; */
     height: calc(100% - 60px);
     overflow-y: auto;
 }
@@ -48,23 +52,31 @@ body, html {
 .schedule {
     display: flex;
     margin-bottom: 0px;
-    height: 200px; /* Fixed height for schedule */
+    height: var(--timeline-height); /* Fixed height for schedule */
     border-top: 1px solid #ccc;
 }
 /* only to make space for the time labels */
 #first-schedule {
-    height: 260px;
+    height: calc(var(--timeline-height) + var(--curr-time-text-height));
     border-top: 0px;
+    
+}
+.first-border {
+    height: 1px;
+    width: 100%;
+    transform: translateY(calc(var(--curr-time-text-height) - 1px));
+    background-color: #ccc;
 }
 #first-timeline-container {
-    padding-top: 56px;
+    padding-top: var(--curr-time-text-height);
+    
 }
 #first-schedule-name {
-    margin-top: 56px;
-    border-top: 1px solid #ccc;
+    margin-top: var(--curr-time-text-height);
+    /* border-top: 1px solid #ccc; */
 }
 #saal-tarantino {
-    border-top: 1px solid #ccc;
+    /* border-top: 1px solid #ccc; */
 }
 /* until here */
 .schedule-name {
@@ -97,6 +109,7 @@ body, html {
     white-space: nowrap;
     padding: 0;
     font-weight: bold;
+    font-size: 1.1rem;
 
 }
 .timeline-container {
@@ -104,12 +117,17 @@ body, html {
     overflow-y: hidden;
     width: calc(100% - 50px);
     z-index: 100;
+    
 }
  
 .timeline {
-    width: 2200px; /* Fixed length for timeline */
-    background-image: linear-gradient(to right, #000 1px, black 1px);
-    background-size: 2200px 100%; /* Adjust this value based on your timeline scale */
+    width: var(--timeline-width); /* Fixed length for timeline */
+    /* background-color: rgb(233, 129, 129); */
+    height: var(--timeline-height);
+    /* padding: 0 50px; */
+    /* background-image: linear-gradient(to right, #000 1px, black 1px);
+    background-size: 1400px 100%; Adjust this value based on your timeline scale */
+
 }
 .timeline-content {
     display: flex;
@@ -139,7 +157,7 @@ body, html {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 8px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border-radius: 7px;
 
    
@@ -155,13 +173,13 @@ body, html {
     /* border: 1px solid #ccc; */
     border-radius: 7px;
     padding: 8px;
-    margin: 10px;
+    margin: 10px 0px;
     background-color: #f2f2f2;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
     cursor: pointer;
-    height: 180px
+    height: calc(var(--timeline-height) - 20px);
 }
 
 .movie-block-inner {
