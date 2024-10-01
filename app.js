@@ -235,7 +235,7 @@ function updateCurrentTimeLine() {
 
     // Update the current time text
     const currentTimeText = document.getElementById('current-time-text');
-    currentTimeText.textContent = `Now: ${hours}:${minutes}`;
+    currentTimeText.textContent = `Now`;//: ${hours}:${minutes}`;
     currentTimeText.style.display = 'block';
     currentTimeText.style.left = percentage;    
     
@@ -252,7 +252,42 @@ function showCurrentTimeLine(theaters) {
     });
 }
 
+function plotTimeScale() {
+    // inside each timeline-content class, we need to add 13 divs that make up the "time-scale". Those represent the hours of the day, from 12pm to 1am
+    
+    
+    const hours = Array.from({ length: 14 }, (_, i) => i + 12);
+    
+    console.log(hours);
+    
+    const timelineContents = document.querySelectorAll('.timeline-content');
+    timelineContents.forEach(content => {
+        hours.forEach(hour => {
+            const percentage = calculateLeft(`${hour}:00`);
+            if (content.id === 'saal-tarantino') {
+                // only create the time scale text if the content has the id "saal-tarantino", for the upper most timeline
+                const timeScale = document.createElement('div');
+                timeScale.classList.add('time-scale-text');
+                timeScale.textContent = `${hour%25}:00`;
+                timeScale.style.left = percentage + '%';
+                
+                content.appendChild(timeScale);
+            }
+            
+            // for all timelines, create the time scale div which is a line that is vertically centered and spans the height of the timeline
+            const timeScale = document.createElement('div');
+            timeScale.classList.add('time-scale');
+            timeScale.style.left = percentage + '%';
+            
 
+
+
+            content.appendChild(timeScale);
+        });
+    });
+}
+
+plotTimeScale();
 // Call this function when the page loads
 updateCurrentTimeLine();
 
