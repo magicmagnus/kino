@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const timelineContainers = document.querySelectorAll('.timeline-container');
+    const buttonContainer = document.querySelector('.date-buttons-container');
     
     timelineContainers.forEach(container => {
         container.addEventListener('scroll', function() {
@@ -12,50 +13,91 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const dayButtons = document.querySelectorAll('.btn');
-
-    const today = new Date();  // Get current date
+    const today = new Date();
     
-
-    // Format buttons with "Today" for the current date, and "Fr., 27.9." for others
-    dayButtons.forEach((button, index) => {
+    // Create initial 9 day buttons
+    for (let i = 0; i < 9; i++) {
+        const button = document.createElement('button');
+        button.classList.add('btn', 'btn-primary', 'me-2'); // Bootstrap classes
         const date = new Date(today);
-        date.setDate(today.getDate() + index);  // Calculate date for each button
+        date.setDate(today.getDate() + i);
 
-        // Display "Today" for the first button, otherwise "Fr., 27.9."
-        if (index === 0) {
+        if (i === 0) {
             button.textContent = "Today";
         } else {
             const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
-            button.textContent = date.toLocaleDateString('de-DE', options);  // Format like "Fr., 27.9."
+            button.textContent = date.toLocaleDateString('de-DE', options);
         }
 
-        button.addEventListener('click', () => {
-            // Create a new date for the day this button represents
-            const date = new Date();
-            date.setDate(date.getDate() + index);
+        setupDateButton(button, date, i);
+        buttonContainer.appendChild(button);
+    }
 
-            // clear existing schedule
-            clearSchedule();
-    
-            // Load the schedule for this day
-            loadScheduleForDay(date, index);
+    // Create divider using Bootstrap's border utility classes
+    const divider = document.createElement('div');
+    divider.classList.add('border-start', 'mx-3', 'h-100');
+    buttonContainer.appendChild(divider);
 
-            // set the button to active
-            dayButtons.forEach(b => b.classList.remove('active'));
-            button.classList.add('active');
+    // Fetch and create buttons for future dates
+    fetch('movie_data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Get all unique dates from the JSON
+            const allDates = new Set();
+            data.forEach(movie => {
+                movie.showtimes.forEach(showtime => {
+                    allDates.add(showtime.date);
+                });
+            });
 
-            
+            // Convert to array and sort
+            const dateArray = Array.from(allDates)
+                .map(dateStr => new Date(dateStr))
+                .sort((a, b) => a - b);
+
+            // Find the cutoff date (9 days from today)
+            const cutoffDate = new Date(today);
+            cutoffDate.setDate(cutoffDate.getDate() + 9);
+
+            // Create buttons for dates beyond the cutoff
+            dateArray.forEach(date => {
+                if (date >= cutoffDate) {
+                    const button = document.createElement('button');
+                    button.classList.add('btn', 'btn-outline-primary', 'me-2'); // Using outline variant for future dates
+                    const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
+                    button.textContent = date.toLocaleDateString('de-DE', options);
+
+                    // Calculate day index (days from today)
+                    const dayIndex = Math.floor((date - today) / (1000 * 60 * 60 * 24));
+                    setupDateButton(button, date, dayIndex);
+                    buttonContainer.appendChild(button);
+                }
+            });
         });
-    });
 
     // Initial load for day 1
     loadScheduleForDay(today, 0);
-    // set the button to active
-    dayButtons[0].classList.add('active');
-    
-    
+    // set the first button to active
+    document.querySelector('.btn').classList.add('active');
 });
+
+function setupDateButton(button, date, dayIndex) {
+    button.addEventListener('click', () => {
+        // set the global day index
+        setGlobalDayIndex(dayIndex);
+
+        // clear existing schedule
+        clearSchedule();
+
+        // Load the schedule for this day
+        loadScheduleForDay(date, dayIndex);
+
+        // set the button to active (using Bootstrap's active class)
+        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+    });
+}
+
 
 function loadScheduleForDay(date, dayIndex) {
     const theaters = {
@@ -103,8 +145,10 @@ function loadScheduleForDay(date, dayIndex) {
             
                         // Fetch movie poster
                         $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + movie.title + "&callback=?", function(json) {
-                            if (json != "Nothing found.") {
-                                const posterUrl = "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path;
+                                if (json != "Nothing found.") {
+                                const posterUrl = json.results[0] ? "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path : "placeholder.jpg";
+                                const logMessage = json.results[0] ? null : "No poster found for " + movie.title;
+                                console.log(logMessage);
 
                                 // Build movie block HTML
                                 if (posterUrl) {
@@ -125,14 +169,24 @@ function loadScheduleForDay(date, dayIndex) {
                                 if (show.attributes[1] === "OMdU") {
                                     movieBlock.style.backgroundColor = "#9eeaf9";
                                 }
+                                // if the duration is longer than 3 hours, change the z index
+                                if (movie.duration.split(' ')[0] > 200) {
+                                    movieBlock.style.zIndex = 0;
+                                }
                                 
                                 theaters[show.theater].appendChild(movieBlock);
-                            }
+                            } 
                         });
                     });
                 }
             });
         });
+}
+
+
+let globalDayIndex = 0;
+function setGlobalDayIndex(index) {
+    globalDayIndex = index;
 }
 
 function clearSchedule() {
@@ -203,6 +257,11 @@ function calculateEndTime(startTime, duration) {
 }
 
 function updateCurrentTimeLine() {
+
+    if (globalDayIndex !== 0) {
+        return;
+    }
+
     const currentTimeLines = {
         currTimeline1: document.getElementById('current-time-line-1'),
         currTimeline2: document.getElementById('current-time-line-2'),
@@ -292,4 +351,5 @@ plotTimeScale();
 updateCurrentTimeLine();
 
 // And every minute thereafter
+
 setInterval(updateCurrentTimeLine, 60000);
