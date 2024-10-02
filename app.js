@@ -171,7 +171,7 @@ function loadScheduleForDay(date, dayIndex) {
                                 }
                                 // if the duration is longer than 3 hours, change the z index
                                 if (movie.duration.split(' ')[0] > 200) {
-                                    movieBlock.style.zIndex = -5;
+                                    movieBlock.style.zIndex = 1;
                                 }
                                 
                                 theaters[show.theater].appendChild(movieBlock);
