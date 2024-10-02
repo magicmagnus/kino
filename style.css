@@ -73,6 +73,7 @@ body, html {
     margin-bottom: 0px;
     height: var(--timeline-height); /* Fixed height for schedule */
     border-top: 1px solid #ccc;
+    ;
     
 }
 /* only to make space for the time labels */
@@ -167,7 +168,7 @@ body, html {
     background-color: red; /* Or any color you prefer */   
     align-items: center;
     transform: translateX(-50%); 
-    z-index: 1000;
+    z-index: 0;
 }
 .current-time-text{
     position: absolute;
@@ -231,6 +232,7 @@ body, html {
     top: 0;
     cursor: pointer;
     height: calc(var(--timeline-height) - 20px);
+    z-index: 10;
 }
 
 .movie-block-inner {
