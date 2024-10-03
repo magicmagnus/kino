@@ -13,6 +13,12 @@
 
 <body>
     <div class="header">
+        <!-- Add this right before your button-container div in the header -->
+        <div class="view-toggle-container">
+            <button id="view-toggle" class="btn btn-secondary me-2">
+                Switch to Room View
+            </button>
+        </div>
         <div class="button-container">
             <div class="date-buttons-container">
                 <!-- Buttons for the dates -->
@@ -21,104 +27,107 @@
     </div>
     <div class="content">
         <div class="first-border"></div>
-        <div class="schedules-container">
-            <div class="schedule" id="first-schedule">
-                
-                <div class="schedule-name" id="first-schedule-name">
-                    <h5>Saal Tarantino</h5>
-                    <div class="fade-in"></div>
+        <div class="views-container">
+            <div class="schedules-container" id="date-view"">
+                <div class="schedule" id="first-schedule">
+                    
+                    <div class="schedule-name" id="first-schedule-name">
+                        <h5>Saal Tarantino</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container" id="first-timeline-container">
+                        <div class="timeline" id="first-timeline">
+                            <div class="timeline-content" id="saal-tarantino">
+                                <div class="current-time" id="current-time-line-1"></div>
+                                <div class="current-time-text" id="current-time-text"> TEST</div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class="timeline-container" id="first-timeline-container">
-                    <div class="timeline" id="first-timeline">
-                        <div class="timeline-content" id="saal-tarantino">
-                            <div class="current-time" id="current-time-line-1"></div>
-                            <div class="current-time-text" id="current-time-text"> TEST</div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Saal Spielberg</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="saal-spielberg">
+                                <div class="current-time" id="current-time-line-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Saal Kubrick</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="saal-kubrick">
+                                <div class="current-time" id="current-time-line-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Saal Almodóvar</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="saal-almodovar">
+                                <div class="current-time" id="current-time-line-4"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Atelier</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="atelier">
+                                <div class="current-time" id="current-time-line-7"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Saal Arsenal</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="saal-arsenal">
+                                <div class="current-time" id="current-time-line-5"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Saal Coppola</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="saal-coppola">
+                                <div class="current-time" id="current-time-line-6"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
             </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Saal Spielberg</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="saal-spielberg">
-                            <div class="current-time" id="current-time-line-2"></div>
-                        </div>
-                    </div>
-                </div>
+            <div class="schedules-container" id="room-view"">
             </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Saal Kubrick</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="saal-kubrick">
-                            <div class="current-time" id="current-time-line-3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Saal Almodóvar</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="saal-almodovar">
-                            <div class="current-time" id="current-time-line-4"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Atelier</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="atelier">
-                            <div class="current-time" id="current-time-line-7"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Saal Arsenal</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="saal-arsenal">
-                            <div class="current-time" id="current-time-line-5"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="schedule">
-                <div class="schedule-name">
-                    <h5>Saal Coppola</h5>
-                    <div class="fade-in"></div>
-                </div>
-                <div class="timeline-container">
-                    <div class="timeline">
-                        <div class="timeline-content" id="saal-coppola">
-                            <div class="current-time" id="current-time-line-6"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
         </div>
-
         <script src="app.js"></script>
 </body>
 
