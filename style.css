@@ -42,7 +42,7 @@ body, html {
 .date-buttons-container {
     display: flex;
     gap: 8px;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     /* padding: 10px; */
     align-items: center;
 }
