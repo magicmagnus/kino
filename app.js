@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add the view toggle handler
     document.getElementById('view-toggle').addEventListener('click', function() {
         currentView = currentView === 'date' ? 'room' : 'date';
-        this.textContent = currentView === 'date' ? 'Switch to Room View' : 'Switch to Date View';
+        this.textContent = currentView === 'date' ? 'Room View' : 'Date View';
         
         // Toggle visibility of views
         const dateView = document.getElementById('date-view');
