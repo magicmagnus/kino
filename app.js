@@ -8,6 +8,7 @@ const todayMonth = today.getMonth() + 1;
 const todayDay = today.getDate();
 const formattedToday = `${todayYear}-${todayMonth}-${todayDay}`;
 let firstDate = formattedToday; // temporarily set to today, could be changed later
+const fetchedPosters = {};
 
 const theaters = getTheaters();
 
@@ -317,9 +318,14 @@ function createMovieBlock(movie, show) {
 }
 
 function loadPoster(title, callback) {
+    if (fetchedPosters[title]) {
+        callback(fetchedPosters[title]);
+        return;
+    }
     $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + title + "&callback=?", function(json) {
         if (json != "Nothing found.") {
             const posterUrl = json.results[0] ? "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path : "placeholder.jpg";
+            fetchedPosters[title] = posterUrl;
             callback(posterUrl);
         } else {
             callback(null);
