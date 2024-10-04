@@ -309,8 +309,8 @@ function createMovieBlock(movie, show) {
             </div>
         `;
 
-        show.attributes[1] === "OMdU" ?? (movieBlock.style.backgroundColor = "#9eeaf9");
-        movie.duration.split(' ')[0] > 220 ?? (movieBlock.style.zIndex = 1);
+        show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
+        movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
     });
 
     return movieBlock;
