@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeDateView();
 
     plotTimeScale();
+
+    //const timelineSync = new TimelineSync();
     
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 60000);
@@ -51,7 +53,8 @@ function initializeDateView() {
     buttonContainer.innerHTML = '';
 
     // fix the scrolling of all timelines to each other
-    mergeScrolling();
+    // mergeScrolling();
+    timelineSync.setView(currentView);
 
     // Create date buttons
     for (let i = 0; i < 9; i++) {
@@ -195,10 +198,9 @@ function loadScheduleForRoom(theater) {
             // Sort dates
             const sortedDates = Array.from(dates);
             sortedDates.sort((a, b) => new Date(a) - new Date(b));
-            // delete the dates that are in the past
-
             sortedDates.forEach((date) => {
-                if (new Date(date) < today) {
+                const dt = new Date(date);
+                if (dt.getDate() < today.getDate() && dt.getMonth() <= today.getMonth()) {
                     sortedDates.shift();
                 }
             });
@@ -217,7 +219,8 @@ function loadScheduleForRoom(theater) {
             });
             
             // only after all schedules have been created, merge scrolling and plot time scale
-            mergeScrolling();
+            // mergeScrolling();
+            timelineSync.setView(currentView);
             plotTimeScale();
 
         });
@@ -421,8 +424,8 @@ function plotTimeScale() {
     const hours = Array.from({ length: 14 }, (_, i) => i + 12);
 
     const timelineContents = getTimelineContentsPerView(currentView);
-    console.log("plotTimeScale:");
-    console.log(timelineContents);
+    // console.log("plotTimeScale:");
+    // console.log(timelineContents);
   
     //console.log(timelineContents);
     timelineContents.forEach((content, index) => {
@@ -472,3 +475,71 @@ function getTheaters() {
         "Atelier": document.getElementById('atelier'),
     };
 }
+
+class TimelineSync {
+    constructor() {
+        this.currentView = 'date';  // default view
+        this.isScrolling = false;
+        this.lastScrollTime = 0;
+        this.scrollThrottle = 16; // ~60fps
+    }
+    
+    initCurrentView() {
+        // Remove existing event listeners if any
+        this.removeEventListeners();
+        
+        // Get fresh references to current timelines
+        this.currentTimelines = getTimelineContainersPerView(this.currentView);
+        console.log(this.currentTimelines);
+        
+        // Add event listeners to current timelines
+        this.currentTimelines.forEach(container => {
+            container.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
+            
+            container.addEventListener('touchmove', (e) => {
+                if (this.isScrolling) return;
+                this.handleScroll.call(container, e);
+            }, { passive: true });
+        });
+    }
+    
+    removeEventListeners() {
+        if (this.currentTimelines) {
+            this.currentTimelines.forEach(container => {
+                // Using a new function reference won't remove the old listener
+                // so we need to store the bound handler if we want to remove it properly
+                container.removeEventListener('scroll', this.handleScroll.bind(this));
+                container.removeEventListener('touchmove', this.handleScroll.bind(this));
+            });
+        }
+    }
+    
+    handleScroll(event) {
+        const now = Date.now();
+        if (this.isScrolling || now - this.lastScrollTime < this.scrollThrottle) return;
+        
+        this.isScrolling = true;
+        this.lastScrollTime = now;
+        
+        const sourceContainer = event.target;
+        const scrollLeft = sourceContainer.scrollLeft;
+        
+        requestAnimationFrame(() => {
+            this.currentTimelines.forEach(container => {
+                if (container !== sourceContainer) {
+                    container.scrollLeft = scrollLeft;
+                }
+            });
+            
+            this.isScrolling = false;
+        });
+    }
+    
+    setView(view) {
+        this.currentView = view;
+        // Reinitialize with new timelines
+        this.initCurrentView();
+    }
+}
+
+const timelineSync = new TimelineSync();

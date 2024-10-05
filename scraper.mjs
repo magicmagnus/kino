@@ -13,7 +13,7 @@ async function fetchPosterUrl(title) {
     const json = await response.json();
     
     if (json.results && json.results.length > 0 && json.results[0].poster_path) {
-      const posterUrl = `http://image.tmdb.org/t/p/w500${json.results[0].poster_path}`;
+      const posterUrl = `https://image.tmdb.org/t/p/w500${json.results[0].poster_path}`;
       fetchedPosters[title] = posterUrl;
       return posterUrl;
     }
