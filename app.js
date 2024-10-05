@@ -481,7 +481,8 @@ class TimelineSync {
         this.currentView = 'date';  // default view
         this.isScrolling = false;
         this.lastScrollTime = 0;
-        this.scrollThrottle = 16; // ~60fps
+        this.scrollThrottle = 8; // ~60fps
+        // and for 120fps: 8ms
     }
     
     initCurrentView() {
