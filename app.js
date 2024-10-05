@@ -491,7 +491,6 @@ class TimelineSync {
         
         // Get fresh references to current timelines
         this.currentTimelines = getTimelineContainersPerView(this.currentView);
-        console.log(this.currentTimelines);
         
         // Add event listeners to current timelines
         this.currentTimelines.forEach(container => {
