@@ -8,8 +8,6 @@ const todayMonth = today.getMonth() + 1;
 const todayDay = today.getDate();
 const formattedToday = `${todayYear}-${todayMonth}-${todayDay}`;
 let firstDate = formattedToday; // temporarily set to today, could be changed later
-const fetchedPosters = {};
-
 const theaters = getTheaters();
 
 // Modify your DOMContentLoaded event listener
@@ -293,45 +291,30 @@ function createMovieBlock(movie, show) {
     const right = calculateLeft(endTime);
     movieBlock.style.width = `${right - calculateLeft(show.time)}%`;
 
-    loadPoster(movie.title, (posterUrl) => {
-        const logMessage = posterUrl ? null : "No poster found for " + movie.title;
-        logMessage ? console.log(logMessage) : null;
+    
+    const posterUrl = movie.posterUrl == null ? "placeholder.jpg" : movie.posterUrl;
+    
 
-        movieBlock.innerHTML = `
-            <div class="movie-block-inner">
-                <img src="${posterUrl}" alt="${movie.title} poster">
-                <div class="movie-block-info">
-                    <strong>${movie.title}</strong>
-                    <div>
-                        <div class="show-time">${show.time} - ${endTime}</div>
-                        ${show.attributes[1] ? `<div class="omdu">OmdU</div>` : ''}
-                    </div>
+    movieBlock.innerHTML = `
+        <div class="movie-block-inner">
+            <img src="${posterUrl}" alt="${movie.title} poster">
+            <div class="movie-block-info">
+                <strong>${movie.title}</strong>
+                <div>
+                    <div class="show-time">${show.time} - ${endTime}</div>
+                    ${show.attributes[1] ? `<div class="omdu">OmdU</div>` : ''}
                 </div>
             </div>
-        `;
+        </div>
+    `;
 
-        show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
-        movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
-    });
+    show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
+    movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
+    
 
     return movieBlock;
 }
 
-function loadPoster(title, callback) {
-    if (fetchedPosters[title]) {
-        callback(fetchedPosters[title]);
-        return;
-    }
-    $.getJSON("https://api.themoviedb.org/3/search/movie?api_key=15d2ea6d0dc1d476efbca3eba2b9bbfb&query=" + title + "&callback=?", function(json) {
-        if (json != "Nothing found.") {
-            const posterUrl = json.results[0] ? "http://image.tmdb.org/t/p/w500/" + json.results[0].poster_path : "placeholder.jpg";
-            fetchedPosters[title] = posterUrl;
-            callback(posterUrl);
-        } else {
-            callback(null);
-        }
-    });
-}
 // OPTIMIZED //
 function mergeScrolling() {
     // when one timeline is scrolled, all other timelines should scroll as well, only grouped by date and room

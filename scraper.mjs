@@ -1,5 +1,29 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs').promises;
+import puppeteer from 'puppeteer';
+import { promises as fs } from 'fs';
+import fetch from 'node-fetch';
+
+const TMDB_API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb';
+const fetchedPosters = {};
+
+async function fetchPosterUrl(title) {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&query=${encodeURIComponent(title)}`
+    );
+    const json = await response.json();
+    
+    if (json.results && json.results.length > 0 && json.results[0].poster_path) {
+      const posterUrl = `http://image.tmdb.org/t/p/w500${json.results[0].poster_path}`;
+      fetchedPosters[title] = posterUrl;
+      return posterUrl;
+    }
+    return null;
+  } catch (error) {
+    console.error(`Error fetching poster for ${title}:`, error);
+    return null;
+  }
+}
+
 
 async function scrapeCinema() {
   console.log('Launching browser...');
@@ -46,6 +70,8 @@ async function scrapeCinema() {
         const fsk = movieItem.querySelector('.fsk')?.textContent.trim() || 'Unknown FSK';
         const description = movieItem.querySelector('.description')?.textContent.trim() || 'No description available';
         const attributes = Array.from(movieItem.querySelectorAll('.attribute')).map(attr => attr.textContent.trim());
+          
+        
 
         // Get all movie-times-grids
         let timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
@@ -133,6 +159,7 @@ async function scrapeCinema() {
           attributes,
           description,
           showtimes
+
         };
       } catch (error) {
         debugLog(`Error processing movie: ${error.message}`);
@@ -152,12 +179,24 @@ async function scrapeCinema() {
 
   await browser.close();
 
+  // Now fetch posters for all movies
+  console.log('\nFetching movie posters...');
+  for (const movie of movies) {
+    console.log(`Fetching poster for: ${movie.title}`);
+    movie.posterUrl = await fetchPosterUrl(movie.title);
+    // Add a small delay to avoid rate limiting
+    await new Promise(resolve => setTimeout(resolve, 500));
+  }
+
   console.log('\nSaving data to file...');
   await fs.writeFile('movie_data.json', JSON.stringify(movies, null, 2));
   console.log('Data has been scraped and saved to movie_data.json');
 }
 
+
+
 scrapeCinema().catch(error => {
   console.error('Error in scraping:', error);
   process.exit(1);
 });
+
