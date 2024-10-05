@@ -478,40 +478,22 @@ function getTheaters() {
 
 class TimelineSync {
     constructor() {
-        this.currentView = 'date';  // default view
+        this.currentView = 'date';
         this.isScrolling = false;
         this.lastScrollTime = 0;
-        this.scrollThrottle = 8; // ~60fps
-        // and for 120fps: 8ms
+        this.scrollThrottle = 1; // For 120Hz support
+        this.currentTimelines = [];
+        this.rafId = null;
     }
     
     initCurrentView() {
-        // Remove existing event listeners if any
         this.removeEventListeners();
-        
-        // Get fresh references to current timelines
         this.currentTimelines = getTimelineContainersPerView(this.currentView);
         
-        // Add event listeners to current timelines
         this.currentTimelines.forEach(container => {
-            container.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
-            
-            container.addEventListener('touchmove', (e) => {
-                if (this.isScrolling) return;
-                this.handleScroll.call(container, e);
-            }, { passive: true });
+            // Main scroll handler
+            container.addEventListener('scroll', (e) => this.handleScroll(e), { passive: true });
         });
-    }
-    
-    removeEventListeners() {
-        if (this.currentTimelines) {
-            this.currentTimelines.forEach(container => {
-                // Using a new function reference won't remove the old listener
-                // so we need to store the bound handler if we want to remove it properly
-                container.removeEventListener('scroll', this.handleScroll.bind(this));
-                container.removeEventListener('touchmove', this.handleScroll.bind(this));
-            });
-        }
     }
     
     handleScroll(event) {
@@ -521,10 +503,15 @@ class TimelineSync {
         this.isScrolling = true;
         this.lastScrollTime = now;
         
+        // Cancel any pending animation frame
+        if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+        }
+        
         const sourceContainer = event.target;
         const scrollLeft = sourceContainer.scrollLeft;
         
-        requestAnimationFrame(() => {
+        this.rafId = requestAnimationFrame(() => {
             this.currentTimelines.forEach(container => {
                 if (container !== sourceContainer) {
                     container.scrollLeft = scrollLeft;
@@ -532,12 +519,27 @@ class TimelineSync {
             });
             
             this.isScrolling = false;
+            this.rafId = null;
         });
+    }
+    
+    removeEventListeners() {
+        if (this.currentTimelines.length) {
+            this.currentTimelines.forEach(container => {
+                const newContainer = container.cloneNode(true);
+                container.parentNode.replaceChild(newContainer, container);
+            });
+        }
+        
+        // Cancel any pending animation frame when removing listeners
+        if (this.rafId) {
+            cancelAnimationFrame(this.rafId);
+            this.rafId = null;
+        }
     }
     
     setView(view) {
         this.currentView = view;
-        // Reinitialize with new timelines
         this.initCurrentView();
     }
 }
