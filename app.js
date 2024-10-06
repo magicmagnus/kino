@@ -53,8 +53,8 @@ function initializeDateView() {
     buttonContainer.innerHTML = '';
 
     // fix the scrolling of all timelines to each other
-    // mergeScrolling();
-    timelineSync.setView(currentView);
+    mergeScrolling();
+    //timelineSync.setView(currentView);
 
     // Create date buttons
     for (let i = 0; i < 9; i++) {
@@ -114,7 +114,7 @@ function loadScheduleForDayIndex(date, dayIndex) {
                 const showtimes = movie.showtimes.find(show => show.date === formattedDate);
                 if (showtimes) {
                     showtimes.shows.forEach(show => {
-                        
+                        console.log("show.theater: " + show.theater);
                         theaters[show.theater].appendChild(createMovieBlock(movie, show));
 
                     });
@@ -219,8 +219,8 @@ function loadScheduleForRoom(theater) {
             });
             
             // only after all schedules have been created, merge scrolling and plot time scale
-            // mergeScrolling();
-            timelineSync.setView(currentView);
+            mergeScrolling();
+            // timelineSync.setView(currentView);
             plotTimeScale();
 
         });
@@ -244,6 +244,7 @@ function createDateSchedule(date, dateObj, isFirst = false) {
     schedule.innerHTML = `
         ${isFirst ? `<div class="schedule-name" id="first-schedule-name">` : `<div class="schedule-name">`}
             <h5>${dateDisplay}</h5>
+            ${isFirst ? `<div class="fade-in" id="first-fade-in"></div>` : ''}
             <div class="fade-in"></div>
         </div>
         ${isFirst ? `<div class="timeline-container" id="first-timeline-container">` : `<div class="timeline-container">`}
@@ -314,6 +315,7 @@ function createMovieBlock(movie, show) {
     show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
     
+    console.log(movieBlock);
 
     return movieBlock;
 }
@@ -489,11 +491,13 @@ class TimelineSync {
     initCurrentView() {
         this.removeEventListeners();
         this.currentTimelines = getTimelineContainersPerView(this.currentView);
+        console.log('Current timelines:', this.currentTimelines);
         
         this.currentTimelines.forEach(container => {
             // Main scroll handler
             container.addEventListener('scroll', (e) => this.handleScroll(e), { passive: true });
         });
+        console.log('Event listeners added');
     }
     
     handleScroll(event) {
@@ -540,6 +544,7 @@ class TimelineSync {
     
     setView(view) {
         this.currentView = view;
+        console.log('Current view:', this.currentView);
         this.initCurrentView();
     }
 }

@@ -23,7 +23,7 @@ body, html {
     padding: 10px;
     display: flex;
     justify-content: flex-start;
-    z-index: 1000;
+    z-index: 2000;
 }
 .view-toggle-container {
     display: flex;
@@ -38,7 +38,14 @@ body, html {
     justify-content: flex-start;
     align-items: center;
     overflow: auto;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    
 }
+.button-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
 .date-buttons-container {
     display: flex;
     gap: 8px;
@@ -80,7 +87,7 @@ body, html {
     margin-bottom: 0px;
     height: var(--timeline-height); /* Fixed height for schedule */
     border-top: 1px solid #ccc;
-    ;
+    
     
 }
 /* only to make space for the time labels */
@@ -100,13 +107,24 @@ body, html {
     padding-top: var(--curr-time-text-height);
     
 }
+
 #first-schedule-name {
     margin-top: var(--curr-time-text-height);
     /* border-top: 1px solid #ccc; */
 }
-#saal-tarantino {
-    /* border-top: 1px solid #ccc; */
+.fade-in-container {
+    height: calc(var(--timeline-height) + var(--curr-time-text-height));
+    display:flex;
+    flex-direction: column;
+    
 }
+#first-fade-in {
+    height: var(--curr-time-text-height);
+    /* move up by the height of the current time text */
+    top: calc(-1 * var(--curr-time-text-height));
+    border-bottom: 1px solid #ccc;
+}
+
 /* until here */
 .schedule-name {
     width: 50px;
@@ -117,7 +135,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
+    z-index: 1000;
     
 }
 .fade-in {
@@ -146,7 +164,12 @@ body, html {
     overflow-y: hidden;
     width: calc(100% - 50px);
     z-index: 100;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
     
+}
+.timeline-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
 }
  
 .timeline {
