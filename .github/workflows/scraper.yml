@@ -1,40 +1,36 @@
 name: Weekly Web Scraper
+
 on:
   schedule:
     # Runs at 3 PM Berlin time (1 PM UTC) every Wednesday
     - cron: '0 13 * * 3'
   workflow_dispatch: # Allows manual triggering of the workflow
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20.17.0'
-        
+        node-version: '20.17.0' # Matches your local Node.js version
+
     - name: Create package.json if it doesn't exist
       run: |
         if [ ! -f package.json ]; then
           echo '{"name": "web-scraper", "version": "1.0.0", "dependencies": {"puppeteer": "^22.0.0"}}' > package.json
         fi
-        
+
     - name: Install dependencies
       run: npm install
-      
-    - name: Install Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y chromium-browser
-        
+
     - name: Run web scraper
-      env:
-        PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
-      run: node scraper.mjs
-      
+      run: node scraper.js
+
     - name: Commit and push if it changed
       run: |
         git config user.name github-actions

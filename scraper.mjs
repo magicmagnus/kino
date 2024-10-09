@@ -30,10 +30,7 @@ async function scrapeCinema() {
   const browser = await puppeteer.launch({
     headless: false,  // Set to false to see what's happening
     defaultViewport: null,
-    //args: ['--start-maximized'],
-    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
-
+    args: ['--start-maximized']
   });
   const page = await browser.newPage();
   
