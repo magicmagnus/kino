@@ -28,9 +28,10 @@ async function fetchPosterUrl(title) {
 async function scrapeCinema() {
   console.log('Launching browser...');
   const browser = await puppeteer.launch({
-    headless: false,  // Set to false to see what's happening
-    defaultViewport: null,
+    //headless: false,  // Set to false to see what's happening
     // args: ['--start-maximized'],
+    defaultViewport: null,
+    headless: 'new',
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
 

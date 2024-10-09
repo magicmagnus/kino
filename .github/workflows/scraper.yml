@@ -1,8 +1,8 @@
 name: Weekly Web Scraper
 on:
   schedule:
-    # Runs at 3 PM Berlin time (1 PM UTC) every Wednesday
-    - cron: '0 13 * * 3'
+    # Runs at 3 PM Berlin time (1 PM UTC) every Tuesday
+    - cron: '0 13 * * 2'
   workflow_dispatch: # Allows manual triggering of the workflow
 jobs:
   run-scraper:
@@ -25,15 +25,15 @@ jobs:
     - name: Install dependencies
       run: npm install
       
-    - name: Install Chrome
+    - name: Install Chrome dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y chromium-browser
+        sudo apt-get install -y chromium-browser xvfb
         
     - name: Run web scraper
       env:
         PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
-      run: node scraper.mjs
+      run: xvfb-run --auto-servernum node scraper.mjs
       
     - name: Commit and push if it changed
       run: |
