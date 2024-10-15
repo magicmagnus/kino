@@ -4,6 +4,10 @@ on:
     # Runs at 3 PM Berlin time (1 PM UTC) every Tuesday
     - cron: '0 13 * * 2'
   workflow_dispatch: # Allows manual triggering of the workflow
+
+permissions:
+  contents: write  # This line gives the workflow permission to write to the repository
+
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
@@ -41,3 +45,5 @@ jobs:
         git config user.email github-actions@github.com
         git add movie_data.json
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update movie_data.json" && git push)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
