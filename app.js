@@ -114,7 +114,7 @@ function loadScheduleForDayIndex(date, dayIndex) {
                 const showtimes = movie.showtimes.find(show => show.date === formattedDate);
                 if (showtimes) {
                     showtimes.shows.forEach(show => {
-                        console.log("show.theater: " + show.theater);
+                        // console.log("show.theater: " + show.theater);
                         theaters[show.theater].appendChild(createMovieBlock(movie, show));
 
                     });
@@ -195,19 +195,14 @@ function loadScheduleForRoom(theater) {
                 });
             });
 
-            // Sort dates
-            const sortedDates = Array.from(dates);
+            // Sort dates and remove dates that are before today
+            let sortedDates = Array.from(dates);
             sortedDates.sort((a, b) => new Date(a) - new Date(b));
-            sortedDates.forEach((date) => {
-                const dt = new Date(date);
-                if (dt.getDate() < today.getDate() && dt.getMonth() <= today.getMonth()) {
-                    sortedDates.shift();
-                }
-            });
+            sortedDates = sortedDates.slice(sortedDates.indexOf(formattedToday));
 
+            // the first date could be a date in the future
             firstDate = sortedDates[0];
-            console.log("first date: " + firstDate);
-
+            
             // Create timeline for each date
             sortedDates.forEach((date, index) => {
                 const dateObj = new Date(date);
@@ -229,6 +224,16 @@ function loadScheduleForRoom(theater) {
     
 
 }
+
+function removeDatesfromArray(date, array) {
+    // look for the date in the array and slice it, then return the last part of the array
+    const index = array.indexOf(date);
+    if (index > -1) {
+        return array.slice(index);
+    }
+    return array;
+}
+
 // for room view OPTIMIZED
 function createDateSchedule(date, dateObj, isFirst = false) {
     // for each date in the room view, create a schedule div
@@ -315,7 +320,7 @@ function createMovieBlock(movie, show) {
     show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
     
-    console.log(movieBlock);
+    // console.log(movieBlock);
 
     return movieBlock;
 }
