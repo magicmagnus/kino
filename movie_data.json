@@ -1,14 +1,20 @@
 [
   {
     "title": "Cranko",
-    "genre": "Drama",
+    "genre": "Drama, Historie",
     "duration": "133 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "OmeU"
+    ],
     "description": "Stuttgart 1960 – als der Choreograph John Cranko mit dem Flugzeug landet, ahnt er nicht, dass dieser Moment sein Leben verändern wird. Er soll am Stuttgarter Ballett als Gast choreographieren. In London, wo er aufgrund...",
     "showtimes": [
       {
-        "date": "2024-10-15",
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
         "shows": [
           {
             "time": "20:15",
@@ -20,10 +26,10 @@
         ]
       },
       {
-        "date": "2024-10-16",
+        "date": "2024-10-24",
         "shows": [
           {
-            "time": "17:15",
+            "time": "17:45",
             "theater": "Saal Almodóvar",
             "attributes": [
               "2D"
@@ -32,13 +38,26 @@
         ]
       },
       {
-        "date": "2024-10-17",
+        "date": "2024-10-25",
         "shows": [
           {
-            "time": "17:30",
+            "time": "17:45",
             "theater": "Saal Almodóvar",
             "attributes": [
               "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
             ]
           },
           {
@@ -51,11 +70,7 @@
         ]
       },
       {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
+        "date": "2024-10-27",
         "shows": [
           {
             "time": "14:45",
@@ -70,27 +85,13 @@
             "attributes": [
               "2D"
             ]
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ]
           }
         ]
       },
       {
-        "date": "2024-10-20",
+        "date": "2024-10-28",
         "shows": [
           {
-            "time": "15:15",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
             "time": "20:15",
             "theater": "Saal Almodóvar",
             "attributes": [
@@ -100,18 +101,11 @@
         ]
       },
       {
-        "date": "2024-10-21",
+        "date": "2024-10-29",
         "shows": [
           {
             "time": "17:30",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Almodóvar",
+            "theater": "Saal Arsenal",
             "attributes": [
               "2D"
             ]
@@ -119,11 +113,11 @@
         ]
       },
       {
-        "date": "2024-10-23",
+        "date": "2024-10-30",
         "shows": [
           {
-            "time": "20:15",
-            "theater": "Saal Almodóvar",
+            "time": "15:00",
+            "theater": "Saal Coppola",
             "attributes": [
               "2D"
             ]
@@ -143,77 +137,6 @@
     ],
     "description": "Das ehemalige Fotomodell Lee Miller (Kate Winslet) ist es leid, Objekt ihrer männlichen Kollegen zu sein und konzentriert sich auf ihre eigene Arbeit als Fotografin. Mitten im Krieg geht sie als Fotoreporterin an die Front...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "20:15",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "12:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "20:15",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -237,9 +160,88 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "18:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/pj15BJlcATFYQnVQZrbLG55Pi8J.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/ffw51hmecHHdTWihncJZgmp9XH2.jpg"
   },
   {
     "title": "Comedy Slam Tübingen: Comedians im Kampf um die Comedy-Krone #18",
@@ -262,168 +264,45 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": null
   },
   {
     "title": "Die Schule der magischen Tiere 3",
-    "genre": "Abenteuer",
+    "genre": "Abenteuer, Familienfilm, Familie",
     "duration": "105 min",
     "fsk": "FSK 0",
     "attributes": [
-      "Cry Baby Cry",
+      "Leselust",
       "blocksubscriptions"
     ],
     "description": "Ida (Emilia Maier) möchte mit ihrer Klasse beim jährlichen Waldtag auftreten, um den lokalen Wald zu schützen. Helene (Emilia Pieske) beteiligt sich, um ihren Influencer-Kanal zu fördern, da ihre Familie kurz vor dem Bankrott...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": [
-          {
-            "time": "17:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "15:15",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "15:15",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "09:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "15:45",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "13:45",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "16:00",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "18:15",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "13:15",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "15:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:45",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "17:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "15:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -461,13 +340,146 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "17:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "17:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "14:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "16:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "13:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "16:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "16:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "16:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/5nwgCRkJG447pfcwpTUfFvkLLMw.jpg"
   },
   {
     "title": "Joker: Folie à Deux",
-    "genre": "Drama, Thriller, Krimi",
+    "genre": "Thriller",
     "duration": "138 min",
     "fsk": "FSK 16",
     "attributes": [
@@ -477,15 +489,8 @@
     "description": "Der Film erzählt, wie Arthur Fleck in der psychiatrischen Anstalt Arkham auf den Prozess für seine Verbrechen als Joker wartet. Während er im Konflikt mit seiner doppelten Identität steht, begegnet Arthur nicht nur seiner...",
     "showtimes": [
       {
-        "date": "2024-10-15",
+        "date": "2024-10-22",
         "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          },
           {
             "time": "19:45",
             "theater": "Saal Tarantino",
@@ -496,15 +501,8 @@
         ]
       },
       {
-        "date": "2024-10-16",
+        "date": "2024-10-23",
         "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          },
           {
             "time": "19:45",
             "theater": "Saal Tarantino",
@@ -516,19 +514,7 @@
         ]
       },
       {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "19:45",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
+        "date": "2024-10-24",
         "shows": [
           {
             "time": "20:15",
@@ -541,10 +527,10 @@
         ]
       },
       {
-        "date": "2024-10-19",
+        "date": "2024-10-25",
         "shows": [
           {
-            "time": "20:30",
+            "time": "20:15",
             "theater": "Saal Tarantino",
             "attributes": [
               "2D"
@@ -553,10 +539,10 @@
         ]
       },
       {
-        "date": "2024-10-20",
+        "date": "2024-10-26",
         "shows": [
           {
-            "time": "20:00",
+            "time": "20:15",
             "theater": "Saal Tarantino",
             "attributes": [
               "2D",
@@ -566,10 +552,18 @@
         ]
       },
       {
-        "date": "2024-10-21",
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      },
+      {
+        "date": "2024-10-29",
         "shows": [
           {
-            "time": "19:45",
+            "time": "19:00",
             "theater": "Saal Tarantino",
             "attributes": [
               "2D"
@@ -578,22 +572,10 @@
         ]
       },
       {
-        "date": "2024-10-22",
+        "date": "2024-10-30",
         "shows": [
           {
-            "time": "19:45",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-23",
-        "shows": [
-          {
-            "time": "19:45",
+            "time": "20:15",
             "theater": "Saal Tarantino",
             "attributes": [
               "2D",
@@ -603,221 +585,7 @@
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg"
-  },
-  {
-    "title": "Megalopolis",
-    "genre": "Drama, Science Fiction",
-    "duration": "138 min",
-    "fsk": "FSK 16",
-    "attributes": [],
-    "description": "Einst war New Rome der Nabel der Welt, das Zentrum der Macht, unangreifbar, unverletzlich. Doch Korruption und Gier haben die Metropole ausgehöhlt, der Zahn der Zeit nagt an den kolossalen Bauten, die sich gen Himmel recken....",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/8Sok3HNA3r1GHnK2lCytHyBz1A.jpg"
-  },
-  {
-    "title": "The Substance",
-    "genre": "Horror",
-    "duration": "140 min",
-    "fsk": "FSK 16",
-    "attributes": [
-      "OMdU"
-    ],
-    "description": "Hast du jemals davon geträumt, eine bessere Version von dir selbst zu sein? Du. Nur besser. In jeder Hinsicht. Dann solltest du dieses neue Produkt ausprobieren: The Substance. ES HAT MEIN LEBEN VERÄNDERT.",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/lqoMzCcZYEFK729d6qzt349fB4o.jpg"
-  },
-  {
-    "title": "Architecton",
-    "genre": "Dokumentarfilm",
-    "duration": "94 min",
-    "fsk": "FSK 0",
-    "attributes": [
-      "OMdU"
-    ],
-    "description": "Was werden die Menschen der nächsten Zivilisation von unserer Zeit wiederfinden? Victor Kossakovsky stellt diese Frage in ARCHITECTON und verdichtet mögliche Antworten darauf zu einem intensiven, visuell schlicht überwältigenden...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "15:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/dPFUKGDjWRxzSj3430nIlUiAAm6.jpg"
-  },
-  {
-    "title": "Treasure - Familie ist ein fremdes Land",
-    "genre": "Drama",
-    "duration": "112 min",
-    "fsk": "FSK 6",
-    "attributes": [
-      "OMdU"
-    ],
-    "description": "Kurz nach dem Fall des Eisernen Vorhangs reist die New Yorker Musik-Journalistin Ruth Rothwax (Lena Dunham) mit ihrem Vater Edek (Stephen Fry) nach Polen, um das Vermächtnis ihrer jüdischen Familie zu erforschen. Edek, ein...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "19:45",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/zgs8J9s8b04z7yNWKyOHfY9DuHq.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/aciP8Km0waTLXEYf5ybFK5CSUxl.jpg"
   },
   {
     "title": "Element of Crime in Wenn es dunkel und kalt wird in Berlin",
@@ -828,14 +596,14 @@
     "description": "Dieser Film erzählt die Geschichte und Gegenwart einer ganz besonderen deutschen Band, die Geschichte von ELEMENT OF CRIME: Es geht um Musik, Freundschaft, eine Haltung zur Welt und um das Geheimnis, 40 Jahre Musik zusammen...",
     "showtimes": [
       {
-        "date": "2024-10-15",
+        "date": "2024-10-22",
         "shows": []
       },
       {
-        "date": "2024-10-16",
+        "date": "2024-10-23",
         "shows": [
           {
-            "time": "17:45",
+            "time": "20:00",
             "theater": "Atelier",
             "attributes": [
               "2D"
@@ -844,11 +612,11 @@
         ]
       },
       {
-        "date": "2024-10-17",
+        "date": "2024-10-24",
         "shows": []
       },
       {
-        "date": "2024-10-18",
+        "date": "2024-10-25",
         "shows": [
           {
             "time": "18:15",
@@ -860,14 +628,10 @@
         ]
       },
       {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
+        "date": "2024-10-26",
         "shows": [
           {
-            "time": "16:45",
+            "time": "15:00",
             "theater": "Atelier",
             "attributes": [
               "2D"
@@ -876,20 +640,20 @@
         ]
       },
       {
-        "date": "2024-10-21",
-        "shows": []
-      },
-      {
-        "date": "2024-10-23",
+        "date": "2024-10-27",
         "shows": [
           {
-            "time": "20:00",
+            "time": "14:15",
             "theater": "Atelier",
             "attributes": [
               "2D"
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/3QuyAndcn6CE601ytKrGXuI9PFQ.jpg"
@@ -903,30 +667,18 @@
     "description": "Kater Beckett (Stimme im englischen Original: Mo Gilligan) genießt seine neun Leben in vollen Zügen – das jedoch meistens ziemlich egoistisch und ohne viel für sein Umfeld übrig zu haben. Für ihn ist es selbstredend,...",
     "showtimes": [
       {
-        "date": "2024-10-15",
+        "date": "2024-10-22",
         "shows": []
       },
       {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "15:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
+        "date": "2024-10-23",
         "shows": []
       },
       {
-        "date": "2024-10-18",
+        "date": "2024-10-24",
         "shows": [
           {
-            "time": "15:45",
+            "time": "16:15",
             "theater": "Saal Kubrick",
             "attributes": [
               "2D"
@@ -935,10 +687,17 @@
         ]
       },
       {
-        "date": "2024-10-19",
+        "date": "2024-10-25",
         "shows": [
           {
-            "time": "13:30",
+            "time": "14:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "16:00",
             "theater": "Saal Kubrick",
             "attributes": [
               "2D"
@@ -947,10 +706,10 @@
         ]
       },
       {
-        "date": "2024-10-20",
+        "date": "2024-10-26",
         "shows": [
           {
-            "time": "13:30",
+            "time": "16:00",
             "theater": "Saal Kubrick",
             "attributes": [
               "2D"
@@ -959,8 +718,36 @@
         ]
       },
       {
-        "date": "2024-10-21",
+        "date": "2024-10-27",
         "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       }
     ],
     "posterUrl": null
@@ -971,143 +758,11 @@
     "duration": "98 min",
     "fsk": "FSK 6",
     "attributes": [
+      "Leselust",
       "blocksubscriptions"
     ],
     "description": "Tag für Tag steht Carl Kollhoff im hinteren Teil eines Buchladens, wo er mit äußerster Sorgfalt Bücher in Papier einwickelt, um sie dann seinen treuen Kunden in der Stadt zu bringen. Für den schweigsamen älteren Mann...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": [
-          {
-            "time": "15:45",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "15:45",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "15:30",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "15:30",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "15:30",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -1147,8 +802,27 @@
         ]
       },
       {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
         "date": "2024-10-25",
         "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          },
           {
             "time": "15:00",
             "theater": "Saal Almodóvar",
@@ -1157,127 +831,69 @@
             ]
           }
         ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/4D3scNhfQbbQq2NOMeG3ATrhp4j.jpg"
-  },
-  {
-    "title": "Die Bestie",
-    "genre": "Drama, Science Fiction, Lovestory",
-    "duration": "146 min",
-    "fsk": "FSK 16",
-    "attributes": [
-      "OMdU"
-    ],
-    "description": "In einer nahen Zukunft, in der künstliche Intelligenz herrscht, sind menschliche Emotionen zu einer Bedrohung geworden. Um sie loszuwerden, muss Gabrielle ihr DNA reinigen, indem sie in ihre früheren Leben zurückkehrt....",
-    "showtimes": [
+      },
       {
-        "date": "2024-10-15",
+        "date": "2024-10-26",
         "shows": [
           {
-            "time": "20:00",
-            "theater": "Atelier",
+            "time": "18:00",
+            "theater": "Saal Kubrick",
             "attributes": [
-              "2D",
-              "OMdU"
+              "2D"
             ]
           }
         ]
       },
       {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
+        "date": "2024-10-27",
         "shows": [
           {
-            "time": "19:00",
-            "theater": "Atelier",
+            "time": "18:15",
+            "theater": "Saal Kubrick",
             "attributes": [
-              "2D",
-              "OMdU"
+              "2D"
             ]
           }
         ]
       },
       {
-        "date": "2024-10-21",
+        "date": "2024-10-28",
         "shows": [
           {
-            "time": "17:15",
-            "theater": "Atelier",
+            "time": "18:15",
+            "theater": "Saal Kubrick",
             "attributes": [
-              "2D",
-              "OMdU"
+              "2D"
             ]
           }
         ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/zvX3asBGybFog0DX9NIlPY0dA67.jpg"
-  },
-  {
-    "title": "Bunuel - Filmemacher des Surrealismus",
-    "genre": "Dokumentarfilm",
-    "duration": "83 min",
-    "fsk": "FSK 6",
-    "attributes": [
-      "OMdU"
-    ],
-    "description": "Luis Buñuel – Genie, Visionär und der Urvater des surrealistischen Kinos. Mit wegweisenden und unvergesslichen Meisterwerken wie „Ein andalusischer Hund“, „Die Vergessenen“ und „Der diskrete Charme der Bourgeoisie“...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
       },
       {
-        "date": "2024-10-16",
-        "shows": []
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       },
       {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
+        "date": "2024-10-30",
         "shows": [
           {
             "time": "16:00",
-            "theater": "Atelier",
+            "theater": "Saal Kubrick",
             "attributes": [
-              "2D",
-              "OMdU"
+              "2D"
             ]
           }
         ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/kZcdgvwMPjJdgEzYdXFZ9qyGkOS.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/dUeSG3O4e0Rly0jG5kpyYoXWwf6.jpg"
   },
   {
     "title": "WILDES LAND - Die Rückkehr der Natur",
@@ -1290,52 +906,6 @@
     "description": "Basierend auf dem gleichnamigen Bestseller von Isabella Tree, erzählt WILDES LAND – Die Rückkehr der Natur die Geschichte eines jungen Paares, das ganz der Natur vertraut, um die Zukunft ihres heruntergekommenen 400 Jahre...",
     "showtimes": [
       {
-        "date": "2024-10-15",
-        "shows": [
-          {
-            "time": "18:15",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "16:30",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      },
-      {
         "date": "2024-10-22",
         "shows": [
           {
@@ -1347,107 +917,33 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/fiVjT0iojVNBL5wj1Peo9ivh7q1.jpg"
-  },
-  {
-    "title": "Adam",
-    "genre": "Drama",
-    "duration": "98 min",
-    "fsk": "FSK 6",
-    "attributes": [
-      "Film & Psychoanalyse"
-    ],
-    "description": "Abla lebt mit ihrer achtjährigen Tochter Warda in Casablanca. Die kleine Bäckerei, die sie betreibt, hat schon bessere Zeiten gesehen, und ihr Leben als alleinerziehende Mutter und berufstätige Frau fordert sie sehr. So...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/sSN5ec7llAzv0Up7wAQ9qeOM0lS.jpg"
-  },
-  {
-    "title": "What a Feeling",
-    "genre": "Komödie, Lovestory",
-    "duration": "110 min",
-    "fsk": "FSK 12",
-    "attributes": [
-      "Queerfilmnacht"
-    ],
-    "description": "Marie Theres, 52, hat das scheinbar perfekte Leben: Seit 20 Jahren ist sie mit ihrem Ehemann Alexander verheiratet, sie zieht ihre jugendliche Tochter Anna groß und ist eine erfolgreiche Ärztin. Doch plötzlich bricht ihr...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": []
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/uGm8jJdch2w4IkrY4NJRSi8L7yN.jpg"
   },
   {
     "title": "Film & Gast: Anima - Die Kleider meines Vaters",
@@ -1470,6 +966,30 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": null
@@ -1480,10 +1000,31 @@
     "duration": "1181 min",
     "fsk": "FSK 6",
     "attributes": [
+      "Filmmarathons",
       "blocksubscriptions"
     ],
     "description": "Tauche ein in die magische Welt von Harry Potter! Erlebe die Abenteuer des jungen Zauberers an der Hogwarts-Schule und seinen Kampf gegen den dunklen Lord Voldemort.",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
       {
         "date": "2024-10-27",
         "shows": [
@@ -1495,6 +1036,10 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": null
@@ -1504,9 +1049,31 @@
     "genre": "Abenteuer, Fantasy",
     "duration": "152 min",
     "fsk": "FSK 6",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Was ist ein Muggle? Wie spielt man Quidditch? Und wer ist Harry Potter? Harry Potter ist ein Junge wie jeder andere mit zwei Armen und zwei Beinen. Doch er ist auch anders und das hat nicht nur etwas damit zu tun, dass eine...",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
       {
         "date": "2024-10-27",
         "shows": [
@@ -1518,6 +1085,10 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg"
@@ -1527,9 +1098,31 @@
     "genre": "Abenteuer, Fantasy",
     "duration": "158 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Harry freut sich auf das neue Schuljahr in Hogwarts, obwohl die Haus-Elfe Dobby ihm dort eine große Gefahr prophezeit hat. Und tatsächlich passieren dort nach den Sommerferien eigenartige Dinge. Schließlich öffnet sich...",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
       {
         "date": "2024-10-27",
         "shows": [
@@ -1541,6 +1134,10 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg"
@@ -1550,9 +1147,31 @@
     "genre": "Abenteuer, Fantasy, Mystery, Familie",
     "duration": "141 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Harry und seine Freunde sind nun im dritten Ausbildungsjahr an der Hogwarts-Schule für Zauberei. Sie werden mit dem Geheimnis eines entflohenen Gefangenen konfrontiert. Sirius Black hat es auf Harry abgesehen, aber Harry...",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
       {
         "date": "2024-10-27",
         "shows": [
@@ -1564,6 +1183,10 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg"
@@ -1573,9 +1196,35 @@
     "genre": "Abenteuer, Fantasy, Mystery, Familie",
     "duration": "157 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "In der Hogwarts Schule steht ein Turnier mit zwei weiteren Zauberschulen an. Für Hogwarts starten zwei Kandidaten, einer davon ist Harry Potter. Die drei Aufgaben, die ihn erwarten, sind gefährlich und sehr geheimnisvoll....",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
       {
         "date": "2024-10-28",
         "shows": [
@@ -1596,9 +1245,35 @@
     "genre": "Abenteuer, Fantasy, Familienfilm",
     "duration": "138 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Das fünfte Jahr in der Zauberschule Hogwarts hat gerade erst begonnen, da steckt Harry Potter schon wieder bis zum Hals in Schwierigkeiten. Nicht nur, dass sein unerlaubtes Zaubern während der Ferien Ärger nach sich zieht....",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
       {
         "date": "2024-10-28",
         "shows": [
@@ -1619,9 +1294,35 @@
     "genre": "Drama, Abenteuer, Action, Fantasy, Familienfilm, Romanze, Mystery",
     "duration": "153 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Im sechsten Jahr in Hogwarts ist für Zauberlehrling Harry und seine Freunde nichts mehr, wie es war. Denn der dunkle Magier Lord Voldemort droht immer mächtiger zu werden, und so scheint nicht einmal die Schule noch ein...",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
       {
         "date": "2024-10-28",
         "shows": [
@@ -1642,7 +1343,9 @@
     "genre": "Abenteuer, Action, Fantasy, Familienfilm, Mystery",
     "duration": "130 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Es ist der alles entscheidende und letzte Kampf. Der alles entscheidende und letzte Kampf zwischen Harry Potter und dem grausamen und mächtigen Lord Voldemort. Und mithin der alles entscheidende und letzte Kampf um das Schicksal...",
     "showtimes": [
       {
@@ -1665,7 +1368,9 @@
     "genre": "Drama, Abenteuer, Action, Fantasy, Familienfilm, Mystery",
     "duration": "145 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Filmmarathons"
+    ],
     "description": "Seit Dumbledores Tod ist für Harry und seine Freunde nichts mehr, wie es war. Denn die Welt scheint vor einer neuen Zeit der Finsternis zu stehen, und nicht einmal Hogwarts ist noch ein sicherer Ort. Um jedoch das zu vollenden,...",
     "showtimes": [
       {
@@ -1760,7 +1465,7 @@
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/wuGprgXYEyU22eQlxF6kZdoa2ts.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/2eMZjYxEGXS6xj4hRtxBmaPPi3z.jpg"
   },
   {
     "title": "Gladiator II",
@@ -1783,7 +1488,7 @@
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/f54mzACTFdiAxnQ30BK4GjrKzyn.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/3d52MgDuO1QNR5oVpBsdQv5JX8.jpg"
   },
   {
     "title": "Comedy Slam Tübingen: Comedians im Kampf um die Comedy-Krone #19",
@@ -2168,84 +1873,12 @@
     "title": "Fuchs und Hase retten den Wald",
     "genre": "Animation, Abenteuer, Familie",
     "duration": "71 min",
-    "fsk": "FSK 12",
-    "attributes": [],
+    "fsk": "FSK 0",
+    "attributes": [
+      "blocksubscriptions"
+    ],
     "description": "Fuchs, Hase und Eule sind beste Freunde. Zusammen mit dem Wildschwein, der Robbe, dem Pinguin und der Meerjungfrau schmeißen sie eine bunte Party mit köstlichem, selbstgebackenem Kuchen und mega langer Wasserrutsche. Während...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "15:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "16:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "14:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "16:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "13:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "15:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -2263,6 +1896,70 @@
         "shows": [
           {
             "time": "15:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "13:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "14:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "13:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "14:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "14:00",
             "theater": "Saal Spielberg",
             "attributes": [
               "2D"
@@ -2274,67 +1971,8 @@
     "posterUrl": "https://image.tmdb.org/t/p/w500/ArMsJDcSDTCVjaX7CWdapIUG16B.jpg"
   },
   {
-    "title": "Longlegs",
-    "genre": "Horror, Krimi",
-    "duration": "101 min",
-    "fsk": "FSK 16",
-    "attributes": [
-      "Wahnsinns-Cinema",
-      "OMdU"
-    ],
-    "description": "Der FBI-Agent Lee Harker wird mit dem Fall einer Mordserie betraut, die auf einen okkulten Tathintergrund schließen lässt. Während er tiefer in die Untersuchung eintaucht, entdeckt er eine persönliche Verbindung zu dem...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": []
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "22:30",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "22:30",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": []
-      },
-      {
-        "date": "2024-10-21",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/5aj8vVGFwGVbQQs26ywhg4Zxk2L.jpg"
-  },
-  {
     "title": "Hagen - Im Tal der Nibelungen",
-    "genre": "Abenteuer, Fantasy, Historie",
+    "genre": "Abenteuer",
     "duration": "133 min",
     "fsk": "FSK 12",
     "attributes": [
@@ -2342,109 +1980,6 @@
     ],
     "description": "Der Burgunder Waffenmeister Hagen von Tronje (Gijs Naber) hält mit Pflichtbewusstsein und eiserner Härte das von Krisen geschüttelte Königreich zusammen. Dabei unterdrückt er die heimliche Liebe zur Königstochter Kriemhild...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "17:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "19:45",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "17:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -2482,9 +2017,73 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "19:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/sxqyo3PSQcARuq955ngHsFRCFIb.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/9feFY8635emd9njQSzLqdgFtWia.jpg"
   },
   {
     "title": "The Apprentice - The Trump Story",
@@ -2498,76 +2097,6 @@
     "description": "THE APPRENTICE gibt Einblick hinter die Kulissen des amerikanischen Imperiums. Er zeigt den Machtaufstieg des jungen Donald Trump durch einen faustischen Deal mit dem einflussreichen Anwalt und politischen Fixer Roy Cohn....",
     "showtimes": [
       {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
         "date": "2024-10-22",
         "shows": [
           {
@@ -2591,6 +2120,81 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/ozoQP8SIOwU7yiWNq34Pjwzjk5G.jpg"
@@ -2600,9 +2204,15 @@
     "genre": "Drama",
     "duration": "104 min",
     "fsk": "FSK 6",
-    "attributes": [],
+    "attributes": [
+      "Leselust"
+    ],
     "description": "Als Eyad als bislang einziger Palästinenser an einer jüdischen Eliteschule aufgenommen wird, ist er ebenso stolz wie seine Familie. Fortan ist er eifrig bemüht, sich an den Schulbetrieb und seine Mitschüler anzupassen....",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
       {
         "date": "2024-10-23",
         "shows": [
@@ -2614,6 +2224,26 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/8cIW83Z4AJkPxhYUe2E97rwefGf.jpg"
@@ -2629,6 +2259,10 @@
     "description": "Ihr Ehemann ging Raimunda schon lange mächtig auf die Nerven, und so ist sie erleichtert, als der Alte schließlich - von der eigenen Tochter erschlagen - tot im Keller liegt. Nun gilt es, die Leiche zu entsorgen. Die Dorfprostituierte...",
     "showtimes": [
       {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
         "date": "2024-10-23",
         "shows": [
           {
@@ -2640,15 +2274,35 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/m1ZUDGTFtVGE3zjTvF8OiQ9um5e.jpg"
   },
   {
-    "title": "Die leisen und die großen Töne",
+    "title": "En Fanfare",
     "genre": "Drama, Komödie",
     "duration": "120 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -2661,16 +2315,18 @@
         "shows": [
           {
             "time": "19:30",
-            "theater": "Saal Arsenal",
+            "theater": "Saal Almodóvar",
             "attributes": [
-              "2D"
+              "2D",
+              "OMdU"
             ]
           },
           {
             "time": "19:30",
-            "theater": "Saal Almodóvar",
+            "theater": "Saal Arsenal",
             "attributes": [
-              "2D"
+              "2D",
+              "OMdU"
             ]
           }
         ]
@@ -2687,9 +2343,22 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
       }
     ],
-    "posterUrl": null
+    "posterUrl": "https://image.tmdb.org/t/p/w500/knB9YhFbWjAjHwD3a3W9fhfoOuW.jpg"
   },
   {
     "title": "The Room Next Door",
@@ -2702,6 +2371,10 @@
     "description": "Handelt von der komplexen Geschichte einer unvollkommenen Mutter und ihrer Tochter, die durch ein großes Missverständnis getrennt werden. Im Zentrum dieses Konflikts steht Ingrid (Julianne Moore), eine Freundin von Marthas...",
     "showtimes": [
       {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
         "date": "2024-10-23",
         "shows": [
           {
@@ -2710,6 +2383,146 @@
             "attributes": [
               "2D",
               "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "16:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
             ]
           }
         ]
@@ -2722,9 +2535,19 @@
     "genre": "Dokumentarfilm",
     "duration": "87 min",
     "fsk": "FSK 12",
-    "attributes": [],
+    "attributes": [
+      "Leselust"
+    ],
     "description": "Davis Guggenheim bringt uns in seiner Dokumentation Leben, Entwicklung und die faszinierende Persönlichkeit eines außergewöhnlichen Mädchens nahe. In seinem Porträt über Malala, die - trotz der Gefahr durch die Taliban...",
     "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
       {
         "date": "2024-10-24",
         "shows": [
@@ -2736,6 +2559,22 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
       }
     ],
     "posterUrl": "https://image.tmdb.org/t/p/w500/lOYrqRKhOrPd5RvWoyTw71KVI6z.jpg"
@@ -2750,80 +2589,6 @@
     ],
     "description": "Berlin 1942. Hilde ist verliebt – in Hans. In ihrer Leidenschaft blenden sie oft den Krieg und die Gefahr aus und sind einfach zwei junge Menschen, die am Anfang ihres Lebens stehen. Hilde bewundert den Mut ihres Geliebten,...",
     "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
-      },
-      {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
-        "shows": [
-          {
-            "time": "19:30",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-18",
-        "shows": []
-      },
-      {
-        "date": "2024-10-19",
-        "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "20:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-20",
-        "shows": [
-          {
-            "time": "15:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          },
-          {
-            "time": "17:30",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2024-10-21",
-        "shows": [
-          {
-            "time": "20:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ]
-          }
-        ]
-      },
       {
         "date": "2024-10-22",
         "shows": [
@@ -2847,32 +2612,20 @@
             ]
           }
         ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/o0smCQQcrY6YUHN8RTHVU0LwXv1.jpg"
-  },
-  {
-    "title": "Jazzfieber. The Story of German Jazz",
-    "genre": "Dokumentarfilm",
-    "duration": "90 min",
-    "fsk": "FSK 12",
-    "attributes": [],
-    "description": "Jazz ist hip! Ob im Club oder im Tanzpalast – swingende Rhythmen sind en vogue, auch und gerade unter jungen Menschen! Dabei wissen die wenigsten um die Wurzeln dieser Musik, die vor 100 Jahren die Tanzböden der Metropolen...",
-    "showtimes": [
-      {
-        "date": "2024-10-15",
-        "shows": []
       },
       {
-        "date": "2024-10-16",
-        "shows": []
-      },
-      {
-        "date": "2024-10-17",
+        "date": "2024-10-24",
         "shows": [
           {
-            "time": "17:45",
-            "theater": "Atelier",
+            "time": "14:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
             "attributes": [
               "2D"
             ]
@@ -2880,23 +2633,93 @@
         ]
       },
       {
-        "date": "2024-10-18",
-        "shows": []
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       },
       {
-        "date": "2024-10-19",
-        "shows": []
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "19:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "14:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       },
       {
-        "date": "2024-10-20",
-        "shows": []
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "14:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       },
       {
-        "date": "2024-10-21",
-        "shows": []
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "19:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/vM2zn4A0r4P103cVeEK7umIe3Sb.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/o0smCQQcrY6YUHN8RTHVU0LwXv1.jpg"
   },
   {
     "title": "Averroès & Rosa Parks",
@@ -2943,12 +2766,12 @@
     "title": "Les Fantômes",
     "genre": "Drama, Mystery",
     "duration": "106 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "OMdU"
     ],
-    "description": "No description available",
+    "description": "Der Syrer Hamid nimmt in Strasbourg eine Spur zu dem Mann auf, den er für seinen früheren Peiniger hält. Täglich sammelt er neue Hinweise.",
     "showtimes": [
       {
         "date": "2024-11-1",
@@ -2983,7 +2806,7 @@
     "title": "Dahomey",
     "genre": "Dokumentation",
     "duration": "68 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -3024,7 +2847,7 @@
     "title": "Langue étrangère",
     "genre": "Komödie",
     "duration": "105 min",
-    "fsk": "FSK 16",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -3065,7 +2888,7 @@
     "title": "THE VILLAGE NEXT TO PARADISE",
     "genre": "Drama",
     "duration": "132 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -3143,10 +2966,10 @@
     "posterUrl": null
   },
   {
-    "title": "LE PROCÈS DU CHIEN",
+    "title": "Le Procès du chien",
     "genre": "Komödie",
     "duration": "83 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -3213,13 +3036,13 @@
     "title": "Omi Nobu",
     "genre": "Dokumentarfilm",
     "duration": "64 min",
-    "fsk": "FSK noch nicht bekannt.",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
-      "OmeU"
+      "OmeI"
     ],
-    "description": "No description available",
+    "description": "Quirino, Mitte Siebzig, lebt seit Jahrzehnten allein in einem verlassenen Dorf auf der Kapverden-Insel São Nicolau. Hoch oben auf der Steilküste gelegen, hat er von seinem Haus einen fantastischen Blick auf das Meer.",
     "showtimes": [
       {
         "date": "2024-10-31",
@@ -3259,7 +3082,7 @@
       "Französische Filmtage",
       "OMdU"
     ],
-    "description": "No description available",
+    "description": "Aya, eine junge Frau aus der Elfenbeinküste, lässt ihre Familie und Freund*innen fassungslos zurück: In letzter Minute verlässt sie ihre Hochzeitsfeier, um ein neues Leben zu beginnen.",
     "showtimes": [
       {
         "date": "2024-11-1",
@@ -3278,10 +3101,1153 @@
     "posterUrl": "https://image.tmdb.org/t/p/w500/1Vh7PfSsxirEF9hWc3BroO7dh8W.jpg"
   },
   {
-    "title": "Meanwhile on Earth",
+    "title": "L’Histoire de Souleymane",
+    "genre": "Drama, Thriller",
+    "duration": "93 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Souleymane hetzt auf seinem Rad durch die überfüllten Straßen von Paris. Als Fahrradkurier eines Essenslieferanten versucht er, sich zwischen Tür und Angel auf sein Asylgespräch vorzubereiten.",
+    "showtimes": [
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "10:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/ns8tSpfBL63Y5Pi84C6Dzr3vlm4.jpg"
+  },
+  {
+    "title": "EMILIA PEREZ",
+    "genre": "Drama, Thriller",
+    "duration": "130 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Mexiko, heute. Die Anwältin Rita erhält ein unerwartetes Angebot. Sie soll einem gefürchteten Kartellboss helfen, sich aus seinem Geschäft zurückzuziehen und für immer zu verschwinden, indem sie die Frau wird, von der...",
+    "showtimes": [
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "19:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/6zUHqsXnSyGDO6Td1eyx7Mz4RRK.jpg"
+  },
+  {
+    "title": "Demba",
+    "genre": "Drama",
+    "duration": "100 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "30 Jahre hat Demba in der Stadtverwaltung seiner senegalesischen Heimatstadt Matam gearbeitet. Der Tod seiner Frau liegt zwei Jahre zurück, jetzt steht seine Pensionierung an.",
+    "showtimes": [
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "19:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/b8AqvN6fGSyNbnsxgd8p9KuCdM5.jpg"
+  },
+  {
+    "title": "Louise Violet",
+    "genre": "Drama, Historie",
+    "duration": "108 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Frankreich, 1889. Die Schulpflicht wird eingeführt und Louise Violet soll als Lehrerin eine Schule auf dem Land etablieren – verpflichtend, kostenfrei und laizistisch.",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/iKNnBYp7zWYUHpnjhzIIlaveUHm.jpg"
+  },
+  {
+    "title": "Vivre, mourir, renaître",
+    "genre": "Romanze, Drama",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Emma liebt Sammy, Sammy liebt Cyril und Cyril liebt ihn auch. Doch die unmittelbar bevorstehende AIDS-Krise droht die möglichen Anfänge einer Dreiecksbeziehung zu ruinieren.",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "20:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/464Rcy7cAFpr2jKZ22itBkx8zxj.jpg"
+  },
+  {
+    "title": "Quelques jours pas plus",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Der chaotische Frauenheld und Musikjournalist Arthur, gespielt vom französischen Sänger Benjamin Biolay, wird bei einem Polizei-Einsatz auf einem Migrant*innencamp von einem Beamten zu Boden geschlagen.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "22:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "22:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/sxPPpYkR9AsuYy7n5xbInbOzJa3.jpg"
+  },
+  {
+    "title": "Hanami",
+    "genre": "Drama, Lovestory",
+    "duration": "127 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Nana kommt bald nach ihrer Geburt bei Verwandten unter. Ihre Mutter Nia verlässt die Kapverden-Insel Fogo, um in Nordamerika ein besseres Leben zu finden.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "20:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hz46z0rtueLZaCzu38zEr2ZYUsg.jpg"
+  },
+  {
+    "title": "L'Art d'être heureux",
+    "genre": "Komödie",
+    "duration": "110 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU",
+      "OmeI"
+    ],
+    "description": "Jean-Yves Machond ist Konzeptkünstler mit nihilistischen Zügen. In der öffentlichen Meinung bisher weitestgehend verkannt, möchte er mit seinem nächsten Werk endlich Anerkennung ernten.",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "21:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/jGbZnP2hHTs44oR1DNHDvVqVyJU.jpg"
+  },
+  {
+    "title": "Une famille",
+    "genre": "Documentary, Dokumentarfilm",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU",
+      "OmeI"
+    ],
+    "description": "Entschlossen stürmt Schriftstellerin Christine Angot in das Haus ihrer Stiefmutter in Straßburg.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "19:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/ett3mWabSzPyz9uSTRwLdWliPix.jpg"
+  },
+  {
+    "title": "Vingt dieux",
+    "genre": "Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Der 18-jährige Totone wohnt in einem winzigen Dorf im Jura. Den Großteil seiner Zeit verbringt er damit, Bier zu trinken und mit seinen Kumpels die Clubs der Region unsicher zu machen.",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "20:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/9c2rILFa4ZIOzVbyfWgVq7v1r0C.jpg"
+  },
+  {
+    "title": "La fille du puisatier",
+    "genre": "Drama",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Ein dramatisches, mit schlagfertigen Dialogen agierendes Werk, in dem der Regisseur Marcel Pagnol die Idylle seiner heimatlichen Provence mit den Schrecken des Krieges und der Etablierung des Vichy-Regimes verbindet.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/o0MGH7xXcbGao6uNJOyRAQj5l1R.jpg"
+  },
+  {
+    "title": "Ernest Cole: Lost and Found",
+    "genre": "Dokumentarfilm",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "Raoul Peck porträtiert den südafrikanischen Fotografen Ernest Cole. Dieser war der Erste, der mit seinen Bildern das rassistische Unrecht gegen die schwarze Bevölkerung aus deren Perspektive zeigte.",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/dTtsMbAY5wyb5h9MUMMmgQ1oR2G.jpg"
+  },
+  {
+    "title": "Kurzfilmreihe Québec",
+    "genre": "Dokumentation",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OmeU"
+    ],
+    "description": "Bestehend aus 7 Kurzfilmen.",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": null
+  },
+  {
+    "title": "Ma vie, ma gueule",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Barberie, genannt Barbie, mag zwar einmal schön, geliebt worden und eine gute Mutter gewesen sein, eine zuverlässige Kollegin und eine Verliebte, ja, vielleicht …",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/fAs0u5fL8mUGKeoOti8OQYKeuNz.jpg"
+  },
+  {
+    "title": "Les Reines du drame",
+    "genre": "Komödie, Romanze",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Punk-Sängerin Billie wird tretend und schreiend aus einer Talentshow gezerrt. Auf einer Party trifft sie eine andere Teilnehmerin, Mimi, die mit Pop-Songs die Herzen der Jury gewinnt.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "22:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/gZtBtBJPpGSeFVXF0S2Kt388rE1.jpg"
+  },
+  {
+    "title": "Kouté Vwa",
+    "genre": "Unknown Genre",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Der 13-jährige Melrick fühlt sich bei seiner Oma in Cayenne, Französisch-Guayana, wie zu Hause. Doch neben Sonne und grünen Blättern prägt auch die Gewalt das Land.",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/cnhq7bSSekCcUovU3uwdiYdbQVa.jpg"
+  },
+  {
+    "title": "A Black Jesus",
+    "genre": "Dokumentarfilm",
+    "duration": "92 min",
+    "fsk": "FSK 0",
+    "attributes": [
+      "Leselust",
+      "OMdU"
+    ],
+    "description": "In Siculiana, einem sizilianischen Städtchen mit abblätternden Fassaden, wird Religiosität selbstverständlich gelebt. Und selbstverständlich ist die hier verehrte Jesus-Christus-Figur schwarz, schon immer. An die dunkelhäutige...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/5sFr0IIvmjLRqd0gvc51DH6cGlx.jpg"
+  },
+  {
+    "title": "Lucy Grizzli Sophie",
+    "genre": "Drama, Thriller",
+    "duration": "99 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "Sophie, von erschütternden Erinnerungen verfolgt, kommt in ein abgelegenes B&B, wo sie Martin kennenlernt. Arbeitslos und im Leben verloren, glaubt Martin eine Gleichgesinnte gefunden zu haben.",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          },
+          {
+            "time": "20:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/tr6oYIrnhXQniTN7D8FztuGihZy.jpg"
+  },
+  {
+    "title": "L`Aiguille",
+    "genre": "Drama, Romanze, Familie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Ein Spielfilm über den Kampf um mehr Akzeptanz für Diversität angesichts enormen Drucks in einer muslimisch geprägten Gesellschaft.",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/dmomsDUUG5iOO4RrJtGWi3FpBIk.jpg"
+  },
+  {
+    "title": "DISCO AFRIKA: UNE HISTOIRE MALGACHE",
+    "genre": "Action, Drama",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Kwame und Rivo, beide um die 20, brechen auf, ihr Glück zu suchen. Eine informelle Saphir-Mine ist ihre erste Station. Als die Polizei aufkreuzt, kommt es zu einer Schießerei, bei der Rivo stirbt.",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "18:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hkvnqRqYICduXSESqdWp4jxD8jG.jpg"
+  },
+  {
+    "title": "Kurzfilme Atelier Ludwigsburg-Paris",
+    "genre": "Unknown Genre",
+    "duration": "70 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "No description available",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "11:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": null
+  },
+  {
+    "title": "La femme du boulanger",
+    "genre": "Tragikomödie",
+    "duration": "138 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "Der betagte Bäcker Aimable (Raimu) zieht mit seiner schönen und sehr viel jüngeren Frau Aurelie (Ginette Leclerc) in ein kleines Dorf. Doch gleich nachdem er seine ersten Brote aus dem Ofen geholt hat, brennt die durchtriebene...",
+    "showtimes": [
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/a1vdBRiPrtZwsCbGjTkg9WPwpkX.jpg"
+  },
+  {
+    "title": "Kurzfilme des Kurzfilmfestivals in Vaulx-en-Velin",
+    "genre": "Unknown Genre",
+    "duration": "95 min",
+    "fsk": "FSK 6",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "No description available",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": null
+  },
+  {
+    "title": "Le Roman de Jim",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Jim wächst mit Mutter Florence (Laetitia Dosch) und Stiefvater Aymeric in Saint-Claude zwischen den Weiden des Juras auf. Als auf einmal der biologische Vater auftaucht, gerät die Familie aus dem Gleichgewicht.",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1oKU8kVGGiy3FFeqCLYsx8aXShG.jpg"
+  },
+  {
+    "title": "La machine à écrire et autres sources de tracas",
+    "genre": "Dokumentarfilm",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Im letzten Teil des Triptychons, nach Sur L’Adamant und Averroès & Rosa Parks, beobachtet Nicolas Philibert nun den Alltag von Menschen mit psychischen Erkrankungen.",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-6",
+        "shows": [
+          {
+            "time": "16:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/zVluQKfgZ8WgnpS7p6FpeqMpb1c.jpg"
+  },
+  {
+    "title": "Borgo",
+    "genre": "Drama",
+    "duration": "118 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Melissa, eine Gefängniswärterin, zieht mit ihrer Familie nach Korsika und beginnt in einem ungewöhnlichen Gefängnis zu arbeiten. Dort freundet sie sich mit Saveriu, einem einflussreichen jungen Insassen, an. Nach seiner...",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/48xwJpo5tecapOAEq0Gio1LQ3Q1.jpg"
+  },
+  {
+    "title": "Mon inséparable",
+    "genre": "Drama, Tragikomödie, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Mona lebt zusammen mit ihrem erwachsenen Sohn Joël, der, wie man sagt, ein bisschen „langsam“ ist.",
+    "showtimes": [
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/pHu7W4RxTBe4UAtsssRJW11n8CC.jpg"
+  },
+  {
+    "title": "Les barbares",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Die kleine Gemeinde des bretonischen Paimponts stimmt für die Aufnahme einer ukrainischen Familie – und kommt sich dabei sehr großzügig vor.",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/y9N2t17YWlV4GQvUdze87k7pDz9.jpg"
+  },
+  {
+    "title": "La prisonnière de Bordeaux",
+    "genre": "Drama",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Alma, eine reiche und eigenwillige Bürgerliche, lebt allein in ihrem großen Haus in Bordeaux. Bei einem Gefängnisbesuch trifft sie die alleinerziehende Mina.",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/xS4H3qSYS4Hyl4XtYXua8uNyJsN.jpg"
+  },
+  {
+    "title": "Pendant ce temps sur Terre",
     "genre": "Drama, Science Fiction",
     "duration": "88 min",
-    "fsk": "FSK 18",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
@@ -3319,22 +4285,22 @@
     "posterUrl": "https://image.tmdb.org/t/p/w500/uADxZluvJ3RslvvWVHwBSroIwmQ.jpg"
   },
   {
-    "title": "The Story of Souleymane",
-    "genre": "Drama",
-    "duration": "93 min",
-    "fsk": "FSK 6",
+    "title": "Une langue universelle",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
       "OMdU"
     ],
-    "description": "No description available",
+    "description": "Die beiden Schülerinnen Negin und Nazgûl finden eines Tages im Wintereis eingefrorenes Bargeld. Mit dem Geld wollen sie ihrem Klassenkameraden Omid eine neue Brille kaufen, die ihm von einem Truthahn geklaut wurde.",
     "showtimes": [
       {
-        "date": "2024-11-4",
+        "date": "2024-11-3",
         "shows": [
           {
-            "time": "17:45",
+            "time": "16:00",
             "theater": "Saal Almodóvar",
             "attributes": [
               "2D",
@@ -3344,10 +4310,77 @@
         ]
       },
       {
-        "date": "2024-11-6",
+        "date": "2024-11-4",
         "shows": [
           {
-            "time": "10:00",
+            "time": "18:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1IgLhgrlTSbDvjgOqBO9UsKZ5h6.jpg"
+  },
+  {
+    "title": "Les Femmes au balcon",
+    "genre": "Komödie, Fantasy, Horror, Thriller",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 16",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Drei Frauen in einer Wohnung in Marseille inmitten einer Hitzewelle. Eine unverhoffte Begegnung mit ihrem mysteriösen, begehrenswerten Nachbarn.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "22:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/rrPt0bfRqQ6QvQiTa5uwhbP48by.jpg"
+  },
+  {
+    "title": "Colocs de choc",
+    "genre": "Drama, Komödie, Coming of Age",
+    "duration": "96 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Als die 16-jährige Manon zu ihrer Großmutter Yvonne zieht, steht ihr ein chaotisches Zusammenleben bevor. An Demenz erkrankt, lebt Yvonne in der Vergangenheit: genauer gesagt im feministischen Aktivismus der 1970er-Jahre",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "18:00",
             "theater": "Saal Almodóvar",
             "attributes": [
               "2D",
@@ -3357,53 +4390,309 @@
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/ns8tSpfBL63Y5Pi84C6Dzr3vlm4.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/w1XIBJuQEpCoJCGSarOyXS0z6ws.jpg"
   },
   {
-    "title": "EMILIA PEREZ",
-    "genre": "Drama, Thriller",
-    "duration": "130 min",
-    "fsk": "FSK 18",
+    "title": "Eat the Night",
+    "genre": "Drama, Thriller, Krimi",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Die 17-jährige Apolline flüchtet lieber in die fantastische Welt des Videospiels „Darknoon“, als sich mit der Realität auseinanderzusetzen.",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/iqJ3k4CUsslrASmMG4Bq2nAMkZL.jpg"
+  },
+  {
+    "title": "Animale",
+    "genre": "Drama, Fantasy",
+    "duration": "100 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Ein starkes feministisches Manifest, das Western und Body-Horror kombiniert: Animale zeigt eine junge Frau, die ihren Platz in einer von Männern dominierten Welt finden muss, und spielt dabei gekonnt mit der Metapher der...",
+    "showtimes": [
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "20:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/pBa0Rmp4AVjbFXtJOPVsw6gnk4P.jpg"
+  },
+  {
+    "title": "Prodigieuses",
+    "genre": "Drama, Historie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeU"
+    ],
+    "description": "Angetrieben vom Ehrgeiz ihres Vaters, beginnen die Zwillinge Claire und Jeanne ihr Studium an einer angesehenen Musikuniversität – auf dem Weg zu großem Erfolg als begabte Pianistinnen.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "22:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/t1PilRUOaUGuHr8kO4hzU4dFPXu.jpg"
+  },
+  {
+    "title": "Pourquoi tu souris",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
     "attributes": [
       "Französische Filmtage",
       "blocksubscriptions",
       "OMdU"
     ],
-    "description": "Mexiko, heute. Die Anwältin Rita erhält ein unerwartetes Angebot. Sie soll einem gefürchteten Kartellboss helfen, sich aus seinem Geschäft zurückzuziehen und für immer zu verschwinden, indem sie die Frau wird, von der...",
-    "showtimes": [
-      {
-        "date": "2024-11-6",
-        "shows": [
-          {
-            "time": "19:30",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/6zUHqsXnSyGDO6Td1eyx7Mz4RRK.jpg"
-  },
-  {
-    "title": "DEMBA",
-    "genre": "Drama",
-    "duration": "100 min",
-    "fsk": "FSK noch nicht bekannt.",
-    "attributes": [
-      "Französische Filmtage",
-      "blocksubscriptions",
-      "OmeI"
-    ],
-    "description": "No description available",
+    "description": "Auf der Suche nach Arbeit findet Wisi sich in Bordeaux wieder. Dort trifft er auf die großherzige Marina und gibt vor, ein Immigrant ohne Papiere zu sein, damit sie ihn bei sich aufnimmt.",
     "showtimes": [
       {
         "date": "2024-11-4",
         "shows": [
           {
             "time": "20:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/d1JR0paoBIRC26MItYpABeNfmx1.jpg"
+  },
+  {
+    "title": "La vie de ma mère",
+    "genre": "Drama, Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Französische Filmtage",
+      "OMdU"
+    ],
+    "description": "Der erfolgreiche Florist Pierre wird von seiner Mutter Judith überrumpelt – für ihn ein unfreiwilliges Wiedersehen nach zwei Jahren. Judith ist sprunghaft und extravagant.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/lmQCgF12UhvkZ8LCk6zDdNUCiRJ.jpg"
+  },
+  {
+    "title": "Miséricorde",
+    "genre": "Drama, Komödie",
+    "duration": "103 min",
+    "fsk": "FSK 16",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OMdU"
+    ],
+    "description": "Nach zehn Jahren kehrt Jérémie in seinen Heimatort Saint-Martial im Südosten Frankreichs zurück, um an der Beerdigung des Dorfbäckers Jean-Pierres teilzunehmen. Als Teenager war Jérémie dessen Lehrling – und vielleicht...",
+    "showtimes": [
+      {
+        "date": "2024-11-2",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/i1eFKvcUNdyNd53YeEOK2vNkBsL.jpg"
+  },
+  {
+    "title": "Rendez-vous avec Pol Pot",
+    "genre": "Drama, Historie",
+    "duration": "112 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "Drei französische Journalisten reisen 1978 auf Einladung des Khmer Rouge Regimes nach Kambodscha und begeben sich in ein gefährliches Abenteuer.",
+    "showtimes": [
+      {
+        "date": "2024-10-31",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-1",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/6inQsfka8VpZZgu7JvpZ095K1wb.jpg"
+  },
+  {
+    "title": "Le deuxième acte",
+    "genre": "Komödie",
+    "duration": "80 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions",
+      "OmeI"
+    ],
+    "description": "Florence (Léa Seydoux) will David (Louis Garrel), den Mann, in den sie sich verliebt hat, ihrem Vater Guillaume (Vincent Lindon) vorstellen. Doch David fühlt sich nicht zu ihr hingezogen und will sie in die Arme seines Freundes...",
+    "showtimes": [
+      {
+        "date": "2024-11-3",
+        "shows": [
+          {
+            "time": "16:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeI"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-11-4",
+        "shows": [
+          {
+            "time": "18:00",
             "theater": "Atelier",
             "attributes": [
               "2D",
@@ -3416,91 +4705,33 @@
         "date": "2024-11-6",
         "shows": [
           {
-            "time": "19:00",
-            "theater": "Saal Arsenal",
+            "time": "20:30",
+            "theater": "Atelier",
             "attributes": [
               "2D",
-              "OmeU"
+              "OmeI"
             ]
           }
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/b8AqvN6fGSyNbnsxgd8p9KuCdM5.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/fGJoyloMr5V0TEksBHxmQ8VthcZ.jpg"
   },
   {
-    "title": "SAUVAGES",
-    "genre": "Drama, Animation, Abenteuer, Familie",
-    "duration": "87 min",
-    "fsk": "FSK noch nicht bekannt.",
-    "attributes": [
-      "Französische Filmtage",
-      "blocksubscriptions",
-      "OmU"
-    ],
-    "description": "In Borneo nimmt Kéria ein Orang-Utan-Baby auf, das auf der Palmölplantage gefunden wurde, auf der ihr Vater arbeitet. Zur gleichen Zeit sucht ihr Cousin Selaï Zuflucht bei ihnen, um dem Konflikt zwischen seiner Nomadenfamilie...",
-    "showtimes": [
-      {
-        "date": "2024-11-5",
-        "shows": [
-          {
-            "time": "10:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OmU"
-            ]
-          }
-        ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/qfQbPOHyKi4nkyoOodZoL5bvIja.jpg"
-  },
-  {
-    "title": "THE FANTASTIC THREE",
+    "title": "Es sind die kleinen Dinge",
     "genre": "Komödie",
-    "duration": "96 min",
-    "fsk": "FSK 6",
+    "duration": "89 min",
+    "fsk": "FSK 12",
     "attributes": [
-      "Französische Filmtage",
-      "blocksubscriptions",
       "OMdU"
     ],
-    "description": "No description available",
+    "description": "Als Lehrerin und Bürgermeisterin in einer 400-Seelen-Gemeinde im Herzen der Bretagne ist Alice (gespielt von Julia Piaton) voll ausgelastet. Als dann auch noch der eigenwillige Émile (gespielt von Michel Blanc) beschließt,...",
     "showtimes": [
       {
-        "date": "2024-11-5",
+        "date": "2024-10-30",
         "shows": [
           {
-            "time": "10:30",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D",
-              "OMdU"
-            ]
-          }
-        ]
-      }
-    ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/mcdmiKLLLtTqePILMIfc0UkTS8F.jpg"
-  },
-  {
-    "title": "Louise Violet",
-    "genre": "Drama, Historie",
-    "duration": "Unknown Duration",
-    "fsk": "FSK noch nicht bekannt.",
-    "attributes": [
-      "Französische Filmtage",
-      "blocksubscriptions",
-      "OMdU"
-    ],
-    "description": "No description available",
-    "showtimes": [
-      {
-        "date": "2024-11-2",
-        "shows": [
-          {
-            "time": "16:00",
+            "time": "18:00",
             "theater": "Atelier",
             "attributes": [
               "2D",
@@ -3510,6 +4741,721 @@
         ]
       }
     ],
-    "posterUrl": "https://image.tmdb.org/t/p/w500/iKNnBYp7zWYUHpnjhzIIlaveUHm.jpg"
+    "posterUrl": "https://image.tmdb.org/t/p/w500/7abkBKQ65ktmLus53D8d9BVEDvp.jpg"
+  },
+  {
+    "title": "What a Feeling",
+    "genre": "Komödie, Lovestory",
+    "duration": "110 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Queerfilmnacht"
+    ],
+    "description": "Marie Theres, 52, hat das scheinbar perfekte Leben: Seit 20 Jahren ist sie mit ihrem Ehemann Alexander verheiratet, sie zieht ihre jugendliche Tochter Anna groß und ist eine erfolgreiche Ärztin. Doch plötzlich bricht ihr...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/uGm8jJdch2w4IkrY4NJRSi8L7yN.jpg"
+  },
+  {
+    "title": "Nur die Sonne war Zeuge",
+    "genre": "Drama, Thriller, Krimi",
+    "duration": "118 min",
+    "fsk": "FSK 16",
+    "attributes": [
+      "OMdU"
+    ],
+    "description": "Der amerikanische Milliardärssohn Richard Greenleaf genießt sein Leben lieber mit seiner Freundin Marge Duval in Italien, als sich zu Hause um die Geschäft zu kümmern. Sein Vater beauftragt daraufhin Tom Ripley, der behauptet,...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/asTqniOVviEV8agTTeMA1Sy72Og.jpg"
+  },
+  {
+    "title": "Münter & Kandinsky",
+    "genre": "Drama",
+    "duration": "125 min",
+    "fsk": "FSK 12",
+    "attributes": [],
+    "description": "Es ist die bewegende Geschichte einer dramatischen Liebe und zugleich ein Dokument epochaler Kunst: Anfang des 20. Jahrhunderts lebt und malt die gebürtige Berlinerin Gabriele Münter gemeinsam mit ihrer großen Liebe, dem...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "16:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "16:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/vLfXZ3sVLL042tIlQuU8yu1hoaX.jpg"
+  },
+  {
+    "title": "Aquarela",
+    "genre": "Dokumentarfilm",
+    "duration": "90 min",
+    "fsk": "FSK 6",
+    "attributes": [
+      "OMdU"
+    ],
+    "description": "AQUARELA nimmt das Publikum mit auf eine ungewöhnliche filmische Reise in die atemberaubende Kraft des wertvollsten Elements der Erde - das Wasser. Der Film erzählt in poetischen Bildern vom launischen Temperament des Wassers...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/Aq4z0BOwqLWljb2SRQXu1fpGTco.jpg"
+  },
+  {
+    "title": "Shorts Attack: Arbeit & Ekstase",
+    "genre": "Kurzfilm",
+    "duration": "90 min",
+    "fsk": "FSK noch nicht bekannt.",
+    "attributes": [
+      "OMdU"
+    ],
+    "description": "Ein Lügendetektor beim Bewerbungsgespräch, mit den Chefs einen Ausflug in die Sauna machen und die Tricks eines Möbelhausgiganten entlarven: Arbeit zwischen Panik und Ekstase. Es singt ein Museumswärter, ein Fundbüromitarbeiter...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": []
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": null
+  },
+  {
+    "title": "Architecton",
+    "genre": "Dokumentarfilm",
+    "duration": "94 min",
+    "fsk": "FSK 0",
+    "attributes": [
+      "Premieren & Gäste",
+      "OMdU"
+    ],
+    "description": "Was werden die Menschen der nächsten Zivilisation von unserer Zeit wiederfinden? Victor Kossakovsky stellt diese Frage in ARCHITECTON und verdichtet mögliche Antworten darauf zu einem intensiven, visuell schlicht überwältigenden...",
+    "showtimes": [
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "19:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/dPFUKGDjWRxzSj3430nIlUiAAm6.jpg"
+  },
+  {
+    "title": "Woodwalkers",
+    "genre": "Abenteuer",
+    "duration": "100 min",
+    "fsk": "FSK 6",
+    "attributes": [
+      "blocksubscriptions"
+    ],
+    "description": "Auf den ersten Blick sieht Carag aus wie ein ganz normaler Junge, doch hinter seinen leuchtenden Augen verbirgt sich ein unglaubliches Geheimnis: Carag ist ein Gestaltwandler. Als Berglöwe ist er in der Wildnis aufgewachsen...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "17:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "15:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/7QEMLmqWKQgGV3lEn5ZRtzOtHcB.jpg"
+  },
+  {
+    "title": "My Hero Academia: You're Next",
+    "genre": "Animation, Abenteuer, Science Fiction, Action",
+    "duration": "110 min",
+    "fsk": "FSK 12",
+    "attributes": [
+      "Anime",
+      "OmeU",
+      "OMdU"
+    ],
+    "description": "In einer Gesellschaft, in der sich Helden und Schurken ständig im Namen des Friedens und des Chaos bekriegen, stellt sich der Yuei-Oberschüler Deku dem Bösewicht entgegen, der sein Superhelden-Idol All Might imitiert. Können...",
+    "showtimes": [
+      {
+        "date": "2024-10-29",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/8rdB1wkheEMMqcY8qLAKjCMPcnZ.jpg"
+  },
+  {
+    "title": "SAUVAGES",
+    "genre": "Drama, Animation, Abenteuer, Familie",
+    "duration": "87 min",
+    "fsk": "FSK 6",
+    "attributes": [
+      "Französische Filmtage",
+      "blocksubscriptions"
+    ],
+    "description": "In Borneo nimmt Kéria ein Orang-Utan-Baby auf, das auf der Palmölplantage gefunden wurde, auf der ihr Vater arbeitet. Zur gleichen Zeit sucht ihr Cousin Selaï Zuflucht bei ihnen, um dem Konflikt zwischen seiner Nomadenfamilie...",
+    "showtimes": [
+      {
+        "date": "2024-11-5",
+        "shows": [
+          {
+            "time": "10:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/qfQbPOHyKi4nkyoOodZoL5bvIja.jpg"
+  },
+  {
+    "title": "Longlegs",
+    "genre": "Horror, Krimi",
+    "duration": "101 min",
+    "fsk": "FSK 16",
+    "attributes": [
+      "Wahnsinns-Cinema",
+      "OMdU"
+    ],
+    "description": "Der FBI-Agent Lee Harker wird mit dem Fall einer Mordserie betraut, die auf einen okkulten Tathintergrund schließen lässt. Während er tiefer in die Untersuchung eintaucht, entdeckt er eine persönliche Verbindung zu dem...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": [
+          {
+            "time": "22:30",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D",
+              "OMdU"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "22:30",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": []
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/5aj8vVGFwGVbQQs26ywhg4Zxk2L.jpg"
+  },
+  {
+    "title": "Alter weißer Mann",
+    "genre": "Komödie",
+    "duration": "Unknown Duration",
+    "fsk": "FSK 6",
+    "attributes": [],
+    "description": "Um endlich den ersehnten Job zu bekommen, muss Familienvater Heinz Hellmich in der Firma seine \"wokeste\" Seite zeigen. Um zu beweisen, dass er kein \"alter weißer Mann\" ist, lädt er seinen Chef und seine Kolleginnen zu einem...",
+    "showtimes": [
+      {
+        "date": "2024-10-30",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/j5Qrdbh6a90jQhncVBbm0jjdx3U.jpg"
+  },
+  {
+    "title": "Gladiator",
+    "genre": "Drama, Action",
+    "duration": "145 min",
+    "fsk": "FSK 16",
+    "attributes": [
+      "OV"
+    ],
+    "description": "Als der Kaiser Marcus Aurelius im sterben liegt, bittet er Maximus, der ein gefeierter Feldherr ist, seine Nachfolge anzutreten. Doch Marcus Aurelius Sohn möchte die Nachfolge seines Vaters selber antreten und ordnet die...",
+    "showtimes": [
+      {
+        "date": "2024-10-22",
+        "shows": []
+      },
+      {
+        "date": "2024-10-23",
+        "shows": []
+      },
+      {
+        "date": "2024-10-24",
+        "shows": []
+      },
+      {
+        "date": "2024-10-25",
+        "shows": []
+      },
+      {
+        "date": "2024-10-26",
+        "shows": [
+          {
+            "time": "21:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-27",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D",
+              "OV"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2024-10-28",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://image.tmdb.org/t/p/w500/ty8TGRuvJLPUmAR1H1nRIsgwvim.jpg"
   }
 ]
