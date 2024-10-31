@@ -138,13 +138,21 @@ async function scrapeCinema() {
             const showWrappers = performanceWrapper.querySelectorAll('.show-wrapper');
             showWrappers.forEach(show => {
               shows.push({
-                time: show.querySelector('.showtime')?.textContent.trim() || 'Unknown Time',
-                theater: show.querySelector('.theatre-name')?.textContent.trim() || 'Unknown Theater',
-                attributes: Array.from(show.querySelectorAll('.attribute-logo')).map(attr => 
-                  attr.querySelector('.screen-reader-text')?.textContent.trim() || 
-                  attr.dataset.attribute || 
-                  'Unknown Attribute'
-                )
+              time: show.querySelector('.showtime')?.textContent.trim() || 'Unknown Time',
+              theater: show.querySelector('.theatre-name')?.textContent.trim() || 'Unknown Theater',
+              attributes: Array.from(show.querySelectorAll('.attribute-logo')).map(attr => {
+                let attribute = attr.querySelector('.screen-reader-text')?.textContent.trim() || 
+                attr.dataset.attribute || 
+                'Unknown Attribute';
+                
+                if (attribute.toLowerCase().includes('omd')) {
+                attribute = 'OmdU';
+                } else if (attribute.toLowerCase().includes('ome')) {
+                attribute = 'OmeU';
+                }
+                
+                return attribute;
+              })
               });
             });
           }

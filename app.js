@@ -311,13 +311,13 @@ function createMovieBlock(movie, show) {
                 <strong>${movie.title}</strong>
                 <div>
                     <div class="show-time">${show.time} - ${endTime}</div>
-                    ${show.attributes[1] ? `<div class="omdu">OmdU</div>` : ''}
+                    ${show.attributes[1] ? `<div class="omdu">${show.attributes[1]}</div>` : ''}
                 </div>
             </div>
         </div>
     `;
 
-    show.attributes[1] === "OMdU" ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
+    show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
     
     // console.log(movieBlock);
