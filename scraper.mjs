@@ -31,7 +31,8 @@ async function scrapeCinema() {
     //headless: false,  // Set to false to see what's happening
     // args: ['--start-maximized'],
     defaultViewport: null,
-    headless: 'new',
+    headless: false,
+    devtools: true,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
 
@@ -179,6 +180,102 @@ async function scrapeCinema() {
       }
     }).filter(movie => movie !== null);
   });
+
+  for (const movie of movies) {
+    for (const showtime of movie.showtimes) {
+      for (const show of showtime.shows) {
+        console.log(`Clicking on showtime for ${movie.title} on ${showtime.date} at ${show.time}`);
+        await page.evaluate((title, date, time) => {
+          //debugger;
+          const movieItems = Array.from(document.querySelectorAll('.movie-item'));
+          let movieItem = null;
+          //debugger;
+          console.log(`Looking for movie title: ${title}`);
+          movieItems.forEach(item => {
+            
+            const itemTitle = item.querySelector('.title')?.textContent.trim();
+    
+            console.log(`Found movie title: ${itemTitle}`);
+            if (itemTitle.toLowerCase() === title.toLowerCase()) {
+              console.log(`Found movie item for title: ${title}`);
+              movieItem = item;
+            }
+          });
+
+          if (!movieItem) {
+            console.error(`Movie item not found for title: ${title}`);
+            return;
+          }
+          const dateGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'))
+          const dateGrid = dateGrids[0].querySelectorAll('.date');
+          let dateItem = null;
+          let dateKey = null; // the index of the date item
+          //debugger;
+          console.log(`Looking for date: ${date}`);
+          dateGrid.forEach((item, key) => {
+            //debugger;
+            let itemDate = item.textContent.trim();
+            if (itemDate === 'Heute') {
+              const today = new Date();
+              itemDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+            } else {
+              const [, day, month] = itemDate.match(/(\d+)\.(\d+)\.$/) || [];
+              if (day && month) {
+                const year = new Date().getFullYear();
+                itemDate = `${year}-${month}-${day}`;
+              }
+            }
+            //debugger;
+            console.log(`Found date: ${itemDate}`);
+            if (itemDate.toLowerCase() === date.toLowerCase()) {
+              console.log(`Found date item for date: ${date}`);
+              dateItem = item;
+              dateKey = key;
+            }
+          });
+
+          if (!dateGrid) {
+            console.error(`Date grid not found for date: ${date}`);
+            return;
+          }
+          const showWrapperAll = dateGrids[1].querySelectorAll('.performances-wrapper'); // TODO: right now we only save [1], we need to save all
+          const showWrapper = showWrapperAll[dateKey].querySelectorAll('.show-wrapper');
+          let showItem = null;
+          //debugger;
+          console.log(`Looking for show time: ${time}`);
+          showWrapper.forEach(item => {
+            //debugger;
+            let itemTime = item.querySelector('.showtime')?.textContent.trim();
+            console.log(`Found show time: ${itemTime}`);
+            if (itemTime.toLowerCase() === time.toLowerCase()) {
+              console.log(`Found show item for time: ${time}`);
+              showItem = item;
+            }
+          });
+
+          if (!showItem) {
+            console.error(`Show item not found for time: ${time}`);
+            return;
+          }
+          //debugger;
+          console.log('Clicking on show item');
+          showItem.click();
+
+
+        }, movie.title, showtime.date, show.time);
+
+        //await page.waitForTimeout(2000); // Wait for the iframe to load
+
+        const iframeUrl = await page.evaluate(() => {
+          const iframe = document.querySelector('iframe');
+          return iframe ? iframe.src : "not found";
+        });
+
+        show.iframeUrl = iframeUrl;
+        console.log(`Found iframe URL: ${iframeUrl}`);
+      }
+    }
+  }
 
   // Retrieve debug logs
   const debugLogs = await page.evaluate(() => {

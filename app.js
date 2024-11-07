@@ -319,6 +319,12 @@ function createMovieBlock(movie, show) {
 
     show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
+
+    //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
+    movieBlock.addEventListener('click', function() {
+        window.open(show.iframeUrl, '_blank');
+    });
+    
     
     // console.log(movieBlock);
 
