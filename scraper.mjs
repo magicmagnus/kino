@@ -49,7 +49,7 @@ async function scrapeCinema() {
   await page.evaluate(() => {
     return new Promise((resolve) => {
       document.querySelectorAll('.performance-item-more-dates').forEach(button => button.click());
-      setTimeout(resolve, 1000); // Wait 1 second after clicking all buttons
+      setTimeout(resolve, 5000); // Wait 1 second after clicking all buttons
       // add another button click to each button .buy-ticket-button 
       
     });
@@ -238,20 +238,25 @@ async function scrapeCinema() {
             console.error(`Date grid not found for date: ${date}`);
             return;
           }
-          const showWrapperAll = dateGrids[1].querySelectorAll('.performances-wrapper'); // TODO: right now we only save [1], we need to save all
-          const showWrapper = showWrapperAll[dateKey].querySelectorAll('.show-wrapper');
-          let showItem = null;
-          //debugger;
-          console.log(`Looking for show time: ${time}`);
-          showWrapper.forEach(item => {
-            //debugger;
-            let itemTime = item.querySelector('.showtime')?.textContent.trim();
-            console.log(`Found show time: ${itemTime}`);
-            if (itemTime.toLowerCase() === time.toLowerCase()) {
-              console.log(`Found show item for time: ${time}`);
-              showItem = item;
-            }
+          // delete the first entry of the dateGrids array###########
+          dateGrids.shift();
+          dateGrids.forEach(item => {
+            const perfWrapper = item.querySelectorAll('.performances-wrapper'); 
+            const showWrapper = perfWrapper[dateKey].querySelectorAll('.show-wrapper');
+            let showItem = null;
+            debugger;
+            console.log(`Looking for show time: ${time}`);
+            showWrapper.forEach((item, showItem) => {
+              //debugger;
+              let itemTime = item.querySelector('.showtime')?.textContent.trim();
+              console.log(`Found show time: ${itemTime}`);
+              if (itemTime.toLowerCase() === time.toLowerCase()) {
+                console.log(`Found show item for time: ${time}`);
+                showItem = item;
+              }
+            });
           });
+          ///###################
 
           if (!showItem) {
             console.error(`Show item not found for time: ${time}`);
