@@ -375,8 +375,8 @@ async function scrapePosterUrls() {
   console.log('Launching browser...');
   const browser = await puppeteer.launch({
       defaultViewport: { width: 1920, height: 1080 },
-      headless: false, // Set to true for headless mode , or 'new'
-      devtools: true,
+      headless: true, // Set to true for headless mode , or 'new'
+      devtools: false,
       executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
