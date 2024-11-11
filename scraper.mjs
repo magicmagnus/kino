@@ -1,6 +1,7 @@
 import puppeteer from 'puppeteer';
 import { promises as fs } from 'fs';
 import fetch from 'node-fetch';
+import { debug } from 'console';
 
 const TMDB_API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb';
 const fetchedPosters = {};
@@ -32,8 +33,9 @@ async function scrapeCinema() {
   const browser = await puppeteer.launch({
     //headless: false,  // Set to false to see what's happening
     // args: ['--start-maximized'],
-    defaultViewport: null,
-    headless:"new",
+    defaultViewport: { width: 1920, height: 1080 },
+    headless: true, // Set to true for headless mode , or 'new'
+    devtools: false,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
 
@@ -48,22 +50,64 @@ async function scrapeCinema() {
   // Click all "more dates" buttons and wait for possible updates
   console.log('Expanding all movie dates...');
   await page.evaluate(() => {
+    const closeButton = document.querySelector('.brlbs-cmpnt-close-button');
+    if (closeButton) {
+        closeButton.click();
+    }
     return new Promise((resolve) => {
-      document.querySelectorAll('.performance-item-more-dates').forEach(button => button.click());
-      setTimeout(resolve, 1000); // Wait 1 second after clicking all buttons
-      // add another button click to each button .buy-ticket-button 
-      
+        //sometimes the expand button does not open all the dates so click on an extras button with class "performance-item-date"
+        const buttons1 = document.querySelectorAll('.performance-item-date');
+        buttons1.forEach(button => button.click());
+        const buttons2 = document.querySelectorAll('.performance-item-more-dates');
+        buttons2.forEach(button => button.click());
+        const buttons3 = document.querySelectorAll('.performance-item-dates');
+        buttons3.forEach(button => button.click());
+        setTimeout(resolve, 1000); // Wait 1 second after clicking all buttons
     });
   });
 
+  // TODO: factor out the following code into a separate function
+  // const movieTrailerURLs = await page.evaluate(async () => {
+
+  //   await new Promise(resolve => setTimeout(resolve, 500));
+
+  //   return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
+  //     debugger;
+  //     const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
+      
+  //     //click on the trailer button to get the trailer URL
+  //     movieItem.querySelector('.trailer-button').click();
+      
+  //     // click on extra button to agree to smth. <button class="button text-medium trailer-confirmation-button confirm cursor-pointer">Video laden</button>
+  //     //<button class="button text-medium set-allowance cursor-pointer checked">Immer entsperren.</button>
+  //     movieItem.querySelector('.checked').click();
+  //     movieItem.querySelector('.trailer-confirmation-button').click();
+  //     // get the trailer URL
+  //     const trailerURL = movieItem.querySelector('#op-yt__player').src;
+  //     return {
+  //       title,
+  //       trailerURL
+  //     };
+  //   });
+  // });
+  
+  // console.log(movieTrailerURLs);
+  
+        
+
+
+
+
   console.log('Scraping movie data...');
-  const movies = await page.evaluate(() => {
+  const movies = await page.evaluate(async () => {
     const debugLog = (msg) => {
       // Create a custom element to store our debug message
       const debugElement = document.createElement('div');
       debugElement.setAttribute('data-debug', msg);
       document.body.appendChild(debugElement);
     };
+
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
       try {
@@ -272,6 +316,10 @@ async function scrapeCinema() {
 
           // click on the showtime to get the iframe 
           showItem.click();
+          return new Promise((resolve) => {
+            setTimeout(resolve, 500);
+        }
+        );
 
         }, movie.title, showtime.date, show.time, show.theater);
 
@@ -300,7 +348,7 @@ async function scrapeCinema() {
 
   // Now fetch posters for all movies with fetchPosterUrlAlt
   console.log('\nFetching movie posters...');
-  const moviePosters = await fetchPosterUrlAlt();
+  const moviePosters = await scrapePosterUrls();
   console.log('Fetched movie posters:', moviePosters);
   // and add them to the movies array
   for (const movie of movies) {
@@ -323,11 +371,11 @@ async function scrapeCinema() {
 }
 
 
-async function fetchPosterUrlAlt() {
+async function scrapePosterUrls() {
   console.log('Launching browser...');
   const browser = await puppeteer.launch({
-      defaultViewport: null,
-      headless: false,
+      defaultViewport: { width: 1920, height: 1080 },
+      headless: false, // Set to true for headless mode , or 'new'
       devtools: true,
       executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
       args: ['--no-sandbox', '--disable-setuid-sandbox']
