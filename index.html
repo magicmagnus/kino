@@ -31,14 +31,17 @@
     <script>
         // Dynamically set the viewport meta tag based on screen width
         document.addEventListener('DOMContentLoaded', function() {
-            var viewportMetaTag = document.createElement('meta');
-            viewportMetaTag.name = "viewport";
-            if (window.innerWidth < window.innerHeight) {
-                viewportMetaTag.content = "width=device-width, initial-scale=0.7, maximum-scale=3.0, user-scalable=yes";
-            } else {
-                viewportMetaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes";
+            var existingViewportMetaTag = document.querySelector('meta[name="viewport"]');
+            if (!existingViewportMetaTag) {
+                var viewportMetaTag = document.createElement('meta');
+                viewportMetaTag.name = "viewport";
+                if (window.innerWidth < window.innerHeight) {
+                    viewportMetaTag.content = "width=device-width, initial-scale=0.7, maximum-scale=3.0, user-scalable=yes";
+                } else {
+                    viewportMetaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes";
+                }
+                document.head.appendChild(viewportMetaTag);
             }
-            document.head.appendChild(viewportMetaTag);
         });
     </script>
 </head>
