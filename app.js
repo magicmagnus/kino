@@ -322,13 +322,101 @@ function createMovieBlock(movie, show) {
 
     //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
     movieBlock.addEventListener('click', function() {
-        window.open(show.iframeUrl, '_blank');
+        //window.open(show.iframeUrl, '_blank');
+
+        // instead of opening the link in a new tab, open it in a modal, like a card
+        createMovieCard(movie, show, endTime);
     });
     
     
     // console.log(movieBlock);
 
     return movieBlock;
+}
+
+function createMovieCard(movie, show, endTime) {
+    // onclick on the movie block, create a modal card with the movie details, like the title, poster, description, etc.
+    // the card should have a close button, and a link to the movie trailer and a link tti the iframeUrl
+    // were gonna fo the full layout of the card in the css file, but here we need:
+    // - a close button that closes the card
+    // - on the top left, the movie poster
+    // - beside the poster, [the movie title and under that the show time]
+    // - under the title, still besides the postrt, the movie description
+    // - under the description, a link to the movie trailer
+    // - under the trailer, a link to the iframeUrl
+    // - the card should be centered on the screen, but not full screen
+    // - the card should have a shadow and a border
+    
+    
+    const modal = document.createElement('div');
+    modal.classList.add('custom-modal');
+    // if were in portrait mode/mobile, we need to alter the modal structure/layaout
+    modal.innerHTML = `
+        <div class="custom-modal-content">
+            <span class="custom-modal-close">
+                <i class="bi bi-x-lg"></i>
+            </span>
+            <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+            <div class="custom-modal-info">
+                <h2>${movie.title}</h2>
+                <div class="custom-modal-attributes">
+                    <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
+                    <h3 class="custom-modal-genre">${movie.genre}</h3>
+                    <h3 class="custom-modal-fsk">${movie.fsk}</h3>
+                    <h3 class="custom-modal-omdu">${show.attributes[1]? show.attributes[1] : ''}</h3>
+                </div>
+                <p class="custom-modal-desc">${movie.description}${movie.description}</p>
+                <div class="custom-modal-links">
+                    <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
+                        <i class="bi bi-play-circle"></i> Trailer ansehen
+                    </a>
+                    <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
+                        <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen
+                    </a>
+                <div>
+            </div>
+        </div>
+    `;
+    // if were in portrait mode/mobile, we need to alter the modal structure/layaout
+    if (window.innerWidth < window.innerHeight) {
+        modal.innerHTML = `
+            <div class="custom-modal-content">
+                <span class="custom-modal-close">
+                    <i class="bi bi-x-lg"></i>
+                </span>
+
+                
+                <div class="custom-modal-info">
+                    <h2>${movie.title}</h2>
+                    <div class="custom-modal-mobile-container">
+                        <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+                        <div class="custom-modal-attributes">
+                            <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
+                            <h3 class="custom-modal-genre">${movie.genre}</h3>
+                            <h3 class="custom-modal-fsk">${movie.fsk}</h3>
+                            <h3 class="custom-modal-omdu">${show.attributes[1]? show.attributes[1] : ''}</h3>
+                        </div>
+                    </div>
+                    <p class="custom-modal-desc">${movie.description}${movie.description}</p>
+                    <div class="custom-modal-links">
+                        <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
+                            <i class="bi bi-play-circle"></i> Trailer ansehen
+                        </a>
+                        <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
+                            <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen
+                        </a>
+                    <div>
+                </div>
+            </div>
+        `;
+    } 
+    document.body.appendChild(modal);
+    console.log(modal);
+
+    const closeButton = modal.querySelector('.custom-modal-close');
+    closeButton.addEventListener('click', function() {  
+        modal.remove();
+    });
 }
 
 // OPTIMIZED //

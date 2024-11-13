@@ -80,7 +80,7 @@ body, html {
 
 .date-buttons-container {
     display: flex;
-    gap: 8px;
+    /* gap: 8px; */
     /* overflow-x: auto; */
     /* padding: 10px; */
     align-items: center;
@@ -343,6 +343,106 @@ body, html {
     font-weight: bold;
 }
 
+.custom-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+}
+
+
+
+.custom-modal-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    position: absolute;
+    width: 80%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+.custom-modal-content img {
+    top: 0;
+    left: 0;
+    width: 180%;
+    height: 100%;
+    border-radius: 5px;
+    margin-right: 20px;
+    
+}
+
+.custom-modal-info {
+    display: flex;
+    flex-direction: column;
+}
+.custom-modal-attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+
+.custom-modal-info h2 {
+    margin: 0 0 10px 0;
+    font-weight: 500;
+}
+
+.custom-modal-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+
+.custom-modal-time {
+    font-weight: bold;
+}
+
+.custom-modal-desc {
+    margin: 0 0 20px 0;
+}
+
+.custom-modal-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.custom-modal-links a {
+    padding: 10px 20px;
+    margin: 0px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.custom-modal-links i {
+    font-size: 1.3rem;
+    margin-right: 5px;
+}
+
+.custom-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    font-size: 1.5rem;
+    
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 
 @media (orientation: portrait) {
     .logo-container {
@@ -363,5 +463,35 @@ body, html {
     }
     .content {
         margin-top: 125px; 
+    }
+
+    .custom-modal-mobile-container {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 20px;
+    }    
+
+    .custom-modal-info h2 {
+        margin: 0 0 20px 0;
+        font-weight: 500;
+    }
+
+    .custom-modal-content img {
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 100%;
+        border-radius: 5px;
+        margin-right: 20px;
+       
+        
+    }
+
+    .custom-modal-poster {
+        margin-bottom: 10px;
+    }
+
+    .custom-modal-desc {
+        margin: 0 0 40px 0;
     }
 }
