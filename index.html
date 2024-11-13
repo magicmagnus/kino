@@ -61,18 +61,21 @@
 
         <div class="logo-container" onclick="window.location.href='index.html'">
             <img class="logo" src="Kinoschurke.svg" alt="Kinoschurke Logo">
-            <h1>Kinoschurke.de</h1>
+            <div class="logo-text">
+                <h1>Kinoschurke.de</h1>
+                <h3>Das Programm der Tübinger Kinos</h2>
+            </div>
         </div>
         <!-- Add this right before your button-container div in the header -->
         <div class="all-button-container">
-            
-            <div class="view-toggle-container">
+            <button id="view-toggle" class="btn btn-secondary me-2">
+                <i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht
+            </button>
+            <!-- <div class="view-toggle-container">
                 
-            </div>
+            </div> -->
             <div class="button-container">
-                <button id="view-toggle" class="btn btn-secondary me-3">
-                    Room View
-                </button>
+                
                 <div class="date-buttons-container">
                     <!-- Buttons for the dates -->
                 </div>

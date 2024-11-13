@@ -4,7 +4,7 @@
     --color-secondary: #0000ff;
     --color-tertiary: #00ff00;
     --timeline-height: 150px;
-    --timeline-width: 1920px;
+    --timeline-width: 2370px; /* für 13 stunden 1920px */
     --curr-time-text-height: 55px;
 }
     
@@ -42,7 +42,7 @@ body, html {
     height: 70px;
     padding: 5px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 20px;
     background-color: white;
 }
 .logo-container h1 {
@@ -52,16 +52,30 @@ body, html {
     font-weight: 400;
     margin: 0;
 }
+.logo-container h3 {
+    color: white;
+    font-size: 1.4rem;
+    font-family: Outfit;
+    font-weight: 400;
+    margin: 0;
+}
 
 .all-button-container {
     display: flex;
     justify-content: flex-start;
 }
-.view-toggle-container {
+
+#view-toggle {
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+#view-toggle-icon {
+    font-size: 1.0rem;
     margin-right: 8px;
+    /* margin-left: 3px; */
+
     
 }
 .button-container {
@@ -86,12 +100,12 @@ body, html {
     align-items: center;
 }
 
-.date-button-divider {
+/* .date-button-divider {
     width: 2px;
     height: 24px;
     background-color: #ccc;
     margin: 0 8px;
-}
+} */
 
 .future-date-btn {
     /* Add any specific styling for future date buttons */
@@ -99,12 +113,12 @@ body, html {
 }
 .header button {
     flex-shrink: 0;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     margin: 0px;
     margin-right: 10px;
 }
 .content {
-    margin-top: 145px; /* Adjust based on header height */
+    margin-top: 160px; /* Adjust based on header height */
     /* margin-right: 50px; */
     height: calc(100% - 60px);
     overflow-y: auto;
@@ -311,21 +325,30 @@ body, html {
 .movie-block-info {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    
+    height: 100%;
+    overflow: hidden; 
+    /* line-height: 1.0; */
 }
+
+
 
 
 /* Ensure the poster and title are aligned properly */
 .movie-block img {
-    
     margin-right: 10px;
     height: 100%;
     border-radius: 4px;
+    object-fit: cover; /* Maintains the image proportions */
+}
+
+.movie-block-title-wrapper {
+    overflow: scroll;
 }
 
 .movie-block strong {
-    font-size: 1rem;
+    /* font-size: 1.1rem; */ /* set in app.js */
     margin-top: 0;
     margin-bottom: 0;
     line-height: normal;
@@ -333,15 +356,25 @@ body, html {
     overflow-wrap: anywhere;
 }
 
-.show-time {
-    margin-top: 3px;
+.movie-block-attributes {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 3px;
+    margin-top: 5px;
+    margin-bottom: 1px;
     font-size: 1rem;
+}
+
+
+.show-time {
+    margin-top: 0px;
 }
 .omdu {
     background-color: #9eeaf9;
-    padding: 5px 10px;
+    padding: 3px 4px;
     border-radius: 5px;
-    /* Fit the width of the p element to the text content's width */
+        /* Fit the width of the p element to the text content's width */
     /* display: inline-block; */
     width: fit-content;
 }
@@ -363,23 +396,27 @@ body, html {
 
 .custom-modal-content {
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
     position: absolute;
     width: 80%;
-    max-width: 800px;
+    max-width: 1100px;
+    height: 80%;
+    max-height: 600px;
     display: flex;
     flex-direction: row;
 }
 
 .custom-modal-content img {
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
+    /* flex: 0 0 35%; Sets the poster section to take 35% of the width */
+    display: flex;
+    align-items: stretch; /* Ensures the image stretches to fill the height */
     border-radius: 5px;
     margin-right: 20px;
+    /* width: 100%; */
+    object-fit: cover;
+    height: 100%; /* Makes the image fill the full height of the container */
     
 }
 
@@ -390,18 +427,23 @@ body, html {
 .custom-modal-attributes {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    gap: 10px;
     margin-bottom: 10px;
+    background-color: #ebebeb;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 
 .custom-modal-info h2 {
     margin: 0 40px 20px 0;
     font-weight: 700;
+    font-size: 3rem;
 }
 
 .custom-modal-info h3 {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     font-size: 1.1rem;
 }
 
@@ -411,43 +453,49 @@ body, html {
 } */
 
 .custom-modal-desc {
-    margin: 0 0 20px 0;
+    margin: 0 0 70px 0;
+    /* text-overflow: auto; */
+    overflow: auto;
 }
 
 .custom-modal-omdu {
     background-color: #9eeaf9;
-    padding: 5px 10px;
+    padding: 2px 5px;
     border-radius: 5px;
+    margin: 0px;
     /* Fit the width of the p element to the text content's width */
     /* display: inline-block; */
     width: fit-content;
 }
 .custom-modal-links {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
 }
 
 .custom-modal-links a {
-    padding: 10px 20px;
+    /* padding: 5px 20px; */
     margin: 0px;
-    margin-left: 20px;
+    margin-left: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .custom-modal-links i {
-    font-size: 1.3rem;
-    margin-right: 5px;
+    font-size: 1rem;
+    margin-right: 8px;
+    margin-left: 3px;
 }
 
 .custom-modal-close {
     position: absolute;
-    top: 10px;
-    right: 17px;
-    font-size: 1.5rem;
+    top: 20px;
+    right: 20px;
     
-    cursor: pointer;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -458,64 +506,94 @@ body, html {
 @media (orientation: portrait) {
     .logo-container {
         width: 100%;
-        justify-content: center;
+        /* justify-content: center; */
         margin-left: 0;
         margin-bottom: 10px;
     }
 
     .logo {
-        width: 50px;
-        height: 50px;
-        margin-right: 5px;
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        margin-left: 5px;
     }
 
     .logo-container h1 {
         font-size: 2rem;
     }
+    .logo-container h3 {
+        color: white;
+        font-size: 1.4rem;
+        font-family: Outfit;
+        font-weight: 400;
+        margin: 0;
+    }
     .content {
-        margin-top: 125px; 
+        margin-top: 142px; 
     }
 
     
 
     .custom-modal-mobile-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-bottom: 25px;
     }    
 
     
 
-    .custom-modal-titel-and-attr {
+    .custom-modal-poster-and-attributes {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: space-between; */
+    }
+
+    .custom-modal-attributes-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        height: 100%;
+        width: 50%;
     }
     .custom-modal-attributes {
-        justify-content:space-between;
+        display: flex;
+        justify-content: flex-end;
         margin-bottom: 0px;
-        margin-right: 40px;
+        margin-right: 0px;
+        height: auto;
+        align-self: self-start;
     }
-    .custom-modal-info h3 {
+    /* .custom-modal-info h3 {
         margin: 20px 0 0 0;
+    } */
+
+    .custom-modal-content {
+        
+        width: 90%;
+        height: 80%;
+        max-height: 1000px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .custom-modal-info h2 {
+        margin: 0 40px 20px 0;
+        font-weight: 700;
+        font-size: 2rem;
     }
 
     .custom-modal-content img {
-        top: 0;
-        left: 0;
         width: 50%;
-        height: 100%;
-        border-radius: 5px;
-        margin-right: 25px;
-       
-        
+        max-width: 300px;
+        /* height: 35%;  */
     }
 
     .custom-modal-poster {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
     }
 
     .custom-modal-desc {
-        margin: 0 0 40px 0;
+        margin: 0 0 60px 0;
+        font-size: 1.2rem;
     }
 }

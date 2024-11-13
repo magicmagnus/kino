@@ -10,12 +10,20 @@ const formattedToday = `${todayYear}-${todayMonth}-${todayDay}`;
 let firstDate = formattedToday; // temporarily set to today, could be changed later
 const theaters = getTheaters();
 
+const START_HOUR = 9; // Start hour for the timescale
+const TOTAL_HOURS = 16; // Total hours for the timescale
+
 // Modify your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
     // Add the view toggle handler
     document.getElementById('view-toggle').addEventListener('click', function() {
         currentView = currentView === 'date' ? 'room' : 'date';
-        this.textContent = currentView === 'date' ? 'Room View' : 'Date View';
+        
+
+        this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht` 
+        : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
+       
+       
         
         // Toggle visibility of views
         const dateView = document.getElementById('date-view');
@@ -24,10 +32,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentView === 'date') {
             dateView.style.display = 'block';
             roomView.style.display = 'none';
+            
             initializeDateView();
         } else {
             dateView.style.display = 'none';
             roomView.style.display = 'block';
+            
             initializeRoomView();
             
         }
@@ -64,7 +74,7 @@ function initializeDateView() {
         date.setDate(todayDay + i);
 
         if (i === 0) {
-            button.textContent = "Today";
+            button.textContent = "Heute";
         } else {
             const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
             button.textContent = date.toLocaleDateString('de-DE', options);
@@ -256,7 +266,7 @@ function createDateSchedule(date, dateObj, isFirst = false) {
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="timeline-${date}">
                     ${isFirst ? `<div class="current-time" id="current-time-room"></div>` : ''}
-                    ${isFirst ? `<div class="current-time-text" id="current-time-text-room">Today</div>` : ''}
+                    ${isFirst ? `<div class="current-time-text" id="current-time-text-room">Heute</div>` : ''}
                 </div>
             </div>
         </div>
@@ -308,17 +318,33 @@ function createMovieBlock(movie, show) {
         <div class="movie-block-inner">
             <img src="${posterUrl}" alt="${movie.title} poster">
             <div class="movie-block-info">
-                <strong>${movie.title}</strong>
-                <div>
+                <div class="movie-block-title-wrapper">
+                    <strong>${movie.title}</strong> 
+                </div>
+                <div class="movie-block-attributes">
+                ${show.attributes[1] ? `<div class="omdu"><i class="bi bi-translate me-1"></i>${show.attributes[1]}</div>` : ''}
                     <div class="show-time">${show.time} - ${endTime}</div>
-                    ${show.attributes[1] ? `<div class="omdu">${show.attributes[1]}</div>` : ''}
+                    
                 </div>
             </div>
         </div>
     `;
+    
+    
 
     //show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
+    movie.title.length >= 35 ? (movieBlock.style.fontSize = "0.9rem") : (movieBlock.style.fontSize = "1.1rem");
+    if (movie.title.length >= 35) {
+        const fontSize = Math.max(1.0 - (movie.title.length - 35) * 0.007, 0.7); // Adjust the decrement as needed
+        movieBlock.style.fontSize = fontSize + 'rem';
+        // and reduce the line height as well
+        movieBlock.style.lineHeight = '1.0';
+    } else {
+        movieBlock.style.fontSize = "1.1rem";
+        movieBlock.style.lineHeight = '1.0';
+    }
+    console.log(movie.title + " " + movie.title.length);
 
     //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
     movieBlock.addEventListener('click', function() {
@@ -349,21 +375,36 @@ function createMovieCard(movie, show, endTime) {
     
     
     const modal = document.createElement('div');
+    let movieDuration = parseInt(movie.duration.split(' ')[0], 10);
+    // movie dureation convert to X hours and Y minutes
+    let movieDurationHours = Math.floor(movieDuration / 60);
+    let movieDurationMinutes = movieDuration % 60;
+    // if the movie duration is less than 60 minutes, we dont want to display 0 hours
+    if (movieDurationHours === 0) {
+        movieDuration = `${movieDurationMinutes} Minuten`;
+    } else if (movieDurationHours === 1) {
+        movieDuration = `${movieDurationHours} Stunde, ${movieDurationMinutes} Minuten`;
+    } else if (movieDurationMinutes === 1) {
+        movieDuration = `${movieDurationHours} Stunden, ${movieDurationMinutes} Minute`;
+    } else {
+        movieDuration = `${movieDurationHours} Stunden, ${movieDurationMinutes} Minuten`;
+    }
     modal.classList.add('custom-modal');
+
     // if were in portrait mode/mobile, we need to alter the modal structure/layaout
     modal.innerHTML = `
         <div class="custom-modal-content">
             <span class="custom-modal-close">
-                <i class="bi bi-x-lg"></i>
+                <button type="button" class="btn-close" aria-label="Close"></button>
             </span>
             <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
             <div class="custom-modal-info">
                 <h2>${movie.title}</h2>
                 <div class="custom-modal-attributes">
-                    <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
-                    <h3 class="custom-modal-genre">${movie.genre}</h3>
-                    <h3 class="custom-modal-fsk">${movie.fsk}</h3>
-                    ${show.attributes[1]? `<h3 class="custom-modal-omdu">${show.attributes[1]}</h3>` : ''}
+                    <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${show.time} - ${endTime} (${movieDuration})</h3>
+                    <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
+                    <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>${movie.fsk}</h3>
+                    ${show.attributes[1]? `<h3 class="custom-modal-omdu"><i class="bi bi-translate me-2"></i>${show.attributes[1]}</h3>` : ''}
                 </div>
                 <p class="custom-modal-desc">${movie.description}</p>
                 <div class="custom-modal-links">
@@ -382,20 +423,24 @@ function createMovieCard(movie, show, endTime) {
         modal.innerHTML = `
             <div class="custom-modal-content">
                 <span class="custom-modal-close">
-                    <i class="bi bi-x-lg"></i>
+                    <button type="button" class="btn-close" aria-label="Close"></button>
                 </span>
                 <div class="custom-modal-info">
                     <div class="custom-modal-mobile-container">
-                        <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
-                        <div class="custom-modal-titel-and-attr">
-                            <h2>${movie.title}</h2>
-                            <div class="custom-modal-attributes">
-                                <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
-                                <h3 class="custom-modal-genre">${movie.genre}</h3>
-                                <h3 class="custom-modal-fsk">${movie.fsk}</h3>
-                                ${show.attributes[1]? `<h3 class="custom-modal-omdu">${show.attributes[1]}</h3>` : ''}
-                            </div>
+                    
+                    <div class="custom-modal-poster-and-attributes">
+                    <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+                        <div class="custom-modal-attributes-wrapper">
+                        <h2>${movie.title}</h2>
+                        <div class="custom-modal-attributes">
+                            <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${show.time} - ${endTime} (${movieDuration})</h3>
+                            <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
+                            <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>${movie.fsk}</h3>
+                            ${show.attributes[1]? `<h3 class="custom-modal-omdu"><i class="bi bi-translate me-2"></i>${show.attributes[1]}</h3>` : ''}
                         </div>
+                        </div>
+                    </div>
+                       
                     </div>
                     <p class="custom-modal-desc">${movie.description}</p>
                     <div class="custom-modal-links">
@@ -441,11 +486,11 @@ function mergeScrolling() {
 
 
 function calculateLeft(time) {
-    // for a given time in HH:MM format, calculate the percentage of the way through 12pm to 1am
-    const totalMinutes = 60 * 13; // 780 
+    // for a given time in HH:MM format, calculate the percentage of the way through START_HOUR to (START_HOUR + TOTAL_HOURS)
+    const totalMinutes = 60 * TOTAL_HOURS; // Total minutes in the timescale
     const [hours, minutes] = time.split(':').map(Number);
     const currentMinutes = hours * 60 + minutes; 
-    const offset = currentMinutes - 12 * 60;
+    const offset = currentMinutes - START_HOUR * 60;
     const percentage = (offset / totalMinutes) * 100;
     return percentage;
 }
@@ -462,7 +507,6 @@ function calculateEndTime(startTime, duration) {
 }
 
 function updateCurrentTimeLine() {
-
     if (globalDayIndex !== 0) {
         return;
     }
@@ -483,7 +527,6 @@ function updateCurrentTimeLine() {
             currTimeline1: document.getElementById('current-time-room'),
         };
         currentTimeText = document.getElementById('current-time-text-room');
-        
     } 
 
     const now = new Date();
@@ -493,19 +536,15 @@ function updateCurrentTimeLine() {
     const left = calculateLeft(`${hours}:${minutes}`);
     const percentage = left + '%';
 
-
-    // only show the current time line if it is between 12pm and 1am
-    if (hours < 12 || hours >= 25 || firstDate !== formattedToday ) {
+    // only show the current time line if it is between START_HOUR and (START_HOUR + TOTAL_HOURS)
+    if (hours < START_HOUR || hours >= (START_HOUR + TOTAL_HOURS) || firstDate !== formattedToday) {
         Object.values(currentTimeLines).forEach(line => {
             line.style.display = 'none';
         });
         currentTimeText.style.display = 'none';
         return;
     }
-    
 
-
-    
     // Update the current time lines
     Object.values(currentTimeLines).forEach(line => {
         line.style.left = percentage;
@@ -513,22 +552,17 @@ function updateCurrentTimeLine() {
     });
 
     // Update the current time text
-    currentTimeText.textContent = currentView === 'date' ? 'Now' : 'Today';
+    currentTimeText.textContent = currentView === 'date' ? 'Jetzt' : 'Heute';
     currentTimeText.style.left = percentage;    
     currentTimeText.style.display = 'block';
-    
 }
 
 function plotTimeScale() {
-    // plots horizontal lines for each hour from 12pm to 1am
-    // and for the upper most timeline, it also plots the time scale text
-    const hours = Array.from({ length: 14 }, (_, i) => i + 12);
+    // plots horizontal lines for each hour from START_HOUR to (START_HOUR + TOTAL_HOURS)
+    const hours = Array.from({ length: TOTAL_HOURS }, (_, i) => i + START_HOUR);
 
     const timelineContents = getTimelineContentsPerView(currentView);
-    // console.log("plotTimeScale:");
-    // console.log(timelineContents);
   
-    //console.log(timelineContents);
     timelineContents.forEach((content, index) => {
         hours.forEach(hour => {
             const percentage = calculateLeft(`${hour}:00`);
@@ -537,7 +571,7 @@ function plotTimeScale() {
             if (index === 0 || index === 7) {
                 const timeScale = document.createElement('div');
                 timeScale.classList.add('time-scale-text');
-                timeScale.textContent = `${hour % 25}:00`;
+                timeScale.textContent = `${hour % 24}:00`;
                 timeScale.style.left = percentage + '%';
                 
                 content.appendChild(timeScale);
@@ -550,7 +584,6 @@ function plotTimeScale() {
             
             content.appendChild(timeScale);
         });
-        
     });
 }
 
@@ -649,3 +682,19 @@ class TimelineSync {
 }
 
 const timelineSync = new TimelineSync();
+
+
+
+function adjustTitleFontSize(movieBlock) {
+    const titleElement = movieBlock.querySelector('.strong');
+    
+    // Set an initial font size and decrease if overflowing
+    titleElement.style.fontSize = ''; // Reset previous styles
+
+    // Reduce font size until the title fits within its wrapper
+    while (titleWrapper.scrollWidth > titleWrapper.clientWidth && fontSize > 10) { // 10px as minimum font size for legibility
+        console.log('Title overflow:', titleElement.textContent);
+        fontSize -= 1; // Adjust the decrement as needed
+        titleElement.style.fontSize = fontSize + 'px';
+    }
+}
