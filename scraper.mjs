@@ -47,7 +47,7 @@ async function scrapeCinema() {
     waitUntil: 'networkidle0'
   });
 
-  // Click all "more dates" buttons and wait for possible updates
+  //Click all "more dates" buttons and wait for possible updates
   console.log('Expanding all movie dates...');
   await page.evaluate(() => {
     const closeButton = document.querySelector('.brlbs-cmpnt-close-button');
@@ -92,6 +92,29 @@ async function scrapeCinema() {
   // });
   
   // console.log(movieTrailerURLs);
+
+  const movieDescriptions = await page.evaluate(async () => {
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
+      debugger;
+      const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
+      
+      //click on the details button to get the full description
+      movieItem.querySelector('.details').click();
+
+      
+      // from the container, select the "description" class and get the text content
+      const description = document.querySelector('.movie-details').querySelector('.description')?.textContent.trim() || 'No description available';
+      return {
+        title,
+        description
+      };
+    });
+  });
+
+  console.log(movieDescriptions);
   
         
 
@@ -354,6 +377,7 @@ async function scrapeCinema() {
   for (const movie of movies) {
 
     const poster = moviePosters.find(poster => poster.alt.toLowerCase().includes(movie.title.toLowerCase()));
+    const description = movieDescriptions.find(description => description.title.toLowerCase().includes(movie.title.toLowerCase()));
     
     if (poster) {
       movie.posterUrl = poster.src;
@@ -362,6 +386,11 @@ async function scrapeCinema() {
       console.log(`No poster found for ${movie.title}, fetching from TMDB...`);
       movie.posterUrl = await fetchPosterUrl(movie.title);
       console.log(`Fetched poster for ${movie.title}:`, movie.posterUrl);
+    }
+
+    if (description) {
+      movie.description = description.description;
+      console.log(`Found description for ${movie.title}:`, description);
     }
   }
 

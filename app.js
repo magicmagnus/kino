@@ -317,7 +317,7 @@ function createMovieBlock(movie, show) {
         </div>
     `;
 
-    show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
+    //show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
 
     //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
@@ -363,9 +363,9 @@ function createMovieCard(movie, show, endTime) {
                     <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
                     <h3 class="custom-modal-genre">${movie.genre}</h3>
                     <h3 class="custom-modal-fsk">${movie.fsk}</h3>
-                    <h3 class="custom-modal-omdu">${show.attributes[1]? show.attributes[1] : ''}</h3>
+                    ${show.attributes[1]? `<h3 class="custom-modal-omdu">${show.attributes[1]}</h3>` : ''}
                 </div>
-                <p class="custom-modal-desc">${movie.description}${movie.description}</p>
+                <p class="custom-modal-desc">${movie.description}</p>
                 <div class="custom-modal-links">
                     <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                         <i class="bi bi-play-circle"></i> Trailer ansehen
@@ -377,27 +377,27 @@ function createMovieCard(movie, show, endTime) {
             </div>
         </div>
     `;
-    // if were in portrait mode/mobile, we need to alter the modal structure/layaout
+    // if were in portrait mode/mobile, we need to alter the modal structure/layout
     if (window.innerWidth < window.innerHeight) {
         modal.innerHTML = `
             <div class="custom-modal-content">
                 <span class="custom-modal-close">
                     <i class="bi bi-x-lg"></i>
                 </span>
-
-                
                 <div class="custom-modal-info">
-                    <h2>${movie.title}</h2>
                     <div class="custom-modal-mobile-container">
                         <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
-                        <div class="custom-modal-attributes">
-                            <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
-                            <h3 class="custom-modal-genre">${movie.genre}</h3>
-                            <h3 class="custom-modal-fsk">${movie.fsk}</h3>
-                            <h3 class="custom-modal-omdu">${show.attributes[1]? show.attributes[1] : ''}</h3>
+                        <div class="custom-modal-titel-and-attr">
+                            <h2>${movie.title}</h2>
+                            <div class="custom-modal-attributes">
+                                <h3 class="custom-modal-time">${show.time} - ${endTime}</h3>
+                                <h3 class="custom-modal-genre">${movie.genre}</h3>
+                                <h3 class="custom-modal-fsk">${movie.fsk}</h3>
+                                ${show.attributes[1]? `<h3 class="custom-modal-omdu">${show.attributes[1]}</h3>` : ''}
+                            </div>
                         </div>
                     </div>
-                    <p class="custom-modal-desc">${movie.description}${movie.description}</p>
+                    <p class="custom-modal-desc">${movie.description}</p>
                     <div class="custom-modal-links">
                         <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                             <i class="bi bi-play-circle"></i> Trailer ansehen
