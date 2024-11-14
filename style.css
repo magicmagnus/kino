@@ -474,6 +474,8 @@ body, html {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    width: auto;
+    margin-left:  12px;
 }
 
 .custom-modal-links a {
@@ -485,8 +487,8 @@ body, html {
     align-items: center;
 }
 .custom-modal-links i {
-    font-size: 1rem;
-    margin-right: 8px;
+    font-size: 2rem;
+    margin-right: 15px;
     margin-left: 3px;
 }
 
@@ -593,7 +595,7 @@ body, html {
     }
 
     .custom-modal-desc {
-        margin: 0 0 60px 0;
+        margin: 0 0 80px 0;
         font-size: 1.2rem;
     }
 }

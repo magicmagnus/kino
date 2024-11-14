@@ -54,8 +54,8 @@ async function scrapeCinema() {
     //headless: false,  // Set to false to see what's happening
     // args: ['--start-maximized'],
     defaultViewport: { width: 1920, height: 1080 },
-    headless: false, // Set to true for headless mode , or 'new'
-    devtools: true,
+    headless: true, // Set to true for headless mode , or 'new'
+    devtools: false,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
 
@@ -63,8 +63,10 @@ async function scrapeCinema() {
   const page = await browser.newPage();
 
   const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
+  
+  // 1. first scrape all movie infos except the dates/shotwimes from one page
+  console.log('1. Scraping movie infos...');
   let allMovieInfos = [];
-
   for (const kino of kinos) {
     console.log(`Navigating to cinema website: ${kino}`);
     await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`, {
@@ -88,7 +90,7 @@ async function scrapeCinema() {
 
     
 
-    // 1. first scrape all movie infos except the dates/shotwimes from one page
+    
     const movieInfos = await page.evaluate(async () => {
 
       const movies = [];
@@ -189,7 +191,7 @@ async function scrapeCinema() {
   console.log('Found', allMovieInfos.length, 'movies');
 
   // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
-  console.log('Navigating to other cinema website...');
+  console.log('2. Scraping movie dates, showtimes and iframe URLs...');
   await page.goto('https://tuebinger-kinos.de/programmuebersicht/', {
     waitUntil: 'networkidle0'
   });
@@ -326,17 +328,12 @@ async function scrapeCinema() {
 
   console.log('Found', allMovieDates.length, 'movies');
   
+  
+
+  
 
   // 3. merge the two lists
-  // console.log('Merging movie infos with dates...');
-  // // merge all properties of the same movie title from the two list into one list
-  // const movies = allMovieInfos.map(movie => {
-  //   const dates = allMovieDates.find(date => date.title === movie.title);
-  //   return { ...movie, ...dates };
-  // });
-
-  // 3. merge the two lists
-  console.log('Merging movie infos with dates...');
+  console.log('3. Merging movie infos with dates...');
 
   // Set a similarity threshold (e.g., 0.7 for 70% similarity)
   const SIMILARITY_THRESHOLD = 0.7;
@@ -368,6 +365,69 @@ async function scrapeCinema() {
       return date; // Keep the original entry if no close match is found
     }
   });
+
+  // 4. scrape higher resolution poster URLs
+  console.log('4. Scraping higher resolution poster URLs...');
+  async function scrapePosterUrls() {
+    console.log('Launching browser...');
+    const browser = await puppeteer.launch({
+        defaultViewport: { width: 1920, height: 1080 },
+        headless: true, // Set to true for headless mode , or 'new'
+        devtools: false,
+        executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    });
+    const page = await browser.newPage();
+  
+    const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
+    let allMoviePosters = [];
+  
+    for (const kino of kinos) {
+        console.log(`Navigating to cinema website: ${kino}`);
+        await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen`, {
+            waitUntil: 'networkidle0'
+        });
+  
+        // Scroll to the bottom of the page to load all movies
+        await autoScroll(page);
+  
+        const moviePosters = await page.evaluate(() => {
+            const posters = [];
+            document.querySelectorAll('.transition-opacity').forEach(element => {
+                if (element.tagName.toLowerCase() === 'img') {
+                    let alt = element.getAttribute('alt');
+                    let src = element.getAttribute('src');
+                    alt = alt.replace('Filmplakat von ', '');
+                    // scplit the src string to get the higher resolution poster, after the first ?
+                    // src = src.split('?')[0];
+                    posters.push({ alt, src });
+                }
+            });
+            return posters;
+        });
+  
+        allMoviePosters = allMoviePosters.concat(moviePosters);
+    }
+  
+    await browser.close();
+  
+    return allMoviePosters;
+  }
+
+  const moviePosters = await scrapePosterUrls();
+  // console.log('Fetched movie posters:', moviePosters);
+  // and add them to the movies array
+  for (const movie of movies) {
+    const poster = moviePosters.find(poster => poster.alt.toLowerCase().includes(movie.title.toLowerCase()));
+    if (poster) {
+      movie.posterUrl = poster.src;
+      //console.log(`Found poster for ${movie.title}:`, poster);
+    } //else {
+    //   console.log(`No poster found for ${movie.title}, fetching from TMDB...`);
+    //   movie.posterUrl = await fetchPosterUrl(movie.title);
+    //   console.log(`Fetched poster for ${movie.title}:`, movie.posterUrl);
+    // }
+  }
 
 
   

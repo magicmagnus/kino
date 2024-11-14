@@ -53,6 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 60000);
+
+    // Scroll to the current time after the page has loaded and timelines have been initialized
+    scrollToCurrentTime();
 });
 
 // DATE VIEW FUNCTIONS #####################################################################
@@ -125,7 +128,7 @@ function loadScheduleForDayIndex(date, dayIndex) {
                 if (showtimes) {
                     showtimes.shows.forEach(show => {
                         // console.log("show.theater: " + show.theater);
-                        theaters[show.theater].appendChild(createMovieBlock(movie, show));
+                        theaters[show.theater].appendChild(createMovieBlock(movie, show, date));
 
                     });
                 }
@@ -290,7 +293,7 @@ function loadMoviesForDateAndTheater(data, date, theater) {
             showtime.shows.forEach(show => {
                 if (show.theater === theater) {
 
-                    timelineContent.appendChild(createMovieBlock(movie, show));
+                    timelineContent.appendChild(createMovieBlock(movie, show, date));
                 }
             });
         }
@@ -300,7 +303,7 @@ function loadMoviesForDateAndTheater(data, date, theater) {
 }
 // END OF ROOM VIEW FUNCTIONS #####################################################################
 
-function createMovieBlock(movie, show) {
+function createMovieBlock(movie, show, date) {
 
     const movieBlock = document.createElement('div');
     movieBlock.classList.add('movie-block');
@@ -351,7 +354,7 @@ function createMovieBlock(movie, show) {
         //window.open(show.iframeUrl, '_blank');
 
         // instead of opening the link in a new tab, open it in a modal, like a card
-        createMovieCard(movie, show, endTime);
+        createMovieCard(movie, show, endTime, date);
     });
     
     
@@ -360,7 +363,7 @@ function createMovieBlock(movie, show) {
     return movieBlock;
 }
 
-function createMovieCard(movie, show, endTime) {
+function createMovieCard(movie, show, endTime, date) {
     // onclick on the movie block, create a modal card with the movie details, like the title, poster, description, etc.
     // the card should have a close button, and a link to the movie trailer and a link tti the iframeUrl
     // were gonna fo the full layout of the card in the css file, but here we need:
@@ -376,6 +379,7 @@ function createMovieCard(movie, show, endTime) {
     
     const modal = document.createElement('div');
     let movieDuration = parseInt(movie.duration.split(' ')[0], 10);
+    const dateDisplay = new Date(date).toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'numeric' });
     // movie dureation convert to X hours and Y minutes
     let movieDurationHours = Math.floor(movieDuration / 60);
     let movieDurationMinutes = movieDuration % 60;
@@ -397,22 +401,23 @@ function createMovieCard(movie, show, endTime) {
             <span class="custom-modal-close">
                 <button type="button" class="btn-close" aria-label="Close"></button>
             </span>
-            <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+            <img src="${movie.posterUrl.split('?')[0]}" alt="${movie.title} poster" class="custom-modal-poster">
             <div class="custom-modal-info">
                 <h2>${movie.title}</h2>
                 <div class="custom-modal-attributes">
-                    <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${show.time} - ${endTime} (${movieDuration})</h3>
+                    <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${movieDuration}</h3>
                     <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
-                    <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>${movie.fsk}</h3>
+                    <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>FSK ${movie.fsk}</h3>
+                    
                     ${show.attributes[1]? `<h3 class="custom-modal-omdu"><i class="bi bi-translate me-2"></i>${show.attributes[1]}</h3>` : ''}
                 </div>
                 <p class="custom-modal-desc">${movie.description}</p>
                 <div class="custom-modal-links">
-                    <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
+                    ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                         <i class="bi bi-play-circle"></i> Trailer ansehen
-                    </a>
+                    </a>` : ''}
                     <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
-                        <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen
+                        <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen für <br>${dateDisplay}, ${show.time}
                     </a>
                 <div>
             </div>
@@ -429,13 +434,13 @@ function createMovieCard(movie, show, endTime) {
                     <div class="custom-modal-mobile-container">
                     
                     <div class="custom-modal-poster-and-attributes">
-                    <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+                    <img src="${movie.posterUrl.split('?')[0]}" alt="${movie.title} poster" class="custom-modal-poster">
                         <div class="custom-modal-attributes-wrapper">
                         <h2>${movie.title}</h2>
                         <div class="custom-modal-attributes">
-                            <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${show.time} - ${endTime} (${movieDuration})</h3>
+                            <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${movieDuration}</h3>
                             <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
-                            <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>${movie.fsk}</h3>
+                            <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>FSK ${movie.fsk}</h3>
                             ${show.attributes[1]? `<h3 class="custom-modal-omdu"><i class="bi bi-translate me-2"></i>${show.attributes[1]}</h3>` : ''}
                         </div>
                         </div>
@@ -444,17 +449,21 @@ function createMovieCard(movie, show, endTime) {
                     </div>
                     <p class="custom-modal-desc">${movie.description}</p>
                     <div class="custom-modal-links">
-                        <a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
+                        ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                             <i class="bi bi-play-circle"></i> Trailer ansehen
-                        </a>
+                        </a>` : ''}
                         <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
-                            <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen
+                            <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen für <br>${dateDisplay}, ${show.time}
                         </a>
                     <div>
                 </div>
             </div>
         `;
     } 
+
+    // maybe add in "more info" section
+    // <h3 class="custom-modal-actors"><i class="bi bi-person me-2"></i>${movie.actors.join(', ')}</h3>
+    // <h3 class="custom-modal-release"><i class="bi bi-calendar2 me-2"></i>${movie.releaseDate}</h3>
     document.body.appendChild(modal);
     console.log(modal);
 
@@ -561,6 +570,20 @@ function updateCurrentTimeLine() {
     currentTimeText.textContent = currentView === 'date' ? 'Jetzt' : 'Heute';
     currentTimeText.style.left = percentage;    
     currentTimeText.style.display = 'block';
+}
+
+function scrollToCurrentTime() {
+    const currentTimeText = document.querySelector('.current-time-text');
+    if (!currentTimeText) return;
+
+    const timelineContainer = currentTimeText.closest('.timeline-container');
+    if (!timelineContainer) return;
+
+    const containerWidth = timelineContainer.clientWidth;
+    const currentTimeTextLeft = currentTimeText.offsetLeft;
+    const scrollPosition = currentTimeTextLeft - (containerWidth / 2) + (currentTimeText.clientWidth / 2);
+
+    timelineContainer.scrollLeft = scrollPosition;
 }
 
 function plotTimeScale() {
