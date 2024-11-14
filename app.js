@@ -489,7 +489,13 @@ function calculateLeft(time) {
     // for a given time in HH:MM format, calculate the percentage of the way through START_HOUR to (START_HOUR + TOTAL_HOURS)
     const totalMinutes = 60 * TOTAL_HOURS; // Total minutes in the timescale
     const [hours, minutes] = time.split(':').map(Number);
-    const currentMinutes = hours * 60 + minutes; 
+    let currentMinutes = hours * 60 + minutes; 
+    
+    // Adjust for times that span into the next day
+    if (hours < START_HOUR) {
+        currentMinutes += 24 * 60; // Add 24 hours in minutes
+    }
+    
     const offset = currentMinutes - START_HOUR * 60;
     const percentage = (offset / totalMinutes) * 100;
     return percentage;

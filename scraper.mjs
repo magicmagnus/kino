@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import { promises as fs } from 'fs';
 import fetch from 'node-fetch';
 import { debug } from 'console';
+import stringSimilarity from 'string-similarity';
 
 const TMDB_API_KEY = '15d2ea6d0dc1d476efbca3eba2b9bbfb';
 const fetchedPosters = {};
@@ -25,6 +26,25 @@ async function fetchPosterUrl(title) {
   }
 }
 
+async function autoScroll(page) {
+  await page.evaluate(async () => {
+      await new Promise((resolve, reject) => {
+          let totalHeight = 0;
+          const distance = 100;
+          const timer = setInterval(() => {
+              const scrollHeight = document.body.scrollHeight;
+              window.scrollBy(0, distance);
+              totalHeight += distance;
+
+              if (totalHeight >= scrollHeight) {
+                  clearInterval(timer);
+                  resolve();
+              }
+          }, 100);
+      });
+  });
+}
+
 
 
 
@@ -34,15 +54,142 @@ async function scrapeCinema() {
     //headless: false,  // Set to false to see what's happening
     // args: ['--start-maximized'],
     defaultViewport: { width: 1920, height: 1080 },
-    headless: true, // Set to true for headless mode , or 'new'
-    devtools: false,
+    headless: false, // Set to true for headless mode , or 'new'
+    devtools: true,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
 
   });
   const page = await browser.newPage();
+
+  const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
+  let allMovieInfos = [];
+
+  for (const kino of kinos) {
+    console.log(`Navigating to cinema website: ${kino}`);
+    await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`, {
+      waitUntil: 'networkidle0'
+    });
+
+    // Click all "more dates" buttons and wait for possible updates
+    console.log('Expanding all movie dates...');
+    await autoScroll(page);
   
-  console.log('Navigating to cinema website...');
+
+    await page.evaluate( () => {
+      // debugger;
+      const buttons = document.querySelectorAll('.movie__actions');
+      for (const button of buttons) {
+        const button1 = button.children[0];
+        button1.click();
+      }
+      return new Promise(resolve => setTimeout(resolve, 1000));
+    });
+
+    
+
+    // 1. first scrape all movie infos except the dates/shotwimes from one page
+    const movieInfos = await page.evaluate(async () => {
+
+      const movies = [];
+
+      await new Promise(resolve => setTimeout(resolve, 500));
+      const movieItems = document.querySelectorAll('.movie');
+
+      for (const movieItem of movieItems) {
+        
+        // debugger;
+        // const title = movieItem.querySelector('.movie__title')?.textContent.trim() || 'Unknown Title';
+        const description = movieItem.querySelector('.movie__info-description')?.textContent.trim() || 'Unknown Description';
+        const posterUrl = movieItem.querySelector('.movie__image img')?.src || null;
+        
+        // some infos are nested in the short and long info sections
+        const movieInfoShort = movieItem.querySelector('.movie__info--short');
+        const duration = movieInfoShort.querySelectorAll('dd')[0]?.textContent.trim() || 'Unknown Duration';
+        const fsk = movieInfoShort.querySelectorAll('dd')[1]?.textContent.trim() || 'Unknown FSK';
+        const genre = movieInfoShort.querySelectorAll('dd')[2]?.textContent.trim() || 'Unknown Genre';
+
+        const movieInfoLong = movieItem.querySelector('.movie__info--long');
+        const title = movieInfoLong.querySelectorAll('dd')[0]?.textContent.trim() || 'Unknown Title';
+        // only some movies have an original title, then indices after are shifted by 1
+        let i = 1;
+        let originalTitle = 'Unknown Original Title';
+        const isOriginal = movieInfoLong.querySelectorAll('dt')[1]?.textContent.trim() || 'Unknown Original Title';
+        if (isOriginal == "Originaltitel") {
+          originalTitle = movieInfoLong.querySelectorAll('dd')[1]?.textContent.trim() || 'Unknown Original Title';
+          i = 2;
+        }
+        const production = movieInfoLong.querySelectorAll('dd')[i+0]?.textContent.trim().split('\n')[0].trim() || 'Unknown Production';
+        const releaseDate = movieInfoLong.querySelectorAll('dd')[i+1]?.textContent.trim() || 'Unknown Release Date';
+        const distributor = movieInfoLong.querySelectorAll('dd')[i+2]?.textContent.trim() || 'Unknown Distributor';
+        const director = movieInfoLong.querySelectorAll('dd')[i+3]?.textContent.trim() || 'Unknown Director';
+        const actors = Array.from(movieInfoLong.querySelectorAll('dd')[i+4]?.querySelectorAll('span') || []).map(span => span.textContent.trim());
+
+        // clikc ono the trailer button to get the trailer URL
+        const trailerButton = movieItem.querySelector('.movie__actions')?.children[1];
+        let trailerUrl = "Unknown Trailer URL";
+        if (trailerButton) {
+          trailerButton.click();
+          await new Promise(resolve => setTimeout(resolve, 500)); // wait for the trailer iframe to appear
+          const iframe = movieItem.querySelector('iframe');
+          if (iframe) {
+            trailerUrl = iframe.src;
+          }
+          // close the trailer
+          trailerButton.click();
+        } 
+
+        // let showtimes = [];
+        // const showtimeWrappers = movieItem.querySelector('.playTimes__slider-slides');
+        
+        // const dates = showtimeWrappers.children[0];
+        // for (let dayIndex; dayIndex < dates.children.length; dayIndex++) {
+        //   const date = dates.children[dayIndex].textContent.trim();
+
+          
+        //   for (let showtimeIndex = 0; showtimeIndex < showtimeWrappers.length - 1; showtimeIndex++) {
+        //     const showtime = showtimeWrappers.children[showtimeIndex];
+        //     if (showtime.classList.contains('is-disabled')) {
+        //       continue;
+        //     }
+        //     const time = showtime.querySelector('.show-detail-button__label--time').textContent.trim();
+        //     const theater = showtime.querySelector('.playTimes__theater').textContent.trim();
+        //     showtimes.push({
+        //       date,
+        //       time,
+        //       theater
+        //     });
+        //   }
+        // }
+      
+        // add the movie to the list
+        movies.push({
+          title,
+          duration,
+          fsk,
+          genre,
+          origTitle: originalTitle,
+          production,
+          releaseDate,
+          distributor,
+          director,
+          actors,
+          description,
+          posterUrl,
+          trailerUrl
+        });
+      }
+
+      return movies;
+    });
+
+    allMovieInfos = allMovieInfos.concat(movieInfos);
+  }
+
+  console.log('Found', allMovieInfos.length, 'movies');
+
+  // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
+  console.log('Navigating to other cinema website...');
   await page.goto('https://tuebinger-kinos.de/programmuebersicht/', {
     waitUntil: 'networkidle0'
   });
@@ -66,147 +213,73 @@ async function scrapeCinema() {
     });
   });
 
-  // TODO: factor out the following code into a separate function
-  // const movieTrailerURLs = await page.evaluate(async () => {
+  console.log('Scraping movie data...');
+  let allMovieDates = await page.evaluate(async () => {
 
-  //   await new Promise(resolve => setTimeout(resolve, 500));
-
-  //   return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
-  //     debugger;
-  //     const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
-      
-  //     //click on the trailer button to get the trailer URL
-  //     movieItem.querySelector('.trailer-button').click();
-      
-  //     // click on extra button to agree to smth. <button class="button text-medium trailer-confirmation-button confirm cursor-pointer">Video laden</button>
-  //     //<button class="button text-medium set-allowance cursor-pointer checked">Immer entsperren.</button>
-  //     movieItem.querySelector('.checked').click();
-  //     movieItem.querySelector('.trailer-confirmation-button').click();
-  //     // get the trailer URL
-  //     const trailerURL = movieItem.querySelector('#op-yt__player').src;
-  //     return {
-  //       title,
-  //       trailerURL
-  //     };
-  //   });
-  // });
-  
-  // console.log(movieTrailerURLs);
-
-  const movieDescriptions = await page.evaluate(async () => {
-
+    const movies = [];
     await new Promise(resolve => setTimeout(resolve, 500));
+    const movieItems = document.querySelectorAll('.movie-item');
 
-    return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
-      debugger;
+    for (const movieItem of movieItems) {
       const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
       
-      //click on the details button to get the full description
-      movieItem.querySelector('.details').click();
-
+      // Basic movie info
+      const genre = movieItem.querySelector('.genres')?.textContent.trim() || 'Unknown Genre';
+      const duration = movieItem.querySelector('.length')?.textContent.trim() || 'Unknown Duration';
+      const fsk = movieItem.querySelector('.fsk')?.textContent.trim() || 'Unknown FSK';
+      const description = movieItem.querySelector('.description')?.textContent.trim() || 'No description available';
+      const attributes = Array.from(movieItem.querySelectorAll('.attribute')).map(attr => attr.textContent.trim());
+        
+      // Get all movie-times-grids
+      let timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
       
-      // from the container, select the "description" class and get the text content
-      const description = document.querySelector('.movie-details').querySelector('.description')?.textContent.trim() || 'No description available';
-      return {
-        title,
-        description
-      };
-    });
-  });
+      if (timeGrids.length === 0) {
+        movieItem.querySelector('.buy-ticket-button').click();
+        timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
+      }
 
-  console.log(movieDescriptions);
-  
-        
-
-
-
-
-  console.log('Scraping movie data...');
-  const movies = await page.evaluate(async () => {
-    const debugLog = (msg) => {
-      // Create a custom element to store our debug message
-      const debugElement = document.createElement('div');
-      debugElement.setAttribute('data-debug', msg);
-      document.body.appendChild(debugElement);
-    };
-
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    return Array.from(document.querySelectorAll('.movie-item')).map(movieItem => {
-      try {
-        const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
-        debugLog(`Processing movie: ${title}`);
-
-        // Basic movie info
-        const genre = movieItem.querySelector('.genres')?.textContent.trim() || 'Unknown Genre';
-        const duration = movieItem.querySelector('.length')?.textContent.trim() || 'Unknown Duration';
-        const fsk = movieItem.querySelector('.fsk')?.textContent.trim() || 'Unknown FSK';
-        const description = movieItem.querySelector('.description')?.textContent.trim() || 'No description available';
-        const attributes = Array.from(movieItem.querySelectorAll('.attribute')).map(attr => attr.textContent.trim());
-          
-        
-
-        // Get all movie-times-grids
-        let timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
-        debugLog(`Found ${timeGrids.length} movie-times-grids for ${title}`);
-
-        if (timeGrids.length === 0) {
-          debugLog(`No time grids found for ${title}`);
-          // return null;
-          // try clikng on the buy ticket button, its inside the movie-item-content class
-          debugLog(`Trying to click on the buy ticket button for ${title}`);
-          movieItem.querySelector('.buy-ticket-button').click();
-          timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
-          debugLog(`Found ${timeGrids.length} movie-times-grids for ${title}`);
-
-          // return null;
-
-
-        }
-
-        // First grid contains the dates
-        const dateGrid = timeGrids[0];
-        const dates = Array.from(dateGrid.querySelectorAll('.date')).map(dateElement => {
-          let date = dateElement.textContent.trim();
-          debugLog(`Found date: ${date}`);
-          
-          if (date === 'Heute') {
-            const today = new Date();
-            date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-          } else {
-            const [, day, month] = date.match(/(\d+)\.(\d+)\.$/) || [];
-            if (day && month) {
-              const year = new Date().getFullYear();
-              date = `${year}-${month}-${day}`;
-            }
+      // First grid contains the dates
+      const dateGrid = timeGrids[0];
+      const dates = Array.from(dateGrid.querySelectorAll('.date')).map(dateElement => {
+        let date = dateElement.textContent.trim();
+        if (date === 'Heute') {
+          const today = new Date();
+          date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+        } else {
+          const [, day, month] = date.match(/(\d+)\.(\d+)\.$/) || [];
+          if (day && month) {
+            const year = new Date().getFullYear();
+            date = `${year}-${month}-${day}`;
           }
-          return date;
-        });
+        }
+        return date;
+      });
 
-        debugLog(`Processing ${dates.length} dates for ${title}`);
-
-        // Process showtimes for each date
-        const showtimes = dates.map((date, dateIndex) => {
-          const shows = [];
+      const showtimes = [];
+      
+      // Loop through all dates
+      for (let dateIndex = 0; dateIndex < dates.length; dateIndex++) {
+        const date = dates[dateIndex];
+        const shows = [];
+        
+        // Start from index 1 to skip the date grid
+        for (let gridIndex = 1; gridIndex < timeGrids.length; gridIndex++) {
+          const theaterGrid = timeGrids[gridIndex];
+          const performanceWrappers = theaterGrid.querySelectorAll('.performances-wrapper');
           
-          // Start from index 1 to skip the date grid
-          for (let gridIndex = 1; gridIndex < timeGrids.length; gridIndex++) {
-            const theaterGrid = timeGrids[gridIndex];
-            const performanceWrappers = theaterGrid.querySelectorAll('.performances-wrapper');
-            
-            debugLog(`Grid ${gridIndex}: Found ${performanceWrappers.length} performance wrappers`);
+          // Get the performance wrapper for this date index
+          const performanceWrapper = performanceWrappers[dateIndex];
+          if (!performanceWrapper) {
+            continue;
+          }
 
-            // Get the performance wrapper for this date index
-            const performanceWrapper = performanceWrappers[dateIndex];
-            if (!performanceWrapper) {
-              debugLog(`No performance wrapper found for date index ${dateIndex} in grid ${gridIndex}`);
-              continue;
-            }
-
-            // Get all shows from this performance wrapper
-            const showWrappers = performanceWrapper.querySelectorAll('.show-wrapper');
-            showWrappers.forEach(show => {
-              shows.push({
+          // Get all shows from this performance wrapper
+          const showWrappers = performanceWrapper.querySelectorAll('.show-wrapper');
+          for (let showIndex = 0; showIndex < showWrappers.length; showIndex++) {
+            const show = showWrappers[showIndex];
+            show.click();
+            await new Promise(resolve => setTimeout(resolve, 500));
+            shows.push({
               time: show.querySelector('.showtime')?.textContent.trim() || 'Unknown Time',
               theater: show.querySelector('.theatre-name')?.textContent.trim() || 'Unknown Theater',
               attributes: Array.from(show.querySelectorAll('.attribute-logo')).map(attr => {
@@ -215,254 +288,106 @@ async function scrapeCinema() {
                 'Unknown Attribute';
                 
                 if (attribute.toLowerCase().includes('omd')) {
-                attribute = 'OmdU';
+                  attribute = 'OmdU';
                 } else if (attribute.toLowerCase().includes('ome')) {
-                attribute = 'OmeU';
+                  attribute = 'OmeU';
                 }
                 
                 return attribute;
-              })
-              });
+              }),
+
+              iframeUrl: document.querySelector('iframe')?.src || 'Unknown iframe URL'
             });
           }
+        }
 
-          return {
-            date,
-            shows
-          };
+        showtimes.push({
+          date,
+          shows
         });
-
-        return {
-          title,
-          genre,
-          duration,
-          fsk,
-          attributes,
-          description,
-          showtimes
-
-        };
-      } catch (error) {
-        debugLog(`Error processing movie: ${error.message}`);
-        return null;
       }
-    }).filter(movie => movie !== null);
+
+      
+      movies.push({
+        title,
+        genre,
+        duration,
+        fsk,
+        description,
+        attributes,
+        showtimes
+      });
+
+    }
+
+    return movies;
+  
   });
 
-  // for each saved showtime, click on the showtime and save the iframe url
-  // we are doing this separately because inside the other loop we are not able to click on the showtime, as its not interactive
-  for (const movie of movies) {
-    for (const showtime of movie.showtimes) {
-      for (const show of showtime.shows) {
-        console.log(`Clicking on showtime for ${movie.title} on ${showtime.date} at ${show.time}`);
-        await page.evaluate((title, date, time, theater) => {
-          
-          // first, match the title of the saved showtime with the title of the movie 
-          const movieItems = Array.from(document.querySelectorAll('.movie-item'));
-          let movieItem = null;
-          console.log(`Looking for movie title: ${title}`);
-          movieItems.forEach(item => {
-            // itemTitle is the interactive part, title is the saved part
-            const itemTitle = item.querySelector('.title')?.textContent.trim();
-            console.log(`Found movie title: ${itemTitle}`);
-            if (itemTitle.toLowerCase() === title.toLowerCase()) {
-              // if the title matches, save the item in movieItem to look inside it for the date
-              movieItem = item;
-            }
-          });
+  console.log('Found', allMovieDates.length, 'movies');
+  
 
-          // second, match the date of the saved showtime with the date of the already matched movieItem
-          const dateGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'))
-          const dateGrid = dateGrids[0].querySelectorAll('.date'); // in the first grid we have the dates, in all the others we have the showtimes
-          let dateKey = null; // the index of the date item, to index the showtimes later
-          console.log(`Looking for date: ${date}`);
-          dateGrid.forEach((item, key) => {
-            
-            let itemDate = item.textContent.trim();
-            // formating the date to match the saved date, should be in the format yyyy-mm-dd
-            if (itemDate === 'Heute') {
-              const today = new Date();
-              itemDate = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
-            } else {
-              const [, day, month] = itemDate.match(/(\d+)\.(\d+)\.$/) || [];
-              if (day && month) {
-                const year = new Date().getFullYear();
-                itemDate = `${year}-${month}-${day}`;
-              }
-            }
-            
-            console.log(`Found date: ${itemDate}`);
-            if (itemDate.toLowerCase() === date.toLowerCase()) {
-              console.log(`Found date item for date: ${date}`);
-              dateKey = key; // save the index of the date item to index the showtimes later
-            }
-          });
+  // 3. merge the two lists
+  // console.log('Merging movie infos with dates...');
+  // // merge all properties of the same movie title from the two list into one list
+  // const movies = allMovieInfos.map(movie => {
+  //   const dates = allMovieDates.find(date => date.title === movie.title);
+  //   return { ...movie, ...dates };
+  // });
 
-          // third, match the time of the saved showtime with the time of the already matched date
-          dateGrids.shift(); // remove the first grid, as we already have the date
-          let showWrapperAll = dateGrids[0]?.querySelectorAll('.performances-wrapper'); 
-          let showWrapper = showWrapperAll[dateKey].querySelectorAll('.show-wrapper');
-          // if the first grid is empty at the index of the date, directly look in the second grid
-          if (!showWrapper || showWrapper.length === 0) {
-            showWrapperAll = dateGrids[1]?.querySelectorAll('.performances-wrapper');
-            showWrapper = showWrapperAll[dateKey].querySelectorAll('.show-wrapper');
-          }
-          let showItem = null;
-          
-          console.log(`Looking for show time: ${time}`);
-          showWrapper.forEach(item => {
-            let itemTime = item.querySelector('.showtime')?.textContent.trim();
-            let itemTheater = item.querySelector('.theatre-name')?.textContent.trim();
-            console.log(`Found show time: ${itemTime}`);
-            // make sure the time as well as the theater match, as there could be multiple showtimes with the same time in different theaters
-            if (itemTime.toLowerCase() === time.toLowerCase() && itemTheater.toLowerCase() === theater.toLowerCase()) {
-              console.log(`Found show item for time: ${time}`);
-              showItem = item;
-            }
-          });
+  // 3. merge the two lists
+  console.log('Merging movie infos with dates...');
 
-          if (!showItem || showItem === null) {
-            // if the showtime is not in the second grid, its position is in the third grid
-            showWrapperAll = dateGrids[1]?.querySelectorAll('.performances-wrapper');
-            showWrapper = showWrapperAll[dateKey].querySelectorAll('.show-wrapper');
-            let showItem = null;
-            console.log(`Looking for show time: ${time}`);
-            showWrapper.forEach(item => {
-              let itemTime = item.querySelector('.showtime')?.textContent.trim();
-              console.log(`Found show time: ${itemTime}`);
-              if (itemTime.toLowerCase() === time.toLowerCase()) {
-                console.log(`Found show item for time: ${time}`);
-                showItem = item;
-              }
-            });
-          }
+  // Set a similarity threshold (e.g., 0.7 for 70% similarity)
+  const SIMILARITY_THRESHOLD = 0.7;
 
-          // click on the showtime to get the iframe 
-          showItem.click();
-          return new Promise((resolve) => {
-            setTimeout(resolve, 500);
-        }
-        );
+  // Function to find the closest match for a given title
+  function findClosestMatch(title, allMovieInfos) {
+    const titles = allMovieInfos.map(info => info.title);
 
-        }, movie.title, showtime.date, show.time, show.theater);
+    const bestMatch = stringSimilarity.findBestMatch(title, titles);
+    //console.log('Best match for', title, 'is', bestMatch.bestMatch.target, 'with similarity', bestMatch.bestMatch.rating);
 
-    
-        const iframeUrl = await page.evaluate(() => {
-          const iframe = document.querySelector('iframe');
-          return iframe ? iframe.src : "not found";
-        });
-
-        show.iframeUrl = iframeUrl;
-        console.log(`Found iframe URL: ${iframeUrl}`);
-      }
+    // Check if the best match's similarity score meets the threshold
+    if (bestMatch.bestMatch.rating >= SIMILARITY_THRESHOLD) {
+      return bestMatch.bestMatch.target;
+    } else {
+      return null;
     }
   }
 
-  // Retrieve debug logs
-  const debugLogs = await page.evaluate(() => {
-    return Array.from(document.querySelectorAll('[data-debug]')).map(el => el.getAttribute('data-debug'));
+  // Merge all properties of the same movie title from the two lists into one list
+  const movies = allMovieDates.map(date => {
+    const closestTitle = findClosestMatch(date.title, allMovieInfos);
+    if (closestTitle) {
+      const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
+      // console.log('Merging', date);
+      // console.log('with', movieInfo);
+      return { ...date, ...movieInfo };
+    } else {
+      return date; // Keep the original entry if no close match is found
+    }
   });
 
-  // Print debug logs
-  console.log('\nDebug logs from browser context:');
-  debugLogs.forEach(log => console.log(log));
 
+  
+
+
+  // close the browser
   await browser.close();
 
-  // Now fetch posters for all movies with fetchPosterUrlAlt
-  console.log('\nFetching movie posters...');
-  const moviePosters = await scrapePosterUrls();
-  console.log('Fetched movie posters:', moviePosters);
-  // and add them to the movies array
-  for (const movie of movies) {
+  
+  
 
-    const poster = moviePosters.find(poster => poster.alt.toLowerCase().includes(movie.title.toLowerCase()));
-    const description = movieDescriptions.find(description => description.title.toLowerCase().includes(movie.title.toLowerCase()));
-    
-    if (poster) {
-      movie.posterUrl = poster.src;
-      console.log(`Found poster for ${movie.title}:`, poster);
-    } else {
-      console.log(`No poster found for ${movie.title}, fetching from TMDB...`);
-      movie.posterUrl = await fetchPosterUrl(movie.title);
-      console.log(`Fetched poster for ${movie.title}:`, movie.posterUrl);
-    }
-
-    if (description) {
-      movie.description = description.description;
-      console.log(`Found description for ${movie.title}:`, description);
-    }
-  }
 
   console.log('\nSaving data to file...');
   await fs.writeFile('movie_data.json', JSON.stringify(movies, null, 2));
   console.log('Data has been scraped and saved to movie_data.json');
+
 }
 
+      
 
-async function scrapePosterUrls() {
-  console.log('Launching browser...');
-  const browser = await puppeteer.launch({
-      defaultViewport: { width: 1920, height: 1080 },
-      headless: true, // Set to true for headless mode , or 'new'
-      devtools: false,
-      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-  });
-  const page = await browser.newPage();
-
-  const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
-  let allMoviePosters = [];
-
-  for (const kino of kinos) {
-      console.log(`Navigating to cinema website: ${kino}`);
-      await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen`, {
-          waitUntil: 'networkidle0'
-      });
-
-      // Scroll to the bottom of the page to load all movies
-      await autoScroll(page);
-
-      const moviePosters = await page.evaluate(() => {
-          const posters = [];
-          document.querySelectorAll('.transition-opacity').forEach(element => {
-              if (element.tagName.toLowerCase() === 'img') {
-                  let alt = element.getAttribute('alt');
-                  const src = element.getAttribute('src');
-                  alt = alt.replace('Filmplakat von ', '');
-                  posters.push({ alt, src });
-              }
-          });
-          return posters;
-      });
-
-      allMoviePosters = allMoviePosters.concat(moviePosters);
-  }
-
-  await browser.close();
-
-  return allMoviePosters;
-}
-
-// Function to scroll to the bottom of the page
-async function autoScroll(page) {
-  await page.evaluate(async () => {
-      await new Promise((resolve, reject) => {
-          let totalHeight = 0;
-          const distance = 100;
-          const timer = setInterval(() => {
-              const scrollHeight = document.body.scrollHeight;
-              window.scrollBy(0, distance);
-              totalHeight += distance;
-
-              if (totalHeight >= scrollHeight) {
-                  clearInterval(timer);
-                  resolve();
-              }
-          }, 100);
-      });
-  });
-}
 
 
 
