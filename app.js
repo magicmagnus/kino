@@ -15,33 +15,10 @@ const TOTAL_HOURS = 16; // Total hours for the timescale
 
 // Modify your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
-    // Add the view toggle handler
-    document.getElementById('view-toggle').addEventListener('click', function() {
-        currentView = currentView === 'date' ? 'room' : 'date';
-        
 
-        this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht` 
-        : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
-       
-       
-        
-        // Toggle visibility of views
-        const dateView = document.getElementById('date-view');
-        const roomView = document.getElementById('room-view');
-        
-        if (currentView === 'date') {
-            dateView.style.display = 'block';
-            roomView.style.display = 'none';
-            
-            initializeDateView();
-        } else {
-            dateView.style.display = 'none';
-            roomView.style.display = 'block';
-            
-            initializeRoomView();
-            
-        }
-    });
+    handleThemeChange();
+
+    updateViewDisplay();
 
     // Functions to initialize the page
    
@@ -49,14 +26,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
     plotTimeScale();
 
-    //const timelineSync = new TimelineSync();
-    
     updateCurrentTimeLine();
     setInterval(updateCurrentTimeLine, 60000);
 
     // Scroll to the current time after the page has loaded and timelines have been initialized
     scrollToCurrentTime();
 });
+
+function updateViewDisplay() {
+    // switch from date view to room view and vice versa
+    document.getElementById('view-toggle').addEventListener('click', function () {
+        currentView = currentView === 'date' ? 'room' : 'date';
+
+
+        this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`
+            : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
+
+
+
+        // Toggle visibility of views
+        const dateView = document.getElementById('date-view');
+        const roomView = document.getElementById('room-view');
+
+        if (currentView === 'date') {
+            dateView.style.display = 'block';
+            roomView.style.display = 'none';
+
+            initializeDateView();
+        } else {
+            dateView.style.display = 'none';
+            roomView.style.display = 'block';
+
+            initializeRoomView();
+
+        }
+    });
+}
+
+function handleThemeChange() {
+    // Theme toggle button
+    const themeToggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        themeToggle.innerHTML = `<i class="bi bi-sun"></i>`;
+    } else {
+        themeToggle.innerHTML = `<i class="bi bi-moon"></i>`;
+    }
+
+    themeToggle.addEventListener('click', function () {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.innerHTML = `<i class="bi bi-sun"></i>`;
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggle.innerHTML = `<i class="bi bi-moon"></i>`;
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
 
 // DATE VIEW FUNCTIONS #####################################################################
 // for date view
@@ -336,7 +368,7 @@ function createMovieBlock(movie, show, date) {
     
 
     //show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
-    movie.duration.split(' ')[0] > 220 ? (movieBlock.style.zIndex = 1) : null;
+    movie.duration.split(' ')[0] > 260 ? (movieBlock.style.zIndex = 1) : null;
     movie.title.length >= 35 ? (movieBlock.style.fontSize = "0.9rem") : (movieBlock.style.fontSize = "1.1rem");
     if (movie.title.length >= 35) {
         const fontSize = Math.max(1.0 - (movie.title.length - 35) * 0.007, 0.7); // Adjust the decrement as needed
@@ -395,8 +427,12 @@ function createMovieCard(movie, show, endTime, date) {
     }
     modal.classList.add('custom-modal');
 
+
+    // check the current theme for settinng the button colors
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const buttonClass = currentTheme === 'dark' ? 'btn-close btn-close-white' : 'btn-close';
     const closeEl = `<span class="custom-modal-close">
-                        <button type="button" class="btn-close" aria-label="Close"></button>
+                        <button type="button" class="${buttonClass}" aria-label="Close"></button>
                     </span>`;
     const posterEl = `<img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">`;
     const attributesEl = `<div class="custom-modal-attributes">

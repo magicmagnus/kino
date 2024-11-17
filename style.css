@@ -1,11 +1,25 @@
 /* General styling */
 :root {
-    --color-header: #353535;
-    --color-secondary: #0000ff;
-    --color-tertiary: #00ff00;
     --timeline-height: 150px;
-    --timeline-width: 2370px; /* für 13 stunden 1920px */
+    --timeline-width: 2370px;
     --curr-time-text-height: 55px;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --color-header: #ffffff;
+    --divider-v-color: #ccc;
+    --divider-h-color: #f0f0f0;
+    --movie-block-color: #f2f2f2;
+    --omdu-color: #9eeaf9;
+}
+
+[data-theme="dark"] {
+    --background-color: #212121;
+    --text-color: #ffffff;
+    --color-header: #000000;
+    --divider-v-color: #515151;
+    --divider-h-color:  #333;
+    --movie-block-color: #333;
+    --omdu-color: #03abcd;
 }
     
 body, html {
@@ -13,6 +27,12 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.body-container {
+    background-color: var(--background-color);
 }
 .header {
     position: fixed;
@@ -20,6 +40,7 @@ body, html {
     left: 0;
     right: 0;
     background-color: var(--color-header);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
     display: flex;
     justify-content: flex-start;
@@ -43,17 +64,17 @@ body, html {
     padding: 5px;
     border-radius: 50%;
     margin-right: 20px;
-    background-color: white;
+    background-color: white
 }
 .logo-container h1 {
-    color: white;
+    color: var(--text-color);
     font-size: 3rem;
     font-family: Outfit;
     font-weight: 400;
     margin: 0;
 }
 .logo-container h3 {
-    color: white;
+    color: var(--text-color);
     font-size: 1.4rem;
     font-family: Outfit;
     font-weight: 400;
@@ -103,14 +124,11 @@ body, html {
 /* .date-button-divider {
     width: 2px;
     height: 24px;
-    background-color: #ccc;
+    background-color: var(--divider-color)
     margin: 0 8px;
 } */
 
-.future-date-btn {
-    /* Add any specific styling for future date buttons */
-    background-color: #f0f0f0;
-}
+
 .header button {
     flex-shrink: 0;
     /* padding: 10px 20px; */
@@ -122,6 +140,7 @@ body, html {
     /* margin-right: 50px; */
     height: calc(100% - 60px);
     overflow-y: auto;
+    background-color: var(--background-color);
 }
 
 .schedules-container {
@@ -132,7 +151,7 @@ body, html {
     display: flex;
     margin-bottom: 0px;
     height: var(--timeline-height); /* Fixed height for schedule */
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--divider-v-color)
     
     
 }
@@ -147,7 +166,7 @@ body, html {
     width: 100%;
     top : 0;;
     transform: translateY(calc(var(--curr-time-text-height) - 0px));
-    background-color: #ccc;
+    background-color: var(--divider-v-color)
 }
 #first-timeline-container {
     padding-top: var(--curr-time-text-height);
@@ -156,7 +175,7 @@ body, html {
 
 #first-schedule-name {
     margin-top: var(--curr-time-text-height);
-    /* border-top: 1px solid #ccc; */
+    /* border-top: 1px solid var(--divider-color) */
 }
 .fade-in-container {
     height: calc(var(--timeline-height) + var(--curr-time-text-height));
@@ -168,14 +187,15 @@ body, html {
     height: var(--curr-time-text-height);
     /* move up by the height of the current time text */
     top: calc(-1 * var(--curr-time-text-height));
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--divider-v-color)
 }
 
 /* until here */
 .schedule-name {
     width: 50px;
     padding: 10px;
-    background-color: #ffffff;
+    color: var(--text-color);
+    background-color: var(--background-color);
     position: sticky;
     left: 0;
     display: flex;
@@ -188,7 +208,7 @@ body, html {
     /* a box, that simulates a white shade that is white on ots left side 
     and fades to transparent on its right side
     it sits on top in its container */
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, var(--background-color), rgba(255, 255, 255, 0));
     position: absolute;
     top: 0;
     left: 50px;
@@ -220,9 +240,11 @@ body, html {
  
 .timeline {
     width: var(--timeline-width); /* Fixed length for timeline */
-    /* background-color: rgb(233, 129, 129); */
+    background-color: var(--background-color);
     height: var(--timeline-height);
     padding: 0 50px;
+    z-index: -10;
+    position: relative;
     /* background-image: linear-gradient(to right, #000 1px, black 1px);
     background-size: 1400px 100%; Adjust this value based on your timeline scale */
 
@@ -276,7 +298,7 @@ body, html {
     text-align: center;
     font-size: 1.2rem;
     font-weight: 400;
-    color: #333;
+    color: var(--text-color);
     position: absolute;
     top: 0;
     transform: translate(-100%, -100%);
@@ -289,7 +311,7 @@ body, html {
     top : 0;
     position: absolute;
     border-radius: 10px;
-    background: #f0f0f0;
+    background: var(--divider-h-color);
     align-items: center;
     transform: translateX(-50%);
     margin-top: 15px;
@@ -298,11 +320,12 @@ body, html {
 }
 /* General styling for movie blocks */
 .movie-block {
-    /* border: 1px solid #ccc; */
+    /* border: 1px solid var(--divider-color) */
     border-radius: 7px;
     padding: 8px;
     margin: 10px 0px;
-    background-color: #f2f2f2;
+    color: var(--text-color);
+    background-color: var(--movie-block-color);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
@@ -371,7 +394,8 @@ body, html {
     margin-top: 0px;
 }
 .omdu {
-    background-color: #9eeaf9;
+    background-color: var(--omdu-color);
+    color: var(--text-color);
     padding: 3px 4px;
     border-radius: 5px;
         /* Fit the width of the p element to the text content's width */
@@ -388,6 +412,7 @@ body, html {
     left: 0; 
     width: 100%;
     height: 100%;
+    color: var(--text-color);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 3000;
 }
@@ -395,7 +420,7 @@ body, html {
 
 
 .custom-modal-content {
-    background-color: #fff;
+    background-color: var(--background-color);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -430,7 +455,7 @@ body, html {
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 10px;
-    background-color: #ebebeb;
+    background-color: var(--movie-block-color);
     padding: 10px;
     border-radius: 5px;
 }
@@ -459,7 +484,7 @@ body, html {
 }
 
 .custom-modal-omdu {
-    background-color: #9eeaf9;
+    background-color: var(--omdu-color);
     padding: 2px 5px;
     border-radius: 5px;
     margin: 0px;
@@ -498,6 +523,7 @@ body, html {
     right: 20px;
     
     
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,7 +550,7 @@ body, html {
         font-size: 2rem;
     }
     .logo-container h3 {
-        color: white;
+
         font-size: 1.4rem;
         font-family: Outfit;
         font-weight: 400;
