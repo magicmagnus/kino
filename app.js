@@ -224,13 +224,11 @@ function setupRoomButton(button, theater) {
 // for room view
 function loadScheduleForRoom(theater) {
     const roomView = document.getElementById('room-view');
-    // Clear the room view of any existing schedule
     roomView.innerHTML = '';
     
     fetch("movie_data.json")
         .then((response) => response.json())
         .then((data) => {
-            // Get all unique dates for this theater
             const dates = new Set();
             data.forEach((movie) => {
                 movie.showtimes.forEach((showtime) => {
@@ -240,34 +238,28 @@ function loadScheduleForRoom(theater) {
                 });
             });
 
-            // Sort dates and remove dates that are before today
             let sortedDates = Array.from(dates);
             sortedDates.sort((a, b) => new Date(a) - new Date(b));
             sortedDates = sortedDates.slice(sortedDates.indexOf(formattedToday));
 
-            // the first date could be a date in the future
+            // Reset firstDate when loading room schedule
             firstDate = sortedDates[0];
             
-            // Create timeline for each date
+            // Reset globalDayIndex based on firstDate
+            globalDayIndex = firstDate === formattedToday ? 0 : -1;
+
             sortedDates.forEach((date, index) => {
                 const dateObj = new Date(date);
-                const schedule = createDateSchedule(date, dateObj, index === 0); // Pass true for first schedule
+                const schedule = createDateSchedule(date, dateObj, index === 0);
                 roomView.appendChild(schedule);
-
-                // Load movies for this date and theater
                 loadMoviesForDateAndTheater(data, date, theater);
             });
             
-            // only after all schedules have been created, merge scrolling and plot time scale
             mergeScrolling();
-            // timelineSync.setView(currentView);
             plotTimeScale();
-
+            // Force update of time indicator after view change
+            updateCurrentTimeLine();
         });
-
-        
-    
-
 }
 
 function removeDatesfromArray(date, array) {
@@ -545,11 +537,8 @@ function calculateEndTime(startTime, duration) {
     return `${endHours}:${endMinutes}`;
 }
 
+// Modify the updateCurrentTimeLine function
 function updateCurrentTimeLine() {
-    if (globalDayIndex !== 0) {
-        return;
-    }
-
     let currentTimeLines = {
         currTimeline1: document.getElementById('current-time-line-1'),
         currTimeline2: document.getElementById('current-time-line-2'),
@@ -566,34 +555,41 @@ function updateCurrentTimeLine() {
             currTimeline1: document.getElementById('current-time-room'),
         };
         currentTimeText = document.getElementById('current-time-text-room');
-    } 
+    }
+
+    // Early return if elements aren't found
+    if (!Object.values(currentTimeLines).some(line => line) || !currentTimeText) {
+        return;
+    }
 
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes().toString().padStart(2, '0');
 
+    // Check if we should show the time indicator
+    const shouldShowIndicator = (
+        firstDate === formattedToday && // Is the first visible date today?
+        hours >= START_HOUR && // Is current time within display hours?
+        hours < (START_HOUR + TOTAL_HOURS) &&
+        (currentView === 'room' || globalDayIndex === 0) // Show in room view or if today is selected in date view
+    );
+
     const left = calculateLeft(`${hours}:${minutes}`);
     const percentage = left + '%';
 
-    // only show the current time line if it is between START_HOUR and (START_HOUR + TOTAL_HOURS)
-    if (hours < START_HOUR || hours >= (START_HOUR + TOTAL_HOURS) || firstDate !== formattedToday) {
-        Object.values(currentTimeLines).forEach(line => {
-            line.style.display = 'none';
-        });
-        currentTimeText.style.display = 'none';
-        return;
-    }
-
-    // Update the current time lines
+    // Update visibility and position
     Object.values(currentTimeLines).forEach(line => {
-        line.style.left = percentage;
-        line.style.display = 'block';
+        if (line) {
+            line.style.display = shouldShowIndicator ? 'block' : 'none';
+            line.style.left = percentage;
+        }
     });
 
-    // Update the current time text
-    currentTimeText.textContent = currentView === 'date' ? 'Jetzt' : 'Heute';
-    currentTimeText.style.left = percentage;    
-    currentTimeText.style.display = 'block';
+    if (currentTimeText) {
+        currentTimeText.style.display = shouldShowIndicator ? 'block' : 'none';
+        currentTimeText.style.left = percentage;
+        currentTimeText.textContent = currentView === 'date' ? 'Jetzt' : 'Heute';
+    }
 }
 
 function scrollToCurrentTime() {
