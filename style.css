@@ -3,23 +3,62 @@
     --timeline-height: 150px;
     --timeline-width: 2370px;
     --curr-time-text-height: 55px;
-    --background-color: #ffffff;
+    /* --background-color: #ffffff; */
     --text-color: #000000;
     --color-header: #ffffff;
     --divider-v-color: #ccc;
     --divider-h-color: #f0f0f0;
     --movie-block-color: #f2f2f2;
-    --omdu-color: #9eeaf9;
+    --omdu-color: #3d8bfd;
+
+   
+
+    /** Light theme surface colors */
+    --color-surface-a0: #ffffff;
+    --color-surface-a10: #f9f9f9;
+    --color-surface-a20: #f2f2f2;
+    --color-surface-a30: #ebebeb;
+    --color-surface-a40: #e4e4e4;
+    --color-surface-a50: #dddddd;
+
+    --blue-100: #cfe2ff;
+    --blue-200: #9ec5fe; 
+    --blue-300: #6ea8fe; 
+    --blue-400: #3d8bfd; 
+    --blue-500: #0d6efd; 
+    --blue-600: #0a58ca; 
+    --blue-700: #084298; 
+    --blue-800: #052c65; 
+    --blue-900: #031633; 
+
+    
+
+
+    
+
+
+
 }
 
 [data-theme="dark"] {
-    --background-color: #212121;
+    /* --background-color: #212121; */
     --text-color: #ffffff;
     --color-header: #000000;
     --divider-v-color: #515151;
     --divider-h-color:  #333;
     --movie-block-color: #333;
-    --omdu-color: #03abcd;
+    --omdu-color: #0d6efd;
+   
+
+    /** Dark theme surface colors */
+    --color-surface-a0: #121212;
+    --color-surface-a10: #282828;
+    --color-surface-a20: #3f3f3f;
+    --color-surface-a30: #575757;
+    --color-surface-a40: #717171;
+    --color-surface-a50: #8b8b8b;
+
+    ;
 }
     
 body, html {
@@ -27,19 +66,20 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: Arial, sans-serif;
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
     color: var(--text-color);
+    overscroll-behavior: none;
 }
 
 .body-container {
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
 }
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: var(--color-header);
+    background-color: var(--color-surface-a10);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
     display: flex;
@@ -140,7 +180,7 @@ body, html {
     /* margin-right: 50px; */
     height: calc(100% - 60px);
     overflow-y: auto;
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
 }
 
 .schedules-container {
@@ -195,7 +235,7 @@ body, html {
     width: 50px;
     padding: 10px;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
     position: sticky;
     left: 0;
     display: flex;
@@ -208,7 +248,7 @@ body, html {
     /* a box, that simulates a white shade that is white on ots left side 
     and fades to transparent on its right side
     it sits on top in its container */
-    background: linear-gradient(to right, var(--background-color), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, var(--color-surface-a10), rgba(255, 255, 255, 0));
     position: absolute;
     top: 0;
     left: 50px;
@@ -240,7 +280,7 @@ body, html {
  
 .timeline {
     width: var(--timeline-width); /* Fixed length for timeline */
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
     height: var(--timeline-height);
     padding: 0 50px;
     z-index: -10;
@@ -263,7 +303,7 @@ body, html {
     bottom: 0;
     width: 4px;
     height: calc(var(--timeline-height) + 20px);
-    background-color: red; /* Or any color you prefer */   
+    background-color: var(--omdu-color);
     align-items: center;
     transform: translateX(-50%); 
     z-index: 0;
@@ -272,7 +312,7 @@ body, html {
     position: absolute;
     transform: translate(-50%, -50%);
     font-size: 1.1rem;
-    background-color: red;
+    background-color:  var(--omdu-color);
     color: white;
     font-weight: bold;
     
@@ -332,6 +372,7 @@ body, html {
     cursor: pointer;
     height: calc(var(--timeline-height) - 20px);
     z-index: 10;
+    width: auto
 }
 
 .movie-block-inner {
@@ -395,7 +436,7 @@ body, html {
 }
 .omdu {
     background-color: var(--omdu-color);
-    color: var(--text-color);
+    color: white;
     padding: 3px 4px;
     border-radius: 5px;
         /* Fit the width of the p element to the text content's width */
@@ -420,7 +461,7 @@ body, html {
 
 
 .custom-modal-content {
-    background-color: var(--background-color);
+    background-color: var(--color-surface-a10);
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 20px;
@@ -485,6 +526,7 @@ body, html {
 
 .custom-modal-omdu {
     background-color: var(--omdu-color);
+    color: white;
     padding: 2px 5px;
     border-radius: 5px;
     margin: 0px;

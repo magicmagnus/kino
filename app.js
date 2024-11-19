@@ -333,9 +333,14 @@ function createMovieBlock(movie, show, date) {
     movieBlock.classList.add('movie-block');
     movieBlock.style.left = `${calculateLeft(show.time)}%`;
     
+    
     const endTime = calculateEndTime(show.time, movie.duration);
     const right = calculateLeft(endTime);
     movieBlock.style.width = `${right - calculateLeft(show.time)}%`;
+
+    if (movie.duration == "Unknown Duration" || movie.duration === "0") {
+        movieBlock.style.width = "250px";
+    }
 
     
     const posterUrl = movie.posterUrl == null ? "placeholder.jpg" : movie.posterUrl;
@@ -371,7 +376,7 @@ function createMovieBlock(movie, show, date) {
         movieBlock.style.fontSize = "1.1rem";
         movieBlock.style.lineHeight = '1.0';
     }
-    console.log(movie.title + " " + movie.title.length);
+    // console.log(movie.title + " " + movie.title.length);
 
     //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
     movieBlock.addEventListener('click', function() {
