@@ -1092,17 +1092,7 @@
     "showtimes": [
       {
         "date": "2024-11-20",
-        "shows": [
-          {
-            "time": "16:00",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/78951?mode=widget&layout=movies&design=new&rb=0&showId=78951"
-          }
-        ]
+        "shows": []
       },
       {
         "date": "2024-11-21",
@@ -1491,6 +1481,132 @@
     "posterUrl": "https://static.kinoheld.de/images/film/mewi-movies-die-kurzfilmwerkschau-67899.v17320139408982.png?w=352&h=528&fm=webp&q=90&fit=crop"
   },
   {
+    "title": "Fly, Rocket, Fly!",
+    "attributes": [],
+    "showtimes": [
+      {
+        "date": "2024-11-20",
+        "shows": []
+      },
+      {
+        "date": "2024-11-21",
+        "shows": []
+      },
+      {
+        "date": "2024-11-22",
+        "shows": []
+      },
+      {
+        "date": "2024-11-23",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12620?mode=widget&layout=movies&design=new&rb=0&showId=12620"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-24",
+        "shows": []
+      },
+      {
+        "date": "2024-11-25",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://static.kinoheld.de/images/film/2/fly-rocket-fly-10859.v17301214293138.jpg?w=352&h=528&fm=webp&q=90&fit=crop"
+  },
+  {
+    "title": "Close to you",
+    "attributes": [
+      "OmdU"
+    ],
+    "showtimes": [
+      {
+        "date": "2024-11-20",
+        "shows": []
+      },
+      {
+        "date": "2024-11-21",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12619?mode=widget&layout=movies&design=new&rb=0&showId=12619"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-22",
+        "shows": []
+      },
+      {
+        "date": "2024-11-23",
+        "shows": []
+      },
+      {
+        "date": "2024-11-24",
+        "shows": []
+      },
+      {
+        "date": "2024-11-25",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://static.kinoheld.de/images/film/close-to-you-63257.v17233490104643.jpg?w=352&h=528&fm=webp&q=90&fit=crop"
+  },
+  {
+    "title": "Immortals",
+    "attributes": [
+      "OmeU"
+    ],
+    "showtimes": [
+      {
+        "date": "2024-11-20",
+        "shows": []
+      },
+      {
+        "date": "2024-11-21",
+        "shows": []
+      },
+      {
+        "date": "2024-11-22",
+        "shows": []
+      },
+      {
+        "date": "2024-11-23",
+        "shows": []
+      },
+      {
+        "date": "2024-11-24",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmeU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12621?mode=widget&layout=movies&design=new&rb=0&showId=12621"
+          }
+        ]
+      },
+      {
+        "date": "2024-11-25",
+        "shows": []
+      }
+    ],
+    "posterUrl": "https://static.kinoheld.de/images/film/immortals-65833.v17321133967755.png?w=352&h=528&fm=webp&q=90&fit=crop"
+  },
+  {
     "title": "Stand-Up Comedy Slam Tübingen",
     "attributes": [
       "OmeU",
@@ -1792,49 +1908,6 @@
       }
     ],
     "posterUrl": "https://static.kinoheld.de/images/film/bekenntnisse-des-hochstaplers-thomas-mann-65293.v17291782121224.jpg?w=352&h=528&fm=webp&q=90&fit=crop"
-  },
-  {
-    "title": "Close to you",
-    "attributes": [
-      "OmdU"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-11-20",
-        "shows": []
-      },
-      {
-        "date": "2024-11-21",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12619?mode=widget&layout=movies&design=new&rb=0&showId=12619"
-          }
-        ]
-      },
-      {
-        "date": "2024-11-22",
-        "shows": []
-      },
-      {
-        "date": "2024-11-23",
-        "shows": []
-      },
-      {
-        "date": "2024-11-24",
-        "shows": []
-      },
-      {
-        "date": "2024-11-25",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://static.kinoheld.de/images/film/close-to-you-63257.v17233490104643.jpg?w=352&h=528&fm=webp&q=90&fit=crop"
   },
   {
     "title": "Die Schule der magischen Tiere 3",
@@ -2473,88 +2546,5 @@
         "shows": []
       }
     ]
-  },
-  {
-    "title": "Fly, Rocket, Fly!",
-    "attributes": [],
-    "showtimes": [
-      {
-        "date": "2024-11-20",
-        "shows": []
-      },
-      {
-        "date": "2024-11-21",
-        "shows": []
-      },
-      {
-        "date": "2024-11-22",
-        "shows": []
-      },
-      {
-        "date": "2024-11-23",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12620?mode=widget&layout=movies&design=new&rb=0&showId=12620"
-          }
-        ]
-      },
-      {
-        "date": "2024-11-24",
-        "shows": []
-      },
-      {
-        "date": "2024-11-25",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://static.kinoheld.de/images/film/2/fly-rocket-fly-10859.v17301214293138.jpg?w=352&h=528&fm=webp&q=90&fit=crop"
-  },
-  {
-    "title": "Immortals",
-    "attributes": [
-      "OmeU"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-11-20",
-        "shows": []
-      },
-      {
-        "date": "2024-11-21",
-        "shows": []
-      },
-      {
-        "date": "2024-11-22",
-        "shows": []
-      },
-      {
-        "date": "2024-11-23",
-        "shows": []
-      },
-      {
-        "date": "2024-11-24",
-        "shows": [
-          {
-            "time": "17:30",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OmeU"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12621?mode=widget&layout=movies&design=new&rb=0&showId=12621"
-          }
-        ]
-      },
-      {
-        "date": "2024-11-25",
-        "shows": []
-      }
-    ],
-    "posterUrl": "https://static.kinoheld.de/images/film/immortals-65833.v17321133967755.png?w=352&h=528&fm=webp&q=90&fit=crop"
   }
 ]
