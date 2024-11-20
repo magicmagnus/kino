@@ -161,6 +161,7 @@ async function scrapeCinema() {
   }
 
   console.log('Found', allMovieInfos.length, 'movies from "widget pages"');
+  console.log('allMovieInfos', allMovieInfos);
 
 
   // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
@@ -284,6 +285,7 @@ async function scrapeCinema() {
   });
 
   console.log('Found', allMovieDates.length, 'movies from "programmübersicht"');
+  console.log('allMovieDates', allMovieDates);
 
 
   // 3. merge the two lists
@@ -309,11 +311,14 @@ async function scrapeCinema() {
     const closestTitle = findClosestMatch(date.title, allMovieInfos);
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
-      return { ...movieInfo, ...date};
+      return { ...date, ...movieInfo };
     } else {
       return date; // Keep the original entry if no close match is found
     }
   });
+
+  console.log('Merged', movies.length, 'movies with dates and showtimes');
+  console.log('movies', movies);
   
 
   // 4. scrape higher resolution poster URLs
