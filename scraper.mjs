@@ -94,32 +94,30 @@ async function scrapeCinema() {
         let actors = [];
 
         for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
-          const dt = movieInfoLong.querySelectorAll('dt')[i].textContent.trim();
+          const dt = movieInfoLong.querySelectorAll('dt')[i];
           const dd = movieInfoLong.querySelectorAll('dd')[i];
-          const ddText = dd.textContent.trim();
-          switch (dt) {
-            case "Titel":
-              title = ddText;
-              break;
-            case "Originaltitel":
-              origTitle = ddText;
-              break;
-            case "Produktion":
-              production = ddText.split('\n')[0].trim();
-              break;
-            case "Erscheinungsdatum":
-              releaseDate = ddText;
-              break;
-            case "Verleih":
-              distributor = ddText;
-              break;
-            case "Regie":
-              director = ddText;
-              break;
-            case "Darsteller":
-              actors = Array.from(dd.querySelectorAll('span')).map(span => span.textContent.trim());
-              break;
+          if (dt.textContent.trim() === "Titel") {
+            title = dd.textContent.trim();
           }
+          if (dt.textContent.trim() === "Originaltitel") {
+            origTitle = dd.textContent.trim();
+          }
+          if (dt.textContent.trim() === "Produktion") {
+            production = dd.textContent.trim().split('\n')[0].trim();
+          }
+          if (dt.textContent.trim() === "Erscheinungsdatum") {
+            releaseDate = dd.textContent.trim();
+          }
+          if (dt.textContent.trim() === "Verleih") {
+            distributor = dd.textContent.trim();
+          }
+          if (dt.textContent.trim() === "Regie") {
+            director = dd.textContent.trim();
+          }
+          if (dt.textContent.trim() === "Darsteller") {
+            actors = Array.from(dd.querySelectorAll('span')).map(span => span.textContent.trim());
+          }
+
         }
 
         // click on the trailer button to get the trailer URL
@@ -310,7 +308,7 @@ async function scrapeCinema() {
     const closestTitle = findClosestMatch(date.title, allMovieInfos);
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
-      return { ...date, ...movieInfo };
+      return { ...movieInfo, ...date };
     } else {
       return date; // Keep the original entry if no close match is found
     }
