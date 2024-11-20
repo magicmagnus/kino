@@ -89,22 +89,22 @@ async function scrapeCinema() {
         let fsk = 'Unknown FSK';
         let genre = 'Unknown Genre';
         for (let i = 0; i < movieInfoShort.querySelectorAll('dt').length; i++) {
-          const dt = movieInfoShort.querySelectorAll('dt')[i];
-          const dd = movieInfoShort.querySelectorAll('dd')[i];
-          if (dt.textContent.trim() === "Dauer") {
-            duration = dd.textContent.trim();
+          const dt = movieInfoShort.querySelectorAll('dt')[i].textContent.trim();
+          const dd = movieInfoShort.querySelectorAll('dd')[i].textContent.trim();
+          switch (dt) {
+            case "Dauer":
+              duration = dd;
+              break;
+            case "FSK":
+              fsk = dd;
+              break;
+            case "Genre":
+              genre = dd;
+              break;
           }
-          if (dt.textContent.trim() === "FSK") {
-            fsk = dd.textContent.trim();
-          }
-          if (dt.textContent.trim() === "Genre") {
-            genre = dd.textContent.trim();
-          }
-      
         }
         
         const movieInfoLong = movieItem.querySelector('.movie__info--long');
-        
         let title = 'Unknown Title';
         let origTitle = 'Unknown Original Title';
         let production = 'Unknown Production';
@@ -112,37 +112,34 @@ async function scrapeCinema() {
         let distributor = 'Unknown Distributor';
         let director = 'Unknown Director';
         let actors = [];
-        
-        for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
-          const dt = movieInfoLong.querySelectorAll('dt')[i]; // the key
-          const dd = movieInfoLong.querySelectorAll('dd')[i]; // the value
-          const dtText = dt.textContent.trim();
-          const ddText = dd.textContent.trim();
-          title = "INDSIDE LOOP";
-          origTitle = dtText;
-          production = ddText;
-          if (dtText === "Titel") {
-            title = ddText;
-          }
-          if (dtText === "Originaltitel") {
-            origTitle = ddText;
-          }
-          if (dtText === "Produktion") {
-            production = ddText.split('\n')[0].trim();
-          }
-          if (dtText === "Erscheinungsdatum") {
-            releaseDate = ddText;
-          }
-          if (dtText === "Verleih") {
-            distributor = ddText;
-          }
-          if (dtText === "Regie") {
-            director = ddText;
-          }
-          if (dtText === "Darsteller") {
-            actors = Array.from(dd.querySelectorAll('span')).map(span => span.textContent.trim());
-          }
 
+        for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
+          const dt = movieInfoLong.querySelectorAll('dt')[i].textContent.trim();
+          const dd = movieInfoLong.querySelectorAll('dd')[i];
+          const ddText = dd.textContent.trim();
+          switch (dt) {
+            case "Titel":
+              title = ddText;
+              break;
+            case "Originaltitel":
+              origTitle = ddText;
+              break;
+            case "Produktion":
+              production = ddText.split('\n')[0].trim();
+              break;
+            case "Erscheinungsdatum":
+              releaseDate = ddText;
+              break;
+            case "Verleih":
+              distributor = ddText;
+              break;
+            case "Regie":
+              director = ddText;
+              break;
+            case "Darsteller":
+              actors = Array.from(dd.querySelectorAll('span')).map(span => span.textContent.trim());
+              break;
+          }
         }
         
 
