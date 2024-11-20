@@ -85,6 +85,11 @@ async function scrapeCinema() {
         }
         
         const movieInfoLong = movieItem.querySelector('.movie__info--long');
+        if (!movieInfoLong) {
+          console.log('No long info found for movie:', movieItem.querySelector('.movie__title').textContent.trim());
+          title = "NOT FOUND";
+          continue;
+        }
         let title = 'Unknown Title';
         let origTitle = 'Unknown Original Title';
         let production = 'Unknown Production';
