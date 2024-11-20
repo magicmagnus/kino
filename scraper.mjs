@@ -95,29 +95,32 @@ async function scrapeCinema() {
         let actors = [];
         
         for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
-          const dt = movieInfoLong.querySelectorAll('dt')[i];
-          const dd = movieInfoLong.querySelectorAll('dd')[i];
+          const dt = movieInfoLong.querySelectorAll('dt')[i]; // the key
+          const dd = movieInfoLong.querySelectorAll('dd')[i]; // the value
+          const dtText = dt.textContent.trim();
+          const ddText = dd.textContent.trim();
           title = "INDSIDE LOOP";
-          origTitle = dd.textContent.trim();
-          if (dt.textContent.trim() === "Titel") {
-            title = dd.textContent.trim();
+          origTitle = dtText;
+          production = ddText;
+          if (dtText === "Titel") {
+            title = ddText;
           }
-          if (dt.textContent.trim() === "Originaltitel") {
-            origTitle = dd.textContent.trim();
+          if (dtText === "Originaltitel") {
+            origTitle = ddText;
           }
-          if (dt.textContent.trim() === "Produktion") {
-            production = dd.textContent.trim().split('\n')[0].trim();
+          if (dtText === "Produktion") {
+            production = ddText.split('\n')[0].trim();
           }
-          if (dt.textContent.trim() === "Erscheinungsdatum") {
-            releaseDate = dd.textContent.trim();
+          if (dtText === "Erscheinungsdatum") {
+            releaseDate = ddText;
           }
-          if (dt.textContent.trim() === "Verleih") {
-            distributor = dd.textContent.trim();
+          if (dtText === "Verleih") {
+            distributor = ddText;
           }
-          if (dt.textContent.trim() === "Regie") {
-            director = dd.textContent.trim();
+          if (dtText === "Regie") {
+            director = ddText;
           }
-          if (dt.textContent.trim() === "Darsteller") {
+          if (dtText === "Darsteller") {
             actors = Array.from(dd.querySelectorAll('span')).map(span => span.textContent.trim());
           }
 
