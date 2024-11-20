@@ -93,15 +93,12 @@ async function scrapeCinema() {
         let distributor = 'Unknown Distributor';
         let director = 'Unknown Director';
         let actors = [];
-        const shortInfos = movieInfoLong.querySelectorAll('dt');
-        if (!shortInfos || shortInfos.length === 0) {
-          console.log('No long info found for movie:', movieItem.querySelector('.movie__title').textContent.trim());
-          title = "NOT FOUND";
-          continue;
-        }
+        
         for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
           const dt = movieInfoLong.querySelectorAll('dt')[i];
           const dd = movieInfoLong.querySelectorAll('dd')[i];
+          title = "INDSIDE LOOP";
+          origTitle = dd.textContent.trim();
           if (dt.textContent.trim() === "Titel") {
             title = dd.textContent.trim();
           }
