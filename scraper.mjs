@@ -33,7 +33,7 @@ async function scrapeCinema() {
   });
   const page = await browser.newPage();
 
-  / Set the Accept-Language header to German
+  // Set the Accept-Language header to German
   await page.setExtraHTTPHeaders({
     'Accept-Language': 'de-DE'
   });
