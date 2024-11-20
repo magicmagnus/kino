@@ -32,6 +32,25 @@ async function scrapeCinema() {
 
   });
   const page = await browser.newPage();
+
+  / Set the Accept-Language header to German
+  await page.setExtraHTTPHeaders({
+    'Accept-Language': 'de-DE'
+  });
+
+  // Optionally, set the navigator.language to German
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'language', {
+      get: function() {
+        return 'de-DE';
+      }
+    });
+    Object.defineProperty(navigator, 'languages', {
+      get: function() {
+        return ['de-DE'];
+      }
+    });
+  });
   
   let allMovieInfos = [];
   const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
