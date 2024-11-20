@@ -70,19 +70,18 @@ async function scrapeCinema() {
         let fsk = 'Unknown FSK';
         let genre = 'Unknown Genre';
         for (let i = 0; i < movieInfoShort.querySelectorAll('dt').length; i++) {
-          const dt = movieInfoShort.querySelectorAll('dt')[i].textContent.trim();
-          const dd = movieInfoShort.querySelectorAll('dd')[i].textContent.trim();
-          switch (dt) {
-            case "Dauer":
-              duration = dd;
-              break;
-            case "FSK":
-              fsk = dd;
-              break;
-            case "Genre":
-              genre = dd;
-              break;
+          const dt = movieInfoShort.querySelectorAll('dt')[i];
+          const dd = movieInfoShort.querySelectorAll('dd')[i];
+          if (dt.textContent.trim() === "Dauer") {
+            duration = dd.textContent.trim();
           }
+          if (dt.textContent.trim() === "FSK") {
+            fsk = dd.textContent.trim();
+          }
+          if (dt.textContent.trim() === "Genre") {
+            genre = dd.textContent.trim();
+          }
+      
         }
         
         const movieInfoLong = movieItem.querySelector('.movie__info--long');
