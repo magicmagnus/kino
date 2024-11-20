@@ -85,11 +85,7 @@ async function scrapeCinema() {
         }
         
         const movieInfoLong = movieItem.querySelector('.movie__info--long');
-        if (!movieInfoLong) {
-          console.log('No long info found for movie:', movieItem.querySelector('.movie__title').textContent.trim());
-          title = "NOT FOUND";
-          continue;
-        }
+        
         let title = 'Unknown Title';
         let origTitle = 'Unknown Original Title';
         let production = 'Unknown Production';
@@ -97,7 +93,12 @@ async function scrapeCinema() {
         let distributor = 'Unknown Distributor';
         let director = 'Unknown Director';
         let actors = [];
-
+        const shortInfos = movieInfoLong.querySelectorAll('dt');
+        if (!shortInfos || shortInfos.length === 0) {
+          console.log('No long info found for movie:', movieItem.querySelector('.movie__title').textContent.trim());
+          title = "NOT FOUND";
+          continue;
+        }
         for (let i = 0; i < movieInfoLong.querySelectorAll('dt').length; i++) {
           const dt = movieInfoLong.querySelectorAll('dt')[i];
           const dd = movieInfoLong.querySelectorAll('dd')[i];
@@ -124,6 +125,7 @@ async function scrapeCinema() {
           }
 
         }
+        
 
         // click on the trailer button to get the trailer URL
         const trailerButton = movieItem.querySelector('.movie__actions')?.children[1];
