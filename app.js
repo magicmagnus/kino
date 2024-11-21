@@ -13,6 +13,175 @@ const theaters = getTheaters();
 const START_HOUR = 9; // Start hour for the timescale
 const TOTAL_HOURS = 16; // Total hours for the timescale
 
+
+// Global variable for holding movie data
+let movieData = [];
+
+// Function to fetch and load movie data
+function loadMovieData() {
+    fetch('movie_data.json')
+        .then(response => response.json())
+        .then(data => {
+            movieData = data;
+            populateMovieDropdown(movieData);
+        })
+        .catch(error => console.error('Error loading movie data:', error));
+}
+
+// Populate the movie dropdown
+function populateMovieDropdown(movies) {
+    const movieDropdown = document.getElementById('movie-dropdown');
+    movies.forEach(movie => {
+        const option = document.createElement('option');
+        option.value = movie.id; // Assuming each movie has a unique 'id'
+        option.textContent = movie.title;
+        movieDropdown.appendChild(option);
+    });
+
+    // by default, the select should be disabled
+    movieDropdown.value = '';
+}
+
+
+function enableOmduChecker(attributes) {
+    const omduChecker = document.getElementById('OmduCheck');
+    // if omdu is in one of the  attributes in lowercase, enable the omdu checker
+    if (attributes.some(attr => attr.toLowerCase() === 'omdu')) {
+        omduChecker.disabled = false;
+    } else {
+        omduChecker.disabled = true;
+    }
+    
+    
+}
+
+// Event listener for movie selection
+document.getElementById('movie-dropdown').addEventListener('change', function () {
+    const selectedMovie = movieData.find(movie => movie.id == this.value);
+    if (selectedMovie) {
+        enableOmduChecker(selectedMovie.attributes);
+    }
+});
+
+// Handle filter button click
+document.getElementById('filter-view-btn').addEventListener('click', async function () {
+    const movieId = document.getElementById('movie-dropdown').value;
+    const omduChecked = document.getElementById('OmduCheck').checked;
+
+   
+
+    currentView = 'filter';
+
+    if (!movieId) {
+        alert('Please select a movie.');
+        return;
+    }
+
+    const selectedMovie = movieData.find(movie => movie.id == movieId);
+    let filteredShowtimes;
+
+    if (omduChecked) {
+        filteredShowtimes = filterShowtimesOmdu(selectedMovie);
+    } else {
+        filteredShowtimes = selectedMovie.showtimes;
+        
+    }
+
+    // console.log('Filtered showtimes:', filteredShowtimes);
+    renderFilterView(filteredShowtimes, selectedMovie);
+
+});
+
+// Filter showtimes based on movie and attribute
+function filterShowtimesOmdu(movie) {
+    
+    // not all the showings have attributes, so we need to check if the attribute exists
+    // and then if the attribute matches omdu (in lowercase)
+    // so return only the showtimes that have the omdu attribute, and delete the rest
+    return movie.showtimes.map(showtime => {
+        const shows = showtime.shows.filter(show => show.attributes.some(attr => attr.toLowerCase() === 'omdu'));
+        return { ...showtime, shows };
+    }).filter(showtime => showtime.shows.length > 0);
+}
+    
+
+// Render the filter view
+function renderFilterView(showtimes, movie) {
+    const filterView = document.getElementById('filter-view');
+    filterView.innerHTML = ''; // Clear existing view
+
+    // first group the showtimes by date
+    const dates = groupBy(showtimes, 'date');
+    Object.keys(dates).forEach(date => {
+        
+        const showCurrentTime = date === formattedToday;
+        
+        const roomHeader = document.createElement('div');
+        // add the css classes to the header
+        roomHeader.classList.add('filter-date-header');
+        const options = { weekday: 'long', day: 'numeric', month: 'numeric' };
+        const dateObj = new Date(date);
+        roomHeader.innerHTML = `${dateObj.toLocaleDateString('de-DE', options)}`;
+        
+        filterView.appendChild(roomHeader);
+        
+
+
+        const timelines = groupBy(dates[date][0].shows, 'theater');
+        
+        if (Object.keys(timelines).length === 0) {
+            filterView.removeChild(roomHeader);
+            return;
+        }
+        
+        // for all the rooms/theaters, create a schedule div
+        Object.keys(timelines).forEach((theater, index) => {
+            
+            
+    
+            const schedule = createRoomSchedule(theater, (showCurrentTime && index === 0), index);
+            // for all the shows in the room/theater, create a movie block
+            timelines[theater].forEach(show => {
+                
+                schedule.querySelector('.timeline-content').appendChild(createMovieBlock(movie, show, date));
+            });
+
+            filterView.appendChild(schedule);
+
+            plotTimeScaleFilter(schedule);
+            updateCurrentTimeLine();
+            
+        });
+
+        
+
+
+    });
+
+    // Toggle visibility of views
+    const dateView = document.getElementById('date-view');
+    const roomView = document.getElementById('room-view');
+
+    dateView.style.display = 'none';
+    roomView.style.display = 'none';
+    filterView.style.display = 'block';
+    
+    filterView.style.position = 'absolute';
+
+    updateCurrentTimeLine();
+}
+
+
+
+// Group an array of objects by a key
+function groupBy(array, key) {
+    return array.reduce((result, item) => {
+        (result[item[key]] = result[item[key]] || []).push(item);
+        return result;
+    }, {});
+}
+
+
 // Modify your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -31,16 +200,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scroll to the current time after the page has loaded and timelines have been initialized
     scrollToCurrentTime();
+
+    loadMovieData();
 });
 
 function updateViewDisplay() {
     // switch from date view to room view and vice versa
     document.getElementById('view-toggle').addEventListener('click', function () {
-        currentView = currentView === 'date' ? 'room' : 'date';
+        // currentView = currentView === 'date' ? 'room' : 'date';
+        if (currentView === 'date') {
+            currentView = 'room';
+            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
+        } else if (currentView === 'room') {
+            currentView = 'date';
+            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
+        } else if (currentView === 'filter') {
+            currentView = 'date';
+            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
+        }
 
 
-        this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`
-            : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
+
+        // this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`
+        //     : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
 
 
 
@@ -302,6 +484,35 @@ function createDateSchedule(date, dateObj, isFirst = false) {
     return schedule;
 }
 
+// analogously, 
+function createRoomSchedule(theater, isFirst = false, index) {
+    const schedule = document.createElement('div');
+    schedule.classList.add('schedule');
+    if (isFirst) {
+        schedule.id = 'first-schedule';
+    }
+    
+    
+    
+    schedule.innerHTML = `
+        ${isFirst ? `<div class="schedule-name" id="first-schedule-name">` : `<div class="schedule-name">`}
+            <h5>${theater}</h5>
+            ${isFirst ? `<div class="fade-in" id="first-fade-in"></div>` : ''}
+            <div class="fade-in"></div>
+        </div>
+        ${isFirst ? `<div class="timeline-container" id="first-timeline-container">` : `<div class="timeline-container">`}
+            ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
+                <div class="timeline-content" id="saal-${theater}">
+                    ${isFirst ? `<div class="current-time" id="current-time-line-${index+1}"></div>` : ''}
+                    ${isFirst ? `<div class="current-time-text" id="current-time-text">Heute</div>` : ''}
+                </div>
+            </div>
+        </div>
+    `;
+
+    return schedule;
+}
+
 // for room view
 function loadMoviesForDateAndTheater(data, date, theater) {
     const timelineContent = document.getElementById(`timeline-${date}`);
@@ -440,6 +651,9 @@ function createMovieCard(movie, show, endTime, date) {
                         </div>`;
     const descEl = `<p class="custom-modal-desc">${movie.description}</p>`;
     const linksEl = `<div class="custom-modal-links">
+                        <button class="btn btn-link filter-shortcut" data-movie="MOVIE_ID">
+                            <i class="bi bi-filter"></i> Showtimes
+                        </button>
                         ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                             <i class="bi bi-play-circle"></i> Trailer ansehen
                         </a>` : ''}
@@ -486,7 +700,6 @@ function createMovieCard(movie, show, endTime, date) {
     // <h3 class="custom-modal-actors"><i class="bi bi-person me-2"></i>${movie.actors.join(', ')}</h3>
     // <h3 class="custom-modal-release"><i class="bi bi-calendar2 me-2"></i>${movie.releaseDate}</h3>
     document.body.appendChild(modal);
-    console.log(modal);
 
     const closeButton = modal.querySelector('.custom-modal-close');
     closeButton.addEventListener('click', function() {  
@@ -498,9 +711,6 @@ function createMovieCard(movie, show, endTime, date) {
 function mergeScrolling() {
     // when one timeline is scrolled, all other timelines should scroll as well, only grouped by date and room
     let timelineContainers = getTimelineContainersPerView(currentView);
-
-    // console.log("mergeScrolling:")
-    // console.log(timelineContainers);
 
     timelineContainers.forEach(container => {
         container.addEventListener('scroll', function() {
@@ -560,6 +770,12 @@ function updateCurrentTimeLine() {
             currTimeline1: document.getElementById('current-time-room'),
         };
         currentTimeText = document.getElementById('current-time-text-room');
+    } else if (currentView === 'filter') {
+        currentTimeLines = {
+            currTimeline1: document.getElementById('current-time-line-1'),
+        };
+        currentTimeText = document.getElementById('current-time-text');
+        
     }
 
     // Early return if elements aren't found
@@ -641,15 +857,56 @@ function plotTimeScale() {
     });
 }
 
+function plotTimeScaleFilter(scheduleContent) {
+    // plots horizontal lines for each hour from START_HOUR to (START_HOUR + TOTAL_HOURS)
+    const hours = Array.from({ length: TOTAL_HOURS }, (_, i) => i + START_HOUR);
+
+    
+    hours.forEach(hour => {
+        const percentage = calculateLeft(`${hour}:00`);
+        
+        // text if it's the first or eighth element
+        const timeScale = document.createElement('div');
+        timeScale.classList.add('time-scale-text');
+        timeScale.textContent = `${hour % 24}:00`;
+        timeScale.style.left = percentage + '%';
+        
+        scheduleContent.querySelector('.timeline-content').appendChild(timeScale);
+
+        // for all timelines, create the time scale div which is a line that is vertically centered and spans the height of the timeline
+        const timeScaleLine = document.createElement('div');
+        timeScaleLine.classList.add('time-scale');
+        timeScaleLine.style.left = percentage + '%';
+
+        scheduleContent.querySelector('.timeline-content').appendChild(timeScaleLine);
+    });
+
+}
+
 // Getter and Setter functions
 function getTimelineContentsPerView(view) {
-    return view === 'date' ? (Array.from(document.querySelectorAll('.timeline-content')).slice(0, 7)) 
-                            : (Array.from(document.querySelectorAll('.timeline-content')).slice(7)); 
+    if (view === 'room') {
+        return Array.from(document.querySelectorAll('.timeline-content'));
+    } else if (view === 'date') {
+        return Array.from(document.querySelectorAll('.timeline-content')).slice(0, 7);
+    } else if (view === 'filter') {
+        let filterView = document.getElementById('filter-view');
+        return Array.from(document.querySelector('.filter-view').querySelectorAll('.timeline-content'));
+    }
+     
 }
 
 function getTimelineContainersPerView(view) {
-    return view === 'date' ? (Array.from(document.querySelectorAll('.timeline-container')).slice(0, 7)) 
-                            : (Array.from(document.querySelectorAll('.timeline-container')).slice(7));
+    if (view === 'room') {
+        return Array.from(document.querySelectorAll('.timeline-container'));
+    } else if (view === 'date') {
+        return Array.from(document.querySelectorAll('.timeline-container')).slice(0, 7);
+    } else if (view === 'filter') {
+        return Array.from(document.querySelector('.filter-view').querySelectorAll('.timeline-container'));
+    }
+    
+    // return view === 'date' ? (Array.from(document.querySelectorAll('.timeline-container')).slice(0, 7)) 
+    //                         : (Array.from(document.querySelectorAll('.timeline-container')).slice(7));
 }
 
 function getTheaters() {

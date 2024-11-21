@@ -3,6 +3,7 @@
     --timeline-height: 150px;
     --timeline-width: 2370px;
     --curr-time-text-height: 55px;
+    --header-height: 228px;
     /* --background-color: #ffffff; */
     --text-color: #000000;
     --color-header: #ffffff;
@@ -175,8 +176,26 @@ body, html {
     margin: 0px;
     margin-right: 10px;
 }
+
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: 10px;
+}
+
+.form-check-label {
+    color: var(--text-color);
+}
+
+#movie-dropdown {
+    width: 250px;
+}
+
+
+
 .content {
-    margin-top: 160px; /* Adjust based on header height */
+    margin-top: var(--header-height);
     /* margin-right: 50px; */
     height: calc(100% - 60px);
     overflow-y: auto;
@@ -442,6 +461,21 @@ body, html {
         /* Fit the width of the p element to the text content's width */
     /* display: inline-block; */
     width: fit-content;
+}
+
+.filter-date-header {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    width: 400px;
+    position: sticky;
+    left: 0;
+
 }
 
 .custom-modal {
