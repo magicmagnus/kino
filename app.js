@@ -1,31 +1,49 @@
 // Variables
-let globalDayIndex = 0;
-let currentView = 'date';
-
 const today = new Date();
-const todayYear = today.getFullYear();
-const todayMonth = today.getMonth() + 1;
-const todayDay = today.getDate();
-const formattedToday = `${todayYear}-${todayMonth}-${todayDay}`;
-let firstDate = formattedToday; // temporarily set to today, could be changed later
-const theaters = getTheaters();
+const TODAY_YEAR = today.getFullYear();
+const TODAY_MONTH = today.getMonth() + 1;
+const TODAY_DAY = today.getDate();
+const TODAY_FORMATTED = `${TODAY_YEAR}-${TODAY_MONTH}-${TODAY_DAY}`;
+const THEATERS = getTheaters();
 
 const START_HOUR = 9; // Start hour for the timescale
 const TOTAL_HOURS = 16; // Total hours for the timescale
 
+const MOVIE_DATA = [];
 
-// Global variable for holding movie data
-let movieData = [];
+const DATE_VIEW = document.getElementById('date-view');
+const ROOM_VIEW = document.getElementById('room-view');
+const FILTER_VIEW = document.getElementById('filter-view');
+
+let globalDayIndex = 0;
+let currentView = 'date';
+let firstDate = TODAY_FORMATTED; // temporarily set to today, could be changed later
+
+// Modify your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', async function() {
+
+    handleThemeChange(); // light/dark theme toggle handler
+
+    initializeViewHandlers(); // event listners for all 3 views and their buttons
+
+    await loadMovieData(); // Load movie data from JSON file
+   
+    initializeDateView(); // initialize the date view by default
+
+    setInterval(updateCurrentTimeLine, 60000); // Update the current time line every minute
+
+});
 
 // Function to fetch and load movie data
-function loadMovieData() {
-    fetch('movie_data.json')
-        .then(response => response.json())
-        .then(data => {
-            movieData = data;
-            populateMovieDropdown(movieData);
-        })
-        .catch(error => console.error('Error loading movie data:', error));
+async function loadMovieData() {
+    try {
+        const response = await fetch('movie_data.json');
+        const data = await response.json();
+        MOVIE_DATA.push(...data);
+        populateMovieDropdown(MOVIE_DATA);
+    } catch (error) {
+        console.error('Error loading movie data:', error);
+    }
 }
 
 // Populate the movie dropdown
@@ -37,140 +55,75 @@ function populateMovieDropdown(movies) {
         option.textContent = movie.title;
         movieDropdown.appendChild(option);
     });
-
-    // by default, the select should be disabled
-    movieDropdown.value = '';
+    movieDropdown.value = ''; // by default, the select should be disabled
 }
-
 
 function enableOmduChecker(attributes) {
     const omduChecker = document.getElementById('OmduCheck');
-    // if omdu is in one of the  attributes in lowercase, enable the omdu checker
     if (attributes.some(attr => attr.toLowerCase() === 'omdu')) {
         omduChecker.disabled = false;
     } else {
         omduChecker.disabled = true;
     }
-    
-    
 }
-
-// Event listener for movie selection
-document.getElementById('movie-dropdown').addEventListener('change', function () {
-    const selectedMovie = movieData.find(movie => movie.id == this.value);
-    if (selectedMovie) {
-        enableOmduChecker(selectedMovie.attributes);
-    }
-});
-
-// Handle filter button click
-document.getElementById('filter-view-btn').addEventListener('click', async function () {
-    const movieId = document.getElementById('movie-dropdown').value;
-    const omduChecked = document.getElementById('OmduCheck').checked;
-
-   
-
-    currentView = 'filter';
-
-    if (!movieId) {
-        alert('Please select a movie.');
-        return;
-    }
-
-    const selectedMovie = movieData.find(movie => movie.id == movieId);
-    let filteredShowtimes;
-
-    if (omduChecked) {
-        filteredShowtimes = filterShowtimesOmdu(selectedMovie);
-    } else {
-        filteredShowtimes = selectedMovie.showtimes;
-        
-    }
-
-    // console.log('Filtered showtimes:', filteredShowtimes);
-    renderFilterView(filteredShowtimes, selectedMovie);
-
-});
 
 // Filter showtimes based on movie and attribute
 function filterShowtimesOmdu(movie) {
-    
-    // not all the showings have attributes, so we need to check if the attribute exists
-    // and then if the attribute matches omdu (in lowercase)
-    // so return only the showtimes that have the omdu attribute, and delete the rest
     return movie.showtimes.map(showtime => {
         const shows = showtime.shows.filter(show => show.attributes.some(attr => attr.toLowerCase() === 'omdu'));
         return { ...showtime, shows };
     }).filter(showtime => showtime.shows.length > 0);
 }
-    
 
 // Render the filter view
 function renderFilterView(showtimes, movie) {
-    const filterView = document.getElementById('filter-view');
-    filterView.innerHTML = ''; // Clear existing view
+    FILTER_VIEW.innerHTML = ''; // Clear existing view
+
+    
 
     // first group the showtimes by date
     const dates = groupBy(showtimes, 'date');
-    Object.keys(dates).forEach(date => {
-        
-        const showCurrentTime = date === formattedToday;
+    Object.keys(dates).forEach((date, indexDates) => {
+       
+        if (date < TODAY_FORMATTED) {
+            return;
+        }
+        const showCurrentTime = date === TODAY_FORMATTED;
         
         const roomHeader = document.createElement('div');
-        // add the css classes to the header
         roomHeader.classList.add('filter-date-header');
         const options = { weekday: 'long', day: 'numeric', month: 'numeric' };
         const dateObj = new Date(date);
-        roomHeader.innerHTML = `${dateObj.toLocaleDateString('de-DE', options)}`;
-        
-        filterView.appendChild(roomHeader);
-        
-
+        roomHeader.innerHTML = `${(showCurrentTime ? ' Heute, ' : '') + dateObj.toLocaleDateString('de-DE', options)}`;
+        FILTER_VIEW.appendChild(roomHeader);
 
         const timelines = groupBy(dates[date][0].shows, 'theater');
-        
         if (Object.keys(timelines).length === 0) {
-            filterView.removeChild(roomHeader);
+            FILTER_VIEW.removeChild(roomHeader);
             return;
         }
         
         // for all the rooms/theaters, create a schedule div
-        Object.keys(timelines).forEach((theater, index) => {
-            
-            
-    
-            const schedule = createRoomSchedule(theater, (showCurrentTime && index === 0), index);
+        Object.keys(timelines).forEach((theater, indexRooms) => {
+            const schedule = createRoomSchedule(theater, (showCurrentTime || indexRooms === 0), showCurrentTime, indexRooms);
             // for all the shows in the room/theater, create a movie block
             timelines[theater].forEach(show => {
-                
                 schedule.querySelector('.timeline-content').appendChild(createMovieBlock(movie, show, date));
             });
-
-            filterView.appendChild(schedule);
-
-            plotTimeScaleFilter(schedule);
-            updateCurrentTimeLine();
+            FILTER_VIEW.appendChild(schedule);
+            drawHourlyLines(schedule, indexRooms === 0);
+            showCurrentTime? updateCurrentTimeLine() : null;
             
         });
-
-        
-
-
     });
 
-    // Toggle visibility of views
-    const dateView = document.getElementById('date-view');
-    const roomView = document.getElementById('room-view');
-
-    dateView.style.display = 'none';
-    roomView.style.display = 'none';
-    filterView.style.display = 'block';
     
-    filterView.style.position = 'absolute';
+    
+    mergeScrolling(); // fix the scrolling of all timelines to each other
 
-    updateCurrentTimeLine();
+    adjustContentMargin(); // update the content position based on the header height
+
 }
-
 
 
 // Group an array of objects by a key
@@ -182,66 +135,91 @@ function groupBy(array, key) {
 }
 
 
-// Modify your DOMContentLoaded event listener
-document.addEventListener('DOMContentLoaded', function() {
 
-    handleThemeChange();
 
-    updateViewDisplay();
+function adjustContentMargin() {
+    const header = document.querySelector('.header');
+    const content = document.querySelector('.content');
+    const headerHeight = header.offsetHeight;
+    content.style.marginTop = headerHeight + 'px';
+}
 
-    // Functions to initialize the page
-   
-    initializeDateView();
+function initializeViewHandlers() {
+    // initialize all event listeners for the view toggle, movie selection and filter button
 
-    plotTimeScale();
-
-    updateCurrentTimeLine();
-    setInterval(updateCurrentTimeLine, 60000);
-
-    // Scroll to the current time after the page has loaded and timelines have been initialized
-    scrollToCurrentTime();
-
-    loadMovieData();
-});
-
-function updateViewDisplay() {
-    // switch from date view to room view and vice versa
+    // handle the view toggle button
     document.getElementById('view-toggle').addEventListener('click', function () {
-        // currentView = currentView === 'date' ? 'room' : 'date';
-        if (currentView === 'date') {
-            currentView = 'room';
-            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
-        } else if (currentView === 'room') {
-            currentView = 'date';
-            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
-        } else if (currentView === 'filter') {
-            currentView = 'date';
-            this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
+
+        const buttonContainer = document.querySelector('.button-container');
+        buttonContainer.style.display = "flex"; // in case it was hidden in the filter view
+
+        switch (currentView) {
+            case 'date': // was date, now render room view
+                currentView = 'room';
+                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
+                DATE_VIEW.style.display = 'none';
+                ROOM_VIEW.style.display = 'block';
+                FILTER_VIEW.style.display = 'none';
+                initializeRoomView();
+                break;
+            case 'room': // was room, now render date view
+                currentView = 'date';
+                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
+                DATE_VIEW.style.display = 'block';
+                ROOM_VIEW.style.display = 'none';
+                FILTER_VIEW.style.display = 'none';
+                initializeDateView();
+                break;
+            case 'filter': // was filter, now render date
+                currentView = 'date';
+                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
+                DATE_VIEW.style.display = 'block';
+                ROOM_VIEW.style.display = 'none';
+                FILTER_VIEW.style.display = 'none';
+                initializeDateView();
+                break;
+            default:
+                break;
         }
+        
+        adjustContentMargin(); // update the content position based on the header height
+    });
 
+    // handle the movie dropdown change
+    document.getElementById('movie-dropdown').addEventListener('change', function () {
+        const selectedMovie = MOVIE_DATA.find(movie => movie.id == this.value);
+        if (selectedMovie) {
+            enableOmduChecker(selectedMovie.attributes);
+        }
+    });
+    document.getElementById('OmduCheck').disabled = true; // Disable the omdu checker by default
+    document.getElementById('OmduCheck').checked = false;
 
-
-        // this.innerHTML = currentView === 'date' ? `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`
-        //     : `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
-
-
-
+    // handle the filter button
+    document.getElementById('filter-view-btn').addEventListener('click', async function () {
+        const movieId = document.getElementById('movie-dropdown').value;
+        const omduChecked = document.getElementById('OmduCheck').checked;
+        if (!movieId) {
+            alert('Please select a movie.');
+            return;
+        }
+        // 
+        currentView = 'filter';
+        document.getElementById('view-toggle').innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
         // Toggle visibility of views
-        const dateView = document.getElementById('date-view');
-        const roomView = document.getElementById('room-view');
+        DATE_VIEW.style.display = 'none';
+        ROOM_VIEW.style.display = 'none';
+        FILTER_VIEW.style.display = 'block';
 
-        if (currentView === 'date') {
-            dateView.style.display = 'block';
-            roomView.style.display = 'none';
 
-            initializeDateView();
-        } else {
-            dateView.style.display = 'none';
-            roomView.style.display = 'block';
+        const selectedMovie = MOVIE_DATA.find(movie => movie.id == movieId);
+        const filteredShowtimes = omduChecked ? filterShowtimesOmdu(selectedMovie) : selectedMovie.showtimes;
 
-            initializeRoomView();
+        // in filter view, we hide the date/room buttons
+        const buttonContainer = document.querySelector('.button-container');
+        buttonContainer.style.display = 'none';
 
-        }
+        renderFilterView(filteredShowtimes, selectedMovie);
     });
 }
 
@@ -249,7 +227,6 @@ function handleThemeChange() {
     // Theme toggle button
     const themeToggle = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
-
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     if (currentTheme === 'dark') {
@@ -279,16 +256,12 @@ function initializeDateView() {
     const buttonContainer = document.querySelector('.date-buttons-container');
     buttonContainer.innerHTML = '';
 
-    // fix the scrolling of all timelines to each other
-    mergeScrolling();
-    //timelineSync.setView(currentView);
-
     // Create date buttons
     for (let i = 0; i < 9; i++) {
         const button = document.createElement('button');
         button.classList.add('btn', 'btn-primary', 'me-2');
         const date = new Date(today);
-        date.setDate(todayDay + i);
+        date.setDate(TODAY_DAY + i);
 
         if (i === 0) {
             button.textContent = "Heute";
@@ -305,21 +278,29 @@ function initializeDateView() {
             button.click();
         }
     }
+
+    // fix the scrolling of all timelines to each other
+    mergeScrolling();
+
+    // plot the time scale for the date view
+    document.querySelectorAll('.schedule').forEach((schedule, index) => {
+        drawHourlyLines(schedule, index === 0);
+    });
 }
 
 // for date view
 function setupDateButton(button, date, dayIndex) {
     button.addEventListener('click', () => {
         setGlobalDayIndex(dayIndex);
-        clearSchedule();
-        loadScheduleForDayIndex(date, dayIndex);
+        clearMovieBlocksDateView();
+        populateMoviesForRoomSchedule(date, dayIndex);
         document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
         button.classList.add('active');
     });
 }
 
 // for date view
-function loadScheduleForDayIndex(date, dayIndex) {
+function populateMoviesForRoomSchedule(date, dayIndex) {
     // Format the date to match JSON
     const year = date.getFullYear();
     const month = date.getMonth() + 1;
@@ -330,24 +311,17 @@ function loadScheduleForDayIndex(date, dayIndex) {
     if (dayIndex === 0) {
         updateCurrentTimeLine();
     } else {
-        hideCurrentTimeLine();
+        hideCurrentTimeLineDateView();
     }
 
-    // Fetch movie data from movie_data.json
-    fetch('movie_data.json')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(movie => {
-                const showtimes = movie.showtimes.find(show => show.date === formattedDate);
-                if (showtimes) {
-                    showtimes.shows.forEach(show => {
-                        // console.log("show.theater: " + show.theater);
-                        theaters[show.theater].appendChild(createMovieBlock(movie, show, date));
-
-                    });
-                }
+    MOVIE_DATA.forEach(movie => {
+        const showtimes = movie.showtimes.find(show => show.date === formattedDate);
+        if (showtimes) {
+            showtimes.shows.forEach(show => {
+                THEATERS[show.theater].appendChild(createMovieBlock(movie, show, date));
             });
-        });
+        }
+    });
 }
 
 // for date view
@@ -356,14 +330,14 @@ function setGlobalDayIndex(index) {
 }
 
 // for date view
-function clearSchedule() {
+function clearMovieBlocksDateView() {
     document.querySelectorAll('.movie-block').forEach(block => block.remove());
 }
 
 // for date view
-function hideCurrentTimeLine() {
-    document.querySelectorAll('.current-time').forEach(line => line.style.display = 'none');
-    document.querySelectorAll('.current-time-text').forEach(text => text.style.display = 'none');
+function hideCurrentTimeLineDateView() {
+    DATE_VIEW.querySelectorAll('.current-time').forEach(line => line.style.display = 'none');
+    DATE_VIEW.querySelectorAll('.current-time-text').forEach(text => text.style.display = 'none');
 }
 // END OF DATE VIEW FUNCTIONS #####################################################################
 
@@ -375,9 +349,8 @@ function initializeRoomView() {
     const buttonContainer = document.querySelector('.date-buttons-container');
     buttonContainer.innerHTML = '';
 
-
     // Create room buttons
-    Object.keys(theaters).forEach((theater, index) => {
+    Object.keys(THEATERS).forEach((theater, index) => {
         const button = document.createElement('button');
         button.classList.add('btn', 'btn-primary', 'me-2');
         button.textContent = theater;
@@ -388,10 +361,9 @@ function initializeRoomView() {
         // Activate first button by default
         if (index === 0) {
             button.click();
-        } 
-
-          
-    });  
+        }   
+    });
+    
 }
 
 // for room view
@@ -405,57 +377,44 @@ function setupRoomButton(button, theater) {
 
 // for room view
 function loadScheduleForRoom(theater) {
-    const roomView = document.getElementById('room-view');
-    roomView.innerHTML = '';
+    ROOM_VIEW.innerHTML = '';
     
-    fetch("movie_data.json")
-        .then((response) => response.json())
-        .then((data) => {
-            const dates = new Set();
-            data.forEach((movie) => {
-                movie.showtimes.forEach((showtime) => {
-                    if (showtime.shows.some((show) => show.theater === theater)) {
-                        dates.add(showtime.date);
-                    }
-                });
-            });
-
-            let sortedDates = Array.from(dates);
-            sortedDates.sort((a, b) => new Date(a) - new Date(b));
-            sortedDates = sortedDates.slice(sortedDates.indexOf(formattedToday));
-
-            // Reset firstDate when loading room schedule
-            firstDate = sortedDates[0];
-            
-            // Reset globalDayIndex based on firstDate
-            globalDayIndex = firstDate === formattedToday ? 0 : -1;
-
-            sortedDates.forEach((date, index) => {
-                const dateObj = new Date(date);
-                const schedule = createDateSchedule(date, dateObj, index === 0);
-                roomView.appendChild(schedule);
-                loadMoviesForDateAndTheater(data, date, theater);
-            });
-            
-            mergeScrolling();
-            plotTimeScale();
-            // Force update of time indicator after view change
-            updateCurrentTimeLine();
+    const dates = new Set();
+    MOVIE_DATA.forEach((movie) => {
+        movie.showtimes.forEach((showtime) => {
+            if (showtime.shows.some((show) => show.theater === theater)) {
+                dates.add(showtime.date);
+            }
         });
-}
+    });
 
-function removeDatesfromArray(date, array) {
-    // look for the date in the array and slice it, then return the last part of the array
-    const index = array.indexOf(date);
-    if (index > -1) {
-        return array.slice(index);
-    }
-    return array;
+    let sortedDates = Array.from(dates);
+    sortedDates.sort((a, b) => new Date(a) - new Date(b));
+    sortedDates = sortedDates.slice(sortedDates.indexOf(TODAY_FORMATTED));
+
+    // Reset firstDate when loading room schedule
+    firstDate = sortedDates[0];
+    
+    // Reset globalDayIndex based on firstDate
+    globalDayIndex = firstDate === TODAY_FORMATTED ? 0 : -1;
+
+    sortedDates.forEach((date, index) => {
+        const dateObj = new Date(date);
+        const schedule = createDateSchedule(date, dateObj, index === 0);
+        drawHourlyLines(schedule, index === 0);
+        ROOM_VIEW.appendChild(schedule);
+        populateMoviesForDateSchedule(schedule, date, theater);
+    });
+    
+    mergeScrolling(); // fix the scrolling of all timelines to each other
+    
+    updateCurrentTimeLine(); // 
 }
 
 // for room view OPTIMIZED
 function createDateSchedule(date, dateObj, isFirst = false) {
-    // for each date in the room view, create a schedule div
+    // (used in the room view)
+    // for each date, create a schedule div
     const schedule = document.createElement('div');
     schedule.classList.add('schedule');
     if (isFirst) {
@@ -468,14 +427,14 @@ function createDateSchedule(date, dateObj, isFirst = false) {
     schedule.innerHTML = `
         ${isFirst ? `<div class="schedule-name" id="first-schedule-name">` : `<div class="schedule-name">`}
             <h5>${dateDisplay}</h5>
-            ${isFirst ? `<div class="fade-in" id="first-fade-in"></div>` : ''}
-            <div class="fade-in"></div>
+            ${isFirst ? `<div class="fade-in" id="first-fade-in1"></div>` : ''}
+            ${isFirst ? `<div class="fade-in" id="first-fade-in2"></div>` : `<div class="fade-in"></div>`}
         </div>
         ${isFirst ? `<div class="timeline-container" id="first-timeline-container">` : `<div class="timeline-container">`}
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="timeline-${date}">
-                    ${isFirst ? `<div class="current-time" id="current-time-room"></div>` : ''}
-                    ${isFirst ? `<div class="current-time-text" id="current-time-text-room">Heute</div>` : ''}
+                    ${isFirst ? `<div class="current-time"></div>` : ''}
+                    ${isFirst ? `<div class="current-time-text">Heute</div>` : ''}
                 </div>
             </div>
         </div>
@@ -485,26 +444,27 @@ function createDateSchedule(date, dateObj, isFirst = false) {
 }
 
 // analogously, 
-function createRoomSchedule(theater, isFirst = false, index) {
+function createRoomSchedule(theater, isFirst = false, isToday = false, index) {
+    // (used in the filter view)
+    // for each room/theater, create a schedule div
     const schedule = document.createElement('div');
     schedule.classList.add('schedule');
     if (isFirst) {
         schedule.id = 'first-schedule';
     }
     
-    
-    
     schedule.innerHTML = `
         ${isFirst ? `<div class="schedule-name" id="first-schedule-name">` : `<div class="schedule-name">`}
             <h5>${theater}</h5>
-            ${isFirst ? `<div class="fade-in" id="first-fade-in"></div>` : ''}
-            <div class="fade-in"></div>
+            ${isFirst ? `<div class="fade-in" id="first-fade-in1"></div>` : ''}
+            ${isFirst ? `<div class="fade-in" id="first-fade-in2"></div>` : `<div class="fade-in"></div>`}
+            ${isFirst ? `<div class="fade-in" id="first-fade-in3"></div>` : ''}
         </div>
         ${isFirst ? `<div class="timeline-container" id="first-timeline-container">` : `<div class="timeline-container">`}
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="saal-${theater}">
-                    ${isFirst ? `<div class="current-time" id="current-time-line-${index+1}"></div>` : ''}
-                    ${isFirst ? `<div class="current-time-text" id="current-time-text">Heute</div>` : ''}
+                    ${isToday ? `<div class="current-time"></div>` : ''}
+                    ${isToday ? `<div class="current-time-text">Heute</div>` : ''}
                 </div>
             </div>
         </div>
@@ -513,28 +473,20 @@ function createRoomSchedule(theater, isFirst = false, index) {
     return schedule;
 }
 
-// for room view
-function loadMoviesForDateAndTheater(data, date, theater) {
-    const timelineContent = document.getElementById(`timeline-${date}`);
-    
-    // only show and update the current time line if it is the upper most timeline
-    if (date === firstDate) {
-        updateCurrentTimeLine();
-    }
-
-    data.forEach(movie => {
+function populateMoviesForDateSchedule(schedule, date, theater) {
+    // (used in the room view)
+    const timelineContent = schedule.querySelector('.timeline-content');
+   
+    MOVIE_DATA.forEach(movie => {
         const showtime = movie.showtimes.find(st => st.date === date);
         if (showtime) {
             showtime.shows.forEach(show => {
                 if (show.theater === theater) {
-
                     timelineContent.appendChild(createMovieBlock(movie, show, date));
                 }
             });
         }
-    });
-    
-    
+    });  
 }
 // END OF ROOM VIEW FUNCTIONS #####################################################################
 
@@ -542,21 +494,17 @@ function createMovieBlock(movie, show, date) {
 
     const movieBlock = document.createElement('div');
     movieBlock.classList.add('movie-block');
-    movieBlock.style.left = `${calculateLeft(show.time)}%`;
-    
+    movieBlock.style.left = `${calculateTimePercentage(show.time)}%`;
     
     const endTime = calculateEndTime(show.time, movie.duration);
-    const right = calculateLeft(endTime);
-    movieBlock.style.width = `${right - calculateLeft(show.time)}%`;
+    const right = calculateTimePercentage(endTime);
+    movieBlock.style.width = `${right - calculateTimePercentage(show.time)}%`;
 
     if (movie.duration == "Unknown Duration" || movie.duration === "0") {
         movieBlock.style.width = "250px";
     }
-
-    
     const posterUrl = movie.posterUrl == null ? "placeholder.jpg" : movie.posterUrl;
     
-
     movieBlock.innerHTML = `
         <div class="movie-block-inner">
             <img src="${posterUrl}" alt="${movie.title} poster">
@@ -565,58 +513,33 @@ function createMovieBlock(movie, show, date) {
                     <strong>${movie.title}</strong> 
                 </div>
                 <div class="movie-block-attributes">
-                ${show.attributes[1] ? `<div class="omdu"><i class="bi bi-translate me-1"></i>${show.attributes[1]}</div>` : ''}
+                    ${show.attributes[1] ? `<div class="omdu"><i class="bi bi-translate me-1"></i><p>${show.attributes[1]}</p></div>` : ''}
                     <div class="show-time">${show.time} - ${endTime}</div>
-                    
                 </div>
             </div>
         </div>
     `;
     
-    
-
-    //show.attributes[1] ? (movieBlock.style.backgroundColor = "#9eeaf9") : null;
     movie.duration.split(' ')[0] > 260 ? (movieBlock.style.zIndex = 1) : null;
     movie.title.length >= 35 ? (movieBlock.style.fontSize = "0.9rem") : (movieBlock.style.fontSize = "1.1rem");
     if (movie.title.length >= 35) {
         const fontSize = Math.max(1.0 - (movie.title.length - 35) * 0.007, 0.7); // Adjust the decrement as needed
         movieBlock.style.fontSize = fontSize + 'rem';
-        // and reduce the line height as well
         movieBlock.style.lineHeight = '1.0';
     } else {
         movieBlock.style.fontSize = "1.1rem";
         movieBlock.style.lineHeight = '1.0';
     }
-    // console.log(movie.title + " " + movie.title.length);
 
-    //onclick event for movie block, get the link from show.iframeUrl and open it in a new tab
     movieBlock.addEventListener('click', function() {
-        //window.open(show.iframeUrl, '_blank');
-
-        // instead of opening the link in a new tab, open it in a modal, like a card
         createMovieCard(movie, show, endTime, date);
     });
-    
-    
-    // console.log(movieBlock);
 
     return movieBlock;
 }
 
 function createMovieCard(movie, show, endTime, date) {
-    // onclick on the movie block, create a modal card with the movie details, like the title, poster, description, etc.
-    // the card should have a close button, and a link to the movie trailer and a link tti the iframeUrl
-    // were gonna fo the full layout of the card in the css file, but here we need:
-    // - a close button that closes the card
-    // - on the top left, the movie poster
-    // - beside the poster, [the movie title and under that the show time]
-    // - under the title, still besides the postrt, the movie description
-    // - under the description, a link to the movie trailer
-    // - under the trailer, a link to the iframeUrl
-    // - the card should be centered on the screen, but not full screen
-    // - the card should have a shadow and a border
-    
-    
+   
     const modal = document.createElement('div');
     let movieDuration = parseInt(movie.duration.split(' ')[0], 10);
     const dateDisplay = new Date(date).toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'numeric' });
@@ -647,7 +570,7 @@ function createMovieCard(movie, show, endTime, date) {
                             <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${movieDuration}</h3>
                             <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
                             <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>FSK ${movie.fsk}</h3>
-                            ${show.attributes[1]? `<h3 class="custom-modal-omdu"><i class="bi bi-translate me-2"></i>${show.attributes[1]}</h3>` : ''}
+                            ${show.attributes[1]? `<h3 class="omdu"><i class="bi bi-translate me-2"></i><p>${show.attributes[1]}</p></h3>` : ''}
                         </div>`;
     const descEl = `<p class="custom-modal-desc">${movie.description}</p>`;
     const linksEl = `<div class="custom-modal-links">
@@ -725,7 +648,7 @@ function mergeScrolling() {
 }
 
 
-function calculateLeft(time) {
+function calculateTimePercentage(time) {
     // for a given time in HH:MM format, calculate the percentage of the way through START_HOUR to (START_HOUR + TOTAL_HOURS)
     const totalMinutes = 60 * TOTAL_HOURS; // Total minutes in the timescale
     const [hours, minutes] = time.split(':').map(Number);
@@ -752,36 +675,8 @@ function calculateEndTime(startTime, duration) {
     return `${endHours}:${endMinutes}`;
 }
 
-// Modify the updateCurrentTimeLine function
 function updateCurrentTimeLine() {
-    let currentTimeLines = {
-        currTimeline1: document.getElementById('current-time-line-1'),
-        currTimeline2: document.getElementById('current-time-line-2'),
-        currTimeline3: document.getElementById('current-time-line-3'),
-        currTimeline4: document.getElementById('current-time-line-4'),
-        currTimeline5: document.getElementById('current-time-line-5'),
-        currTimeline6: document.getElementById('current-time-line-6'),
-        currTimeline7: document.getElementById('current-time-line-7'),
-    };
-    let currentTimeText = document.getElementById('current-time-text');
-
-    if (currentView === 'room') {
-        currentTimeLines = {
-            currTimeline1: document.getElementById('current-time-room'),
-        };
-        currentTimeText = document.getElementById('current-time-text-room');
-    } else if (currentView === 'filter') {
-        currentTimeLines = {
-            currTimeline1: document.getElementById('current-time-line-1'),
-        };
-        currentTimeText = document.getElementById('current-time-text');
-        
-    }
-
-    // Early return if elements aren't found
-    if (!Object.values(currentTimeLines).some(line => line) || !currentTimeText) {
-        return;
-    }
+    let { currentTimeLines, currentTimeText } = getCurrentTimeElements(currentView);
 
     const now = new Date();
     const hours = now.getHours();
@@ -789,13 +684,13 @@ function updateCurrentTimeLine() {
 
     // Check if we should show the time indicator
     const shouldShowIndicator = (
-        firstDate === formattedToday && // Is the first visible date today?
+        firstDate === TODAY_FORMATTED && // Is the first visible date today?
         hours >= START_HOUR && // Is current time within display hours?
         hours < (START_HOUR + TOTAL_HOURS) &&
-        (currentView === 'room' || globalDayIndex === 0) // Show in room view or if today is selected in date view
+        (currentView === 'room' || currentView === 'filter' || globalDayIndex === 0) // Show in room view or if today is selected in date view
     );
 
-    const left = calculateLeft(`${hours}:${minutes}`);
+    const left = calculateTimePercentage(`${hours}:${minutes}`);
     const percentage = left + '%';
 
     // Update visibility and position
@@ -813,100 +708,81 @@ function updateCurrentTimeLine() {
     }
 }
 
-function scrollToCurrentTime() {
-    const currentTimeText = document.querySelector('.current-time-text');
-    if (!currentTimeText) return;
 
-    const timelineContainer = currentTimeText.closest('.timeline-container');
-    if (!timelineContainer) return;
 
-    const containerWidth = timelineContainer.clientWidth;
-    const currentTimeTextLeft = currentTimeText.offsetLeft;
-    const scrollPosition = currentTimeTextLeft - (containerWidth / 2) + (currentTimeText.clientWidth / 2);
 
-    timelineContainer.scrollLeft = scrollPosition;
-}
-
-function plotTimeScale() {
+function drawHourlyLines(schedule, plotText = false) {
     // plots horizontal lines for each hour from START_HOUR to (START_HOUR + TOTAL_HOURS)
     const hours = Array.from({ length: TOTAL_HOURS }, (_, i) => i + START_HOUR);
-
-    const timelineContents = getTimelineContentsPerView(currentView);
-  
-    timelineContents.forEach((content, index) => {
-        hours.forEach(hour => {
-            const percentage = calculateLeft(`${hour}:00`);
-            
-            // text if it's the first or eighth element
-            if (index === 0 || index === 7) {
-                const timeScale = document.createElement('div');
-                timeScale.classList.add('time-scale-text');
-                timeScale.textContent = `${hour % 24}:00`;
-                timeScale.style.left = percentage + '%';
-                
-                content.appendChild(timeScale);
-            }
-            
-            // for all timelines, create the time scale div which is a line that is vertically centered and spans the height of the timeline
-            const timeScale = document.createElement('div');
-            timeScale.classList.add('time-scale');
-            timeScale.style.left = percentage + '%';
-            
-            content.appendChild(timeScale);
-        });
-    });
-}
-
-function plotTimeScaleFilter(scheduleContent) {
-    // plots horizontal lines for each hour from START_HOUR to (START_HOUR + TOTAL_HOURS)
-    const hours = Array.from({ length: TOTAL_HOURS }, (_, i) => i + START_HOUR);
-
     
     hours.forEach(hour => {
-        const percentage = calculateLeft(`${hour}:00`);
+        const percentage = calculateTimePercentage(`${hour}:00`);
         
         // text if it's the first or eighth element
-        const timeScale = document.createElement('div');
-        timeScale.classList.add('time-scale-text');
-        timeScale.textContent = `${hour % 24}:00`;
-        timeScale.style.left = percentage + '%';
-        
-        scheduleContent.querySelector('.timeline-content').appendChild(timeScale);
+        if (plotText) {
+            const timeScale = document.createElement('div');
+            timeScale.classList.add('time-scale-text');
+            timeScale.textContent = `${hour % 24}:00`;
+            timeScale.style.left = percentage + '%';
+            schedule.querySelector('.timeline-content').appendChild(timeScale);
+        }
 
         // for all timelines, create the time scale div which is a line that is vertically centered and spans the height of the timeline
         const timeScaleLine = document.createElement('div');
         timeScaleLine.classList.add('time-scale');
         timeScaleLine.style.left = percentage + '%';
-
-        scheduleContent.querySelector('.timeline-content').appendChild(timeScaleLine);
+        schedule.querySelector('.timeline-content').appendChild(timeScaleLine);
     });
 
 }
 
 // Getter and Setter functions
 function getTimelineContentsPerView(view) {
-    if (view === 'room') {
-        return Array.from(document.querySelectorAll('.timeline-content'));
-    } else if (view === 'date') {
-        return Array.from(document.querySelectorAll('.timeline-content')).slice(0, 7);
-    } else if (view === 'filter') {
-        let filterView = document.getElementById('filter-view');
-        return Array.from(document.querySelector('.filter-view').querySelectorAll('.timeline-content'));
+    switch (view) {
+        case 'room':
+            return Array.from(ROOM_VIEW.querySelectorAll('.timeline-content'));
+        case 'date':
+            return Array.from(DATE_VIEW.querySelectorAll('.timeline-content'));
+        case 'filter':
+            return Array.from(FILTER_VIEW.querySelectorAll('.timeline-content'));
+        default:
+            return [];
     }
-     
 }
 
 function getTimelineContainersPerView(view) {
-    if (view === 'room') {
-        return Array.from(document.querySelectorAll('.timeline-container'));
-    } else if (view === 'date') {
-        return Array.from(document.querySelectorAll('.timeline-container')).slice(0, 7);
-    } else if (view === 'filter') {
-        return Array.from(document.querySelector('.filter-view').querySelectorAll('.timeline-container'));
+    switch (view) {
+        case 'room':
+            return Array.from(ROOM_VIEW.querySelectorAll('.timeline-container'));
+        case 'date':
+            return Array.from(DATE_VIEW.querySelectorAll('.timeline-container'));
+        case 'filter':
+            return Array.from(FILTER_VIEW.querySelectorAll('.timeline-container'));
+        default:
+            return [];
     }
-    
-    // return view === 'date' ? (Array.from(document.querySelectorAll('.timeline-container')).slice(0, 7)) 
-    //                         : (Array.from(document.querySelectorAll('.timeline-container')).slice(7));
+}
+
+function getCurrentTimeElements(view) {
+    switch (view) {
+        case 'room':
+            return {
+                currentTimeLines: {line: ROOM_VIEW.querySelector('.current-time')},
+                currentTimeText: ROOM_VIEW.querySelector('.current-time-text')
+            };
+        case 'date':
+            return {
+                currentTimeLines: DATE_VIEW.querySelectorAll('.current-time'),
+                currentTimeText: DATE_VIEW.querySelector('.current-time-text')
+            };
+        case 'filter':
+            return {
+                currentTimeLines: {line: FILTER_VIEW.querySelector('.current-time')},
+                currentTimeText: FILTER_VIEW.querySelector('.current-time-text')
+            };
+        default:
+            return {};
+    }
 }
 
 function getTheaters() {
@@ -919,93 +795,4 @@ function getTheaters() {
         "Saal Coppola": document.getElementById('saal-coppola'),
         "Atelier": document.getElementById('atelier'),
     };
-}
-
-class TimelineSync {
-    constructor() {
-        this.currentView = 'date';
-        this.isScrolling = false;
-        this.lastScrollTime = 0;
-        this.scrollThrottle = 1; // For 120Hz support
-        this.currentTimelines = [];
-        this.rafId = null;
-    }
-    
-    initCurrentView() {
-        this.removeEventListeners();
-        this.currentTimelines = getTimelineContainersPerView(this.currentView);
-        console.log('Current timelines:', this.currentTimelines);
-        
-        this.currentTimelines.forEach(container => {
-            // Main scroll handler
-            container.addEventListener('scroll', (e) => this.handleScroll(e), { passive: true });
-        });
-        console.log('Event listeners added');
-    }
-    
-    handleScroll(event) {
-        const now = Date.now();
-        if (this.isScrolling || now - this.lastScrollTime < this.scrollThrottle) return;
-        
-        this.isScrolling = true;
-        this.lastScrollTime = now;
-        
-        // Cancel any pending animation frame
-        if (this.rafId) {
-            cancelAnimationFrame(this.rafId);
-        }
-        
-        const sourceContainer = event.target;
-        const scrollLeft = sourceContainer.scrollLeft;
-        
-        this.rafId = requestAnimationFrame(() => {
-            this.currentTimelines.forEach(container => {
-                if (container !== sourceContainer) {
-                    container.scrollLeft = scrollLeft;
-                }
-            });
-            
-            this.isScrolling = false;
-            this.rafId = null;
-        });
-    }
-    
-    removeEventListeners() {
-        if (this.currentTimelines.length) {
-            this.currentTimelines.forEach(container => {
-                const newContainer = container.cloneNode(true);
-                container.parentNode.replaceChild(newContainer, container);
-            });
-        }
-        
-        // Cancel any pending animation frame when removing listeners
-        if (this.rafId) {
-            cancelAnimationFrame(this.rafId);
-            this.rafId = null;
-        }
-    }
-    
-    setView(view) {
-        this.currentView = view;
-        console.log('Current view:', this.currentView);
-        this.initCurrentView();
-    }
-}
-
-const timelineSync = new TimelineSync();
-
-
-
-function adjustTitleFontSize(movieBlock) {
-    const titleElement = movieBlock.querySelector('.strong');
-    
-    // Set an initial font size and decrease if overflowing
-    titleElement.style.fontSize = ''; // Reset previous styles
-
-    // Reduce font size until the title fits within its wrapper
-    while (titleWrapper.scrollWidth > titleWrapper.clientWidth && fontSize > 10) { // 10px as minimum font size for legibility
-        console.log('Title overflow:', titleElement.textContent);
-        fontSize -= 1; // Adjust the decrement as needed
-        titleElement.style.fontSize = fontSize + 'px';
-    }
 }
