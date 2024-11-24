@@ -65,46 +65,61 @@
                 <h1>Kinoschurke.de</h1>
                 <h3>Das Programm der Tübinger Kinos</h2>
             </div>
+            <button id="theme-toggle" class="btn btn-secondary me-2">
+                <i class="bi bi-moon"></i>
+            </button>
         </div>
-        <!-- Add this right before your button-container div in the header -->
+        
+        <!-- posotion 1 -->
+        
+    </div>
+    <div class="content">
+        <!-- position 2 -->
         <div class="all-button-container">
+            <!-- <p>Gruppieren nach:</p> -->
             <div class="order-button-container" >
-                <button id="theme-toggle" class="btn btn-secondary me-2">
-                    <i class="bi bi-moon"></i>
-                </button>
-                <button id="view-toggle" class="btn btn-secondary me-2">
-                    <i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht
+                
+                <button id="date-view-btn" class="btn btn-primary me-2">
+                    <i id="view-toggle-icon" class="bi bi-calendar3"></i> Datum
                 </button>
 
-                <div class="filter-container">
+                <button id="room-view-btn" class="btn btn-primary me-2">
+                    <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i> Saal
+                </button>
+
+                <button id="movie-view-btn" class="btn btn-primary me-2">
+                    <i id="view-toggle-icon" class="bi bi-film"></i> Film 
+                </button>
+
+                
+            </div>
+            
+            <div class="button-container">
+                <div class="date-buttons-container">
+                    <!-- Buttons for the dates -->
+                </div>
+                <div class="movie-view-container" style="display: none;">
                     <div class="dropdown-container">
                         <select id="movie-dropdown" class="form-select me-2">
                             <option value="" disabled selected>Film auswählen</option>
                         </select>
                         <div class="form-check m-2" id="omdu-checker" >
-                            <input class="form-check-input" type="checkbox" value="" id="OmduCheck" disabled>
-                            <label class="form-check-label" for="OmduCheck">
+                            <input class="form-check-input" type="checkbox" value="" id="omdu-check" disabled>
+                            <label class="form-check-label" for="omdu-check">
                             OmdU
                             </label>
                         </div>
                     </div>
+
                     
-                    <button id="filter-view-btn" class="btn btn-secondary">
-                        <i class="bi bi-filter"></i> Filter View
-                    </button>
-                </div>
-            </div>
-            
-            <div class="button-container">
-                
-                <div class="date-buttons-container">
-                    <!-- Buttons for the dates -->
+                    <div class="filter-container">
+                        <button id="filter-view-btn" class="btn btn-secondary">
+                            <i class="bi bi-search"></i> Suchen
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="content">
-        
         <div class="views-container">
             <div class="schedules-container" id="date-view">
                 <div class="schedule" id="first-schedule">
@@ -167,19 +182,6 @@
                 </div>
                 <div class="schedule">
                     <div class="schedule-name">
-                        <h5>Atelier</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="atelier">
-                                <div class="current-time" id="current-time-line-7"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
                         <h5>Saal Arsenal</h5>
                         <div class="fade-in"></div>
                     </div>
@@ -204,6 +206,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="schedule">
+                    <div class="schedule-name">
+                        <h5>Atelier</h5>
+                        <div class="fade-in"></div>
+                    </div>
+                    <div class="timeline-container">
+                        <div class="timeline">
+                            <div class="timeline-content" id="atelier">
+                                <div class="current-time" id="current-time-line-7"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
                 
             </div>
             <div class="schedules-container" id="room-view">

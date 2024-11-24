@@ -3,7 +3,7 @@
     --timeline-height: 150px;
     --timeline-width: 2370px;
     --curr-time-text-height: 55px;
-    --header-height: 228px;
+    --header-height: 105px;
     /* --background-color: #ffffff; */
     --text-color: #000000;
     --color-header: #ffffff;
@@ -85,7 +85,7 @@ html {
     align-items: center;
     justify-content: flex-start;
     margin-left: 10px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .logo-container:hover {
@@ -117,10 +117,51 @@ html {
     margin: 0;
 }
 
+#theme-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+#theme-toggle i {
+    font-size: 1.1rem;
+    line-height: 1px;
+}
+
+/*################################################################################################ */
+.content {
+    width: 100%;
+    overflow-y: scroll;
+    background-color: var(--color-surface-a10);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--header-height);
+}
+
 .all-button-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.all-button-container p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.all-button-container button {
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .order-button-container {
@@ -162,6 +203,7 @@ html {
     -ms-overflow-style: none;
     /* IE 10+ */
     margin-top: 10px;
+    height: 40px;
 }
 
 .button-container::-webkit-scrollbar {
@@ -174,6 +216,10 @@ html {
     align-items: center;
 }
 
+.movie-view-container {
+    height: 100%;
+}
+
 .header button {
     flex-shrink: 0;
     margin: 0px;
@@ -183,6 +229,7 @@ html {
 .dropdown-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     position: relative;
     margin-right: 10px;
     width: auto;
@@ -194,13 +241,7 @@ html {
 
 #movie-dropdown {
     max-width: 200px;
-}
-
-/*################################################################################################ */
-.content {
-    width: 100%;
-    overflow-y: auto;
-    background-color: var(--color-surface-a10);
+    height: auto;
 }
 
 .schedules-container {
@@ -517,15 +558,26 @@ html {
     flex-direction: row;
 }
 
-.custom-modal-content img {
+.custom-modal-poster-wrapper  {
+    position: relative;
+    margin-right: 20px;
+    
+}
+
+.custom-modal-poster {
     display: flex;
     align-items: stretch;
     /* Ensures the image stretches to fill the height */
     border-radius: 5px;
-    margin-right: 20px;
     object-fit: cover;
     height: 100%;
     /* Makes the image fill the full height of the container */
+}
+
+#trailer-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
 
 .custom-modal-info {
@@ -583,6 +635,14 @@ html {
     align-items: center;
 }
 
+.custom-modal-links button {
+    margin: 0px;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .custom-modal-links i {
     font-size: 2rem;
     margin-right: 15px;
@@ -623,11 +683,6 @@ html {
         font-family: Outfit;
         font-weight: 400;
         margin: 0;
-    }
-
-    .content {
-        margin-top: 184px;
-        height: calc(100% - 184px);
     }
 
     .custom-modal-mobile-container {
@@ -672,11 +727,16 @@ html {
         font-size: 2rem;
     }
 
-    .custom-modal-content img {
-        width: 50%;
-        max-width: 300px;
+    .custom-modal-poster-wrapper  {
+        width: 50%; 
+        /* change to width instead of height */
     }
-
+    
+    .custom-modal-poster {
+        width: 100%;
+    }
+    
+   
     .custom-modal-desc {
         margin: 0 0 80px 0;
         font-size: 1.2rem;

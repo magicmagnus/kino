@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     await loadMovieData(); // Load movie data from JSON file
    
-    initializeDateView(); // initialize the date view by default
+    document.getElementById('date-view-btn').click(); // Show the date view by default
+
+    adjustContentMargin();
 
     setInterval(updateCurrentTimeLine, 60000); // Update the current time line every minute
 
@@ -59,11 +61,12 @@ function populateMovieDropdown(movies) {
 }
 
 function enableOmduChecker(attributes) {
-    const omduChecker = document.getElementById('OmduCheck');
+    const omduChecker = document.getElementById('omdu-check');
     if (attributes.some(attr => attr.toLowerCase() === 'omdu')) {
         omduChecker.disabled = false;
     } else {
         omduChecker.disabled = true;
+        omduChecker.checked = false;
     }
 }
 
@@ -147,43 +150,57 @@ function adjustContentMargin() {
 function initializeViewHandlers() {
     // initialize all event listeners for the view toggle, movie selection and filter button
 
-    // handle the view toggle button
-    document.getElementById('view-toggle').addEventListener('click', function () {
+   
 
-        const buttonContainer = document.querySelector('.button-container');
-        buttonContainer.style.display = "flex"; // in case it was hidden in the filter view
-
-        switch (currentView) {
-            case 'date': // was date, now render room view
-                currentView = 'room';
-                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
-                DATE_VIEW.style.display = 'none';
-                ROOM_VIEW.style.display = 'block';
-                FILTER_VIEW.style.display = 'none';
-                initializeRoomView();
-                break;
-            case 'room': // was room, now render date view
-                currentView = 'date';
-                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
-                DATE_VIEW.style.display = 'block';
-                ROOM_VIEW.style.display = 'none';
-                FILTER_VIEW.style.display = 'none';
-                initializeDateView();
-                break;
-            case 'filter': // was filter, now render date
-                currentView = 'date';
-                this.innerHTML =  `<i id="view-toggle-icon" class="bi bi-film"></i> Saal Ansicht`;
-                DATE_VIEW.style.display = 'block';
-                ROOM_VIEW.style.display = 'none';
-                FILTER_VIEW.style.display = 'none';
-                initializeDateView();
-                break;
-            default:
-                break;
-        }
-        
+    // date view button 
+    document.getElementById('date-view-btn').addEventListener('click', function () {
+        currentView = 'date';
+        this.classList.add('active');
+        const buttonContainer = document.querySelector('.movie-view-container');
+        buttonContainer.style.display = 'none';
+        document.getElementById('room-view-btn').classList.remove('active');
+        document.getElementById('movie-view-btn').classList.remove('active');
+        DATE_VIEW.style.display = 'block';
+        ROOM_VIEW.style.display = 'none';
+        FILTER_VIEW.style.display = 'none';
+        initializeDateView();
         adjustContentMargin(); // update the content position based on the header height
     });
+
+    // room view button
+    document.getElementById('room-view-btn').addEventListener('click', function () {
+        currentView = 'room';
+        console.log("Class list: ", this.classList);
+        this.classList.add('active');
+        console.log("Class list: ", this.classList);
+        const buttonContainer = document.querySelector('.movie-view-container');
+        buttonContainer.style.display = 'none';
+        document.getElementById('date-view-btn').classList.remove('active');
+        document.getElementById('movie-view-btn').classList.remove('active');
+        DATE_VIEW.style.display = 'none';
+        ROOM_VIEW.style.display = 'block';
+        FILTER_VIEW.style.display = 'none';
+        initializeRoomView();
+        adjustContentMargin(); // update the content position based on the header height
+    });
+
+    // filter view button
+    document.getElementById('movie-view-btn').addEventListener('click', function () {
+        // in filter view, we hide the date/room buttons
+        const dropdownContainer = document.querySelector('.movie-view-container');
+        dropdownContainer.style.display = 'flex';
+        const buttonContainer = document.querySelector('.date-buttons-container');
+        buttonContainer.innerHTML = '';
+        this.classList.add('active');
+        document.getElementById('date-view-btn').classList.remove('active');
+        document.getElementById('room-view-btn').classList.remove('active');
+
+        // directly prompt the user to select a movie from the dropdown by opening the dropdown
+        document.getElementById('movie-dropdown').focus();
+        
+    });
+
+    
 
     // handle the movie dropdown change
     document.getElementById('movie-dropdown').addEventListener('change', function () {
@@ -192,32 +209,34 @@ function initializeViewHandlers() {
             enableOmduChecker(selectedMovie.attributes);
         }
     });
-    document.getElementById('OmduCheck').disabled = true; // Disable the omdu checker by default
-    document.getElementById('OmduCheck').checked = false;
+    document.getElementById('omdu-check').disabled = true; // Disable the omdu checker by default
+    document.getElementById('omdu-check').checked = false;
 
     // handle the filter button
     document.getElementById('filter-view-btn').addEventListener('click', async function () {
         const movieId = document.getElementById('movie-dropdown').value;
-        const omduChecked = document.getElementById('OmduCheck').checked;
+        const omduChecked = document.getElementById('omdu-check').checked;
         if (!movieId) {
             alert('Please select a movie.');
             return;
         }
         // 
         currentView = 'filter';
-        document.getElementById('view-toggle').innerHTML =  `<i id="view-toggle-icon" class="bi bi-calendar3"></i> Tages Ansicht`;
         // Toggle visibility of views
         DATE_VIEW.style.display = 'none';
         ROOM_VIEW.style.display = 'none';
         FILTER_VIEW.style.display = 'block';
+        console.log("Current view: ", currentView);
+
+        
 
 
         const selectedMovie = MOVIE_DATA.find(movie => movie.id == movieId);
         const filteredShowtimes = omduChecked ? filterShowtimesOmdu(selectedMovie) : selectedMovie.showtimes;
 
         // in filter view, we hide the date/room buttons
-        const buttonContainer = document.querySelector('.button-container');
-        buttonContainer.style.display = 'none';
+        const buttonContainer = document.querySelector('.dropdown-container');
+        buttonContainer.style.display = 'flex';
 
         renderFilterView(filteredShowtimes, selectedMovie);
     });
@@ -259,7 +278,7 @@ function initializeDateView() {
     // Create date buttons
     for (let i = 0; i < 9; i++) {
         const button = document.createElement('button');
-        button.classList.add('btn', 'btn-primary', 'me-2');
+        button.classList.add('btn', 'btn-secondary', 'me-2');
         const date = new Date(today);
         date.setDate(TODAY_DAY + i);
 
@@ -294,7 +313,7 @@ function setupDateButton(button, date, dayIndex) {
         setGlobalDayIndex(dayIndex);
         clearMovieBlocksDateView();
         populateMoviesForRoomSchedule(date, dayIndex);
-        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.date-buttons-container').querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
         button.classList.add('active');
     });
 }
@@ -352,7 +371,7 @@ function initializeRoomView() {
     // Create room buttons
     Object.keys(THEATERS).forEach((theater, index) => {
         const button = document.createElement('button');
-        button.classList.add('btn', 'btn-primary', 'me-2');
+        button.classList.add('btn', 'btn-secondary', 'me-2');
         button.textContent = theater;
         
         setupRoomButton(button, theater);
@@ -370,7 +389,7 @@ function initializeRoomView() {
 function setupRoomButton(button, theater) {
     button.addEventListener('click', () => {
         loadScheduleForRoom(theater);
-        document.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+        document.querySelector('.date-buttons-container').querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
         button.classList.add('active');
     });
 }
@@ -565,7 +584,14 @@ function createMovieCard(movie, show, endTime, date) {
     const closeEl = `<span class="custom-modal-close">
                         <button type="button" class="${buttonClass}" aria-label="Close"></button>
                     </span>`;
-    const posterEl = `<img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">`;
+    const posterEl = `
+        <div class="custom-modal-poster-wrapper">
+            <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+            ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" id="trailer-button" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
+                <i class="bi bi-play-circle"></i> Trailer
+            </a>` : ''}
+        </div>
+        `;
     const attributesEl = `<div class="custom-modal-attributes">
                             <h3 class="custom-modal-time"><i class="bi bi-clock me-2"></i>${movieDuration}</h3>
                             <h3 class="custom-modal-genre"><i class="bi bi-tags me-2"></i>${movie.genre}</h3>
@@ -574,12 +600,10 @@ function createMovieCard(movie, show, endTime, date) {
                         </div>`;
     const descEl = `<p class="custom-modal-desc">${movie.description}</p>`;
     const linksEl = `<div class="custom-modal-links">
-                        <button class="btn btn-link filter-shortcut" data-movie="MOVIE_ID">
-                            <i class="bi bi-filter"></i> Showtimes
+                        <button class="btn btn-secondary filter-shortcut" data-movie=${movie.id}>
+                            <i class="bi bi-filter"></i> Alle Vorstellungen
                         </button>
-                        ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
-                            <i class="bi bi-play-circle"></i> Trailer ansehen
-                        </a>` : ''}
+                        
                         <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
                             <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen für <br>${dateDisplay}, ${show.time}
                         </a>
@@ -624,8 +648,38 @@ function createMovieCard(movie, show, endTime, date) {
     // <h3 class="custom-modal-release"><i class="bi bi-calendar2 me-2"></i>${movie.releaseDate}</h3>
     document.body.appendChild(modal);
 
+    // Push a new state to the history
+    history.pushState({ modalOpen: true }, '', '');
+
+    // Function to close the modal
+    const closeModal = function() {
+        modal.remove();
+        // Remove the popstate listener
+        window.removeEventListener('popstate', onPopState);
+    };
+
+    // Listen for the popstate event
+    const onPopState = function(event) {
+        if (event.state && event.state.modalOpen) {
+            closeModal();
+        }
+    };
+    window.addEventListener('popstate', onPopState);
+
+    // Close button event listener
     const closeButton = modal.querySelector('.custom-modal-close');
-    closeButton.addEventListener('click', function() {  
+    closeButton.addEventListener('click', function() {
+        closeModal();
+        // Go back to the previous state
+        history.back();
+    });
+
+    const filterShortcut = modal.querySelector('.filter-shortcut');
+    filterShortcut.addEventListener('click', function() {
+        document.getElementById('movie-view-btn').click();
+        document.getElementById('movie-dropdown').value = movie.id;
+        enableOmduChecker(movie.attributes);
+        document.getElementById('filter-view-btn').click();
         modal.remove();
     });
 }
