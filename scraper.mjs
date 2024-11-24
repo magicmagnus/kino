@@ -325,13 +325,13 @@ async function scrapeCinema() {
   }
 
   // Merge all properties of the same movie title from the two lists into one list
-  const movies = allMovieDates.map(date => {
+  const movies = allMovieDates.map((date, index) => {
     const closestTitle = findClosestMatch(date.title, allMovieInfos);
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
-      return { ...movieInfo, ...date };
+      return { id: index, ...movieInfo, ...date };
     } else {
-      return date; // Keep the original entry if no close match is found
+      return { id: index, ...date }; // Keep the original entry if no close match is found
     }
   });
 
