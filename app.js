@@ -19,6 +19,50 @@ let globalDayIndex = 0;
 let currentView = 'date';
 let firstDate = TODAY_FORMATTED; // temporarily set to today, could be changed later
 
+const translations = {
+    en: {
+        dateViewLabel: "Date",
+        roomViewLabel: "Room",
+        movieViewLabel: "Movie",
+        searchLabel: "Search",
+        omduLabel: "Original with Subtitles",
+        selectMoviePlaceholder: "Select a movie",
+        todayLabel: "Today",
+        nowLabel: "Now",
+        dateFormat: "en-UK",
+        selectMovieAlert: "Please select a movie to filter by.",
+        tagline: "The program of the Tübingen cinemas",
+        minuteLabel: "Minute",
+        minutesLabel: "Minutes",
+        hourLabel: "Hour",
+        hoursLabel: "Hours",
+        allShowings: "All Showings",
+        buyTickets: "Buy tickets for",
+    },
+    de: {
+        dateViewLabel: "Datum",
+        roomViewLabel: "Saal",
+        movieViewLabel: "Film",
+        searchLabel: "Suchen",
+        omduLabel: "OmdU",
+        selectMoviePlaceholder: "Film auswählen",
+        todayLabel: "Heute",
+        nowLabel: "Jetzt",
+        dateFormat: "de-DE",
+        selectMovieAlert: "Bitte wählen Sie einen Film, um nach diesem zu filtern.",
+        tagline: "Das Programm der Tübinger Kinos",
+        minuteLabel: "Minute",
+        minutesLabel: "Minuten",
+        hourLabel: "Stunde",
+        hoursLabel: "Stunden",
+        allShowings: "Alle Vorstellungen",
+        buyTickets: "Karten kaufen für",
+    }
+};
+const userLang = navigator.language || navigator.userLanguage;
+const language = userLang.startsWith('de') ? 'de' : 'en';
+// const language = 'en';
+
 // Modify your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', async function() {
 
@@ -34,7 +78,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     setInterval(updateCurrentTimeLine, 60000); // Update the current time line every minute
 
+    updateLanguage(); // Update the language based on user's browser settings
 });
+
+function updateLanguage() {
+    document.getElementById('date-view-btn').innerHTML = `<i class="bi bi-calendar3"></i> ${translations[language].dateViewLabel}`;
+    document.getElementById('room-view-btn').innerHTML = `<i class="bi bi-door-closed-fill"></i> ${translations[language].roomViewLabel}`;
+    document.getElementById('movie-view-btn').innerHTML = `<i class="bi bi-film"></i> ${translations[language].movieViewLabel}`;
+    document.getElementById('filter-view-btn').innerHTML = `<i class="bi bi-search"></i> ${translations[language].searchLabel}`;
+    document.getElementById('omdu-check-label').textContent = translations[language].omduLabel;
+    document.getElementById('movie-dropdown').querySelector('option[value=""]').textContent = translations[language].selectMoviePlaceholder;
+    document.querySelectorAll('.current-time-text').forEach(el => el.textContent = translations[language].nowLabel);
+    document.getElementById('tagline').textContent = translations[language].tagline;
+}
 
 // Function to fetch and load movie data
 async function loadMovieData() {
@@ -97,7 +153,7 @@ function renderFilterView(showtimes, movie) {
         roomHeader.classList.add('filter-date-header');
         const options = { weekday: 'long', day: 'numeric', month: 'numeric' };
         const dateObj = new Date(date);
-        roomHeader.innerHTML = `${(showCurrentTime ? ' Heute, ' : '') + dateObj.toLocaleDateString('de-DE', options)}`;
+        roomHeader.innerHTML = `${(showCurrentTime ? translations[language].todayLabel + ', ' : '') + dateObj.toLocaleDateString(translations[language].dateFormat, options)}`;
         FILTER_VIEW.appendChild(roomHeader);
 
         const timelines = groupBy(dates[date][0].shows, 'theater');
@@ -170,9 +226,7 @@ function initializeViewHandlers() {
     // room view button
     document.getElementById('room-view-btn').addEventListener('click', function () {
         currentView = 'room';
-        console.log("Class list: ", this.classList);
         this.classList.add('active');
-        console.log("Class list: ", this.classList);
         const buttonContainer = document.querySelector('.movie-view-container');
         buttonContainer.style.display = 'none';
         document.getElementById('date-view-btn').classList.remove('active');
@@ -217,7 +271,7 @@ function initializeViewHandlers() {
         const movieId = document.getElementById('movie-dropdown').value;
         const omduChecked = document.getElementById('omdu-check').checked;
         if (!movieId) {
-            alert('Please select a movie.');
+            alert(translations[language].selectMovieAlert);
             return;
         }
         // 
@@ -283,10 +337,10 @@ function initializeDateView() {
         date.setDate(TODAY_DAY + i);
 
         if (i === 0) {
-            button.textContent = "Heute";
+            button.textContent = translations[language].todayLabel;
         } else {
             const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
-            button.textContent = date.toLocaleDateString('de-DE', options);
+            button.textContent = date.toLocaleDateString(translations[language].dateFormat, options);
         }
 
         setupDateButton(button, date, i);
@@ -441,7 +495,7 @@ function createDateSchedule(date, dateObj, isFirst = false) {
     }
     
     const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
-    const dateDisplay = dateObj.toLocaleDateString('de-DE', options);
+    const dateDisplay = dateObj.toLocaleDateString(translations[language].dateFormat, options);
     
     schedule.innerHTML = `
         ${isFirst ? `<div class="schedule-name" id="first-schedule-name">` : `<div class="schedule-name">`}
@@ -453,7 +507,7 @@ function createDateSchedule(date, dateObj, isFirst = false) {
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="timeline-${date}">
                     ${isFirst ? `<div class="current-time"></div>` : ''}
-                    ${isFirst ? `<div class="current-time-text">Heute</div>` : ''}
+                    ${isFirst ? `<div class="current-time-text">${translations[language].nowLabel}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -483,7 +537,7 @@ function createRoomSchedule(theater, isFirst = false, isToday = false, index) {
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="saal-${theater}">
                     ${isToday ? `<div class="current-time"></div>` : ''}
-                    ${isToday ? `<div class="current-time-text">Heute</div>` : ''}
+                    ${isToday ? `<div class="current-time-text">${translations[language].nowLabel}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -561,19 +615,20 @@ function createMovieCard(movie, show, endTime, date) {
    
     const modal = document.createElement('div');
     let movieDuration = parseInt(movie.duration.split(' ')[0], 10);
-    const dateDisplay = new Date(date).toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'numeric' });
+    const options = { weekday: 'short', day: 'numeric', month: 'numeric' };
+    const dateDisplay = new Date(date).toLocaleDateString(translations[language].dateFormat, options);
     // movie dureation convert to X hours and Y minutes
     let movieDurationHours = Math.floor(movieDuration / 60);
     let movieDurationMinutes = movieDuration % 60;
     // if the movie duration is less than 60 minutes, we dont want to display 0 hours
     if (movieDurationHours === 0) {
-        movieDuration = `${movieDurationMinutes} Minuten`;
+        movieDuration = `${movieDurationMinutes} ${translations[language].minutesLabel}`;
     } else if (movieDurationHours === 1) {
-        movieDuration = `${movieDurationHours} Stunde, ${movieDurationMinutes} Minuten`;
+        movieDuration = `${movieDurationHours} ${translations[language].hourLabel}, ${movieDurationMinutes} ${translations[language].minutesLabel}`;
     } else if (movieDurationMinutes === 1) {
-        movieDuration = `${movieDurationHours} Stunden, ${movieDurationMinutes} Minute`;
+        movieDuration = `${movieDurationHours} ${translations[language].hoursLabel}, ${movieDurationMinutes} ${translations[language].minuteLabel}`;
     } else {
-        movieDuration = `${movieDurationHours} Stunden, ${movieDurationMinutes} Minuten`;
+        movieDuration = `${movieDurationHours} ${translations[language].hoursLabel}, ${movieDurationMinutes} ${translations[language].minutesLabel}`;
     }
     modal.classList.add('custom-modal');
 
@@ -601,11 +656,11 @@ function createMovieCard(movie, show, endTime, date) {
     const descEl = `<p class="custom-modal-desc">${movie.description}</p>`;
     const linksEl = `<div class="custom-modal-links">
                         <button class="btn btn-secondary filter-shortcut" data-movie=${movie.id}>
-                            <i class="bi bi-filter"></i> Alle Vorstellungen
+                            <i class="bi bi-filter"></i> ${translations[language].allShowings}
                         </button>
                         
                         <a href="${show.iframeUrl}" target="_blank" class="btn btn-primary " style="text-decoration: none; color: white;">
-                            <i class="bi bi-ticket-perforated-fill"></i> Karten kaufen für <br>${dateDisplay}, ${show.time}
+                            <i class="bi bi-ticket-perforated-fill"></i> ${translations[language].buyTickets} <br>${dateDisplay}, ${show.time}
                         </a>
                     <div>`;
 
@@ -758,7 +813,6 @@ function updateCurrentTimeLine() {
     if (currentTimeText) {
         currentTimeText.style.display = shouldShowIndicator ? 'block' : 'none';
         currentTimeText.style.left = percentage;
-        currentTimeText.textContent = currentView === 'date' ? 'Jetzt' : 'Heute';
     }
 }
 
