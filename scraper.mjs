@@ -233,6 +233,7 @@ async function scrapeCinema() {
       
       const title = movieItem.querySelector('.title')?.textContent.trim() || 'Unknown Title';
       const attributes = formatAttributes(Array.from(movieItem.querySelectorAll('.attribute')).map(attr => attr.textContent.trim()));
+      const duration = movieItem.querySelector('.minutes')?.textContent.trim() || '0';
       
       // movie-times-grids are the containers for Dates, Theater1, Theater2, ...
       let timeGrids = Array.from(movieItem.querySelectorAll('.movie-times-grid'));
@@ -252,7 +253,11 @@ async function scrapeCinema() {
         } else {
           const [, day, month] = date.match(/(\d+)\.(\d+)\.$/) || [];
           if (day && month) {
-            const year = new Date().getFullYear();
+            const today = new Date();
+            let year = today.getFullYear();
+            if (parseInt(month) < (today.getMonth() + 1)) {
+              year += 1;
+            }
             date = `${year}-${month}-${day}`;
           }
         }
@@ -302,6 +307,7 @@ async function scrapeCinema() {
       movies.push({
         title,
         attributes,
+        duration,
         showtimes
       });
     }

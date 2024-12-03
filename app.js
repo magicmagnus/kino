@@ -463,7 +463,9 @@ function loadScheduleForRoom(theater) {
 
     let sortedDates = Array.from(dates);
     sortedDates.sort((a, b) => new Date(a) - new Date(b));
-    sortedDates = sortedDates.slice(sortedDates.indexOf(TODAY_FORMATTED));
+    if (sortedDates.includes(TODAY_FORMATTED)) {
+        sortedDates = sortedDates.slice(sortedDates.indexOf(TODAY_FORMATTED));
+    }
 
     // Reset firstDate when loading room schedule
     firstDate = sortedDates[0];
