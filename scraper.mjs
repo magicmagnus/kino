@@ -191,9 +191,14 @@ async function scrapeCinema() {
 
   //Click all "more dates" buttons and wait for possible updates
   await page.evaluate(() => {
+    debugger;
     const closeButton = document.querySelector('.brlbs-cmpnt-close-button');
     if (closeButton) {
         closeButton.click();
+    }
+    const listViewButton = document.querySelector('.overview-filter-header').querySelector('.overview-view-button-list');
+    if (listViewButton) {
+        listViewButton.click();
     }
     return new Promise((resolve) => {
         //sometimes the expand button does not open all the dates so click on an extras button with class "performance-item-date"
@@ -220,7 +225,7 @@ async function scrapeCinema() {
         return attr;
       });
     }
-
+    debugger;
     const movies = [];
     const movieItems = document.querySelectorAll('.movie-item');
 
