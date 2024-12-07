@@ -138,40 +138,57 @@ function filterShowtimesOmdu(movie) {
 function renderFilterView(showtimes, movie) {
     FILTER_VIEW.innerHTML = ''; // Clear existing view
 
-    
+    // Define the desired order of theaters
+    const theaterOrder = [
+        "Saal Tarantino",
+        "Saal Spielberg",
+        "Saal Kubrick",
+        "Saal Almodóvar",
+        "Saal Arsenal",
+        "Saal Coppola",
+        "Atelier"
+    ];
 
     // first group the showtimes by date
     const dates = groupBy(showtimes, 'date');
+    // for all dates
+    console.log("all days", dates)
     Object.keys(dates).forEach((date, indexDates) => {
        
         if (date < TODAY_FORMATTED) {
             return;
         }
-        const showCurrentTime = date === TODAY_FORMATTED;
+        const isDateToday = date === TODAY_FORMATTED;
         
         const roomHeader = document.createElement('div');
         roomHeader.classList.add('filter-date-header');
         const options = { weekday: 'long', day: 'numeric', month: 'numeric' };
         const dateObj = new Date(date);
-        roomHeader.innerHTML = `${(showCurrentTime ? translations[language].todayLabel + ', ' : '') + dateObj.toLocaleDateString(translations[language].dateFormat, options)}`;
+        roomHeader.innerHTML = `${(isDateToday ? translations[language].todayLabel + ', ' : '') + dateObj.toLocaleDateString(translations[language].dateFormat, options)}`;
         FILTER_VIEW.appendChild(roomHeader);
 
         const timelines = groupBy(dates[date][0].shows, 'theater');
-        if (Object.keys(timelines).length === 0) {
-            FILTER_VIEW.removeChild(roomHeader);
-            return;
-        }
+        // if (Object.keys(timelines).length === 0) {
+        //     FILTER_VIEW.removeChild(roomHeader);
+        //     return;
+        // }
+
+        // sort the timelines to be in the same order as the theaters in the date view 
+        const sortedTimelines = Object.keys(timelines).sort((a, b) => {
+            return theaterOrder.indexOf(a) - theaterOrder.indexOf(b);
+        });
+
         
         // for all the rooms/theaters, create a schedule div
-        Object.keys(timelines).forEach((theater, indexRooms) => {
-            const schedule = createRoomSchedule(theater, (showCurrentTime || indexRooms === 0), showCurrentTime, indexRooms);
+        sortedTimelines.forEach((theater, indexRooms) => {
+            const schedule = createRoomSchedule(theater, indexRooms === 0, isDateToday, indexRooms);
             // for all the shows in the room/theater, create a movie block
             timelines[theater].forEach(show => {
                 schedule.querySelector('.timeline-content').appendChild(createMovieBlock(movie, show, date));
             });
             FILTER_VIEW.appendChild(schedule);
             drawHourlyLines(schedule, indexRooms === 0);
-            showCurrentTime? updateCurrentTimeLine() : null;
+            isDateToday ? updateCurrentTimeLine() : null;
             
         });
     });
@@ -539,7 +556,7 @@ function createRoomSchedule(theater, isFirst = false, isToday = false, index) {
             ${isFirst ? `<div class="timeline" id="first-timeline">` : `<div class="timeline">`}
                 <div class="timeline-content" id="saal-${theater}">
                     ${isToday ? `<div class="current-time"></div>` : ''}
-                    ${isToday ? `<div class="current-time-text">${translations[language].nowLabel}</div>` : ''}
+                    ${(isToday && index === 0) ? `<div class="current-time-text">${translations[language].nowLabel}</div>` : ''}
                 </div>
             </div>
         </div>
@@ -887,7 +904,7 @@ function getCurrentTimeElements(view) {
             };
         case 'filter':
             return {
-                currentTimeLines: {line: FILTER_VIEW.querySelector('.current-time')},
+                currentTimeLines: FILTER_VIEW.querySelectorAll('.current-time'),
                 currentTimeText: FILTER_VIEW.querySelector('.current-time-text')
             };
         default:
