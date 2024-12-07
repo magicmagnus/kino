@@ -30,7 +30,7 @@ const translations = {
         todayLabel: "Today",
         nowLabel: "Now",
         dateFormat: "en-UK",
-        selectMovieAlert: "Please select a movie to filter by.",
+        selectMovieAlert: "Choose a movie to filter by.",
         tagline: "The program of the Tübingen cinemas",
         minuteLabel: "Minute",
         minutesLabel: "Minutes",
@@ -38,6 +38,7 @@ const translations = {
         hoursLabel: "Hours",
         allShowings: "All Showings",
         buyTickets: "Buy tickets for",
+        noShowtimes: "There are no showtimes for this movie this week.<br>Check back next week!"
     },
     de: {
         dateViewLabel: "Datum",
@@ -49,7 +50,7 @@ const translations = {
         todayLabel: "Heute",
         nowLabel: "Jetzt",
         dateFormat: "de-DE",
-        selectMovieAlert: "Bitte wählen Sie einen Film, um nach diesem zu filtern.",
+        selectMovieAlert: "Wähle einen Film, um zu filtern.",
         tagline: "Das Programm der Tübinger Kinos",
         minuteLabel: "Minute",
         minutesLabel: "Minuten",
@@ -57,6 +58,7 @@ const translations = {
         hoursLabel: "Stunden",
         allShowings: "Alle Vorstellungen",
         buyTickets: "Karten kaufen für",
+        noShowtimes: "Diese Woche sind leider keine Vorstellungen für diesen Film verfügbar.<br>Schau doch nächste Woche wieder vorbei!"
     }
 };
 const userLang = navigator.language || navigator.userLanguage;
@@ -152,10 +154,9 @@ function renderFilterView(showtimes, movie) {
     // first group the showtimes by date
     const dates = groupBy(showtimes, 'date');
     // for all dates
-    console.log("all days", dates)
     Object.keys(dates).forEach((date, indexDates) => {
        
-        if (date < TODAY_FORMATTED) {
+        if (new Date(date) < new Date(TODAY_FORMATTED)) {
             return;
         }
         const isDateToday = date === TODAY_FORMATTED;
@@ -166,12 +167,13 @@ function renderFilterView(showtimes, movie) {
         const dateObj = new Date(date);
         roomHeader.innerHTML = `${(isDateToday ? translations[language].todayLabel + ', ' : '') + dateObj.toLocaleDateString(translations[language].dateFormat, options)}`;
         FILTER_VIEW.appendChild(roomHeader);
-
+        
+        // if there are no shows for the date, remove the header
         const timelines = groupBy(dates[date][0].shows, 'theater');
-        // if (Object.keys(timelines).length === 0) {
-        //     FILTER_VIEW.removeChild(roomHeader);
-        //     return;
-        // }
+        if (Object.keys(timelines).length === 0) {
+            FILTER_VIEW.removeChild(roomHeader);
+            return;
+        }
 
         // sort the timelines to be in the same order as the theaters in the date view 
         const sortedTimelines = Object.keys(timelines).sort((a, b) => {
@@ -193,7 +195,13 @@ function renderFilterView(showtimes, movie) {
         });
     });
 
-    
+    // if there are no showtimes for the selected movie, show a message
+    if (FILTER_VIEW.innerHTML === '') {
+        const noShowsMessage = document.createElement('div');
+        noShowsMessage.classList.add('no-shows-message');
+        noShowsMessage.textContent = translations[language].noShowtimes;
+        FILTER_VIEW.appendChild(noShowsMessage);
+    }
     
     mergeScrolling(); // fix the scrolling of all timelines to each other
 
@@ -220,6 +228,15 @@ function adjustContentMargin() {
     content.style.marginTop = headerHeight + 'px';
 }
 
+function adjustOverlayPosition() {
+    const overlay = document.querySelector('.inactive-overlay');
+    const header = document.querySelector('.header');
+    const buttonContainer = document.querySelector('.all-button-container');
+    const headerHeight = header.offsetHeight;
+    const buttonContainerHeight = buttonContainer.offsetHeight;
+    overlay.style.top = headerHeight + buttonContainerHeight + 10 + 'px';
+}
+
 function initializeViewHandlers() {
     // initialize all event listeners for the view toggle, movie selection and filter button
 
@@ -236,6 +253,10 @@ function initializeViewHandlers() {
         DATE_VIEW.style.display = 'block';
         ROOM_VIEW.style.display = 'none';
         FILTER_VIEW.style.display = 'none';
+        // disable the overlay
+        const overlay = document.querySelector('.inactive-overlay');
+        overlay.style.display = 'none';
+        DATE_VIEW.style.opacity = '1';
         initializeDateView();
         adjustContentMargin(); // update the content position based on the header height
     });
@@ -251,6 +272,10 @@ function initializeViewHandlers() {
         DATE_VIEW.style.display = 'none';
         ROOM_VIEW.style.display = 'block';
         FILTER_VIEW.style.display = 'none';
+        // disable the overlay
+        const overlay = document.querySelector('.inactive-overlay');
+        overlay.style.display = 'none';
+        ROOM_VIEW.style.opacity = '1';
         initializeRoomView();
         adjustContentMargin(); // update the content position based on the header height
     });
@@ -268,6 +293,17 @@ function initializeViewHandlers() {
 
         // directly prompt the user to select a movie from the dropdown by opening the dropdown
         document.getElementById('movie-dropdown').focus();
+        
+
+        // inactivate the views and show an overlay
+        DATE_VIEW.style.opacity = '0.3';
+        ROOM_VIEW.style.opacity = '0.3';
+        const overlay = document.querySelector('.inactive-overlay');
+        overlay.style.display = 'flex';
+        const overlayText = document.querySelector('.inactive-text');
+        overlayText.innerHTML = translations[language].selectMovieAlert;
+        adjustOverlayPosition()
+
         
     });
 
@@ -291,16 +327,15 @@ function initializeViewHandlers() {
             alert(translations[language].selectMovieAlert);
             return;
         }
-        // 
+        // disable the overlay
+        const overlay = document.querySelector('.inactive-overlay');
+        overlay.style.display = 'none';
+
         currentView = 'filter';
         // Toggle visibility of views
         DATE_VIEW.style.display = 'none';
         ROOM_VIEW.style.display = 'none';
         FILTER_VIEW.style.display = 'block';
-        console.log("Current view: ", currentView);
-
-        
-
 
         const selectedMovie = MOVIE_DATA.find(movie => movie.id == movieId);
         const filteredShowtimes = omduChecked ? filterShowtimesOmdu(selectedMovie) : selectedMovie.showtimes;
@@ -316,7 +351,7 @@ function initializeViewHandlers() {
 function handleThemeChange() {
     // Theme toggle button
     const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
     if (currentTheme === 'dark') {
@@ -672,7 +707,7 @@ function createMovieCard(movie, show, endTime, date) {
                             <h3 class="custom-modal-fsk"><i class="bi bi-exclamation-circle me-2"></i>FSK ${movie.fsk}</h3>
                             ${show.attributes[1]? `<h3 class="omdu"><i class="bi bi-translate me-2"></i><p>${show.attributes[1]}</p></h3>` : ''}
                         </div>`;
-    const descEl = `<p class="custom-modal-desc">${movie.description}</p>`;
+    const descEl = `<p class="custom-modal-desc">${movie.description.replace(/\n/g, '<br>')}</p>`;
     const linksEl = `<div class="custom-modal-links">
                         <button class="btn btn-secondary filter-shortcut" data-movie=${movie.id}>
                             <i class="bi bi-filter"></i> ${translations[language].allShowings}

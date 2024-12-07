@@ -2,7 +2,7 @@
 :root {
     --timeline-height: 150px;
     --timeline-width: 2370px;
-    --curr-time-text-height: 55px;
+    --curr-time-text-height: 50px;
     --header-height: 105px;
     /* --background-color: #ffffff; */
     --text-color: #000000;
@@ -149,7 +149,6 @@ html {
     flex-direction: column;
     justify-content: flex-start;
     margin-top: 10px;
-    margin-left: 10px;
 }
 
 .all-button-container p {
@@ -171,6 +170,7 @@ html {
     align-items: center;
     width: 100%;
     overflow: auto;
+    padding-left: 10px;
 }
 
 #view-toggle {
@@ -202,8 +202,10 @@ html {
     /* Firefox */
     -ms-overflow-style: none;
     /* IE 10+ */
-    margin-top: 10px;
-    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    height: 55px;
 }
 
 .button-container::-webkit-scrollbar {
@@ -253,7 +255,6 @@ html {
     display: flex;
     margin-bottom: 0px;
     height: var(--timeline-height);
-    /* Fixed height for schedule */
     border-top: 1px solid var(--divider-v-color)
 }
 
@@ -516,17 +517,52 @@ html {
 
 .filter-date-header {
     color: var(--text-color);
-    font-size: 1.2rem;
-    font-weight: 700;
-    padding-left: 15px;
+    border-top: 3px solid var(--divider-v-color);
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-left: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     padding-top: 10px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: flex-start;
-    width: 400px;
+    width: 100%;
     height: fit-content;
     position: sticky;
     left: 0;
+}
+
+.no-shows-message {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.inactive-overlay {
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start ;
+    align-items: center;
+}
+
+.inactive-text {
+    color: var(--text-color);
+    background-color: var(--movie-block-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 1.5rem;
+    padding: 47px;
+    margin-top: 60px;
+    text-align: center;
+    border-radius: 10px;
 }
 
 /*################################################################################################ */

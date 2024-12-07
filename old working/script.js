@@ -1,4 +1,4 @@
-const movieDataUrl = './movie_data.json'; // Path to your JSON file
+const movieDataUrl = '../movie_data.json'; // Path to your JSON file
 
 // Fetch and display current date
 document.querySelector('.current-date').textContent = new Date().toLocaleDateString();

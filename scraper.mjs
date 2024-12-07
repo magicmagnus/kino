@@ -2,6 +2,7 @@ import puppeteer from 'puppeteer';
 import { promises as fs } from 'fs';
 import stringSimilarity from 'string-similarity';
 
+
 async function autoScroll(page) {
   await page.evaluate(async () => {
       await new Promise((resolve, reject) => {
@@ -56,7 +57,7 @@ async function scrapeCinema() {
   const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
   
   // 1. first scrape all movie infos except the dates/shotwimes from one page
-  console.log('1. Scraping movie infos from "widget pages"...');
+  console.log('\n\t1. Scraping movie infos from "widget pages"...\n');
   for (const kino of kinos) {
     console.log(`Navigating to cinema website: ${kino}`);
     await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`, {
@@ -86,7 +87,7 @@ async function scrapeCinema() {
         // some infos are nested in the short and long info sections
         const movieInfoShort = movieItem.querySelector('.movie__info--short');
         let duration = '0';
-        let fsk = 'Unknown FSK';
+        let fsk = 'Unknown';
         let genre = 'Unknown Genre';
         for (let i = 0; i < movieInfoShort.querySelectorAll('dt').length; i++) {
           const dt = movieInfoShort.querySelectorAll('dt')[i].textContent.trim();
@@ -180,11 +181,25 @@ async function scrapeCinema() {
     allMovieInfos = allMovieInfos.concat(movieInfos);
   }
 
-  console.log('Found', allMovieInfos.length, 'movies from "widget pages"');
+  function filterDuplicateTitles(movieList) {
+    const titles = movieList.map(info => info.title);
+    const duplicates = titles.filter((title, index) => titles.indexOf(title) !== index);
+    if (duplicates.length > 0) {
+      console.log('\nFound duplicate titles:', duplicates, '\nremoving duplicates...');
+      return movieList.filter((info, index) => titles.indexOf(info.title) === index);
+    }
+    return movieList;
+  }
+
+  // check if there are any duplicates in the titles, cause we visit multiple kino pages which might have the same movies (redundant)
+  allMovieInfos = filterDuplicateTitles(allMovieInfos);
+
+  console.log('\nFound', allMovieInfos.length, 'movies from "widget pages"');
+  
 
 
   // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
-  console.log('2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...');
+  console.log('\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n');
   await page.goto('https://tuebinger-kinos.de/programmuebersicht/', {
     waitUntil: 'networkidle0'
   });
@@ -314,43 +329,53 @@ async function scrapeCinema() {
     return movies;
   });
 
-  console.log('Found', allMovieDates.length, 'movies from "programmübersicht"');
-
+  console.log('\Found', allMovieDates.length, 'movies from "programmübersicht"');
+  
 
   // 3. merge the two lists
-  console.log('3. Merging movie infos with dates...');
+  console.log('\n\t3. Merging movie infos with dates...\n');
 
   // Set a similarity threshold (e.g., 0.7 for 70% similarity)
-  const SIMILARITY_THRESHOLD = 0.7;
+  const SIMILARITY_THRESHOLD = 0.2;
+
+  
 
   // Function to find the closest match for a given title
-  function findClosestMatch(title, allMovieInfos) {
-    const titles = allMovieInfos.map(info => info.title);
+  function findClosestMatch(title, titles) {
 
-    const bestMatch = stringSimilarity.findBestMatch(title, titles);
+    const lowerCaseTitles = titles.map(t => t.toLowerCase());
+    const bestMatch = stringSimilarity.findBestMatch(title.toLowerCase(), lowerCaseTitles);
+
     if (bestMatch.bestMatch.rating >= SIMILARITY_THRESHOLD) {
-      return bestMatch.bestMatch.target;
+      const originalTitle = titles[lowerCaseTitles.indexOf(bestMatch.bestMatch.target)];
+      console.log('Best match for', title, 'is', originalTitle , 'with a similarity of', bestMatch.bestMatch.rating);
+      return originalTitle;
     } else {
+      console.log('No close match found for', title, 'with a similarity of', bestMatch.bestMatch.rating );
       return null;
     }
   }
 
   // Merge all properties of the same movie title from the two lists into one list
   const movies = allMovieDates.map((date, index) => {
-    const closestTitle = findClosestMatch(date.title, allMovieInfos);
+    const closestTitle = findClosestMatch(date.title, allMovieInfos.map(info => info.title));
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
-      return { id: index, ...movieInfo, ...date };
+      // remove movieInfor from the list
+      allMovieInfos = allMovieInfos.filter(info => info.title !== closestTitle);
+      return { id: index, ...movieInfo, ...date , title: closestTitle }; // Merge the two entries
     } else {
       return { id: index, ...date }; // Keep the original entry if no close match is found
     }
   });
 
-  console.log('Merged', movies.length, 'movies with dates and showtimes');
+  console.log('\nMerged', movies.length, 'movies with dates and showtimes');
+  console.log('\nNo showtimes found for', allMovieInfos.length, 'movies found in "widget pages":');
+  console.log(allMovieInfos.map(info => info.title));
   
 
   // 4. scrape higher resolution poster URLs
-  console.log('4. Scraping higher resolution poster URLs from "non-widget pages"...');
+  console.log('\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n');
   async function scrapePosterUrls() {
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920, height: 1080 },
@@ -381,7 +406,7 @@ async function scrapeCinema() {
                     let src = element.getAttribute('src');
                     alt = alt.replace('Filmplakat von ', '');
                     posters.push({ 
-                      alt, 
+                      title: alt,
                       src 
                     });
                 }
@@ -397,19 +422,30 @@ async function scrapeCinema() {
     return allMoviePosters;
   }
 
-  const moviePosters = await scrapePosterUrls();
-  console.log('Found', moviePosters.length, 'movie posters from "non-widget pages"');
+  // TODO with the stringSimilarity library, find the best match for each movie title and the poster alt text
+  let moviePosters = await scrapePosterUrls();
+
+  moviePosters = filterDuplicateTitles(moviePosters);
+
+  console.log('\nFound', moviePosters.length, 'movie posters from "non-widget pages"');
+
+  console.log('\n\t5. Merging movies with higher resolution poster URLs...\n');
   for (const movie of movies) {
-    const poster = moviePosters.find(poster => poster.alt.toLowerCase().includes(movie.title.toLowerCase()));
-    if (poster) {
-      movie.posterUrl = poster.src; 
+    const closestTitle = findClosestMatch(movie.title, moviePosters.map(poster => poster.title));
+    if (closestTitle) {
+      const poster = moviePosters.find(poster => poster.title === closestTitle);
+      // remove poster from the list
+      moviePosters = moviePosters.filter(p => p.title !== closestTitle);
+      movie.posterUrl = poster.src;
     }
   }
   await browser.close();
 
-  console.log('Merged', movies.length, 'movies with higher resolution poster URLs');
+  console.log('\nMerged', movies.length, 'movies with higher resolution poster URLs');
+  console.log('\nNo showtimes found for', moviePosters.length, 'posters found in "non-widget pages": ');
+  console.log(moviePosters.map(poster => poster.title));
 
-  console.log('\nSaving data to file...');
+  console.log('\n\tSaving data to file...\n');
   await fs.writeFile('movie_data.json', JSON.stringify(movies, null, 2));
   console.log('Data has been scraped and saved to movie_data.json');
 
