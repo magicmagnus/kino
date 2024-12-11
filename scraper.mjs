@@ -22,6 +22,8 @@ async function autoScroll(page) {
   });
 }
 
+
+
 //main function
 async function scrapeCinema() {
   const browser = await puppeteer.launch({
@@ -29,7 +31,8 @@ async function scrapeCinema() {
     headless: true,
     devtools: false,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] // args: ['--start-maximized'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox'], // args: ['--start-maximized'],
+    protocolTimeout: 300000 // Increase the protocol timeout to 5 minutes
 
   });
   const page = await browser.newPage();
@@ -300,6 +303,10 @@ async function scrapeCinema() {
           for (let showIndex = 0; showIndex < showWrappers.length; showIndex++) {
             const show = showWrappers[showIndex];
             show.click();
+            const room = show.querySelector('.theatre-name')?.textContent.trim() || 'Unknown Theater';
+            
+            
+
             await new Promise(resolve => setTimeout(resolve, 500));
             shows.push({
               time: show.querySelector('.showtime')?.textContent.trim() || 'Unknown Time',
@@ -315,6 +322,37 @@ async function scrapeCinema() {
             });
           }
         }
+        
+        // Correct the iframe URL for the shows
+        const theatersAndRooms = {
+          "museum": ["Saal Almodóvar", "Saal Coppola", "Saal Arsenal"],
+          "atelier": ["Atelier"],
+          "blaue-bruecke": ["Saal Tarantino", "Saal Spielberg", "Saal Kubrick"]
+        }; 
+
+        function getCinemaByTheater(theater) {
+          for (const [cinema, rooms] of Object.entries(theatersAndRooms)) {
+            if (rooms.includes(theater)) {
+              return cinema;
+            }
+          }
+          return null;
+        }
+        
+        function correctIframeUrls(shows) {
+          shows.forEach(show => {
+            const theater = show.theater;
+            const correctCinema = getCinemaByTheater(theater);
+            if (correctCinema && !show.iframeUrl.includes(correctCinema)) {
+              console.log('Correcting iframe URL for', show.theater, 'to', correctCinema);
+              show.iframeUrl = show.iframeUrl.replace(/kino-[^/]+/, `kino-${correctCinema}-tuebingen`);
+            }
+          });
+          return shows;
+        }
+
+        correctIframeUrls(shows);
+
         showtimes.push({
           date,
           shows
@@ -383,7 +421,8 @@ async function scrapeCinema() {
         headless: true, 
         devtools: false,
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        protocolTimeout: 300000 // Increase the protocol timeout to 5 minutes
     });
     const page = await browser.newPage();
   
