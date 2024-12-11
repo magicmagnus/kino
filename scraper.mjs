@@ -83,6 +83,7 @@ async function scrapeCinema() {
         
         const description = movieItem.querySelector('.movie__info-description')?.textContent.trim() || 'Unknown Description';
         const posterUrl = movieItem.querySelector('.movie__image img')?.src || null;
+        // const title = movieItem.querySelector('.movie__title')?.textContent.trim() || 'Unknown Title';
         
         // some infos are nested in the short and long info sections
         const movieInfoShort = movieItem.querySelector('.movie__info--short');
