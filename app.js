@@ -31,14 +31,44 @@ const translations = {
         nowLabel: "Now",
         dateFormat: "en-UK",
         selectMovieAlert: "Choose a movie to filter by.",
-        tagline: "The program of the Tübingen cinemas",
+        tagline: "Your local cinema showtimes in Tübingen",
         minuteLabel: "Minute",
         minutesLabel: "Minutes",
         hourLabel: "Hour",
         hoursLabel: "Hours",
         allShowings: "All Showings",
         buyTickets: "Buy tickets for",
-        noShowtimes: "There are no showtimes for this movie this week.<br>Check back next week!"
+        noShowtimes: "There are no showtimes for this movie this week.<br>Check back next week!",
+        moreInfo: "More Info",
+        letsGo: "Let's Go",
+        welcomeMessage: `<h2>Welcome to Kinoschurke!</h2>
+                        <h3>What's Kinoschurke?</h3>
+                        <p>Kinoschurke is an open-source visualization tool for movie show times.  
+                        We display the schedules of Tübingen cinemas as timelines,  
+                        giving you a quick and easy overview of all show times.  
+                        The data is pulled from the official <a href="https://tuebinger-kinos.de/">Tübingen cinemas</a> website,  
+                        where schedules are updated every Tuesday.</p>
+                        <h3>How do I use Kinoschurke?</h3>
+                        <div class="dummy-btn-wrapper">
+                            <p>You can organize the timelines by</p>
+                            <div class="dummy-btn-container">
+                                <button id="dummy-btn" class="btn btn-primary me-2">
+                                    <i id="view-toggle-icon" class="bi bi-calendar3"></i>Date
+                                </button>
+                                <p>,</p>
+                                <button id="dummy-btn" class="btn btn-primary me-2">
+                                    <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i>Room
+                                </button>
+                                <p>, or</p>
+                                <button id="dummy-btn" class="btn btn-primary me-2">
+                                    <i id="view-toggle-icon" class="bi bi-film"></i>Movie
+                                </button><p>.</p>
+                            </div>
+                            
+                        </div>
+                        <p>The current time is marked by the blue bar,  
+                        and the width of each block represents the movie's duration.</p>
+                        <p>Click on a movie to see more details and book your tickets.</p>`,
     },
     de: {
         dateViewLabel: "Datum",
@@ -58,7 +88,38 @@ const translations = {
         hoursLabel: "Stunden",
         allShowings: "Alle Vorstellungen",
         buyTickets: "Karten kaufen für",
-        noShowtimes: "Diese Woche sind leider keine Vorstellungen für diesen Film verfügbar.<br>Schau doch nächste Woche wieder vorbei!"
+        noShowtimes: "Diese Woche sind leider keine Vorstellungen für diesen Film verfügbar.<br>Schau doch nächste Woche wieder vorbei!",
+        moreInfo: "Mehr Infos",
+        letsGo: "Los geht's",
+        welcomeMessage: `<h2>Willkommen bei Kinoschurke!</h2>
+                    <h3>Was ist Kinoschurke?</h3>
+                    <p>Kinoschurke ist ein Open-Source-Visualisierungstool für Filmspielzeiten.
+                        Wir zeigen dir das Programm der Tübinger Kinos als Timelines,
+                        um einen schnellen Überblick über alle Spielzeiten zu bekommen.
+                        Die Daten werden von der offiziellen Seite der <a href="https://tuebinger-kinos.de/">Tübinger Kinos</a> abgerufen,
+                        wo das Kinoprogramm jeden Dienstag aktualisiert wird.</p>
+                    <h3>Wie nutze ich Kinoschurke?</h3>
+                    <div class="dummy-btn-wrapper">
+                        <p>Du kannst Timelines nach</p>
+                        <div class="dummy-btn-container">
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-calendar3"></i>Datum
+                            </button>
+                            <p>,</p>
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i>Saal
+                            </button>
+                            <p>oder</p>
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-film"></i>Film 
+                            </button>
+                        </div>
+                        <p>gruppieren.</p>
+                    </div>
+                    <p>Die aktuelle Uhrzeit wird durch den blauen Balken markiert,
+                        die Breite des Blocks entspricht der Dauer des Films. </p>
+                    <p>Klicke auf einen Film,
+                        um mehr Informationen zu sehen und Karten zu buchen.</p>`,
     }
 };
 const userLang = navigator.language || navigator.userLanguage;
@@ -69,6 +130,8 @@ const language = userLang.startsWith('de') ? 'de' : 'en';
 document.addEventListener('DOMContentLoaded', async function() {
 
     handleThemeChange(); // light/dark theme toggle handler
+
+    handleInfoMessage(); // info message handler
 
     initializeViewHandlers(); // event listners for all 3 views and their buttons
 
@@ -92,7 +155,43 @@ function updateLanguage() {
     document.getElementById('movie-dropdown').querySelector('option[value=""]').textContent = translations[language].selectMoviePlaceholder;
     document.querySelectorAll('.current-time-text').forEach(el => el.textContent = translations[language].nowLabel);
     document.getElementById('tagline').textContent = translations[language].tagline;
+    // Info modal translations
+    document.querySelector('.info-modal-info').innerHTML = translations[language].welcomeMessage;
+    document.getElementById('open-faq').textContent = translations[language].moreInfo;
+    document.getElementById('close-info-modal').textContent = translations[language].letsGo;
 }
+
+function handleInfoMessage() {
+    const infoMessage = document.querySelector('.info-modal');
+    const infoModalSeen = localStorage.getItem('infoModalSeen');
+
+    if (!infoModalSeen) {
+        // Show the info modal on first visit
+        infoMessage.style.display = 'flex';
+    } 
+
+    // The "?" button in the bottom right corner
+    document.querySelector('.help-button').addEventListener('click', function () {
+        infoMessage.style.display = 'flex';
+    });
+
+    // The close button in the info message
+    document.getElementById('close-info-modal').addEventListener('click', function () {
+        infoMessage.style.display = 'none';
+        // Set localStorage to indicate the user has seen the modal
+        localStorage.setItem('infoModalSeen', 'true');
+    });
+
+    // The more info button in the info message
+    document.getElementById('open-faq').addEventListener('click', function () {
+        infoMessage.style.display = 'none';
+        // Set localStorage to indicate the user has seen the modal
+        localStorage.setItem('infoModalSeen', 'true');
+        window.location.href = 'faq.html';
+    });
+}
+
+
 
 // Function to fetch and load movie data
 async function loadMovieData() {
@@ -695,7 +794,7 @@ function createMovieCard(movie, show, endTime, date) {
                     </span>`;
     const posterEl = `
         <div class="custom-modal-poster-wrapper">
-            <img src="${movie.posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
+            <img src="${movie.posterUrl.split('?')[0]}" alt="${movie.title} poster" class="custom-modal-poster">
             ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" id="trailer-button" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                 <i class="bi bi-play-circle"></i> Trailer
             </a>` : ''}
@@ -751,10 +850,6 @@ function createMovieCard(movie, show, endTime, date) {
             </div>
         `;
     } 
-
-    // maybe add in "more info" section
-    // <h3 class="custom-modal-actors"><i class="bi bi-person me-2"></i>${movie.actors.join(', ')}</h3>
-    // <h3 class="custom-modal-release"><i class="bi bi-calendar2 me-2"></i>${movie.releaseDate}</h3>
     document.body.appendChild(modal);
 
     // Push a new state to the history
@@ -763,24 +858,19 @@ function createMovieCard(movie, show, endTime, date) {
     // Function to close the modal
     const closeModal = function() {
         modal.remove();
-        // Remove the popstate listener
-        window.removeEventListener('popstate', onPopState);
     };
 
     // Listen for the popstate event
-    const onPopState = function(event) {
-        if (event.state && event.state.modalOpen) {
+    window.addEventListener('popstate', function(event) {
+        if (!event.state || !event.state.modalOpen) {
             closeModal();
         }
-    };
-    window.addEventListener('popstate', onPopState);
+    });
 
     // Close button event listener
     const closeButton = modal.querySelector('.custom-modal-close');
     closeButton.addEventListener('click', function() {
         closeModal();
-        // Go back to the previous state
-        history.back();
     });
 
     const filterShortcut = modal.querySelector('.filter-shortcut');

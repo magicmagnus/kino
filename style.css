@@ -74,8 +74,9 @@ html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
     z-index: 2000;
 }
 
@@ -138,7 +139,7 @@ html {
     width: 100%;
     overflow-y: scroll;
     background-color: var(--color-surface-a10);
-    height: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin-top: var(--header-height);
@@ -694,6 +695,180 @@ html {
     align-items: center;
 }
 
+.help-button {
+    background-color: var(--omdu-color);
+    color: white;
+    border: 0px;
+    z-index: 10000;
+    border-radius: 50%;
+    box-shadow: 0 0px 6px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    padding-top: 0px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.help-button:hover {
+    cursor: pointer;
+    background-color: var(--blue-600);
+}
+
+.help-button i {
+    font-size: 2.2rem;
+    margin-bottom: 2px;
+}
+
+.info-modal {
+    display: none; /* Hidden by default , only shown when help button is clicked or on first pages visit*/
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 3000;
+}
+
+.info-modal-content {
+    background-color: var(--color-surface-a10);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    padding-top: 40px;
+    position: absolute;
+    width: 80%;
+    max-width: 900px;
+    height: fit-content;
+    max-height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-modal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+   
+}
+
+.info-modal-info h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.info-modal-info h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.info-modal-info p {
+    margin-top: 0px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.info-modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;  
+}
+
+.dummy-btn-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;  
+}
+
+.dummy-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dummy-btn {
+    margin: 0px;
+    margin-bottom: 15px;
+    margin-left: 7px;
+    padding: 3px 7.5px;
+    padding-top: 2px;
+    display: flex;
+    white-space: nowrap;
+}
+
+#dummy-btn i {
+    font-size: 0.8rem;
+    margin-right: 5px;
+    padding-top: 3px;
+}
+
+/*################################################################################################ */
+.faq-content {
+    width: 100%;
+    background-color: var(--color-surface-a10);
+    height: calc(100% - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: var(--header-height);
+    position: fixed;
+    bottom: 0;
+}
+
+.faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    max-width: 1000px;
+}
+
+.faq-container {
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+    gap: 20px;
+    padding: 20px;
+    height: 730px;
+    overflow: auto;
+}
+
+.ct img {
+    vertical-align: middle;
+    position: relative;
+}
+
+.ct {
+    display: inline;
+}
+
+.back-button-container {
+    z-index: 10000;
+    width: 100%;
+    padding: 50px 0px;
+    border-top: 3px solid var(--divider-v-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*################################################################################################ */
 @media (orientation: portrait) {
 
@@ -718,6 +893,24 @@ html {
         font-family: Outfit;
         font-weight: 400;
         margin: 0;
+    }
+
+    .info-modal-content {
+        width: 85%;
+        max-height: 95%;
+        padding: 30px;
+        padding-bottom: 40px;
+    }
+
+    .dummy-btn-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .faq-container {
+        height: auto;
     }
 
     .custom-modal-mobile-container {

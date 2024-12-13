@@ -23,7 +23,7 @@
     <!-- for "mobile optimized" in web checker, need to leave the initial scale at 1.0, so scale the site in .css for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=yes">
     <title>Kinoschurke - Kino Programm Tübingen</title>
-    <meta name="description" content="Das Programm der Tübinger Kinos, dargestellt als Timelines um einen besseren Überblick über alle Spielzeiten zu bekommen.">
+    <meta name="description" content="Wir zeigen dir das Programm der Tübinger Kinos als Timelines, um einen schnellen Überblick über alle Spielzeiten zu bekommen.">
 
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -36,22 +36,12 @@
         // Dynamically set the viewport meta tag based on screen width
         document.addEventListener('DOMContentLoaded', function() {
             var existingViewportMetaTag = document.querySelector('meta[name="viewport"]');
-            if (!existingViewportMetaTag) {
-                var viewportMetaTag = document.createElement('meta');
-                viewportMetaTag.name = "viewport";
-                if (window.innerWidth < window.innerHeight) {
-                    viewportMetaTag.content = "width=device-width, initial-scale=0.7, maximum-scale=3.0, user-scalable=yes";
-                } else {
-                    viewportMetaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes";
-                }
-                document.head.appendChild(viewportMetaTag);
+            if (window.innerWidth < window.innerHeight) {
+                existingViewportMetaTag.content = "width=device-width, initial-scale=0.7, maximum-scale=3.0, user-scalable=yes";
             } else {
-                if (window.innerWidth < window.innerHeight) {
-                    existingViewportMetaTag.content = "width=device-width, initial-scale=0.7, maximum-scale=3.0, user-scalable=yes";
-                } else {
-                    existingViewportMetaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes";
-                }
+                existingViewportMetaTag.content = "width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes";
             }
+            
         });
     </script>
 </head>
@@ -60,15 +50,17 @@
     <div class="header">
 
         <div class="logo-container" onclick="window.location.href='index.html'">
+
             <img class="logo" src="Kinoschurke.svg" alt="Kinoschurke Logo">
             <div class="logo-text">
-                <h1>Kinoschurke.de</h1>
+                <h1>Kinoschurke</h1>
                 <h3 id="tagline">Das Programm der Tübinger Kinos</h2>
             </div>
-            <button id="theme-toggle" class="btn btn-secondary me-2">
-                <i class="bi bi-moon"></i>
-            </button>
+            
         </div>
+        <button id="theme-toggle" class="btn btn-secondary me-2">
+            <i class="bi bi-moon"></i>
+        </button>
         
         <!-- posotion 1 -->
         
@@ -230,6 +222,51 @@
             <div class="schedules-container" id="filter-view">
             </div>
         </div>
+        
+        <button class="help-button">
+            <i class="bi bi-question"></i> 
+        </button>
+
+        <div class="info-modal">
+            <div class="info-modal-content">
+                <div class="info-modal-info">
+                    <h2>Willkommen bei Kinoschurke.de!</h2>
+                    <h3>Was ist Kinoschurke?</h3>
+                    <p>Kinoschurke ist ein Open Source Visualisierungstool für Filmpielzeiten.
+                        Wir zeigen dir das Programm der Tübinger Kinos als Timelines,
+                        um einen schnellen Überblick über alle Spielzeiten zu bekommen.
+                        Die Daten werden von der offiziellen Seite der <a href="https://tuebinger-kinos.de/">Tübinger Kinos</a> abgerufen,
+                        wo das Kinoprogramm jeden Dienstag aktualisiert wird.</p>
+                    <h3>Wie nutze ich Kinoschurke?</h3>
+                    <div class="dummy-btn-wrapper">
+                        <p>Du kannst Timelines nach</p>
+                        <div class="dummy-btn-container">
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-calendar3"></i>Datum
+                            </button>
+                            <p>,</p>
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i>Saal
+                            </button>
+                            <p>oder</p>
+                            <button id="dummy-btn" class="btn btn-primary me-2">
+                                <i id="view-toggle-icon" class="bi bi-film"></i>Film 
+                            </button>
+                        </div>
+                        <p>gruppieren.</p>
+                    </div>
+                    <p>Die aktuelle Uhrzeit wird durch den blauen Balken markiert,
+                        die Breite des Blocks entspricht der Dauer des Films. </p>
+                    <p>Klicke auf einen Film,
+                        um mehr Informationen zu sehen und Karten zu buchen.</p>
+                </div>
+                <div class="info-modal-footer">
+                    <button class="btn btn-secondary" id="open-faq">Mehr Info</button>
+                    <button class="btn btn-primary" id="close-info-modal">Los geht's</button>
+                </div>
+
+        </div>
+        
         <script src="app.js"></script>
 </body>
 
