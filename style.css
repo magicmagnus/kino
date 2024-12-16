@@ -721,7 +721,7 @@ html {
 
 .help-button i {
     font-size: 2.2rem;
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
 }
 
 .info-modal {
@@ -894,6 +894,10 @@ html {
         font-family: Outfit;
         font-weight: 400;
         margin: 0;
+    }
+
+    .help-button i {
+        margin-bottom: 0px;
     }
 
     .info-modal-content {
