@@ -94,13 +94,21 @@ html {
     cursor: pointer;
 }
 
-.logo {
+.logo-wrapper {
     width: 70px;
     height: 70px;
-    padding: 5px;
+    /* padding: 5px; */
     border-radius: 50%;
     margin-right: 20px;
-    background-color: white
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    width: 85%;
+    height: 85%;
+   
 }
 
 .logo-container h1 {
