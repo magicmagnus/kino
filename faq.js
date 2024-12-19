@@ -96,7 +96,7 @@ function handleThemeChange() {
 
     if (currentTheme === 'dark') {
         themeToggle.innerHTML = `<i class="bi bi-sun"></i>`;
-        contact.innerHTML = `<img src="contact_dark.png" alt="contact">`;
+        contact.innerHTML = `<img src="/assets/imgs/contact_dark.png" alt="contact">`;
         const img = document.querySelector('.ct img');
         img.style.height = '23px';
         img.style.marginLeft = '2px';
@@ -104,7 +104,7 @@ function handleThemeChange() {
         img.style.filter = 'brightness(1.07)';
     } else {
         themeToggle.innerHTML = `<i class="bi bi-moon"></i>`;
-        contact.innerHTML = `<img src="contact_light.png" alt="contact">`;
+        contact.innerHTML = `<img src="/assets/imgs/contact_light.png" alt="contact">`;
         const img = document.querySelector('.ct img');
         img.style.height = '19px';
         img.style.marginLeft = '2px';
@@ -119,7 +119,7 @@ function handleThemeChange() {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeToggle.innerHTML = `<i class="bi bi-sun"></i>`;
             localStorage.setItem('theme', 'dark');
-            contact.innerHTML = `<img src="contact_dark.png" alt="contact">`;
+            contact.innerHTML = `<img src="/assets/imgs/contact_dark.png" alt="contact">`;
             const img = document.querySelector('.ct img');
             img.style.height = '23px';
             img.style.marginLeft = '2px';
@@ -129,7 +129,7 @@ function handleThemeChange() {
             document.documentElement.setAttribute('data-theme', 'light');
             themeToggle.innerHTML = `<i class="bi bi-moon"></i>`;
             localStorage.setItem('theme', 'light');
-            contact.innerHTML = `<img src="contact_light.png" alt="contact">`;
+            contact.innerHTML = `<img src="/assets/imgs/contact_light.png" alt="contact">`;
             const img = document.querySelector('.ct img');
             img.style.height = '19px';
             img.style.marginLeft = '2px';

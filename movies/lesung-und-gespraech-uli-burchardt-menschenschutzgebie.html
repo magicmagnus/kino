@@ -20,10 +20,10 @@
     <meta charset="UTF-8">
     <!-- for "mobile optimized" in web checker, need to leave the initial scale at 1.0, so scale the site in .css for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=yes">
-    <title>Kinoschurke - Kino Programm Tübingen</title>
+    <title>Lesung & Gespräch - Uli Burchardt - Menschenschutzgebie - Kinoschurke</title>
     <meta name="description" content="Wir zeigen dir das Programm der Tübinger Kinos als Timelines, um einen schnellen Überblick über alle Spielzeiten zu bekommen.">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,7 @@
                     <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i> Saal
                 </button>
 
-                <button id="movie-view-btn" class="btn btn-primary me-2">
+                <button id="movie-view-btn" class="btn btn-primary me-2 active">
                     <i id="view-toggle-icon" class="bi bi-film"></i> Film 
                 </button>
 
@@ -118,118 +118,37 @@
                 </div>
             </div>
         </div>
-        <div class="views-container">
-            <div class="schedules-container" id="date-view">
-                <div class="schedule" id="first-schedule">
-                    
-                    <div class="schedule-name" id="first-schedule-name">
-                        <h5>Saal Tarantino</h5>
-                        <div class="fade-in-container">
-                            <div class="fade-in" id="first-fade-in1"></div>
-                            <div class="fade-in" id="first-fade-in2"></div>
-                        </div>
-                    </div>
-                    <div class="timeline-container" id="first-timeline-container">
-                        <div class="timeline" id="first-timeline">
-                            <div class="timeline-content" id="saal-tarantino">
-                                <div class="current-time" id="current-time-line-1"></div>
-                                <div class="current-time-text" id="current-time-text">Jetzt</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Spielberg</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-spielberg">
-                                <div class="current-time" id="current-time-line-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Kubrick</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-kubrick">
-                                <div class="current-time" id="current-time-line-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Almodóvar</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-almodovar">
-                                <div class="current-time" id="current-time-line-4"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Arsenal</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-arsenal">
-                                <div class="current-time" id="current-time-line-5"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Coppola</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-coppola">
-                                <div class="current-time" id="current-time-line-6"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Atelier</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="atelier">
-                                <div class="current-time" id="current-time-line-7"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-                
-            </div>
-            <div class="schedules-container" id="room-view">
-            </div>
-            <div class="inactive-overlay" id="inactive-overlay">
-                <div class="inactive-text">
-                    <h2 class="inactive-text">Please Select a Movie</h2>
-                </div>
-            </div>
-            <div class="schedules-container" id="filter-view">
+        
+        <section class="movie-info">
+            <p>Straßenblockaden durch protestierende Bauern und „Klimakleber“, explodierende Energie-
+und Mietpreise, Wut auf die Umweltpolitik der Grünen und Zulauf für die AfD: Der Streit über
+den angemessenen Umgang mit, der sich anbahnenden Klimakatastrophe spaltet, unsere
+Gesellschaft und die Perspektive auf ein sozial gerechtes und umweltfreundliches
+Zusammenleben droht unter die Räder politischer Grabenkämpfe zu geraten.
+Der Konstanzer Oberbürgermeister, Förster und gelernte Landwirt Uli Burchardt wirft einen
+frischen, unideologischen und hoffnungsvollen Blick auf die brennenden Themen unserer
+Zeit – von Ernährung über Landwirtschaft bis hin zu Digitalisierung und Klimaschutz.
+Entgegen dem traditionellen Verständnis von Umweltschutz hebt er den vermeintlichen
+Gegensatz zwischen „Schädling Mensch“ und "schützenswerter Natur“ auf. Virtuos verbindet
+er autobiographische Eindrücke und Beispiele aus seiner beruflichen Praxis mit den großen
+Umweltthemen unserer Zeit, um schließlich eine klimaneutrale und lebenswerte Stadt der
+Zukunft zu skizzieren: ein Menschenschutzgebiet – den besten Lebensraum, den es für uns
+Menschen je gab.</p>
+            <!-- Additional movie details -->
+        </section>
+        
+        <div class="schedules-container" id="date-view"> 
+        </div>
+        <div class="schedules-container" id="room-view">
+        </div>
+        <div class="inactive-overlay" id="inactive-overlay">
+            <div class="inactive-text">
+                <h2 class="inactive-text">Please Select a Movie</h2>
             </div>
         </div>
-        
+        <div class="schedules-container" id="filter-view">
+        </div>
+
         <button class="help-button">
             <i class="bi bi-question"></i> 
         </button>
@@ -274,7 +193,7 @@
 
         </div>
         
-        <script src="app.js"></script>
+        <script src="../app.js"></script>
 </body>
 
 </html>

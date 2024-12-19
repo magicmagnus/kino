@@ -136,8 +136,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     initializeViewHandlers(); // event listners for all 3 views and their buttons
 
     await loadMovieData(); // Load movie data from JSON file
-   
-    document.getElementById('date-view-btn').click(); // Show the date view by default
+    
+    if (!window.location.pathname.includes('/movies/')) {
+        document.getElementById('date-view-btn').click(); // Show the date view by default
+    } else {
+        const dropdownContainer = document.querySelector('.movie-view-container');
+        dropdownContainer.style.display = 'flex';
+    }
+    
 
     adjustContentMargin();
 
@@ -196,7 +202,7 @@ function handleInfoMessage() {
 // Function to fetch and load movie data
 async function loadMovieData() {
     try {
-        const response = await fetch('movie_data.json');
+        const response = await fetch('/movie_data.json');
         const data = await response.json();
         MOVIE_DATA.push(...data);
         populateMovieDropdown(MOVIE_DATA);
@@ -237,7 +243,11 @@ function filterShowtimesOmdu(movie) {
 
 // Render the filter view
 function renderFilterView(showtimes, movie) {
-    FILTER_VIEW.innerHTML = ''; // Clear existing view
+    //FILTER_VIEW.innerHTML = ''; // Clear existing view
+    const newFilterView = document.createElement('div');
+    newFilterView.classList.add('filter-view');
+    
+    console.log("1", newFilterView);
 
     // Define the desired order of theaters
     const theaterOrder = [
@@ -252,9 +262,11 @@ function renderFilterView(showtimes, movie) {
 
     // first group the showtimes by date
     const dates = groupBy(showtimes, 'date');
+    console.log(dates);
     // for all dates
     Object.keys(dates).forEach((date, indexDates) => {
-       
+        console.log(date);
+        console.log(document);
         if (new Date(date) < new Date(TODAY_FORMATTED)) {
             return;
         }
@@ -265,12 +277,13 @@ function renderFilterView(showtimes, movie) {
         const options = { weekday: 'long', day: 'numeric', month: 'numeric' };
         const dateObj = new Date(date);
         roomHeader.innerHTML = `${(isDateToday ? translations[language].todayLabel + ', ' : '') + dateObj.toLocaleDateString(translations[language].dateFormat, options)}`;
-        FILTER_VIEW.appendChild(roomHeader);
-        
+        newFilterView.appendChild(roomHeader);
+        console.log("2", newFilterView);
+        console.log("3", roomHeader);
         // if there are no shows for the date, remove the header
         const timelines = groupBy(dates[date][0].shows, 'theater');
         if (Object.keys(timelines).length === 0) {
-            FILTER_VIEW.removeChild(roomHeader);
+            newFilterView.removeChild(roomHeader);
             return;
         }
 
@@ -287,7 +300,7 @@ function renderFilterView(showtimes, movie) {
             timelines[theater].forEach(show => {
                 schedule.querySelector('.timeline-content').appendChild(createMovieBlock(movie, show, date));
             });
-            FILTER_VIEW.appendChild(schedule);
+            newFilterView.appendChild(schedule);
             drawHourlyLines(schedule, indexRooms === 0);
             isDateToday ? updateCurrentTimeLine() : null;
             
@@ -295,17 +308,18 @@ function renderFilterView(showtimes, movie) {
     });
 
     // if there are no showtimes for the selected movie, show a message
-    if (FILTER_VIEW.innerHTML === '') {
+    if (newFilterView.innerHTML === '') {
         const noShowsMessage = document.createElement('div');
         noShowsMessage.classList.add('no-shows-message');
         noShowsMessage.textContent = translations[language].noShowtimes;
-        FILTER_VIEW.appendChild(noShowsMessage);
+        newFilterView.appendChild(noShowsMessage);
     }
     
     mergeScrolling(); // fix the scrolling of all timelines to each other
 
     adjustContentMargin(); // update the content position based on the header height
 
+    return newFilterView;
 }
 
 
@@ -343,6 +357,9 @@ function initializeViewHandlers() {
 
     // date view button 
     document.getElementById('date-view-btn').addEventListener('click', function () {
+        if (window.location.pathname.includes('/movies/')) {
+            window.location.href = '/';
+        }
         currentView = 'date';
         this.classList.add('active');
         const buttonContainer = document.querySelector('.movie-view-container');
@@ -362,6 +379,10 @@ function initializeViewHandlers() {
 
     // room view button
     document.getElementById('room-view-btn').addEventListener('click', function () {
+        // if this button gest clickew while on a movie subpage, like /movies/avengers-endgame, redirect to the main page
+        if (window.location.pathname.includes('/movies/')) {
+            window.location.href = '/';
+        }
         currentView = 'room';
         this.classList.add('active');
         const buttonContainer = document.querySelector('.movie-view-container');
@@ -426,6 +447,7 @@ function initializeViewHandlers() {
             alert(translations[language].selectMovieAlert);
             return;
         }
+        
         // disable the overlay
         const overlay = document.querySelector('.inactive-overlay');
         overlay.style.display = 'none';
@@ -439,11 +461,27 @@ function initializeViewHandlers() {
         const selectedMovie = MOVIE_DATA.find(movie => movie.id == movieId);
         const filteredShowtimes = omduChecked ? filterShowtimesOmdu(selectedMovie) : selectedMovie.showtimes;
 
+        // navigate to the subpage
+        window.location.href = `/movies/${selectedMovie.slug}.html`;
+        populateMovieDropdown(MOVIE_DATA);
+
+        // set the movie dropdown value to the selected movie
+        document.getElementById('movie-dropdown').value = movieId;
+
+
         // in filter view, we hide the date/room buttons
         const buttonContainer = document.querySelector('.dropdown-container');
         buttonContainer.style.display = 'flex';
 
-        renderFilterView(filteredShowtimes, selectedMovie);
+        
+
+        const newFilterView = renderFilterView(filteredShowtimes, selectedMovie);
+        console.log(newFilterView);
+        adjustContentMargin(); // update the content position based on the header height
+
+        const filterView = document.getElementById('filter-view');
+        filterView.innerHTML = '';
+        filterView.innerHTML = newFilterView.innerHTML;
     });
 }
 
@@ -542,6 +580,7 @@ function populateMoviesForRoomSchedule(date, dayIndex) {
         const showtimes = movie.showtimes.find(show => show.date === formattedDate);
         if (showtimes) {
             showtimes.shows.forEach(show => {
+                console.log(show.theater);
                 THEATERS[show.theater].appendChild(createMovieBlock(movie, show, date));
             });
         }
@@ -729,7 +768,7 @@ function createMovieBlock(movie, show, date) {
     if (movie.duration == "Unknown Duration" || movie.duration === "0") {
         movieBlock.style.width = "250px";
     }
-    const posterUrl = movie.posterUrl == null ? "placeholder.jpg" : movie.posterUrl;
+    const posterUrl = movie.posterUrl == null ? "/assets/imgs/placeholder.jpg" : movie.posterUrl;
     
     movieBlock.innerHTML = `
         <div class="movie-block-inner">

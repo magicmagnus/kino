@@ -20,10 +20,10 @@
     <meta charset="UTF-8">
     <!-- for "mobile optimized" in web checker, need to leave the initial scale at 1.0, so scale the site in .css for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, user-scalable=yes">
-    <title>Kinoschurke - Kino Programm Tübingen</title>
+    <title>DTK unplugged meets Krimispannung live - Kinoschurke</title>
     <meta name="description" content="Wir zeigen dir das Programm der Tübinger Kinos als Timelines, um einen schnellen Überblick über alle Spielzeiten zu bekommen.">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,7 @@
                     <i id="view-toggle-icon" class="bi bi-door-closed-fill"></i> Saal
                 </button>
 
-                <button id="movie-view-btn" class="btn btn-primary me-2">
+                <button id="movie-view-btn" class="btn btn-primary me-2 active">
                     <i id="view-toggle-icon" class="bi bi-film"></i> Film 
                 </button>
 
@@ -118,118 +118,49 @@
                 </div>
             </div>
         </div>
-        <div class="views-container">
-            <div class="schedules-container" id="date-view">
-                <div class="schedule" id="first-schedule">
-                    
-                    <div class="schedule-name" id="first-schedule-name">
-                        <h5>Saal Tarantino</h5>
-                        <div class="fade-in-container">
-                            <div class="fade-in" id="first-fade-in1"></div>
-                            <div class="fade-in" id="first-fade-in2"></div>
-                        </div>
-                    </div>
-                    <div class="timeline-container" id="first-timeline-container">
-                        <div class="timeline" id="first-timeline">
-                            <div class="timeline-content" id="saal-tarantino">
-                                <div class="current-time" id="current-time-line-1"></div>
-                                <div class="current-time-text" id="current-time-text">Jetzt</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Spielberg</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-spielberg">
-                                <div class="current-time" id="current-time-line-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Kubrick</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-kubrick">
-                                <div class="current-time" id="current-time-line-3"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Almodóvar</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-almodovar">
-                                <div class="current-time" id="current-time-line-4"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Arsenal</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-arsenal">
-                                <div class="current-time" id="current-time-line-5"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Saal Coppola</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="saal-coppola">
-                                <div class="current-time" id="current-time-line-6"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule">
-                    <div class="schedule-name">
-                        <h5>Atelier</h5>
-                        <div class="fade-in"></div>
-                    </div>
-                    <div class="timeline-container">
-                        <div class="timeline">
-                            <div class="timeline-content" id="atelier">
-                                <div class="current-time" id="current-time-line-7"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-                
-            </div>
-            <div class="schedules-container" id="room-view">
-            </div>
-            <div class="inactive-overlay" id="inactive-overlay">
-                <div class="inactive-text">
-                    <h2 class="inactive-text">Please Select a Movie</h2>
-                </div>
-            </div>
-            <div class="schedules-container" id="filter-view">
+        
+        <section class="movie-info">
+            <p>Für einen ganz besonderen Abend finden Schlager-Kultstar Dieter Thomas Kuhn, Gitarrist
+
+Philipp Feldtkeller und Krimi-Bestsellerautor Michael Kobr, bekannt von den Kluftinger-
+Krimis, zusammen. Die einmalige Mischung aus einfühlsamen Songs, kongenial interpretiert
+
+von Kuhn und seinem legendären Gitarristen Feldtkeller, und prickelnden Krimiszenen aus
+der Feder von Kobr verspricht Unterhaltung der Extraklasse.
+Die drei Künstler kennen sich schon seit Jahren, standen bis jetzt aber noch nie zu dritt auf der
+Bühne – für die Zukunft jedoch ist bereits ein weiteres gemeinsames Projekt in Planung, an
+dessen Entstehen die Zuschauer teilhaben können. Im unterhaltsamen Dialog mit dem
+charmanten Erfolgsautor Kobr wird Dieter Thomas Kuhn mit seiner unverwechselbaren,
+samtig-markanten Stimme nicht nur einige Szenen aus Kobrs Dänemark-Krimi „Nebel über
+Rønne“ vortragen. Exklusiv liest er auch erste Textpassagen aus einer noch unvollendeten
+Biografie, in der es um den faszinierenden Aufstieg von der Tübinger Schülerband zum
+deutschlandweit gefeierten Kultstar gehen wird, und bei der Michael Kobr als Co-Autor die
+Fäden zusammenhält.
+Lassen Sie sich überraschen von dem thematischen Brückenschlag zu Kobrs neuestem Werk.
+Und darum geht’s im Krimi: Über den Wolken... auf dem Flughafen der Inselhauptstadt
+landet eine kleine Privatmaschine, rollt aus und stoppt am Ende der Landebahn. Doch die
+Türen bleiben verschlossen, niemand reagiert auf die Funksprüche. Denn alle drei Insassen
+sind tot, Opfer eines raffinierten Mordanschlags.
+Lennart Ipsen von der Bornholmer Kriminalpolizei steht vor einem Rätsel: Was verband die
+drei Reisenden? Und wer hat den Frieden auf der beschaulichen dänischen Urlaubsinsel auf
+so brutale Art und Weise gestört?
+Freuen Sie sich auf die einmalige Mischung aus handgemachter Musik und Krimi - und
+sichern Sie sich noch heute Ihre Tickets.</p>
+            <!-- Additional movie details -->
+        </section>
+        
+        <div class="schedules-container" id="date-view"> 
+        </div>
+        <div class="schedules-container" id="room-view">
+        </div>
+        <div class="inactive-overlay" id="inactive-overlay">
+            <div class="inactive-text">
+                <h2 class="inactive-text">Please Select a Movie</h2>
             </div>
         </div>
-        
+        <div class="schedules-container" id="filter-view">
+        </div>
+
         <button class="help-button">
             <i class="bi bi-question"></i> 
         </button>
@@ -274,7 +205,7 @@
 
         </div>
         
-        <script src="app.js"></script>
+        <script src="../app.js"></script>
 </body>
 
 </html>
