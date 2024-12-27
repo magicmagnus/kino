@@ -486,7 +486,7 @@ async function scrapeCinema() {
   console.log(moviePosters.map(poster => poster.title));
 
   console.log('\n\tSaving data to file...\n');
-  await fs.writeFile('movie_data.json', JSON.stringify(movies, null, 2));
+  await fs.writeFile('data/source_movie_data.json', JSON.stringify(movies, null, 2));
   console.log('Data has been scraped and saved to movie_data.json');
 
 }
