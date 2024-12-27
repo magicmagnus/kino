@@ -60,7 +60,8 @@ async function scrapeCinema() {
   const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
   
   // 1. first scrape all movie infos except the dates/shotwimes from one page
-  console.log('\n\t1. Scraping movie infos from "widget pages"...\n');
+  console.log('\n\t1. Scraping movie infos from "widget pages"...\n' +
+    '\t(https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget)\n');
   for (const kino of kinos) {
     console.log(`Navigating to cinema website: ${kino}`);
     await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`, {
@@ -85,7 +86,7 @@ async function scrapeCinema() {
       for (const movieItem of movieItems) {
         
         const description = movieItem.querySelector('.movie__info-description')?.textContent.trim() || 'Unknown Description';
-        const posterUrl = movieItem.querySelector('.movie__image img')?.src || null;
+        const posterUrl = movieItem.querySelector('.movie__image img')?.src || 'Unknown Poster URL';
         // const title = movieItem.querySelector('.movie__title')?.textContent.trim() || 'Unknown Title';
         
         // some infos are nested in the short and long info sections
@@ -199,11 +200,14 @@ async function scrapeCinema() {
   allMovieInfos = filterDuplicateTitles(allMovieInfos);
 
   console.log('\nFound', allMovieInfos.length, 'movies from "widget pages"');
+  // console.log('\n\tSaving movie infos to file "source_movie_info.json"...\n');
+  // await fs.writeFile('data/source_movie_info.json', JSON.stringify(allMovieInfos, null, 2));
   
 
 
   // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
-  console.log('\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n');
+  console.log('\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n' +
+    '\t(https://tuebinger-kinos.de/programmuebersicht/)\n');
   await page.goto('https://tuebinger-kinos.de/programmuebersicht/', {
     waitUntil: 'networkidle0'
   });
@@ -369,6 +373,8 @@ async function scrapeCinema() {
   });
 
   console.log('\Found', allMovieDates.length, 'movies from "programmübersicht"');
+  // console.log('\n\tSaving movie dates to file "source_movie_dates.json"...\n');
+  // await fs.writeFile('data/source_movie_dates.json', JSON.stringify(allMovieDates, null, 2));
   
 
   // 3. merge the two lists
@@ -401,20 +407,21 @@ async function scrapeCinema() {
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
       // remove movieInfor from the list
-      allMovieInfos = allMovieInfos.filter(info => info.title !== closestTitle);
-      return { id: index, ...movieInfo, ...date , title: closestTitle }; // Merge the two entries
+      // allMovieInfos = allMovieInfos.filter(info => info.title !== closestTitle);
+      return { id: index, ...movieInfo, ...date } //, title: closestTitle }; // Merge the two entries, tak the title from the dates
     } else {
       return { id: index, ...date }; // Keep the original entry if no close match is found
     }
   });
 
   console.log('\nMerged', movies.length, 'movies with dates and showtimes');
-  console.log('\nNo showtimes found for', allMovieInfos.length, 'movies found in "widget pages":');
-  console.log(allMovieInfos.map(info => info.title));
+  //console.log('\nNo showtimes found for', allMovieInfos.length, 'movies found in "widget pages":');
+  //console.log(allMovieInfos.map(info => info.title));
   
 
   // 4. scrape higher resolution poster URLs
-  console.log('\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n');
+  console.log('\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n' +
+    '\t(https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen)\n');
   async function scrapePosterUrls() {
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920, height: 1080 },
@@ -447,7 +454,7 @@ async function scrapeCinema() {
                     alt = alt.replace('Filmplakat von ', '');
                     posters.push({ 
                       title: alt,
-                      src 
+                      src: (src && src.includes('kinoheld.de')) ? src : "Unknown Poster URL"
                     });
                 }
             });
@@ -468,6 +475,9 @@ async function scrapeCinema() {
   moviePosters = filterDuplicateTitles(moviePosters);
 
   console.log('\nFound', moviePosters.length, 'movie posters from "non-widget pages"');
+  // console.log('\n\tSaving movie posters to file "source_movie_posters.json"...\n');
+  // await fs.writeFile('data/source_movie_posters.json', JSON.stringify(moviePosters, null, 2));
+
 
   console.log('\n\t5. Merging movies with higher resolution poster URLs...\n');
   for (const movie of movies) {
@@ -475,19 +485,19 @@ async function scrapeCinema() {
     if (closestTitle) {
       const poster = moviePosters.find(poster => poster.title === closestTitle);
       // remove poster from the list
-      moviePosters = moviePosters.filter(p => p.title !== closestTitle);
+      // moviePosters = moviePosters.filter(p => p.title !== closestTitle);
       movie.posterUrl = poster.src;
     }
   }
   await browser.close();
 
   console.log('\nMerged', movies.length, 'movies with higher resolution poster URLs');
-  console.log('\nNo showtimes found for', moviePosters.length, 'posters found in "non-widget pages": ');
-  console.log(moviePosters.map(poster => poster.title));
+  // console.log('\nNo showtimes found for', moviePosters.length, 'posters found in "non-widget pages": ');
+  // console.log(moviePosters.map(poster => poster.title));
 
   console.log('\n\tSaving data to file...\n');
   await fs.writeFile('data/source_movie_data.json', JSON.stringify(movies, null, 2));
-  console.log('Data has been scraped and saved to movie_data.json');
+  console.log('Data has been scraped and saved to "data/source_movie_data.json"');
 
 }
 

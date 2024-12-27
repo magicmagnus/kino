@@ -196,7 +196,7 @@ function handleInfoMessage() {
 // Function to fetch and load movie data
 async function loadMovieData() {
     try {
-        const response = await fetch('movie_data.json');
+        const response = await fetch('data/source_movie_data.json');
         const data = await response.json();
         MOVIE_DATA.push(...data);
         populateMovieDropdown(MOVIE_DATA);
