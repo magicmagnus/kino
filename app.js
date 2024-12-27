@@ -729,7 +729,7 @@ function createMovieBlock(movie, show, date) {
     if (movie.duration == "Unknown Duration" || movie.duration === "0") {
         movieBlock.style.width = "250px";
     }
-    const posterUrl = movie.posterUrl == null ? "placeholder.jpg" : movie.posterUrl;
+    const posterUrl = movie.posterUrl == 'Unknown Poster URL' ? "placeholder.jpg" : movie.posterUrl;
     
     movieBlock.innerHTML = `
         <div class="movie-block-inner">
@@ -792,9 +792,10 @@ function createMovieCard(movie, show, endTime, date) {
     const closeEl = `<span class="custom-modal-close">
                         <button type="button" class="${buttonClass}" aria-label="Close"></button>
                     </span>`;
+    const posterUrl = movie.posterUrl == 'Unknown Poster URL' ? "placeholder.jpg" : movie.posterUrl.split('?')[0];
     const posterEl = `
         <div class="custom-modal-poster-wrapper">
-            <img src="${movie.posterUrl.split('?')[0]}" alt="${movie.title} poster" class="custom-modal-poster">
+            <img src="${posterUrl}" alt="${movie.title} poster" class="custom-modal-poster">
             ${movie.trailerUrl != "Unknown Trailer URL" ? `<a href="${movie.trailerUrl}" id="trailer-button" target="_blank" class="btn btn-secondary " style="text-decoration: none; color: white;">
                 <i class="bi bi-play-circle"></i> Trailer
             </a>` : ''}

@@ -58,6 +58,7 @@ html {
     background-color: var(--color-surface-a10);
     color: var(--text-color);
     overscroll-behavior: none;
+    scroll-behavior: smooth;
 }
 
 .body-container {

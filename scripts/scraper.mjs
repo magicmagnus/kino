@@ -57,16 +57,17 @@ async function scrapeCinema() {
   });
   
   let allMovieInfos = [];
-  const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen"];
+  const kinos = ["kino-museum-tuebingen", "kino-atelier-tuebingen", "kino-blaue-bruecke-tuebingen",];
+  let atelierMovies = [];
   
   // 1. first scrape all movie infos except the dates/shotwimes from one page
-  console.log('\n\t1. Scraping movie infos from "widget pages"...\n' +
-    '\t(https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget)\n');
+  console.log('\n\t1. Scraping movie infos from "widget pages"...\n');
   for (const kino of kinos) {
-    console.log(`Navigating to cinema website: ${kino}`);
+    console.log(`Navigating to cinema website: https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`);
     await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/shows/movies?mode=widget`, {
       waitUntil: 'networkidle0'
     });
+   
 
     // Click all "Info" buttons and wait for possible updates
     await autoScroll(page);
@@ -79,13 +80,31 @@ async function scrapeCinema() {
       return new Promise(resolve => setTimeout(resolve, 1000));
     });
     
-    const movieInfos = await page.evaluate(async () => {
+    const movieInfos = await page.evaluate(async (kino) => {
+
+      function formatAttributes(attributes) {
+        return attributes.map(attr => {
+          if (attr.toLowerCase().includes('omd')) {
+            return 'OmdU';
+          } else if (attr.toLowerCase().includes('ome')) {
+            return 'OmeU';
+          }
+          return attr;
+        });
+      }
+
+      debugger;
       const movies = [];
       await new Promise(resolve => setTimeout(resolve, 500));
       const movieItems = document.querySelectorAll('.movie');
       for (const movieItem of movieItems) {
         
-        const description = movieItem.querySelector('.movie__info-description')?.textContent.trim() || 'Unknown Description';
+        const descriptions = movieItem.querySelectorAll('.movie__info-description');
+        let description = 'Unknown Description';
+        if (descriptions) {
+          description = Array.from(descriptions).map(desc => desc.textContent.trim()).join('<br><br>');
+        }
+        
         const posterUrl = movieItem.querySelector('.movie__image img')?.src || 'Unknown Poster URL';
         // const title = movieItem.querySelector('.movie__title')?.textContent.trim() || 'Unknown Title';
         
@@ -162,6 +181,77 @@ async function scrapeCinema() {
           trailerButton.click(); // close the trailer iframe
         } 
 
+        debugger;
+        // extract the dates from the playTimes__slider-wrapper
+        const allGrids = movieItem.querySelector('.playTimes__slider-wrapper')?.querySelectorAll('.u-flex-row');
+        
+        let dates = [];
+        if (allGrids) {
+          const dateGrid = allGrids[0];
+          dates = Array.from(dateGrid.children).map(dateElement => {
+            let date = dateElement.textContent.trim();
+            if (date === 'heute') {
+              const today = new Date();
+              date = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+            } else {
+              // extract day and month from the date string, will be in the format "Di 12.10."
+              const [, day, month] = date.match(/(\d+)\.(\d+)\.$/) || [];
+              if (day && month) {
+                const today = new Date();
+                let year = today.getFullYear();
+                if (parseInt(month) < (today.getMonth() + 1)) {
+                  year += 1;
+                }
+                date = `${year}-${month}-${day}`;
+              }
+              
+            }
+            return date;
+          });
+        } else {
+          debugger;
+          console.log('No date grid found for', title);
+          // continue;
+        }
+
+        const showtimes = [];
+        const timeGrids = Array.from(movieItem.querySelectorAll('.playTimes__slider-wrapper .u-flex-row'));
+        if (timeGrids) {
+  
+          // for each movie, loop through all dates
+          for (let dateIndex = 0; dateIndex < dates.length; dateIndex++) {
+            const date = dates[dateIndex];
+            const shows = [];
+            debugger;
+            
+            // for each date, loop through all timeGrids (all theaters), from index 1 to skip the dateGrid
+            for (let gridIndex = 1; gridIndex < timeGrids.length; gridIndex++) {
+              const showWrappers = timeGrids[gridIndex].querySelectorAll('.show-detail-button');	
+              debugger;
+              
+              const show = showWrappers[dateIndex];
+              debugger;
+              if (show.textContent.trim() === '-') {
+                continue;
+              }
+              let attributes = ["2D"];
+              shows.push({
+                time: show.querySelector('.show-detail-button__label--time')?.textContent.trim() || 'Unknown Time',
+                theater: kino.replace("kino-atelier-tuebingen", 'Atelier') || 'Unknown Theater',
+                attributes: formatAttributes((show.querySelector('.flag-omdu') ? attributes.concat(show.querySelector('.flag-omdu').textContent.trim()) : attributes)),
+                iframeUrl: show.href || 'Unknown iframe URL'
+              });
+              
+            }
+            showtimes.push({
+              date,
+              shows
+            });
+          }
+        } else {
+          console.log('No time grids found for', title);
+        }
+
         // add the movie to the list
         movies.push({
           title,
@@ -177,13 +267,19 @@ async function scrapeCinema() {
           posterUrl,
           trailerUrl,
           actors,
+          showtimes,
+          attributes: [],
         });
       }
 
       return movies;
-    });
+    }, kino);
 
     allMovieInfos = allMovieInfos.concat(movieInfos);
+    if (kino === "kino-atelier-tuebingen") {
+      atelierMovies = movieInfos // save the Atelier movies to a separate file
+      console.log('Found', atelierMovies.length, 'movies from "Atelier"');
+    }
   }
 
   function filterDuplicateTitles(movieList) {
@@ -206,8 +302,8 @@ async function scrapeCinema() {
 
 
   // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
-  console.log('\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n' +
-    '\t(https://tuebinger-kinos.de/programmuebersicht/)\n');
+  console.log('\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n');
+  console.log('Navigating to cinema website: https://tuebinger-kinos.de/programmuebersicht/');
   await page.goto('https://tuebinger-kinos.de/programmuebersicht/', {
     waitUntil: 'networkidle0'
   });
@@ -383,8 +479,6 @@ async function scrapeCinema() {
   // Set a similarity threshold (e.g., 0.7 for 70% similarity)
   const SIMILARITY_THRESHOLD = 0.2;
 
-  
-
   // Function to find the closest match for a given title
   function findClosestMatch(title, titles) {
 
@@ -401,14 +495,15 @@ async function scrapeCinema() {
     }
   }
 
+  
   // Merge all properties of the same movie title from the two lists into one list
-  const movies = allMovieDates.map((date, index) => {
+  let movies = allMovieDates.map((date, index) => {
     const closestTitle = findClosestMatch(date.title, allMovieInfos.map(info => info.title));
     if (closestTitle) {
       const movieInfo = allMovieInfos.find(info => info.title === closestTitle);
       // remove movieInfor from the list
       // allMovieInfos = allMovieInfos.filter(info => info.title !== closestTitle);
-      return { id: index, ...movieInfo, ...date } //, title: closestTitle }; // Merge the two entries, tak the title from the dates
+      return { id: index, ...movieInfo, ...date, attributes: date.attributes} //, title: closestTitle }; // Merge the two entries, tak the title from the dates
     } else {
       return { id: index, ...date }; // Keep the original entry if no close match is found
     }
@@ -417,11 +512,17 @@ async function scrapeCinema() {
   console.log('\nMerged', movies.length, 'movies with dates and showtimes');
   //console.log('\nNo showtimes found for', allMovieInfos.length, 'movies found in "widget pages":');
   //console.log(allMovieInfos.map(info => info.title));
-  
+
+  console.log('\nAdding', atelierMovies.length, 'movies from "Atelier" to the list...\n');
+  // regardles of the merging before, add the Atelier movies to the list, also with the same 
+  const maxIndex = Math.max(...movies.map(movie => movie.id));
+  movies = movies.concat(atelierMovies.map((movie, index) => {
+    return { id: maxIndex + index + 1, ...movie };
+  }));
+  console.log('\nAdded', atelierMovies.length, 'movies from "Atelier" to the list');
 
   // 4. scrape higher resolution poster URLs
-  console.log('\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n' +
-    '\t(https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen)\n');
+  console.log('\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n');
   async function scrapePosterUrls() {
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920, height: 1080 },
@@ -437,7 +538,7 @@ async function scrapeCinema() {
     let allMoviePosters = [];
   
     for (const kino of kinos) {
-        console.log(`Navigating to cinema website: ${kino}`);
+        console.log(`Navigating to cinema website: https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen`);
         await page.goto(`https://www.kinoheld.de/kino/tuebingen/${kino}/vorstellungen`, {
             waitUntil: 'networkidle0'
         });
