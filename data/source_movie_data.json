@@ -1,17 +1,575 @@
 [
   {
     "id": 0,
+    "title": "FESTE & FREUNDE - Ein Hoch auf uns!",
+    "duration": "107 min",
+    "fsk": "12",
+    "genre": "Romanze",
+    "origTitle": "Unknown Original Title",
+    "production": "Deutschland",
+    "releaseDate": "02.01.2025",
+    "distributor": "Unknown Distributor",
+    "director": "David Dietl",
+    "description": "Als Ellen (Laura Tonke) die Silvesterfeier 2019 ihrer besten Freunde besucht, hütet sie ein Geheimnis: Sie hat eine Affäre mit Sebastian (Ronald Zehrfeld), den sie für ihre große Liebe hält, doch er ist mit Eva (Antje Traue) verheiratet. Zwischen Rolf (Nicholas Ofczarek) und Dina (Pegah Ferydoni) knistert es, während es bei Mareike (Annette Frier) und Adam (Trystan Pütter) kriselt. Maya (Katia Fellin) wünscht sich Kinder, Natalie (Jasmin Shakeri) ist unentschlossen. Dann erscheint Max (Henning Flüsloh), der Ellen lieben würde, wenn sie ihn ließe. Jahre vergehen, es wird gefeiert, geliebt, gestritten. Doch ein Schicksalsschlag bringt alles ins Wanken und erinnert daran: Das Leben muss in jedem Moment intensiv gelebt werden – mit den besten Freunden!<br><br>Zehn Freunde, drei Jahre, sieben Feste: David Dietls intensive und turbulente Ensemblekomödie FESTE & FREUNDE begleitet eine Gruppe von Freunden durch die Höhen und Tiefen des Lebens.",
+    "posterUrl": "https://static.kinoheld.de/images/film/feste-freunde-ein-hoch-auf-uns-66573.v17327015513108.webp?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/LG_DaTxfEas?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Laura Tonke",
+      "Jasmin Shakeri",
+      "Annette Frier",
+      "Nicholas Ofczarek"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79314?mode=widget&layout=movies&design=new&rb=0&showId=79314"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79307?mode=widget&layout=movies&design=new&rb=0&showId=79307"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79315?mode=widget&layout=movies&design=new&rb=0&showId=79315"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79316?mode=widget&layout=movies&design=new&rb=0&showId=79316"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "16:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79317?mode=widget&layout=movies&design=new&rb=0&showId=79317"
+          },
+          {
+            "time": "19:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79318?mode=widget&layout=movies&design=new&rb=0&showId=79318"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "14:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79319?mode=widget&layout=movies&design=new&rb=0&showId=79319"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79320?mode=widget&layout=movies&design=new&rb=0&showId=79320"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79321?mode=widget&layout=movies&design=new&rb=0&showId=79321"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79322?mode=widget&layout=movies&design=new&rb=0&showId=79322"
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79323?mode=widget&layout=movies&design=new&rb=0&showId=79323"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79308?mode=widget&layout=movies&design=new&rb=0&showId=79308"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79324?mode=widget&layout=movies&design=new&rb=0&showId=79324"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79309?mode=widget&layout=movies&design=new&rb=0&showId=79309"
+          }
+        ]
+      }
+    ],
+    "attributes": []
+  },
+  {
+    "id": 1,
+    "title": "Queer",
+    "duration": "135 min",
+    "fsk": "16",
+    "genre": "Drama, Lovestory",
+    "origTitle": "Unknown Original Title",
+    "production": "Italien, Vereinigte Staaten",
+    "releaseDate": "02.01.2025",
+    "distributor": "MUBI",
+    "director": "Luca Guadagnino",
+    "description": "1950. William Lee, ein amerikanischer Expat in Mexiko-Stadt, verbringt seine Tage fast vollständig allein, abgesehen von wenigen Kontakten mit anderen Mitgliedern der Gemeinschaft. Seine Begegnung mit Eugene Allerton, einem ehemaligen Soldaten und ebenfalls Expat, zeigt ihm, dass es vielleicht endlich möglich ist, eine intime Verbindung aufzubauen.",
+    "posterUrl": "https://static.kinoheld.de/images/film/queer-66625.v17337572226939.png?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/poZkwBfqGq4?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Andrés Duprat",
+      "Michaël Borremans",
+      "Michael Kent",
+      "Jean Carlos Gonzalez Flores"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79306?mode=widget&layout=movies&design=new&rb=0&showId=79306"
+          },
+          {
+            "time": "20:45",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79325?mode=widget&layout=movies&design=new&rb=0&showId=79325"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79328?mode=widget&layout=movies&design=new&rb=0&showId=79328"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "21:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79326?mode=widget&layout=movies&design=new&rb=0&showId=79326"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79312?mode=widget&layout=movies&design=new&rb=0&showId=79312"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79329?mode=widget&layout=movies&design=new&rb=0&showId=79329"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79327?mode=widget&layout=movies&design=new&rb=0&showId=79327"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79330?mode=widget&layout=movies&design=new&rb=0&showId=79330"
+          }
+        ]
+      }
+    ],
+    "attributes": [
+      "OmdU"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Wicked",
+    "duration": "161 min",
+    "fsk": "6",
+    "genre": "Drama, Fantasy, Lovestory",
+    "origTitle": "Unknown Original Title",
+    "production": "Vereinigte Staaten",
+    "releaseDate": "12.12.2024",
+    "distributor": "Universal Pictures",
+    "director": "Jon M. Chu",
+    "description": "WICKED erzählt die bislang unbekannte Geschichte der Hexen von Oz. Im Mittelpunkt stehen zwei junge Frauen: Zum einen Elphaba (gespielt von Emmy-, Grammy- und Tony-Preisträgerin Cynthia Erivo, Harriet – Der Weg in die Freiheit, Broadway-Stück Die Farbe Lila), die aufgrund ihrer ungewöhnlichen grünen Hautfarbe missverstanden wird und ihre wahren Fähigkeiten erst noch entdecken muss, zum anderen die beliebte, ehrgeizige und privilegierte Glinda (gespielt von Weltstar und Multi-Platin- und Grammy-Gewinnerin Ariana Grande), die ihr wahres Ich noch finden muss. Die beiden treffen sich als Studentinnen an der Universität Glizz im fantastischen Land Oz und schließen eine ungewöhnliche, aber tiefe Freundschaft miteinander. Nach einer Begegnung mit dem wundervollen Zauberer von Oz gelangt ihre Beziehung an einen Wendepunkt, und die Lebenswege der beiden Freundinnen verlaufen höchst unterschiedlich. Glindas unbeirrbarer Wunsch nach Beliebtheit verführt sie zur Macht, während Elphabas Entschlossenheit, sich selbst und den Menschen in ihrer Umgebung treu zu bleiben, unerwartete und schockierende Folgen für ihre Zukunft haben wird. In ihren unglaublichen Abenteuern in Oz müssen schließlich beide ihre Bestimmungen erfüllen: Glinda als die Gute und Elphaba als böse Hexe des Westens.",
+    "posterUrl": "https://static.kinoheld.de/images/film/wicked-62051.v17205161338649.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/9WU4x97PD6A?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Michelle Yeoh",
+      "Ariana Grande",
+      "Jonathan Bailey",
+      "Cynthia Erivo"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79264?mode=widget&layout=movies&design=new&rb=0&showId=79264"
+          },
+          {
+            "time": "19:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79270?mode=widget&layout=movies&design=new&rb=0&showId=79270"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79291?mode=widget&layout=movies&design=new&rb=0&showId=79291"
+          },
+          {
+            "time": "17:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79298?mode=widget&layout=movies&design=new&rb=0&showId=79298"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79299?mode=widget&layout=movies&design=new&rb=0&showId=79299"
+          },
+          {
+            "time": "17:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79292?mode=widget&layout=movies&design=new&rb=0&showId=79292"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "17:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79293?mode=widget&layout=movies&design=new&rb=0&showId=79293"
+          },
+          {
+            "time": "20:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79300?mode=widget&layout=movies&design=new&rb=0&showId=79300"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79294?mode=widget&layout=movies&design=new&rb=0&showId=79294"
+          },
+          {
+            "time": "20:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79295?mode=widget&layout=movies&design=new&rb=0&showId=79295"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "13:45",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79296?mode=widget&layout=movies&design=new&rb=0&showId=79296"
+          },
+          {
+            "time": "17:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79301?mode=widget&layout=movies&design=new&rb=0&showId=79301"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "16:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79297?mode=widget&layout=movies&design=new&rb=0&showId=79297"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79302?mode=widget&layout=movies&design=new&rb=0&showId=79302"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "19:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79303?mode=widget&layout=movies&design=new&rb=0&showId=79303"
+          }
+        ]
+      }
+    ],
+    "attributes": [
+      "OmdU"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "UKRAINISCH: Wicked",
+    "duration": "161 min",
+    "fsk": "6",
+    "genre": "Drama, Fantasy, Lovestory",
+    "origTitle": "Wicked",
+    "production": "Vereinigte Staaten",
+    "releaseDate": "12.12.2024",
+    "distributor": "Universal Pictures",
+    "director": "Jon M. Chu",
+    "description": "WICKED erzählt die bislang unbekannte Geschichte der Hexen von Oz. Im Mittelpunkt stehen zwei junge Frauen: Zum einen Elphaba (gespielt von Emmy-, Grammy- und Tony-Preisträgerin Cynthia Erivo, Harriet – Der Weg in die Freiheit, Broadway-Stück Die Farbe Lila), die aufgrund ihrer ungewöhnlichen grünen Hautfarbe missverstanden wird und ihre wahren Fähigkeiten erst noch entdecken muss, zum anderen die beliebte, ehrgeizige und privilegierte Glinda (gespielt von Weltstar und Multi-Platin- und Grammy-Gewinnerin Ariana Grande), die ihr wahres Ich noch finden muss. Die beiden treffen sich als Studentinnen an der Universität Glizz im fantastischen Land Oz und schließen eine ungewöhnliche, aber tiefe Freundschaft miteinander. Nach einer Begegnung mit dem wundervollen Zauberer von Oz gelangt ihre Beziehung an einen Wendepunkt, und die Lebenswege der beiden Freundinnen verlaufen höchst unterschiedlich. Glindas unbeirrbarer Wunsch nach Beliebtheit verführt sie zur Macht, während Elphabas Entschlossenheit, sich selbst und den Menschen in ihrer Umgebung treu zu bleiben, unerwartete und schockierende Folgen für ihre Zukunft haben wird. In ihren unglaublichen Abenteuern in Oz müssen schließlich beide ihre Bestimmungen erfüllen: Glinda als die Gute und Elphaba als böse Hexe des Westens.",
+    "posterUrl": "https://static.kinoheld.de/images/film/mo/5357-114857.v17356690707338.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/9WU4x97PD6A?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Michelle Yeoh",
+      "Ariana Grande",
+      "Jonathan Bailey",
+      "Cynthia Erivo"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": []
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79304?mode=widget&layout=movies&design=new&rb=0&showId=79304"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": []
+      },
+      {
+        "date": "2025-1-6",
+        "shows": []
+      }
+    ],
+    "attributes": []
+  },
+  {
+    "id": 4,
     "title": "Misty - The Erroll Garner Story",
     "duration": "100 min",
     "fsk": "6",
-    "genre": "Dokumentarfilm",
-    "origTitle": "Misty – The Erroll Garner Story",
+    "genre": "Dokumentation",
+    "origTitle": "Unknown Original Title",
     "production": "Deutschland, Schweiz, Frankreich",
     "releaseDate": "23.01.2025",
     "distributor": "Real Fiction",
     "director": "Georges Gachot",
-    "description": "",
-    "posterUrl": "Unknown Poster URL",
+    "description": "EXKLUSIVE FILMPREVIEW & KONZERT\nMISTY — DOKUMENTARFILM VON GEORGES GACHOT\nNachgespräch: Regisseur Georges Gachot im Gespräch mit Sven Gormsen\n\nanschließend KONZERT: Florian Dohrmann (Bass), Anselm Krisch (Piano) und Dieter Schumacher (Drums) spielen Erroll Garner",
+    "posterUrl": "https://static.kinoheld.de/images/film/mo/5357-114851.v17356686929632.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
     "trailerUrl": "Unknown Trailer URL",
     "actors": [],
     "showtimes": [
@@ -24,7 +582,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79272?mode=widget&layout=movies&design=new&rb=0&showId=79272"
           }
         ]
       }
@@ -36,7 +594,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 5,
     "title": "DTK unplugged meets Krimispannung live",
     "duration": "100 min",
     "fsk": "6",
@@ -73,7 +631,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79214?mode=widget&layout=movies&design=new&rb=0&showId=79214"
           }
         ]
       }
@@ -84,7 +642,7 @@
     ]
   },
   {
-    "id": 2,
+    "id": 6,
     "title": "Die leisen und die großen Töne",
     "duration": "103 min",
     "fsk": "0",
@@ -105,89 +663,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "14:30",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "17:30",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "14:15",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "17:30",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "14:30",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:15",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -196,7 +671,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79232?mode=widget&layout=movies&design=new&rb=0&showId=79232"
           },
           {
             "time": "17:30",
@@ -204,7 +679,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79233?mode=widget&layout=movies&design=new&rb=0&showId=79233"
           },
           {
             "time": "20:15",
@@ -212,7 +687,139 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79234?mode=widget&layout=movies&design=new&rb=0&showId=79234"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79273?mode=widget&layout=movies&design=new&rb=0&showId=79273"
+          },
+          {
+            "time": "20:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79274?mode=widget&layout=movies&design=new&rb=0&showId=79274"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "14:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79284?mode=widget&layout=movies&design=new&rb=0&showId=79284"
+          },
+          {
+            "time": "20:30",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79275?mode=widget&layout=movies&design=new&rb=0&showId=79275"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79276?mode=widget&layout=movies&design=new&rb=0&showId=79276"
+          },
+          {
+            "time": "20:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79277?mode=widget&layout=movies&design=new&rb=0&showId=79277"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79278?mode=widget&layout=movies&design=new&rb=0&showId=79278"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79279?mode=widget&layout=movies&design=new&rb=0&showId=79279"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "14:30",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79280?mode=widget&layout=movies&design=new&rb=0&showId=79280"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79281?mode=widget&layout=movies&design=new&rb=0&showId=79281"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79282?mode=widget&layout=movies&design=new&rb=0&showId=79282"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "17:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79283?mode=widget&layout=movies&design=new&rb=0&showId=79283"
           }
         ]
       }
@@ -222,7 +829,7 @@
     ]
   },
   {
-    "id": 3,
+    "id": 7,
     "title": "Die Saat des heiligen Feigenbaums",
     "duration": "167 min",
     "fsk": "16",
@@ -243,74 +850,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "14:15",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:00",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "11:30",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:30",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "14:45",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:45",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -319,7 +858,86 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79243?mode=widget&layout=movies&design=new&rb=0&showId=79243"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79290?mode=widget&layout=movies&design=new&rb=0&showId=79290"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "19:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79285?mode=widget&layout=movies&design=new&rb=0&showId=79285"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "17:15",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79286?mode=widget&layout=movies&design=new&rb=0&showId=79286"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79287?mode=widget&layout=movies&design=new&rb=0&showId=79287"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "16:45",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79288?mode=widget&layout=movies&design=new&rb=0&showId=79288"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79289?mode=widget&layout=movies&design=new&rb=0&showId=79289"
           }
         ]
       }
@@ -329,7 +947,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 8,
     "title": "Sonic the Hedgehog 3",
     "duration": "110 min",
     "fsk": "12",
@@ -350,73 +968,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "13:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "13:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "13:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:15",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -425,7 +976,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73868?mode=widget&layout=movies&design=new&rb=0&showId=73868"
           },
           {
             "time": "16:15",
@@ -433,7 +984,138 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73869?mode=widget&layout=movies&design=new&rb=0&showId=73869"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "13:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73956?mode=widget&layout=movies&design=new&rb=0&showId=73956"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73957?mode=widget&layout=movies&design=new&rb=0&showId=73957"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "13:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73958?mode=widget&layout=movies&design=new&rb=0&showId=73958"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73959?mode=widget&layout=movies&design=new&rb=0&showId=73959"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "13:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73977?mode=widget&layout=movies&design=new&rb=0&showId=73977"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73960?mode=widget&layout=movies&design=new&rb=0&showId=73960"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "13:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73961?mode=widget&layout=movies&design=new&rb=0&showId=73961"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73962?mode=widget&layout=movies&design=new&rb=0&showId=73962"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "13:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73963?mode=widget&layout=movies&design=new&rb=0&showId=73963"
+          },
+          {
+            "time": "15:45",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73964?mode=widget&layout=movies&design=new&rb=0&showId=73964"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73978?mode=widget&layout=movies&design=new&rb=0&showId=73978"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73965?mode=widget&layout=movies&design=new&rb=0&showId=73965"
           }
         ]
       }
@@ -443,18 +1125,18 @@
     ]
   },
   {
-    "id": 5,
+    "id": 9,
     "title": "UKRAINISCH: Mufasa: Der König der Löwen",
     "duration": "118 min",
     "fsk": "6",
-    "genre": "Drama, Animation, Abenteuer, Familie",
+    "genre": "Abenteuer, Action, Zeichentrick",
     "origTitle": "Mufasa: The Lion King",
     "production": "Vereinigte Staaten, Südafrika",
     "releaseDate": "19.12.2024",
     "distributor": "Walt Disney",
     "director": "Barry Jenkins",
     "description": "In \"Mufasa: Der König der Löwen\" erzählt Rafiki der jungen Löwin Kiara, Tochter von Simba und Nala, die Geschichte von Mufasas außergewöhnlichen Aufstieg zum König des Geweihten Landes. Unterstützt wird Rafiki von Timon und Pumbaa, die mit ihrem unverwechselbaren Humor zum Geschehen beitragen. Wir begleiten das verwaiste Jungtier Mufasa, das verloren und allein ist, bis es auf den sympathischen Thronerben Taka trifft. Diese schicksalshafte Begegnung setzt eine große Reise einer außergewöhnlichen Gruppe von Außenseitern in Gang, die auf der Suche nach ihrer Bestimmung ist. Ihr Zusammenhalt wird auf die Probe gestellt, als sie versuchen, einem tödlichen Feind zu entkommen.",
-    "posterUrl": "https://static.kinoheld.de/images/film/mufasa-der-koenig-der-loewen-62341.v17262151457625.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "posterUrl": "https://static.kinoheld.de/images/film/mufasa-der-koenig-der-loewen-62341.v17355541947515.jpeg?w=352&h=528&fm=webp&q=90&fit=crop",
     "trailerUrl": "https://www.youtube-nocookie.com/embed/aKqKe-vODEk?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
     "actors": [
       "Keith David",
@@ -464,15 +1146,23 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
+        "date": "2025-1-1",
         "shows": []
       },
       {
-        "date": "2024-12-28",
+        "date": "2025-1-2",
         "shows": []
       },
       {
-        "date": "2024-12-29",
+        "date": "2025-1-3",
+        "shows": []
+      },
+      {
+        "date": "2025-1-4",
+        "shows": []
+      },
+      {
+        "date": "2025-1-5",
         "shows": [
           {
             "time": "13:30",
@@ -480,30 +1170,43 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73949?mode=widget&layout=movies&design=new&rb=0&showId=73949"
           }
         ]
       },
       {
-        "date": "2024-12-30",
+        "date": "2025-1-6",
         "shows": []
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73975?mode=widget&layout=movies&design=new&rb=0&showId=73975"
+          }
+        ]
       }
     ],
     "attributes": []
   },
   {
-    "id": 6,
+    "id": 10,
     "title": "Mufasa: Der König der Löwen",
     "duration": "118 min",
     "fsk": "6",
-    "genre": "Drama, Animation, Abenteuer, Familie",
+    "genre": "Abenteuer, Action, Zeichentrick",
     "origTitle": "Mufasa: The Lion King",
     "production": "Vereinigte Staaten, Südafrika",
     "releaseDate": "19.12.2024",
     "distributor": "Walt Disney",
     "director": "Barry Jenkins",
     "description": "In \"Mufasa: Der König der Löwen\" erzählt Rafiki der jungen Löwin Kiara, Tochter von Simba und Nala, die Geschichte von Mufasas außergewöhnlichen Aufstieg zum König des Geweihten Landes. Unterstützt wird Rafiki von Timon und Pumbaa, die mit ihrem unverwechselbaren Humor zum Geschehen beitragen. Wir begleiten das verwaiste Jungtier Mufasa, das verloren und allein ist, bis es auf den sympathischen Thronerben Taka trifft. Diese schicksalshafte Begegnung setzt eine große Reise einer außergewöhnlichen Gruppe von Außenseitern in Gang, die auf der Suche nach ihrer Bestimmung ist. Ihr Zusammenhalt wird auf die Probe gestellt, als sie versuchen, einem tödlichen Feind zu entkommen.",
-    "posterUrl": "https://static.kinoheld.de/images/film/mufasa-der-koenig-der-loewen-62341.v17262151457625.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "posterUrl": "https://static.kinoheld.de/images/film/mufasa-der-koenig-der-loewen-62341.v17355541947515.jpeg?w=352&h=528&fm=webp&q=90&fit=crop",
     "trailerUrl": "https://www.youtube-nocookie.com/embed/aKqKe-vODEk?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
     "actors": [
       "Keith David",
@@ -512,114 +1215,6 @@
       "Tiffany Boone"
     ],
     "showtimes": [
-      {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "13:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "15:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "3D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "15:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "3D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "13:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "15:15",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "3D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:30",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
       {
         "date": "2025-1-1",
         "shows": [
@@ -629,7 +1224,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73888?mode=widget&layout=movies&design=new&rb=0&showId=73888"
           },
           {
             "time": "15:15",
@@ -637,7 +1232,7 @@
             "attributes": [
               "3D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73900?mode=widget&layout=movies&design=new&rb=0&showId=73900"
           },
           {
             "time": "16:30",
@@ -645,7 +1240,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73889?mode=widget&layout=movies&design=new&rb=0&showId=73889"
           },
           {
             "time": "19:30",
@@ -653,7 +1248,228 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73890?mode=widget&layout=movies&design=new&rb=0&showId=73890"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73932?mode=widget&layout=movies&design=new&rb=0&showId=73932"
+          },
+          {
+            "time": "15:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73950?mode=widget&layout=movies&design=new&rb=0&showId=73950"
+          },
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73933?mode=widget&layout=movies&design=new&rb=0&showId=73933"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73934?mode=widget&layout=movies&design=new&rb=0&showId=73934"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "13:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73951?mode=widget&layout=movies&design=new&rb=0&showId=73951"
+          },
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73935?mode=widget&layout=movies&design=new&rb=0&showId=73935"
+          },
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73936?mode=widget&layout=movies&design=new&rb=0&showId=73936"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73947?mode=widget&layout=movies&design=new&rb=0&showId=73947"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73937?mode=widget&layout=movies&design=new&rb=0&showId=73937"
+          },
+          {
+            "time": "15:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73952?mode=widget&layout=movies&design=new&rb=0&showId=73952"
+          },
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73938?mode=widget&layout=movies&design=new&rb=0&showId=73938"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73939?mode=widget&layout=movies&design=new&rb=0&showId=73939"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73953?mode=widget&layout=movies&design=new&rb=0&showId=73953"
+          },
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73940?mode=widget&layout=movies&design=new&rb=0&showId=73940"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73941?mode=widget&layout=movies&design=new&rb=0&showId=73941"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "13:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73942?mode=widget&layout=movies&design=new&rb=0&showId=73942"
+          },
+          {
+            "time": "14:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73954?mode=widget&layout=movies&design=new&rb=0&showId=73954"
+          },
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73948?mode=widget&layout=movies&design=new&rb=0&showId=73948"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73943?mode=widget&layout=movies&design=new&rb=0&showId=73943"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "3D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73955?mode=widget&layout=movies&design=new&rb=0&showId=73955"
+          },
+          {
+            "time": "20:00",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73944?mode=widget&layout=movies&design=new&rb=0&showId=73944"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "16:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73945?mode=widget&layout=movies&design=new&rb=0&showId=73945"
+          },
+          {
+            "time": "19:30",
+            "theater": "Saal Tarantino",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73946?mode=widget&layout=movies&design=new&rb=0&showId=73946"
           }
         ]
       }
@@ -666,138 +1482,11 @@
     ]
   },
   {
-    "id": 7,
-    "title": "Wicked",
-    "duration": "161 min",
-    "fsk": "6",
-    "genre": "Musical",
-    "origTitle": "Wicked",
-    "production": "Vereinigte Staaten",
-    "releaseDate": "12.12.2024",
-    "distributor": "Universal Pictures",
-    "director": "Jon M. Chu",
-    "description": "WICKED erzählt die bislang unbekannte Geschichte der Hexen von Oz. Im Mittelpunkt stehen zwei junge Frauen: Zum einen Elphaba (gespielt von Emmy-, Grammy- und Tony-Preisträgerin Cynthia Erivo, Harriet – Der Weg in die Freiheit, Broadway-Stück Die Farbe Lila), die aufgrund ihrer ungewöhnlichen grünen Hautfarbe missverstanden wird und ihre wahren Fähigkeiten erst noch entdecken muss, zum anderen die beliebte, ehrgeizige und privilegierte Glinda (gespielt von Weltstar und Multi-Platin- und Grammy-Gewinnerin Ariana Grande), die ihr wahres Ich noch finden muss. Die beiden treffen sich als Studentinnen an der Universität Glizz im fantastischen Land Oz und schließen eine ungewöhnliche, aber tiefe Freundschaft miteinander. Nach einer Begegnung mit dem wundervollen Zauberer von Oz gelangt ihre Beziehung an einen Wendepunkt, und die Lebenswege der beiden Freundinnen verlaufen höchst unterschiedlich. Glindas unbeirrbarer Wunsch nach Beliebtheit verführt sie zur Macht, während Elphabas Entschlossenheit, sich selbst und den Menschen in ihrer Umgebung treu zu bleiben, unerwartete und schockierende Folgen für ihre Zukunft haben wird. In ihren unglaublichen Abenteuern in Oz müssen schließlich beide ihre Bestimmungen erfüllen: Glinda als die Gute und Elphaba als böse Hexe des Westens.",
-    "posterUrl": "https://static.kinoheld.de/images/film/wicked-62051.v17205161338649.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "https://www.youtube-nocookie.com/embed/9WU4x97PD6A?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
-    "actors": [
-      "Michelle Yeoh",
-      "Ariana Grande",
-      "Jonathan Bailey",
-      "Cynthia Erivo"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "17:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:45",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "11:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "16:30",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:45",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "17:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2025-1-1",
-        "shows": [
-          {
-            "time": "17:00",
-            "theater": "Saal Almodóvar",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "19:45",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      }
-    ],
-    "attributes": [
-      "OmdU"
-    ]
-  },
-  {
-    "id": 8,
-    "title": "Vaiana 2",
+    "id": 11,
+    "title": "VAIANA 2",
     "duration": "100 min",
     "fsk": "0",
-    "genre": "Zeichentrick",
+    "genre": "Animation, Abenteuer, Familie",
     "origTitle": "MOANA 2",
     "production": "Kanada, Vereinigte Staaten",
     "releaseDate": "28.11.2024",
@@ -814,73 +1503,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "13:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "13:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "13:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "18:00",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -889,7 +1511,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73908?mode=widget&layout=movies&design=new&rb=0&showId=73908"
           },
           {
             "time": "18:00",
@@ -897,7 +1519,118 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73909?mode=widget&layout=movies&design=new&rb=0&showId=73909"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "13:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73966?mode=widget&layout=movies&design=new&rb=0&showId=73966"
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73967?mode=widget&layout=movies&design=new&rb=0&showId=73967"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "15:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73976?mode=widget&layout=movies&design=new&rb=0&showId=73976"
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73968?mode=widget&layout=movies&design=new&rb=0&showId=73968"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "13:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73969?mode=widget&layout=movies&design=new&rb=0&showId=73969"
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73970?mode=widget&layout=movies&design=new&rb=0&showId=73970"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "13:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73971?mode=widget&layout=movies&design=new&rb=0&showId=73971"
+          },
+          {
+            "time": "18:00",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73972?mode=widget&layout=movies&design=new&rb=0&showId=73972"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "16:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73973?mode=widget&layout=movies&design=new&rb=0&showId=73973"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "17:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73974?mode=widget&layout=movies&design=new&rb=0&showId=73974"
           }
         ]
       }
@@ -908,56 +1641,7 @@
     ]
   },
   {
-    "id": 9,
-    "title": "Der Herr der Ringe: Die Schlacht der Rohirrim",
-    "duration": "125 min",
-    "fsk": "12",
-    "genre": "Animation, Action, Fantasy",
-    "origTitle": "The Lord of the Rings: The War of the Rohirrim",
-    "production": "Japan",
-    "releaseDate": "12.12.2024",
-    "distributor": "Warner Bros. Pictures Germany",
-    "director": "Kenji Kamiyama",
-    "description": "„The Lord of the Rings: The War of the Rohirrim“ spielt 183 Jahre vor den Ereignissen der ursprünglichen Filmtrilogie. Der Film erzählt vom Schicksal des Hauses von Helm Hammerhand, dem legendären König von Rohan. Wulf, ein ebenso gerissener wie skrupelloser Fürst der Dunländer, sinnt auf Rache für den Tod seines Vaters. Als er Helm und seine Gefolgsleute unerwartet angreift, sind diese gezwungen, sich in der alten Festung Hornburg, die später unter dem Namen Helms Klamm Bekanntheit erlangen wird, zu einem wagemutigen letzten Gefecht zu stellen. In einer zunehmend verzweifelten Lage muss Helms Tochter Héra den Willen aufbringen, den Widerstand gegen einen tödlichen Feind anzuführen – einen Feind, der nicht weniger will als ihre völlige Vernichtung.",
-    "posterUrl": "https://static.kinoheld.de/images/film/der-herr-der-ringe-die-schlacht-der-rohirrim-67623.v17328843715010.png?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "https://www.youtube-nocookie.com/embed/iBERAHjS7hU?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
-    "actors": [
-      "Brian Cox",
-      "Gaia Wise",
-      "Luke Pasqualino",
-      "Miranda Otto"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "22:00",
-            "theater": "Saal Tarantino",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": []
-      },
-      {
-        "date": "2024-12-30",
-        "shows": []
-      }
-    ],
-    "attributes": []
-  },
-  {
-    "id": 10,
+    "id": 12,
     "title": "Der Spitzname",
     "duration": "90 min",
     "fsk": "6",
@@ -978,73 +1662,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "18:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "18:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "18:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "20:45",
-            "theater": "Saal Kubrick",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -1053,7 +1670,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73856?mode=widget&layout=movies&design=new&rb=0&showId=73856"
           },
           {
             "time": "20:45",
@@ -1061,7 +1678,138 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73857?mode=widget&layout=movies&design=new&rb=0&showId=73857"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73913?mode=widget&layout=movies&design=new&rb=0&showId=73913"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73914?mode=widget&layout=movies&design=new&rb=0&showId=73914"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73915?mode=widget&layout=movies&design=new&rb=0&showId=73915"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73916?mode=widget&layout=movies&design=new&rb=0&showId=73916"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73917?mode=widget&layout=movies&design=new&rb=0&showId=73917"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73918?mode=widget&layout=movies&design=new&rb=0&showId=73918"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73919?mode=widget&layout=movies&design=new&rb=0&showId=73919"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73920?mode=widget&layout=movies&design=new&rb=0&showId=73920"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "18:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73921?mode=widget&layout=movies&design=new&rb=0&showId=73921"
+          },
+          {
+            "time": "20:15",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73922?mode=widget&layout=movies&design=new&rb=0&showId=73922"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73923?mode=widget&layout=movies&design=new&rb=0&showId=73923"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Kubrick",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73924?mode=widget&layout=movies&design=new&rb=0&showId=73924"
           }
         ]
       }
@@ -1071,7 +1819,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 13,
     "title": "Konklave",
     "duration": "120 min",
     "fsk": "6",
@@ -1092,74 +1840,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "20:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "14:45",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "20:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "14:45",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "20:30",
-            "theater": "Saal Spielberg",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "14:30",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -1168,7 +1848,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73874?mode=widget&layout=movies&design=new&rb=0&showId=73874"
           },
           {
             "time": "14:45",
@@ -1176,7 +1856,100 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79251?mode=widget&layout=movies&design=new&rb=0&showId=79251"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73930?mode=widget&layout=movies&design=new&rb=0&showId=73930"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73925?mode=widget&layout=movies&design=new&rb=0&showId=73925"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73926?mode=widget&layout=movies&design=new&rb=0&showId=73926"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73931?mode=widget&layout=movies&design=new&rb=0&showId=73931"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "19:15",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73927?mode=widget&layout=movies&design=new&rb=0&showId=73927"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "19:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73928?mode=widget&layout=movies&design=new&rb=0&showId=73928"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "19:45",
+            "theater": "Saal Spielberg",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73929?mode=widget&layout=movies&design=new&rb=0&showId=73929"
           }
         ]
       }
@@ -1187,7 +1960,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 14,
     "title": "The Outrun",
     "duration": "118 min",
     "fsk": "12",
@@ -1208,58 +1981,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "17:30",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "14:30",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          },
-          {
-            "time": "17:00",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "17:15",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -1268,7 +1989,157 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79256?mode=widget&layout=movies&design=new&rb=0&showId=79256"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12731?mode=widget&layout=movies&design=new&rb=0&showId=12731"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": []
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12736?mode=widget&layout=movies&design=new&rb=0&showId=12736"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12732?mode=widget&layout=movies&design=new&rb=0&showId=12732"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": []
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12737?mode=widget&layout=movies&design=new&rb=0&showId=12737"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12733?mode=widget&layout=movies&design=new&rb=0&showId=12733"
+          }
+        ]
+      }
+    ],
+    "attributes": []
+  },
+  {
+    "id": 15,
+    "title": "Emilia Pérez",
+    "duration": "130 min",
+    "fsk": "12",
+    "genre": "Drama, Thriller",
+    "origTitle": "Emilia Pérez",
+    "production": "Frankreich, Mexiko, Vereinigte Staaten",
+    "releaseDate": "28.11.2024",
+    "distributor": "Neue Visionen / WildBunch",
+    "director": "Jacques Audiard",
+    "description": "Die Anwältin Rita (Zoe Saldaña) ist ein kleines Licht in einer großen Firma: überqualifiziert, aber unterrepräsentiert. Ihrer Intelligenz verdanken Drogendealer, Mörder und Kartellbosse die Freiheit. Im Blitzlichtgewitter sonnt sich hinterher ihr stets korrumpierbarer Chef. Eines Tages bietet sich ihr ein Ausweg: Kartellboss Manitas del Monte (Karla Sofía Gascón) will mit ihrer Hilfe aus der Mafia-Welt aussteigen. Rita soll den Schlussstrich unter sein zweifelhaftes Lebenswerk ziehen, ein neues Leben für seine Frau Jessi (Selena Gomez) und die Kinder organisieren und einen Plan umsetzen, den er seit Jahren im Verborgenen vorbereitet hat: sich voll und ganz in die Frau zu verwandeln, die er tief im Inneren schon immer war: EMILIA PÉREZ. Doch Manitas' Vergangenheit ist eine Geschichte, die nur ihren eigenen Regeln gehorcht, die wiederkehrt und sich mit aller Gewalt rächen wird.<br><br>Nichts weniger als eine einzigartige Kino-Offenbarung ist dieses epochale Meisterwerk mit grandioser Starbesetzung, das in Cannes mit gleich zwei Preisen ausgezeichnet wurde. Der mehrfach preisgekrönte Regisseur Jacques Audiard schreibt sich mit dieser formal revolutionären Geschichte über die absolute Freiheit der Selbsterfindung endgültig in die Geschichte ein. Eine grandiose Show voller Vitalität und Energie, die alle Sinne fesselt, in ihren Bann zieht und die Macht des Kinos so leidenschaftlich zelebriert wie noch nie.",
+    "posterUrl": "https://static.kinoheld.de/images/film/emilia-perez-62047.v17291792829370.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/SO-bRNyjt2A?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Édgar Ramírez",
+      "Adriana Paz",
+      "Karla Sofía Gascón",
+      "Selena Gomez"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12719?mode=widget&layout=movies&design=new&rb=0&showId=12719"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": []
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12720?mode=widget&layout=movies&design=new&rb=0&showId=12720"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12721?mode=widget&layout=movies&design=new&rb=0&showId=12721"
           }
         ]
       }
@@ -1278,7 +2149,130 @@
     ]
   },
   {
-    "id": 13,
+    "id": 16,
+    "title": "Freud - Jenseits des Glaubens",
+    "duration": "109 min",
+    "fsk": "12",
+    "genre": "Drama",
+    "origTitle": "Freud's Last Session",
+    "production": "Vereinigtes Königreich, Irland, Vereinigte Staaten",
+    "releaseDate": "19.12.2024",
+    "distributor": "X Verleih",
+    "director": "Matt Brown",
+    "description": "London, 3. September 1939. Soeben ist der Zweite Weltkrieg ausgebrochen. Sigmund Freud (ANTHONY HOPKINS) ist mit seiner Tochter Anna Freud (LIV LISA FRIES) vor dem Nazi-Regime aus Wien geflohen. Anna, selbst Psychoanalytikerin, unterstützt ihren Vater bedingungslos, kämpft aber auch um die Anerkennung ihrer eigenen Bedürfnisse. Wenige Tage vor seinem Tod stattet ein Gelehrter vom College der University of Oxford Freud einen Besuch ab: C.S. Lewis (MATTHEW GOODE), der später mit „Die Chroniken von Narnia“ Weltruhm erlangen wird. An diesem Tag liefern sich zwei große Denker des zwanzigsten Jahrhunderts einen kontroversen Diskurs über Liebe, den Glauben, die Zukunft der Menschheit und die für sie alles entscheidende Frage: Gibt es einen Gott?<br><br>Basierend auf einem fiktiven Treffen zweier großer Denker verwebt FREUD – JENSEITS DES GLAUBENS Vergangenheit, Gegenwart und Fantasie und bricht aus der Enge von Freuds Arbeitszimmer auf zu einer dynamischen Reise mit Gesprächen über das Diesseits und das Jenseits. Aus dem historischen Moment des Films heraus spiegeln sich auch aktuelle Konflikte wider. Zwei berühmte Intellektuelle versuchen, den freien Willen, den Glauben und die Sterblichkeit zu erkunden, und trotz scheinbar unüberbrückbarer Differenzen finden sie eine Verbindung zueinander.",
+    "posterUrl": "https://static.kinoheld.de/images/film/freud-jenseits-des-glaubens-68279.v17343445874154.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/3nwW_S5wuC8?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Anthony Hopkins",
+      "Matthew Goode",
+      "Liv Lisa Fries",
+      "Jodi Balfour"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12727?mode=widget&layout=movies&design=new&rb=0&showId=12727"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12722?mode=widget&layout=movies&design=new&rb=0&showId=12722"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12723?mode=widget&layout=movies&design=new&rb=0&showId=12723"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12724?mode=widget&layout=movies&design=new&rb=0&showId=12724"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "19:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12728?mode=widget&layout=movies&design=new&rb=0&showId=12728"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-7",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12725?mode=widget&layout=movies&design=new&rb=0&showId=12725"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-8",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12726?mode=widget&layout=movies&design=new&rb=0&showId=12726"
+          }
+        ]
+      }
+    ],
+    "attributes": [
+      "OmdU"
+    ]
+  },
+  {
+    "id": 17,
     "title": "All we imagine as Light",
     "duration": "114 min",
     "fsk": "12",
@@ -1299,32 +2293,6 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": []
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "11:45",
-            "theater": "Saal Coppola",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": []
-      },
-      {
         "date": "2025-1-1",
         "shows": [
           {
@@ -1334,7 +2302,115 @@
               "2D",
               "OmdU"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79218?mode=widget&layout=movies&design=new&rb=0&showId=79218"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": []
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12734?mode=widget&layout=movies&design=new&rb=0&showId=12734"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "12:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12735?mode=widget&layout=movies&design=new&rb=0&showId=12735"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": []
+      }
+    ],
+    "attributes": [
+      "OmdU"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Shambhala",
+    "duration": "150 min",
+    "fsk": "12",
+    "genre": "Drama",
+    "origTitle": "शम्भाला",
+    "production": "Unknown Production",
+    "releaseDate": "21.11.2024",
+    "distributor": "Die Filmagentinnen",
+    "director": "Min Bahadur Bham",
+    "description": "Im Himalaya geht Pema (Thinley Lhamo) eine polygame Ehe mit Tashi (Tenzin Dalha) und seinen beiden Brüdern ein. Alles läuft gut und sie leben in einer harmonischen Gemeinschaft. Als sie jedoch schwanger wird, wird die Legitimität von ihrem ungeborenen Kind infrage gestellt, als Tashi von einer Reise nicht zurückkehrt. Also macht sie sich, in Begleitung ihres derzeitigen Haupt-Ehepartners Karma (Sonam Topden), auf die Suche nach ihm. Karma ist Mönch und war anfangs nicht begeistert, sein Kloster gegen ein weltliches Leben einzutauschen. Doch er findet immer mehr Gefallen daran. Als er jedoch für dringende Pflichten ins Kloster zurückgerufen wird, muss Pema alleine weitergehen und findet sich auf einer Sinnreise zu sich selbst wieder.",
+    "posterUrl": "https://static.kinoheld.de/images/film/shambhala-65923.v17319253748122.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/0rz0FacXADA?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Thinley Lhamo",
+      "Sonam Topden",
+      "Tenzing Dalha",
+      "Karma Wangyal Gurung"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12729?mode=widget&layout=movies&design=new&rb=0&showId=12729"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": []
+      },
+      {
+        "date": "2025-1-5",
+        "shows": []
+      },
+      {
+        "date": "2025-1-6",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12730?mode=widget&layout=movies&design=new&rb=0&showId=12730"
           }
         ]
       }
@@ -1344,72 +2420,43 @@
     ]
   },
   {
-    "id": 14,
-    "title": "A Real Pain",
-    "duration": "90 min",
-    "fsk": "12",
-    "genre": "Drama, Komödie",
-    "origTitle": "Unknown Original Title",
-    "production": "Polen, Vereinigte Staaten",
-    "releaseDate": "16.01.2025",
-    "distributor": "Walt Disney",
-    "director": "Jesse Eisenberg",
-    "description": "Die ungleichen Cousins David (Jesse Eisenberg) und Benji (Kieran Culkin) reisen gemeinsam nach Polen, um mehr über das Leben ihrer kürzlich verstorbenen Großmutter zu erfahren. Der Roadtrip, der als Reise in die Vergangenheit gedacht war, konfrontiert die beiden mit der Gegenwart, in der sie ihre Beziehung zueinander und ihre Familiengeschichte hinterfragen.",
-    "posterUrl": "https://static.kinoheld.de/images/film/a-real-pain-65735.v17309717528569.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "https://www.youtube-nocookie.com/embed/dX1MDyV5sqw?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
-    "actors": [
-      "Jesse Eisenberg",
-      "Kieran Culkin",
-      "Will Sharpe",
-      "Jennifer Grey"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": []
-      },
-      {
-        "date": "2024-12-29",
-        "shows": []
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Saal Arsenal",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "Unknown iframe URL"
-          }
-        ]
-      }
-    ],
-    "attributes": []
-  },
-  {
-    "id": 15,
-    "title": "Lesung mit Sandro Mattioli: Germafia",
-    "duration": "120 min",
-    "fsk": "6",
+    "id": 19,
+    "title": "Arsenal Sneak",
+    "duration": "0",
+    "fsk": "18",
     "genre": "Unknown Genre",
-    "origTitle": "Unknown Original Title",
-    "production": "Unknown Production",
-    "releaseDate": "22.01.2025",
+    "origTitle": "Sneak Preview",
+    "production": "Deutschland",
+    "releaseDate": "01.01.2038",
     "distributor": "Unknown Distributor",
     "director": "Unknown Director",
-    "description": "",
-    "posterUrl": "https://static.kinoheld.de/images/film/lesung-mit-sandro-mattioli-germafia-68275.v17331485418333.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "description": "Neue Filme - Manchmal eine Woche - manchmal Monate vor dem deutschen Filmstart. Aber: Der Filmtitel bleibt geheim, bis sich der Vorhang öffnet. Wir verraten nicht mal um welches Genre es sich handelt: Komödie, Drama, Action, Horror oder Dokumentation, alles ist möglich.",
+    "posterUrl": "https://static.kinoheld.de/images/film/mo/5357-114849.v17356684863879.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
     "trailerUrl": "Unknown Trailer URL",
     "actors": [],
     "showtimes": [
       {
-        "date": "2025-1-22",
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": []
+      },
+      {
+        "date": "2025-1-4",
+        "shows": []
+      },
+      {
+        "date": "2025-1-5",
+        "shows": []
+      },
+      {
+        "date": "2025-1-6",
         "shows": [
           {
             "time": "20:00",
@@ -1417,53 +2464,129 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79313?mode=widget&layout=movies&design=new&rb=0&showId=79313"
           }
         ]
       }
     ],
     "attributes": [
-      "Lesung",
-      "blocksubscriptions"
+      "Arsenal Sneak"
     ]
   },
   {
-    "id": 16,
-    "title": "Lesung & Gespräch - Uli Burchardt - Menschenschutzgebiet",
-    "duration": "100 min",
-    "fsk": "Unknown",
-    "genre": "Unknown Genre",
+    "id": 20,
+    "title": "We Live in Time",
+    "duration": "108 min",
+    "fsk": "12",
+    "genre": "Drama, Lovestory",
     "origTitle": "Unknown Original Title",
-    "production": "Unknown Production",
-    "releaseDate": "14.02.2025",
-    "distributor": "Unknown Distributor",
-    "director": "Unknown Director",
-    "description": "Straßenblockaden durch protestierende Bauern und „Klimakleber“, explodierende Energie-\nund Mietpreise, Wut auf die Umweltpolitik der Grünen und Zulauf für die AfD: Der Streit über\nden angemessenen Umgang mit, der sich anbahnenden Klimakatastrophe spaltet, unsere\nGesellschaft und die Perspektive auf ein sozial gerechtes und umweltfreundliches\nZusammenleben droht unter die Räder politischer Grabenkämpfe zu geraten.\nDer Konstanzer Oberbürgermeister, Förster und gelernte Landwirt Uli Burchardt wirft einen\nfrischen, unideologischen und hoffnungsvollen Blick auf die brennenden Themen unserer\nZeit – von Ernährung über Landwirtschaft bis hin zu Digitalisierung und Klimaschutz.\nEntgegen dem traditionellen Verständnis von Umweltschutz hebt er den vermeintlichen\nGegensatz zwischen „Schädling Mensch“ und \"schützenswerter Natur“ auf. Virtuos verbindet\ner autobiographische Eindrücke und Beispiele aus seiner beruflichen Praxis mit den großen\nUmweltthemen unserer Zeit, um schließlich eine klimaneutrale und lebenswerte Stadt der\nZukunft zu skizzieren: ein Menschenschutzgebiet – den besten Lebensraum, den es für uns\nMenschen je gab.",
-    "posterUrl": "https://static.kinoheld.de/images/film/lesung-gespraech-uli-burchardt-menschenschutzgebie-68311.v17332285929065.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "Unknown Trailer URL",
-    "actors": [],
+    "production": "Vereinigtes Königreich",
+    "releaseDate": "09.01.2025",
+    "distributor": "StudioCanal Deutschland",
+    "director": "John Crowley",
+    "description": "Almut (Florence Pugh) und Tobias (Andrew Garfield) begegnen sich in einem völlig unerwarteten Moment ihres Lebens, der den Auftakt ihrer gemeinsamen Geschichte bildet: der Zauber des Kennenlernens, wie sie eine Familie gründen und als Paar ihre Zukunft planen. Doch ihre Beziehung wird überschattet von einer Nachricht, die beide auf eine harte Probe stellt und sie schlussendlich erkennen lässt, jeden Moment ihrer besonderen Liebe im Hier und Jetzt zu genießen.<br><br>WE LIVE IN TIME ist ein zutiefst bewegendes Romantik-Drama mit der Oscar-nominierten Florence Pugh („Dune“, „Don’t Worry Darling”) und dem zweimal Oscar-nominierten und BAFTA-preisgekrönten Schauspieler Andrew Garfield („Tick Tick... Boom!”, „The Amazing Spider-Man”) in den Hauptrollen. Regie führte der Oscar-nominierte und BAFTA-prämierte Regisseur John Crowley. STUDIOCANAL hat den Filmstoff entwickelt und zusammen mit den BAFTA-preisgekrönten Partnern SunnyMarch produziert; Benedict Cumberbatch zeichnet als ausführender Produzent verantwortlich, zusammen mit Anna Marsh, Ron Halpern und Joe Naftalin für STUDIOCANAL.",
+    "posterUrl": "https://static.kinoheld.de/images/film/we-live-in-time-65733.v17339279881952.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/09EXdXwrDhg?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Amy Morgan",
+      "Joao Soares Dos Reis",
+      "Roly Botha",
+      "Kevin Brewer"
+    ],
     "showtimes": [
       {
-        "date": "2025-2-14",
+        "date": "2025-1-8",
         "shows": [
           {
-            "time": "19:00",
+            "time": "18:30",
             "theater": "Saal Arsenal",
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79310?mode=widget&layout=movies&design=new&rb=0&showId=79310"
           }
         ]
       }
     ],
-    "attributes": [
-      "Lesung",
-      "blocksubscriptions"
-    ]
+    "attributes": []
   },
   {
-    "id": 17,
+    "id": 21,
+    "title": "Cranko",
+    "duration": "133 min",
+    "fsk": "12",
+    "genre": "Drama",
+    "origTitle": "Unknown Original Title",
+    "production": "Deutschland",
+    "releaseDate": "03.10.2024",
+    "distributor": "Port Au Prince Films",
+    "director": "Joachim Lang",
+    "description": "Stuttgart 1960 – als der Choreograph John Cranko mit dem Flugzeug landet, ahnt er nicht, dass dieser Moment sein Leben verändern wird. Er soll am Stuttgarter Ballett als Gast choreographieren. In London, wo er aufgrund seiner Homosexualität zahlreiche Demütigungen bis hin zu einem Arbeitsverbot ertragen musste, hält ihn nichts mehr. In der beschaulichen Stadt erholt sich John Cranko von den erniedrigenden Erfahrungen, niemand scheint sich an seinem unkonventionellen Lebensstil zu stören. Er wird nach kurzer Zeit Ballettdirektor, Liebling des Publikums, gibt sich seiner Kunst und einem berauschenden Lebensstil hin, hat Affären, durchleidet private Rückschläge und tiefe Krisen, führt sein Büro in der Theater-Kantine und bezeichnet seine Compagnie als ‚seine Kinder‘. Der rasante und steile Aufstieg bis zur Weltspitze, das „Stuttgarter Ballettwunder“, machen John Cranko zu einem Superstar seiner Zeit. Angetrieben von der Besessenheit und Leidenschaft für seine Arbeit ist John Cranko immer auf der Suche nach Perfektion. Am Höhepunkt seiner Karriere stirbt er, unerwartet und viel zu jung, auf dem Rückflug von einer Tournee seiner Compagnie aus den USA, inmitten seiner Tänzer:innen, die mit ihm an Bord waren.<br><br>Der Kinofilm CRANKO zeichnet ein einfühlsames und bewegendes Porträt des faszinierenden Starchoreographen und Künstlers, der das Ballett in Deutschland wie kein anderer prägte: Anfang der 1960er Jahre kommt Cranko nach Stuttgart, und beginnt dort damit, das Ballett zu entstauben: Er stellt eine außergewöhnliche Compagnie zusammen, mit deren Tänzer:innen er das Stuttgarter Ballett an die Weltspitze führt.",
+    "posterUrl": "https://static.kinoheld.de/images/film/cranko-63197.v17254501147643.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/ATTmA6ZUmQw?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Jakob Forster",
+      "Sam Riley",
+      "Marcus Calvin",
+      "Stefan Weinert"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-1-2",
+        "shows": []
+      },
+      {
+        "date": "2025-1-3",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79311?mode=widget&layout=movies&design=new&rb=0&showId=79311"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-4",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Saal Coppola",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79331?mode=widget&layout=movies&design=new&rb=0&showId=79331"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-5",
+        "shows": [
+          {
+            "time": "17:15",
+            "theater": "Saal Almodóvar",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79305?mode=widget&layout=movies&design=new&rb=0&showId=79305"
+          }
+        ]
+      },
+      {
+        "date": "2025-1-6",
+        "shows": []
+      }
+    ],
+    "attributes": []
+  },
+  {
+    "id": 22,
     "title": "Stand-Up Comedy Slam Tübingen",
     "duration": "150 min",
     "fsk": "Unknown",
@@ -1487,7 +2610,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79006?mode=widget&layout=movies&design=new&rb=0&showId=79006"
           }
         ]
       },
@@ -1500,7 +2623,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79007?mode=widget&layout=movies&design=new&rb=0&showId=79007"
           }
         ]
       },
@@ -1513,7 +2636,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79008?mode=widget&layout=movies&design=new&rb=0&showId=79008"
           }
         ]
       },
@@ -1526,7 +2649,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79009?mode=widget&layout=movies&design=new&rb=0&showId=79009"
           }
         ]
       },
@@ -1539,7 +2662,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010"
           }
         ]
       },
@@ -1552,7 +2675,7 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "Unknown iframe URL"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79011?mode=widget&layout=movies&design=new&rb=0&showId=79011"
           }
         ]
       }
@@ -1563,7 +2686,77 @@
     ]
   },
   {
-    "id": 18,
+    "id": 23,
+    "title": "Lesung & Gespräch - Uli Burchardt - Menschenschutzgebiet",
+    "duration": "100 min",
+    "fsk": "Unknown",
+    "genre": "Unknown Genre",
+    "origTitle": "Unknown Original Title",
+    "production": "Unknown Production",
+    "releaseDate": "14.02.2025",
+    "distributor": "Unknown Distributor",
+    "director": "Unknown Director",
+    "description": "Straßenblockaden durch protestierende Bauern und „Klimakleber“, explodierende Energie-\nund Mietpreise, Wut auf die Umweltpolitik der Grünen und Zulauf für die AfD: Der Streit über\nden angemessenen Umgang mit, der sich anbahnenden Klimakatastrophe spaltet, unsere\nGesellschaft und die Perspektive auf ein sozial gerechtes und umweltfreundliches\nZusammenleben droht unter die Räder politischer Grabenkämpfe zu geraten.\nDer Konstanzer Oberbürgermeister, Förster und gelernte Landwirt Uli Burchardt wirft einen\nfrischen, unideologischen und hoffnungsvollen Blick auf die brennenden Themen unserer\nZeit – von Ernährung über Landwirtschaft bis hin zu Digitalisierung und Klimaschutz.\nEntgegen dem traditionellen Verständnis von Umweltschutz hebt er den vermeintlichen\nGegensatz zwischen „Schädling Mensch“ und \"schützenswerter Natur“ auf. Virtuos verbindet\ner autobiographische Eindrücke und Beispiele aus seiner beruflichen Praxis mit den großen\nUmweltthemen unserer Zeit, um schließlich eine klimaneutrale und lebenswerte Stadt der\nZukunft zu skizzieren: ein Menschenschutzgebiet – den besten Lebensraum, den es für uns\nMenschen je gab.",
+    "posterUrl": "https://static.kinoheld.de/images/film/lesung-gespraech-uli-burchardt-menschenschutzgebie-68311.v17332285929065.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "Unknown Trailer URL",
+    "actors": [],
+    "showtimes": [
+      {
+        "date": "2025-2-14",
+        "shows": [
+          {
+            "time": "19:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79124?mode=widget&layout=movies&design=new&rb=0&showId=79124"
+          }
+        ]
+      }
+    ],
+    "attributes": [
+      "Lesung",
+      "blocksubscriptions"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Lesung mit Sandro Mattioli: Germafia",
+    "duration": "120 min",
+    "fsk": "6",
+    "genre": "Unknown Genre",
+    "origTitle": "Unknown Original Title",
+    "production": "Unknown Production",
+    "releaseDate": "22.01.2025",
+    "distributor": "Unknown Distributor",
+    "director": "Unknown Director",
+    "description": "",
+    "posterUrl": "https://static.kinoheld.de/images/film/lesung-mit-sandro-mattioli-germafia-68275.v17331485418333.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "Unknown Trailer URL",
+    "actors": [],
+    "showtimes": [
+      {
+        "date": "2025-1-22",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Saal Arsenal",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79074?mode=widget&layout=movies&design=new&rb=0&showId=79074"
+          }
+        ]
+      }
+    ],
+    "attributes": [
+      "Lesung",
+      "blocksubscriptions"
+    ]
+  },
+  {
+    "id": 25,
     "title": "Freud - Jenseits des Glaubens",
     "duration": "109 Minuten",
     "fsk": "12",
@@ -1584,20 +2777,38 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
+        "date": "2025-1-1",
+        "shows": []
+      },
+      {
+        "date": "2025-01-02",
         "shows": [
           {
-            "time": "20:15",
+            "time": "17:45",
             "theater": "Atelier",
             "attributes": [
-              "2D"
+              "2D",
+              "OmdU"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12709?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12727?mode=widget"
           }
         ]
       },
       {
-        "date": "2024-12-28",
+        "date": "2025-01-03",
+        "shows": [
+          {
+            "time": "18:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12722?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-04",
         "shows": [
           {
             "time": "20:30",
@@ -1605,222 +2816,107 @@
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12710?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12723?mode=widget"
           }
         ]
       },
       {
-        "date": "2024-12-29",
+        "date": "2025-01-05",
         "shows": [
           {
-            "time": "16:45",
+            "time": "17:45",
             "theater": "Atelier",
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12711?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12724?mode=widget"
           }
         ]
       },
       {
-        "date": "2024-12-30",
+        "date": "2025-01-06",
         "shows": [
           {
-            "time": "20:15",
+            "time": "19:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12728?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-07",
+        "shows": [
+          {
+            "time": "20:00",
             "theater": "Atelier",
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12712?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12725?mode=widget"
           }
         ]
       },
       {
-        "date": "2024-12-31",
+        "date": "2025-01-08",
         "shows": [
           {
-            "time": "20:15",
+            "time": "17:30",
             "theater": "Atelier",
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12713?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12726?mode=widget"
           }
         ]
       },
       {
-        "date": "2025-01-01",
-        "shows": []
-      },
-      {
-        "date": "2025-01-02",
-        "shows": []
-      },
-      {
-        "date": "2025-01-03",
+        "date": "2025-01-09",
         "shows": []
       }
     ],
     "attributes": []
   },
   {
-    "id": 19,
-    "title": "Raub ihren Atem",
-    "duration": "110 Minuten",
+    "id": 26,
+    "title": "The Outrun",
+    "duration": "118 Minuten",
     "fsk": "12",
-    "genre": "Thriller",
+    "genre": "Drama",
     "origTitle": "Unknown Original Title",
-    "production": "Deutschland",
-    "releaseDate": "26.12.2024",
-    "distributor": "Camino Filmverleih",
-    "director": "Andreas Kröneck",
-    "description": "Die letzte Nacht vor Silvester. Polizistin Maxine und ihr Partner Joggl brauchen einen Erfolg, sonst verlieren sie ihren Job. Ein Insider-Tipp führt beide in ein Luxushotel. Ihr Ziel: eine Liste mit den wahren Identitäten hunderter V-Leute und Informanten. Doch auch die Meisterdiebin Laura ist hinter der Liste her – und beginnt mit Maxine ein gefährliches Katz und-Maus-Spiel. Beide ahnen nicht, dass sie ins Visier des skrupellosen Laschla gekommen sind.\nLaura und Maxines Chancen, diese Nacht zu überleben, schwinden. Denn es geschieht, was nicht geschehen darf – sie verlieben sich.<br><br>Eberhofer-Krimi trifft auf Film Noir – RAUB IHREN ATEM verbindet pulpiges Genrekino mit viel Humor und echten Gefühlen. Zugleich ist der Film eine Liebeserklärung an zwei ungeliebte Dialekte: Schwäbisch und Sächsisch.",
-    "posterUrl": "https://static.kinoheld.de/images/film/raub-ihren-atem-66883.v17349469388086.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "https://www.youtube-nocookie.com/embed/N1R7GmO6550?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "production": "Deutschland, Vereinigtes Königreich",
+    "releaseDate": "05.12.2024",
+    "distributor": "Studiocanal GmbH",
+    "director": "Nora Fingscheidt",
+    "description": "Nach mehr als einem Jahrzehnt kehrt Rona (Saoirse Ronan) in ihre Heimat auf den entlegenen Orkney-Inseln zurück. Während sie die einzigartige Landschaft, in der sie aufgewachsen ist, wiederentdeckt, vermischen sich ihre Kindheitserinnerungen mit der letzten, von Sucht geprägten Zeit. Ihr damaliger Aufbruch in die Stadt und die folgenden ausschweifenden Jahre in London endeten in einem schmerzhaften Absturz. Doch nach und nach wird die Begegnung mit der rauen Natur der Inseln zu einer Chance auf ein neues Leben.<br><br>Amy Liptrots Buch stand wochenlang auf den britischen Bestsellerlisten und wurde 2016 mit dem Wainright Prize und 2017 mit dem PEN Ackerley Prize ausgezeichnet. Es wurde allein in Großbritannien über 110.000-mal verkauft und später in fünfzehn Sprachen übersetzt. In Deutschland ist „Nachtlichter“ 2017 im btb Verlag erschienen. Der Verlag Canongate nahm „Nachtlichter“ in die Liste der modernen Klassiker „The Canons“ auf.",
+    "posterUrl": "https://static.kinoheld.de/images/film/the-outrun-65207.v17291791486872.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/d3PdpKhbgHE?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
     "actors": [
-      "Florian Wünsche",
-      "Katy Karrenbauer",
-      "Luisa Binger",
-      "Christina Rieth"
+      "Saoirse Ronan",
+      "Paapa Essiedu",
+      "Nabil Elouahabi",
+      "Izuka Hoyle"
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12715?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-28",
-        "shows": [
-          {
-            "time": "15:45",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12716?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": []
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "15:45",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12717?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-31",
-        "shows": []
-      },
-      {
-        "date": "2025-01-01",
+        "date": "2025-1-1",
         "shows": []
       },
       {
         "date": "2025-01-02",
-        "shows": []
-      },
-      {
-        "date": "2025-01-03",
-        "shows": []
-      }
-    ],
-    "attributes": []
-  },
-  {
-    "id": 20,
-    "title": "Es liegt an dir, Chéri",
-    "duration": "102 Minuten",
-    "fsk": "12",
-    "genre": "Komödie",
-    "origTitle": "Nous, les Leroy",
-    "production": "Frankreich",
-    "releaseDate": "19.12.2024",
-    "distributor": "Weltkino Filmverleih",
-    "director": "Florent Bernard",
-    "description": "Nach über zwanzig gemeinsamen Jahren hat Sandrine genug von ihrem Mann Christophe. Vorbei sind die Zeiten wilder Romantik und verliebter Neckereien. Christophe ist kaum noch zu Hause und hört obendrein nie seine Sprachnachrichten ab. Mit Erlaubnis ihrer fast erwachsenen Kinder Loreleï und Bastien fordert Sandrine die Scheidung. In der Hoffnung, seine Ehe zu retten, schlägt Christophe ein letztes gemeinsames Wochenende mit den Kindern vor, um die Orte zu besuchen, die ihre Familiengeschichte geprägt haben. Doch wie so vieles in seinem Leben verläuft der Roadtrip nicht ganz wie geplant.<br><br>Mit Leichtigkeit, Authentizität und viel Witz beleuchtet Florent Bernard in seiner tiefgründigen Familienkomödie die Tücken einer langjährigen Beziehung und kann sich dabei voll und ganz auf seinen hochkarätigen Cast verlassen: Charlotte Gainsbourg brilliert als frustrierte Ehefrau an der Seite von José Garcia als gescheiterter Ehemann, der verzweifelt versucht, die Flamme neu zu entfachen.",
-    "posterUrl": "https://static.kinoheld.de/images/film/es-liegt-an-dircheri-64547.v17262140060356.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
-    "trailerUrl": "https://www.youtube-nocookie.com/embed/5rtB6DNBZeI?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
-    "actors": [
-      "Charlotte Gainsbourg",
-      "José Garcia",
-      "Lili Aubry",
-      "Hadrien Heaulmé"
-    ],
-    "showtimes": [
-      {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
         "shows": [
           {
-            "time": "18:00",
+            "time": "20:15",
             "theater": "Atelier",
             "attributes": [
               "2D"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12706?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12731?mode=widget"
           }
         ]
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "14:30",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12707?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": [
-          {
-            "time": "18:00",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12708?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-31",
-        "shows": []
-      },
-      {
-        "date": "2025-01-01",
-        "shows": []
-      },
-      {
-        "date": "2025-01-02",
-        "shows": []
       },
       {
         "date": "2025-01-03",
@@ -1828,13 +2924,69 @@
       },
       {
         "date": "2025-01-04",
+        "shows": [
+          {
+            "time": "17:45",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12736?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-05",
+        "shows": [
+          {
+            "time": "15:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12732?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-06",
+        "shows": []
+      },
+      {
+        "date": "2025-01-07",
+        "shows": [
+          {
+            "time": "17:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12737?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-08",
+        "shows": [
+          {
+            "time": "20:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12733?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-09",
         "shows": []
       }
     ],
     "attributes": []
   },
   {
-    "id": 21,
+    "id": 27,
     "title": "EMILIA PEREZ",
     "duration": "130 Minuten",
     "fsk": "12",
@@ -1855,46 +3007,7 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
-        "shows": []
-      },
-      {
-        "date": "2024-12-28",
-        "shows": []
-      },
-      {
-        "date": "2024-12-29",
-        "shows": [
-          {
-            "time": "19:15",
-            "theater": "Atelier",
-            "attributes": [
-              "2D",
-              "OmdU"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12705?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2024-12-30",
-        "shows": []
-      },
-      {
-        "date": "2024-12-31",
-        "shows": [
-          {
-            "time": "17:45",
-            "theater": "Atelier",
-            "attributes": [
-              "2D"
-            ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12703?mode=widget"
-          }
-        ]
-      },
-      {
-        "date": "2025-01-01",
+        "date": "2025-1-1",
         "shows": []
       },
       {
@@ -1903,7 +3016,16 @@
       },
       {
         "date": "2025-01-03",
-        "shows": []
+        "shows": [
+          {
+            "time": "20:30",
+            "theater": "Atelier",
+            "attributes": [
+              "2D"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12719?mode=widget"
+          }
+        ]
       },
       {
         "date": "2025-01-04",
@@ -1911,13 +3033,53 @@
       },
       {
         "date": "2025-01-05",
+        "shows": [
+          {
+            "time": "20:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12720?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-06",
+        "shows": [
+          {
+            "time": "17:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12721?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-07",
+        "shows": []
+      },
+      {
+        "date": "2025-01-08",
+        "shows": []
+      },
+      {
+        "date": "2025-01-09",
+        "shows": []
+      },
+      {
+        "date": "2025-01-10",
         "shows": []
       }
     ],
     "attributes": []
   },
   {
-    "id": 22,
+    "id": 28,
     "title": "Shambhala",
     "duration": "150 Minuten",
     "fsk": "12",
@@ -1938,37 +3100,91 @@
     ],
     "showtimes": [
       {
-        "date": "2024-12-27",
+        "date": "2025-1-1",
         "shows": []
       },
       {
-        "date": "2024-12-28",
+        "date": "2025-01-02",
         "shows": []
       },
       {
-        "date": "2024-12-29",
+        "date": "2025-01-03",
         "shows": [
           {
-            "time": "11:30",
+            "time": "15:00",
             "theater": "Atelier",
             "attributes": [
               "2D",
               "OmdU"
             ],
-            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12718?mode=widget"
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12729?mode=widget"
           }
         ]
       },
       {
-        "date": "2024-12-30",
+        "date": "2025-01-04",
         "shows": []
       },
       {
-        "date": "2024-12-31",
+        "date": "2025-01-05",
         "shows": []
       },
       {
-        "date": "2025-01-01",
+        "date": "2025-01-06",
+        "shows": [
+          {
+            "time": "14:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12730?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-07",
+        "shows": []
+      },
+      {
+        "date": "2025-01-08",
+        "shows": []
+      },
+      {
+        "date": "2025-01-09",
+        "shows": []
+      },
+      {
+        "date": "2025-01-10",
+        "shows": []
+      }
+    ],
+    "attributes": []
+  },
+  {
+    "id": 29,
+    "title": "All we imagine as Light",
+    "duration": "114 Minuten",
+    "fsk": "12",
+    "genre": "Drama",
+    "origTitle": "All We Imagine as Light",
+    "production": "Frankreich, Indien, Luxemburg, Niederlande",
+    "releaseDate": "19.12.2024",
+    "distributor": "Rapid Eye Movies",
+    "director": "Payal Kapadia",
+    "description": "In Mumbai gerät der Alltag der Krankenpflegerin Prabha aus den Fugen, als sie überraschend ein Geschenk von ihrem Ehemann aus Deutschland erhält. Während Prabha sich von ihm entfremdet hat, sucht ihre jüngere, frisch verliebte Mitbewohnerin nach Raum für Zweisamkeit mit ihrem Freund. Zufällig entdecken die Frauen am Strand einen Ort, an dem sich ihre Sehnsüchte erfüllen sollen. Alternativ: Die Krankenschwester Prabha lebt mit ihrer jüngeren Kollegin und Mitbewohnerin Anu in Mumbai. Prabha hat sich von ihrem Ehemann entfremdet und versucht, ihr vergangenes Leben zu vergessen. Stattdessen stürzt sie sich in die Arbeit. Als Prabha von ihrem Mann ein unerwartetes Geschenk erhält, bringt das ihr Leben gehörig durcheinander. Währenddessen ist die unbeschwerte Anu auf der Suche nach einem Ort in der Stadt, an dem sie mit ihrem Geliebten intim sein kann. Eines Tages begeben sich Prabha und Anu auf einen Ausflug ans Meer. Dort stoßen sie auf einen mystischen Wald. Der Ort ist ein Raum der Freiheit und verhilft den Frauen zur Verwirklichung ihrer Träume. Wettbewerb Cannes Filmfestival 2024. Mit dem Großen Preis der Jury ausgezeichnet.",
+    "posterUrl": "https://static.kinoheld.de/images/film/all-we-imagine-as-light-61833.v17343474691932.jpg?w=352&h=528&fm=webp&q=90&fit=crop",
+    "trailerUrl": "https://www.youtube-nocookie.com/embed/d2Hfu5Zxddo?autoplay=1&controls=2&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&hl=de&origin=https://www.kinoheld.de:",
+    "actors": [
+      "Kani Kusruti",
+      "Divya Prabha",
+      "Chhaya Kadam",
+      "Hridhu Haroon"
+    ],
+    "showtimes": [
+      {
+        "date": "2025-1-1",
         "shows": []
       },
       {
@@ -1981,10 +3197,54 @@
       },
       {
         "date": "2025-01-04",
-        "shows": []
+        "shows": [
+          {
+            "time": "15:15",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12734?mode=widget"
+          }
+        ]
       },
       {
         "date": "2025-01-05",
+        "shows": [
+          {
+            "time": "12:00",
+            "theater": "Atelier",
+            "attributes": [
+              "2D",
+              "OmdU"
+            ],
+            "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12735?mode=widget"
+          }
+        ]
+      },
+      {
+        "date": "2025-01-06",
+        "shows": []
+      },
+      {
+        "date": "2025-01-07",
+        "shows": []
+      },
+      {
+        "date": "2025-01-08",
+        "shows": []
+      },
+      {
+        "date": "2025-01-09",
+        "shows": []
+      },
+      {
+        "date": "2025-01-10",
+        "shows": []
+      },
+      {
+        "date": "2025-01-11",
         "shows": []
       }
     ],
