@@ -1,1525 +1,5 @@
 [
   {
-    "date": "2025-1-2",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79291?mode=widget&layout=movies&design=new&rb=0&showId=79291"
-              },
-              {
-                "time": "17:15",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79298?mode=widget&layout=movies&design=new&rb=0&showId=79298"
-              },
-              {
-                "time": "20:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79274?mode=widget&layout=movies&design=new&rb=0&showId=79274"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79314?mode=widget&layout=movies&design=new&rb=0&showId=79314"
-              },
-              {
-                "time": "17:30",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79290?mode=widget&layout=movies&design=new&rb=0&showId=79290"
-              },
-              {
-                "time": "20:45",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79325?mode=widget&layout=movies&design=new&rb=0&showId=79325"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79306?mode=widget&layout=movies&design=new&rb=0&showId=79306"
-              },
-              {
-                "time": "18:00",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79273?mode=widget&layout=movies&design=new&rb=0&showId=79273"
-              },
-              {
-                "time": "20:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79307?mode=widget&layout=movies&design=new&rb=0&showId=79307"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73932?mode=widget&layout=movies&design=new&rb=0&showId=73932"
-              },
-              {
-                "time": "16:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73933?mode=widget&layout=movies&design=new&rb=0&showId=73933"
-              },
-              {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73934?mode=widget&layout=movies&design=new&rb=0&showId=73934"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "13:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73966?mode=widget&layout=movies&design=new&rb=0&showId=73966"
-              },
-              {
-                "time": "15:15",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73950?mode=widget&layout=movies&design=new&rb=0&showId=73950"
-              },
-              {
-                "time": "18:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73967?mode=widget&layout=movies&design=new&rb=0&showId=73967"
-              },
-              {
-                "time": "20:30",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73930?mode=widget&layout=movies&design=new&rb=0&showId=73930"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "13:15",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73956?mode=widget&layout=movies&design=new&rb=0&showId=73956"
-              },
-              {
-                "time": "15:45",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73957?mode=widget&layout=movies&design=new&rb=0&showId=73957"
-              },
-              {
-                "time": "18:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73913?mode=widget&layout=movies&design=new&rb=0&showId=73913"
-              },
-              {
-                "time": "20:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73914?mode=widget&layout=movies&design=new&rb=0&showId=73914"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:45",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12727?mode=widget&layout=movies&design=new&rb=0&showId=12727"
-              },
-              {
-                "time": "20:15",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12731?mode=widget&layout=movies&design=new&rb=0&showId=12731"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-1-3",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79299?mode=widget&layout=movies&design=new&rb=0&showId=79299"
-              },
-              {
-                "time": "17:15",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79292?mode=widget&layout=movies&design=new&rb=0&showId=79292"
-              },
-              {
-                "time": "20:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79275?mode=widget&layout=movies&design=new&rb=0&showId=79275"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79315?mode=widget&layout=movies&design=new&rb=0&showId=79315"
-              },
-              {
-                "time": "17:30",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79328?mode=widget&layout=movies&design=new&rb=0&showId=79328"
-              },
-              {
-                "time": "20:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79316?mode=widget&layout=movies&design=new&rb=0&showId=79316"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "14:45",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79284?mode=widget&layout=movies&design=new&rb=0&showId=79284"
-              },
-              {
-                "time": "17:00",
-                "movieId": 21,
-                "movieTitle": "Cranko",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79311?mode=widget&layout=movies&design=new&rb=0&showId=79311"
-              },
-              {
-                "time": "19:45",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79285?mode=widget&layout=movies&design=new&rb=0&showId=79285"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73935?mode=widget&layout=movies&design=new&rb=0&showId=73935"
-              },
-              {
-                "time": "16:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73936?mode=widget&layout=movies&design=new&rb=0&showId=73936"
-              },
-              {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73947?mode=widget&layout=movies&design=new&rb=0&showId=73947"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "13:00",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73951?mode=widget&layout=movies&design=new&rb=0&showId=73951"
-              },
-              {
-                "time": "15:30",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73976?mode=widget&layout=movies&design=new&rb=0&showId=73976"
-              },
-              {
-                "time": "18:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73968?mode=widget&layout=movies&design=new&rb=0&showId=73968"
-              },
-              {
-                "time": "20:30",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73925?mode=widget&layout=movies&design=new&rb=0&showId=73925"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "13:15",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73958?mode=widget&layout=movies&design=new&rb=0&showId=73958"
-              },
-              {
-                "time": "15:45",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73959?mode=widget&layout=movies&design=new&rb=0&showId=73959"
-              },
-              {
-                "time": "18:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73915?mode=widget&layout=movies&design=new&rb=0&showId=73915"
-              },
-              {
-                "time": "20:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73916?mode=widget&layout=movies&design=new&rb=0&showId=73916"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:00",
-                "movieId": 18,
-                "movieTitle": "Shambhala",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12729?mode=widget&layout=movies&design=new&rb=0&showId=12729"
-              },
-              {
-                "time": "18:00",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12722?mode=widget&layout=movies&design=new&rb=0&showId=12722"
-              },
-              {
-                "time": "20:30",
-                "movieId": 15,
-                "movieTitle": "Emilia Pérez",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12719?mode=widget&layout=movies&design=new&rb=0&showId=12719"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-1-4",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 3,
-                "movieTitle": "UKRAINISCH: Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79304?mode=widget&layout=movies&design=new&rb=0&showId=79304"
-              },
-              {
-                "time": "17:15",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79293?mode=widget&layout=movies&design=new&rb=0&showId=79293"
-              },
-              {
-                "time": "20:30",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79300?mode=widget&layout=movies&design=new&rb=0&showId=79300"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 21,
-                "movieTitle": "Cranko",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79331?mode=widget&layout=movies&design=new&rb=0&showId=79331"
-              },
-              {
-                "time": "16:45",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79317?mode=widget&layout=movies&design=new&rb=0&showId=79317"
-              },
-              {
-                "time": "19:00",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79318?mode=widget&layout=movies&design=new&rb=0&showId=79318"
-              },
-              {
-                "time": "21:15",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79326?mode=widget&layout=movies&design=new&rb=0&showId=79326"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "15:00",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79276?mode=widget&layout=movies&design=new&rb=0&showId=79276"
-              },
-              {
-                "time": "17:15",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79286?mode=widget&layout=movies&design=new&rb=0&showId=79286"
-              },
-              {
-                "time": "20:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79277?mode=widget&layout=movies&design=new&rb=0&showId=79277"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73937?mode=widget&layout=movies&design=new&rb=0&showId=73937"
-              },
-              {
-                "time": "16:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73938?mode=widget&layout=movies&design=new&rb=0&showId=73938"
-              },
-              {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73939?mode=widget&layout=movies&design=new&rb=0&showId=73939"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "13:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73969?mode=widget&layout=movies&design=new&rb=0&showId=73969"
-              },
-              {
-                "time": "15:15",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73952?mode=widget&layout=movies&design=new&rb=0&showId=73952"
-              },
-              {
-                "time": "18:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73970?mode=widget&layout=movies&design=new&rb=0&showId=73970"
-              },
-              {
-                "time": "20:30",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73926?mode=widget&layout=movies&design=new&rb=0&showId=73926"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "13:15",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73977?mode=widget&layout=movies&design=new&rb=0&showId=73977"
-              },
-              {
-                "time": "15:45",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73960?mode=widget&layout=movies&design=new&rb=0&showId=73960"
-              },
-              {
-                "time": "18:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73917?mode=widget&layout=movies&design=new&rb=0&showId=73917"
-              },
-              {
-                "time": "20:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73918?mode=widget&layout=movies&design=new&rb=0&showId=73918"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 17,
-                "movieTitle": "All we imagine as Light",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12734?mode=widget&layout=movies&design=new&rb=0&showId=12734"
-              },
-              {
-                "time": "17:45",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12736?mode=widget&layout=movies&design=new&rb=0&showId=12736"
-              },
-              {
-                "time": "20:30",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12723?mode=widget&layout=movies&design=new&rb=0&showId=12723"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-1-5",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79294?mode=widget&layout=movies&design=new&rb=0&showId=79294"
-              },
-              {
-                "time": "17:15",
-                "movieId": 21,
-                "movieTitle": "Cranko",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79305?mode=widget&layout=movies&design=new&rb=0&showId=79305"
-              },
-              {
-                "time": "20:00",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79295?mode=widget&layout=movies&design=new&rb=0&showId=79295"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "14:45",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79319?mode=widget&layout=movies&design=new&rb=0&showId=79319"
-              },
-              {
-                "time": "17:00",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79287?mode=widget&layout=movies&design=new&rb=0&showId=79287"
-              },
-              {
-                "time": "20:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79320?mode=widget&layout=movies&design=new&rb=0&showId=79320"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79278?mode=widget&layout=movies&design=new&rb=0&showId=79278"
-              },
-              {
-                "time": "17:30",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79312?mode=widget&layout=movies&design=new&rb=0&showId=79312"
-              },
-              {
-                "time": "20:15",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79279?mode=widget&layout=movies&design=new&rb=0&showId=79279"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 9,
-                "movieTitle": "UKRAINISCH: Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73949?mode=widget&layout=movies&design=new&rb=0&showId=73949"
-              },
-              {
-                "time": "16:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73940?mode=widget&layout=movies&design=new&rb=0&showId=73940"
-              },
-              {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73941?mode=widget&layout=movies&design=new&rb=0&showId=73941"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "13:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73971?mode=widget&layout=movies&design=new&rb=0&showId=73971"
-              },
-              {
-                "time": "15:15",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73953?mode=widget&layout=movies&design=new&rb=0&showId=73953"
-              },
-              {
-                "time": "18:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73972?mode=widget&layout=movies&design=new&rb=0&showId=73972"
-              },
-              {
-                "time": "20:30",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73931?mode=widget&layout=movies&design=new&rb=0&showId=73931"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "13:15",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73961?mode=widget&layout=movies&design=new&rb=0&showId=73961"
-              },
-              {
-                "time": "15:45",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73962?mode=widget&layout=movies&design=new&rb=0&showId=73962"
-              },
-              {
-                "time": "18:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73919?mode=widget&layout=movies&design=new&rb=0&showId=73919"
-              },
-              {
-                "time": "20:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73920?mode=widget&layout=movies&design=new&rb=0&showId=73920"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "12:00",
-                "movieId": 17,
-                "movieTitle": "All we imagine as Light",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12735?mode=widget&layout=movies&design=new&rb=0&showId=12735"
-              },
-              {
-                "time": "15:00",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12732?mode=widget&layout=movies&design=new&rb=0&showId=12732"
-              },
-              {
-                "time": "17:45",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12724?mode=widget&layout=movies&design=new&rb=0&showId=12724"
-              },
-              {
-                "time": "20:15",
-                "movieId": 15,
-                "movieTitle": "Emilia Pérez",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12720?mode=widget&layout=movies&design=new&rb=0&showId=12720"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-1-6",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "13:45",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79296?mode=widget&layout=movies&design=new&rb=0&showId=79296"
-              },
-              {
-                "time": "17:00",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79301?mode=widget&layout=movies&design=new&rb=0&showId=79301"
-              },
-              {
-                "time": "20:15",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79281?mode=widget&layout=movies&design=new&rb=0&showId=79281"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79321?mode=widget&layout=movies&design=new&rb=0&showId=79321"
-              },
-              {
-                "time": "15:45",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79322?mode=widget&layout=movies&design=new&rb=0&showId=79322"
-              },
-              {
-                "time": "18:00",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79323?mode=widget&layout=movies&design=new&rb=0&showId=79323"
-              },
-              {
-                "time": "20:15",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79329?mode=widget&layout=movies&design=new&rb=0&showId=79329"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "14:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79280?mode=widget&layout=movies&design=new&rb=0&showId=79280"
-              },
-              {
-                "time": "16:45",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79288?mode=widget&layout=movies&design=new&rb=0&showId=79288"
-              },
-              {
-                "time": "20:00",
-                "movieId": 19,
-                "movieTitle": "Arsenal Sneak",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79313?mode=widget&layout=movies&design=new&rb=0&showId=79313"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73942?mode=widget&layout=movies&design=new&rb=0&showId=73942"
-              },
-              {
-                "time": "16:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73948?mode=widget&layout=movies&design=new&rb=0&showId=73948"
-              },
-              {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73943?mode=widget&layout=movies&design=new&rb=0&showId=73943"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73954?mode=widget&layout=movies&design=new&rb=0&showId=73954"
-              },
-              {
-                "time": "16:45",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73973?mode=widget&layout=movies&design=new&rb=0&showId=73973"
-              },
-              {
-                "time": "19:15",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73927?mode=widget&layout=movies&design=new&rb=0&showId=73927"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "13:15",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73963?mode=widget&layout=movies&design=new&rb=0&showId=73963"
-              },
-              {
-                "time": "15:45",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73964?mode=widget&layout=movies&design=new&rb=0&showId=73964"
-              },
-              {
-                "time": "18:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73921?mode=widget&layout=movies&design=new&rb=0&showId=73921"
-              },
-              {
-                "time": "20:15",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73922?mode=widget&layout=movies&design=new&rb=0&showId=73922"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "14:00",
-                "movieId": 18,
-                "movieTitle": "Shambhala",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12730?mode=widget&layout=movies&design=new&rb=0&showId=12730"
-              },
-              {
-                "time": "17:00",
-                "movieId": 15,
-                "movieTitle": "Emilia Pérez",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12721?mode=widget&layout=movies&design=new&rb=0&showId=12721"
-              },
-              {
-                "time": "19:45",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12728?mode=widget&layout=movies&design=new&rb=0&showId=12728"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-1-7",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "16:15",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79297?mode=widget&layout=movies&design=new&rb=0&showId=79297"
-              },
-              {
-                "time": "19:30",
-                "movieId": 2,
-                "movieTitle": "Wicked",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79302?mode=widget&layout=movies&design=new&rb=0&showId=79302"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 1,
-                "movieTitle": "Queer",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79327?mode=widget&layout=movies&design=new&rb=0&showId=79327"
-              },
-              {
-                "time": "20:15",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79324?mode=widget&layout=movies&design=new&rb=0&showId=79324"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "17:45",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79308?mode=widget&layout=movies&design=new&rb=0&showId=79308"
-              },
-              {
-                "time": "20:00",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79282?mode=widget&layout=movies&design=new&rb=0&showId=79282"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 9,
-                "movieTitle": "UKRAINISCH: Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73975?mode=widget&layout=movies&design=new&rb=0&showId=73975"
-              },
-              {
-                "time": "20:00",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73944?mode=widget&layout=movies&design=new&rb=0&showId=73944"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:00",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73955?mode=widget&layout=movies&design=new&rb=0&showId=73955"
-              },
-              {
-                "time": "19:45",
-                "movieId": 13,
-                "movieTitle": "Konklave",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73928?mode=widget&layout=movies&design=new&rb=0&showId=73928"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 8,
-                "movieTitle": "Sonic the Hedgehog 3",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73978?mode=widget&layout=movies&design=new&rb=0&showId=73978"
-              },
-              {
-                "time": "20:00",
-                "movieId": 12,
-                "movieTitle": "Der Spitzname",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73923?mode=widget&layout=movies&design=new&rb=0&showId=73923"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12737?mode=widget&layout=movies&design=new&rb=0&showId=12737"
-              },
-              {
-                "time": "20:00",
-                "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12725?mode=widget&layout=movies&design=new&rb=0&showId=12725"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "date": "2025-1-8",
     "theaters": [
       {
@@ -1530,22 +10,22 @@
             "showings": [
               {
                 "time": "17:15",
-                "movieId": 6,
+                "movieId": 10,
                 "movieTitle": "Die leisen und die großen Töne",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79283?mode=widget&layout=movies&design=new&rb=0&showId=79283"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
-                "movieId": 2,
+                "movieId": 7,
                 "movieTitle": "Wicked",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79303?mode=widget&layout=movies&design=new&rb=0&showId=79303"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1554,22 +34,22 @@
             "showings": [
               {
                 "time": "17:00",
-                "movieId": 7,
+                "movieId": 11,
                 "movieTitle": "Die Saat des heiligen Feigenbaums",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79289?mode=widget&layout=movies&design=new&rb=0&showId=79289"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
-                "movieId": 1,
+                "movieId": 6,
                 "movieTitle": "Queer",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79330?mode=widget&layout=movies&design=new&rb=0&showId=79330"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1578,21 +58,21 @@
             "showings": [
               {
                 "time": "18:30",
-                "movieId": 20,
+                "movieId": 0,
                 "movieTitle": "We Live in Time",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79310?mode=widget&layout=movies&design=new&rb=0&showId=79310"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
-                "movieId": 0,
-                "movieTitle": "FESTE & FREUNDE - Ein Hoch auf uns!",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79309?mode=widget&layout=movies&design=new&rb=0&showId=79309"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1606,21 +86,21 @@
             "showings": [
               {
                 "time": "16:30",
-                "movieId": 10,
+                "movieId": 13,
                 "movieTitle": "Mufasa: Der König der Löwen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73945?mode=widget&layout=movies&design=new&rb=0&showId=73945"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
-                "movieId": 10,
+                "movieId": 13,
                 "movieTitle": "Mufasa: Der König der Löwen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73946?mode=widget&layout=movies&design=new&rb=0&showId=73946"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1629,22 +109,22 @@
             "showings": [
               {
                 "time": "17:15",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73974?mode=widget&layout=movies&design=new&rb=0&showId=73974"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:45",
-                "movieId": 13,
+                "movieId": 16,
                 "movieTitle": "Konklave",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73929?mode=widget&layout=movies&design=new&rb=0&showId=73929"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1653,21 +133,269 @@
             "showings": [
               {
                 "time": "17:30",
-                "movieId": 8,
+                "movieId": 12,
                 "movieTitle": "Sonic the Hedgehog 3",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73965?mode=widget&layout=movies&design=new&rb=0&showId=73965"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
-                "movieId": 12,
+                "movieId": 15,
                 "movieTitle": "Der Spitzname",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73924?mode=widget&layout=movies&design=new&rb=0&showId=73924"
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "17:30",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:30",
+                "movieId": 25,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12726?mode=widget"
+              },
+              {
+                "time": "20:00",
+                "movieId": 18,
+                "movieTitle": "The Outrun",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 26,
+                "movieTitle": "The Outrun",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12733?mode=widget"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-9",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "15:30",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:45",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "14:45",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:00",
+                "movieId": 11,
+                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "15:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:30",
+                "movieId": 6,
+                "movieTitle": "Queer",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "15:30",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:00",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "15:45",
+                "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1682,20 +410,21 @@
               {
                 "time": "17:30",
                 "movieId": 16,
-                "movieTitle": "Freud - Jenseits des Glaubens",
+                "movieTitle": "Konklave",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12726?mode=widget&layout=movies&design=new&rb=0&showId=12726"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
                 "attributes": [
-                  "2D"
+                  "2D",
+                  "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12733?mode=widget&layout=movies&design=new&rb=0&showId=12733"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1704,7 +433,7 @@
     ]
   },
   {
-    "date": "2025-1-1",
+    "date": "2025-1-10",
     "theaters": [
       {
         "name": "Kino Museum",
@@ -1713,31 +442,31 @@
             "name": "Saal Almodóvar",
             "showings": [
               {
-                "time": "14:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79232?mode=widget&layout=movies&design=new&rb=0&showId=79232"
-              },
-              {
-                "time": "17:00",
-                "movieId": 2,
+                "time": "15:00",
+                "movieId": 7,
                 "movieTitle": "Wicked",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79264?mode=widget&layout=movies&design=new&rb=0&showId=79264"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "20:15",
-                "movieId": 6,
+                "time": "18:15",
+                "movieId": 10,
                 "movieTitle": "Die leisen und die großen Töne",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79234?mode=widget&layout=movies&design=new&rb=0&showId=79234"
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:30",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1745,32 +474,32 @@
             "name": "Saal Coppola",
             "showings": [
               {
-                "time": "15:00",
-                "movieId": 17,
-                "movieTitle": "All we imagine as Light",
+                "time": "15:15",
+                "movieId": 6,
+                "movieTitle": "Queer",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79218?mode=widget&layout=movies&design=new&rb=0&showId=79218"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "17:30",
-                "movieId": 14,
-                "movieTitle": "The Outrun",
+                "time": "18:00",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79256?mode=widget&layout=movies&design=new&rb=0&showId=79256"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "20:00",
-                "movieId": 7,
-                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "time": "20:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79243?mode=widget&layout=movies&design=new&rb=0&showId=79243"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1778,32 +507,32 @@
             "name": "Saal Arsenal",
             "showings": [
               {
-                "time": "14:45",
-                "movieId": 13,
-                "movieTitle": "Konklave",
+                "time": "15:00",
+                "movieId": 3,
+                "movieTitle": "Emilia Pérez",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79251?mode=widget&layout=movies&design=new&rb=0&showId=79251"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "17:30",
-                "movieId": 6,
-                "movieTitle": "Die leisen und die großen Töne",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79233?mode=widget&layout=movies&design=new&rb=0&showId=79233"
-              },
-              {
-                "time": "19:45",
-                "movieId": 2,
-                "movieTitle": "Wicked",
+                "time": "17:45",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79270?mode=widget&layout=movies&design=new&rb=0&showId=79270"
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 11,
+                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1816,31 +545,32 @@
             "name": "Saal Tarantino",
             "showings": [
               {
-                "time": "13:30",
-                "movieId": 10,
+                "time": "15:15",
+                "movieId": 13,
                 "movieTitle": "Mufasa: Der König der Löwen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73888?mode=widget&layout=movies&design=new&rb=0&showId=73888"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "16:30",
-                "movieId": 10,
+                "time": "18:00",
+                "movieId": 13,
                 "movieTitle": "Mufasa: Der König der Löwen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73889?mode=widget&layout=movies&design=new&rb=0&showId=73889"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "19:30",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
+                "time": "20:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
                 "attributes": [
-                  "2D"
+                  "2D",
+                  "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73890?mode=widget&layout=movies&design=new&rb=0&showId=73890"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1848,40 +578,34 @@
             "name": "Saal Spielberg",
             "showings": [
               {
-                "time": "13:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
+                "time": "15:00",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
                 "attributes": [
-                  "2D"
+                  "2D",
+                  "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73908?mode=widget&layout=movies&design=new&rb=0&showId=73908"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "15:15",
-                "movieId": 10,
-                "movieTitle": "Mufasa: Der König der Löwen",
+                "time": "17:15",
+                "movieId": 7,
+                "movieTitle": "Wicked",
                 "attributes": [
-                  "3D"
+                  "2D",
+                  "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73900?mode=widget&layout=movies&design=new&rb=0&showId=73900"
-              },
-              {
-                "time": "18:00",
-                "movieId": 11,
-                "movieTitle": "VAIANA 2",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73909?mode=widget&layout=movies&design=new&rb=0&showId=73909"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
-                "movieId": 13,
-                "movieTitle": "Konklave",
+                "movieId": 2,
+                "movieTitle": "September 5",
                 "attributes": [
-                  "2D"
+                  "2D",
+                  "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73874?mode=widget&layout=movies&design=new&rb=0&showId=73874"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1889,40 +613,1164 @@
             "name": "Saal Kubrick",
             "showings": [
               {
-                "time": "13:45",
-                "movieId": 8,
+                "time": "15:45",
+                "movieId": 12,
                 "movieTitle": "Sonic the Hedgehog 3",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73868?mode=widget&layout=movies&design=new&rb=0&showId=73868"
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:15",
+                "movieId": 17,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 16,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-11",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "15:00",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:15",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:30",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "14:30",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "16:45",
+                "movieId": 11,
+                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 3,
+                "movieTitle": "Emilia Pérez",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "15:15",
+                "movieId": 6,
+                "movieTitle": "Queer",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:00",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "13:15",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "15:30",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "21:00",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "13:45",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:15",
-                "movieId": 8,
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:30",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:30",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "13:15",
+                "movieId": 12,
                 "movieTitle": "Sonic the Hedgehog 3",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73869?mode=widget&layout=movies&design=new&rb=0&showId=73869"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "18:45",
+                "time": "15:45",
                 "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 15,
                 "movieTitle": "Der Spitzname",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73856?mode=widget&layout=movies&design=new&rb=0&showId=73856"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
-                "time": "20:45",
-                "movieId": 12,
+                "time": "20:15",
+                "movieId": 15,
                 "movieTitle": "Der Spitzname",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/73857?mode=widget&layout=movies&design=new&rb=0&showId=73857"
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "16:00",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:30",
+                "movieId": 17,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:30",
+                "movieId": 16,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-12",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "14:30",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:45",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "14:15",
+                "movieId": 11,
+                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:30",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 6,
+                "movieTitle": "Queer",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "15:00",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:15",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:30",
+                "movieId": 3,
+                "movieTitle": "Emilia Pérez",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "12:00",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "14:15",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:00",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "12:30",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "15:00",
+                "movieId": 14,
+                "movieTitle": "Vaiana 2",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:15",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:15",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "12:15",
+                "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "14:45",
+                "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:30",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:30",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "14:30",
+                "movieId": 16,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "17:00",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:30",
+                "movieId": 17,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-13",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 3,
+                "movieTitle": "Emilia Pérez",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 20,
+                "movieTitle": "Arsenal Sneak",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 17,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-14",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 11,
+                "movieTitle": "Die Saat des heiligen Feigenbaums",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "16:00",
+                "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 16,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:30",
+                "movieId": 17,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-1-15",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:45",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 0,
+                "movieTitle": "We Live in Time",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "17:45",
+                "movieId": 5,
+                "movieTitle": "Feste & Freunde - Ein Hoch auf uns!",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 6,
+                "movieTitle": "Queer",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 4,
+                "movieTitle": "A Real Pain",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 10,
+                "movieTitle": "Die leisen und die großen Töne",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 13,
+                "movieTitle": "Mufasa: Der König der Löwen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "19:45",
+                "movieId": 1,
+                "movieTitle": "Nosferatu - Der Untote",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "17:00",
+                "movieId": 7,
+                "movieTitle": "Wicked",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 2,
+                "movieTitle": "September 5",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "16:00",
+                "movieId": 12,
+                "movieTitle": "Sonic the Hedgehog 3",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "18:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:15",
+                "movieId": 15,
+                "movieTitle": "Der Spitzname",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "17:30",
+                "movieId": 19,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              },
+              {
+                "time": "20:00",
+                "movieId": 16,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1941,12 +1789,12 @@
             "showings": [
               {
                 "time": "11:00",
-                "movieId": 4,
+                "movieId": 8,
                 "movieTitle": "Misty - The Erroll Garner Story",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79272?mode=widget&layout=movies&design=new&rb=0&showId=79272"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1965,12 +1813,12 @@
             "showings": [
               {
                 "time": "20:00",
-                "movieId": 5,
+                "movieId": 9,
                 "movieTitle": "DTK unplugged meets Krimispannung live",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79213?mode=widget&layout=movies&design=new&rb=0&showId=79213"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1989,12 +1837,132 @@
             "showings": [
               {
                 "time": "20:00",
-                "movieId": 5,
+                "movieId": 9,
                 "movieTitle": "DTK unplugged meets Krimispannung live",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79214?mode=widget&layout=movies&design=new&rb=0&showId=79214"
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-2-11",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 21,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-3-11",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 21,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-4-8",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 21,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-5-13",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 21,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-6-10",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "20:00",
+                "movieId": 21,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2018,7 +1986,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79006?mode=widget&layout=movies&design=new&rb=0&showId=79006"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2042,7 +2010,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79007?mode=widget&layout=movies&design=new&rb=0&showId=79007"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2066,7 +2034,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79008?mode=widget&layout=movies&design=new&rb=0&showId=79008"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2090,7 +2058,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79009?mode=widget&layout=movies&design=new&rb=0&showId=79009"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2114,7 +2082,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2138,7 +2106,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79011?mode=widget&layout=movies&design=new&rb=0&showId=79011"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2162,7 +2130,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79124?mode=widget&layout=movies&design=new&rb=0&showId=79124"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2186,7 +2154,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79074?mode=widget&layout=movies&design=new&rb=0&showId=79074"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2195,7 +2163,7 @@
     ]
   },
   {
-    "date": "2025-01-02",
+    "date": "2025-01-09",
     "theaters": [
       {
         "name": "Kino Atelier",
@@ -2204,23 +2172,23 @@
             "name": "Atelier",
             "showings": [
               {
-                "time": "17:45",
+                "time": "17:30",
+                "movieId": 27,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12743?mode=widget"
+              },
+              {
+                "time": "20:00",
                 "movieId": 25,
                 "movieTitle": "Freud - Jenseits des Glaubens",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12727?mode=widget"
-              },
-              {
-                "time": "20:15",
-                "movieId": 26,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12731?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12741?mode=widget"
               }
             ]
           }
@@ -2229,7 +2197,7 @@
     ]
   },
   {
-    "date": "2025-01-03",
+    "date": "2025-01-11",
     "theaters": [
       {
         "name": "Kino Atelier",
@@ -2238,32 +2206,31 @@
             "name": "Atelier",
             "showings": [
               {
-                "time": "15:00",
+                "time": "16:00",
+                "movieId": 25,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12738?mode=widget"
+              },
+              {
+                "time": "18:30",
                 "movieId": 28,
-                "movieTitle": "Shambhala",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12729?mode=widget"
-              },
-              {
-                "time": "18:00",
-                "movieId": 25,
-                "movieTitle": "Freud - Jenseits des Glaubens",
+                "movieTitle": "Veni Vidi Vici",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12722?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12752?mode=widget"
               },
               {
                 "time": "20:30",
                 "movieId": 27,
-                "movieTitle": "EMILIA PEREZ",
+                "movieTitle": "Konklave",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12719?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12745?mode=widget"
               }
             ]
           }
@@ -2272,50 +2239,7 @@
     ]
   },
   {
-    "date": "2025-01-04",
-    "theaters": [
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:15",
-                "movieId": 29,
-                "movieTitle": "All we imagine as Light",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12734?mode=widget"
-              },
-              {
-                "time": "17:45",
-                "movieId": 26,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12736?mode=widget"
-              },
-              {
-                "time": "20:30",
-                "movieId": 25,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12723?mode=widget"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-01-05",
+    "date": "2025-01-12",
     "theaters": [
       {
         "name": "Kino Atelier",
@@ -2326,40 +2250,140 @@
               {
                 "time": "12:00",
                 "movieId": 29,
-                "movieTitle": "All we imagine as Light",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12735?mode=widget"
-              },
-              {
-                "time": "15:00",
-                "movieId": 26,
-                "movieTitle": "The Outrun",
+                "movieTitle": "Unknown Title",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12732?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12750?mode=widget"
               },
               {
-                "time": "17:45",
+                "time": "14:30",
+                "movieId": 27,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12746?mode=widget"
+              },
+              {
+                "time": "17:00",
                 "movieId": 25,
                 "movieTitle": "Freud - Jenseits des Glaubens",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12724?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12739?mode=widget"
+              },
+              {
+                "time": "19:30",
+                "movieId": 28,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12753?mode=widget"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-01-13",
+    "theaters": [
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "movieId": 28,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12754?mode=widget"
+              },
+              {
+                "time": "20:00",
+                "movieId": 25,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12742?mode=widget"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-01-15",
+    "theaters": [
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "17:30",
+                "movieId": 25,
+                "movieTitle": "Freud - Jenseits des Glaubens",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12740?mode=widget"
+              },
+              {
+                "time": "20:00",
+                "movieId": 27,
+                "movieTitle": "Konklave",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12749?mode=widget"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-01-10",
+    "theaters": [
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:15",
+                "movieId": 28,
+                "movieTitle": "Veni Vidi Vici",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12751?mode=widget"
               },
               {
                 "time": "20:15",
                 "movieId": 27,
-                "movieTitle": "EMILIA PEREZ",
+                "movieTitle": "Konklave",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12720?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12748?mode=widget"
               }
             ]
           }
@@ -2368,7 +2392,7 @@
     ]
   },
   {
-    "date": "2025-01-06",
+    "date": "2025-01-14",
     "theaters": [
       {
         "name": "Kino Atelier",
@@ -2377,100 +2401,22 @@
             "name": "Atelier",
             "showings": [
               {
-                "time": "14:00",
-                "movieId": 28,
-                "movieTitle": "Shambhala",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12730?mode=widget"
-              },
-              {
-                "time": "17:00",
+                "time": "18:00",
                 "movieId": 27,
-                "movieTitle": "EMILIA PEREZ",
+                "movieTitle": "Konklave",
                 "attributes": [
-                  "2D",
-                  "OmdU"
+                  "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12721?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12747?mode=widget"
               },
               {
-                "time": "19:45",
-                "movieId": 25,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12728?mode=widget"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-01-07",
-    "theaters": [
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 26,
-                "movieTitle": "The Outrun",
+                "time": "20:30",
+                "movieId": 28,
+                "movieTitle": "Veni Vidi Vici",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12737?mode=widget"
-              },
-              {
-                "time": "20:00",
-                "movieId": 25,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12725?mode=widget"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-01-08",
-    "theaters": [
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:30",
-                "movieId": 25,
-                "movieTitle": "Freud - Jenseits des Glaubens",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12726?mode=widget"
-              },
-              {
-                "time": "20:00",
-                "movieId": 26,
-                "movieTitle": "The Outrun",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12733?mode=widget"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/vorstellung/12755?mode=widget"
               }
             ]
           }
