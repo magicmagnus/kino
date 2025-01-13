@@ -20,8 +20,46 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script>
+        let deferredPrompt;
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            // Update UI notify the user they can install the PWA
+            showInstallPromotion();
+        });
+
+        const showInstallPromotion = () => {
+            const installButton = document.createElement('button');
+            installButton.textContent = 'Install App';
+            installButton.style.position = 'fixed';
+            installButton.style.bottom = '10px';
+            installButton.style.right = '10px';
+            document.body.appendChild(installButton);
+
+            installButton.addEventListener('click', () => {
+                // Hide the app provided install promotion
+                installButton.style.display = 'none';
+                // Show the install prompt
+                deferredPrompt.prompt();
+                // Wait for the user to respond to the prompt
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User accepted the install prompt');
+                    } else {
+                        console.log('User dismissed the install prompt');
+                    }
+                    deferredPrompt = null;
+                });
+            });
+        };
+    </script>
     <title>Kinoschurke</title>
-  <script type="module" crossorigin src="/assets/index-CxvXANSQ.js"></script>
+  <script type="module" crossorigin src="/assets/index-CMumRKQ-.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-Ble1XDNd.css">
 </head>
 
