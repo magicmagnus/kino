@@ -23,9 +23,9 @@ const router = createBrowserRouter(
             <Route path="*" element={<NotFoundPage />} />
         </Route>,
     ),
-    {
-        basename: "/kino2",
-    },
+    // {
+    //     basename: "/kino2",
+    // },
 );
 
 const App = () => {
