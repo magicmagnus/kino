@@ -33,7 +33,7 @@ const MovieBlock = (props) => {
                     className="h-full w-auto rounded-l-lg object-cover"
                 />
             </div>
-            <div className="flex flex-grow flex-col justify-between gap-2 overflow-hidden px-3 pb-1.5 pt-1 text-left">
+            <div className="flex h-full flex-grow flex-col justify-between gap-2 overflow-hidden px-3 pb-1.5 pt-1 text-left">
                 <h1
                     className={
                         "text-sm font-semibold" +

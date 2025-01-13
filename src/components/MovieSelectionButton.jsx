@@ -20,7 +20,7 @@ const MovieSelectionButton = (props) => {
                 />
             </div>
 
-            <div className="flex flex-col items-start justify-center gap-1.5 overflow-hidden px-1.5 pr-2 text-left">
+            <div className="flex h-full flex-col items-start justify-center gap-1.5 overflow-hidden px-1.5 pr-2 text-left">
                 <p className="line-clamp-2 break-words">{text}</p>
             </div>
         </button>
