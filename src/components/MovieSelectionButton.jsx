@@ -6,7 +6,7 @@ const MovieSelectionButton = (props) => {
         <button
             onClick={onClick}
             className={
-                "flex h-10 w-44 min-w-32 rounded-full text-xs font-semibold transition-all duration-200 hover:bg-rose-500 hover:text-rose-50" +
+                "flex h-10 w-44 min-w-32 rounded-lg text-xs font-semibold transition-all duration-200 hover:bg-rose-500 hover:text-rose-50" +
                 (selected
                     ? " bg-rose-600 text-rose-50"
                     : " bg-rose-900 text-gray-200")
@@ -14,7 +14,7 @@ const MovieSelectionButton = (props) => {
         >
             <div className="h-10 shrink-0">
                 <img
-                    className="h-full w-auto rounded-l-full object-cover"
+                    className="h-full w-auto rounded-l-lg object-cover"
                     src={img}
                     alt="movie"
                 />
