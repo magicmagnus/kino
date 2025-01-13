@@ -4,6 +4,8 @@ on:
   push:
   repository_dispatch:
     types: [deploy_trigger]
+  workflow_dispatch: # Allows manual triggering of the workflow
+
 
 permissions:
   contents: write  # This line gives the workflow permission to write to the repository
