@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import MovieCard from "../components/MovieCard";
 import Footer from "../components/Footer";
+import InstallPWA from "../components/InstallPWA";
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { TIMELINE_WIDTH } from "../utils/utils";
@@ -64,6 +65,9 @@ const MainLayout = () => {
                     </div>
                 )}
             </div>
+
+            {/* Install PWA button */}
+            <InstallPWA />
         </div>
     );
 };
