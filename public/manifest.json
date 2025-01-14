@@ -1,5 +1,5 @@
 {
-    "name": "Kinoschurke",
+    "name": "Kinoschurke - Kino Programm Tübingen",
     "short_name": "Kinoschurke",
     "description": "Get a quick overview of all movie showtimes in Tübingen cinemas.",
     "lang": "de-DE",
@@ -15,15 +15,62 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#09090b",
+    "theme_color": "#e11d48",
     "background_color": "#09090b",
     "display": "standalone",
-    "start_url": "/",
-    "scope": "/",
+    "display_override": [
+        "window-controls-overlay",
+        "standalone"
+    ],
+    "start_url": "https://kinoschurke.de/",
+    "scope": "https://kinoschurke.de/",
     "orientation": "portrait",
     "categories": [
+        "education",
         "entertainment",
-        "movies"
+        "lifestyle"
     ],
-    "splash_pages": null
+    "splash_pages": null,
+    "id": "/",
+    "dir": "ltr",
+    "shortcuts": [
+        {
+            "name": "Date",
+            "url": "/date",
+            "description": "Go to the Date page"
+        },
+        {
+            "name": "Room",
+            "url": "/room",
+            "description": "Go to the Room page"
+        },
+        {
+            "name": "Movie",
+            "url": "/movie",
+            "description": "Go to the Movie Page"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshot-1920-1080.png",
+            "sizes": "1920x1080",
+            "type": "image/png"
+        },
+        {
+            "src": "/screenshot-1128x2436.png",
+            "sizes": "1128x2436",
+            "type": "image/png"
+        }
+    ],
+    "protocol_handlers": [
+        {
+            "protocol": "web+kinoschurke",
+            "url": {
+                "scheme": "https",
+                "host": "kinoschurke.de",
+                "path": "/movie"
+            }
+        }
+    ],
+    "iarc_rating_id": "0"
 }
