@@ -7,13 +7,14 @@ const moviesFilePath = path.join("src", "data", "movies-reference.json");
 async function generateSitemap() {
     const moviesData = JSON.parse(await fs.readFile(moviesFilePath, "utf8"));
     const moviePages = Object.values(moviesData).map(
-        (movie) => `/movies/${movie.slug}`,
+        (movie) => `/movie/${movie.slug}`,
     );
 
     const staticPages = [
         "/",
         "/date",
         "/room",
+        "/movie",
         // Add more static pages here
     ];
 
