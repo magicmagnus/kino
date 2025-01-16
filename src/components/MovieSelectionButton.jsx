@@ -6,7 +6,7 @@ const MovieSelectionButton = (props) => {
         <button
             onClick={onClick}
             className={
-                "flex h-10 w-44 min-w-32 rounded-lg text-xs font-semibold transition-all duration-200 hover:bg-rose-500 hover:text-rose-50" +
+                "flex h-10 min-w-32 rounded-lg text-xs font-semibold transition-all duration-200 hover:bg-rose-500 hover:text-rose-50 sm:min-w-44" +
                 (selected
                     ? " bg-rose-600 text-rose-50"
                     : " bg-rose-900 text-gray-200")
@@ -20,7 +20,7 @@ const MovieSelectionButton = (props) => {
                 />
             </div>
 
-            <div className="flex h-full flex-col items-start justify-center gap-1.5 overflow-hidden px-1.5 pr-2 text-left">
+            <div className="flex h-full w-full flex-col items-start justify-center gap-1.5 overflow-hidden text-wrap px-1.5 pr-2 text-left">
                 <p className="line-clamp-2 break-words">{text}</p>
             </div>
         </button>

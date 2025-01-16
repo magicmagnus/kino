@@ -110,9 +110,14 @@ const MovieAttributes = (props) => {
                 </div>
 
                 {/* title, attributes, descripction */}
-                <div className="mb-4 flex flex-1 flex-col justify-start gap-4 p-4 sm:mb-12 sm:overflow-scroll">
+                <div
+                    className={
+                        "flex flex-1 flex-col justify-start gap-4 p-4 sm:overflow-scroll " +
+                        (isCard ? " sm:mb-[88px] lg:mb-12" : "")
+                    }
+                >
                     {/* title */}
-                    <h2 className="text-left text-3xl font-semibold">
+                    <h2 className="text-left text-3xl font-semibold sm:mr-10">
                         {title}
                     </h2>
 

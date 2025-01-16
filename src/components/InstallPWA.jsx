@@ -91,7 +91,7 @@ const InstallPWA = () => {
 
     return (
         <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
-            {process.env.NODE_ENV === "development" && (
+            {/* {process.env.NODE_ENV === "development" && (
                 <div className="rounded-lg bg-zinc-800 p-4 shadow-lg">
                     <h3 className="mb-2 font-semibold text-white">
                         PWA Debug Panel
@@ -106,7 +106,7 @@ const InstallPWA = () => {
                         Reset Installation
                     </button>
                 </div>
-            )}
+            )} */}
 
             {showInstallButton && (
                 <button

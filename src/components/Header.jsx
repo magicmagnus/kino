@@ -14,8 +14,8 @@ const Header = () => {
     return (
         <div className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between bg-zinc-950 p-4 text-white">
             <Link to="/" className="flex items-center gap-4">
-                <h1 className="text-xl font-bold sm:text-4xl">
-                    Kino<span className="text-rose-600">Schurke</span>
+                <h1 className="text-xl font-bold text-rose-600 sm:text-4xl">
+                    Kino<span className="text-white">Schurke</span>
                 </h1>
             </Link>
             <div className="flex gap-1.5 text-sm">

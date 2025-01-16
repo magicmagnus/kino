@@ -82,7 +82,7 @@ const MovieCard = (props) => {
                     isCard={true}
                 >
                     {/* sticky button container */}
-                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between gap-2 bg-zinc-800 px-2.5 py-2 shadow-xl shadow-black sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-row sm:gap-2 sm:bg-transparent">
+                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between gap-2 bg-zinc-800 px-2.5 py-2 shadow-xl shadow-black sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-2 sm:bg-transparent lg:flex-row">
                         <div className="flex h-fit w-full items-center justify-center gap-2 opacity-100">
                             <button
                                 onClick={handleAllShowsClick}
