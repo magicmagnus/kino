@@ -24,7 +24,7 @@
     ],
     "start_url": "https://kinoschurke.de/",
     "scope": "https://kinoschurke.de/",
-    "orientation": "portrait",
+    "orientation": "natural",
     "categories": [
         "education",
         "entertainment",
@@ -48,18 +48,6 @@
             "name": "Movie",
             "url": "/movie",
             "description": "Go to the Movie Page"
-        }
-    ],
-    "screenshots": [
-        {
-            "src": "/screenshot-1920-1080.png",
-            "sizes": "1920x1080",
-            "type": "image/png"
-        },
-        {
-            "src": "/screenshot-1128x2436.png",
-            "sizes": "1128x2436",
-            "type": "image/png"
         }
     ],
     "protocol_handlers": [
