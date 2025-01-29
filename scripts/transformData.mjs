@@ -47,9 +47,15 @@ function getSlug(title) {
 }
 
 function cleanUpUrl(url) {
-    return url.split("?")[0].replace("embed/", "watch?v=").replace('-nocookie', '').split('=')[1];
+    if (!url) {
+        return null;
+    }
+    return url
+        .split("?")[0]
+        .replace("embed/", "watch?v=")
+        .replace("-nocookie", "")
+        .split("=")[1];
 }
-
 
 function transformToDateView(sourceData) {
     const dateView = {};
