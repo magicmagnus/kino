@@ -706,7 +706,25 @@ async function scrapeCinema() {
                 attributes: date.attributes,
             }; //, title: closestTitle }; // Merge the two entries, tak the title from the dates
         } else {
-            return { id: index, ...date }; // Keep the original entry if no close match is found
+            // if we don't find a close match, keep the original entry
+            // but some attributes only would be in the movieInfo, so we have to add them
+
+            return {
+                id: index,
+                ...date,
+                duration: "0",
+                fsk: "Unknown",
+                genre: "Unknown Genre",
+                origTitle: "Unknown Original Title",
+                production: "Unknown Production",
+                releaseDate: "Unknown Release Date",
+                distributor: "Unknown Distributor",
+                director: "Unknown Director",
+                description: "Unknown Description",
+                posterUrl: "Unknown Poster URL",
+                trailerUrl: "Unknown Trailer URL",
+                actors: [],
+            }; // Keep the original entry if no close match is found
         }
     });
 
@@ -714,23 +732,23 @@ async function scrapeCinema() {
     //console.log('\nNo showtimes found for', allMovieInfos.length, 'movies found in "widget pages":');
     //console.log(allMovieInfos.map(info => info.title));
 
-    console.log(
-        "\nAdding",
-        atelierMovies.length,
-        'movies from "Atelier" to the list...\n',
-    );
+    // console.log(
+    //     "\nAdding",
+    //     atelierMovies.length,
+    //     'movies from "Atelier" to the list...\n',
+    // );
     // regardles of the merging before, add the Atelier movies to the list, also with the same
-    const maxIndex = Math.max(...movies.map((movie) => movie.id));
-    movies = movies.concat(
-        atelierMovies.map((movie, index) => {
-            return { id: maxIndex + index + 1, ...movie };
-        }),
-    );
-    console.log(
-        "\nAdded",
-        atelierMovies.length,
-        'movies from "Atelier" to the list',
-    );
+    // const maxIndex = Math.max(...movies.map((movie) => movie.id));
+    // movies = movies.concat(
+    //     atelierMovies.map((movie, index) => {
+    //         return { id: maxIndex + index + 1, ...movie };
+    //     }),
+    // );
+    // console.log(
+    //     "\nAdded",
+    //     atelierMovies.length,
+    //     'movies from "Atelier" to the list',
+    // );
 
     // 4. scrape higher resolution poster URLs
     console.log(
