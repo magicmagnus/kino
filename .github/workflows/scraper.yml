@@ -1,64 +1,62 @@
 name: Weekly Web Scraper
 on:
-  schedule:
-    # Runs at 1 AM UTC every Wednesday
-    - cron: '0 1 * * 3'
-  workflow_dispatch: # Allows manual triggering of the workflow
+    schedule:
+        # Runs at 1 AM UTC every Wednesday
+        - cron: "0 1 * * 3"
+    workflow_dispatch: # Allows manual triggering of the workflow
 
 permissions:
-  contents: write  # This line gives the workflow permission to write to the repository
+    contents: write # This line gives the workflow permission to write to the repository
 
 jobs:
-  run-scraper:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-      
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20.17.0'
-        
-    - name: Create package.json if it doesn't exist
-      run: |
-        if [ ! -f package.json ]; then
-          echo '{"name": "web-scraper", "version": "1.0.0", "dependencies": {"puppeteer": "^22.0.0"}}' > package.json
-        fi
-        
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Install Chrome dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y chromium-browser xvfb
-        
-    - name: Run web scraper
-      env:
-        PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
-      #run: xvfb-run --auto-servernum node scraper.mjs
-      # Ensure the correct viewport is set
-      run: |
-        xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" node scripts/scraper.mjs
+    run-scraper:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
 
-    - name: Transform data
-      run: node scripts/transformData.mjs
-      
-      
-    - name: Commit and push if it changed
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add src/data
-        git diff --quiet && git diff --staged --quiet || (git commit -m "[BOT] Update Movie Data" && git push)
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "20.17.0"
 
-    - name: Trigger deploy workflow
-      run: |
-        curl -X POST \
-        -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-        -H "Accept: application/vnd.github.v3+json" \
-        https://api.github.com/repos/${{ github.repository }}/dispatches \
-        -d '{"event_type":"deploy_trigger"}'
+            - name: Create package.json if it doesn't exist
+              run: |
+                  if [ ! -f package.json ]; then
+                    echo '{"name": "web-scraper", "version": "1.0.0", "dependencies": {"puppeteer": "^22.0.0"}}' > package.json
+                  fi
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: Install Chrome dependencies
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y chromium-browser xvfb
+
+            - name: Run web scraper
+              env:
+                  PUPPETEER_EXECUTABLE_PATH: /usr/bin/chromium-browser
+                  TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+              run: |
+                  xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" node scripts/scraper.mjs
+
+            - name: Transform data
+              run: node scripts/transformData.mjs
+
+            - name: Commit and push if it changed
+              run: |
+                  git config user.name github-actions
+                  git config user.email github-actions@github.com
+                  git add src/data
+                  git diff --quiet && git diff --staged --quiet || (git commit -m "[BOT] Update Movie Data" && git push)
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+            - name: Trigger deploy workflow
+              run: |
+                  curl -X POST \
+                  -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  https://api.github.com/repos/${{ github.repository }}/dispatches \
+                  -d '{"event_type":"deploy_trigger"}'

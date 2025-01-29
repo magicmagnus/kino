@@ -1,6 +1,8 @@
 import puppeteer from "puppeteer";
 import { promises as fs } from "fs";
 import stringSimilarity from "string-similarity";
+import dotenv from "dotenv";
+dotenv.config();
 
 async function autoScroll(page) {
     await page.evaluate(async () => {
@@ -687,6 +689,24 @@ async function scrapeCinema() {
         }
     }
 
+    // a function to fetch poster URLs from the other TMDB API, only for the movies that are not found in the widget pages
+    async function fetchPosterUrls(title) {
+        console.log("\nFetching poster URL for", title);
+        const API_KEY = process.env.TMDB_API_KEY;
+
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.results && data.results.length > 0) {
+            const posterPath = data.results[0].poster_path;
+            console.log("\nFound poster path:", posterPath);
+            return `https://image.tmdb.org/t/p/w500${posterPath}`;
+        }
+        console.log("\nNo poster path found");
+        return "/poster-template.jpg";
+    }
+
     // Merge all properties of the same movie title from the two lists into one list
     let movies = allMovieDates.map((date, index) => {
         const closestTitle = findClosestMatch(
@@ -721,7 +741,7 @@ async function scrapeCinema() {
                 distributor: "Unknown Distributor",
                 director: "Unknown Director",
                 description: "Unknown Description",
-                posterUrl: "Unknown Poster URL",
+                posterUrl: "/poster-template.jpg",
                 trailerUrl: "Unknown Trailer URL",
                 actors: [],
             }; // Keep the original entry if no close match is found
