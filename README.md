@@ -1,7 +1,7 @@
 # Kinoschurke
 
 
-![Kinoschurke Screenshot](public\screenshot.png)
+![Kinoschurke Screenshot](public/screenshot.png)
 
 
 ## What is Kinoschurke?
