@@ -8,7 +8,10 @@ const MovieInfo = (props) => {
     return (
         <div className="sticky left-0 top-0 flex w-screen flex-col justify-end bg-zinc-950 text-white">
             <div
-                className={`mb-2 flex w-screen overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? "h-96" : "h-12"} `}
+                className={
+                    "mb-2 flex w-screen justify-start overflow-hidden transition-all duration-500 ease-in-out " +
+                    (isExpanded ? "h-[550px]" : "h-12 sm:h-20")
+                }
             >
                 <MovieAttributes
                     posterUrl={movieData.posterUrl}

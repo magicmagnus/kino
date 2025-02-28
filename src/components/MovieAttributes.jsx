@@ -81,12 +81,12 @@ const MovieAttributes = (props) => {
             {/* container poster, title, attributes, descripction*/}
             <div
                 className={
-                    "relative flex h-full w-full flex-col justify-start overflow-auto sm:flex-row" +
-                    (isCard ? " rounded-3xl" : "")
+                    "relative flex h-full w-fit flex-col overflow-auto sm:flex-row " +
+                    (isCard ? " justify-start rounded-3xl" : " ")
                 }
             >
                 {/* poster  */}
-                <div className="w-full bg-zinc-800 sm:h-full sm:w-auto">
+                <div className="w-full bg-zinc-800 sm:h-[550px] sm:w-auto">
                     <div className="relative w-full pb-[150%] sm:aspect-[2/3] sm:h-full sm:w-auto sm:pb-0">
                         {!imageLoaded && !imageError && (
                             <div
@@ -113,7 +113,7 @@ const MovieAttributes = (props) => {
                 <div
                     className={
                         "flex flex-1 flex-col justify-start gap-4 p-4 sm:overflow-scroll " +
-                        (isCard ? " sm:mb-[88px] lg:mb-12" : "")
+                        (isCard ? " sm:mb-[88px] lg:mb-12" : "max-w-[800px]")
                     }
                 >
                     {/* title */}
@@ -122,7 +122,7 @@ const MovieAttributes = (props) => {
                     </h2>
 
                     {/* just attributes */}
-                    <div className="flex flex-col items-start justify-center gap-2 rounded-md bg-zinc-800 px-2 py-2 text-left text-sm">
+                    <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-zinc-800 px-2 py-2 text-left text-sm">
                         {/* Always visible content */}
                         <div className="flex items-center gap-2">
                             <i className="fa-solid fa-clock"></i>

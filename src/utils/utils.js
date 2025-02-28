@@ -21,11 +21,16 @@ export const timeToPixels = (time) => {
 
 export const formatDateString = (date) => {
     let dateObj = new Date(date);
+    let today = new Date();
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
     if (date === TODAY_FORMATTED) {
         return "Heute";
     } else if (
-        dateObj.getDate() === new Date().getDate() + 1 &&
-        dateObj.getMonth() === new Date().getMonth()
+        dateObj.getDate() === tomorrow.getDate() &&
+        dateObj.getMonth() === tomorrow.getMonth() &&
+        dateObj.getFullYear() === tomorrow.getFullYear()
     ) {
         return "Morgen";
     }

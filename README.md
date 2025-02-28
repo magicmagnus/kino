@@ -27,7 +27,7 @@ where the cinema program is updated every Tuesday. That's also where our name co
 ## Technologies used
 
 ### Frontend
-- [React](https://reactjs.org/) with [Vite](https://vitejs.dev/)
+- [React](https://reactjs.org/) (through [Vite](https://vitejs.dev/))
 - [Font Awesome](https://fontawesome.com/)
 
 ### Backend

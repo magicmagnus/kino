@@ -1,6 +1,7 @@
 import puppeteer from "puppeteer";
 import { promises as fs } from "fs";
 import stringSimilarity from "string-similarity";
+import levenshtein from "fast-levenshtein";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -658,54 +659,82 @@ async function scrapeCinema() {
     // Set a similarity threshold (e.g., 0.7 for 70% similarity)
     const SIMILARITY_THRESHOLD = 0.2;
 
+    function weightedJaccardSimilarity(title1, title2) {
+        const words1 = title1.toLowerCase().split(/\s+/);
+        const words2 = title2.toLowerCase().split(/\s+/);
+
+        const intersection = words1.filter((word) => words2.includes(word));
+        const union = new Set([...words1, ...words2]);
+
+        // Weight words that appear at the start of the title more
+        let score = intersection.length / union.size;
+
+        // Boost similarity if the first words match
+        if (words1[0] === words2[0]) {
+            score += 0.2; // Adjust boost factor if needed
+        }
+
+        return Math.min(1, score); // Keep score in range [0,1]
+    }
+
+    // const levenshtein = require('fast-levenshtein');
+
+    function levenshteinSimilarity(title1, title2) {
+        const maxLength = Math.max(title1.length, title2.length);
+        const distance = levenshtein.get(
+            title1.toLowerCase(),
+            title2.toLowerCase(),
+        );
+        return 1 - distance / maxLength; // Normalize score between 0 and 1
+    }
+
     // Function to find the closest match for a given title
     function findClosestMatch(title, titles) {
-        const lowerCaseTitles = titles.map((t) => t.toLowerCase());
-        const bestMatch = stringSimilarity.findBestMatch(
-            title.toLowerCase(),
-            lowerCaseTitles,
+        let bestMatch = null;
+        let highestScore = 0;
+
+        for (let t of titles) {
+            let jaccard = weightedJaccardSimilarity(title, t);
+            let levenshtein = levenshteinSimilarity(title, t);
+
+            // Adjust weights: More reliance on Jaccard, but Levenshtein still helps
+            let score = 0.8 * jaccard + 0.2 * levenshtein;
+
+            if (score > highestScore) {
+                highestScore = score;
+                bestMatch = t;
+            }
+        }
+
+        console.log(
+            "Best match for",
+            title,
+            "is",
+            bestMatch,
+            "with a similarity of",
+            highestScore,
         );
 
-        if (bestMatch.bestMatch.rating >= SIMILARITY_THRESHOLD) {
-            const originalTitle =
-                titles[lowerCaseTitles.indexOf(bestMatch.bestMatch.target)];
-            console.log(
-                "Best match for",
-                title,
-                "is",
-                originalTitle,
-                "with a similarity of",
-                bestMatch.bestMatch.rating,
-            );
-            return originalTitle;
-        } else {
-            console.log(
-                "No close match found for",
-                title,
-                "with a similarity of",
-                bestMatch.bestMatch.rating,
-            );
-            return null;
-        }
+        return highestScore > SIMILARITY_THRESHOLD ? bestMatch : null;
     }
 
-    // a function to fetch poster URLs from the other TMDB API, only for the movies that are not found in the widget pages
-    async function fetchPosterUrls(title) {
-        console.log("\nFetching poster URL for", title);
-        const API_KEY = process.env.TMDB_API_KEY;
+    // // a function to fetch poster URLs from the other TMDB API, only for the movies that are not found in the widget pages
+    // async function fetchPosterUrls(title) {
+    //     console.log("\nFetching poster URL for", title);
+    //     const API_KEY = process.env.TMDB_API_KEY;
 
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
-        const response = await fetch(url);
-        const data = await response.json();
+    //     const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(title)}`;
+    //     const response = await fetch(url);
+    //     const data = await response.json();
 
-        if (data.results && data.results.length > 0) {
-            const posterPath = data.results[0].poster_path;
-            console.log("\nFound poster path:", posterPath);
-            return `https://image.tmdb.org/t/p/w500${posterPath}`;
-        }
-        console.log("\nNo poster path found");
-        return "/poster-template.jpg";
-    }
+    //     if (data.results && data.results.length > 0) {
+    //         const posterPath = data.results[0].poster_path;
+    //         console.log("\nFound poster path:", posterPath);
+    //         return `https://image.tmdb.org/t/p/w500${posterPath}`;
+    //     }
+    //     console.log("\nNo poster path found");
+    //     return "/poster-template.jpg";
+    // }
 
     // Merge all properties of the same movie title from the two lists into one list
     let movies = allMovieDates.map((date, index) => {
