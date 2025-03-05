@@ -1,194 +1,5 @@
 [
   {
-    "date": "2025-03-04",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:16",
-                "movieId": 13,
-                "movieTitle": "Wunderschöner",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74437?mode=widget&layout=movies&design=new&rb=0&showId=74437"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:16",
-                "movieId": 13,
-                "movieTitle": "Wunderschöner",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74438?mode=widget&layout=movies&design=new&rb=0&showId=74438"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:30",
-                "endTime": "19:35",
-                "movieId": 12,
-                "movieTitle": "Bridget Jones - Verrückt nach ihm",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74402?mode=widget&layout=movies&design=new&rb=0&showId=74402"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:20",
-                "movieId": 12,
-                "movieTitle": "Bridget Jones - Verrückt nach ihm",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74403?mode=widget&layout=movies&design=new&rb=0&showId=74403"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "16:45",
-                "endTime": "18:28",
-                "movieId": 16,
-                "movieTitle": "Paddington in Peru",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74421?mode=widget&layout=movies&design=new&rb=0&showId=74421"
-              },
-              {
-                "time": "19:15",
-                "endTime": "22:08",
-                "movieId": 17,
-                "movieTitle": "Der Graf von Monte Christo",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74410?mode=widget&layout=movies&design=new&rb=0&showId=74410"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "21:40",
-                "movieId": 29,
-                "movieTitle": "Alles hat ein Ende - auch das Wachstum?! Streitgespräch mit Ulrike Herrmann und Boris Palmer",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79671?mode=widget&layout=movies&design=new&rb=0&showId=79671"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:32",
-                "movieId": 3,
-                "movieTitle": "Heldin",
-                "attributes": [
-                  "2D",
-                  "OmeU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79738?mode=widget&layout=movies&design=new&rb=0&showId=79738"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:53",
-                "movieId": 9,
-                "movieTitle": "Fargo - Blutiger Schnee",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79736?mode=widget&layout=movies&design=new&rb=0&showId=79736"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:20",
-                "movieId": 1,
-                "movieTitle": "Like A Complete Unknown",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79757?mode=widget&layout=movies&design=new&rb=0&showId=79757"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:20",
-                "movieId": 1,
-                "movieTitle": "Like A Complete Unknown",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79761?mode=widget&layout=movies&design=new&rb=0&showId=79761"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:42",
-                "movieId": 22,
-                "movieTitle": "Pfau - Bin ich echt?",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12876?mode=widget&layout=movies&design=new&rb=0&showId=12876"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:02",
-                "movieId": 21,
-                "movieTitle": "Sing Sing",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12884?mode=widget&layout=movies&design=new&rb=0&showId=12884"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "date": "2025-03-05",
     "theaters": [
       {
@@ -200,22 +11,22 @@
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74439?mode=widget&layout=movies&design=new&rb=0&showId=74439"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74440?mode=widget&layout=movies&design=new&rb=0&showId=74440"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -225,22 +36,22 @@
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74404?mode=widget&layout=movies&design=new&rb=0&showId=74404"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74405?mode=widget&layout=movies&design=new&rb=0&showId=74405"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -250,22 +61,22 @@
               {
                 "time": "17:15",
                 "endTime": "18:58",
-                "movieId": 16,
+                "movieId": 15,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74422?mode=widget&layout=movies&design=new&rb=0&showId=74422"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:45",
                 "endTime": "21:30",
-                "movieId": 15,
+                "movieId": 14,
                 "movieTitle": "Der Lehrer, der uns das Meer versprach",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74414?mode=widget&layout=movies&design=new&rb=0&showId=74414"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -285,7 +96,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79758?mode=widget&layout=movies&design=new&rb=0&showId=79758"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
@@ -295,7 +106,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79759?mode=widget&layout=movies&design=new&rb=0&showId=79759"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -311,7 +122,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79730?mode=widget&layout=movies&design=new&rb=0&showId=79730"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
@@ -321,7 +132,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79749?mode=widget&layout=movies&design=new&rb=0&showId=79749"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -336,18 +147,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79737?mode=widget&layout=movies&design=new&rb=0&showId=79737"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:18",
-                "movieId": 11,
+                "movieId": 10,
                 "movieTitle": "Maria",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79767?mode=widget&layout=movies&design=new&rb=0&showId=79767"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -362,22 +173,22 @@
               {
                 "time": "17:45",
                 "endTime": "19:32",
-                "movieId": 21,
+                "movieId": 19,
                 "movieTitle": "Sing Sing",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12881?mode=widget&layout=movies&design=new&rb=0&showId=12881"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "21:42",
-                "movieId": 22,
+                "movieId": 20,
                 "movieTitle": "Pfau - Bin ich echt?",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12877?mode=widget&layout=movies&design=new&rb=0&showId=12877"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -397,12 +208,12 @@
               {
                 "time": "15:00",
                 "endTime": "16:43",
-                "movieId": 16,
+                "movieId": 15,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74483?mode=widget&layout=movies&design=new&rb=0&showId=74483"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -413,7 +224,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74477?mode=widget&layout=movies&design=new&rb=0&showId=74477"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -423,7 +234,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74469?mode=widget&layout=movies&design=new&rb=0&showId=74469"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -438,27 +249,27 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74462?mode=widget&layout=movies&design=new&rb=0&showId=74462"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74487?mode=widget&layout=movies&design=new&rb=0&showId=74487"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74488?mode=widget&layout=movies&design=new&rb=0&showId=74488"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -468,32 +279,32 @@
               {
                 "time": "15:00",
                 "endTime": "16:40",
-                "movieId": 14,
+                "movieId": 13,
                 "movieTitle": "Die drei ??? und der Karpatenhund",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74461?mode=widget&layout=movies&design=new&rb=0&showId=74461"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74443?mode=widget&layout=movies&design=new&rb=0&showId=74443"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74444?mode=widget&layout=movies&design=new&rb=0&showId=74444"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -514,7 +325,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79817?mode=widget&layout=movies&design=new&rb=0&showId=79817"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
@@ -524,7 +335,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79808?mode=widget&layout=movies&design=new&rb=0&showId=79808"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -539,7 +350,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79794?mode=widget&layout=movies&design=new&rb=0&showId=79794"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -549,7 +360,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79787?mode=widget&layout=movies&design=new&rb=0&showId=79787"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
@@ -560,7 +371,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79823?mode=widget&layout=movies&design=new&rb=0&showId=79823"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -575,7 +386,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79786?mode=widget&layout=movies&design=new&rb=0&showId=79786"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -585,17 +396,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79795?mode=widget&layout=movies&design=new&rb=0&showId=79795"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:45",
                 "endTime": "21:53",
-                "movieId": 31,
+                "movieId": 28,
                 "movieTitle": "Auf Umwegen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79607?mode=widget&layout=movies&design=new&rb=0&showId=79607"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -610,13 +421,13 @@
               {
                 "time": "18:15",
                 "endTime": "20:02",
-                "movieId": 21,
+                "movieId": 19,
                 "movieTitle": "Sing Sing",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12901?mode=widget&layout=movies&design=new&rb=0&showId=12901"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -627,7 +438,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12892?mode=widget&layout=movies&design=new&rb=0&showId=12892"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -647,12 +458,12 @@
               {
                 "time": "15:00",
                 "endTime": "16:43",
-                "movieId": 16,
+                "movieId": 15,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74484?mode=widget&layout=movies&design=new&rb=0&showId=74484"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -662,7 +473,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74470?mode=widget&layout=movies&design=new&rb=0&showId=74470"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -673,7 +484,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74478?mode=widget&layout=movies&design=new&rb=0&showId=74478"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -688,27 +499,27 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74463?mode=widget&layout=movies&design=new&rb=0&showId=74463"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74489?mode=widget&layout=movies&design=new&rb=0&showId=74489"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74490?mode=widget&layout=movies&design=new&rb=0&showId=74490"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -718,33 +529,33 @@
               {
                 "time": "14:45",
                 "endTime": "16:50",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74445?mode=widget&layout=movies&design=new&rb=0&showId=74445"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74457?mode=widget&layout=movies&design=new&rb=0&showId=74457"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74446?mode=widget&layout=movies&design=new&rb=0&showId=74446"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -764,7 +575,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79809?mode=widget&layout=movies&design=new&rb=0&showId=79809"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
@@ -775,7 +586,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79818?mode=widget&layout=movies&design=new&rb=0&showId=79818"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -791,7 +602,7 @@
                   "2D",
                   "OmeU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79806?mode=widget&layout=movies&design=new&rb=0&showId=79806"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:45",
@@ -801,17 +612,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79789?mode=widget&layout=movies&design=new&rb=0&showId=79789"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:45",
                 "endTime": "23:20",
-                "movieId": 10,
+                "movieId": 9,
                 "movieTitle": "Der Brutalist",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79783?mode=widget&layout=movies&design=new&rb=0&showId=79783"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -826,7 +637,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79788?mode=widget&layout=movies&design=new&rb=0&showId=79788"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "18:00",
@@ -836,7 +647,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79796?mode=widget&layout=movies&design=new&rb=0&showId=79796"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
@@ -846,7 +657,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79797?mode=widget&layout=movies&design=new&rb=0&showId=79797"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -861,22 +672,22 @@
               {
                 "time": "17:15",
                 "endTime": "19:02",
-                "movieId": 21,
+                "movieId": 19,
                 "movieTitle": "Sing Sing",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12903?mode=widget&layout=movies&design=new&rb=0&showId=12903"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
                 "endTime": "21:33",
-                "movieId": 11,
+                "movieId": 10,
                 "movieTitle": "Maria",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12896?mode=widget&layout=movies&design=new&rb=0&showId=12896"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "22:00",
@@ -887,7 +698,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12888?mode=widget&layout=movies&design=new&rb=0&showId=12888"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -907,12 +718,12 @@
               {
                 "time": "15:00",
                 "endTime": "16:43",
-                "movieId": 16,
+                "movieId": 15,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74485?mode=widget&layout=movies&design=new&rb=0&showId=74485"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -922,7 +733,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74471?mode=widget&layout=movies&design=new&rb=0&showId=74471"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -932,7 +743,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74472?mode=widget&layout=movies&design=new&rb=0&showId=74472"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -947,27 +758,27 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74464?mode=widget&layout=movies&design=new&rb=0&showId=74464"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74491?mode=widget&layout=movies&design=new&rb=0&showId=74491"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74492?mode=widget&layout=movies&design=new&rb=0&showId=74492"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -977,32 +788,32 @@
               {
                 "time": "14:45",
                 "endTime": "16:50",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74447?mode=widget&layout=movies&design=new&rb=0&showId=74447"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74448?mode=widget&layout=movies&design=new&rb=0&showId=74448"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74449?mode=widget&layout=movies&design=new&rb=0&showId=74449"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1022,7 +833,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79810?mode=widget&layout=movies&design=new&rb=0&showId=79810"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:00",
@@ -1033,7 +844,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79819?mode=widget&layout=movies&design=new&rb=0&showId=79819"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
@@ -1043,7 +854,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79811?mode=widget&layout=movies&design=new&rb=0&showId=79811"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1053,12 +864,12 @@
               {
                 "time": "15:15",
                 "endTime": "17:31",
-                "movieId": 27,
+                "movieId": 25,
                 "movieTitle": "Für immer hier",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79775?mode=widget&layout=movies&design=new&rb=0&showId=79775"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "18:00",
@@ -1068,7 +879,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79798?mode=widget&layout=movies&design=new&rb=0&showId=79798"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
@@ -1079,7 +890,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79779?mode=widget&layout=movies&design=new&rb=0&showId=79779"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1094,18 +905,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79790?mode=widget&layout=movies&design=new&rb=0&showId=79790"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
                 "endTime": "19:46",
-                "movieId": 27,
+                "movieId": 25,
                 "movieTitle": "Für immer hier",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79776?mode=widget&layout=movies&design=new&rb=0&showId=79776"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -1115,7 +926,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79799?mode=widget&layout=movies&design=new&rb=0&showId=79799"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1130,43 +941,43 @@
               {
                 "time": "15:45",
                 "endTime": "17:27",
-                "movieId": 22,
+                "movieId": 20,
                 "movieTitle": "Pfau - Bin ich echt?",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12899?mode=widget&layout=movies&design=new&rb=0&showId=12899"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "18:00",
                 "endTime": "19:50",
-                "movieId": 25,
+                "movieId": 23,
                 "movieTitle": "Mein Platz ist hier",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12886?mode=widget&layout=movies&design=new&rb=0&showId=12886"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:00",
-                "movieId": 15,
+                "movieId": 14,
                 "movieTitle": "Der Lehrer, der uns das Meer versprach",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12889?mode=widget&layout=movies&design=new&rb=0&showId=12889"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "22:30",
                 "endTime": "00:18",
-                "movieId": 23,
+                "movieId": 21,
                 "movieTitle": "Hundreds of Beavers",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12895?mode=widget&layout=movies&design=new&rb=0&showId=12895"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1186,12 +997,12 @@
               {
                 "time": "14:00",
                 "endTime": "15:43",
-                "movieId": 16,
+                "movieId": 15,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74486?mode=widget&layout=movies&design=new&rb=0&showId=74486"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:30",
@@ -1201,7 +1012,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74473?mode=widget&layout=movies&design=new&rb=0&showId=74473"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
@@ -1212,7 +1023,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74479?mode=widget&layout=movies&design=new&rb=0&showId=74479"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1227,27 +1038,27 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74465?mode=widget&layout=movies&design=new&rb=0&showId=74465"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:00",
                 "endTime": "18:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74493?mode=widget&layout=movies&design=new&rb=0&showId=74493"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:00",
                 "endTime": "21:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74494?mode=widget&layout=movies&design=new&rb=0&showId=74494"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1257,33 +1068,33 @@
               {
                 "time": "13:45",
                 "endTime": "15:50",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74450?mode=widget&layout=movies&design=new&rb=0&showId=74450"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:30",
                 "endTime": "18:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74451?mode=widget&layout=movies&design=new&rb=0&showId=74451"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:15",
                 "endTime": "21:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74458?mode=widget&layout=movies&design=new&rb=0&showId=74458"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1303,7 +1114,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79812?mode=widget&layout=movies&design=new&rb=0&showId=79812"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:00",
@@ -1313,7 +1124,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79813?mode=widget&layout=movies&design=new&rb=0&showId=79813"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:00",
@@ -1324,7 +1135,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79820?mode=widget&layout=movies&design=new&rb=0&showId=79820"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1334,13 +1145,13 @@
               {
                 "time": "12:00",
                 "endTime": "13:11",
-                "movieId": 26,
+                "movieId": 24,
                 "movieTitle": "Ein Tag ohne Frauen",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79778?mode=widget&layout=movies&design=new&rb=0&showId=79778"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "14:30",
@@ -1351,7 +1162,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79785?mode=widget&layout=movies&design=new&rb=0&showId=79785"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:30",
@@ -1361,7 +1172,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79792?mode=widget&layout=movies&design=new&rb=0&showId=79792"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
@@ -1371,7 +1182,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79801?mode=widget&layout=movies&design=new&rb=0&showId=79801"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1386,7 +1197,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79791?mode=widget&layout=movies&design=new&rb=0&showId=79791"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "15:30",
@@ -1396,18 +1207,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79800?mode=widget&layout=movies&design=new&rb=0&showId=79800"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "17:45",
                 "endTime": "21:20",
-                "movieId": 10,
+                "movieId": 9,
                 "movieTitle": "Der Brutalist",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79784?mode=widget&layout=movies&design=new&rb=0&showId=79784"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1422,22 +1233,22 @@
               {
                 "time": "11:30",
                 "endTime": "13:33",
-                "movieId": 11,
+                "movieId": 10,
                 "movieTitle": "Maria",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12897?mode=widget&layout=movies&design=new&rb=0&showId=12897"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "16:30",
                 "endTime": "18:15",
-                "movieId": 15,
+                "movieId": 14,
                 "movieTitle": "Der Lehrer, der uns das Meer versprach",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12890?mode=widget&layout=movies&design=new&rb=0&showId=12890"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:00",
@@ -1448,7 +1259,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12887?mode=widget&layout=movies&design=new&rb=0&showId=12887"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1474,7 +1285,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74480?mode=widget&layout=movies&design=new&rb=0&showId=74480"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -1484,7 +1295,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74474?mode=widget&layout=movies&design=new&rb=0&showId=74474"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1499,17 +1310,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74466?mode=widget&layout=movies&design=new&rb=0&showId=74466"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74495?mode=widget&layout=movies&design=new&rb=0&showId=74495"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1519,22 +1330,22 @@
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74453?mode=widget&layout=movies&design=new&rb=0&showId=74453"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74454?mode=widget&layout=movies&design=new&rb=0&showId=74454"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1554,7 +1365,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79814?mode=widget&layout=movies&design=new&rb=0&showId=79814"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
@@ -1565,7 +1376,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79821?mode=widget&layout=movies&design=new&rb=0&showId=79821"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1580,7 +1391,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79803?mode=widget&layout=movies&design=new&rb=0&showId=79803"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1595,17 +1406,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79802?mode=widget&layout=movies&design=new&rb=0&showId=79802"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:00",
-                "movieId": 28,
+                "movieId": 26,
                 "movieTitle": "Sneak Preview",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79781?mode=widget&layout=movies&design=new&rb=0&showId=79781"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1620,13 +1431,13 @@
               {
                 "time": "18:00",
                 "endTime": "19:47",
-                "movieId": 21,
+                "movieId": 19,
                 "movieTitle": "Sing Sing",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12902?mode=widget&layout=movies&design=new&rb=0&showId=12902"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
@@ -1636,7 +1447,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12893?mode=widget&layout=movies&design=new&rb=0&showId=12893"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1661,7 +1472,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74475?mode=widget&layout=movies&design=new&rb=0&showId=74475"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -1672,7 +1483,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74481?mode=widget&layout=movies&design=new&rb=0&showId=74481"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1687,17 +1498,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74467?mode=widget&layout=movies&design=new&rb=0&showId=74467"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74496?mode=widget&layout=movies&design=new&rb=0&showId=74496"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1707,23 +1518,23 @@
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74455?mode=widget&layout=movies&design=new&rb=0&showId=74455"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74459?mode=widget&layout=movies&design=new&rb=0&showId=74459"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1744,7 +1555,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79822?mode=widget&layout=movies&design=new&rb=0&showId=79822"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:45",
@@ -1754,7 +1565,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79815?mode=widget&layout=movies&design=new&rb=0&showId=79815"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1770,7 +1581,7 @@
                   "2D",
                   "OmeU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79824?mode=widget&layout=movies&design=new&rb=0&showId=79824"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
@@ -1781,7 +1592,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79780?mode=widget&layout=movies&design=new&rb=0&showId=79780"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1796,7 +1607,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79793?mode=widget&layout=movies&design=new&rb=0&showId=79793"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
@@ -1806,7 +1617,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79804?mode=widget&layout=movies&design=new&rb=0&showId=79804"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1821,22 +1632,22 @@
               {
                 "time": "18:00",
                 "endTime": "19:42",
-                "movieId": 22,
+                "movieId": 20,
                 "movieTitle": "Pfau - Bin ich echt?",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12900?mode=widget&layout=movies&design=new&rb=0&showId=12900"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:00",
-                "movieId": 15,
+                "movieId": 14,
                 "movieTitle": "Der Lehrer, der uns das Meer versprach",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12891?mode=widget&layout=movies&design=new&rb=0&showId=12891"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1862,7 +1673,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74482?mode=widget&layout=movies&design=new&rb=0&showId=74482"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:30",
@@ -1872,7 +1683,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74476?mode=widget&layout=movies&design=new&rb=0&showId=74476"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1887,17 +1698,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74468?mode=widget&layout=movies&design=new&rb=0&showId=74468"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:16",
-                "movieId": 13,
+                "movieId": 12,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74497?mode=widget&layout=movies&design=new&rb=0&showId=74497"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1907,23 +1718,23 @@
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74460?mode=widget&layout=movies&design=new&rb=0&showId=74460"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Bridget Jones - Verrückt nach ihm",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74456?mode=widget&layout=movies&design=new&rb=0&showId=74456"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1943,7 +1754,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79805?mode=widget&layout=movies&design=new&rb=0&showId=79805"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:30",
@@ -1953,7 +1764,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79816?mode=widget&layout=movies&design=new&rb=0&showId=79816"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           },
@@ -1963,22 +1774,22 @@
               {
                 "time": "18:00",
                 "endTime": "19:55",
-                "movieId": 18,
+                "movieId": 16,
                 "movieTitle": "Köln 75",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79771?mode=widget&layout=movies&design=new&rb=0&showId=79771"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:59",
-                "movieId": 30,
+                "movieId": 27,
                 "movieTitle": "Beau Is Afraid",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79560?mode=widget&layout=movies&design=new&rb=0&showId=79560"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -1998,18 +1809,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12894?mode=widget&layout=movies&design=new&rb=0&showId=12894"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "20:00",
                 "endTime": "22:03",
-                "movieId": 11,
+                "movieId": 10,
                 "movieTitle": "Maria",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12898?mode=widget&layout=movies&design=new&rb=0&showId=12898"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2029,12 +1840,12 @@
               {
                 "time": "22:00",
                 "endTime": "23:40",
-                "movieId": 24,
+                "movieId": 22,
                 "movieTitle": "Layla",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12775?mode=widget&layout=movies&design=new&rb=0&showId=12775"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2054,12 +1865,12 @@
               {
                 "time": "18:00",
                 "endTime": "21:05",
-                "movieId": 36,
+                "movieId": 33,
                 "movieTitle": "MET Opera 2024/25: Ludwig van Beethoven FIDELIO",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79391?mode=widget&layout=movies&design=new&rb=0&showId=79391"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2079,12 +1890,12 @@
               {
                 "time": "18:00",
                 "endTime": "19:29",
-                "movieId": 19,
+                "movieId": 17,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79772?mode=widget&layout=movies&design=new&rb=0&showId=79772"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2104,12 +1915,12 @@
               {
                 "time": "18:00",
                 "endTime": "19:38",
-                "movieId": 20,
+                "movieId": 18,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79773?mode=widget&layout=movies&design=new&rb=0&showId=79773"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2129,12 +1940,12 @@
               {
                 "time": "19:00",
                 "endTime": "20:40",
-                "movieId": 32,
+                "movieId": 29,
                 "movieTitle": "Benefizveranstaltung - Rafik Schami liest \"Die Königin und der Kalligraph\"",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79395?mode=widget&layout=movies&design=new&rb=0&showId=79395"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2154,12 +1965,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:00",
-                "movieId": 35,
+                "movieId": 32,
                 "movieTitle": "Poetry Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79015?mode=widget&layout=movies&design=new&rb=0&showId=79015"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2179,12 +1990,12 @@
               {
                 "time": "19:00",
                 "endTime": "22:52",
-                "movieId": 37,
+                "movieId": 34,
                 "movieTitle": "Met Opera 2024/25: Wolfgang Amadeus Mozart LE NOZZE DI FIGARO",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79392?mode=widget&layout=movies&design=new&rb=0&showId=79392"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2204,22 +2015,22 @@
               {
                 "time": "16:00",
                 "endTime": "17:32",
-                "movieId": 33,
+                "movieId": 30,
                 "movieTitle": "Baldiga – Entsichertes Herz",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79723?mode=widget&layout=movies&design=new&rb=0&showId=79723"
+                "iframeUrl": "Unknown iframe URL"
               },
               {
                 "time": "19:00",
                 "endTime": "21:15",
-                "movieId": 38,
+                "movieId": 35,
                 "movieTitle": "MET Opera 2024/25: Richard Strauss SALOME",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79393?mode=widget&layout=movies&design=new&rb=0&showId=79393"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2239,12 +2050,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:30",
-                "movieId": 34,
+                "movieId": 31,
                 "movieTitle": "Stand-Up Comedy Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2264,12 +2075,12 @@
               {
                 "time": "19:00",
                 "endTime": "22:35",
-                "movieId": 39,
+                "movieId": 36,
                 "movieTitle": "MET Opera 2024/25: Gioachino Rossini IL BARBIERE DI SIVIGLIA",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79394?mode=widget&layout=movies&design=new&rb=0&showId=79394"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2289,12 +2100,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:00",
-                "movieId": 35,
+                "movieId": 32,
                 "movieTitle": "Poetry Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79017?mode=widget&layout=movies&design=new&rb=0&showId=79017"
+                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
