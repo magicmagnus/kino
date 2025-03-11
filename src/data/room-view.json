@@ -4,15 +4,796 @@
     "rooms": [
       {
         "name": "Saal Tarantino",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "20:30",
+                "endTime": "22:49",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74481?mode=widget&layout=movies&design=new&rb=0&showId=74481"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-12",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:49",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74482?mode=widget&layout=movies&design=new&rb=0&showId=74482"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:49",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74476?mode=widget&layout=movies&design=new&rb=0&showId=74476"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74529?mode=widget&layout=movies&design=new&rb=0&showId=74529"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74522?mode=widget&layout=movies&design=new&rb=0&showId=74522"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "14:30",
+                "endTime": "16:13",
+                "movieId": 9,
+                "movieTitle": "Paddington in Peru",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74535?mode=widget&layout=movies&design=new&rb=0&showId=74535"
+              },
+              {
+                "time": "17:00",
+                "endTime": "19:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74523?mode=widget&layout=movies&design=new&rb=0&showId=74523"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74530?mode=widget&layout=movies&design=new&rb=0&showId=74530"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "14:00",
+                "endTime": "15:25",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74515?mode=widget&layout=movies&design=new&rb=0&showId=74515"
+              },
+              {
+                "time": "16:00",
+                "endTime": "17:25",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74516?mode=widget&layout=movies&design=new&rb=0&showId=74516"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:25",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74517?mode=widget&layout=movies&design=new&rb=0&showId=74517"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74524?mode=widget&layout=movies&design=new&rb=0&showId=74524"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "14:00",
+                "endTime": "15:43",
+                "movieId": 9,
+                "movieTitle": "Paddington in Peru",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74537?mode=widget&layout=movies&design=new&rb=0&showId=74537"
+              },
+              {
+                "time": "16:30",
+                "endTime": "18:49",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74525?mode=widget&layout=movies&design=new&rb=0&showId=74525"
+              },
+              {
+                "time": "19:30",
+                "endTime": "21:49",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74531?mode=widget&layout=movies&design=new&rb=0&showId=74531"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74532?mode=widget&layout=movies&design=new&rb=0&showId=74532"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74526?mode=widget&layout=movies&design=new&rb=0&showId=74526"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74527?mode=widget&layout=movies&design=new&rb=0&showId=74527"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74533?mode=widget&layout=movies&design=new&rb=0&showId=74533"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74534?mode=widget&layout=movies&design=new&rb=0&showId=74534"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 5,
+                "movieTitle": "Mickey 17",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74528?mode=widget&layout=movies&design=new&rb=0&showId=74528"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "Saal Spielberg",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:16",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74496?mode=widget&layout=movies&design=new&rb=0&showId=74496"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-12",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:09",
+                "movieId": 8,
+                "movieTitle": "Ein Mädchen namens Willow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74468?mode=widget&layout=movies&design=new&rb=0&showId=74468"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:16",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74497?mode=widget&layout=movies&design=new&rb=0&showId=74497"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "14:45",
+                "endTime": "16:10",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74513?mode=widget&layout=movies&design=new&rb=0&showId=74513"
+              },
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74538?mode=widget&layout=movies&design=new&rb=0&showId=74538"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74539?mode=widget&layout=movies&design=new&rb=0&showId=74539"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "14:45",
+                "endTime": "16:10",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74514?mode=widget&layout=movies&design=new&rb=0&showId=74514"
+              },
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74540?mode=widget&layout=movies&design=new&rb=0&showId=74540"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74541?mode=widget&layout=movies&design=new&rb=0&showId=74541"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "14:15",
+                "endTime": "15:58",
+                "movieId": 9,
+                "movieTitle": "Paddington in Peru",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74536?mode=widget&layout=movies&design=new&rb=0&showId=74536"
+              },
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74542?mode=widget&layout=movies&design=new&rb=0&showId=74542"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74543?mode=widget&layout=movies&design=new&rb=0&showId=74543"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "14:15",
+                "endTime": "15:40",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74518?mode=widget&layout=movies&design=new&rb=0&showId=74518"
+              },
+              {
+                "time": "16:15",
+                "endTime": "18:31",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74544?mode=widget&layout=movies&design=new&rb=0&showId=74544"
+              },
+              {
+                "time": "19:15",
+                "endTime": "21:31",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74545?mode=widget&layout=movies&design=new&rb=0&showId=74545"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74546?mode=widget&layout=movies&design=new&rb=0&showId=74546"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74547?mode=widget&layout=movies&design=new&rb=0&showId=74547"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74548?mode=widget&layout=movies&design=new&rb=0&showId=74548"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74549?mode=widget&layout=movies&design=new&rb=0&showId=74549"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "16:45",
+                "endTime": "19:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74550?mode=widget&layout=movies&design=new&rb=0&showId=74550"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 11,
+                "movieTitle": "Wunderschöner",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74551?mode=widget&layout=movies&design=new&rb=0&showId=74551"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "Saal Kubrick",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74459?mode=widget&layout=movies&design=new&rb=0&showId=74459"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-12",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:35",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74460?mode=widget&layout=movies&design=new&rb=0&showId=74460"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74456?mode=widget&layout=movies&design=new&rb=0&showId=74456"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:39",
+                "movieId": 8,
+                "movieTitle": "Ein Mädchen namens Willow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74509?mode=widget&layout=movies&design=new&rb=0&showId=74509"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:35",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74498?mode=widget&layout=movies&design=new&rb=0&showId=74498"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74501?mode=widget&layout=movies&design=new&rb=0&showId=74501"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:39",
+                "movieId": 8,
+                "movieTitle": "Ein Mädchen namens Willow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74510?mode=widget&layout=movies&design=new&rb=0&showId=74510"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:35",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74502?mode=widget&layout=movies&design=new&rb=0&showId=74502"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74503?mode=widget&layout=movies&design=new&rb=0&showId=74503"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:39",
+                "movieId": 8,
+                "movieTitle": "Ein Mädchen namens Willow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74511?mode=widget&layout=movies&design=new&rb=0&showId=74511"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:35",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74504?mode=widget&layout=movies&design=new&rb=0&showId=74504"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74505?mode=widget&layout=movies&design=new&rb=0&showId=74505"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "13:45",
+                "endTime": "15:24",
+                "movieId": 8,
+                "movieTitle": "Ein Mädchen namens Willow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74512?mode=widget&layout=movies&design=new&rb=0&showId=74512"
+              },
+              {
+                "time": "16:15",
+                "endTime": "18:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74506?mode=widget&layout=movies&design=new&rb=0&showId=74506"
+              },
+              {
+                "time": "19:00",
+                "endTime": "21:05",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74499?mode=widget&layout=movies&design=new&rb=0&showId=74499"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "18:15",
+                "endTime": "19:40",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74519?mode=widget&layout=movies&design=new&rb=0&showId=74519"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74507?mode=widget&layout=movies&design=new&rb=0&showId=74507"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "18:15",
+                "endTime": "19:40",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74520?mode=widget&layout=movies&design=new&rb=0&showId=74520"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74500?mode=widget&layout=movies&design=new&rb=0&showId=74500"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "18:15",
+                "endTime": "19:40",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74521?mode=widget&layout=movies&design=new&rb=0&showId=74521"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:20",
+                "movieId": 10,
+                "movieTitle": "Bridget Jones - Verrückt nach ihm",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74508?mode=widget&layout=movies&design=new&rb=0&showId=74508"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -21,15 +802,921 @@
     "rooms": [
       {
         "name": "Saal Almodóvar",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "19:45",
+                "endTime": "22:05",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79815?mode=widget&layout=movies&design=new&rb=0&showId=79815"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79876?mode=widget&layout=movies&design=new&rb=0&showId=79876"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79867?mode=widget&layout=movies&design=new&rb=0&showId=79867"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "14:00",
+                "endTime": "16:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79877?mode=widget&layout=movies&design=new&rb=0&showId=79877"
+              },
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79868?mode=widget&layout=movies&design=new&rb=0&showId=79868"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79878?mode=widget&layout=movies&design=new&rb=0&showId=79878"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "14:00",
+                "endTime": "16:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79869?mode=widget&layout=movies&design=new&rb=0&showId=79869"
+              },
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79879?mode=widget&layout=movies&design=new&rb=0&showId=79879"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79870?mode=widget&layout=movies&design=new&rb=0&showId=79870"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "13:00",
+                "endTime": "15:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79871?mode=widget&layout=movies&design=new&rb=0&showId=79871"
+              },
+              {
+                "time": "16:00",
+                "endTime": "18:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79872?mode=widget&layout=movies&design=new&rb=0&showId=79872"
+              },
+              {
+                "time": "19:00",
+                "endTime": "21:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79880?mode=widget&layout=movies&design=new&rb=0&showId=79880"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79873?mode=widget&layout=movies&design=new&rb=0&showId=79873"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79881?mode=widget&layout=movies&design=new&rb=0&showId=79881"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79882?mode=widget&layout=movies&design=new&rb=0&showId=79882"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79874?mode=widget&layout=movies&design=new&rb=0&showId=79874"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79875?mode=widget&layout=movies&design=new&rb=0&showId=79875"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:20",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79883?mode=widget&layout=movies&design=new&rb=0&showId=79883"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-25",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:30",
+                "movieId": 26,
+                "movieTitle": "Stand-Up Comedy Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/78352?mode=widget&layout=movies&design=new&rb=0&showId=78352"
+              }
+            ]
+          },
+          {
+            "date": "2025-04-01",
+            "showings": [
+              {
+                "time": "19:00",
+                "endTime": "20:40",
+                "movieId": 25,
+                "movieTitle": "Benefizveranstaltung - Rafik Schami liest \"Die Königin und der Kalligraph\"",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79395?mode=widget&layout=movies&design=new&rb=0&showId=79395"
+              }
+            ]
+          },
+          {
+            "date": "2025-04-08",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:00",
+                "movieId": 27,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79015?mode=widget&layout=movies&design=new&rb=0&showId=79015"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-27",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:30",
+                "movieId": 26,
+                "movieTitle": "Stand-Up Comedy Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010"
+              }
+            ]
+          },
+          {
+            "date": "2025-06-10",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:00",
+                "movieId": 27,
+                "movieTitle": "Poetry Slam Tübingen",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79017?mode=widget&layout=movies&design=new&rb=0&showId=79017"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "Saal Coppola",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:19",
+                "movieId": 7,
+                "movieTitle": "Anora",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79780?mode=widget&layout=movies&design=new&rb=0&showId=79780"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-12",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79805?mode=widget&layout=movies&design=new&rb=0&showId=79805"
+              },
+              {
+                "time": "19:30",
+                "endTime": "21:50",
+                "movieId": 2,
+                "movieTitle": "Like A Complete Unknown",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79816?mode=widget&layout=movies&design=new&rb=0&showId=79816"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "19:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79895?mode=widget&layout=movies&design=new&rb=0&showId=79895"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:53",
+                "movieId": 18,
+                "movieTitle": "Joan Baez: I Am a Noise",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79837?mode=widget&layout=movies&design=new&rb=0&showId=79837"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "16:00",
+                "endTime": "19:35",
+                "movieId": 6,
+                "movieTitle": "Der Brutalist",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79910?mode=widget&layout=movies&design=new&rb=0&showId=79910"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79896?mode=widget&layout=movies&design=new&rb=0&showId=79896"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "15:15",
+                "endTime": "17:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79897?mode=widget&layout=movies&design=new&rb=0&showId=79897"
+              },
+              {
+                "time": "18:15",
+                "endTime": "19:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79888?mode=widget&layout=movies&design=new&rb=0&showId=79888"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79898?mode=widget&layout=movies&design=new&rb=0&showId=79898"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "12:00",
+                "endTime": "14:00",
+                "movieId": 20,
+                "movieTitle": "The Guide",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79831?mode=widget&layout=movies&design=new&rb=0&showId=79831"
+              },
+              {
+                "time": "15:00",
+                "endTime": "16:32",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79889?mode=widget&layout=movies&design=new&rb=0&showId=79889"
+              },
+              {
+                "time": "17:15",
+                "endTime": "18:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79890?mode=widget&layout=movies&design=new&rb=0&showId=79890"
+              },
+              {
+                "time": "19:30",
+                "endTime": "21:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79891?mode=widget&layout=movies&design=new&rb=0&showId=79891"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79892?mode=widget&layout=movies&design=new&rb=0&showId=79892"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79900?mode=widget&layout=movies&design=new&rb=0&showId=79900"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "19:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79901?mode=widget&layout=movies&design=new&rb=0&showId=79901"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79902?mode=widget&layout=movies&design=new&rb=0&showId=79902"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:16",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79908?mode=widget&layout=movies&design=new&rb=0&showId=79908"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79903?mode=widget&layout=movies&design=new&rb=0&showId=79903"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-20",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "21:50",
+                "movieId": 19,
+                "movieTitle": "The Room Next Door",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79838?mode=widget&layout=movies&design=new&rb=0&showId=79838"
+              }
+            ]
+          }
+        ]
       },
       {
         "name": "Saal Arsenal",
-        "dates": []
+        "dates": [
+          {
+            "date": "2025-03-11",
+            "showings": [
+              {
+                "time": "20:15",
+                "endTime": "21:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79804?mode=widget&layout=movies&design=new&rb=0&showId=79804"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-12",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79771?mode=widget&layout=movies&design=new&rb=0&showId=79771"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:59",
+                "movieId": 14,
+                "movieTitle": "Beau Is Afraid",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79560?mode=widget&layout=movies&design=new&rb=0&showId=79560"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-13",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79884?mode=widget&layout=movies&design=new&rb=0&showId=79884"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:01",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79904?mode=widget&layout=movies&design=new&rb=0&showId=79904"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:32",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79885?mode=widget&layout=movies&design=new&rb=0&showId=79885"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79905?mode=widget&layout=movies&design=new&rb=0&showId=79905"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79886?mode=widget&layout=movies&design=new&rb=0&showId=79886"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "15:30",
+                "endTime": "17:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79887?mode=widget&layout=movies&design=new&rb=0&showId=79887"
+              },
+              {
+                "time": "18:00",
+                "endTime": "21:05",
+                "movieId": 28,
+                "movieTitle": "MET Opera 2024/25: Ludwig van Beethoven FIDELIO",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79391?mode=widget&layout=movies&design=new&rb=0&showId=79391"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "11:00",
+                "endTime": "13:00",
+                "movieId": 22,
+                "movieTitle": "Die glorreichen Sieben",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79856?mode=widget&layout=movies&design=new&rb=0&showId=79856"
+              },
+              {
+                "time": "14:00",
+                "endTime": "16:16",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79899?mode=widget&layout=movies&design=new&rb=0&showId=79899"
+              },
+              {
+                "time": "17:00",
+                "endTime": "18:25",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79911?mode=widget&layout=movies&design=new&rb=0&showId=79911"
+              },
+              {
+                "time": "19:00",
+                "endTime": "21:16",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79906?mode=widget&layout=movies&design=new&rb=0&showId=79906"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "19:31",
+                "movieId": 0,
+                "movieTitle": "Für immer hier",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79907?mode=widget&layout=movies&design=new&rb=0&showId=79907"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:00",
+                "movieId": 24,
+                "movieTitle": "Sneak Preview",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79909?mode=widget&layout=movies&design=new&rb=0&showId=79909"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "17:45",
+                "endTime": "19:17",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79893?mode=widget&layout=movies&design=new&rb=0&showId=79893"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:04",
+                "movieId": 7,
+                "movieTitle": "Anora",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79912?mode=widget&layout=movies&design=new&rb=0&showId=79912"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:29",
+                "movieId": 15,
+                "movieTitle": "The Last Showgirl",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79772?mode=widget&layout=movies&design=new&rb=0&showId=79772"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:32",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79894?mode=widget&layout=movies&design=new&rb=0&showId=79894"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-26",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:38",
+                "movieId": 16,
+                "movieTitle": "Niki de Saint Phalle",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79773?mode=widget&layout=movies&design=new&rb=0&showId=79773"
+              }
+            ]
+          },
+          {
+            "date": "2025-04-06",
+            "showings": [
+              {
+                "time": "12:00",
+                "endTime": "13:40",
+                "movieId": 21,
+                "movieTitle": "I Work at the Cemetery",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79832?mode=widget&layout=movies&design=new&rb=0&showId=79832"
+              }
+            ]
+          },
+          {
+            "date": "2025-04-26",
+            "showings": [
+              {
+                "time": "19:00",
+                "endTime": "22:52",
+                "movieId": 29,
+                "movieTitle": "Met Opera 2024/25: Wolfgang Amadeus Mozart LE NOZZE DI FIGARO",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79392?mode=widget&layout=movies&design=new&rb=0&showId=79392"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-17",
+            "showings": [
+              {
+                "time": "16:00",
+                "endTime": "17:32",
+                "movieId": 23,
+                "movieTitle": "Baldiga – Entsichertes Herz",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79723?mode=widget&layout=movies&design=new&rb=0&showId=79723"
+              },
+              {
+                "time": "19:00",
+                "endTime": "21:15",
+                "movieId": 30,
+                "movieTitle": "MET Opera 2024/25: Richard Strauss SALOME",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79393?mode=widget&layout=movies&design=new&rb=0&showId=79393"
+              }
+            ]
+          },
+          {
+            "date": "2025-05-31",
+            "showings": [
+              {
+                "time": "19:00",
+                "endTime": "22:35",
+                "movieId": 31,
+                "movieTitle": "MET Opera 2024/25: Gioachino Rossini IL BARBIERE DI SIVIGLIA",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79394?mode=widget&layout=movies&design=new&rb=0&showId=79394"
+              }
+            ]
+          }
+        ]
       }
     ]
   },
@@ -43,19 +1730,9 @@
             "date": "2025-03-11",
             "showings": [
               {
-                "time": "18:00",
-                "endTime": "19:42",
-                "movieId": 13,
-                "movieTitle": "Pfau - Bin ich echt?",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12900?mode=widget&layout=movies&design=new&rb=0&showId=12900"
-              },
-              {
                 "time": "20:15",
                 "endTime": "22:00",
-                "movieId": 9,
+                "movieId": 13,
                 "movieTitle": "Der Lehrer, der uns das Meer versprach",
                 "attributes": [
                   "2D"
@@ -70,7 +1747,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:25",
-                "movieId": 2,
+                "movieId": 4,
                 "movieTitle": "Flow",
                 "attributes": [
                   "2D"
@@ -80,7 +1757,7 @@
               {
                 "time": "20:00",
                 "endTime": "22:03",
-                "movieId": 6,
+                "movieId": 17,
                 "movieTitle": "Maria",
                 "attributes": [
                   "2D",
@@ -94,14 +1771,217 @@
             "date": "2025-03-13",
             "showings": [
               {
-                "time": "22:00",
-                "endTime": "00:00",
-                "movieId": 14,
-                "movieTitle": "Layla",
+                "time": "18:00",
+                "endTime": "19:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12775?mode=widget&layout=movies&design=new&rb=0&showId=12775"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12915?mode=widget&layout=movies&design=new&rb=0&showId=12915"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12911?mode=widget&layout=movies&design=new&rb=0&showId=12911"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-14",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:25",
+                "movieId": 4,
+                "movieTitle": "Flow",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12910?mode=widget&layout=movies&design=new&rb=0&showId=12910"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12916?mode=widget&layout=movies&design=new&rb=0&showId=12916"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-15",
+            "showings": [
+              {
+                "time": "15:30",
+                "endTime": "17:15",
+                "movieId": 13,
+                "movieTitle": "Der Lehrer, der uns das Meer versprach",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12905?mode=widget&layout=movies&design=new&rb=0&showId=12905"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12917?mode=widget&layout=movies&design=new&rb=0&showId=12917"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:02",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12912?mode=widget&layout=movies&design=new&rb=0&showId=12912"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-16",
+            "showings": [
+              {
+                "time": "12:00",
+                "endTime": "13:11",
+                "movieId": 12,
+                "movieTitle": "Ein Tag ohne Frauen",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12908?mode=widget&layout=movies&design=new&rb=0&showId=12908"
+              },
+              {
+                "time": "14:00",
+                "endTime": "15:45",
+                "movieId": 13,
+                "movieTitle": "Der Lehrer, der uns das Meer versprach",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12906?mode=widget&layout=movies&design=new&rb=0&showId=12906"
+              },
+              {
+                "time": "16:30",
+                "endTime": "18:25",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12918?mode=widget&layout=movies&design=new&rb=0&showId=12918"
+              },
+              {
+                "time": "19:00",
+                "endTime": "21:19",
+                "movieId": 7,
+                "movieTitle": "Anora",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12904?mode=widget&layout=movies&design=new&rb=0&showId=12904"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-17",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12919?mode=widget&layout=movies&design=new&rb=0&showId=12919"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:47",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12913?mode=widget&layout=movies&design=new&rb=0&showId=12913"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-18",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:15",
+                "movieId": 13,
+                "movieTitle": "Der Lehrer, der uns das Meer versprach",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12907?mode=widget&layout=movies&design=new&rb=0&showId=12907"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12920?mode=widget&layout=movies&design=new&rb=0&showId=12920"
+              }
+            ]
+          },
+          {
+            "date": "2025-03-19",
+            "showings": [
+              {
+                "time": "16:30",
+                "endTime": "17:41",
+                "movieId": 12,
+                "movieTitle": "Ein Tag ohne Frauen",
+                "attributes": [
+                  "2D",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12909?mode=widget&layout=movies&design=new&rb=0&showId=12909"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:32",
+                "movieId": 3,
+                "movieTitle": "Heldin",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12914?mode=widget&layout=movies&design=new&rb=0&showId=12914"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:55",
+                "movieId": 1,
+                "movieTitle": "Köln 75",
+                "attributes": [
+                  "2D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12921?mode=widget&layout=movies&design=new&rb=0&showId=12921"
               }
             ]
           }

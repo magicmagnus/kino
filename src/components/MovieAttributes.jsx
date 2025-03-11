@@ -86,7 +86,7 @@ const MovieAttributes = (props) => {
                 }
             >
                 {/* poster  */}
-                <div className="w-full bg-zinc-800 sm:h-[550px] sm:w-auto">
+                <div className="w-full bg-zinc-800 sm:h-full sm:w-auto">
                     <div className="relative w-full pb-[150%] sm:aspect-[2/3] sm:h-full sm:w-auto sm:pb-0">
                         {!imageLoaded && !imageError && (
                             <div

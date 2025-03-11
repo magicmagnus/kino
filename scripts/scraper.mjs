@@ -61,7 +61,7 @@ async function scrapeCinema() {
         "kino-atelier-tuebingen",
         "kino-blaue-bruecke-tuebingen",
     ];
-    let atelierMovies = [];
+    // let atelierMovies = [];
 
     // 1. first scrape all movie infos except the dates/shotwimes from one page
     console.log('\n\t1. Scraping movie infos from "widget pages"...\n');
@@ -354,10 +354,10 @@ async function scrapeCinema() {
         }, kino);
 
         allMovieInfos = allMovieInfos.concat(movieInfos);
-        if (kino === "kino-atelier-tuebingen") {
-            atelierMovies = movieInfos; // save the Atelier movies to a separate file
-            console.log("Found", atelierMovies.length, 'movies from "Atelier"');
-        }
+        // if (kino === "kino-atelier-tuebingen") {
+        //     atelierMovies = movieInfos; // save the Atelier movies to a separate file
+        //     console.log("Found", atelierMovies.length, 'movies from "Atelier"');
+        // }
     }
 
     function filterDuplicateTitles(movieList) {
@@ -428,6 +428,8 @@ async function scrapeCinema() {
     });
 
     let allMovieDates = await page.evaluate(async () => {
+        // ##################################################
+        // first a couple of helper functions inside the context of the browser
         function formatAttributes(attributes) {
             return attributes.map((attr) => {
                 if (attr.toLowerCase().includes("omd")) {
@@ -438,6 +440,79 @@ async function scrapeCinema() {
                 return attr;
             });
         }
+
+        // the room name formats change often on the site, but the "core name" stays the same
+        function getFormattedRoomName(scrapedRoom) {
+            const validNames = [
+                "Saal Tarantino",
+                "Saal Spielberg",
+                "Saal Kubrick",
+                "Saal Almodóvar",
+                "Saal Coppola",
+                "Saal Arsenal",
+                "Atelier",
+            ];
+
+            // Try to find a valid room name within the scraped value
+            for (const room of validNames) {
+                const shortName = room.replace(/^Saal\s/, ""); // Remove "Saal " prefix for matching
+                if (scrapedRoom.includes(shortName)) {
+                    return room; // Return the correctly formatted room name
+                }
+            }
+            return null;
+        }
+
+        // self-explanatory
+        function getCinemaSlugByTheater(theater) {
+            const theatersAndRooms = {
+                "museum-tuebingen": [
+                    "Saal Almodóvar",
+                    "Saal Coppola",
+                    "Saal Arsenal",
+                ],
+                "atelier-tuebingen": ["Atelier"],
+                "blaue-bruecke-tuebingen": [
+                    "Saal Tarantino",
+                    "Saal Spielberg",
+                    "Saal Kubrick",
+                ],
+            };
+            for (const [cinemaSlug, rooms] of Object.entries(
+                theatersAndRooms,
+            )) {
+                if (rooms.includes(theater)) {
+                    return cinemaSlug;
+                }
+            }
+            return null;
+        }
+
+        // some iframe URLs for the widgets have the wrong cinema slug, so we have to correct them manually
+        function correctIframeUrls(shows) {
+            shows.forEach((show) => {
+                const theater = show.theater;
+                const correctCinemaSlug = getCinemaSlugByTheater(theater);
+                if (
+                    correctCinemaSlug &&
+                    !show.iframeUrl.includes(correctCinemaSlug) //if the URL doesnt contain the correct cinema
+                ) {
+                    console.log(
+                        "Correcting iframe URL for",
+                        show.theater,
+                        "to",
+                        correctCinemaSlug,
+                    );
+                    show.iframeUrl = show.iframeUrl.replace(
+                        /kino-[^/]+/,
+                        `kino-${correctCinemaSlug}`,
+                    );
+                }
+            });
+            return shows;
+        }
+        // ##################################################
+
         debugger;
         const movies = [];
         const movieItems = document.querySelectorAll(".movie-item");
@@ -510,7 +585,7 @@ async function scrapeCinema() {
             // for each movie, loop through all dates
             for (let dateIndex = 0; dateIndex < dates.length; dateIndex++) {
                 const date = dates[dateIndex];
-                const shows = [];
+                let shows = [];
 
                 // for each date, loop through all timeGrids (all theaters), from index 1 to skip the dateGrid
                 for (
@@ -544,22 +619,14 @@ async function scrapeCinema() {
                         await new Promise((resolve) =>
                             setTimeout(resolve, 500),
                         );
+
                         shows.push({
                             time:
                                 show
                                     .querySelector(".showtime")
                                     ?.textContent.trim() || "Unknown Time",
-                            theater: show
-                                .querySelector(".theatre-name")
-                                ?.textContent.trim()
-                                .includes(" - ")
-                                ? show
-                                      .querySelector(".theatre-name")
-                                      ?.textContent.trim()
-                                      .split(" - ")[1]
-                                : show
-                                      .querySelector(".theatre-name")
-                                      ?.textContent.trim() || "Unknown Theater",
+                            theater: getFormattedRoomName(room),
+
                             attributes: formatAttributes(
                                 Array.from(
                                     show.querySelectorAll(".attribute-logo"),
@@ -583,52 +650,8 @@ async function scrapeCinema() {
                     }
                 }
 
-                // Correct the iframe URL for the shows
-                const theatersAndRooms = {
-                    museum: ["Saal Almodóvar", "Saal Coppola", "Saal Arsenal"],
-                    atelier: ["Atelier"],
-                    "blaue-bruecke": [
-                        "Saal Tarantino",
-                        "Saal Spielberg",
-                        "Saal Kubrick",
-                    ],
-                };
-
-                function getCinemaByTheater(theater) {
-                    for (const [cinema, rooms] of Object.entries(
-                        theatersAndRooms,
-                    )) {
-                        if (rooms.includes(theater)) {
-                            return cinema;
-                        }
-                    }
-                    return null;
-                }
-
-                function correctIframeUrls(shows) {
-                    shows.forEach((show) => {
-                        const theater = show.theater;
-                        const correctCinema = getCinemaByTheater(theater);
-                        if (
-                            correctCinema &&
-                            !show.iframeUrl.includes(correctCinema)
-                        ) {
-                            console.log(
-                                "Correcting iframe URL for",
-                                show.theater,
-                                "to",
-                                correctCinema,
-                            );
-                            show.iframeUrl = show.iframeUrl.replace(
-                                /kino-[^/]+/,
-                                `kino-${correctCinema}-tuebingen`,
-                            );
-                        }
-                    });
-                    return shows;
-                }
-
-                correctIframeUrls(shows);
+                // manually correct the iframe URL for the shows
+                shows = correctIframeUrls(shows);
 
                 showtimes.push({
                     date,
@@ -670,14 +693,12 @@ async function scrapeCinema() {
         let score = intersection.length / union.size;
 
         // Boost similarity if the first words match
-        if (words1[0] === words2[0]) {
+        if (words1[0] === words2[0] && words1[1] === words2[1]) {
             score += 0.2; // Adjust boost factor if needed
         }
 
         return Math.min(1, score); // Keep score in range [0,1]
     }
-
-    // const levenshtein = require('fast-levenshtein');
 
     function levenshteinSimilarity(title1, title2) {
         const maxLength = Math.max(title1.length, title2.length);
