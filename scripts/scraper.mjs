@@ -470,15 +470,65 @@ async function scrapeMovieSchedules(page) {
                         showIndex++
                     ) {
                         const show = showWrappers[showIndex];
+
+                        // Store the current iframe URL before clicking (if any)
+                        const previousIframeUrl =
+                            document.querySelector("iframe")?.src || "";
+
+                        // Click to load new iframe content
                         show.click();
                         const room =
                             show
                                 .querySelector(".theatre-name")
                                 ?.textContent.trim() || "Unknown Theater";
 
-                        await new Promise((resolve) =>
-                            setTimeout(resolve, 800),
-                        );
+                        // Wait for iframe content to change or load
+                        let iframeUrl = "Unknown iframe URL";
+                        try {
+                            await new Promise((resolve, reject) => {
+                                const startTime = Date.now();
+                                const maxWaitTime = 5000; // 5 seconds timeout
+
+                                const checkIframeChanged = () => {
+                                    const iframe =
+                                        document.querySelector("iframe");
+                                    const currentIframeUrl = iframe?.src || "";
+
+                                    // If iframe exists and URL changed, or if we now have an iframe URL
+                                    if (
+                                        (iframe &&
+                                            currentIframeUrl &&
+                                            currentIframeUrl !==
+                                                previousIframeUrl) ||
+                                        (currentIframeUrl &&
+                                            previousIframeUrl === "")
+                                    ) {
+                                        iframeUrl = currentIframeUrl;
+                                        resolve();
+                                        return;
+                                    }
+
+                                    // Check timeout
+                                    if (Date.now() - startTime > maxWaitTime) {
+                                        console.warn(
+                                            "Timeout waiting for iframe URL to change",
+                                        );
+                                        resolve(); // Resolve anyway to continue with other shows
+                                        return;
+                                    }
+
+                                    // Continue polling
+                                    setTimeout(checkIframeChanged, 100);
+                                };
+
+                                // Start polling
+                                checkIframeChanged();
+                            });
+                        } catch (error) {
+                            console.error(
+                                `Error waiting for iframe: ${error.message}`,
+                            );
+                        }
 
                         shows.push({
                             time:
@@ -486,7 +536,6 @@ async function scrapeMovieSchedules(page) {
                                     .querySelector(".showtime")
                                     ?.textContent.trim() || "Unknown Time",
                             theater: await window.getFormattedRoomName(room),
-
                             attributes: await window.formatOmduInAttributes(
                                 Array.from(
                                     show.querySelectorAll(".attribute-logo"),
@@ -502,10 +551,7 @@ async function scrapeMovieSchedules(page) {
                                     return attribute;
                                 }),
                             ),
-
-                            iframeUrl:
-                                document.querySelector("iframe")?.src ||
-                                "Unknown iframe URL",
+                            iframeUrl: iframeUrl,
                         });
                     }
                 }
