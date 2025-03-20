@@ -1,214 +1,5 @@
 [
   {
-    "date": "2025-03-19",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:19",
-                "movieId": 8,
-                "movieTitle": "Mickey 17",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74534?mode=widget&layout=movies&design=new&rb=0&showId=74534"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:19",
-                "movieId": 8,
-                "movieTitle": "Mickey 17",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74528?mode=widget&layout=movies&design=new&rb=0&showId=74528"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "16:45",
-                "endTime": "19:01",
-                "movieId": 12,
-                "movieTitle": "Wunderschöner",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74550?mode=widget&layout=movies&design=new&rb=0&showId=74550"
-              },
-              {
-                "time": "19:45",
-                "endTime": "22:01",
-                "movieId": 12,
-                "movieTitle": "Wunderschöner",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74551?mode=widget&layout=movies&design=new&rb=0&showId=74551"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "18:15",
-                "endTime": "19:40",
-                "movieId": 7,
-                "movieTitle": "Flow",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74521?mode=widget&layout=movies&design=new&rb=0&showId=74521"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:20",
-                "movieId": 11,
-                "movieTitle": "Bridget Jones - Verrückt nach ihm",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74508?mode=widget&layout=movies&design=new&rb=0&showId=74508"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:20",
-                "movieId": 4,
-                "movieTitle": "Like A Complete Unknown",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79875?mode=widget&layout=movies&design=new&rb=0&showId=79875"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:20",
-                "movieId": 4,
-                "movieTitle": "Like A Complete Unknown",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79883?mode=widget&layout=movies&design=new&rb=0&showId=79883"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:16",
-                "movieId": 1,
-                "movieTitle": "Für immer hier",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79908?mode=widget&layout=movies&design=new&rb=0&showId=79908"
-              },
-              {
-                "time": "19:45",
-                "endTime": "22:01",
-                "movieId": 1,
-                "movieTitle": "Für immer hier",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79903?mode=widget&layout=movies&design=new&rb=0&showId=79903"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:29",
-                "movieId": 14,
-                "movieTitle": "The Last Showgirl",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79772?mode=widget&layout=movies&design=new&rb=0&showId=79772"
-              },
-              {
-                "time": "20:00",
-                "endTime": "21:32",
-                "movieId": 5,
-                "movieTitle": "Heldin",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79894?mode=widget&layout=movies&design=new&rb=0&showId=79894"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "16:30",
-                "endTime": "17:41",
-                "movieId": 13,
-                "movieTitle": "Ein Tag ohne Frauen",
-                "attributes": [
-                  "2D",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12909?mode=widget&layout=movies&design=new&rb=0&showId=12909"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:32",
-                "movieId": 5,
-                "movieTitle": "Heldin",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12914?mode=widget&layout=movies&design=new&rb=0&showId=12914"
-              },
-              {
-                "time": "20:00",
-                "endTime": "21:55",
-                "movieId": 3,
-                "movieTitle": "Köln 75",
-                "attributes": [
-                  "2D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12921?mode=widget&layout=movies&design=new&rb=0&showId=12921"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "date": "2025-03-20",
     "theaters": [
       {
@@ -245,12 +36,12 @@
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74597?mode=widget&layout=movies&design=new&rb=0&showId=74597"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74597?mode=widget&layout=movies&design=new&rb=0&showId=74597&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -260,7 +51,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74590?mode=widget&layout=movies&design=new&rb=0&showId=74590"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74590?mode=widget&layout=movies&design=new&rb=0&showId=74590&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -275,7 +66,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74582?mode=widget&layout=movies&design=new&rb=0&showId=74582"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74582?mode=widget&layout=movies&design=new&rb=0&showId=74582&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:30",
@@ -285,7 +76,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74572?mode=widget&layout=movies&design=new&rb=0&showId=74572"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74572?mode=widget&layout=movies&design=new&rb=0&showId=74572&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -300,13 +91,13 @@
               {
                 "time": "18:00",
                 "endTime": "19:29",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79962?mode=widget&layout=movies&design=new&rb=0&showId=79962"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79962?mode=widget&layout=movies&design=new&rb=0&showId=79962&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -316,7 +107,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79945?mode=widget&layout=movies&design=new&rb=0&showId=79945"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79945?mode=widget&layout=movies&design=new&rb=0&showId=79945&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -331,18 +122,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79966?mode=widget&layout=movies&design=new&rb=0&showId=79966"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79966?mode=widget&layout=movies&design=new&rb=0&showId=79966&sessid=as7i159jnut03pv38mrokdv45o"
               },
               {
                 "time": "20:00",
                 "endTime": "21:50",
-                "movieId": 16,
+                "movieId": 14,
                 "movieTitle": "The Room Next Door",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79913?mode=widget&layout=movies&design=new&rb=0&showId=79913"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79913?mode=widget&layout=movies&design=new&rb=0&showId=79913&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           },
@@ -367,7 +158,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79933?mode=widget&layout=movies&design=new&rb=0&showId=79933"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79933?mode=widget&layout=movies&design=new&rb=0&showId=79933&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -387,28 +178,28 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12928?mode=widget&layout=movies&design=new&rb=0&showId=12928"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12928?mode=widget&layout=movies&design=new&rb=0&showId=12928&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:45",
                 "endTime": "21:23",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12936?mode=widget&layout=movies&design=new&rb=0&showId=12936"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12936?mode=widget&layout=movies&design=new&rb=0&showId=12936&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "22:00",
                 "endTime": "23:40",
-                "movieId": 24,
+                "movieId": 22,
                 "movieTitle": "Layla",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12926?mode=widget&layout=movies&design=new&rb=0&showId=12926"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12926?mode=widget&layout=movies&design=new&rb=0&showId=12926&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -468,7 +259,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74579?mode=widget&layout=movies&design=new&rb=0&showId=74579"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74579?mode=widget&layout=movies&design=new&rb=0&showId=74579&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:30",
@@ -478,7 +269,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74584?mode=widget&layout=movies&design=new&rb=0&showId=74584"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74584?mode=widget&layout=movies&design=new&rb=0&showId=74584&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:30",
@@ -489,7 +280,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74594?mode=widget&layout=movies&design=new&rb=0&showId=74594"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74594?mode=widget&layout=movies&design=new&rb=0&showId=74594&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -504,7 +295,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74583?mode=widget&layout=movies&design=new&rb=0&showId=74583"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74583?mode=widget&layout=movies&design=new&rb=0&showId=74583&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "17:00",
@@ -514,17 +305,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74573?mode=widget&layout=movies&design=new&rb=0&showId=74573"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74573?mode=widget&layout=movies&design=new&rb=0&showId=74573&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:15",
                 "endTime": "22:31",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74598?mode=widget&layout=movies&design=new&rb=0&showId=74598"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74598?mode=widget&layout=movies&design=new&rb=0&showId=74598&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -544,7 +335,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79946?mode=widget&layout=movies&design=new&rb=0&showId=79946"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79946?mode=widget&layout=movies&design=new&rb=0&showId=79946&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:00",
@@ -554,7 +345,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79971?mode=widget&layout=movies&design=new&rb=0&showId=79971"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79971?mode=widget&layout=movies&design=new&rb=0&showId=79971&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -565,7 +356,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79951?mode=widget&layout=movies&design=new&rb=0&showId=79951"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79951?mode=widget&layout=movies&design=new&rb=0&showId=79951&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -575,12 +366,12 @@
               {
                 "time": "16:00",
                 "endTime": "17:29",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79956?mode=widget&layout=movies&design=new&rb=0&showId=79956"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79956?mode=widget&layout=movies&design=new&rb=0&showId=79956&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:15",
@@ -590,18 +381,18 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79967?mode=widget&layout=movies&design=new&rb=0&showId=79967"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79967?mode=widget&layout=movies&design=new&rb=0&showId=79967&sessid=as7i159jnut03pv38mrokdv45o"
               },
               {
                 "time": "20:30",
                 "endTime": "21:59",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79963?mode=widget&layout=movies&design=new&rb=0&showId=79963"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79963?mode=widget&layout=movies&design=new&rb=0&showId=79963&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -616,7 +407,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79934?mode=widget&layout=movies&design=new&rb=0&showId=79934"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79934?mode=widget&layout=movies&design=new&rb=0&showId=79934&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "17:30",
@@ -652,12 +443,12 @@
               {
                 "time": "18:00",
                 "endTime": "19:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12937?mode=widget&layout=movies&design=new&rb=0&showId=12937"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12937?mode=widget&layout=movies&design=new&rb=0&showId=12937&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "20:15",
@@ -667,7 +458,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12929?mode=widget&layout=movies&design=new&rb=0&showId=12929"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12929?mode=widget&layout=movies&design=new&rb=0&showId=12929&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -727,7 +518,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74580?mode=widget&layout=movies&design=new&rb=0&showId=74580"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74580?mode=widget&layout=movies&design=new&rb=0&showId=74580&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:30",
@@ -737,7 +528,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74585?mode=widget&layout=movies&design=new&rb=0&showId=74585"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74585?mode=widget&layout=movies&design=new&rb=0&showId=74585&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:30",
@@ -747,7 +538,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74591?mode=widget&layout=movies&design=new&rb=0&showId=74591"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74591?mode=widget&layout=movies&design=new&rb=0&showId=74591&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -762,7 +553,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74604?mode=widget&layout=movies&design=new&rb=0&showId=74604"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74604?mode=widget&layout=movies&design=new&rb=0&showId=74604&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "17:00",
@@ -772,17 +563,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74574?mode=widget&layout=movies&design=new&rb=0&showId=74574"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74574?mode=widget&layout=movies&design=new&rb=0&showId=74574&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:15",
                 "endTime": "22:31",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74599?mode=widget&layout=movies&design=new&rb=0&showId=74599"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74599?mode=widget&layout=movies&design=new&rb=0&showId=74599&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -803,17 +594,17 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79952?mode=widget&layout=movies&design=new&rb=0&showId=79952"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79952?mode=widget&layout=movies&design=new&rb=0&showId=79952&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:00",
                 "endTime": "19:29",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79957?mode=widget&layout=movies&design=new&rb=0&showId=79957"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79957?mode=widget&layout=movies&design=new&rb=0&showId=79957&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:15",
@@ -823,7 +614,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79947?mode=widget&layout=movies&design=new&rb=0&showId=79947"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79947?mode=widget&layout=movies&design=new&rb=0&showId=79947&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -848,17 +639,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79968?mode=widget&layout=movies&design=new&rb=0&showId=79968"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79968?mode=widget&layout=movies&design=new&rb=0&showId=79968&sessid=as7i159jnut03pv38mrokdv45o"
               },
               {
                 "time": "20:45",
                 "endTime": "22:14",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79958?mode=widget&layout=movies&design=new&rb=0&showId=79958"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79958?mode=widget&layout=movies&design=new&rb=0&showId=79958&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -873,7 +664,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79936?mode=widget&layout=movies&design=new&rb=0&showId=79936"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79936?mode=widget&layout=movies&design=new&rb=0&showId=79936&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "17:45",
@@ -893,7 +684,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79937?mode=widget&layout=movies&design=new&rb=0&showId=79937"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79937?mode=widget&layout=movies&design=new&rb=0&showId=79937&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -913,17 +704,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12930?mode=widget&layout=movies&design=new&rb=0&showId=12930"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12930?mode=widget&layout=movies&design=new&rb=0&showId=12930&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:00",
                 "endTime": "19:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12938?mode=widget&layout=movies&design=new&rb=0&showId=12938"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12938?mode=widget&layout=movies&design=new&rb=0&showId=12938&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "20:15",
@@ -933,7 +724,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12931?mode=widget&layout=movies&design=new&rb=0&showId=12931"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12931?mode=widget&layout=movies&design=new&rb=0&showId=12931&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -994,17 +785,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74581?mode=widget&layout=movies&design=new&rb=0&showId=74581"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74581?mode=widget&layout=movies&design=new&rb=0&showId=74581&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "16:00",
                 "endTime": "18:16",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74600?mode=widget&layout=movies&design=new&rb=0&showId=74600"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74600?mode=widget&layout=movies&design=new&rb=0&showId=74600&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:00",
@@ -1015,7 +806,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74595?mode=widget&layout=movies&design=new&rb=0&showId=74595"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74595?mode=widget&layout=movies&design=new&rb=0&showId=74595&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1040,7 +831,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74586?mode=widget&layout=movies&design=new&rb=0&showId=74586"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74586?mode=widget&layout=movies&design=new&rb=0&showId=74586&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "18:30",
@@ -1050,7 +841,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74575?mode=widget&layout=movies&design=new&rb=0&showId=74575"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74575?mode=widget&layout=movies&design=new&rb=0&showId=74575&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1070,7 +861,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79923?mode=widget&layout=movies&design=new&rb=0&showId=79923"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79923?mode=widget&layout=movies&design=new&rb=0&showId=79923&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "14:00",
@@ -1080,7 +871,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79939?mode=widget&layout=movies&design=new&rb=0&showId=79939"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79939?mode=widget&layout=movies&design=new&rb=0&showId=79939&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "16:00",
@@ -1090,7 +881,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79948?mode=widget&layout=movies&design=new&rb=0&showId=79948"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79948?mode=widget&layout=movies&design=new&rb=0&showId=79948&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:00",
@@ -1101,7 +892,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79953?mode=widget&layout=movies&design=new&rb=0&showId=79953"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79953?mode=widget&layout=movies&design=new&rb=0&showId=79953&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1116,7 +907,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79973?mode=widget&layout=movies&design=new&rb=0&showId=79973"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79973?mode=widget&layout=movies&design=new&rb=0&showId=79973&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "14:45",
@@ -1126,17 +917,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79969?mode=widget&layout=movies&design=new&rb=0&showId=79969"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79969?mode=widget&layout=movies&design=new&rb=0&showId=79969&sessid=as7i159jnut03pv38mrokdv45o"
               },
               {
                 "time": "17:00",
                 "endTime": "18:29",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79959?mode=widget&layout=movies&design=new&rb=0&showId=79959"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79959?mode=widget&layout=movies&design=new&rb=0&showId=79959&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:15",
@@ -1162,7 +953,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79938?mode=widget&layout=movies&design=new&rb=0&showId=79938"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79938?mode=widget&layout=movies&design=new&rb=0&showId=79938&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "14:00",
@@ -1172,7 +963,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79917?mode=widget&layout=movies&design=new&rb=0&showId=79917"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79917?mode=widget&layout=movies&design=new&rb=0&showId=79917&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "16:30",
@@ -1193,7 +984,7 @@
                   "2D",
                   "OmeU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79943?mode=widget&layout=movies&design=new&rb=0&showId=79943"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79943?mode=widget&layout=movies&design=new&rb=0&showId=79943&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1208,12 +999,12 @@
               {
                 "time": "15:00",
                 "endTime": "16:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12939?mode=widget&layout=movies&design=new&rb=0&showId=12939"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12939?mode=widget&layout=movies&design=new&rb=0&showId=12939&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "17:00",
@@ -1223,7 +1014,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12932?mode=widget&layout=movies&design=new&rb=0&showId=12932"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12932?mode=widget&layout=movies&design=new&rb=0&showId=12932&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:30",
@@ -1234,7 +1025,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12927?mode=widget&layout=movies&design=new&rb=0&showId=12927"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12927?mode=widget&layout=movies&design=new&rb=0&showId=12927&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1279,12 +1070,12 @@
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74601?mode=widget&layout=movies&design=new&rb=0&showId=74601"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74601?mode=widget&layout=movies&design=new&rb=0&showId=74601&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -1294,7 +1085,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74592?mode=widget&layout=movies&design=new&rb=0&showId=74592"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74592?mode=widget&layout=movies&design=new&rb=0&showId=74592&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1309,7 +1100,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74587?mode=widget&layout=movies&design=new&rb=0&showId=74587"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74587?mode=widget&layout=movies&design=new&rb=0&showId=74587&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:30",
@@ -1319,7 +1110,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74576?mode=widget&layout=movies&design=new&rb=0&showId=74576"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74576?mode=widget&layout=movies&design=new&rb=0&showId=74576&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1339,7 +1130,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79940?mode=widget&layout=movies&design=new&rb=0&showId=79940"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79940?mode=widget&layout=movies&design=new&rb=0&showId=79940&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -1349,7 +1140,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79949?mode=widget&layout=movies&design=new&rb=0&showId=79949"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79949?mode=widget&layout=movies&design=new&rb=0&showId=79949&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1370,13 +1161,13 @@
               {
                 "time": "20:15",
                 "endTime": "21:44",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79964?mode=widget&layout=movies&design=new&rb=0&showId=79964"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79964?mode=widget&layout=movies&design=new&rb=0&showId=79964&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1386,23 +1177,23 @@
               {
                 "time": "18:00",
                 "endTime": "19:35",
-                "movieId": 21,
+                "movieId": 19,
                 "movieTitle": "Das Kind (L'enfant)",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79944?mode=widget&layout=movies&design=new&rb=0&showId=79944"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79944?mode=widget&layout=movies&design=new&rb=0&showId=79944&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "20:00",
                 "endTime": "21:40",
-                "movieId": 34,
+                "movieId": 33,
                 "movieTitle": "Arsenal Sneak",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79955?mode=widget&layout=movies&design=new&rb=0&showId=79955"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79955?mode=widget&layout=movies&design=new&rb=0&showId=79955&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1422,17 +1213,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12933?mode=widget&layout=movies&design=new&rb=0&showId=12933"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12933?mode=widget&layout=movies&design=new&rb=0&showId=12933&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
                 "endTime": "21:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12940?mode=widget&layout=movies&design=new&rb=0&showId=12940"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12940?mode=widget&layout=movies&design=new&rb=0&showId=12940&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1477,12 +1268,12 @@
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74602?mode=widget&layout=movies&design=new&rb=0&showId=74602"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74602?mode=widget&layout=movies&design=new&rb=0&showId=74602&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -1493,7 +1284,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74596?mode=widget&layout=movies&design=new&rb=0&showId=74596"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74596?mode=widget&layout=movies&design=new&rb=0&showId=74596&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1508,7 +1299,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74588?mode=widget&layout=movies&design=new&rb=0&showId=74588"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74588?mode=widget&layout=movies&design=new&rb=0&showId=74588&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:30",
@@ -1518,7 +1309,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74577?mode=widget&layout=movies&design=new&rb=0&showId=74577"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74577?mode=widget&layout=movies&design=new&rb=0&showId=74577&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1533,22 +1324,22 @@
               {
                 "time": "17:00",
                 "endTime": "18:29",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79960?mode=widget&layout=movies&design=new&rb=0&showId=79960"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79960?mode=widget&layout=movies&design=new&rb=0&showId=79960&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
                 "endTime": "22:30",
-                "movieId": 37,
+                "movieId": 35,
                 "movieTitle": "Stand-Up Comedy Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/78352?mode=widget&layout=movies&design=new&rb=0&showId=78352"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/78352?mode=widget&layout=movies&design=new&rb=0&showId=78352&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           },
@@ -1568,12 +1359,12 @@
               {
                 "time": "20:15",
                 "endTime": "21:44",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79961?mode=widget&layout=movies&design=new&rb=0&showId=79961"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79961?mode=widget&layout=movies&design=new&rb=0&showId=79961&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           },
@@ -1588,7 +1379,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79950?mode=widget&layout=movies&design=new&rb=0&showId=79950"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79950?mode=widget&layout=movies&design=new&rb=0&showId=79950&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:15",
@@ -1598,7 +1389,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79941?mode=widget&layout=movies&design=new&rb=0&showId=79941"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79941?mode=widget&layout=movies&design=new&rb=0&showId=79941&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1613,13 +1404,13 @@
               {
                 "time": "18:00",
                 "endTime": "19:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12942?mode=widget&layout=movies&design=new&rb=0&showId=12942"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12942?mode=widget&layout=movies&design=new&rb=0&showId=12942&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "20:15",
@@ -1630,7 +1421,7 @@
                   "2D",
                   "OmeU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12935?mode=widget&layout=movies&design=new&rb=0&showId=12935"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12935?mode=widget&layout=movies&design=new&rb=0&showId=12935&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1676,12 +1467,12 @@
               {
                 "time": "17:00",
                 "endTime": "19:16",
-                "movieId": 12,
+                "movieId": 11,
                 "movieTitle": "Wunderschöner",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74603?mode=widget&layout=movies&design=new&rb=0&showId=74603"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74603?mode=widget&layout=movies&design=new&rb=0&showId=74603&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -1691,7 +1482,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74593?mode=widget&layout=movies&design=new&rb=0&showId=74593"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74593?mode=widget&layout=movies&design=new&rb=0&showId=74593&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1706,7 +1497,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74589?mode=widget&layout=movies&design=new&rb=0&showId=74589"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74589?mode=widget&layout=movies&design=new&rb=0&showId=74589&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "19:30",
@@ -1716,7 +1507,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74578?mode=widget&layout=movies&design=new&rb=0&showId=74578"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74578?mode=widget&layout=movies&design=new&rb=0&showId=74578&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           }
@@ -1736,7 +1527,7 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79942?mode=widget&layout=movies&design=new&rb=0&showId=79942"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79942?mode=widget&layout=movies&design=new&rb=0&showId=79942&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
@@ -1747,7 +1538,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79954?mode=widget&layout=movies&design=new&rb=0&showId=79954"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79954?mode=widget&layout=movies&design=new&rb=0&showId=79954&sessid=trt33s84lv5dt9jhobjv498g9s"
               }
             ]
           },
@@ -1763,18 +1554,18 @@
                   "2D",
                   "OmeU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79970?mode=widget&layout=movies&design=new&rb=0&showId=79970"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79970?mode=widget&layout=movies&design=new&rb=0&showId=79970&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:15",
                 "endTime": "21:44",
-                "movieId": 14,
+                "movieId": 12,
                 "movieTitle": "The Last Showgirl",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79965?mode=widget&layout=movies&design=new&rb=0&showId=79965"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79965?mode=widget&layout=movies&design=new&rb=0&showId=79965&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           },
@@ -1784,12 +1575,12 @@
               {
                 "time": "18:00",
                 "endTime": "19:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79773?mode=widget&layout=movies&design=new&rb=0&showId=79773"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79773?mode=widget&layout=movies&design=new&rb=0&showId=79773&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "20:15",
@@ -1800,7 +1591,7 @@
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79932?mode=widget&layout=movies&design=new&rb=0&showId=79932"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79932?mode=widget&layout=movies&design=new&rb=0&showId=79932&sessid=as7i159jnut03pv38mrokdv45o"
               }
             ]
           }
@@ -1820,17 +1611,17 @@
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12934?mode=widget&layout=movies&design=new&rb=0&showId=12934"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12934?mode=widget&layout=movies&design=new&rb=0&showId=12934&sessid=trt33s84lv5dt9jhobjv498g9s"
               },
               {
                 "time": "20:00",
                 "endTime": "21:38",
-                "movieId": 15,
+                "movieId": 13,
                 "movieTitle": "Niki de Saint Phalle",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12941?mode=widget&layout=movies&design=new&rb=0&showId=12941"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12941?mode=widget&layout=movies&design=new&rb=0&showId=12941&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1850,13 +1641,13 @@
               {
                 "time": "20:00",
                 "endTime": "21:58",
-                "movieId": 17,
+                "movieId": 15,
                 "movieTitle": "The Outrun",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79914?mode=widget&layout=movies&design=new&rb=0&showId=79914"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79914?mode=widget&layout=movies&design=new&rb=0&showId=79914&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1876,12 +1667,12 @@
               {
                 "time": "19:00",
                 "endTime": "20:40",
-                "movieId": 36,
+                "movieId": 34,
                 "movieTitle": "Benefizveranstaltung - Rafik Schami liest \"Die Königin und der Kalligraph\"",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79395?mode=widget&layout=movies&design=new&rb=0&showId=79395"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79395?mode=widget&layout=movies&design=new&rb=0&showId=79395&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           },
@@ -1891,13 +1682,13 @@
               {
                 "time": "20:00",
                 "endTime": "21:46",
-                "movieId": 31,
+                "movieId": 30,
                 "movieTitle": "Die purpurnen Flüsse",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79918?mode=widget&layout=movies&design=new&rb=0&showId=79918"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79918?mode=widget&layout=movies&design=new&rb=0&showId=79918&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1942,12 +1733,12 @@
               {
                 "time": "19:30",
                 "endTime": "21:44",
-                "movieId": 18,
+                "movieId": 16,
                 "movieTitle": "Nosferatu - Der Untote",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79840?mode=widget&layout=movies&design=new&rb=0&showId=79840"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79840?mode=widget&layout=movies&design=new&rb=0&showId=79840&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1962,13 +1753,13 @@
               {
                 "time": "20:00",
                 "endTime": "22:12",
-                "movieId": 22,
+                "movieId": 20,
                 "movieTitle": "Stelios",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12922?mode=widget&layout=movies&design=new&rb=0&showId=12922"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12922?mode=widget&layout=movies&design=new&rb=0&showId=12922&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -1988,12 +1779,12 @@
               {
                 "time": "12:00",
                 "endTime": "13:40",
-                "movieId": 20,
+                "movieId": 18,
                 "movieTitle": "I Work at the Cemetery",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79832?mode=widget&layout=movies&design=new&rb=0&showId=79832"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79832?mode=widget&layout=movies&design=new&rb=0&showId=79832&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2013,12 +1804,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:00",
-                "movieId": 38,
+                "movieId": 36,
                 "movieTitle": "Poetry Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79015?mode=widget&layout=movies&design=new&rb=0&showId=79015"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79015?mode=widget&layout=movies&design=new&rb=0&showId=79015&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2038,12 +1829,12 @@
               {
                 "time": "20:00",
                 "endTime": "21:37",
-                "movieId": 30,
+                "movieId": 29,
                 "movieTitle": "Mittagsstunde",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79857?mode=widget&layout=movies&design=new&rb=0&showId=79857"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79857?mode=widget&layout=movies&design=new&rb=0&showId=79857&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2063,13 +1854,13 @@
               {
                 "time": "20:00",
                 "endTime": "22:03",
-                "movieId": 19,
+                "movieId": 17,
                 "movieTitle": "Perfect Days",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79841?mode=widget&layout=movies&design=new&rb=0&showId=79841"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79841?mode=widget&layout=movies&design=new&rb=0&showId=79841&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2089,13 +1880,13 @@
               {
                 "time": "20:00",
                 "endTime": "21:45",
-                "movieId": 28,
+                "movieId": 27,
                 "movieTitle": "Neil Young: Coastal",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79916?mode=widget&layout=movies&design=new&rb=0&showId=79916"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79916?mode=widget&layout=movies&design=new&rb=0&showId=79916&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2110,13 +1901,13 @@
               {
                 "time": "22:00",
                 "endTime": "23:17",
-                "movieId": 25,
+                "movieId": 23,
                 "movieTitle": "Λεσβία",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12923?mode=widget&layout=movies&design=new&rb=0&showId=12923"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12923?mode=widget&layout=movies&design=new&rb=0&showId=12923&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2136,12 +1927,12 @@
               {
                 "time": "19:00",
                 "endTime": "22:52",
-                "movieId": 39,
+                "movieId": 37,
                 "movieTitle": "Met Opera 2024/25: Wolfgang Amadeus Mozart LE NOZZE DI FIGARO",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79392?mode=widget&layout=movies&design=new&rb=0&showId=79392"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79392?mode=widget&layout=movies&design=new&rb=0&showId=79392&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2161,12 +1952,12 @@
               {
                 "time": "18:00",
                 "endTime": "20:00",
-                "movieId": 35,
+                "movieId": 26,
                 "movieTitle": "Tübinale 2025 - Kurzfilmfestival",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79921?mode=widget&layout=movies&design=new&rb=0&showId=79921"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79921?mode=widget&layout=movies&design=new&rb=0&showId=79921&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2186,13 +1977,13 @@
               {
                 "time": "20:00",
                 "endTime": "21:44",
-                "movieId": 32,
+                "movieId": 31,
                 "movieTitle": "Red Heat",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74552?mode=widget&layout=movies&design=new&rb=0&showId=74552"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74552?mode=widget&layout=movies&design=new&rb=0&showId=74552&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2212,12 +2003,12 @@
               {
                 "time": "18:00",
                 "endTime": "19:49",
-                "movieId": 29,
+                "movieId": 28,
                 "movieTitle": "Wochenendrebellen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79919?mode=widget&layout=movies&design=new&rb=0&showId=79919"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79919?mode=widget&layout=movies&design=new&rb=0&showId=79919&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2237,12 +2028,12 @@
               {
                 "time": "22:00",
                 "endTime": "23:35",
-                "movieId": 26,
+                "movieId": 24,
                 "movieTitle": "Blindgänger",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12924?mode=widget&layout=movies&design=new&rb=0&showId=12924"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12924?mode=widget&layout=movies&design=new&rb=0&showId=12924&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2262,22 +2053,22 @@
               {
                 "time": "16:00",
                 "endTime": "17:32",
-                "movieId": 23,
+                "movieId": 21,
                 "movieTitle": "Baldiga – Entsichertes Herz",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79723?mode=widget&layout=movies&design=new&rb=0&showId=79723"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79723?mode=widget&layout=movies&design=new&rb=0&showId=79723&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               },
               {
                 "time": "19:00",
                 "endTime": "21:15",
-                "movieId": 40,
+                "movieId": 38,
                 "movieTitle": "MET Opera 2024/25: Richard Strauss SALOME",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79393?mode=widget&layout=movies&design=new&rb=0&showId=79393"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79393?mode=widget&layout=movies&design=new&rb=0&showId=79393&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2297,12 +2088,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:30",
-                "movieId": 37,
+                "movieId": 35,
                 "movieTitle": "Stand-Up Comedy Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79010?mode=widget&layout=movies&design=new&rb=0&showId=79010&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2322,12 +2113,12 @@
               {
                 "time": "19:00",
                 "endTime": "22:35",
-                "movieId": 41,
+                "movieId": 39,
                 "movieTitle": "MET Opera 2024/25: Gioachino Rossini IL BARBIERE DI SIVIGLIA",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79394?mode=widget&layout=movies&design=new&rb=0&showId=79394"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79394?mode=widget&layout=movies&design=new&rb=0&showId=79394&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2347,12 +2138,12 @@
               {
                 "time": "20:00",
                 "endTime": "21:19",
-                "movieId": 33,
+                "movieId": 32,
                 "movieTitle": "Lola rennt",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79922?mode=widget&layout=movies&design=new&rb=0&showId=79922"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79922?mode=widget&layout=movies&design=new&rb=0&showId=79922&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2372,12 +2163,12 @@
               {
                 "time": "20:00",
                 "endTime": "22:00",
-                "movieId": 38,
+                "movieId": 36,
                 "movieTitle": "Poetry Slam Tübingen",
                 "attributes": [
                   "2D"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79017?mode=widget&layout=movies&design=new&rb=0&showId=79017"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79017?mode=widget&layout=movies&design=new&rb=0&showId=79017&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }
@@ -2397,13 +2188,13 @@
               {
                 "time": "22:00",
                 "endTime": "23:39",
-                "movieId": 27,
+                "movieId": 25,
                 "movieTitle": "The Mattachine Family",
                 "attributes": [
                   "2D",
                   "OmdU"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12925?mode=widget&layout=movies&design=new&rb=0&showId=12925"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/12925?mode=widget&layout=movies&design=new&rb=0&showId=12925&sessid=t4dpfkrrr7hva4m2mnrco3mbin"
               }
             ]
           }

@@ -19,11 +19,55 @@ const MovieCard = (props) => {
 
     function openYouTube(videoId) {
         const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        const appLink = isIOS
-            ? `youtube://watch?v=${videoId}` // iOS deep link
-            : `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;end;`; // Android intent link
+        const isAndroid = /Android/i.test(navigator.userAgent);
 
-        window.location.href = appLink;
+        if (isIOS || isAndroid) {
+            // For mobile devices, try to use deep linking first
+            const now = Date.now();
+
+            // Track if the app was opened
+            const appOpened = () => {
+                return Date.now() - now > 500; // If more than 500ms passed, app likely opened
+            };
+
+            // Set up fallback to browser
+            const fallbackTimeout = setTimeout(() => {
+                if (!document.hidden) {
+                    // Only open browser if our page is still visible
+                    window.location.href = `https://www.youtube.com/watch?v=${videoId}`;
+                }
+            }, 2000); // Give enough time for app to open
+
+            // Listen for visibility change to clear the fallback
+            const handleVisibilityChange = () => {
+                if (document.hidden && appOpened()) {
+                    clearTimeout(fallbackTimeout);
+                }
+            };
+
+            document.addEventListener(
+                "visibilitychange",
+                handleVisibilityChange,
+            );
+
+            // Clean up event listener after 2.5 seconds
+            setTimeout(() => {
+                document.removeEventListener(
+                    "visibilitychange",
+                    handleVisibilityChange,
+                );
+            }, 2500);
+
+            // Try to open the app
+            if (isIOS) {
+                window.location.href = `youtube://watch?v=${videoId}`;
+            } else {
+                window.location.href = `intent://www.youtube.com/watch?v=${videoId}#Intent;package=com.google.android.youtube;scheme=https;end;`;
+            }
+        } else {
+            // Desktop - simply open in new tab
+            window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
+        }
     }
 
     const navigate = useNavigate();

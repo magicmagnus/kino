@@ -2,23 +2,21 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { release } from "node:os";
 import slugify from "slugify";
 
-import { CINEMA_LAYOUT } from "./utils.mjs";
-
-// // Define theater structure
-// const CINEMA_LAYOUT = {
-//     "Kino Blaue Brücke": {
-//         name: "Kino Blaue Brücke",
-//         rooms: ["Saal Tarantino", "Saal Spielberg", "Saal Kubrick"],
-//     },
-//     "Kino Museum": {
-//         name: "Kino Museum",
-//         rooms: ["Saal Almodóvar", "Saal Coppola", "Saal Arsenal"],
-//     },
-//     "Kino Atelier": {
-//         name: "Kino Atelier",
-//         rooms: ["Atelier"],
-//     },
-// };
+// Define theater structure
+const theaterStructure = {
+    "Kino Blaue Brücke": {
+        name: "Kino Blaue Brücke",
+        rooms: ["Saal Tarantino", "Saal Spielberg", "Saal Kubrick"],
+    },
+    "Kino Museum": {
+        name: "Kino Museum",
+        rooms: ["Saal Almodóvar", "Saal Coppola", "Saal Arsenal"],
+    },
+    "Kino Atelier": {
+        name: "Kino Atelier",
+        rooms: ["Atelier"],
+    },
+};
 function calculateEndTime(startTime, duration) {
     const [startHours, startMinutes] = startTime.split(":").map(Number);
     const movieDuration =
@@ -32,7 +30,7 @@ function calculateEndTime(startTime, duration) {
 
 // Helper function to get theater name from room name
 function getTheaterForRoom(roomName) {
-    for (const [theaterName, theater] of Object.entries(CINEMA_LAYOUT)) {
+    for (const [theaterName, theater] of Object.entries(theaterStructure)) {
         if (theater.rooms.includes(roomName)) {
             return theaterName;
         }
@@ -167,14 +165,14 @@ function transformToDateView(sourceData) {
     // Convert theaters and rooms objects to arrays while maintaining order
     Object.values(dateView).forEach((dateEntry) => {
         // Get ordered theater list from theaterStructure
-        dateEntry.theaters = Object.keys(CINEMA_LAYOUT)
+        dateEntry.theaters = Object.keys(theaterStructure)
             // Only include theaters that have showings
             .filter((theaterName) => dateEntry.theaters[theaterName])
             .map((theaterName) => {
                 const theater = dateEntry.theaters[theaterName];
 
                 // Get the ordered room list from theaterStructure
-                const orderedRooms = CINEMA_LAYOUT[theaterName].rooms
+                const orderedRooms = theaterStructure[theaterName].rooms
                     .filter((roomName) => theater.rooms[roomName]) // Only include rooms that have showings
                     .map((roomName) => theater.rooms[roomName]);
 
@@ -193,7 +191,7 @@ function transformToDateView(sourceData) {
     return {
         dateView: sortedDates,
         movies: movies,
-        theaters: CINEMA_LAYOUT,
+        theaters: theaterStructure,
     };
 }
 
@@ -202,7 +200,7 @@ function transformToRoomView(sourceData) {
     const movies = {};
 
     // Initialize the structure based on theaterStructure
-    Object.entries(CINEMA_LAYOUT).forEach(([theaterName, theater]) => {
+    Object.entries(theaterStructure).forEach(([theaterName, theater]) => {
         roomView[theaterName] = {
             name: theaterName,
             rooms: theater.rooms.reduce((acc, roomName) => {
@@ -296,7 +294,7 @@ function transformToRoomView(sourceData) {
     const roomViewArray = Object.entries(roomView).map(
         ([theaterName, theater]) => ({
             name: theaterName,
-            rooms: CINEMA_LAYOUT[theaterName].rooms
+            rooms: theaterStructure[theaterName].rooms
                 .filter((roomName) => theater.rooms[roomName]) // Only include rooms that exist in our data
                 .map((roomName) => ({
                     name: roomName,
@@ -310,7 +308,7 @@ function transformToRoomView(sourceData) {
     return {
         roomView: roomViewArray,
         movies: movies,
-        theaters: CINEMA_LAYOUT,
+        theaters: theaterStructure,
     };
 }
 
@@ -416,7 +414,7 @@ function transformToMovieView(sourceData) {
                 const sortedTheaters = Object.entries(date.theaters).map(
                     ([theaterName, theater]) => {
                         // Get ordered room list from theaterStructure
-                        const orderedRooms = CINEMA_LAYOUT[theaterName].rooms
+                        const orderedRooms = theaterStructure[theaterName].rooms
                             .filter((roomName) => theater.rooms[roomName]) // Only include rooms that have showings
                             .map((roomName) => {
                                 const room = theater.rooms[roomName];
