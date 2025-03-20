@@ -477,7 +477,7 @@ async function scrapeMovieSchedules(page) {
                                 ?.textContent.trim() || "Unknown Theater";
 
                         await new Promise((resolve) =>
-                            setTimeout(resolve, 500),
+                            setTimeout(resolve, 800),
                         );
 
                         shows.push({
