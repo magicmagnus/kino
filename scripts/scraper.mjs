@@ -41,8 +41,35 @@ async function scrapeAllSites() {
 
     // ############################################################################################################
 
-    // 1. first scrape all movie attributes except the dates/shotwimes from one page
-    console.log('\n\t1. Scraping movie attributes from "widget pages"...\n');
+    // 1. scrape higher resolution poster URLs from one page per cinema
+
+    // ############################################################################################################
+    console.log(
+        '\n\t1. Scraping higher resolution poster URLs from "non-widget pages"...\n',
+    );
+
+    let moviePosterUrls = await scrapePosterUrls(page);
+
+    moviePosterUrls = filterDuplicateTitles(moviePosterUrls);
+
+    console.log(
+        "\nFound",
+        moviePosterUrls.length,
+        'moviePostersUrls from "non-widget pages"',
+    );
+
+    // // print all moviePosterUrls titles
+    // for (const moviePoster of moviePosterUrls) {
+    //     console.log("Movie Poster URL:", moviePoster.title);
+    // }
+
+    // ############################################################################################################
+
+    // 2. scrape the movie attributes (except the dates/shotwimes) from one page per cinema
+
+    // ############################################################################################################
+    console.log('\n\t2. Scraping movie attributes from "widget pages"...\n');
+
     let movieAttributes = await scrapeMovieAttributes(page);
 
     // check if there are any duplicates in the titles, cause we visit multiple kino pages which might have the same movies (redundant)
@@ -51,7 +78,7 @@ async function scrapeAllSites() {
     console.log(
         "\nFound",
         movieAttributes.length,
-        'movies from "widget pages"',
+        'movieAttributes from "widget pages"',
     );
 
     // log the forst element of the movieAttributes
@@ -59,16 +86,18 @@ async function scrapeAllSites() {
 
     // ############################################################################################################
 
-    // 2. Scrape the dates, showtimes and iframe URL from the other cinema website
+    // 3. Scrape the dates, showtimes and iframe URL from the other cinema website from the shared page
+
+    // ############################################################################################################
     console.log(
-        '\n\t2. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n',
+        '\n\t3. Scraping movie dates, showtimes and iframe URLs from "programmübersicht"...\n',
     );
     let movieSchedules = await scrapeMovieSchedules(page);
 
     console.log(
         "Found",
         movieSchedules.length,
-        'movies from "programmübersicht"',
+        'movieSchedules from "programmübersicht"',
     );
 
     // log the first element of the movieSchedules
@@ -80,8 +109,10 @@ async function scrapeAllSites() {
 
     // ############################################################################################################
 
-    // 3. merge the two lists
-    console.log("\n\t3. Merging movieAttributes with movieSchedules ...\n");
+    // 4. merge movieSchedules (main) with movieAttributes (extension)
+
+    // ############################################################################################################
+    console.log("\n\t4. Merging movieSchedules with movieAttributes ...\n");
 
     // Merge all properties of the same movie title from the two lists into one list
     let moviesMerged = mergeMovieAttributesAndSchedules(
@@ -89,35 +120,14 @@ async function scrapeAllSites() {
         movieAttributes,
     );
 
-    console.log(
-        "\nMerged",
-        moviesMerged.length,
-        "movies with dates and showtimes",
-    );
+    console.log("\nMerged", moviesMerged.length, "into moviesMerged");
 
     // ############################################################################################################
 
-    // 4. scrape higher resolution poster URLs
-    console.log(
-        '\n\t4. Scraping higher resolution poster URLs from "non-widget pages"...\n',
-    );
-
-    let moviePosterUrls = await scrapePosterUrls(page);
-
-    moviePosterUrls = filterDuplicateTitles(moviePosterUrls);
-
-    console.log(
-        "\nFound",
-        moviePosterUrls.length,
-        'movie posters from "non-widget pages"',
-    );
+    // 5. merge moviesMerged (main) with moviePosterUrls (extension)
 
     // ############################################################################################################
-
-    // 5. merge the two lists
-    console.log(
-        "\n\t5. Merging movies with higher resolution poster URLs...\n",
-    );
+    console.log("\n\t5. Merging moviesMerged with moviePosterUrls...\n");
     for (const movie of moviesMerged) {
         const closestTitle = findClosestMatch(
             movie.title,
@@ -137,13 +147,14 @@ async function scrapeAllSites() {
     console.log(
         "\nMerged",
         moviesMerged.length,
-        "movies with higher resolution poster URLs",
+        "into moviesMerged with added poster URLs",
     );
 
     // ############################################################################################################
 
     // 6. save the data to a file
 
+    // ############################################################################################################
     console.log("\n\t6. Saving data to file...\n");
     await fs.writeFile(
         "src/data/source_movie_data.json",
@@ -182,9 +193,9 @@ async function scrapeMovieAttributes(page) {
         );
 
         // scroll to the bottom of the page to load all movies,
-        // then click on all "mehr infos" buttons to get the full movie info
-        await autoScroll(page);
+        await autoScroll(page, { scrollDelay: 100, finalWaitTime: 1000 });
 
+        // then click on all "mehr infos" buttons to get the full movie info
         await page.evaluate(() => {
             const buttons = document.querySelectorAll(".movie__actions");
             for (const button of buttons) {
@@ -195,7 +206,7 @@ async function scrapeMovieAttributes(page) {
         });
 
         const movieAttributes = await page.evaluate(async (kino) => {
-            debugger;
+            //debugger;
             const movies = [];
             await new Promise((resolve) => setTimeout(resolve, 500));
             const movieItems = document.querySelectorAll(".movie");
@@ -306,7 +317,7 @@ async function scrapeMovieAttributes(page) {
                     trailerButton.click(); // close the trailer iframe
                 }
 
-                debugger;
+                //debugger;
 
                 // add the movie to the list
                 movies.push({
@@ -362,10 +373,11 @@ async function scrapeMovieSchedules(page) {
         waitUntil: "networkidle0",
     });
 
+    // scroll to the bottom of the page to load all movies,
+    await autoScroll(page, { scrollDelay: 100, finalWaitTime: 2000 });
+
     // prepare the page for scraping
     await page.evaluate(() => {
-        debugger;
-
         // first close the cookie banner
         const closeButton = document.querySelector(".brlbs-cmpnt-close-button");
         if (closeButton) {
@@ -397,7 +409,6 @@ async function scrapeMovieSchedules(page) {
     });
 
     let allMovieDates = await page.evaluate(async () => {
-        debugger;
         const movies = [];
         const movieItems = document.querySelectorAll(".movie-item");
 
@@ -649,9 +660,10 @@ async function scrapePosterUrls(page) {
         );
 
         // Scroll to the bottom of the page to load all movies
-        await autoScroll(page);
+        await autoScroll(page, { scrollDelay: 100, finalWaitTime: 5000 });
 
         const moviePosters = await page.evaluate(() => {
+            //debugger;
             const posters = [];
             document
                 .querySelectorAll(".transition-opacity")

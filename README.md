@@ -18,7 +18,7 @@ You visit the official page of your local cinemas, which is designed beautifully
 So, like anyone would, you think to yourself, "*It can't be that hard to write a script that copies all the show times from the official site and 
 build a custom website that displays these show times in a way that feels natural to me, preferably in a nice timeline overview per day, can it?*"
 
-So yeah, that’s what happened to me and why I built this website. I hope you have fun using it!
+So yeah, that’s what happened and why I built this website. I hope you have fun using it!
 
 ## How does Kinoschurke work?
 The data is retrieved from the official website of the [Tübinger Kinos](https://tuebinger-kinos.de/) and from [Kinoheld](https://kinoheld.de/), 

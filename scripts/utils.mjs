@@ -22,28 +22,62 @@ export const CINEMA_LAYOUT = {
 };
 
 /**
- * Automatically scrolls the page to the bottom.
+ * Automatically scrolls the page to the bottom with configurable parameters
+ * to ensure content is fully loaded.
  *
  * @param {object} page - The Puppeteer page object.
+ * @param {object} options - Scroll configuration options
+ * @param {number} options.scrollDelay - Time in ms between scroll steps (default: 300)
+ * @param {number} options.scrollStep - Pixels to scroll in each step (default: 100)
+ * @param {number} options.finalWaitTime - Time in ms to wait at the bottom (default: 2000)
+ * @param {number} options.maxScrollAttempts - Max scroll attempts if height keeps changing (default: 10)
  * @returns {Promise<void>} A promise that resolves when the page has been scrolled to the bottom.
  */
-export async function autoScroll(page) {
-    await page.evaluate(async () => {
-        await new Promise((resolve, reject) => {
+export async function autoScroll(page, options = {}) {
+    // Default options
+    const config = {
+        scrollDelay: options.scrollDelay ?? 300,
+        scrollStep: options.scrollStep ?? 100,
+        finalWaitTime: options.finalWaitTime ?? 2000,
+        maxScrollAttempts: options.maxScrollAttempts ?? 10,
+    };
+
+    await page.evaluate(async (config) => {
+        await new Promise((resolve) => {
             let totalHeight = 0;
-            const distance = 100;
+            let previousHeight = 0;
+            let unchangedCount = 0;
+
             const timer = setInterval(() => {
                 const scrollHeight = document.body.scrollHeight;
-                window.scrollBy(0, distance);
-                totalHeight += distance;
+                window.scrollBy(0, config.scrollStep);
+                totalHeight += config.scrollStep;
 
+                // Check if we've reached bottom
                 if (totalHeight >= scrollHeight) {
-                    clearInterval(timer);
-                    resolve();
+                    // Check if content is still loading (height changing)
+                    if (scrollHeight === previousHeight) {
+                        unchangedCount++;
+                        // If height hasn't changed for several checks, assume we're done
+                        if (
+                            unchangedCount >= 3 ||
+                            unchangedCount >= config.maxScrollAttempts
+                        ) {
+                            clearInterval(timer);
+                            // Wait a bit more at the bottom to ensure everything loads
+                            setTimeout(resolve, config.finalWaitTime);
+                        }
+                    } else {
+                        // Reset counter if height changed
+                        unchangedCount = 0;
+                        previousHeight = scrollHeight;
+                    }
+                } else {
+                    previousHeight = scrollHeight;
                 }
-            }, 100);
+            }, config.scrollDelay);
         });
-    });
+    }, config);
 }
 
 /**
