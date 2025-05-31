@@ -549,18 +549,21 @@ async function scrapeMovieSchedules(page) {
                             theater: await window.getFormattedRoomName(room),
                             attributes: await window.formatOmduInAttributes(
                                 Array.from(
-                                    show.querySelectorAll(".attribute-logo"),
-                                ).map((attr) => {
-                                    let attribute =
-                                        attr
-                                            .querySelector(
-                                                ".screen-reader-text",
-                                            )
-                                            ?.textContent.trim() ||
-                                        attr.dataset.attribute ||
-                                        "Unknown Attribute";
-                                    return attribute;
-                                }),
+                                    show.querySelectorAll(
+                                        ".attribute-logo, .attribute-name",
+                                    ),
+                                ).map((attr) => attr.textContent.trim()),
+                                // ).map((attr) => {
+                                //     let attribute =
+                                //         attr
+                                //             .querySelector(
+                                //                 ".screen-reader-text",
+                                //             )
+                                //             ?.textContent.trim() ||
+                                //         attr.dataset.attribute ||
+                                //         "Unknown Attribute";
+                                //     return attribute;
+                                // }),
                             ),
                             iframeUrl: iframeUrl,
                         });

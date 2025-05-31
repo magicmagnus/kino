@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { containsOmdu } from "../utils/utils";
+import { containsOmdu, getOtherAttribute } from "../utils/utils";
 
 const MovieAttributes = (props) => {
     const {
@@ -37,6 +37,7 @@ const MovieAttributes = (props) => {
     const [imageError, setImageError] = useState(false);
 
     const isOmdu = containsOmdu(attributes);
+    const otherAttribute = getOtherAttribute(attributes);
 
     let omduExplainer = "";
     if (isOmdu) {
@@ -45,7 +46,7 @@ const MovieAttributes = (props) => {
                 <p>
                     OmdU{" "}
                     <span className="text-xs">
-                        (Original mit deutschen Untertitlen
+                        (Original mit deutschen Untertiteln)
                     </span>
                 </p>
             );
@@ -54,7 +55,7 @@ const MovieAttributes = (props) => {
                 <p>
                     OmeU{" "}
                     <span className="text-xs">
-                        (Original mit englischen Untertitlen
+                        (Original mit englischen Untertiteln)
                     </span>
                 </p>
             );
@@ -190,13 +191,42 @@ const MovieAttributes = (props) => {
                             ></i>
                         </button>
                     </div>
-                    {/* omdu tag */}
-                    {isOmdu && (
-                        <div className="flex w-fit items-center gap-2 rounded-full bg-rose-700 py-0.5 pl-1.5 pr-2 text-sm font-medium text-rose-200">
-                            <i className="fa-solid fa-language"></i>
-                            {omduExplainer}
-                        </div>
-                    )}
+                    <div className="flex flex-col gap-2">
+                        {/* omdu tag */}
+                        {isOmdu && (
+                            <div className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-earth-americas"></i>
+                                </div>
+                                {omduExplainer}
+                            </div>
+                        )}
+                        {/* other attribute */}
+                        {otherAttribute && (
+                            <div
+                                className={
+                                    "flex w-fit items-center gap-1 rounded-full bg-pink-700 px-1.5 py-0.5 pr-2 text-sm font-medium text-pink-200" +
+                                    (otherAttribute === "Apéro Film"
+                                        ? " bg-[#fe5e08] text-[#fef2e6]"
+                                        : "")
+                                }
+                            >
+                                <div className="flex w-4 items-center justify-center">
+                                    <i
+                                        className={
+                                            "fa-solid fa-tags" +
+                                            (otherAttribute === "Apéro Film"
+                                                ? " fa-wine-glass"
+                                                : "")
+                                        }
+                                    ></i>
+                                </div>
+                                <p className="truncate font-medium">
+                                    {otherAttribute}
+                                </p>
+                            </div>
+                        )}
+                    </div>
 
                     {/* description */}
                     <p className="text-left text-sm">
