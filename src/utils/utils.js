@@ -55,6 +55,10 @@ export const containsOmdu = (attributes) => {
 export const getOtherAttribute = (attributes) => {
     return attributes.filter(
         (attribute) =>
-            attribute !== "2D" && attribute !== "3D" && attribute !== "OmdU",
+            attribute !== "2D" &&
+            attribute !== "3D" &&
+            attribute !== "OmdU" &&
+            attribute !== "OmeU" &&
+            attribute !== "OV",
     )[0];
 };

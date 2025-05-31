@@ -67,7 +67,7 @@ const MovieBlock = (props) => {
                         )}
                         {isOmdu && (
                             <div className="flex-shrink-0 rounded-full bg-rose-700 px-1.5 py-0.5 text-xs text-rose-200">
-                                <p className="font-medium">OmdU</p>
+                                <p className="font-medium">{isOmdu}</p>
                             </div>
                         )}
                     </div>
