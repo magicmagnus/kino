@@ -54,10 +54,10 @@ const MovieBlock = (props) => {
                         {otherAttribute && (
                             <div
                                 className={
-                                    "max-w-fit overflow-hidden rounded-full bg-pink-700 px-1.5 py-0.5 text-xs text-pink-200" +
+                                    "rounded-ful max-w-fit overflow-hidden px-1.5 py-0.5 text-xs " +
                                     (otherAttribute === "Apéro Film"
                                         ? " bg-[#fe5e08] text-[#fef2e6]"
-                                        : "")
+                                        : " bg-pink-700 text-pink-200")
                                 }
                             >
                                 <p className="truncate font-medium">
