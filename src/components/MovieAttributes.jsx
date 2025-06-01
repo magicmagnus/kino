@@ -126,12 +126,16 @@ const MovieAttributes = (props) => {
                     <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-zinc-800 px-2 py-2 text-left text-sm">
                         {/* Always visible content */}
                         <div className="flex items-center gap-2">
-                            <i className="fa-solid fa-clock"></i>
+                            <div className="flex w-4 items-center justify-center">
+                                <i className="fa-solid fa-clock"></i>
+                            </div>
                             <p>{durationText}</p>
                         </div>
                         {genre != "Unknown Genre" ? (
                             <div className="flex items-center gap-2">
-                                <i className="fa-solid fa-tags"></i>
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-masks-theater"></i>
+                                </div>
                                 <p>{genre}</p>
                             </div>
                         ) : (
@@ -143,40 +147,52 @@ const MovieAttributes = (props) => {
                             className={`grid transition-all duration-300 ease-in-out ${isAttributesExpanded ? "grid-rows-[1fr]" : "-mt-3 grid-rows-[0fr]"}`}
                         >
                             <div className="overflow-hidden">
-                                {director != "Unknown Director" && (
+                                {fsk != "Unknown" && (
                                     <div className="flex items-center gap-2">
-                                        <i className="fa-solid fa-clapperboard"></i>
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-shield-halved"></i>
+                                        </div>
+                                        <p>FSK: {fsk}</p>
+                                    </div>
+                                )}
+                                {director != "Unknown Director" && (
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-clapperboard"></i>
+                                        </div>
                                         <p>{director}</p>
                                     </div>
                                 )}
                                 {actors.length > 0 && (
-                                    <div className="flex items-start gap-2 pt-2">
-                                        <i className="fa-solid fa-user-group pt-1"></i>
+                                    <div className="flex items-center gap-2 pt-2">
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-users"></i>
+                                        </div>
                                         <p>{actors.join(", ")}</p>
                                     </div>
                                 )}
                                 {releaseDate != "Unknown Release Date" && (
                                     <div className="flex items-center gap-2 pt-2">
-                                        <i className="fa-solid fa-calendar"></i>
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-calendar-day"></i>
+                                        </div>
                                         <p>Erschienen: {releaseDate}</p>
                                     </div>
                                 )}
                                 {originalTitle != "Unknown Original Title" && (
                                     <div className="flex items-center gap-2 pt-2">
-                                        <i className="fa-solid fa-book"></i>
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-book"></i>
+                                        </div>
                                         <p>Original Titel: "{originalTitle}"</p>
                                     </div>
                                 )}
                                 {production != "Unknown Production" && (
-                                    <div className="flex items-start gap-2 pt-2">
-                                        <i className="fa-solid fa-film pt-1"></i>
-                                        <p>Produktion: {production}</p>
-                                    </div>
-                                )}
-                                {fsk != "Unknown" && (
                                     <div className="flex items-center gap-2 pt-2">
-                                        <i className="fa-solid fa-shield"></i>
-                                        <p>FSK: {fsk}</p>
+                                        <div className="flex w-4 items-center justify-center">
+                                            <i className="fa-solid fa-film"></i>
+                                        </div>
+                                        <p>Produktion: {production}</p>
                                     </div>
                                 )}
                             </div>
@@ -205,19 +221,27 @@ const MovieAttributes = (props) => {
                         {otherAttribute && (
                             <div
                                 className={
-                                    "flex w-fit items-center gap-1 rounded-full bg-pink-700 px-1.5 py-0.5 pr-2 text-sm font-medium text-pink-200" +
+                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium " +
                                     (otherAttribute === "Apéro Film"
                                         ? " bg-[#fe5e08] text-[#fef2e6]"
-                                        : "")
+                                        : " bg-pink-700 text-pink-200")
                                 }
                             >
                                 <div className="flex w-4 items-center justify-center">
                                     <i
                                         className={
-                                            "fa-solid fa-tags" +
+                                            "fa-solid " +
                                             (otherAttribute === "Apéro Film"
                                                 ? " fa-wine-glass"
-                                                : "")
+                                                : otherAttribute
+                                                        .toLowerCase()
+                                                        .includes("film")
+                                                  ? "fa-film"
+                                                  : otherAttribute
+                                                          .toLowerCase()
+                                                          .includes("sneak")
+                                                    ? "fa-film"
+                                                    : "fa-tag")
                                         }
                                     ></i>
                                 </div>

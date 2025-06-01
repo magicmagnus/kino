@@ -33,7 +33,7 @@ const MovieBlock = (props) => {
                 <img
                     src={
                         movieInfo.posterUrl === "Unknown Poster URL"
-                            ? "/poster-template.jpg"
+                            ? "/placeholder-poster.png"
                             : movieInfo.posterUrl
                     }
                     alt={movieInfo.title}
