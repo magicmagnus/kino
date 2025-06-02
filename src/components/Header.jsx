@@ -27,14 +27,20 @@ const Header = () => {
                 </h1>
             </Link>
             <div className="flex gap-1.5 text-sm">
-                <NavLink to="/date" className={linkClass}>
+                <NavLink to="/dates" className={linkClass}>
                     Datum
                 </NavLink>
-                <NavLink to="/room" className={linkClass}>
+                <NavLink to="/rooms" className={linkClass}>
                     Saal
                 </NavLink>
-                <NavLink to="/movie" className={linkClass}>
+                <NavLink to="/movies" className={linkClass}>
                     Film
+                </NavLink>
+                <NavLink
+                    to="/events"
+                    className={linkClass + " hidden sm:block"}
+                >
+                    Event
                 </NavLink>
             </div>
         </div>

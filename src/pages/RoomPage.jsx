@@ -3,22 +3,55 @@ import TopSection from "../components/TopSection";
 import SelectionButton from "../components/SelectionButton";
 import Timeline from "../components/Timeline";
 import { useState, useEffect } from "react";
-import { useOutletContext } from "react-router-dom";
+import {
+    useOutletContext,
+    useParams,
+    Navigate,
+    useNavigate,
+} from "react-router-dom";
 import { formatDateString, TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 
 const RoomPage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
         useOutletContext();
+    const { roomSlug } = useParams();
+    const navigate = useNavigate();
 
-    const [selectedRoom, setSelectedRoom] = useState("Saal Tarantino");
+    // Get first available room as default
+    const getFirstAvailableRoom = () => {
+        for (const theater of roomViewData) {
+            for (const room of theater.rooms) {
+                return room.slug || room.name; // Use slug if available, fallback to name
+            }
+        }
+        return null;
+    };
 
-    // Filter and Find
+    const [selectedRoom, setSelectedRoom] = useState(
+        roomSlug || getFirstAvailableRoom(),
+    );
+
+    // Update URL when selectedRoom changes
+    useEffect(() => {
+        if (selectedRoom && selectedRoom !== roomSlug) {
+            navigate(`/rooms/${selectedRoom}`, { replace: true });
+        }
+    }, [selectedRoom, roomSlug, navigate]);
+
+    // Update selectedRoom when URL changes
+    useEffect(() => {
+        if (roomSlug && roomSlug !== selectedRoom) {
+            setSelectedRoom(roomSlug);
+        }
+    }, [roomSlug]);
+
+    // Filter and Find - Updated to work with both slug and name
     const filteredRoomData = roomViewData.reduce(
         (filteredTheaters, theater) => {
             // Filter room and dates in one pass
             const filteredRooms = theater.rooms
-                .filter((room) => room.name === selectedRoom)
+                .filter((room) => (room.slug || room.name) === selectedRoom)
                 .map((room) => ({
                     ...room,
                     dates: room.dates.filter(
@@ -40,6 +73,11 @@ const RoomPage = () => {
         [],
     );
 
+    // Add error handling for when room is not found
+    if (selectedRoom && filteredRoomData.length === 0) {
+        return <Navigate to={"/404/"} />;
+    }
+
     // Add useEffect to handle firstDate update
     useEffect(() => {
         if (filteredRoomData.length > 0) {
@@ -56,9 +94,11 @@ const RoomPage = () => {
                 {roomViewData.map((theater, theaterIdx) =>
                     theater.rooms.map((room, roomIdx) => (
                         <SelectionButton
-                            key={roomIdx}
-                            onClick={() => setSelectedRoom(room.name)}
-                            selected={room.name === selectedRoom}
+                            key={`${theaterIdx}-${roomIdx}`}
+                            onClick={() =>
+                                setSelectedRoom(room.slug || room.name)
+                            }
+                            selected={(room.slug || room.name) === selectedRoom}
                             text={room.name}
                         />
                     )),
@@ -69,7 +109,7 @@ const RoomPage = () => {
                 theater.rooms.map((room, roomIdx) =>
                     room.dates.map((date, dateIdx) => (
                         <Timeline
-                            key={dateIdx}
+                            key={`${theaterIdx}-${roomIdx}-${dateIdx}`}
                             schedule={date}
                             scheduleIdx={dateIdx}
                             isFirst={dateIdx === 0}

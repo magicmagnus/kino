@@ -4,21 +4,6 @@ import slugify from "slugify";
 
 import { CINEMA_LAYOUT } from "./utils.mjs";
 
-// // Define theater structure
-// const CINEMA_LAYOUT = {
-//     "Kino Blaue Brücke": {
-//         name: "Kino Blaue Brücke",
-//         rooms: ["Saal Tarantino", "Saal Spielberg", "Saal Kubrick"],
-//     },
-//     "Kino Museum": {
-//         name: "Kino Museum",
-//         rooms: ["Saal Almodóvar", "Saal Coppola", "Saal Arsenal"],
-//     },
-//     "Kino Atelier": {
-//         name: "Kino Atelier",
-//         rooms: ["Atelier"],
-//     },
-// };
 function calculateEndTime(startTime, duration) {
     const [startHours, startMinutes] = startTime.split(":").map(Number);
     const movieDuration =
@@ -57,6 +42,23 @@ function cleanUpUrl(url) {
         .replace("embed/", "watch?v=")
         .replace("-nocookie", "")
         .split("=")[1];
+}
+
+// Add this function to filter and process events (similar to getOtherAttribute)
+function getFilteredEvents(attributes) {
+    const eventBlacklist = [
+        "2D",
+        "3D",
+        "OmdU",
+        "OmeU",
+        "OV",
+        "Dolby Atmos",
+        "IMAX",
+    ];
+
+    return attributes
+        .filter((attr) => !eventBlacklist.includes(attr))
+        .filter((attr) => attr.trim().length > 0);
 }
 
 function transformToDateView(sourceData) {
@@ -208,6 +210,7 @@ function transformToRoomView(sourceData) {
             rooms: theater.rooms.reduce((acc, roomName) => {
                 acc[roomName] = {
                     name: roomName,
+                    slug: getSlug(roomName), // Add slug for each room name
                     dates: {},
                 };
                 return acc;
@@ -300,6 +303,7 @@ function transformToRoomView(sourceData) {
                 .filter((roomName) => theater.rooms[roomName]) // Only include rooms that exist in our data
                 .map((roomName) => ({
                     name: roomName,
+                    slug: theater.rooms[roomName].slug, // Add slug for each room
                     dates: Object.values(theater.rooms[roomName].dates).sort(
                         (a, b) => a.date.localeCompare(b.date),
                     ), // Sort dates chronologically
@@ -449,6 +453,93 @@ function transformToMovieView(sourceData) {
     });
 }
 
+// Add this function to create event view data
+function createEventViewData(movieData) {
+    const eventMap = new Map();
+
+    // Collect all shows with their filtered events
+    movieData.forEach((movie) => {
+        movie.dates.forEach((dateObj) => {
+            dateObj.theaters.forEach((theater) => {
+                theater.rooms.forEach((room) => {
+                    // Added this level!
+                    room.showings.forEach((showing) => {
+                        // Changed from 'shows' to 'showings'
+                        const events = getFilteredEvents(showing.attributes);
+
+                        events.forEach((event) => {
+                            const eventSlug = slugify(event, {
+                                lower: true,
+                                strict: true,
+                            });
+
+                            if (!eventMap.has(eventSlug)) {
+                                eventMap.set(eventSlug, {
+                                    slug: eventSlug,
+                                    name: event,
+                                    dates: new Map(),
+                                });
+                            }
+
+                            const eventData = eventMap.get(eventSlug);
+                            const dateKey = dateObj.date;
+
+                            if (!eventData.dates.has(dateKey)) {
+                                eventData.dates.set(dateKey, {
+                                    date: dateKey,
+                                    theaters: new Map(),
+                                });
+                            }
+
+                            const dateData = eventData.dates.get(dateKey);
+                            const theaterKey = theater.name;
+
+                            if (!dateData.theaters.has(theaterKey)) {
+                                dateData.theaters.set(theaterKey, {
+                                    name: theater.name,
+                                    rooms: new Map(),
+                                });
+                            }
+
+                            const theaterData =
+                                dateData.theaters.get(theaterKey);
+                            const roomKey = room.name;
+
+                            if (!theaterData.rooms.has(roomKey)) {
+                                theaterData.rooms.set(roomKey, {
+                                    name: room.name,
+                                    showings: [],
+                                });
+                            }
+
+                            theaterData.rooms
+                                .get(roomKey)
+                                .showings.push(showing);
+                        });
+                    });
+                });
+            });
+        });
+    });
+
+    // Convert Maps to Arrays and sort
+    const eventViewData = Array.from(eventMap.values()).map((event) => ({
+        ...event,
+        dates: Array.from(event.dates.values())
+            .map((date) => ({
+                ...date,
+                theaters: Array.from(date.theaters.values()).map((theater) => ({
+                    ...theater,
+                    rooms: Array.from(theater.rooms.values()),
+                })),
+            }))
+            .sort((a, b) => a.date.localeCompare(b.date)),
+    }));
+
+    // Sort events alphabetically by name
+    return eventViewData.sort((a, b) => a.name.localeCompare(b.name));
+}
+
 function processMovieData(sourceFilePath) {
     try {
         const rawData = readFileSync(sourceFilePath, "utf8");
@@ -459,6 +550,7 @@ function processMovieData(sourceFilePath) {
         const dateViewData = transformToDateView(arrayData);
         const roomViewData = transformToRoomView(arrayData);
         const movieViewData = transformToMovieView(arrayData);
+        const eventViewData = createEventViewData(movieViewData);
 
         // Write all views to files
         writeFileSync(
@@ -485,6 +577,11 @@ function processMovieData(sourceFilePath) {
         writeFileSync(
             "src/data/theaters-reference.json",
             JSON.stringify(dateViewData.theaters, null, 2),
+        );
+
+        writeFileSync(
+            "src/data/event-view.json",
+            JSON.stringify(eventViewData, null, 2),
         );
 
         console.log("Transformation completed successfully!");

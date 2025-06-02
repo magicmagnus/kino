@@ -27,20 +27,20 @@ const TopSection = (props) => {
                     {/* pad for the corner where the two stickys meet */}
                     {/* <div className="sticky left-0 z-20 flex w-6 flex-shrink-0 items-center justify-center bg-zinc-800 text-center" /> */}
                     <div className="relative ml-12 flex w-full">
-                        {HOURS.map((hour) => (
-                            <div
-                                key={hour}
-                                className="w-28 flex-shrink-0 py-1 text-left"
-                            >
-                                <p className="-ml-2.5 w-fit text-xs text-white">
-                                    {hour}
-                                </p>
-                            </div>
-                        ))}
                         {/* Height adjusted to match header height */}
                         <div className="absolute inset-0 h-full">
                             <TimeIndicator date={date} isTop={true} />
                         </div>
+                        {HOURS.map((hour) => (
+                            <div
+                                key={hour}
+                                className="z-[1] w-28 flex-shrink-0 py-1 text-right"
+                            >
+                                <p className="-ml-16 w-10 text-xs text-white">
+                                    {hour}
+                                </p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

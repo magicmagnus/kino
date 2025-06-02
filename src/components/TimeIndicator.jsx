@@ -55,12 +55,16 @@ const TimeIndicator = (props) => {
     return (
         <div
             className={
-                "absolute bottom-0 z-[11] w-1 bg-rose-600 opacity-100 shadow-2xl" +
-                (isFirst ? " bottom-0 h-36" : isTop ? " h-6" : " h-32") +
+                "absolute bottom-0 w-1 bg-rose-600 opacity-100 shadow-2xl" +
+                (isFirst
+                    ? " bottom-0 h-36"
+                    : isTop
+                      ? " z-[0] h-6"
+                      : " z-[11] h-32") +
                 " "
             }
             style={{
-                left: `${position}px`,
+                left: `${position - 2}px`, // minus 2 px to align with the hour markers, center-aligned
                 // boxShadow: "0 0 4px rgba(225, 29, 72, 0.99)",
             }}
         />

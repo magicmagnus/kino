@@ -9,8 +9,8 @@ const HourMarkers = (props) => {
                     key={i}
                     className="absolute top-0 mt-[15px] h-20 w-1 rounded-full bg-zinc-700"
                     style={{
-                        left: `${i * HOUR_WIDTH}px`,
-                        width: "4px",
+                        left: `${i * HOUR_WIDTH - 2}px`, // minus 2 px to align with the hour markers
+                        width: "4px", // was 4 px
                     }}
                 />
             ))}

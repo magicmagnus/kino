@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { containsOmdu, getOtherAttribute } from "../utils/utils";
+import { Link, useNavigate } from "react-router-dom";
+import slugify from "slugify";
 
 const MovieAttributes = (props) => {
     const {
@@ -17,9 +19,12 @@ const MovieAttributes = (props) => {
         attributes,
         description,
         isCard,
+        setShowCard, // Add this prop
+        setIsVisible, // Add this prop
     } = props;
 
     const [isAttributesExpanded, setIsExpanded] = useState(false);
+    const navigate = useNavigate();
 
     // Add these styles in your CSS or styled-components
     const imageStyles = {
@@ -38,6 +43,31 @@ const MovieAttributes = (props) => {
 
     const isOmdu = containsOmdu(attributes);
     const otherAttribute = getOtherAttribute(attributes);
+
+    // Add event navigation handler
+    const handleEventClick = (e) => {
+        e.preventDefault(); // Prevent default link behavior
+
+        if (isCard && setShowCard && setIsVisible) {
+            // Navigate immediately (will be hidden behind the modal)
+            navigate(
+                `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
+            );
+
+            // Then start the fade out animation
+            setIsVisible(false);
+
+            // Finally remove the card from DOM after animation
+            setTimeout(() => {
+                setShowCard(null);
+            }, 200);
+        } else {
+            // If not in card or no handlers provided, use normal navigation
+            navigate(
+                `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
+            );
+        }
+    };
 
     let omduExplainer = "";
     if (isOmdu) {
@@ -219,12 +249,13 @@ const MovieAttributes = (props) => {
                         )}
                         {/* other attribute */}
                         {otherAttribute && (
-                            <div
+                            <button
+                                onClick={handleEventClick}
                                 className={
-                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium " +
+                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 " +
                                     (otherAttribute === "Apéro Film"
-                                        ? " bg-[#fe5e08] text-[#fef2e6]"
-                                        : " bg-pink-700 text-pink-200")
+                                        ? " bg-[#fe5e08] text-[#fef2e6] hover:bg-[#e54f07]"
+                                        : " bg-pink-700 text-pink-200 hover:bg-pink-600")
                                 }
                             >
                                 <div className="flex w-4 items-center justify-center">
@@ -248,7 +279,7 @@ const MovieAttributes = (props) => {
                                 <p className="truncate font-medium">
                                     {otherAttribute}
                                 </p>
-                            </div>
+                            </button>
                         )}
                     </div>
 

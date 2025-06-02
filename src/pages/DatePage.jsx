@@ -2,26 +2,54 @@ import dateViewData from "../data/date-view.json";
 import TopSection from "../components/TopSection";
 import SelectionButton from "../components/SelectionButton";
 import TimelineGroup from "../components/TimelineGroup";
-import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+    useOutletContext,
+    useParams,
+    Navigate,
+    useNavigate,
+} from "react-router-dom";
 import { formatDateString, TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 
 const DatePage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
         useOutletContext();
+    const { dateSlug } = useParams();
+    const navigate = useNavigate();
 
     // Filter out dates before today
     const upcomingDateData = dateViewData.filter(
         (date) => date.date >= TODAY_FORMATTED,
     );
 
-    const [selectedDate, setSelectedData] = useState(upcomingDateData[0].date);
+    const [selectedDate, setSelectedDate] = useState(
+        dateSlug || upcomingDateData[0]?.date,
+    );
+
+    // Update URL when selectedDate changes
+    useEffect(() => {
+        if (selectedDate && selectedDate !== dateSlug) {
+            navigate(`/dates/${selectedDate}`, { replace: true });
+        }
+    }, [selectedDate, dateSlug, navigate]);
+
+    // Update selectedDate when URL changes
+    useEffect(() => {
+        if (dateSlug && dateSlug !== selectedDate) {
+            setSelectedDate(dateSlug);
+        }
+    }, [dateSlug]);
 
     // Find the data for the selected date
     const filteredDateData = dateViewData.find(
         (date) => date.date === selectedDate,
     );
+
+    // Add error handling for when date is not found or is in the past
+    if (!filteredDateData || selectedDate < TODAY_FORMATTED) {
+        return <Navigate to={"/404/"} />;
+    }
 
     useScrollToEarliest([selectedDate]);
 
@@ -31,7 +59,7 @@ const DatePage = () => {
                 {/* Date buttons for Date View */}
                 {upcomingDateData.slice(0, 7).map((date, dateIndex) => (
                     <SelectionButton
-                        onClick={() => setSelectedData(date.date)}
+                        onClick={() => setSelectedDate(date.date)}
                         key={dateIndex}
                         selected={date.date === selectedDate}
                         text={formatDateString(date.date)}
