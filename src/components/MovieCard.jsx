@@ -170,7 +170,7 @@ const MovieCard = (props) => {
                                 {/* Share button */}
                                 <ShareButton
                                     title={`${showCard.movieInfo.title} - ${showCard.show.time}`}
-                                    text={`Schau dir ${showCard.movieInfo.title} um ${showCard.show.time}h mit mir an!`}
+                                    text={`Schau dir "${showCard.movieInfo.title}" um ${showCard.show.time}h mit mir an!`}
                                     isMovieCard={true}
                                     classNameBtn="flex h-fit w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
                                 >
