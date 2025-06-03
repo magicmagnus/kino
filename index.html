@@ -76,22 +76,29 @@
 
 
     <title>Kinoschurke</title>
-  <script type="module" crossorigin src="/assets/index-CSY0snBU.js"></script>
+  <script type="module" crossorigin src="/assets/index-DjVbnU0V.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-DXaNohoo.css">
 </head>
 
 <body>
     <script>
         (function () {
+            // Store the current hash FIRST, before any processing
+            const originalHash = window.location.hash;
+
             const redirect = localStorage.getItem('redirect');
             if (redirect) {
                 localStorage.removeItem('redirect');
                 if (redirect !== '/') {
-                    // Preserve any existing hash when redirecting
-                    const currentHash = window.location.hash;
-                    const redirectUrl = redirect + currentHash;
+                    // For GitHub Pages redirects, preserve the hash
+                    const redirectUrl = redirect + originalHash;
                     window.history.replaceState(null, null, redirectUrl);
                 }
+            }
+
+            // Always preserve hash for direct visits (GitHub Pages can strip these)
+            if (originalHash && originalHash.startsWith('#show=')) {
+                localStorage.setItem('kinoschurke_preserved_hash', originalHash);
             }
         })();
     </script>
