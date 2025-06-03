@@ -3,16 +3,21 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <title>Kinoschurke</title>
     <script>
-        const path = window.location.pathname;
-        localStorage.setItem('redirect', path);
-        window.location.href = '/';
+        // Store the current URL (including search params) for the redirect
+        var l = window.location;
+        var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+            l.pathname + l.search + l.hash;
+
+        // Store the full URL including search params
+        localStorage.setItem('redirect', redirect);
+
+        // Redirect to the root
+        l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/');
     </script>
 </head>
 
-<body>
-    Redirecting...
-</body>
+<body></body>
 
 </html>
