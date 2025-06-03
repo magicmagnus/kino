@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { formatDateString, TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
+import SEOHead from "../components/SEOHead";
 
 const DatePage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
@@ -55,6 +56,10 @@ const DatePage = () => {
 
     return (
         <>
+            <SEOHead
+                date={formatDateString(selectedDate)}
+                url={`https://kinoschurke.de/dates/${selectedDate}`}
+            />
             <TopSection date={selectedDate}>
                 {/* Date buttons for Date View */}
                 {upcomingDateData.slice(0, 7).map((date, dateIndex) => (

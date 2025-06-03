@@ -12,6 +12,7 @@ import {
 import { TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import MovieSelectionButton from "../components/MovieSelectionButton";
+import SEOHead from "../components/SEOHead";
 
 const MoviePage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
@@ -63,6 +64,10 @@ const MoviePage = () => {
 
     return (
         <>
+            <SEOHead
+                movieTitle={movieData.title}
+                url={`https://kinoschurke.de/movies/${selectedMovie}`}
+            />
             <TopSection date={firstDate} movieData={movieData}>
                 {/* Movie selection buttons */}
                 {movieViewData.map((movie, movieIndex) => (

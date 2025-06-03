@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
+import SEOHead from "../components/SEOHead";
 
 const EventPage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
@@ -62,6 +63,10 @@ const EventPage = () => {
 
     return (
         <>
+            <SEOHead
+                eventName={eventData.name}
+                url={`https://kinoschurke.de/events/${selectedEvent}`}
+            />
             <TopSection date={firstDate} eventData={eventData}>
                 {/* Event buttons for Event View */}
                 {eventViewData.map((event, eventIndex) => (

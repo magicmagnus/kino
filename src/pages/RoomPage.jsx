@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { formatDateString, TODAY_FORMATTED } from "../utils/utils";
 import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
+import SEOHead from "../components/SEOHead";
 
 const RoomPage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
@@ -89,6 +90,10 @@ const RoomPage = () => {
 
     return (
         <>
+            <SEOHead
+                roomName={selectedRoom}
+                url={`https://kinoschurke.de/rooms/${selectedRoom}`}
+            />
             <TopSection date={firstDate}>
                 {/* Room buttons for Room View */}
                 {roomViewData.map((theater, theaterIdx) =>
