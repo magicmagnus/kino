@@ -2,7 +2,7 @@ import { timeToPixels, containsOmdu, getOtherAttribute } from "../utils/utils";
 import movieReference from "../data/movies-reference.json";
 
 const MovieBlock = (props) => {
-    const { show, showIdx, setShowCard } = props;
+    const { show, showIdx, setShowCard, date } = props;
 
     const movieInfo = movieReference[show.movieId];
 
@@ -12,9 +12,13 @@ const MovieBlock = (props) => {
 
     // when clickineg on a movie block, show the movie card
     const handleClick = (e) => {
+        const showHash = `${show.iframeUrl.split("showId=")[1]?.split("&")[0] || show.movieId}-${show.time}`;
+        window.location.hash = `show=${showHash}`;
+
         setShowCard({
             show: show,
             movieInfo: movieInfo,
+            date: date,
             top: e.clientY,
             left: e.clientX,
         });

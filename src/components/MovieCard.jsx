@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import MovieAttributes from "./MovieAttributes";
+import ShareButton from "./ShareButton";
 import { useNavigate } from "react-router-dom";
+import { formatDateString } from "../utils/utils";
 
 const MovieCard = (props) => {
     const { showCard, setShowCard } = props;
@@ -12,6 +14,7 @@ const MovieCard = (props) => {
     }, []);
 
     const handleClose = () => {
+        window.location.hash = ""; // Clear hash
         setIsVisible(false);
         // Wait for animation to complete before unmounting
         setTimeout(() => setShowCard(null), 200);
@@ -74,7 +77,7 @@ const MovieCard = (props) => {
 
     const handleAllShowsClick = () => {
         // Navigate immediately (will be hidden behind the modal)
-        navigate(`/movie/${showCard.movieInfo.slug}`);
+        navigate(`/movies/${showCard.movieInfo.slug}`);
 
         // Then start the fade out animation
         setIsVisible(false);
@@ -128,8 +131,9 @@ const MovieCard = (props) => {
                     setIsVisible={setIsVisible} // Add this line
                 >
                     {/* sticky button container */}
-                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between gap-2 bg-zinc-800 px-2.5 py-2 shadow-xl shadow-black sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-2 sm:bg-transparent lg:flex-row">
-                        <div className="flex h-fit w-full items-center justify-center gap-2 opacity-100">
+                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between bg-zinc-800 px-0 shadow-xl shadow-black sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-0 sm:bg-transparent sm:shadow-transparent lg:flex-row lg:items-end">
+                        {/* "All shows" and Trailer buttons */}
+                        <div className="flex h-fit w-full items-center justify-center gap-2 px-2.5 py-2 opacity-100">
                             <button
                                 onClick={handleAllShowsClick}
                                 className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-rose-950 p-2 px-2 py-2 text-xs font-semibold text-rose-500 hover:opacity-80"
@@ -149,19 +153,39 @@ const MovieCard = (props) => {
                             </button>
                         </div>
 
-                        <button className="flex-1">
-                            <a
-                                href={showCard.show.iframeUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
-                            >
-                                <i className="fa-solid fa-ticket"></i>
-                                <p className="pl-1">
-                                    Tickets für {showCard.show.time}h kaufen
+                        <div className="rounde flex h-fit w-full flex-col justify-center gap-2 bg-zinc-950 py-2 sm:gap-2 sm:rounded-tl-xl sm:bg-zinc-800">
+                            {/* Info tag with date, */}
+                            <div>
+                                <p className="text-xs font-semibold text-white">
+                                    Vorstellung:{" "}
+                                    {formatDateString(showCard.date)} -{" "}
+                                    {showCard.show.time}h:
                                 </p>
-                            </a>
-                        </button>
+                            </div>
+                            <div className="flex w-full items-center justify-between gap-2 px-2 sm:flex-row lg:gap-2">
+                                {/* Share button */}
+                                <ShareButton
+                                    title={`${showCard.movieInfo.title} - ${showCard.show.time}`}
+                                    text={`Check out ${showCard.movieInfo.title} at ${showCard.show.time}`}
+                                    isMovieCard={true}
+                                    classNameBtn="flex h-fit w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
+                                >
+                                    <div>
+                                        <p className="pl-1">Einladen</p>
+                                    </div>
+                                </ShareButton>
+                                {/* Ticket button (was flex-1)*/}
+                                <a
+                                    href={showCard.show.iframeUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="flex h-fit w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
+                                >
+                                    <i className="fa-solid fa-ticket"></i>
+                                    <p className="pl-1">Tickets kaufen</p>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </MovieAttributes>
             </div>

@@ -90,7 +90,7 @@ const InstallPWA = () => {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
+        <div>
             {/* {process.env.NODE_ENV === "development" && (
                 <div className="rounded-lg bg-zinc-800 p-4 shadow-lg">
                     <h3 className="mb-2 font-semibold text-white">
@@ -111,12 +111,18 @@ const InstallPWA = () => {
             {showInstallButton && (
                 <button
                     onClick={handleInstallClick}
-                    className="flex items-center gap-2 rounded-full bg-rose-600 px-6 py-3 text-white shadow-lg transition-colors hover:bg-rose-700"
+                    className="text-md mt-2 flex items-center gap-2 rounded-full bg-rose-600 px-4 py-1 font-semibold text-white shadow-lg transition-colors hover:bg-rose-700"
                 >
                     <i className="fas fa-download"></i>
-                    Install App
+                    App Laden
                 </button>
             )}
+
+            {/* Dummy */}
+            {/* <button className="text-md mt-2 flex items-center gap-2 rounded-full bg-rose-600 px-4 py-1 font-semibold text-white shadow-lg transition-colors hover:bg-rose-700">
+                <i className="fas fa-download"></i>
+                App Laden
+            </button> */}
         </div>
     );
 };

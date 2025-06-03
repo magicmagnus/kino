@@ -55,6 +55,7 @@ const Timeline = (props) => {
                         show={show}
                         showIdx={showIdx}
                         setShowCard={setShowCard}
+                        date={date}
                     />
                 ))}
                 {/* Time indicator */}

@@ -540,6 +540,62 @@ function createEventViewData(movieData) {
     return eventViewData.sort((a, b) => a.name.localeCompare(b.name));
 }
 
+// Add this function to create a show lookup table
+function createShowLookup(sourceData) {
+    const showLookup = {};
+
+    sourceData.forEach((movie) => {
+        if (movie.showtimes) {
+            movie.showtimes.forEach((dateEntry) => {
+                if (dateEntry.shows && dateEntry.shows.length > 0) {
+                    dateEntry.shows.forEach((show) => {
+                        // Create the same hash format as in MovieBlock
+                        const showId =
+                            show.iframeUrl.split("showId=")[1]?.split("&")[0] ||
+                            movie.id;
+                        const hash = `${showId}-${show.time}`;
+
+                        showLookup[hash] = {
+                            show: {
+                                time: show.time,
+                                endTime: calculateEndTime(
+                                    show.time,
+                                    movie.duration,
+                                ),
+                                movieId: movie.id,
+                                movieTitle: movie.title,
+                                attributes: show.attributes,
+                                iframeUrl: show.iframeUrl,
+                                theater: show.theater,
+                            },
+                            movieInfo: {
+                                id: movie.id,
+                                title: movie.title,
+                                slug: getSlug(movie.title),
+                                duration: movie.duration,
+                                fsk: movie.fsk,
+                                genre: movie.genre,
+                                originalTitle: movie.origTitle,
+                                production: movie.production,
+                                releaseDate: movie.releaseDate,
+                                distributor: movie.distributor,
+                                director: movie.director,
+                                description: movie.description,
+                                posterUrl: movie.posterUrl,
+                                trailerUrl: cleanUpUrl(movie.trailerUrl),
+                                actors: movie.actors,
+                            },
+                            date: dateEntry.date,
+                        };
+                    });
+                }
+            });
+        }
+    });
+
+    return showLookup;
+}
+
 function processMovieData(sourceFilePath) {
     try {
         const rawData = readFileSync(sourceFilePath, "utf8");
@@ -551,6 +607,7 @@ function processMovieData(sourceFilePath) {
         const roomViewData = transformToRoomView(arrayData);
         const movieViewData = transformToMovieView(arrayData);
         const eventViewData = createEventViewData(movieViewData);
+        const showLookup = createShowLookup(arrayData);
 
         // Write all views to files
         writeFileSync(
@@ -582,6 +639,10 @@ function processMovieData(sourceFilePath) {
         writeFileSync(
             "src/data/event-view.json",
             JSON.stringify(eventViewData, null, 2),
+        );
+        writeFileSync(
+            "src/data/show-lookup.json", // Add this line
+            JSON.stringify(showLookup, null, 2),
         );
 
         console.log("Transformation completed successfully!");
