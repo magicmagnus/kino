@@ -33,8 +33,22 @@ const MainLayout = () => {
     // Handle hash changes for MovieCard state
     useEffect(() => {
         const handleHashChange = () => {
-            const hash = window.location.hash;
-            if (hash.startsWith("#show=")) {
+            let hash = window.location.hash;
+
+            // Check for preserved hash from GitHub Pages redirect
+            if (!hash || hash === "") {
+                const preservedHash = localStorage.getItem(
+                    "kinoschurke_preserved_hash",
+                );
+                if (preservedHash && preservedHash.startsWith("#show=")) {
+                    hash = preservedHash;
+                    localStorage.removeItem("kinoschurke_preserved_hash");
+                    // Restore the hash to the URL
+                    window.location.hash = hash;
+                }
+            }
+
+            if (hash && hash.startsWith("#show=")) {
                 const showHash = hash.replace("#show=", "");
                 const showData = findShowById(showHash);
                 if (showData) {
@@ -42,7 +56,6 @@ const MainLayout = () => {
                         show: showData.show,
                         movieInfo: showData.movieInfo,
                         date: showData.date,
-                        // You might not have top/left from URL, so use center
                         top: window.innerHeight / 2,
                         left: window.innerWidth / 2,
                     });
@@ -52,8 +65,11 @@ const MainLayout = () => {
             }
         };
 
-        // Handle initial load
-        handleHashChange();
+        // Handle initial load with multiple timing strategies for GitHub Pages
+        const timeouts = [0, 50, 100, 250];
+        timeouts.forEach((delay) => {
+            setTimeout(handleHashChange, delay);
+        });
 
         // Listen for hash changes
         window.addEventListener("hashchange", handleHashChange);
