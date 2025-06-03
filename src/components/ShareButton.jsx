@@ -11,15 +11,15 @@ const ShareButton = ({
 
     const handleShare = async () => {
         // For MovieCard shares, include the current hash
-        const shareUrl = isMovieCard
-            ? window.location.href
-            : window.location.href.split("#")[0]; // Remove hash for page shares
-
-        const shareData = {
-            title: title || "Kinoschurke.de - Dein Kinoprogramm",
-            text: text || "Komm mit mir ins Kino!",
-            url: shareUrl,
-        };
+        if (isMovieCard) {
+            // For MovieCard shares, include the current URL with show parameter
+            shareUrl = window.location.href;
+        } else {
+            // For page shares, remove the show parameter
+            const url = new URL(window.location);
+            url.searchParams.delete("show");
+            shareUrl = url.toString();
+        }
 
         if (navigator.share && navigator.canShare(shareData)) {
             try {

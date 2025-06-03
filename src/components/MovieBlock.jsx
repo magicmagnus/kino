@@ -12,8 +12,14 @@ const MovieBlock = (props) => {
 
     // when clickineg on a movie block, show the movie card
     const handleClick = (e) => {
-        const showHash = `${show.iframeUrl.split("showId=")[1]?.split("&")[0] || show.movieId}-${show.time}`;
-        window.location.hash = `show=${showHash}`;
+        const showId =
+            show.iframeUrl.split("showId=")[1]?.split("&")[0] || show.movieId;
+        const showParam = `${showId}-${show.time.split(":").join("-")}`;
+        // Update the URL with the show parameter
+
+        const url = new URL(window.location);
+        url.searchParams.set("show", showParam);
+        window.history.pushState(null, null, url.toString());
 
         setShowCard({
             show: show,

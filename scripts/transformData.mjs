@@ -553,7 +553,7 @@ function createShowLookup(sourceData) {
                         const showId =
                             show.iframeUrl.split("showId=")[1]?.split("&")[0] ||
                             movie.id;
-                        const hash = `${showId}-${show.time}`;
+                        const hash = `${showId}-${show.time.split(":").join("-")}`;
 
                         showLookup[hash] = {
                             show: {

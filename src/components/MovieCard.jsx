@@ -13,10 +13,14 @@ const MovieCard = (props) => {
         setIsVisible(true);
     }, []);
 
+    // In MovieCard.jsx - update the handleClose function
     const handleClose = () => {
-        window.location.hash = ""; // Clear hash
+        // Remove the show parameter from URL
+        const url = new URL(window.location);
+        url.searchParams.delete("show");
+        window.history.pushState(null, null, url.toString());
+
         setIsVisible(false);
-        // Wait for animation to complete before unmounting
         setTimeout(() => setShowCard(null), 200);
     };
 

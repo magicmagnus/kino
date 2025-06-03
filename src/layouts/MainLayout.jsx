@@ -30,27 +30,14 @@ const MainLayout = () => {
         };
     }, [showCard]);
 
-    // Handle hash changes for MovieCard state
+    // In MainLayout.jsx - replace the hash handling useEffect
     useEffect(() => {
-        const handleHashChange = () => {
-            let hash = window.location.hash;
+        const handleShowParameter = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const showParam = urlParams.get("show");
 
-            // Check for preserved hash from GitHub Pages redirect
-            if (!hash || hash === "") {
-                const preservedHash = localStorage.getItem(
-                    "kinoschurke_preserved_hash",
-                );
-                if (preservedHash && preservedHash.startsWith("#show=")) {
-                    hash = preservedHash;
-                    localStorage.removeItem("kinoschurke_preserved_hash");
-                    // Restore the hash to the URL
-                    window.location.hash = hash;
-                }
-            }
-
-            if (hash && hash.startsWith("#show=")) {
-                const showHash = hash.replace("#show=", "");
-                const showData = findShowById(showHash);
+            if (showParam) {
+                const showData = findShowById(showParam);
                 if (showData) {
                     setShowCard({
                         show: showData.show,
@@ -65,17 +52,14 @@ const MainLayout = () => {
             }
         };
 
-        // Handle initial load with multiple timing strategies for GitHub Pages
-        const timeouts = [0, 50, 100, 250];
-        timeouts.forEach((delay) => {
-            setTimeout(handleHashChange, delay);
-        });
+        // Handle initial load
+        handleShowParameter();
 
-        // Listen for hash changes
-        window.addEventListener("hashchange", handleHashChange);
+        // Listen for popstate events (back/forward navigation)
+        window.addEventListener("popstate", handleShowParameter);
 
         return () => {
-            window.removeEventListener("hashchange", handleHashChange);
+            window.removeEventListener("popstate", handleShowParameter);
         };
     }, []);
 
