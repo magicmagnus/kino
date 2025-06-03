@@ -9,8 +9,10 @@ const ShareButton = ({
 }) => {
     const [showCopied, setShowCopied] = useState(false);
 
+    // In ShareButton.jsx - update the handleShare function
     const handleShare = async () => {
-        // For MovieCard shares, include the current hash
+        let shareUrl;
+
         if (isMovieCard) {
             // For MovieCard shares, include the current URL with show parameter
             shareUrl = window.location.href;
@@ -21,17 +23,21 @@ const ShareButton = ({
             shareUrl = url.toString();
         }
 
+        const shareData = {
+            title: title || "Kinoschurke.de",
+            text: text || "Dein Kinoprogramm für heute",
+            url: shareUrl,
+        };
+
         if (navigator.share && navigator.canShare(shareData)) {
             try {
                 await navigator.share(shareData);
             } catch (err) {
-                // User cancelled or error occurred
-                console.log("Share cancelled or failed:", err);
+                console.log("Error sharing:", err);
             }
         } else {
-            // Fallback: copy to clipboard
             try {
-                await navigator.clipboard.writeText(window.location.href);
+                await navigator.clipboard.writeText(shareUrl);
                 setShowCopied(true);
                 setTimeout(() => setShowCopied(false), 2000);
             } catch (err) {
