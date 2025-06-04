@@ -30,9 +30,9 @@ jobs:
               run: npm install
 
             #- name: Install Chrome dependencies
-              #run: |
-                 # sudo apt-get update
-                 # sudo apt-get install -y chromium-browser xvfb
+            #run: |
+            # sudo apt-get update
+            # sudo apt-get install -y chromium-browser xvfb
 
             - name: Run web scraper
               env:
@@ -52,11 +52,3 @@ jobs:
                   git diff --quiet && git diff --staged --quiet || (git commit -m "[BOT] Update Movie Data" && git push)
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Trigger deploy workflow
-              run: |
-                  curl -X POST \
-                  -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-                  -H "Accept: application/vnd.github.v3+json" \
-                  https://api.github.com/repos/${{ github.repository }}/dispatches \
-                  -d '{"event_type":"deploy_trigger"}'
