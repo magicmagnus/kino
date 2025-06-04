@@ -1,0 +1,53 @@
+name: Build and Deploy to GitHub Pages
+on:
+    push:
+    repository_dispatch:
+        types: [deploy_trigger]
+    workflow_dispatch: # Allows manual triggering of the workflow
+
+permissions:
+    contents: write # This line gives the workflow permission to write to the repository
+
+jobs:
+    # Build Job
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v3
+            - name: Install Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18.x
+            - name: Install Dependencies
+              run: npm install
+            - name: Build Project
+              run: npm run build
+            - name: Upload artifact to enable deployment
+              uses: actions/upload-artifact@v4
+              with:
+                  name: production-files
+                  path: ./dist
+    # Deploy Job
+    deploy:
+        # Add a dependency to the build job
+        needs: build
+
+        runs-on: ubuntu-latest
+        steps:
+            - name: Download artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: production-files
+                  path: ./dist
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./dist
+            - name: Trigger GitHub Pages Build
+              run: |
+                  curl -X POST \
+                  -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  https://api.github.com/repos/${{ github.repository }}/pages/builds
