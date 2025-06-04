@@ -44,6 +44,9 @@ jobs:
             - name: Transform data
               run: node scripts/transformData.mjs
 
+            - name: Build Sitemap
+              run: node scripts/generateSitemap.mjs
+
             - name: Commit and push if it changed
               run: |
                   git config user.name github-actions
