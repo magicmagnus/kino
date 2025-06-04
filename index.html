@@ -74,32 +74,11 @@
 
 
     <title>Kinoschurke</title>
-  <script type="module" crossorigin src="/assets/main-BEmoBLmM.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-DXaNohoo.css">
+  <script type="module" crossorigin src="/assets/index-BwH4uej6.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DXaNohoo.css">
 </head>
 
 <body>
-    <script>
-        (function () {
-            const redirect = localStorage.getItem('redirect');
-            if (redirect) {
-                localStorage.removeItem('redirect');
-                if (redirect !== window.location.href) {
-                    // Parse the stored redirect URL
-                    const redirectUrl = new URL(redirect);
-                    const currentUrl = new URL(window.location);
-
-                    // Preserve the path and search params from the redirect
-                    currentUrl.pathname = redirectUrl.pathname;
-                    currentUrl.search = redirectUrl.search;
-                    currentUrl.hash = redirectUrl.hash;
-
-                    // Update the browser URL without reloading
-                    window.history.replaceState(null, null, currentUrl.toString());
-                }
-            }
-        })();
-    </script>
     <div id="root"></div>
 </body>
 
