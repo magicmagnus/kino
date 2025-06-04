@@ -7,6 +7,7 @@ const SEOHead = ({
     url,
     movieTitle,
     eventName,
+    roomName,
     date,
 }) => {
     // Generate dynamic content based on props
@@ -20,8 +21,11 @@ const SEOHead = ({
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
+    } else if (roomName) {
+        pageTitle = `${roomName} - Kinoschurke`;
+        pageDescription = `Das Kinoprogramm für ${roomName} in Tübingen.`;
     } else if (date) {
-        pageTitle = `Kinoprogramm ${date} - Kinoschurke`;
+        pageTitle = `${date} - Kinoschurke`;
         pageDescription = `Das Kinoprogramm für ${date} in Tübingen.`;
     }
 

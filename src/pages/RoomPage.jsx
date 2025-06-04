@@ -91,7 +91,7 @@ const RoomPage = () => {
     return (
         <>
             <SEOHead
-                roomName={selectedRoom}
+                roomName={filteredRoomData[0]?.rooms[0]?.name}
                 url={`https://kinoschurke.de/rooms/${selectedRoom}`}
             />
             <TopSection date={firstDate}>
