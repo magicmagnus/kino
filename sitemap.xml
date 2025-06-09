@@ -2,301 +2,651 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-      <loc>https://kinoschurke.de/</loc>
+        <loc>https://kinoschurke.de/</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://kinoschurke.de/dates</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://kinoschurke.de/rooms</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://kinoschurke.de/movies</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://kinoschurke.de/events</loc>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <url>
+      <loc>https://kinoschurke.de/movies/lilo-und-stitch</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/date</loc>
+      <loc>https://kinoschurke.de/movies/from-the-world-of-john-wick-ballerina</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/room</loc>
+      <loc>https://kinoschurke.de/movies/der-phoenizische-meisterstreich</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie</loc>
+      <loc>https://kinoschurke.de/movies/mission-impossible-the-final-reckoning</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/misty-the-erroll-garner-story</loc>
+      <loc>https://kinoschurke.de/movies/drachenzaehmen-leicht-gemacht</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/juror-2</loc>
+      <loc>https://kinoschurke.de/movies/chaos-und-stille</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/criminal-squad-2</loc>
+      <loc>https://kinoschurke.de/movies/im-prinzip-familie</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/die-drei-und-der-karpatenhund</loc>
+      <loc>https://kinoschurke.de/movies/akiko-der-fliegende-affe</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/nosferatu-der-untote</loc>
+      <loc>https://kinoschurke.de/movies/lioness-die-loewin</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/la-cocina-der-geschmack-des-lebens</loc>
+      <loc>https://kinoschurke.de/movies/saint-exupery-die-geschichte-vor-dem-kleinen-prinzen</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/kundschafter-des-friedens-2</loc>
+      <loc>https://kinoschurke.de/movies/on-swift-horses</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/we-live-in-time</loc>
+      <loc>https://kinoschurke.de/movies/die-vorkosterinnen</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/sieben</loc>
+      <loc>https://kinoschurke.de/movies/alle-lieben-touda</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/der-junge-und-der-reiher</loc>
+      <loc>https://kinoschurke.de/movies/monsieur-aznavour</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/september-5</loc>
+      <loc>https://kinoschurke.de/movies/f1</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/queer</loc>
+      <loc>https://kinoschurke.de/movies/28-years-later</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/die-saat-des-heiligen-feigenbaums</loc>
+      <loc>https://kinoschurke.de/movies/der-meister-und-margarita</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/emilia-perez</loc>
+      <loc>https://kinoschurke.de/movies/black-bag-doppeltes-spiel</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/feste-und-freunde-ein-hoch-auf-uns</loc>
+      <loc>https://kinoschurke.de/movies/blood-und-sinners</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/die-leisen-und-die-grossen-toene</loc>
+      <loc>https://kinoschurke.de/movies/der-pinguin-meines-lebens</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/wicked</loc>
+      <loc>https://kinoschurke.de/movies/sieben-tage</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/der-spitzname</loc>
+      <loc>https://kinoschurke.de/movies/stand-up-comedy-slam-tuebingen</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/mufasa-der-koenig-der-loewen</loc>
+      <loc>https://kinoschurke.de/movies/poetry-slam-tuebingen</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/sonic-the-hedgehog-3</loc>
+      <loc>https://kinoschurke.de/movies/classic-sneak-love-is-in-the-air</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/vaiana-2</loc>
+      <loc>https://kinoschurke.de/movies/arsenal-sneak</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/die-abenteuer-von-kina-und-yuk</loc>
+      <loc>https://kinoschurke.de/movies/uefa-womens-euro-2025</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/a-real-pain</loc>
+      <loc>https://kinoschurke.de/movies/call-me-by-your-name</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/on-the-go</loc>
+      <loc>https://kinoschurke.de/movies/ocean-with-david-attenborough</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/armand</loc>
+      <loc>https://kinoschurke.de/movies/copa-71</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/konklave</loc>
+      <loc>https://kinoschurke.de/movies/blinder-fleck</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/freud-jenseits-des-glaubens</loc>
+      <loc>https://kinoschurke.de/movies/alle-reden-uebers-wetter</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/veni-vidi-vici</loc>
+      <loc>https://kinoschurke.de/movies/gagarin-einmal-schwerelos-und-zurueck</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/dtk-unplugged-meets-krimispannung-live</loc>
+      <loc>https://kinoschurke.de/movies/das-fest-geht-weiter</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/arsenal-sneak</loc>
+      <loc>https://kinoschurke.de/movies/meine-stillen-gedanken-my-thoughts-are-silent</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/stand-up-comedy-slam-tuebingen</loc>
+      <loc>https://kinoschurke.de/movies/the-mattachine-family</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/poetry-slam-tuebingen</loc>
+      <loc>https://kinoschurke.de/movies/beating-hearts</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/lesung-mit-sandro-mattioli-germafia</loc>
+      <loc>https://kinoschurke.de/movies/bridget-jones-verrueckt-nach-ihm</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/lesung-und-gespraech-uli-burchardt-menschenschutzgebiet</loc>
+      <loc>https://kinoschurke.de/movies/maria</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/benefizveranstaltung-rafik-schami-die-koenigin-und-der-kalligraph</loc>
+      <loc>https://kinoschurke.de/movies/fuer-immer-hier</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/met-opera-202425-richard-strauss-salome</loc>
+      <loc>https://kinoschurke.de/movies/rueckkehr-nach-korsika</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/met-opera-202425-giuseppe-verdi-aida</loc>
+      <loc>https://kinoschurke.de/movies/flow</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/met-opera-202425-wolfgang-amadeus-mozart-le-nozze-di-figaro</loc>
+      <loc>https://kinoschurke.de/movies/the-idea-of-you-als-du-mich-sahst</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/met-opera-202425-gioachino-rossini-il-barbiere-di-siviglia</loc>
+      <loc>https://kinoschurke.de/movies/paddington-in-peru</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/met-opera-202425-ludwig-van-beethoven-fidelio</loc>
+      <loc>https://kinoschurke.de/movies/moon-der-panda</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/konklave</loc>
+      <loc>https://kinoschurke.de/movies/vaiana-2</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/freud-jenseits-des-glaubens</loc>
+      <loc>https://kinoschurke.de/movies/mufasa-der-koenig-der-loewen</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/september-5</loc>
+      <loc>https://kinoschurke.de/movies/die-drei-und-der-karpatenhund</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/on-the-go</loc>
+      <loc>https://kinoschurke.de/events/apero-film</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/armand</loc>
+      <loc>https://kinoschurke.de/events/arsenal-sneak</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
   
     <url>
-      <loc>https://kinoschurke.de/movie/veni-vidi-vici</loc>
+      <loc>https://kinoschurke.de/events/classic-sneak</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/film-and-psychoanalyse</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/film-des-monats</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/mein-lieblingsfilm</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/poetry-slam</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/queerfilmnacht</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/rewind</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/sommerferienprogramm</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/specials</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/events/ukrainian-cinema</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-tarantino</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-spielberg</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-kubrick</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-almodovar</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-coppola</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/saal-arsenal</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/rooms/atelier</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-05</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-06</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-07</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-08</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-09</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-10</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-11</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-12</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-15</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-18</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-19</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-24</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-25</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-26</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-27</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-28</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-06-29</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-04</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-06</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-08</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-12</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-16</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-07-31</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-01</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-04</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-05</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-06</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-07</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-08-08</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-09-09</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-10-14</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-11-11</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2025-12-09</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2026-01-13</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2026-02-10</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2026-03-10</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2026-04-14</loc>
+      <changefreq>weekly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  
+    <url>
+      <loc>https://kinoschurke.de/dates/2026-05-12</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
