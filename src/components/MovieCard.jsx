@@ -99,7 +99,7 @@ const MovieCard = (props) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className={`absolute left-1/2 top-1/2 h-[95%] w-[90%] max-w-[900px] rounded-3xl bg-zinc-950 text-white shadow-lg transition-all duration-300 ease-in-out sm:h-[90%] sm:max-h-[500px] sm:w-[90%] ${
+                className={`absolute left-1/2 top-1/2 h-[95%] w-[90%] max-w-[900px] rounded-3xl bg-zinc-900 text-white shadow-lg transition-all duration-300 ease-in-out sm:h-[90%] sm:max-h-[500px] sm:w-[90%] ${
                     isVisible
                         ? "-translate-x-1/2 -translate-y-1/2 scale-100 opacity-100"
                         : "-translate-x-1/2 -translate-y-[45%] scale-95 opacity-0"
@@ -108,7 +108,7 @@ const MovieCard = (props) => {
                 {/* close button */}
                 <button
                     onClick={handleClose}
-                    className="absolute right-0 top-0 z-20 m-2 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 p-4 text-rose-500 transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-zinc-700"
+                    className="absolute right-0 top-0 z-20 m-2 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 p-4 text-rose-700 transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-zinc-700"
                     style={{
                         boxShadow: "0 0 10px 2px rgba(0,0,0,0.5)",
                     }}
@@ -135,9 +135,9 @@ const MovieCard = (props) => {
                     setIsVisible={setIsVisible} // Add this line
                 >
                     {/* sticky button container */}
-                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between bg-zinc-800 px-0 shadow-xl shadow-black sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-0 sm:bg-transparent sm:shadow-transparent lg:flex-row lg:items-end">
+                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between rounded-t-3xl bg-zinc-800 px-0 sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-0 sm:bg-transparent sm:shadow-transparent lg:flex-row lg:items-end">
                         {/* "All shows" and Trailer buttons */}
-                        <div className="flex h-fit w-full items-center justify-center gap-2 px-2.5 py-2 opacity-100">
+                        <div className="flex h-fit w-full items-center justify-center gap-2 px-2 py-2 opacity-100 lg:mb-[0px] lg:mr-[-2px]">
                             <button
                                 onClick={handleAllShowsClick}
                                 className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-rose-950 p-2 px-2 py-2 text-xs font-semibold text-rose-500 hover:opacity-80"
@@ -157,10 +157,10 @@ const MovieCard = (props) => {
                             </button>
                         </div>
 
-                        <div className="rounde flex h-fit w-full flex-col justify-center gap-2 bg-zinc-950 py-2 sm:gap-2 sm:rounded-tl-xl sm:bg-zinc-800">
+                        <div className="flex h-fit w-full flex-col justify-center gap-1.5 rounded-3xl border-[1.5x] border-neutral-400 bg-zinc-900 py-2 pt-1.5 sm:bg-zinc-800">
                             {/* Info tag with date, */}
                             <div>
-                                <p className="text-xs font-semibold text-white">
+                                <p className="text-xs font-semibold text-neutral-100">
                                     Vorstellung:{" "}
                                     {formatDateString(showCard.date)} -{" "}
                                     {showCard.show.time}h:

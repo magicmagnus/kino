@@ -36,7 +36,7 @@ const TopSection = (props) => {
                                 key={hour}
                                 className="z-[1] w-28 flex-shrink-0 py-1 text-right"
                             >
-                                <p className="-ml-16 w-10 text-xs text-white">
+                                <p className="-ml-6 w-10 text-xs text-white">
                                     {hour}
                                 </p>
                             </div>

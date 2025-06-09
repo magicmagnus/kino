@@ -144,7 +144,9 @@ const MovieAttributes = (props) => {
                 <div
                     className={
                         "flex flex-1 flex-col justify-start gap-4 p-4 sm:overflow-scroll " +
-                        (isCard ? " sm:mb-[88px] lg:mb-12" : "max-w-[800px]")
+                        (isCard
+                            ? " sm:mb-[118px] lg:mb-[68px]"
+                            : "max-w-[800px]")
                     }
                 >
                     {/* title */}
