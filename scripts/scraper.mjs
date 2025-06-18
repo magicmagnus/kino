@@ -21,7 +21,7 @@ async function scrapeAllSites() {
     // create a new browser instance and a new page
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920, height: 1080 },
-        headless: true,
+        headless: false,
         devtools: false,
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
         args: ["--no-sandbox", "--disable-setuid-sandbox"], // args: ['--start-maximized'],
@@ -374,216 +374,247 @@ async function scrapeMovieSchedules(page) {
     });
 
     // scroll to the bottom of the page to load all movies,
-    await autoScroll(page, { scrollDelay: 100, finalWaitTime: 2000 });
+    // await autoScroll(page, { scrollDelay: 100, finalWaitTime: 2000 });
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    debugger;
 
-    // prepare the page for scraping
+    // prepare the page for scraping - revised implementation
     await page.evaluate(() => {
-        // first close the cookie banner
-        const closeButton = document.querySelector(".brlbs-cmpnt-close-button");
-        if (closeButton) {
-            closeButton.click();
+        // Click accept button for cookies
+        const acceptButton = document.querySelector(".brlbs-btn-accept-all");
+        if (acceptButton) {
+            acceptButton.click();
         }
-        // and switch to list view (easier to see all schedule dates)
+    });
+
+    // Wait 2 seconds after clicking the accept button
+    // Wait 2 seconds using Promise and setTimeout
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    debugger;
+    // Click on list view button
+    await page.evaluate(() => {
+        // Switch to list view (easier to see all schedule dates)
         const listViewButton = document
             .querySelector(".overview-filter-header")
             .querySelector(".overview-view-button-list");
         if (listViewButton) {
             listViewButton.click();
         }
-        return new Promise((resolve) => {
-            //Click all possible "more dates" buttons and wait for possible updates
-            const buttons1 = document.querySelectorAll(
-                ".performance-item-date",
-            );
-            const buttons2 = document.querySelectorAll(
-                ".performance-item-dates",
-            );
-            const buttons3 = document.querySelectorAll(
-                ".performance-item-more-dates",
-            );
-            buttons1.forEach((button) => button.click());
-            buttons2.forEach((button) => button.click());
-            buttons3.forEach((button) => button.click());
-            setTimeout(resolve, 1000); // Wait 1 second after clicking all buttons
-        });
+    });
+
+    // Wait 2 seconds after clicking the list view button
+    // Wait 2 seconds using Promise and setTimeout
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    debugger;
+    // Find and click all "more dates" buttons
+    await page.evaluate(async () => {
+        debugger;
+        // Collect all "more dates" buttons
+        const moreDatesButtons =
+            document.querySelectorAll(".buy-ticket-button");
+        let counter = 0;
+        // Click each button and wait 1 second between clicks
+        for (const button of moreDatesButtons) {
+            if (button && counter < 50) {
+                button.click();
+                counter++;
+                await new Promise((resolve) => setTimeout(resolve, 10));
+            }
+        }
     });
 
     let allMovieDates = await page.evaluate(async () => {
+        debugger;
         const movies = [];
         const movieItems = document.querySelectorAll(".movie-item");
+        debugger;
+
+        let counter = 0;
 
         for (const movieItem of movieItems) {
-            const title =
-                movieItem.querySelector(".title")?.textContent.trim() ||
-                "Unknown Title";
-            const attributes = await window.formatOmduInAttributes(
-                Array.from(movieItem.querySelectorAll(".attribute")).map(
-                    (attr) => attr.textContent.trim(),
-                ),
-            );
-            const duration =
-                movieItem.querySelector(".minutes")?.textContent.trim() || "0";
+            counter++;
+            if (counter < 50) {
+                const title =
+                    movieItem.querySelector(".title")?.textContent.trim() ||
+                    "Unknown Title";
+                const attributes = await window.formatOmduInAttributes(
+                    Array.from(movieItem.querySelectorAll(".attribute")).map(
+                        (attr) => attr.textContent.trim(),
+                    ),
+                );
+                const duration =
+                    movieItem.querySelector(".minutes")?.textContent.trim() ||
+                    "0";
 
-            // movie-times-grids are the containers for Dates, Theater1, Theater2, ...
-            let timeGrids = Array.from(
-                movieItem.querySelectorAll(".movie-times-grid"),
-            );
-            if (timeGrids.length === 0) {
-                movieItem.querySelector(".buy-ticket-button").click();
-                timeGrids = Array.from(
+                // movie-times-grids are the containers for Dates, Theater1, Theater2, ...
+                let timeGrids = Array.from(
                     movieItem.querySelectorAll(".movie-times-grid"),
                 );
-                console.log(
-                    "No time grids found, clicked on buy ticket button",
-                );
-            }
-
-            // First grid contains the dates
-            const dateGrid = timeGrids[0];
-            let dates = await Promise.all(
-                Array.from(dateGrid.querySelectorAll(".date")).map(
-                    async (dateElement) => {
-                        let date = dateElement.textContent.trim();
-                        return await window.formatDateString(date);
-                    },
-                ),
-            );
-            // Filter out nulls
-            dates.filter(Boolean);
-
-            const showtimes = [];
-
-            // for each movie, loop through all dates
-            for (let dateIndex = 0; dateIndex < dates.length; dateIndex++) {
-                const date = dates[dateIndex];
-                let shows = [];
-
-                // for each date, loop through all timeGrids (all theaters), from index 1 to skip the dateGrid
-                for (
-                    let gridIndex = 1;
-                    gridIndex < timeGrids.length;
-                    gridIndex++
-                ) {
-                    const performanceWrappers = timeGrids[
-                        gridIndex
-                    ].querySelectorAll(".performances-wrapper");
-                    // Get the performance wrapper for this date index
-                    const performanceWrapper = performanceWrappers[dateIndex];
-                    if (!performanceWrapper) {
-                        continue;
-                    }
-                    // for each performance wrapper (which is all shows for a day), loop through all showtimes
-                    const showWrappers =
-                        performanceWrapper.querySelectorAll(".show-wrapper");
-                    for (
-                        let showIndex = 0;
-                        showIndex < showWrappers.length;
-                        showIndex++
-                    ) {
-                        const show = showWrappers[showIndex];
-
-                        // Store the current iframe URL before clicking (if any)
-                        const previousIframeUrl =
-                            document.querySelector("iframe")?.src || "";
-
-                        // Click to load new iframe content
-                        show.click();
-                        const room =
-                            show
-                                .querySelector(".theatre-name")
-                                ?.textContent.trim() || "Unknown Theater";
-
-                        // Wait for iframe content to change or load
-                        let iframeUrl = "Unknown iframe URL";
-                        try {
-                            await new Promise((resolve, reject) => {
-                                const startTime = Date.now();
-                                const maxWaitTime = 5000; // 5 seconds timeout
-
-                                const checkIframeChanged = () => {
-                                    const iframe =
-                                        document.querySelector("iframe");
-                                    const currentIframeUrl = iframe?.src || "";
-
-                                    // If iframe exists and URL changed, or if we now have an iframe URL
-                                    if (
-                                        (iframe &&
-                                            currentIframeUrl &&
-                                            currentIframeUrl !==
-                                                previousIframeUrl) ||
-                                        (currentIframeUrl &&
-                                            previousIframeUrl === "")
-                                    ) {
-                                        iframeUrl = currentIframeUrl;
-                                        resolve();
-                                        return;
-                                    }
-
-                                    // Check timeout
-                                    if (Date.now() - startTime > maxWaitTime) {
-                                        console.warn(
-                                            "Timeout waiting for iframe URL to change",
-                                        );
-                                        resolve(); // Resolve anyway to continue with other shows
-                                        return;
-                                    }
-
-                                    // Continue polling
-                                    setTimeout(checkIframeChanged, 100);
-                                };
-
-                                // Start polling
-                                checkIframeChanged();
-                            });
-                        } catch (error) {
-                            console.error(
-                                `Error waiting for iframe: ${error.message}`,
-                            );
-                        }
-
-                        shows.push({
-                            time:
-                                show
-                                    .querySelector(".showtime")
-                                    ?.textContent.trim() || "Unknown Time",
-                            theater: await window.getFormattedRoomName(room),
-                            attributes: await window.formatOmduInAttributes(
-                                Array.from(
-                                    show.querySelectorAll(
-                                        ".attribute-logo, .attribute-name",
-                                    ),
-                                ).map((attr) => attr.textContent.trim()),
-                                // ).map((attr) => {
-                                //     let attribute =
-                                //         attr
-                                //             .querySelector(
-                                //                 ".screen-reader-text",
-                                //             )
-                                //             ?.textContent.trim() ||
-                                //         attr.dataset.attribute ||
-                                //         "Unknown Attribute";
-                                //     return attribute;
-                                // }),
-                            ),
-                            iframeUrl: iframeUrl,
-                        });
-                    }
+                if (timeGrids.length === 0) {
+                    movieItem.querySelector(".buy-ticket-button").click();
+                    timeGrids = Array.from(
+                        movieItem.querySelectorAll(".movie-times-grid"),
+                    );
+                    console.log(
+                        "No time grids found, clicked on buy ticket button",
+                    );
                 }
 
-                // manually correct the iframe URL for the shows
-                shows = await window.correctIframeUrls(shows);
+                // First grid contains the dates
+                const dateGrid = timeGrids[0];
+                let dates = await Promise.all(
+                    Array.from(dateGrid.querySelectorAll(".date")).map(
+                        async (dateElement) => {
+                            let date = dateElement.textContent.trim();
+                            return await window.formatDateString(date);
+                        },
+                    ),
+                );
+                // Filter out nulls
+                dates.filter(Boolean);
 
-                showtimes.push({
-                    date,
-                    shows,
+                const showtimes = [];
+
+                // for each movie, loop through all dates
+                for (let dateIndex = 0; dateIndex < dates.length; dateIndex++) {
+                    const date = dates[dateIndex];
+                    let shows = [];
+
+                    // for each date, loop through all timeGrids (all theaters), from index 1 to skip the dateGrid
+                    for (
+                        let gridIndex = 1;
+                        gridIndex < timeGrids.length;
+                        gridIndex++
+                    ) {
+                        const performanceWrappers = timeGrids[
+                            gridIndex
+                        ].querySelectorAll(".performances-wrapper");
+                        // Get the performance wrapper for this date index
+                        const performanceWrapper =
+                            performanceWrappers[dateIndex];
+                        if (!performanceWrapper) {
+                            continue;
+                        }
+                        // for each performance wrapper (which is all shows for a day), loop through all showtimes
+                        const showWrappers =
+                            performanceWrapper.querySelectorAll(
+                                ".show-wrapper",
+                            );
+                        for (
+                            let showIndex = 0;
+                            showIndex < showWrappers.length;
+                            showIndex++
+                        ) {
+                            const show = showWrappers[showIndex];
+
+                            // Store the current iframe URL before clicking (if any)
+                            const previousIframeUrl =
+                                document.querySelector("iframe")?.src || "";
+
+                            // Click to load new iframe content
+                            show.click();
+                            const room =
+                                show
+                                    .querySelector(".theatre-name")
+                                    ?.textContent.trim() || "Unknown Theater";
+
+                            // Wait for iframe content to change or load
+                            let iframeUrl = "Unknown iframe URL";
+                            try {
+                                await new Promise((resolve, reject) => {
+                                    const startTime = Date.now();
+                                    const maxWaitTime = 5000; // 5 seconds timeout
+
+                                    const checkIframeChanged = () => {
+                                        const iframe =
+                                            document.querySelector("iframe");
+                                        const currentIframeUrl =
+                                            iframe?.src || "";
+
+                                        // If iframe exists and URL changed, or if we now have an iframe URL
+                                        if (
+                                            (iframe &&
+                                                currentIframeUrl &&
+                                                currentIframeUrl !==
+                                                    previousIframeUrl) ||
+                                            (currentIframeUrl &&
+                                                previousIframeUrl === "")
+                                        ) {
+                                            iframeUrl = currentIframeUrl;
+                                            resolve();
+                                            return;
+                                        }
+
+                                        // Check timeout
+                                        if (
+                                            Date.now() - startTime >
+                                            maxWaitTime
+                                        ) {
+                                            console.warn(
+                                                "Timeout waiting for iframe URL to change",
+                                            );
+                                            resolve(); // Resolve anyway to continue with other shows
+                                            return;
+                                        }
+
+                                        // Continue polling
+                                        setTimeout(checkIframeChanged, 100);
+                                    };
+
+                                    // Start polling
+                                    checkIframeChanged();
+                                });
+                            } catch (error) {
+                                console.error(
+                                    `Error waiting for iframe: ${error.message}`,
+                                );
+                            }
+
+                            shows.push({
+                                time:
+                                    show
+                                        .querySelector(".showtime")
+                                        ?.textContent.trim() || "Unknown Time",
+                                theater:
+                                    await window.getFormattedRoomName(room),
+                                attributes: await window.formatOmduInAttributes(
+                                    Array.from(
+                                        show.querySelectorAll(
+                                            ".attribute-logo, .attribute-name",
+                                        ),
+                                    ).map((attr) => attr.textContent.trim()),
+                                    // ).map((attr) => {
+                                    //     let attribute =
+                                    //         attr
+                                    //             .querySelector(
+                                    //                 ".screen-reader-text",
+                                    //             )
+                                    //             ?.textContent.trim() ||
+                                    //         attr.dataset.attribute ||
+                                    //         "Unknown Attribute";
+                                    //     return attribute;
+                                    // }),
+                                ),
+                                iframeUrl: iframeUrl,
+                            });
+                        }
+                    }
+
+                    // manually correct the iframe URL for the shows
+                    shows = await window.correctIframeUrls(shows);
+
+                    showtimes.push({
+                        date,
+                        shows,
+                    });
+                }
+                movies.push({
+                    title,
+                    attributes,
+                    duration,
+                    showtimes,
                 });
             }
-            movies.push({
-                title,
-                attributes,
-                duration,
-                showtimes,
-            });
         }
         return movies;
     });
