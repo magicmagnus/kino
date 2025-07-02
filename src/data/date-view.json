@@ -1,1433 +1,5 @@
 [
   {
-    "date": "2025-06-09",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 44,
-                "movieTitle": "Poetry Slam Tübingen",
-                "attributes": [
-                  "Poetry Slam"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-25",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "17:30",
-                "endTime": "19:07",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75339?mode=widget&layout=movies&design=new&rb=0&showId=75339"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:35",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [
-                  "Film des Monats",
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75131?mode=widget&layout=movies&design=new&rb=0&showId=75131"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75327?mode=widget&layout=movies&design=new&rb=0&showId=75327"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:50",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75317?mode=widget&layout=movies&design=new&rb=0&showId=75317"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:48",
-                "movieId": 3,
-                "movieTitle": "Lilo & Stitch",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75359?mode=widget&layout=movies&design=new&rb=0&showId=75359"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:25",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75305?mode=widget&layout=movies&design=new&rb=0&showId=75305"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:43",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [
-                  "Apéro Film"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80652?mode=widget&layout=movies&design=new&rb=0&showId=80652"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:53",
-                "movieId": 16,
-                "movieTitle": "Mirai - das Mädchen aus der Zukunft",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80654?mode=widget&layout=movies&design=new&rb=0&showId=80654"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "16:45",
-                "endTime": "18:36",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80636?mode=widget&layout=movies&design=new&rb=0&showId=80636"
-              },
-              {
-                "time": "19:00",
-                "endTime": "20:40",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80672?mode=widget&layout=movies&design=new&rb=0&showId=80672"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:45",
-                "endTime": "19:31",
-                "movieId": 9,
-                "movieTitle": "Das Fest geht weiter",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13171?mode=widget&layout=movies&design=new&rb=0&showId=13171"
-              },
-              {
-                "time": "20:00",
-                "endTime": "21:59",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13176?mode=widget&layout=movies&design=new&rb=0&showId=13176"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-26",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75378?mode=widget&layout=movies&design=new&rb=0&showId=75378"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:50",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75388?mode=widget&layout=movies&design=new&rb=0&showId=75388"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:37",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75395?mode=widget&layout=movies&design=new&rb=0&showId=75395"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75404?mode=widget&layout=movies&design=new&rb=0&showId=75404"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "17:15",
-                "endTime": "19:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80675?mode=widget&layout=movies&design=new&rb=0&showId=80675"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80676?mode=widget&layout=movies&design=new&rb=0&showId=80676"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "17:30",
-                "endTime": "19:21",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80701?mode=widget&layout=movies&design=new&rb=0&showId=80701"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:16",
-                "movieId": 27,
-                "movieTitle": "Für immer hier",
-                "attributes": [
-                  "OmdU",
-                  "Rewind"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80450?mode=widget&layout=movies&design=new&rb=0&showId=80450"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:29",
-                "movieId": 25,
-                "movieTitle": "Alle reden übers Wetter",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80567?mode=widget&layout=movies&design=new&rb=0&showId=80567"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:10",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80692?mode=widget&layout=movies&design=new&rb=0&showId=80692"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:41",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13180?mode=widget&layout=movies&design=new&rb=0&showId=13180"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:14",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13187?mode=widget&layout=movies&design=new&rb=0&showId=13187"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-27",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "18:30",
-                "endTime": "20:07",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75363?mode=widget&layout=movies&design=new&rb=0&showId=75363"
-              },
-              {
-                "time": "20:45",
-                "endTime": "22:40",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75373?mode=widget&layout=movies&design=new&rb=0&showId=75373"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "14:30",
-                "endTime": "16:35",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75379?mode=widget&layout=movies&design=new&rb=0&showId=75379"
-              },
-              {
-                "time": "17:15",
-                "endTime": "19:20",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75389?mode=widget&layout=movies&design=new&rb=0&showId=75389"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75385?mode=widget&layout=movies&design=new&rb=0&showId=75385"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "15:30",
-                "endTime": "17:18",
-                "movieId": 3,
-                "movieTitle": "Lilo & Stitch",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75406?mode=widget&layout=movies&design=new&rb=0&showId=75406"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:44",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75409?mode=widget&layout=movies&design=new&rb=0&showId=75409"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75396?mode=widget&layout=movies&design=new&rb=0&showId=75396"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "17:30",
-                "endTime": "20:05",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80677?mode=widget&layout=movies&design=new&rb=0&showId=80677"
-              },
-              {
-                "time": "20:30",
-                "endTime": "23:05",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80688?mode=widget&layout=movies&design=new&rb=0&showId=80688"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "17:45",
-                "endTime": "19:25",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80704?mode=widget&layout=movies&design=new&rb=0&showId=80704"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:06",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80702?mode=widget&layout=movies&design=new&rb=0&showId=80702"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:45",
-                "movieId": 22,
-                "movieTitle": "Ocean with David Attenborough",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80565?mode=widget&layout=movies&design=new&rb=0&showId=80565"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:10",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80693?mode=widget&layout=movies&design=new&rb=0&showId=80693"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:45",
-                "endTime": "17:31",
-                "movieId": 9,
-                "movieTitle": "Das Fest geht weiter",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13194?mode=widget&layout=movies&design=new&rb=0&showId=13194"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:59",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13188?mode=widget&layout=movies&design=new&rb=0&showId=13188"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:11",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13184?mode=widget&layout=movies&design=new&rb=0&showId=13184"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-28",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "15:00",
-                "endTime": "16:37",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75364?mode=widget&layout=movies&design=new&rb=0&showId=75364"
-              },
-              {
-                "time": "17:15",
-                "endTime": "18:52",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75371?mode=widget&layout=movies&design=new&rb=0&showId=75371"
-              },
-              {
-                "time": "19:30",
-                "endTime": "21:07",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75365?mode=widget&layout=movies&design=new&rb=0&showId=75365"
-              },
-              {
-                "time": "21:45",
-                "endTime": "23:40",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75375?mode=widget&layout=movies&design=new&rb=0&showId=75375"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "14:30",
-                "endTime": "16:35",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75390?mode=widget&layout=movies&design=new&rb=0&showId=75390"
-              },
-              {
-                "time": "17:15",
-                "endTime": "19:20",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75380?mode=widget&layout=movies&design=new&rb=0&showId=75380"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75391?mode=widget&layout=movies&design=new&rb=0&showId=75391"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "15:30",
-                "endTime": "17:18",
-                "movieId": 3,
-                "movieTitle": "Lilo & Stitch",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75407?mode=widget&layout=movies&design=new&rb=0&showId=75407"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:43",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75397?mode=widget&layout=movies&design=new&rb=0&showId=75397"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75398?mode=widget&layout=movies&design=new&rb=0&showId=75398"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "14:30",
-                "endTime": "17:05",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80678?mode=widget&layout=movies&design=new&rb=0&showId=80678"
-              },
-              {
-                "time": "17:30",
-                "endTime": "20:05",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80679?mode=widget&layout=movies&design=new&rb=0&showId=80679"
-              },
-              {
-                "time": "20:30",
-                "endTime": "23:05",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80680?mode=widget&layout=movies&design=new&rb=0&showId=80680"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "15:15",
-                "endTime": "16:55",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [
-                  "OmeU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80705?mode=widget&layout=movies&design=new&rb=0&showId=80705"
-              },
-              {
-                "time": "17:30",
-                "endTime": "19:14",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80706?mode=widget&layout=movies&design=new&rb=0&showId=80706"
-              },
-              {
-                "time": "20:00",
-                "endTime": "21:51",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80703?mode=widget&layout=movies&design=new&rb=0&showId=80703"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "15:30",
-                "endTime": "17:21",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80697?mode=widget&layout=movies&design=new&rb=0&showId=80697"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:31",
-                "movieId": 23,
-                "movieTitle": "Copa 71",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80566?mode=widget&layout=movies&design=new&rb=0&showId=80566"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:55",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80694?mode=widget&layout=movies&design=new&rb=0&showId=80694"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:45",
-                "endTime": "17:31",
-                "movieId": 9,
-                "movieTitle": "Das Fest geht weiter",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13195?mode=widget&layout=movies&design=new&rb=0&showId=13195"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:59",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13193?mode=widget&layout=movies&design=new&rb=0&showId=13193"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:11",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13181?mode=widget&layout=movies&design=new&rb=0&showId=13181"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-29",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "13:30",
-                "endTime": "15:07",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75366?mode=widget&layout=movies&design=new&rb=0&showId=75366"
-              },
-              {
-                "time": "15:45",
-                "endTime": "17:22",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75367?mode=widget&layout=movies&design=new&rb=0&showId=75367"
-              },
-              {
-                "time": "18:00",
-                "endTime": "19:37",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75372?mode=widget&layout=movies&design=new&rb=0&showId=75372"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:10",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75376?mode=widget&layout=movies&design=new&rb=0&showId=75376"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "14:00",
-                "endTime": "16:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75381?mode=widget&layout=movies&design=new&rb=0&showId=75381"
-              },
-              {
-                "time": "16:45",
-                "endTime": "18:50",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75392?mode=widget&layout=movies&design=new&rb=0&showId=75392"
-              },
-              {
-                "time": "19:30",
-                "endTime": "21:35",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75386?mode=widget&layout=movies&design=new&rb=0&showId=75386"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "14:30",
-                "endTime": "16:18",
-                "movieId": 3,
-                "movieTitle": "Lilo & Stitch",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75408?mode=widget&layout=movies&design=new&rb=0&showId=75408"
-              },
-              {
-                "time": "17:00",
-                "endTime": "18:43",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75399?mode=widget&layout=movies&design=new&rb=0&showId=75399"
-              },
-              {
-                "time": "19:15",
-                "endTime": "20:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75400?mode=widget&layout=movies&design=new&rb=0&showId=75400"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "12:00",
-                "endTime": "13:45",
-                "movieId": 22,
-                "movieTitle": "Ocean with David Attenborough",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80691?mode=widget&layout=movies&design=new&rb=0&showId=80691"
-              },
-              {
-                "time": "14:00",
-                "endTime": "16:35",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80681?mode=widget&layout=movies&design=new&rb=0&showId=80681"
-              },
-              {
-                "time": "17:00",
-                "endTime": "19:35",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80682?mode=widget&layout=movies&design=new&rb=0&showId=80682"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:35",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80689?mode=widget&layout=movies&design=new&rb=0&showId=80689"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "11:30",
-                "endTime": "13:31",
-                "movieId": 18,
-                "movieTitle": "Rocketman",
-                "attributes": [
-                  "Film & Faden"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80619?mode=widget&layout=movies&design=new&rb=0&showId=80619"
-              },
-              {
-                "time": "15:00",
-                "endTime": "16:51",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80708?mode=widget&layout=movies&design=new&rb=0&showId=80708"
-              },
-              {
-                "time": "17:15",
-                "endTime": "18:55",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80709?mode=widget&layout=movies&design=new&rb=0&showId=80709"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:29",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80707?mode=widget&layout=movies&design=new&rb=0&showId=80707"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "12:00",
-                "endTime": "13:44",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80710?mode=widget&layout=movies&design=new&rb=0&showId=80710"
-              },
-              {
-                "time": "14:45",
-                "endTime": "16:25",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80695?mode=widget&layout=movies&design=new&rb=0&showId=80695"
-              },
-              {
-                "time": "17:00",
-                "endTime": "18:21",
-                "movieId": 24,
-                "movieTitle": "Blinder Fleck",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80569?mode=widget&layout=movies&design=new&rb=0&showId=80569"
-              },
-              {
-                "time": "19:30",
-                "endTime": "22:20",
-                "movieId": 8,
-                "movieTitle": "Mission: Impossible - The Final Reckoning",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80699?mode=widget&layout=movies&design=new&rb=0&showId=80699"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "15:00",
-                "endTime": "16:46",
-                "movieId": 9,
-                "movieTitle": "Das Fest geht weiter",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13196?mode=widget&layout=movies&design=new&rb=0&showId=13196"
-              },
-              {
-                "time": "17:15",
-                "endTime": "18:56",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13185?mode=widget&layout=movies&design=new&rb=0&showId=13185"
-              },
-              {
-                "time": "19:30",
-                "endTime": "21:29",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13189?mode=widget&layout=movies&design=new&rb=0&showId=13189"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-06-30",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "18:15",
-                "endTime": "19:52",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75368?mode=widget&layout=movies&design=new&rb=0&showId=75368"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:25",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75374?mode=widget&layout=movies&design=new&rb=0&showId=75374"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75382?mode=widget&layout=movies&design=new&rb=0&showId=75382"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:50",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75393?mode=widget&layout=movies&design=new&rb=0&showId=75393"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:44",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75410?mode=widget&layout=movies&design=new&rb=0&showId=75410"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75401?mode=widget&layout=movies&design=new&rb=0&showId=75401"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "17:15",
-                "endTime": "19:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80683?mode=widget&layout=movies&design=new&rb=0&showId=80683"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80684?mode=widget&layout=movies&design=new&rb=0&showId=80684"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "17:15",
-                "endTime": "19:06",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80711?mode=widget&layout=movies&design=new&rb=0&showId=80711"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:25",
-                "movieId": 17,
-                "movieTitle": "Zikaden",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80712?mode=widget&layout=movies&design=new&rb=0&showId=80712"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "18:15",
-                "endTime": "19:38",
-                "movieId": 48,
-                "movieTitle": "Shorts Attack 2025: Wo die Liebe hinfällt",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80717?mode=widget&layout=movies&design=new&rb=0&showId=80717"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 20,
-                "movieTitle": "Arsenal Sneak",
-                "attributes": [
-                  "Arsenal Sneak"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80724?mode=widget&layout=movies&design=new&rb=0&showId=80724"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "17:45",
-                "endTime": "19:44",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13190?mode=widget&layout=movies&design=new&rb=0&showId=13190"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:56",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13182?mode=widget&layout=movies&design=new&rb=0&showId=13182"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-07-01",
-    "theaters": [
-      {
-        "name": "Kino Blaue Brücke",
-        "rooms": [
-          {
-            "name": "Saal Tarantino",
-            "showings": [
-              {
-                "time": "18:15",
-                "endTime": "19:52",
-                "movieId": 4,
-                "movieTitle": "Elio",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75369?mode=widget&layout=movies&design=new&rb=0&showId=75369"
-              },
-              {
-                "time": "20:30",
-                "endTime": "22:25",
-                "movieId": 1,
-                "movieTitle": "28 Years Later",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75377?mode=widget&layout=movies&design=new&rb=0&showId=75377"
-              }
-            ]
-          },
-          {
-            "name": "Saal Spielberg",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "19:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75394?mode=widget&layout=movies&design=new&rb=0&showId=75394"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:50",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
-                "attributes": [
-                  "3D"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75383?mode=widget&layout=movies&design=new&rb=0&showId=75383"
-              }
-            ]
-          },
-          {
-            "name": "Saal Kubrick",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:44",
-                "movieId": 6,
-                "movieTitle": "One to One: John & Yoko",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75411?mode=widget&layout=movies&design=new&rb=0&showId=75411"
-              },
-              {
-                "time": "20:15",
-                "endTime": "21:58",
-                "movieId": 15,
-                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75402?mode=widget&layout=movies&design=new&rb=0&showId=75402"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "17:15",
-                "endTime": "19:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80685?mode=widget&layout=movies&design=new&rb=0&showId=80685"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:50",
-                "movieId": 2,
-                "movieTitle": "F1",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80686?mode=widget&layout=movies&design=new&rb=0&showId=80686"
-              }
-            ]
-          },
-          {
-            "name": "Saal Coppola",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:31",
-                "movieId": 23,
-                "movieTitle": "Copa 71",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80715?mode=widget&layout=movies&design=new&rb=0&showId=80715"
-              },
-              {
-                "time": "20:00",
-                "endTime": "22:36",
-                "movieId": 12,
-                "movieTitle": "Der letzte Kaiser",
-                "attributes": [
-                  "Best of Cinema"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80716?mode=widget&layout=movies&design=new&rb=0&showId=80716"
-              }
-            ]
-          },
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "17:15",
-                "endTime": "19:00",
-                "movieId": 22,
-                "movieTitle": "Ocean with David Attenborough",
-                "attributes": [
-                  "Specials"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80718?mode=widget&layout=movies&design=new&rb=0&showId=80718"
-              },
-              {
-                "time": "19:45",
-                "endTime": "21:36",
-                "movieId": 13,
-                "movieTitle": "Black Tea",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80698?mode=widget&layout=movies&design=new&rb=0&showId=80698"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Kino Atelier",
-        "rooms": [
-          {
-            "name": "Atelier",
-            "showings": [
-              {
-                "time": "18:00",
-                "endTime": "19:41",
-                "movieId": 7,
-                "movieTitle": "Der Phönizische Meisterstreich",
-                "attributes": [],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13186?mode=widget&layout=movies&design=new&rb=0&showId=13186"
-              },
-              {
-                "time": "20:15",
-                "endTime": "22:14",
-                "movieId": 19,
-                "movieTitle": "Loyal Friend",
-                "attributes": [
-                  "OmdU"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13191?mode=widget&layout=movies&design=new&rb=0&showId=13191"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     "date": "2025-07-02",
     "theaters": [
       {
@@ -1439,7 +11,7 @@
               {
                 "time": "17:30",
                 "endTime": "19:07",
-                "movieId": 4,
+                "movieId": 5,
                 "movieTitle": "Elio",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75370?mode=widget&layout=movies&design=new&rb=0&showId=75370"
@@ -1447,9 +19,11 @@
               {
                 "time": "20:00",
                 "endTime": "22:14",
-                "movieId": 10,
-                "movieTitle": "Jurassic World - Die Wiedergeburt",
-                "attributes": [],
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75360?mode=widget&layout=movies&design=new&rb=0&showId=75360"
               }
             ]
@@ -1460,8 +34,8 @@
               {
                 "time": "17:30",
                 "endTime": "19:44",
-                "movieId": 10,
-                "movieTitle": "Jurassic World - Die Wiedergeburt",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
                 "attributes": [
                   "3D"
                 ],
@@ -1470,7 +44,7 @@
               {
                 "time": "20:15",
                 "endTime": "22:20",
-                "movieId": 0,
+                "movieId": 8,
                 "movieTitle": "Drachenzähmen leicht gemacht",
                 "attributes": [
                   "OmdU"
@@ -1485,7 +59,7 @@
               {
                 "time": "17:30",
                 "endTime": "19:35",
-                "movieId": 0,
+                "movieId": 8,
                 "movieTitle": "Drachenzähmen leicht gemacht",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75405?mode=widget&layout=movies&design=new&rb=0&showId=75405"
@@ -1493,7 +67,7 @@
               {
                 "time": "20:15",
                 "endTime": "21:58",
-                "movieId": 15,
+                "movieId": 17,
                 "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75403?mode=widget&layout=movies&design=new&rb=0&showId=75403"
@@ -1511,7 +85,7 @@
               {
                 "time": "17:15",
                 "endTime": "19:50",
-                "movieId": 2,
+                "movieId": 0,
                 "movieTitle": "F1",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80687?mode=widget&layout=movies&design=new&rb=0&showId=80687"
@@ -1519,9 +93,11 @@
               {
                 "time": "20:15",
                 "endTime": "22:50",
-                "movieId": 2,
+                "movieId": 0,
                 "movieTitle": "F1",
-                "attributes": [],
+                "attributes": [
+                  "OmdU"
+                ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80690?mode=widget&layout=movies&design=new&rb=0&showId=80690"
               }
             ]
@@ -1532,7 +108,7 @@
               {
                 "time": "17:00",
                 "endTime": "18:51",
-                "movieId": 13,
+                "movieId": 6,
                 "movieTitle": "Black Tea",
                 "attributes": [
                   "OmdU"
@@ -1542,7 +118,7 @@
               {
                 "time": "19:45",
                 "endTime": "22:35",
-                "movieId": 8,
+                "movieId": 13,
                 "movieTitle": "Mission: Impossible - The Final Reckoning",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80723?mode=widget&layout=movies&design=new&rb=0&showId=80723"
@@ -1555,7 +131,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:33",
-                "movieId": 5,
+                "movieId": 10,
                 "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
                 "attributes": [
                   "Apéro Film"
@@ -1565,7 +141,7 @@
               {
                 "time": "20:00",
                 "endTime": "21:40",
-                "movieId": 17,
+                "movieId": 18,
                 "movieTitle": "Zikaden",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80696?mode=widget&layout=movies&design=new&rb=0&showId=80696"
@@ -1593,7 +169,7 @@
               {
                 "time": "20:00",
                 "endTime": "21:41",
-                "movieId": 7,
+                "movieId": 15,
                 "movieTitle": "Der Phönizische Meisterstreich",
                 "attributes": [],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13183?mode=widget&layout=movies&design=new&rb=0&showId=13183"
@@ -1611,17 +187,110 @@
         "name": "Kino Blaue Brücke",
         "rooms": [
           {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "14:15",
+                "endTime": "16:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "Dolby Atmos",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75475?mode=widget&layout=movies&design=new&rb=0&showId=75475"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:29",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75451?mode=widget&layout=movies&design=new&rb=0&showId=75451"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75452?mode=widget&layout=movies&design=new&rb=0&showId=75452"
+              }
+            ]
+          },
+          {
             "name": "Saal Spielberg",
             "showings": [
               {
+                "time": "14:00",
+                "endTime": "16:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75464?mode=widget&layout=movies&design=new&rb=0&showId=75464"
+              },
+              {
+                "time": "16:45",
+                "endTime": "19:20",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75434?mode=widget&layout=movies&design=new&rb=0&showId=75434"
+              },
+              {
                 "time": "20:00",
-                "endTime": "21:40",
-                "movieId": 14,
-                "movieTitle": "Classic Sneak - Thriller-Time",
+                "endTime": "22:00",
+                "movieId": 26,
+                "movieTitle": "Classic Sneak - Thriller Time",
                 "attributes": [
                   "Classic Sneak"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75362?mode=widget&layout=movies&design=new&rb=0&showId=75362"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "14:45",
+                "endTime": "16:50",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75417?mode=widget&layout=movies&design=new&rb=0&showId=75417"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:20",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75425?mode=widget&layout=movies&design=new&rb=0&showId=75425"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:20",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75435?mode=widget&layout=movies&design=new&rb=0&showId=75435"
+              },
+              {
+                "time": "22:30",
+                "endTime": "00:25",
+                "movieId": 7,
+                "movieTitle": "28 Years Later",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75414?mode=widget&layout=movies&design=new&rb=0&showId=75414"
               }
             ]
           }
@@ -1631,17 +300,97 @@
         "name": "Kino Museum",
         "rooms": [
           {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:45",
+                "endTime": "19:18",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80767?mode=widget&layout=movies&design=new&rb=0&showId=80767"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:54",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80740?mode=widget&layout=movies&design=new&rb=0&showId=80740"
+              }
+            ]
+          },
+          {
             "name": "Saal Coppola",
             "showings": [
               {
+                "time": "17:30",
+                "endTime": "19:21",
+                "movieId": 6,
+                "movieTitle": "Black Tea",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80752?mode=widget&layout=movies&design=new&rb=0&showId=80752"
+              },
+              {
                 "time": "20:00",
                 "endTime": "22:04",
-                "movieId": 45,
+                "movieId": 29,
                 "movieTitle": "In Liebe, eure Hilde",
                 "attributes": [
                   "Rewind"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80719?mode=widget&layout=movies&design=new&rb=0&showId=80719"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:33",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80733?mode=widget&layout=movies&design=new&rb=0&showId=80733"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:58",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80757?mode=widget&layout=movies&design=new&rb=0&showId=80757"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:15",
+                "endTime": "19:59",
+                "movieId": 16,
+                "movieTitle": "One to One: John & Yoko",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13207?mode=widget&layout=movies&design=new&rb=0&showId=13207"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:11",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13201?mode=widget&layout=movies&design=new&rb=0&showId=13201"
               }
             ]
           }
@@ -1656,17 +405,448 @@
         "name": "Kino Blaue Brücke",
         "rooms": [
           {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:35",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75470?mode=widget&layout=movies&design=new&rb=0&showId=75470"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:29",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75454?mode=widget&layout=movies&design=new&rb=0&showId=75454"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "14:30",
+                "endTime": "16:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75476?mode=widget&layout=movies&design=new&rb=0&showId=75476"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75465?mode=widget&layout=movies&design=new&rb=0&showId=75465"
+              },
+              {
+                "time": "20:30",
+                "endTime": "23:05",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75447?mode=widget&layout=movies&design=new&rb=0&showId=75447"
+              }
+            ]
+          },
+          {
             "name": "Saal Kubrick",
             "showings": [
               {
+                "time": "15:00",
+                "endTime": "16:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75432?mode=widget&layout=movies&design=new&rb=0&showId=75432"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:20",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75418?mode=widget&layout=movies&design=new&rb=0&showId=75418"
+              },
+              {
                 "time": "21:00",
                 "endTime": "23:00",
-                "movieId": 21,
+                "movieId": 27,
                 "movieTitle": "UEFA Women's EURO 2025",
                 "attributes": [
                   "Specials"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74962?mode=widget&layout=movies&design=new&rb=0&showId=74962"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "16:00",
+                "endTime": "17:39",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80741?mode=widget&layout=movies&design=new&rb=0&showId=80741"
+              },
+              {
+                "time": "18:15",
+                "endTime": "19:54",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80742?mode=widget&layout=movies&design=new&rb=0&showId=80742"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:03",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80768?mode=widget&layout=movies&design=new&rb=0&showId=80768"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "15:30",
+                "endTime": "17:01",
+                "movieId": 23,
+                "movieTitle": "Copa 71",
+                "attributes": [
+                  "Specials"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80754?mode=widget&layout=movies&design=new&rb=0&showId=80754"
+              },
+              {
+                "time": "17:45",
+                "endTime": "19:28",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80785?mode=widget&layout=movies&design=new&rb=0&showId=80785"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:40",
+                "movieId": 18,
+                "movieTitle": "Zikaden",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80779?mode=widget&layout=movies&design=new&rb=0&showId=80779"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "16:00",
+                "endTime": "17:19",
+                "movieId": 4,
+                "movieTitle": "Heidi - Die Legende vom Luchs",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80764?mode=widget&layout=movies&design=new&rb=0&showId=80764"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:33",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80734?mode=widget&layout=movies&design=new&rb=0&showId=80734"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:58",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80758?mode=widget&layout=movies&design=new&rb=0&showId=80758"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:36",
+                "movieId": 20,
+                "movieTitle": "Der Bauer und der Bobo - Wie aus Wut Freundschaft wurde",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13197?mode=widget&layout=movies&design=new&rb=0&showId=13197"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:15",
+                "movieId": 22,
+                "movieTitle": "Kneecap",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13205?mode=widget&layout=movies&design=new&rb=0&showId=13205"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-05",
+    "theaters": [
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "19:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75472?mode=widget&layout=movies&design=new&rb=0&showId=75472"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:29",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75456?mode=widget&layout=movies&design=new&rb=0&showId=75456"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "14:30",
+                "endTime": "16:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75466?mode=widget&layout=movies&design=new&rb=0&showId=75466"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75477?mode=widget&layout=movies&design=new&rb=0&showId=75477"
+              },
+              {
+                "time": "20:30",
+                "endTime": "23:05",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75439?mode=widget&layout=movies&design=new&rb=0&showId=75439"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75428?mode=widget&layout=movies&design=new&rb=0&showId=75428"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:20",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75419?mode=widget&layout=movies&design=new&rb=0&showId=75419"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:05",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75420?mode=widget&layout=movies&design=new&rb=0&showId=75420"
+              },
+              {
+                "time": "22:45",
+                "endTime": "00:40",
+                "movieId": 7,
+                "movieTitle": "28 Years Later",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75413?mode=widget&layout=movies&design=new&rb=0&showId=75413"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "15:30",
+                "endTime": "17:15",
+                "movieId": 14,
+                "movieTitle": "Ocean with David Attenborough",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80775?mode=widget&layout=movies&design=new&rb=0&showId=80775"
+              },
+              {
+                "time": "17:45",
+                "endTime": "19:24",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80743?mode=widget&layout=movies&design=new&rb=0&showId=80743"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:39",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80744?mode=widget&layout=movies&design=new&rb=0&showId=80744"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "15:45",
+                "endTime": "17:25",
+                "movieId": 18,
+                "movieTitle": "Zikaden",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80780?mode=widget&layout=movies&design=new&rb=0&showId=80780"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:51",
+                "movieId": 6,
+                "movieTitle": "Black Tea",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80753?mode=widget&layout=movies&design=new&rb=0&showId=80753"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:03",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80769?mode=widget&layout=movies&design=new&rb=0&showId=80769"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "16:00",
+                "endTime": "17:19",
+                "movieId": 4,
+                "movieTitle": "Heidi - Die Legende vom Luchs",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80765?mode=widget&layout=movies&design=new&rb=0&showId=80765"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:33",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80735?mode=widget&layout=movies&design=new&rb=0&showId=80735"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:58",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80759?mode=widget&layout=movies&design=new&rb=0&showId=80759"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "15:45",
+                "endTime": "17:26",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13202?mode=widget&layout=movies&design=new&rb=0&showId=13202"
+              },
+              {
+                "time": "18:00",
+                "endTime": "19:44",
+                "movieId": 16,
+                "movieTitle": "One to One: John & Yoko",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13208?mode=widget&layout=movies&design=new&rb=0&showId=13208"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:56",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13198?mode=widget&layout=movies&design=new&rb=0&showId=13198"
               }
             ]
           }
@@ -1678,21 +858,468 @@
     "date": "2025-07-06",
     "theaters": [
       {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "13:30",
+                "endTime": "15:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75457?mode=widget&layout=movies&design=new&rb=0&showId=75457"
+              },
+              {
+                "time": "16:30",
+                "endTime": "19:05",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75473?mode=widget&layout=movies&design=new&rb=0&showId=75473"
+              },
+              {
+                "time": "19:30",
+                "endTime": "21:44",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75458?mode=widget&layout=movies&design=new&rb=0&showId=75458"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "13:45",
+                "endTime": "16:20",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75440?mode=widget&layout=movies&design=new&rb=0&showId=75440"
+              },
+              {
+                "time": "16:45",
+                "endTime": "18:59",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75467?mode=widget&layout=movies&design=new&rb=0&showId=75467"
+              },
+              {
+                "time": "19:45",
+                "endTime": "22:20",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75448?mode=widget&layout=movies&design=new&rb=0&showId=75448"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "13:00",
+                "endTime": "14:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75429?mode=widget&layout=movies&design=new&rb=0&showId=75429"
+              },
+              {
+                "time": "15:15",
+                "endTime": "17:20",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75421?mode=widget&layout=movies&design=new&rb=0&showId=75421"
+              },
+              {
+                "time": "18:00",
+                "endTime": "20:05",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75426?mode=widget&layout=movies&design=new&rb=0&showId=75426"
+              },
+              {
+                "time": "20:45",
+                "endTime": "22:40",
+                "movieId": 7,
+                "movieTitle": "28 Years Later",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75415?mode=widget&layout=movies&design=new&rb=0&showId=75415"
+              }
+            ]
+          }
+        ]
+      },
+      {
         "name": "Kino Museum",
         "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "12:30",
+                "endTime": "14:09",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80777?mode=widget&layout=movies&design=new&rb=0&showId=80777"
+              },
+              {
+                "time": "15:00",
+                "endTime": "16:45",
+                "movieId": 14,
+                "movieTitle": "Ocean with David Attenborough",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80776?mode=widget&layout=movies&design=new&rb=0&showId=80776"
+              },
+              {
+                "time": "17:15",
+                "endTime": "18:54",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80745?mode=widget&layout=movies&design=new&rb=0&showId=80745"
+              },
+              {
+                "time": "19:30",
+                "endTime": "21:09",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80746?mode=widget&layout=movies&design=new&rb=0&showId=80746"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "12:45",
+                "endTime": "14:18",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80778?mode=widget&layout=movies&design=new&rb=0&showId=80778"
+              },
+              {
+                "time": "15:15",
+                "endTime": "16:46",
+                "movieId": 23,
+                "movieTitle": "Copa 71",
+                "attributes": [
+                  "Specials"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80755?mode=widget&layout=movies&design=new&rb=0&showId=80755"
+              },
+              {
+                "time": "17:30",
+                "endTime": "19:10",
+                "movieId": 18,
+                "movieTitle": "Zikaden",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80781?mode=widget&layout=movies&design=new&rb=0&showId=80781"
+              },
+              {
+                "time": "19:45",
+                "endTime": "21:18",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80772?mode=widget&layout=movies&design=new&rb=0&showId=80772"
+              }
+            ]
+          },
           {
             "name": "Saal Arsenal",
             "showings": [
               {
                 "time": "12:00",
                 "endTime": "13:44",
-                "movieId": 26,
+                "movieId": 28,
                 "movieTitle": "Meine stillen Gedanken - My Thoughts Are Silent",
                 "attributes": [
                   "OmdU",
                   "Ukrainian cinema"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79836?mode=widget&layout=movies&design=new&rb=0&showId=79836"
+              },
+              {
+                "time": "14:45",
+                "endTime": "16:04",
+                "movieId": 4,
+                "movieTitle": "Heidi - Die Legende vom Luchs",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80766?mode=widget&layout=movies&design=new&rb=0&showId=80766"
+              },
+              {
+                "time": "16:45",
+                "endTime": "18:18",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80736?mode=widget&layout=movies&design=new&rb=0&showId=80736"
+              },
+              {
+                "time": "19:00",
+                "endTime": "20:43",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80760?mode=widget&layout=movies&design=new&rb=0&showId=80760"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "14:30",
+                "endTime": "16:11",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13199?mode=widget&layout=movies&design=new&rb=0&showId=13199"
+              },
+              {
+                "time": "16:45",
+                "endTime": "18:29",
+                "movieId": 16,
+                "movieTitle": "One to One: John & Yoko",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13209?mode=widget&layout=movies&design=new&rb=0&showId=13209"
+              },
+              {
+                "time": "19:00",
+                "endTime": "20:41",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13203?mode=widget&layout=movies&design=new&rb=0&showId=13203"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-07",
+    "theaters": [
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75459?mode=widget&layout=movies&design=new&rb=0&showId=75459"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75460?mode=widget&layout=movies&design=new&rb=0&showId=75460"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75430?mode=widget&layout=movies&design=new&rb=0&showId=75430"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75442?mode=widget&layout=movies&design=new&rb=0&showId=75442"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75443?mode=widget&layout=movies&design=new&rb=0&showId=75443"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "17:05",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75422?mode=widget&layout=movies&design=new&rb=0&showId=75422"
+              },
+              {
+                "time": "17:45",
+                "endTime": "19:50",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75423?mode=widget&layout=movies&design=new&rb=0&showId=75423"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:25",
+                "movieId": 7,
+                "movieTitle": "28 Years Later",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75416?mode=widget&layout=movies&design=new&rb=0&showId=75416"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:09",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80747?mode=widget&layout=movies&design=new&rb=0&showId=80747"
+              },
+              {
+                "time": "19:45",
+                "endTime": "21:24",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80748?mode=widget&layout=movies&design=new&rb=0&showId=80748"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:43",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80763?mode=widget&layout=movies&design=new&rb=0&showId=80763"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:48",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80770?mode=widget&layout=movies&design=new&rb=0&showId=80770"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "17:45",
+                "endTime": "19:18",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80737?mode=widget&layout=movies&design=new&rb=0&showId=80737"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:00",
+                "movieId": 24,
+                "movieTitle": "Arsenal Sneak",
+                "attributes": [
+                  "Arsenal Sneak"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80774?mode=widget&layout=movies&design=new&rb=0&showId=80774"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:45",
+                "movieId": 22,
+                "movieTitle": "Kneecap",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13206?mode=widget&layout=movies&design=new&rb=0&showId=13206"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:42",
+                "movieId": 21,
+                "movieTitle": "Step Across the Border",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13211?mode=widget&layout=movies&design=new&rb=0&showId=13211"
               }
             ]
           }
@@ -1707,17 +1334,371 @@
         "name": "Kino Blaue Brücke",
         "rooms": [
           {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75461?mode=widget&layout=movies&design=new&rb=0&showId=75461"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75462?mode=widget&layout=movies&design=new&rb=0&showId=75462"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75431?mode=widget&layout=movies&design=new&rb=0&showId=75431"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75449?mode=widget&layout=movies&design=new&rb=0&showId=75449"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75444?mode=widget&layout=movies&design=new&rb=0&showId=75444"
+              }
+            ]
+          },
+          {
             "name": "Saal Kubrick",
             "showings": [
               {
                 "time": "18:00",
                 "endTime": "20:00",
-                "movieId": 21,
+                "movieId": 27,
                 "movieTitle": "UEFA Women's EURO 2025",
                 "attributes": [
                   "Specials"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74963?mode=widget&layout=movies&design=new&rb=0&showId=74963"
+              },
+              {
+                "time": "20:30",
+                "endTime": "22:35",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75427?mode=widget&layout=movies&design=new&rb=0&showId=75427"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:45",
+                "endTime": "19:24",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80749?mode=widget&layout=movies&design=new&rb=0&showId=80749"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:33",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80771?mode=widget&layout=movies&design=new&rb=0&showId=80771"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "18:55",
+                "movieId": 18,
+                "movieTitle": "Zikaden",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80782?mode=widget&layout=movies&design=new&rb=0&showId=80782"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:08",
+                "movieId": 11,
+                "movieTitle": "Der Wein und der Wind",
+                "attributes": [
+                  "Inkl. Weinprobe"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80756?mode=widget&layout=movies&design=new&rb=0&showId=80756"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:33",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80738?mode=widget&layout=movies&design=new&rb=0&showId=80738"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:58",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80761?mode=widget&layout=movies&design=new&rb=0&showId=80761"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:41",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13200?mode=widget&layout=movies&design=new&rb=0&showId=13200"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:59",
+                "movieId": 16,
+                "movieTitle": "One to One: John & Yoko",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13210?mode=widget&layout=movies&design=new&rb=0&showId=13210"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-09",
+    "theaters": [
+      {
+        "name": "Kino Blaue Brücke",
+        "rooms": [
+          {
+            "name": "Saal Tarantino",
+            "showings": [
+              {
+                "time": "17:00",
+                "endTime": "19:35",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "Dolby Atmos"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75474?mode=widget&layout=movies&design=new&rb=0&showId=75474"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "Dolby Atmos",
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75463?mode=widget&layout=movies&design=new&rb=0&showId=75463"
+              }
+            ]
+          },
+          {
+            "name": "Saal Spielberg",
+            "showings": [
+              {
+                "time": "15:00",
+                "endTime": "16:37",
+                "movieId": 5,
+                "movieTitle": "Elio",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75433?mode=widget&layout=movies&design=new&rb=0&showId=75433"
+              },
+              {
+                "time": "17:15",
+                "endTime": "19:29",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [
+                  "3D"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75468?mode=widget&layout=movies&design=new&rb=0&showId=75468"
+              },
+              {
+                "time": "20:15",
+                "endTime": "22:50",
+                "movieId": 0,
+                "movieTitle": "F1",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75450?mode=widget&layout=movies&design=new&rb=0&showId=75450"
+              }
+            ]
+          },
+          {
+            "name": "Saal Kubrick",
+            "showings": [
+              {
+                "time": "17:15",
+                "endTime": "19:20",
+                "movieId": 8,
+                "movieTitle": "Drachenzähmen leicht gemacht",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75424?mode=widget&layout=movies&design=new&rb=0&showId=75424"
+              },
+              {
+                "time": "20:00",
+                "endTime": "22:14",
+                "movieId": 1,
+                "movieTitle": "Jurassic World: Rebirth",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75478?mode=widget&layout=movies&design=new&rb=0&showId=75478"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Almodóvar",
+            "showings": [
+              {
+                "time": "17:30",
+                "endTime": "19:09",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80750?mode=widget&layout=movies&design=new&rb=0&showId=80750"
+              },
+              {
+                "time": "19:45",
+                "endTime": "21:24",
+                "movieId": 2,
+                "movieTitle": "Bella Roma - Liebe auf Italienisch",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80751?mode=widget&layout=movies&design=new&rb=0&showId=80751"
+              }
+            ]
+          },
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:29",
+                "movieId": 12,
+                "movieTitle": "Vier Mütter für Edward",
+                "attributes": [
+                  "Apéro Film"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80783?mode=widget&layout=movies&design=new&rb=0&showId=80783"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:33",
+                "movieId": 3,
+                "movieTitle": "Hot Milk",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80773?mode=widget&layout=movies&design=new&rb=0&showId=80773"
+              }
+            ]
+          },
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:33",
+                "movieId": 10,
+                "movieTitle": "Agent of Happiness - Unterwegs im Auftrag des Glücks",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80739?mode=widget&layout=movies&design=new&rb=0&showId=80739"
+              },
+              {
+                "time": "20:15",
+                "endTime": "21:58",
+                "movieId": 17,
+                "movieTitle": "Die Barbaren - Willkommen in der Bretagne",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80762?mode=widget&layout=movies&design=new&rb=0&showId=80762"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Atelier",
+        "rooms": [
+          {
+            "name": "Atelier",
+            "showings": [
+              {
+                "time": "18:00",
+                "endTime": "19:27",
+                "movieId": 21,
+                "movieTitle": "Step Across the Border",
+                "attributes": [],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13212?mode=widget&layout=movies&design=new&rb=0&showId=13212"
+              },
+              {
+                "time": "20:00",
+                "endTime": "21:41",
+                "movieId": 15,
+                "movieTitle": "Der Phönizische Meisterstreich",
+                "attributes": [
+                  "OmdU"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-atelier-tuebingen/show/13204?mode=widget&layout=movies&design=new&rb=0&showId=13204"
               }
             ]
           }
@@ -1737,9 +1718,10 @@
               {
                 "time": "20:15",
                 "endTime": "22:17",
-                "movieId": 11,
+                "movieId": 9,
                 "movieTitle": "Superman",
                 "attributes": [
+                  "Dolby Atmos",
                   "OmdU"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75300?mode=widget&layout=movies&design=new&rb=0&showId=75300"
@@ -1757,7 +1739,7 @@
               {
                 "time": "20:00",
                 "endTime": "21:46",
-                "movieId": 46,
+                "movieId": 30,
                 "movieTitle": "The Zone of Interest",
                 "attributes": [
                   "Rewind"
@@ -1782,12 +1764,37 @@
               {
                 "time": "21:00",
                 "endTime": "23:00",
-                "movieId": 21,
+                "movieId": 27,
                 "movieTitle": "UEFA Women's EURO 2025",
                 "attributes": [
                   "Specials"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74964?mode=widget&layout=movies&design=new&rb=0&showId=74964"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-13",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Arsenal",
+            "showings": [
+              {
+                "time": "11:00",
+                "endTime": "12:54",
+                "movieId": 34,
+                "movieTitle": "Juror #2",
+                "attributes": [
+                  "Mein Lieblingsfilm"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80725?mode=widget&layout=movies&design=new&rb=0&showId=80725"
               }
             ]
           }
@@ -1807,12 +1814,62 @@
               {
                 "time": "20:00",
                 "endTime": "21:55",
-                "movieId": 28,
+                "movieId": 33,
                 "movieTitle": "The Idea of You - Als du mich sahst",
                 "attributes": [
                   "Film & Psychoanalyse"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/79860?mode=widget&layout=movies&design=new&rb=0&showId=79860"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-17",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "21:38",
+                "movieId": 32,
+                "movieTitle": "Gagarin - Einmal schwerelos und zurück",
+                "attributes": [
+                  "Rewind"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80721?mode=widget&layout=movies&design=new&rb=0&showId=80721"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-07-20",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "11:30",
+                "endTime": "13:45",
+                "movieId": 25,
+                "movieTitle": "Little Women",
+                "attributes": [
+                  "Film & Faden"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80732?mode=widget&layout=movies&design=new&rb=0&showId=80732"
               }
             ]
           }
@@ -1832,7 +1889,7 @@
               {
                 "time": "19:30",
                 "endTime": "21:46",
-                "movieId": 47,
+                "movieId": 31,
                 "movieTitle": "Parthenope",
                 "attributes": [
                   "Rewind"
@@ -1857,7 +1914,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:25",
-                "movieId": 29,
+                "movieId": 40,
                 "movieTitle": "Flow",
                 "attributes": [
                   "Sommerferienprogramm"
@@ -1882,7 +1939,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:43",
-                "movieId": 30,
+                "movieId": 41,
                 "movieTitle": "Paddington in Peru",
                 "attributes": [
                   "Sommerferienprogramm"
@@ -1907,7 +1964,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:40",
-                "movieId": 31,
+                "movieId": 42,
                 "movieTitle": "Vaiana 2",
                 "attributes": [
                   "Sommerferienprogramm"
@@ -1932,12 +1989,32 @@
               {
                 "time": "18:00",
                 "endTime": "19:58",
-                "movieId": 32,
+                "movieId": 43,
                 "movieTitle": "Mufasa: Der König der Löwen",
                 "attributes": [
                   "Sommerferienprogramm"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74895?mode=widget&layout=movies&design=new&rb=0&showId=74895"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "22:05",
+                "movieId": 35,
+                "movieTitle": "Der weiße Hai",
+                "attributes": [
+                  "Best of Cinema"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80726?mode=widget&layout=movies&design=new&rb=0&showId=80726"
               }
             ]
           }
@@ -1957,7 +2034,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:40",
-                "movieId": 33,
+                "movieId": 44,
                 "movieTitle": "Die drei ??? und der Karpatenhund",
                 "attributes": [
                   "Sommerferienprogramm"
@@ -1982,7 +2059,7 @@
               {
                 "time": "18:00",
                 "endTime": "19:40",
-                "movieId": 34,
+                "movieId": 45,
                 "movieTitle": "Moon, Der Panda",
                 "attributes": [
                   "Sommerferienprogramm"
@@ -1996,23 +2073,23 @@
     ]
   },
   {
-    "date": "2025-08-08",
+    "date": "2025-09-02",
     "theaters": [
       {
-        "name": "Kino Blaue Brücke",
+        "name": "Kino Museum",
         "rooms": [
           {
-            "name": "Saal Tarantino",
+            "name": "Saal Coppola",
             "showings": [
               {
-                "time": "18:00",
-                "endTime": "20:05",
-                "movieId": 0,
-                "movieTitle": "Drachenzähmen leicht gemacht",
+                "time": "20:00",
+                "endTime": "22:16",
+                "movieId": 36,
+                "movieTitle": "Walk the Line",
                 "attributes": [
-                  "Sommerferienprogramm"
+                  "Best of Cinema"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74898?mode=widget&layout=movies&design=new&rb=0&showId=74898"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80727?mode=widget&layout=movies&design=new&rb=0&showId=80727"
               }
             ]
           }
@@ -2021,48 +2098,23 @@
     ]
   },
   {
-    "date": "2025-09-09",
+    "date": "2025-10-07",
     "theaters": [
       {
         "name": "Kino Museum",
         "rooms": [
           {
-            "name": "Saal Almodóvar",
+            "name": "Saal Coppola",
             "showings": [
               {
                 "time": "20:00",
-                "endTime": "22:30",
-                "movieId": 43,
-                "movieTitle": "Stand-Up Comedy Slam Tübingen",
+                "endTime": "21:33",
+                "movieId": 37,
+                "movieTitle": "Sie Leben",
                 "attributes": [
-                  "OmeU"
+                  "Best of Cinema"
                 ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-10-14",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 44,
-                "movieTitle": "Poetry Slam Tübingen",
-                "attributes": [
-                  "Poetry Slam"
-                ],
-                "iframeUrl": "Unknown iframe URL"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80728?mode=widget&layout=movies&design=new&rb=0&showId=80728"
               }
             ]
           }
@@ -2082,12 +2134,37 @@
               {
                 "time": "19:00",
                 "endTime": "21:45",
-                "movieId": 37,
-                "movieTitle": "Met Opera 2025/26: La Sonnambula - Bellini",
+                "movieId": 46,
+                "movieTitle": "MET Opera 2025/26: La Sonnambula - Bellini",
                 "attributes": [
                   "MET OPERA"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80620?mode=widget&layout=movies&design=new&rb=0&showId=80620"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "date": "2025-11-04",
+    "theaters": [
+      {
+        "name": "Kino Museum",
+        "rooms": [
+          {
+            "name": "Saal Coppola",
+            "showings": [
+              {
+                "time": "20:00",
+                "endTime": "21:58",
+                "movieId": 38,
+                "movieTitle": "Das Schweigen der Lämmer",
+                "attributes": [
+                  "Best of Cinema"
+                ],
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80729?mode=widget&layout=movies&design=new&rb=0&showId=80729"
               }
             ]
           }
@@ -2107,37 +2184,12 @@
               {
                 "time": "19:00",
                 "endTime": "22:30",
-                "movieId": 35,
+                "movieId": 47,
                 "movieTitle": "MET Opera 2025/26: La Bohème - Puccini",
                 "attributes": [
                   "MET OPERA"
                 ],
                 "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80621?mode=widget&layout=movies&design=new&rb=0&showId=80621"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-11-11",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:30",
-                "movieId": 43,
-                "movieTitle": "Stand-Up Comedy Slam Tübingen",
-                "attributes": [
-                  "OmeU"
-                ],
-                "iframeUrl": "Unknown iframe URL"
               }
             ]
           }
@@ -2157,7 +2209,7 @@
               {
                 "time": "19:00",
                 "endTime": "23:10",
-                "movieId": 36,
+                "movieId": 48,
                 "movieTitle": "MET Opera 2025/2026: Arabella",
                 "attributes": [
                   "MET OPERA"
@@ -2171,273 +2223,23 @@
     ]
   },
   {
-    "date": "2025-12-09",
+    "date": "2025-12-02",
     "theaters": [
       {
         "name": "Kino Museum",
         "rooms": [
           {
-            "name": "Saal Almodóvar",
+            "name": "Saal Coppola",
             "showings": [
               {
                 "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 44,
-                "movieTitle": "Poetry Slam Tübingen",
-                "attributes": [
-                  "Poetry Slam"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2025-12-13",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "19:00",
-                "endTime": "00:30",
-                "movieId": 42,
-                "movieTitle": "Met Opera 2025/26: Andrea Chénier - Giordano",
-                "attributes": [
-                  "MET OPERA"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80623?mode=widget&layout=movies&design=new&rb=0&showId=80623"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-01-10",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "19:00",
-                "endTime": "00:50",
+                "endTime": "21:55",
                 "movieId": 39,
-                "movieTitle": "MET Opera 2025/26: I Puritani - Bellini",
+                "movieTitle": "Charlie und die Schokoladenfabrik",
                 "attributes": [
-                  "MET OPERA"
+                  "Best of Cinema"
                 ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80624?mode=widget&layout=movies&design=new&rb=0&showId=80624"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-01-13",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:30",
-                "movieId": 43,
-                "movieTitle": "Stand-Up Comedy Slam Tübingen",
-                "attributes": [
-                  "OmeU"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-02-10",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 44,
-                "movieTitle": "Poetry Slam Tübingen",
-                "attributes": [
-                  "Poetry Slam"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-03-10",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:30",
-                "movieId": 43,
-                "movieTitle": "Stand-Up Comedy Slam Tübingen",
-                "attributes": [
-                  "OmeU"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-03-21",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "17:00",
-                "endTime": "22:10",
-                "movieId": 40,
-                "movieTitle": "Met Opera 2025/26 Wagner TRISTAN UND ISOLDE",
-                "attributes": [
-                  "MET OPERA"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80625?mode=widget&layout=movies&design=new&rb=0&showId=80625"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-04-14",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:00",
-                "movieId": 44,
-                "movieTitle": "Poetry Slam Tübingen",
-                "attributes": [
-                  "Poetry Slam"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-05-02",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "19:00",
-                "endTime": "23:05",
-                "movieId": 41,
-                "movieTitle": "Met Opera 2025/26: Eugene Onegin - Tchaikovsky",
-                "attributes": [
-                  "MET OPERA"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80626?mode=widget&layout=movies&design=new&rb=0&showId=80626"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-05-12",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Almodóvar",
-            "showings": [
-              {
-                "time": "20:00",
-                "endTime": "22:30",
-                "movieId": 43,
-                "movieTitle": "Stand-Up Comedy Slam Tübingen",
-                "attributes": [
-                  "OmeU"
-                ],
-                "iframeUrl": "Unknown iframe URL"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "date": "2026-05-30",
-    "theaters": [
-      {
-        "name": "Kino Museum",
-        "rooms": [
-          {
-            "name": "Saal Arsenal",
-            "showings": [
-              {
-                "time": "19:00",
-                "endTime": "21:50",
-                "movieId": 38,
-                "movieTitle": "Met Opera 2025/26 El Ultimo Sueno de Frida y Diegp",
-                "attributes": [
-                  "MET OPERA"
-                ],
-                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80627?mode=widget&layout=movies&design=new&rb=0&showId=80627"
+                "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80731?mode=widget&layout=movies&design=new&rb=0&showId=80731"
               }
             ]
           }
