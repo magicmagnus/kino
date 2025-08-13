@@ -1,5 +1,61 @@
 [
   {
+    "slug": "apero-film",
+    "name": "Apéro Film",
+    "dates": [
+      {
+        "date": "2025-08-20",
+        "theaters": [
+          {
+            "name": "Kino Museum",
+            "rooms": [
+              {
+                "name": "Saal Arsenal",
+                "showings": [
+                  {
+                    "time": "20:00",
+                    "endTime": "21:49",
+                    "movieId": 4,
+                    "attributes": [
+                      "Apéro Film",
+                      "OmdU"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/81049?mode=widget&layout=movies&design=new&rb=0&showId=81049"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-27",
+        "theaters": [
+          {
+            "name": "Kino Museum",
+            "rooms": [
+              {
+                "name": "Saal Arsenal",
+                "showings": [
+                  {
+                    "time": "20:00",
+                    "endTime": "22:00",
+                    "movieId": 14,
+                    "attributes": [
+                      "2D",
+                      "Apéro Film"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/81050?mode=widget&layout=movies&design=new&rb=0&showId=81050"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "best-of-cinema",
     "name": "Best of Cinema",
     "dates": [
@@ -15,12 +71,12 @@
                   {
                     "time": "20:00",
                     "endTime": "22:16",
-                    "movieId": 30,
+                    "movieId": 38,
                     "attributes": [
                       "2D",
                       "Best of Cinema"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80727?mode=widget&layout=movies&design=new&rb=0&showId=80727&sessid=s1v360bnt12c9msqech0t0vcmr"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80727?mode=widget&layout=movies&design=new&rb=0&showId=80727"
                   }
                 ]
               }
@@ -40,12 +96,12 @@
                   {
                     "time": "20:00",
                     "endTime": "21:33",
-                    "movieId": 31,
+                    "movieId": 39,
                     "attributes": [
                       "2D",
                       "Best of Cinema"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80728?mode=widget&layout=movies&design=new&rb=0&showId=80728&sessid=igkcir3an26cfktko11elaouc3"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80728?mode=widget&layout=movies&design=new&rb=0&showId=80728"
                   }
                 ]
               }
@@ -65,12 +121,12 @@
                   {
                     "time": "20:00",
                     "endTime": "21:58",
-                    "movieId": 32,
+                    "movieId": 40,
                     "attributes": [
                       "2D",
                       "Best of Cinema"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80729?mode=widget&layout=movies&design=new&rb=0&showId=80729&sessid=g9o1u6e5e051oq3nfla7de7tqq"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80729?mode=widget&layout=movies&design=new&rb=0&showId=80729"
                   }
                 ]
               }
@@ -90,12 +146,12 @@
                   {
                     "time": "20:00",
                     "endTime": "21:55",
-                    "movieId": 33,
+                    "movieId": 41,
                     "attributes": [
                       "2D",
                       "Best of Cinema"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80731?mode=widget&layout=movies&design=new&rb=0&showId=80731&sessid=s3bk5ime1bnnupkhl73v23o5ea"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80731?mode=widget&layout=movies&design=new&rb=0&showId=80731"
                   }
                 ]
               }
@@ -121,12 +177,12 @@
                   {
                     "time": "17:00",
                     "endTime": "03:08",
-                    "movieId": 25,
+                    "movieId": 32,
                     "attributes": [
                       "Filmmarathons",
                       "OmdU"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/10075654?mode=widget&layout=movies&design=new&rb=0&showId=10075654&sessid=osni866per4rm81dc73l6pb2q0"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/10075654?mode=widget&layout=movies&design=new&rb=0&showId=10075654"
                   }
                 ]
               }
@@ -152,12 +208,12 @@
                   {
                     "time": "19:30",
                     "endTime": "21:10",
-                    "movieId": 29,
+                    "movieId": 37,
                     "attributes": [
                       "2D",
                       "Live Events"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80837?mode=widget&layout=movies&design=new&rb=0&showId=80837&sessid=95krtf44cgpoeme8uci9mpc153"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80837?mode=widget&layout=movies&design=new&rb=0&showId=80837"
                   }
                 ]
               }
@@ -183,12 +239,12 @@
                   {
                     "time": "19:00",
                     "endTime": "21:45",
-                    "movieId": 34,
+                    "movieId": 42,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80620?mode=widget&layout=movies&design=new&rb=0&showId=80620&sessid=r8litemt3dbnkoqo0kjmdavufe"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80620?mode=widget&layout=movies&design=new&rb=0&showId=80620"
                   }
                 ]
               }
@@ -208,12 +264,12 @@
                   {
                     "time": "19:00",
                     "endTime": "22:30",
-                    "movieId": 35,
+                    "movieId": 43,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80621?mode=widget&layout=movies&design=new&rb=0&showId=80621&sessid=8m5qg9a470k2bfhqn0kok53c74"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80621?mode=widget&layout=movies&design=new&rb=0&showId=80621"
                   }
                 ]
               }
@@ -233,12 +289,12 @@
                   {
                     "time": "19:00",
                     "endTime": "23:10",
-                    "movieId": 36,
+                    "movieId": 44,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80622?mode=widget&layout=movies&design=new&rb=0&showId=80622&sessid=53msapkr7mu3501lk1nq56l7m4"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80622?mode=widget&layout=movies&design=new&rb=0&showId=80622"
                   }
                 ]
               }
@@ -258,12 +314,12 @@
                   {
                     "time": "19:00",
                     "endTime": "00:30",
-                    "movieId": 37,
+                    "movieId": 45,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80623?mode=widget&layout=movies&design=new&rb=0&showId=80623&sessid=ukgv9peqb9jtffq2hpdhfodv7f"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80623?mode=widget&layout=movies&design=new&rb=0&showId=80623"
                   }
                 ]
               }
@@ -283,12 +339,12 @@
                   {
                     "time": "19:00",
                     "endTime": "00:50",
-                    "movieId": 38,
+                    "movieId": 46,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80624?mode=widget&layout=movies&design=new&rb=0&showId=80624&sessid=87kt6b9ep9qac22fpvo24umlv9"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80624?mode=widget&layout=movies&design=new&rb=0&showId=80624"
                   }
                 ]
               }
@@ -308,37 +364,12 @@
                   {
                     "time": "17:00",
                     "endTime": "22:10",
-                    "movieId": 40,
+                    "movieId": 48,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80625?mode=widget&layout=movies&design=new&rb=0&showId=80625&sessid=9bopjovisee7q582t74ll2raje"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2026-05-02",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Arsenal",
-                "showings": [
-                  {
-                    "time": "19:00",
-                    "endTime": "23:05",
-                    "movieId": 41,
-                    "attributes": [
-                      "2D",
-                      "MET OPERA"
-                    ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80626?mode=widget&layout=movies&design=new&rb=0&showId=80626&sessid=tnc0lp91eft5bhj1hm86eu930p"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80625?mode=widget&layout=movies&design=new&rb=0&showId=80625"
                   }
                 ]
               }
@@ -358,143 +389,12 @@
                   {
                     "time": "19:00",
                     "endTime": "21:50",
-                    "movieId": 39,
+                    "movieId": 47,
                     "attributes": [
                       "2D",
                       "MET OPERA"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80627?mode=widget&layout=movies&design=new&rb=0&showId=80627&sessid=f1su43jkabhjhh8683jneo2kb7"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "poetry-slam",
-    "name": "Poetry Slam",
-    "dates": [
-      {
-        "date": "2025-10-14",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Almodóvar",
-                "showings": [
-                  {
-                    "time": "20:00",
-                    "endTime": "22:00",
-                    "movieId": 43,
-                    "attributes": [
-                      "2D",
-                      "Poetry Slam"
-                    ],
-                    "iframeUrl": "Unknown iframe URL"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2025-12-09",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Almodóvar",
-                "showings": [
-                  {
-                    "time": "20:00",
-                    "endTime": "22:00",
-                    "movieId": 43,
-                    "attributes": [
-                      "2D",
-                      "Poetry Slam"
-                    ],
-                    "iframeUrl": "Unknown iframe URL"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2026-02-10",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Almodóvar",
-                "showings": [
-                  {
-                    "time": "20:00",
-                    "endTime": "22:00",
-                    "movieId": 43,
-                    "attributes": [
-                      "2D",
-                      "Poetry Slam"
-                    ],
-                    "iframeUrl": "Unknown iframe URL"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2026-04-14",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Almodóvar",
-                "showings": [
-                  {
-                    "time": "20:00",
-                    "endTime": "22:00",
-                    "movieId": 43,
-                    "attributes": [
-                      "2D",
-                      "Poetry Slam"
-                    ],
-                    "iframeUrl": "Unknown iframe URL"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2026-06-09",
-        "theaters": [
-          {
-            "name": "Kino Museum",
-            "rooms": [
-              {
-                "name": "Saal Almodóvar",
-                "showings": [
-                  {
-                    "time": "20:00",
-                    "endTime": "22:00",
-                    "movieId": 43,
-                    "attributes": [
-                      "2D",
-                      "Poetry Slam"
-                    ],
-                    "iframeUrl": "Unknown iframe URL"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-museum-tuebingen/show/80627?mode=widget&layout=movies&design=new&rb=0&showId=80627"
                   }
                 ]
               }
@@ -509,82 +409,7 @@
     "name": "Sommerferienprogramm",
     "dates": [
       {
-        "date": "2025-08-06",
-        "theaters": [
-          {
-            "name": "Kino Blaue Brücke",
-            "rooms": [
-              {
-                "name": "Saal Tarantino",
-                "showings": [
-                  {
-                    "time": "18:00",
-                    "endTime": "19:40",
-                    "movieId": 23,
-                    "attributes": [
-                      "2D",
-                      "Sommerferienprogramm"
-                    ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74896?mode=widget&layout=movies&design=new&rb=0&showId=74896&sessid=mqi2scf9mha07evegul75tv1jv"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2025-08-07",
-        "theaters": [
-          {
-            "name": "Kino Blaue Brücke",
-            "rooms": [
-              {
-                "name": "Saal Tarantino",
-                "showings": [
-                  {
-                    "time": "18:00",
-                    "endTime": "19:40",
-                    "movieId": 24,
-                    "attributes": [
-                      "2D",
-                      "Sommerferienprogramm"
-                    ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74897?mode=widget&layout=movies&design=new&rb=0&showId=74897&sessid=osni866per4rm81dc73l6pb2q0"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2025-08-08",
-        "theaters": [
-          {
-            "name": "Kino Blaue Brücke",
-            "rooms": [
-              {
-                "name": "Saal Tarantino",
-                "showings": [
-                  {
-                    "time": "18:00",
-                    "endTime": "20:05",
-                    "movieId": 17,
-                    "attributes": [
-                      "2D",
-                      "Sommerferienprogramm"
-                    ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/74898?mode=widget&layout=movies&design=new&rb=0&showId=74898&sessid=h2br08ehk6qjc9ju95jc95k1sf"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2025-08-11",
+        "date": "2025-08-13",
         "theaters": [
           {
             "name": "Kino Blaue Brücke",
@@ -594,13 +419,138 @@
                 "showings": [
                   {
                     "time": "17:45",
-                    "endTime": "19:15",
-                    "movieId": 2,
+                    "endTime": "19:21",
+                    "movieId": 26,
                     "attributes": [
                       "2D",
                       "Sommerferienprogramm"
                     ],
-                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75750?mode=widget&layout=movies&design=new&rb=0&showId=75750&sessid=cuica8au9sk62so81hb9ke3b6p"
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75717?mode=widget&layout=movies&design=new&rb=0&showId=75717"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-14",
+        "theaters": [
+          {
+            "name": "Kino Blaue Brücke",
+            "rooms": [
+              {
+                "name": "Saal Kubrick",
+                "showings": [
+                  {
+                    "time": "18:00",
+                    "endTime": "19:40",
+                    "movieId": 27,
+                    "attributes": [
+                      "2D",
+                      "Sommerferienprogramm"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75827?mode=widget&layout=movies&design=new&rb=0&showId=75827"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-15",
+        "theaters": [
+          {
+            "name": "Kino Blaue Brücke",
+            "rooms": [
+              {
+                "name": "Saal Kubrick",
+                "showings": [
+                  {
+                    "time": "17:30",
+                    "endTime": "19:12",
+                    "movieId": 28,
+                    "attributes": [
+                      "2D",
+                      "Sommerferienprogramm"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75818?mode=widget&layout=movies&design=new&rb=0&showId=75818"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-18",
+        "theaters": [
+          {
+            "name": "Kino Blaue Brücke",
+            "rooms": [
+              {
+                "name": "Saal Kubrick",
+                "showings": [
+                  {
+                    "time": "18:00",
+                    "endTime": "19:35",
+                    "movieId": 29,
+                    "attributes": [
+                      "2D",
+                      "Sommerferienprogramm"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75842?mode=widget&layout=movies&design=new&rb=0&showId=75842"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-19",
+        "theaters": [
+          {
+            "name": "Kino Blaue Brücke",
+            "rooms": [
+              {
+                "name": "Saal Kubrick",
+                "showings": [
+                  {
+                    "time": "18:00",
+                    "endTime": "19:49",
+                    "movieId": 30,
+                    "attributes": [
+                      "2D",
+                      "Sommerferienprogramm"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75835?mode=widget&layout=movies&design=new&rb=0&showId=75835"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2025-08-20",
+        "theaters": [
+          {
+            "name": "Kino Blaue Brücke",
+            "rooms": [
+              {
+                "name": "Saal Kubrick",
+                "showings": [
+                  {
+                    "time": "18:00",
+                    "endTime": "19:15",
+                    "movieId": 31,
+                    "attributes": [
+                      "2D",
+                      "Sommerferienprogramm"
+                    ],
+                    "iframeUrl": "https://www.kinoheld.de/kino/tuebingen/kino-blaue-bruecke-tuebingen/show/75841?mode=widget&layout=movies&design=new&rb=0&showId=75841"
                   }
                 ]
               }
