@@ -13,30 +13,29 @@
             "src": "/web-app-manifest-512x512-maskable.png",
             "sizes": "512x512",
             "type": "image/png"
+        },
+        {
+            "purpose": "maskable",
+            "sizes": "1024x1024",
+            "src": "maskable_icon.png",
+            "type": "image/png"
         }
     ],
     "theme_color": "#e11d48",
     "background_color": "#09090b",
     "display": "standalone",
-    "display_override": [
-        "window-controls-overlay",
-        "standalone"
-    ],
+    "display_override": ["window-controls-overlay", "standalone"],
     "start_url": "https://kinoschurke.de/",
     "scope": "https://kinoschurke.de/",
     "orientation": "natural",
-    "categories": [
-        "education",
-        "entertainment",
-        "lifestyle"
-    ],
+    "categories": ["education", "entertainment", "lifestyle"],
     "splash_pages": null,
     "id": "/",
     "dir": "ltr",
     "shortcuts": [
         {
             "name": "Date",
-            "url": "/date",
+            "url": "/dates",
             "description": "Go to the Date page",
             "icons": [
                 {
@@ -53,7 +52,7 @@
         },
         {
             "name": "Room",
-            "url": "/room",
+            "url": "/rooms",
             "description": "Go to the Room page",
             "icons": [
                 {
@@ -70,7 +69,7 @@
         },
         {
             "name": "Movie",
-            "url": "/movie",
+            "url": "/movies",
             "description": "Go to the Movie Page",
             "icons": [
                 {
