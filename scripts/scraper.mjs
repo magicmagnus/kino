@@ -16,6 +16,15 @@ import {
     formatDateString,
 } from "./utils.mjs";
 
+// Parse command line arguments
+const args = process.argv.slice(2);
+const enableManualConfirmation =
+    args.includes("--manual") || args.includes("-m");
+
+console.log(
+    `Manual confirmation: ${enableManualConfirmation ? "ENABLED" : "DISABLED"}`,
+);
+
 //main function
 async function scrapeAllSites() {
     // create a new browser instance and a new page
@@ -115,9 +124,10 @@ async function scrapeAllSites() {
     console.log("\n\t4. Merging movieSchedules with movieAttributes ...\n");
 
     // Merge all properties of the same movie title from the two lists into one list
-    let moviesMerged = mergeMovieAttributesAndSchedules(
+    let moviesMerged = await mergeMovieAttributesAndSchedules(
         movieSchedules,
         movieAttributes,
+        enableManualConfirmation, // Enable manual confirmation?
     );
 
     console.log("\nMerged", moviesMerged.length, "into moviesMerged");
@@ -129,9 +139,10 @@ async function scrapeAllSites() {
     // ############################################################################################################
     console.log("\n\t5. Merging moviesMerged with moviePosterUrls...\n");
     for (const movie of moviesMerged) {
-        const closestTitle = findClosestMatch(
+        const closestTitle = await findClosestMatch(
             movie.title,
             moviePosterUrls.map((poster) => poster.title),
+            enableManualConfirmation, // Enable manual confirmation?
         );
         if (closestTitle) {
             const poster = moviePosterUrls.find(
@@ -626,33 +637,39 @@ async function scrapeMovieSchedules(page) {
  *
  * @param {Array<Object>} movieSchedules - An array of movie schedule entries.
  * @param {Array<Object>} movieAttributes - An array of movie attribute entries.
- * @returns {Array<Object>} An array of merged movie entries, each containing both schedule and attribute information.
+ * @returns {Promise<Array<Object>>} An array of merged movie entries, each containing both schedule and attribute information.
  */
-function mergeMovieAttributesAndSchedules(movieSchedules, movieAttributes) {
-    return movieSchedules.map((movieScheduleEntry, index) => {
-        const closestTitle = findClosestMatch(
+async function mergeMovieAttributesAndSchedules(
+    movieSchedules,
+    movieAttributes,
+    enableManualConfirmation = false,
+) {
+    const mergedMovies = [];
+
+    for (const [index, movieScheduleEntry] of movieSchedules.entries()) {
+        const closestTitle = await findClosestMatch(
             movieScheduleEntry.title,
             movieAttributes.map(
                 (movieAttributeEntry) => movieAttributeEntry.title,
             ),
+            enableManualConfirmation, // Enable manual confirmation?
         );
+
         if (closestTitle) {
             const movieInfo = movieAttributes.find(
                 (movieAttributeEntry) =>
                     movieAttributeEntry.title === closestTitle,
             );
-            // remove movieInfor from the list
-            // allMovieInfos = allMovieInfos.filter(info => info.title !== closestTitle);
-            return {
+            mergedMovies.push({
                 id: index,
                 ...movieInfo,
                 ...movieScheduleEntry,
                 attributes: movieScheduleEntry.attributes,
-            }; //, title: closestTitle }; // Merge the two entries, tak the title from the dates
+            });
         } else {
             // if we don't find a close match, keep the original entry
             // but some attributes only would be in the movieInfo, so we have to add them
-            return {
+            mergedMovies.push({
                 id: index,
                 ...movieScheduleEntry,
                 duration: "0",
@@ -664,12 +681,14 @@ function mergeMovieAttributesAndSchedules(movieSchedules, movieAttributes) {
                 distributor: "Unknown Distributor",
                 director: "Unknown Director",
                 description: "Unknown Description",
-                posterUrl: "/poster-template.jpg",
+                posterUrl: "/placeholder-poster.png",
                 trailerUrl: "Unknown Trailer URL",
                 actors: [],
-            };
+            });
         }
-    });
+    }
+
+    return mergedMovies;
 }
 
 /**

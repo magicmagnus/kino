@@ -1,7 +1,9 @@
 import levenshtein from "fast-levenshtein";
+import readline from "readline";
 
 // Constants
 export const SIMILARITY_THRESHOLD = 0.2;
+export const MANUAL_CONFIRMATION_THRESHOLD = 0.6; // New threshold for manual confirmation
 
 export const CINEMA_LAYOUT = {
     "Kino Blaue Brücke": {
@@ -183,35 +185,110 @@ function levenshteinSimilarity(title1, title2) {
  *
  * @param {string} title - The title to find the closest match for.
  * @param {string[]} titles - An array of titles to compare against.
- * @returns {string|null} - The closest matching title if the similarity score exceeds the threshold, otherwise null.
+ * @param {boolean} allowManualConfirmation - Whether to prompt user for manual confirmation when confidence is low.
+ * @returns {Promise<string|null>} - The closest matching title if the similarity score exceeds the threshold, otherwise null.
  */
-export function findClosestMatch(title, titles) {
-    let bestMatch = null;
-    let highestScore = 0;
+export async function findClosestMatch(
+    title,
+    titles,
+    allowManualConfirmation = false,
+) {
+    const matches = [];
 
+    // Calculate scores for all titles
     for (let t of titles) {
         let jaccard = weightedJaccardSimilarity(title, t);
         let levenshtein = levenshteinSimilarity(title, t);
-
-        // Adjust weights: More reliance on Jaccard, but Levenshtein still helps
         let score = 0.8 * jaccard + 0.2 * levenshtein;
 
-        if (score > highestScore) {
-            highestScore = score;
-            bestMatch = t;
-        }
+        matches.push({ title: t, score });
     }
+
+    // Sort by score descending
+    matches.sort((a, b) => b.score - a.score);
+
+    const bestMatch = matches[0];
 
     console.log(
         "Best match for",
         title,
         "is",
-        bestMatch,
+        bestMatch.title,
         "with a similarity of",
-        highestScore,
+        bestMatch.score,
     );
 
-    return highestScore > SIMILARITY_THRESHOLD ? bestMatch : null;
+    // If manual confirmation is enabled and score is below manual confirmation threshold
+    if (
+        allowManualConfirmation &&
+        bestMatch.score < MANUAL_CONFIRMATION_THRESHOLD
+    ) {
+        console.log(`\nLow confidence match for: "${title}"`);
+        console.log(
+            `Best algorithmic match: "${bestMatch.title}" (score: ${bestMatch.score.toFixed(3)})`,
+        );
+        console.log("\nTop 10 closest matches:");
+
+        const top10 = matches.slice(0, 10);
+        top10.forEach((match, index) => {
+            console.log(
+                `${index + 1}. ${match.title} (score: ${match.score.toFixed(3)})`,
+            );
+        });
+
+        console.log("0. None of the above / Skip");
+
+        const userChoice = await promptUserChoice(top10.length);
+
+        if (userChoice === 0) {
+            console.log("Skipping this match.\n");
+            return null;
+        } else {
+            const selectedMatch = top10[userChoice - 1];
+            console.log(`Selected: "${selectedMatch.title}"\n`);
+            return selectedMatch.title;
+        }
+    }
+
+    // If score is below SIMILARITY_THRESHOLD, return null
+    else if (bestMatch.score <= SIMILARITY_THRESHOLD) {
+        return null;
+    }
+
+    return bestMatch.score > SIMILARITY_THRESHOLD ? bestMatch.title : null;
+}
+
+/**
+ * Prompts the user to select a choice from 0 to maxChoice.
+ *
+ * @param {number} maxChoice - The maximum choice number available
+ * @returns {Promise<number>} - The user's choice as a number
+ */
+async function promptUserChoice(maxChoice) {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    return new Promise((resolve) => {
+        const askQuestion = () => {
+            rl.question(`\nSelect option (0-${maxChoice}): `, (answer) => {
+                const choice = parseInt(answer.trim());
+
+                if (isNaN(choice) || choice < 0 || choice > maxChoice) {
+                    console.log(
+                        `Please enter a number between 0 and ${maxChoice}.`,
+                    );
+                    askQuestion();
+                } else {
+                    rl.close();
+                    resolve(choice);
+                }
+            });
+        };
+
+        askQuestion();
+    });
 }
 
 /**
