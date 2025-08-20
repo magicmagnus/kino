@@ -71,6 +71,12 @@ async function scrapeAllSites() {
     // for (const moviePoster of moviePosterUrls) {
     //     console.log("Movie Poster URL:", moviePoster.title);
     // }
+    console.log("\n\tSaving data to file...\n");
+    await fs.writeFile(
+        "src/data/moviePosterUrls.json",
+        JSON.stringify(moviePosterUrls, null, 2),
+        "utf-8",
+    );
 
     // ############################################################################################################
 
@@ -92,6 +98,13 @@ async function scrapeAllSites() {
 
     // log the forst element of the movieAttributes
     console.log("\nFirst movieAttributes element:\n\n", movieAttributes[0]);
+
+    // Save movieAttributes to file
+    await fs.writeFile(
+        "src/data/movieAttributes.json",
+        JSON.stringify(movieAttributes, null, 2),
+        "utf-8",
+    );
 
     // ############################################################################################################
 
@@ -116,64 +129,71 @@ async function scrapeAllSites() {
         movieSchedules[0].showtimes[0],
     );
 
-    // ############################################################################################################
-
-    // 4. merge movieSchedules (main) with movieAttributes (extension)
-
-    // ############################################################################################################
-    console.log("\n\t4. Merging movieSchedules with movieAttributes ...\n");
-
-    // Merge all properties of the same movie title from the two lists into one list
-    let moviesMerged = await mergeMovieAttributesAndSchedules(
-        movieSchedules,
-        movieAttributes,
-        enableManualConfirmation, // Enable manual confirmation?
+    // Save movieSchedules to file
+    await fs.writeFile(
+        "src/data/movieSchedules.json",
+        JSON.stringify(movieSchedules, null, 2),
+        "utf-8",
     );
 
-    console.log("\nMerged", moviesMerged.length, "into moviesMerged");
-
     // ############################################################################################################
 
-    // 5. merge moviesMerged (main) with moviePosterUrls (extension)
+    // // 4. merge movieSchedules (main) with movieAttributes (extension)
 
-    // ############################################################################################################
-    console.log("\n\t5. Merging moviesMerged with moviePosterUrls...\n");
-    for (const movie of moviesMerged) {
-        const closestTitle = await findClosestMatch(
-            movie.title,
-            moviePosterUrls.map((poster) => poster.title),
-            enableManualConfirmation, // Enable manual confirmation?
-        );
-        if (closestTitle) {
-            const poster = moviePosterUrls.find(
-                (poster) => poster.title === closestTitle,
-            );
-            // remove poster from the list
-            // moviePosters = moviePosters.filter(p => p.title !== closestTitle);
-            movie.posterUrl = poster.src;
-        }
-    }
+    // // ############################################################################################################
+    // console.log("\n\t4. Merging movieSchedules with movieAttributes ...\n");
+
+    // // Merge all properties of the same movie title from the two lists into one list
+    // let moviesMerged = await mergeMovieAttributesAndSchedules(
+    //     movieSchedules,
+    //     movieAttributes,
+    //     enableManualConfirmation, // Enable manual confirmation?
+    // );
+
+    // console.log("\nMerged", moviesMerged.length, "into moviesMerged");
+
+    // // ############################################################################################################
+
+    // // 5. merge moviesMerged (main) with moviePosterUrls (extension)
+
+    // // ############################################################################################################
+    // console.log("\n\t5. Merging moviesMerged with moviePosterUrls...\n");
+    // for (const movie of moviesMerged) {
+    //     const closestTitle = await findClosestMatch(
+    //         movie.title,
+    //         moviePosterUrls.map((poster) => poster.title),
+    //         enableManualConfirmation, // Enable manual confirmation?
+    //     );
+    //     if (closestTitle) {
+    //         const poster = moviePosterUrls.find(
+    //             (poster) => poster.title === closestTitle,
+    //         );
+    //         // remove poster from the list
+    //         // moviePosters = moviePosters.filter(p => p.title !== closestTitle);
+    //         movie.posterUrl = poster.src;
+    //     }
+    // }
     await browser.close();
 
-    console.log(
-        "\nMerged",
-        moviesMerged.length,
-        "into moviesMerged with added poster URLs",
-    );
+    // console.log(
+    //     "\nMerged",
+    //     moviesMerged.length,
+    //     "into moviesMerged with added poster URLs",
+    // );
 
-    // ############################################################################################################
+    // // ############################################################################################################
 
-    // 6. save the data to a file
+    // // 6. save the data to a file
 
-    // ############################################################################################################
-    console.log("\n\t6. Saving data to file...\n");
-    await fs.writeFile(
-        "src/data/source_movie_data.json",
-        JSON.stringify(moviesMerged, null, 2),
-    );
-    console.log(
-        'Data has been scraped and saved to "data/source_movie_data.json"',
-    );
+    // // ############################################################################################################
+    // console.log("\n\t6. Saving data to file...\n");
+    // await fs.writeFile(
+    //     "src/data/source_movie_data.json",
+    //     JSON.stringify(moviesMerged, null, 2),
+    // );
+    // console.log(
+    //     'Data has been scraped and saved to "data/source_movie_data.json"',
+    // );
 }
 
 // Run the main function
@@ -449,9 +469,11 @@ async function scrapeMovieSchedules(page) {
                     movieItem.querySelector(".title")?.textContent.trim() ||
                     "Unknown Title";
                 const attributes = await window.formatOmduInAttributes(
-                    Array.from(movieItem.querySelectorAll(".attribute")).map(
-                        (attr) => attr.textContent.trim(),
-                    ),
+                    Array.from(
+                        movieItem.querySelectorAll(
+                            ".attribute-logo, .attribute-name",
+                        ),
+                    ).map((attr) => attr.textContent.trim()),
                 );
                 const duration =
                     movieItem.querySelector(".minutes")?.textContent.trim() ||

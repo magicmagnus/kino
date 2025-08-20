@@ -41,6 +41,15 @@ jobs:
               run: |
                   xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" node scripts/scraper.mjs
 
+            - name: Setup python env
+              run: |
+                  sudo apt-get update
+                  sudo apt-get install -y python3 python3-pip
+                  pip3 install -r requirements.txt
+
+            - name: Merge data
+              run: python scripts/matcher.py
+
             - name: Transform data
               run: node scripts/transformData.mjs
 
