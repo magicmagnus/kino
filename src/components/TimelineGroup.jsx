@@ -31,7 +31,7 @@ const TimelineGroup = (props) => {
                     {/* could be theater name or date name */}
                     {parentGroupType === "theater"
                         ? groupElement.name
-                        : formatDateString(groupElement.date)}
+                        : formatDateString(groupElement.date, true, "long")}
                 </h1>
             </div>
             {/* loop over all schedules of the elements */}
@@ -60,7 +60,10 @@ const TimelineGroup = (props) => {
                             schedule={room}
                             scheduleIdx={roomIdx}
                             isFirst={roomIdx === 0}
-                            isLast={roomIdx === theater.rooms.length - 1}
+                            isLast={
+                                roomIdx === theater.rooms.length - 1 &&
+                                theaterIdx === groupedList.length - 1
+                            }
                             title={room.name}
                             showCard={showCard}
                             setShowCard={setShowCard}

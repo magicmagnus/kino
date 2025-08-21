@@ -19,31 +19,40 @@ export const timeToPixels = (time) => {
     return (hoursFromStart * 60 + minutes) * (HOUR_WIDTH / 60);
 };
 
-export const formatDateString = (date) => {
+export const formatDateString = (
+    date,
+    addNumbersToToday = false,
+    weekdayFormat = "short",
+) => {
     let dateObj = new Date(date);
     let today = new Date();
     let tomorrow = new Date(today);
     tomorrow.setDate(today.getDate() + 1);
 
+    let formattedDate = dateObj.toLocaleDateString("de-DE", {
+        month: "numeric",
+        day: "numeric",
+    });
+
     if (date === TODAY_FORMATTED) {
-        return "Heute";
+        return addNumbersToToday ? `Heute, ${formattedDate}` : "Heute";
     } else if (
         dateObj.getDate() === tomorrow.getDate() &&
         dateObj.getMonth() === tomorrow.getMonth() &&
         dateObj.getFullYear() === tomorrow.getFullYear()
     ) {
-        return "Morgen";
+        return addNumbersToToday ? `Morgen, ${formattedDate}` : "Morgen";
     }
 
     return dateObj.toLocaleDateString("de-DE", {
-        weekday: "short",
+        weekday: weekdayFormat,
         month: "numeric",
         day: "numeric",
     });
 };
 
 export const containsOmdu = (attributes) => {
-    return attributes.includes("OmdU")
+    return attributes.includes("OmdU") || attributes.includes("OmU")
         ? "OmdU"
         : attributes.includes("OmeU")
           ? "OmeU"
@@ -59,6 +68,7 @@ export const getOtherAttribute = (attributes) => {
             attribute !== "3D" &&
             attribute !== "OmdU" &&
             attribute !== "OmeU" &&
+            attribute !== "OmU" &&
             attribute !== "OV",
     )[0];
 };

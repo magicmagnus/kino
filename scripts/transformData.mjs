@@ -49,9 +49,9 @@ function getFilteredEvents(attributes) {
     const eventBlacklist = [
         "2D",
         "3D",
-        "OmdU",
-        "OmeU",
-        "OV",
+        // "OmdU",
+        // "OmeU",
+        // "OV",
         "Dolby Atmos",
         "IMAX",
     ];

@@ -67,7 +67,7 @@ const DatePage = () => {
                         onClick={() => setSelectedDate(date.date)}
                         key={dateIndex}
                         selected={date.date === selectedDate}
-                        text={formatDateString(date.date)}
+                        text={formatDateString(date.date, true)}
                     />
                 ))}
             </TopSection>

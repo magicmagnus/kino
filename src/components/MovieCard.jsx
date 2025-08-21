@@ -162,7 +162,7 @@ const MovieCard = (props) => {
                             <div>
                                 <p className="text-xs font-semibold text-neutral-100">
                                     Vorstellung:{" "}
-                                    {formatDateString(showCard.date)} -{" "}
+                                    {formatDateString(showCard.date, true)} -{" "}
                                     {showCard.show.time}h:
                                 </p>
                             </div>
