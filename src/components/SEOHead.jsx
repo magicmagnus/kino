@@ -6,6 +6,7 @@ const SEOHead = ({
     image = "https://kinoschurke.de/preview_image.png",
     url,
     movieTitle,
+    movieSlug,
     eventName,
     roomName,
     date,
@@ -13,11 +14,16 @@ const SEOHead = ({
     // Generate dynamic content based on props
     let pageTitle = title;
     let pageDescription = description;
-    let pageUrl = url || window.location.href;
+    let pageUrl =
+        url || (typeof window !== "undefined" ? window.location.href : "");
+    let ogImage = image;
+    let squareImage = "https://kinoschurke.de/preview_image_sq.png";
 
-    if (movieTitle) {
+    if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
         pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübinger Kinos.`;
+        ogImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.jpg`;
+        squareImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.jpg`;
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
@@ -39,7 +45,7 @@ const SEOHead = ({
             <meta property="og:type" content="website" />
             <meta property="og:title" content={pageTitle} />
             <meta property="og:description" content={pageDescription} />
-            <meta property="og:image" content={image} />
+            <meta property="og:image" content={ogImage} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
 
@@ -49,13 +55,10 @@ const SEOHead = ({
             <meta property="twitter:url" content={pageUrl} />
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={pageDescription} />
-            <meta name="twitter:image" content={image} />
+            <meta name="twitter:image" content={ogImage} />
 
             {/* WhatsApp square image */}
-            <meta
-                property="og:image"
-                content="https://kinoschurke.de/preview_image_sq.png"
-            />
+            <meta property="og:image" content={squareImage} />
             <meta property="og:image:width" content="600" />
             <meta property="og:image:height" content="600" />
         </Helmet>

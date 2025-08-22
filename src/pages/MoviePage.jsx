@@ -67,6 +67,7 @@ const MoviePage = () => {
             <SEOHead
                 movieTitle={movieData.title}
                 url={`https://kinoschurke.de/movies/${selectedMovie}`}
+                movieSlug={selectedMovie}
             />
             <TopSection date={firstDate} movieData={movieData}>
                 {/* Movie selection buttons */}
