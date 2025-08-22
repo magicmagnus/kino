@@ -69,6 +69,11 @@ const SEOHead = ({
                 }
             />
 
+            {/* WhatsApp square image */}
+            <meta property="og:image" content={twitterImage} />
+            <meta property="og:image:width" content="600" />
+            <meta property="og:image:height" content="600" />
+
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta property="twitter:domain" content="kinoschurke.de" />

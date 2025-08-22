@@ -50,6 +50,11 @@ jobs:
             - name: Merge data
               run: python scripts/matcher.py
 
+            - name: refresh posters
+              run: |
+                  rm -rf src/data/posters/*
+                  python scripts/getPosters.py
+
             - name: Transform data
               run: node scripts/transformData.mjs
 
