@@ -22,10 +22,10 @@ const SEOHead = ({
     if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
         pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübinger Kinos.`;
-        // Use the landscape image as primary (better for most platforms)
-        primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.jpg`;
-        // Use square for Twitter which works better with their card format
-        twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.jpg`;
+        // Use the landscape image as primary (better for most platforms) - now PNG
+        primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.png`;
+        // Use square for Twitter which works better with their card format - now PNG
+        twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.png`;
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
@@ -50,15 +50,9 @@ const SEOHead = ({
 
             {/* Single primary OG image */}
             <meta property="og:image" content={primaryImage} />
-            <meta property="og:image:type" content="image/jpeg" />
-            <meta
-                property="og:image:width"
-                content={movieTitle && movieSlug ? "1200" : "1200"}
-            />
-            <meta
-                property="og:image:height"
-                content={movieTitle && movieSlug ? "630" : "630"}
-            />
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
             <meta
                 property="og:image:alt"
                 content={

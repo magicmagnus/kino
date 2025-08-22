@@ -125,13 +125,13 @@ def create_poster_variants(poster_path, slug, variants_dir):
 
             # Create Open Graph variant (1200x630)
             og_variant = create_og_variant(img, slug)
-            og_path = os.path.join(og_dir, f"{slug}.jpg")
-            og_variant.save(og_path, "JPEG", quality=90)
+            og_path = os.path.join(og_dir, f"{slug}.png")  # Changed to .png
+            og_variant.save(og_path, "PNG", quality=95)  # Changed to PNG format
 
             # Create square variant (600x600)
             square_variant = create_square_variant(img, slug)
-            square_path = os.path.join(square_dir, f"{slug}.jpg")
-            square_variant.save(square_path, "JPEG", quality=90)
+            square_path = os.path.join(square_dir, f"{slug}.png")  # Changed to .png
+            square_variant.save(square_path, "PNG", quality=95)  # Changed to PNG format
 
             print(f"✓ Created variants for: {slug}")
             return True
