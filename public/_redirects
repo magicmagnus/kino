@@ -1,0 +1,11 @@
+# Don't redirect static assets - serve directly
+/poster-variants/* 200!
+/preview_image.png 200!
+/preview_image_sq.png 200!
+/*.png 200!
+/*.jpg 200!
+/*.jpeg 200!
+/*.webp 200!
+
+# Redirect www to non-www for everything else
+https://www.kinoschurke.de/* https://kinoschurke.de/:splat 301!

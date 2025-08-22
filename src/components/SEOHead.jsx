@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 const SEOHead = ({
     title = "Kinoschurke",
     description = "Das Programm der Tübinger Kinos, in Timelines für einen schnellen Überblick.",
-    image = "/preview_image.png",
+    image = "https://kinoschurke.de/preview_image.png",
     url,
     movieTitle,
     movieSlug,
@@ -17,18 +17,25 @@ const SEOHead = ({
     let pageUrl =
         url || (typeof window !== "undefined" ? window.location.href : "");
     let primaryImage = image;
-    let twitterImage = "/preview_image_sq.png";
+    let twitterImage = "https://kinoschurke.de/preview_image_sq.png";
 
     if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
-        pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübinger Kinos.`;
-        // Use the landscape image as primary (better for most platforms) - now PNG
-        primaryImage = `/poster-variants/og/${movieSlug}.png`;
-        // Use square for Twitter which works better with their card format - now PNG
-        twitterImage = `/poster-variants/square/${movieSlug}.png`;
+        pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübingen.`;
+        // Use the same domain as your primary domain (no www)
+        primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.png`;
+        twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.png`;
+
+        // Debug logging
+        console.log("SEO Debug:", {
+            movieTitle,
+            movieSlug,
+            primaryImage,
+            twitterImage,
+        });
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
-        pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
+        pageDescription = `Alle "${eventName}" Vorstellungen in Tübingen.`;
     } else if (roomName) {
         pageTitle = `${roomName} - Kinoschurke`;
         pageDescription = `Das Kinoprogramm für ${roomName} in Tübingen.`;
