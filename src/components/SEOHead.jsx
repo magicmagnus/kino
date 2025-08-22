@@ -45,6 +45,13 @@ const SEOHead = ({
             <meta property="og:type" content="website" />
             <meta property="og:title" content={pageTitle} />
             <meta property="og:description" content={pageDescription} />
+
+            {/* Primary OG image - use square for better compatibility */}
+            <meta property="og:image" content={squareImage} />
+            <meta property="og:image:width" content="600" />
+            <meta property="og:image:height" content="600" />
+
+            {/* Secondary OG image - landscape for platforms that support it */}
             <meta property="og:image" content={ogImage} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
@@ -56,11 +63,6 @@ const SEOHead = ({
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={pageDescription} />
             <meta name="twitter:image" content={ogImage} />
-
-            {/* WhatsApp square image */}
-            <meta property="og:image" content={squareImage} />
-            <meta property="og:image:width" content="600" />
-            <meta property="og:image:height" content="600" />
         </Helmet>
     );
 };
