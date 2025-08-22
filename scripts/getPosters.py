@@ -97,7 +97,7 @@ import os
 from pathlib import Path
 from urllib.parse import urlparse
 import time
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import io
 
 
@@ -164,8 +164,8 @@ def create_og_variant(img, slug):
     y_offset = (target_height - new_height) // 2
     background.paste(resized, (x_offset, y_offset))
 
-    # Add subtle branding
-    add_branding(background, "kinoschurke.de", position="bottom-right", size="small")
+    # Add logo with drop shadow - use square logo for OG variant
+    add_logo(background, position="bottom-left", size=300, variant_type="og")
 
     return background
 
@@ -185,15 +185,136 @@ def create_square_variant(img, slug):
     # Resize the main image while preserving aspect ratio
     resized = img.resize((new_width, new_height), Image.Resampling.LANCZOS)
 
-    # Center the resized image on the blurred background
-    x_offset = (target_size - new_width) // 2
+    # Center the resized image on the blurred background between the logo on the left and the right edge
+    logo_width = int(target_size * 0.47619047619047616 * 0.56)  # Half of the logo width
+    x_offset = ((target_size - new_width) // 2) + logo_width // 2
     y_offset = (target_size - new_height) // 2
     background.paste(resized, (x_offset, y_offset))
 
-    # Add subtle branding
-    add_branding(background, "kinoschurke.de", position="bottom-right", size="small")
+    # Add logo - use cropped and rotated preview_image.png for square variant
+    add_logo(
+        background, position="bottom-left", size=target_size, variant_type="square"
+    )
 
     return background
+
+
+def add_logo(canvas, position="bottom-left", size=60, variant_type="og"):
+    """Adds the logo to the image - different logos for different variants"""
+    try:
+        if variant_type == "square":
+            # For square variant: use preview_image.png, crop to half height, rotate 90°
+            logo_paths = [
+                "public/preview_image.png",
+                "preview_image.png",
+                "../public/preview_image.png",
+            ]
+        else:
+            # For OG variant: use preview_image_sq.png as before
+            logo_paths = [
+                "public/preview_image_sq.png",
+                "preview_image_sq.png",
+                "src/assets/preview_image_sq.png",
+                "../public/preview_image_sq.png",
+            ]
+
+        logo_path = None
+        for path in logo_paths:
+            if os.path.exists(path):
+                logo_path = path
+                break
+
+        if not logo_path:
+            print(f"Warning: Could not find logo file for {variant_type} variant")
+            return
+
+        # Open and process the logo
+        with Image.open(logo_path) as logo:
+            # Convert to RGBA to handle transparency
+            if logo.mode != "RGBA":
+                logo = logo.convert("RGBA")
+
+            if variant_type == "square":
+                # Rotate 90 degrees clockwise
+                logo = logo.rotate(90, expand=True)
+
+                # Crop to half height (top half)
+
+                logo = logo.resize(
+                    (int(size * 0.47619047619047616), size), Image.Resampling.LANCZOS
+                )
+
+                # Crop to the middle 20% of the width
+                left = int(logo.width * 0.22)
+                right = int(logo.width * 0.78)
+                logo = logo.crop((left, 0, right, logo.height))
+
+                canvas.paste(logo, (0, 0), logo)
+
+            else:
+                # Resize the logo
+                logo = logo.resize((size, size), Image.Resampling.LANCZOS)
+
+                # Calculate position
+                padding = 15
+                if position == "bottom-left":
+                    x = padding
+                    y = canvas.height - size - padding
+                elif position == "bottom-right":
+                    x = canvas.width - size - padding
+                    y = canvas.height - size - padding
+                elif position == "top-left":
+                    x = padding
+                    y = padding
+                else:  # top-right
+                    x = canvas.width - size - padding
+                    y = padding
+
+                # Paste the logo
+                canvas.paste(logo, (x, y), logo)  # Use logo as mask for transparency
+
+    except Exception as e:
+        print(f"Warning: Could not add logo: {e}")
+
+
+def add_branding(canvas, text, position="bottom-right", size="small"):
+    """Adds subtle branding text to the image"""
+    try:
+        draw = ImageDraw.Draw(canvas)
+
+        # Try to use a nice font, fall back to default if not available
+        try:
+            font_size = 16 if size == "small" else 24
+            font = ImageFont.truetype("arial.ttf", font_size)
+        except:
+            font = ImageFont.load_default()
+
+        # Get text size
+        bbox = draw.textbbox((0, 0), text, font=font)
+        text_width = bbox[2] - bbox[0]
+        text_height = bbox[3] - bbox[1]
+
+        # Calculate position
+        padding = 15  # Increased padding to account for logo
+        if position == "bottom-right":
+            x = canvas.width - text_width - padding
+            y = canvas.height - text_height - padding
+        elif position == "bottom-left":
+            x = padding + 70  # Extra space to avoid logo
+            y = canvas.height - text_height - padding
+        else:
+            x = padding
+            y = padding
+
+        # Draw text with shadow for better visibility
+        shadow_offset = 1
+        draw.text(
+            (x + shadow_offset, y + shadow_offset), text, font=font, fill=(0, 0, 0, 128)
+        )
+        draw.text((x, y), text, font=font, fill=(255, 255, 255, 200))
+
+    except Exception as e:
+        print(f"Warning: Could not add branding: {e}")
 
 
 def create_blurred_background(img, target_width, target_height):
@@ -236,46 +357,6 @@ def create_blurred_background(img, target_width, target_height):
     background = enhancer.enhance(0.3)  # Make it 30% as bright (70% darker)
 
     return background
-
-
-def add_branding(canvas, text, position="bottom-right", size="small"):
-    """Adds subtle branding to the image"""
-    try:
-        draw = ImageDraw.Draw(canvas)
-
-        # Try to use a nice font, fall back to default if not available
-        try:
-            font_size = 16 if size == "small" else 24
-            font = ImageFont.truetype("arial.ttf", font_size)
-        except:
-            font = ImageFont.load_default()
-
-        # Get text size
-        bbox = draw.textbbox((0, 0), text, font=font)
-        text_width = bbox[2] - bbox[0]
-        text_height = bbox[3] - bbox[1]
-
-        # Calculate position
-        padding = 10
-        if position == "bottom-right":
-            x = canvas.width - text_width - padding
-            y = canvas.height - text_height - padding
-        elif position == "bottom-left":
-            x = padding
-            y = canvas.height - text_height - padding
-        else:
-            x = padding
-            y = padding
-
-        # Draw text with shadow for better visibility
-        shadow_offset = 1
-        draw.text(
-            (x + shadow_offset, y + shadow_offset), text, font=font, fill=(0, 0, 0, 128)
-        )
-        draw.text((x, y), text, font=font, fill=(255, 255, 255, 200))
-
-    except Exception as e:
-        print(f"Warning: Could not add branding: {e}")
 
 
 def process_all_posters_for_variants(posters_dir, variants_dir):
