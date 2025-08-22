@@ -16,14 +16,16 @@ const SEOHead = ({
     let pageDescription = description;
     let pageUrl =
         url || (typeof window !== "undefined" ? window.location.href : "");
-    let ogImage = image;
-    let squareImage = "https://kinoschurke.de/preview_image_sq.png";
+    let primaryImage = image;
+    let twitterImage = image;
 
     if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
         pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübinger Kinos.`;
-        ogImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.jpg`;
-        squareImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.jpg`;
+        // Use the landscape image as primary (better for most platforms)
+        primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.jpg`;
+        // Use square for Twitter which works better with their card format
+        twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.jpg`;
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
@@ -46,15 +48,25 @@ const SEOHead = ({
             <meta property="og:title" content={pageTitle} />
             <meta property="og:description" content={pageDescription} />
 
-            {/* Primary OG image - use square for better compatibility */}
-            <meta property="og:image" content={squareImage} />
-            <meta property="og:image:width" content="600" />
-            <meta property="og:image:height" content="600" />
-
-            {/* Secondary OG image - landscape for platforms that support it */}
-            <meta property="og:image" content={ogImage} />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
+            {/* Single primary OG image */}
+            <meta property="og:image" content={primaryImage} />
+            <meta property="og:image:type" content="image/jpeg" />
+            <meta
+                property="og:image:width"
+                content={movieTitle && movieSlug ? "1200" : "1200"}
+            />
+            <meta
+                property="og:image:height"
+                content={movieTitle && movieSlug ? "630" : "630"}
+            />
+            <meta
+                property="og:image:alt"
+                content={
+                    movieTitle
+                        ? `${movieTitle} Poster`
+                        : "Kinoschurke - Tübinger Kinoprogramm"
+                }
+            />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
@@ -62,7 +74,15 @@ const SEOHead = ({
             <meta property="twitter:url" content={pageUrl} />
             <meta name="twitter:title" content={pageTitle} />
             <meta name="twitter:description" content={pageDescription} />
-            <meta name="twitter:image" content={ogImage} />
+            <meta name="twitter:image" content={twitterImage} />
+            <meta
+                name="twitter:image:alt"
+                content={
+                    movieTitle
+                        ? `${movieTitle} Poster`
+                        : "Kinoschurke - Tübinger Kinoprogramm"
+                }
+            />
         </Helmet>
     );
 };
