@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 const SEOHead = ({
     title = "Kinoschurke",
     description = "Das Programm der Tübinger Kinos, in Timelines für einen schnellen Überblick.",
-    image = "https://kinoschurke.de/preview_image.png",
+    image = "https://www.kinoschurke.de/preview_image.png",
     url,
     movieTitle,
     movieSlug,
@@ -17,15 +17,15 @@ const SEOHead = ({
     let pageUrl =
         url || (typeof window !== "undefined" ? window.location.href : "");
     let primaryImage = image;
-    let twitterImage = image;
+    let twitterImage = "https://www.kinoschurke.de/preview_image_sq.png";
 
     if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
         pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübinger Kinos.`;
         // Use the landscape image as primary (better for most platforms) - now PNG
-        primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.png`;
+        primaryImage = `https://www.kinoschurke.de/poster-variants/og/${movieSlug}.png`;
         // Use square for Twitter which works better with their card format - now PNG
-        twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.png`;
+        twitterImage = `https://www.kinoschurke.de/poster-variants/square/${movieSlug}.png`;
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübinger Kinos.`;
