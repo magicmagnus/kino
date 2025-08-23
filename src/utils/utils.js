@@ -19,6 +19,17 @@ export const timeToPixels = (time) => {
     return (hoursFromStart * 60 + minutes) * (HOUR_WIDTH / 60);
 };
 
+export const isDateTodayOrTomorrow = (date) => {
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    return (
+        date === TODAY_FORMATTED ||
+        date === tomorrow.toISOString().split("T")[0]
+    );
+};
+
 export const formatDateString = (
     date,
     addNumbersToToday = false,

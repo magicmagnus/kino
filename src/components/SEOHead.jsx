@@ -1,4 +1,6 @@
 import { Helmet } from "react-helmet-async";
+import { useShowParameter } from "../hooks/useShowParameter";
+import { formatDateString, isDateTodayOrTomorrow } from "../utils/utils";
 
 const SEOHead = ({
     title = "Kinoschurke",
@@ -11,28 +13,41 @@ const SEOHead = ({
     roomName,
     date,
 }) => {
+    // Get show data from URL parameter
+    const showData = useShowParameter();
+
     // Generate dynamic content based on props
     let pageTitle = title;
     let pageDescription = description;
-    let pageUrl =
-        url || (typeof window !== "undefined" ? window.location.href : "");
+    let pageUrl = typeof window !== "undefined" ? window.location.href : "";
     let primaryImage = image;
     let twitterImage = "https://kinoschurke.de/preview_image_sq.png";
 
-    if (movieTitle && movieSlug) {
+    // Priority 1: If there's a show parameter, use the movie from that show
+    if (showData && showData.movieInfo) {
+        const showMovieTitle = showData.movieInfo.title;
+        const showMovieSlug = showData.movieInfo.slug;
+
+        const useFillerWord = !isDateTodayOrTomorrow(showData.date);
+        const formattedDate = formatDateString(showData.date);
+
+        pageTitle = `${showMovieTitle} - Kinoschurke`;
+        pageDescription =
+            showMovieTitle +
+            (useFillerWord
+                ? ` am ${formattedDate}`
+                : `, ${formattedDate.toLowerCase()}`) +
+            ` um ${showData.show.time}h in Tübingen.`;
+        primaryImage = `https://kinoschurke.de/poster-variants/og/${showMovieSlug}.png`;
+        twitterImage = `https://kinoschurke.de/poster-variants/square/${showMovieSlug}.png`;
+    }
+    // Priority 2: If no show parameter but we have movie data from props
+    else if (movieTitle && movieSlug) {
         pageTitle = `${movieTitle} - Kinoschurke`;
         pageDescription = `Alle Vorstellungen von "${movieTitle}" in Tübingen.`;
         // Use the same domain as your primary domain (no www)
         primaryImage = `https://kinoschurke.de/poster-variants/og/${movieSlug}.png`;
         twitterImage = `https://kinoschurke.de/poster-variants/square/${movieSlug}.png`;
-
-        // Debug logging
-        console.log("SEO Debug:", {
-            movieTitle,
-            movieSlug,
-            primaryImage,
-            twitterImage,
-        });
     } else if (eventName) {
         pageTitle = `${eventName} - Kinoschurke`;
         pageDescription = `Alle "${eventName}" Vorstellungen in Tübingen.`;
@@ -63,8 +78,8 @@ const SEOHead = ({
             <meta
                 property="og:image:alt"
                 content={
-                    movieTitle
-                        ? `${movieTitle} Poster`
+                    showData?.movieInfo?.title || movieTitle
+                        ? `${showData?.movieInfo?.title || movieTitle} Poster`
                         : "Kinoschurke - Tübinger Kinoprogramm"
                 }
             />
@@ -84,8 +99,8 @@ const SEOHead = ({
             <meta
                 name="twitter:image:alt"
                 content={
-                    movieTitle
-                        ? `${movieTitle} Poster`
+                    showData?.movieInfo?.title || movieTitle
+                        ? `${showData?.movieInfo?.title || movieTitle} Poster`
                         : "Kinoschurke - Tübinger Kinoprogramm"
                 }
             />

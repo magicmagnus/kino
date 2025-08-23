@@ -7,10 +7,14 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { TIMELINE_WIDTH } from "../utils/utils";
 import { findShowById } from "../utils/showLookup";
+import { useShowParameter } from "../hooks/useShowParameter";
 
 const MainLayout = () => {
     const [showCard, setShowCard] = useState(false);
     const [firstDate, setFirstDate] = useState(new Date());
+
+    // Get show data from URL parameter
+    const showData = useShowParameter();
 
     // Handle mobile viewport and scrolling
     useEffect(() => {
@@ -30,38 +34,20 @@ const MainLayout = () => {
         };
     }, [showCard]);
 
-    // In MainLayout.jsx - replace the hash handling useEffect
+    // Update showCard when showData changes
     useEffect(() => {
-        const handleShowParameter = () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const showParam = urlParams.get("show");
-
-            if (showParam) {
-                const showData = findShowById(showParam);
-                if (showData) {
-                    setShowCard({
-                        show: showData.show,
-                        movieInfo: showData.movieInfo,
-                        date: showData.date,
-                        top: window.innerHeight / 2,
-                        left: window.innerWidth / 2,
-                    });
-                }
-            } else {
-                setShowCard(null);
-            }
-        };
-
-        // Handle initial load
-        handleShowParameter();
-
-        // Listen for popstate events (back/forward navigation)
-        window.addEventListener("popstate", handleShowParameter);
-
-        return () => {
-            window.removeEventListener("popstate", handleShowParameter);
-        };
-    }, []);
+        if (showData) {
+            setShowCard({
+                show: showData.show,
+                movieInfo: showData.movieInfo,
+                date: showData.date,
+                top: window.innerHeight / 2,
+                left: window.innerWidth / 2,
+            });
+        } else {
+            setShowCard(null);
+        }
+    }, [showData]);
 
     return (
         <div className="flex min-h-[100dvh] flex-col bg-zinc-950">
