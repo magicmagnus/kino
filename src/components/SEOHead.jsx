@@ -31,13 +31,18 @@ const SEOHead = ({
         const useFillerWord = !isDateTodayOrTomorrow(showData.date);
         const formattedDate = formatDateString(showData.date);
 
-        pageTitle = `${showMovieTitle} - Kinoschurke`;
-        pageDescription =
-            showMovieTitle +
+        pageTitle =
+            `"${showMovieTitle}"` +
             (useFillerWord
                 ? ` am ${formattedDate}`
                 : `, ${formattedDate.toLowerCase()}`) +
-            ` um ${showData.show.time}h in Tübingen.`;
+            ` um ${showData.show.time}h`;
+        pageDescription =
+            `Schau dir "${showMovieTitle}"` +
+            (useFillerWord
+                ? ` am ${formattedDate}`
+                : `, ${formattedDate.toLowerCase()}`) +
+            ` um ${showData.show.time}h in Tübingen. Klicke hier für mehr Infos!`;
         primaryImage = `https://kinoschurke.de/poster-variants/og/${showMovieSlug}.png`;
         twitterImage = `https://kinoschurke.de/poster-variants/square/${showMovieSlug}.png`;
     }
