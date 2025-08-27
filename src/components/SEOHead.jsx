@@ -42,7 +42,7 @@ const SEOHead = ({
             (useFillerWord
                 ? ` am ${formattedDate}`
                 : `, ${formattedDate.toLowerCase()}`) +
-            ` um ${showData.show.time}h in Tübingen. Klicke hier für mehr Infos!`;
+            ` um ${showData.show.time}h in Tübingen mit mir an. Klicke hier für mehr Infos!`;
         primaryImage = `https://kinoschurke.de/poster-variants/og/${showMovieSlug}.png`;
         twitterImage = `https://kinoschurke.de/poster-variants/square/${showMovieSlug}.png`;
     }
