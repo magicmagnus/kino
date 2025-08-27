@@ -34,7 +34,7 @@ async function scrapeAllSites() {
         devtools: false,
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
         args: ["--no-sandbox", "--disable-setuid-sandbox"], // args: ['--start-maximized'],
-        protocolTimeout: 600000, // Increase the protocol timeout to 5 minutes
+        protocolTimeout: 1200000, // Increase the protocol timeout to 20 minutes
     });
 
     const page = await browser.newPage();
