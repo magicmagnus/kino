@@ -21,6 +21,9 @@ export class KinoheldDataTransformer {
         },
     };
 
+    // Define the order of theaters
+    static theaterOrder = ["Kino Blaue Brücke", "Kino Museum", "Kino Atelier"];
+
     static transformToDateView(apiData) {
         const { shows, movies } = apiData;
         const dateView = {};
@@ -78,20 +81,30 @@ export class KinoheldDataTransformer {
             });
         });
 
-        // Convert to array and sort
+        // Convert to array and sort with consistent ordering
         const dateViewArray = Object.values(dateView)
             .sort((a, b) => a.date.localeCompare(b.date))
             .map((dateEntry) => ({
                 ...dateEntry,
-                theaters: Object.values(dateEntry.theaters).map((theater) => ({
-                    ...theater,
-                    rooms: Object.values(theater.rooms).map((room) => ({
-                        ...room,
-                        showings: room.showings.sort((a, b) =>
-                            a.time.localeCompare(b.time),
-                        ),
-                    })),
-                })),
+                theaters: this.theaterOrder
+                    .filter((theaterName) => dateEntry.theaters[theaterName]) // Only include theaters that have shows
+                    .map((theaterName) => {
+                        const theater = dateEntry.theaters[theaterName];
+                        return {
+                            ...theater,
+                            rooms: this.cinemaLayout[theaterName].rooms
+                                .filter((roomName) => theater.rooms[roomName]) // Only include rooms that have shows
+                                .map((roomName) => {
+                                    const room = theater.rooms[roomName];
+                                    return {
+                                        ...room,
+                                        showings: room.showings.sort((a, b) =>
+                                            a.time.localeCompare(b.time),
+                                        ),
+                                    };
+                                }),
+                        };
+                    }),
             }));
 
         return dateViewArray;
@@ -156,21 +169,30 @@ export class KinoheldDataTransformer {
             });
         });
 
-        // Convert the structure to arrays while maintaining order
-        const roomViewArray = Object.entries(roomView).map(
-            ([theaterName, theater]) => ({
-                name: theaterName,
-                rooms: this.cinemaLayout[theaterName].rooms
-                    .filter((roomName) => theater.rooms[roomName]) // Only include rooms that exist in our data
-                    .map((roomName) => ({
-                        name: roomName,
-                        slug: theater.rooms[roomName].slug,
-                        dates: Object.values(
-                            theater.rooms[roomName].dates,
-                        ).sort((a, b) => a.date.localeCompare(b.date)),
-                    })),
-            }),
-        );
+        // Convert the structure to arrays with consistent ordering
+        const roomViewArray = this.theaterOrder
+            .filter((theaterName) => roomView[theaterName]) // Only include theaters that exist
+            .map((theaterName) => {
+                const theater = roomView[theaterName];
+                return {
+                    name: theaterName,
+                    rooms: this.cinemaLayout[theaterName].rooms
+                        .filter(
+                            (roomName) =>
+                                theater.rooms[roomName] &&
+                                Object.keys(theater.rooms[roomName].dates)
+                                    .length > 0,
+                        ) // Only include rooms that have shows
+                        .map((roomName) => ({
+                            name: roomName,
+                            slug: theater.rooms[roomName].slug,
+                            dates: Object.values(
+                                theater.rooms[roomName].dates,
+                            ).sort((a, b) => a.date.localeCompare(b.date)),
+                        })),
+                };
+            })
+            .filter((theater) => theater.rooms.length > 0); // Remove theaters with no rooms
 
         return roomViewArray;
     }
@@ -271,15 +293,17 @@ export class KinoheldDataTransformer {
             });
         });
 
-        // Sort and structure the data
+        // Sort and structure the data with consistent ordering
         const movieViewArray = Object.values(movieView).map((movie) => {
             // Convert dates object to sorted array
             const sortedDates = Object.values(movie.dates)
                 .map((date) => {
-                    // Convert theaters object to array with ordered rooms
-                    const sortedTheaters = Object.entries(date.theaters).map(
-                        ([theaterName, theater]) => {
-                            // Get ordered room list from cinema layout
+                    // Order theaters according to theaterOrder
+                    const sortedTheaters = this.theaterOrder
+                        .filter((theaterName) => date.theaters[theaterName]) // Only include theaters that have shows
+                        .map((theaterName) => {
+                            const theater = date.theaters[theaterName];
+                            // Order rooms according to cinemaLayout
                             const orderedRooms = this.cinemaLayout[
                                 theaterName
                             ].rooms
@@ -298,8 +322,7 @@ export class KinoheldDataTransformer {
                                 name: theaterName,
                                 rooms: orderedRooms,
                             };
-                        },
-                    );
+                        });
 
                     return {
                         date: date.date,
@@ -384,25 +407,70 @@ export class KinoheldDataTransformer {
             });
         });
 
-        // Convert Maps to Arrays and sort
+        // Convert Maps to Arrays and sort with consistent ordering
         const eventViewData = Array.from(eventMap.values()).map((event) => ({
             ...event,
             dates: Array.from(event.dates.values())
                 .map((date) => ({
                     ...date,
-                    theaters: Array.from(date.theaters.values()).map(
-                        (theater) => ({
-                            ...theater,
-                            rooms: Array.from(theater.rooms.values()).map(
-                                (room) => ({
-                                    ...room,
-                                    showings: room.showings.sort((a, b) =>
-                                        a.time.localeCompare(b.time),
-                                    ),
-                                }),
-                            ),
+                    theaters: this.theaterOrder
+                        .filter((theaterName) => {
+                            // Check if this theater exists in the date's theaters Map
+                            for (let [mapTheaterName] of date.theaters) {
+                                if (mapTheaterName === theaterName) return true;
+                            }
+                            return false;
+                        })
+                        .map((theaterName) => {
+                            // Find the theater in the Map
+                            for (let [
+                                mapTheaterName,
+                                theater,
+                            ] of date.theaters) {
+                                if (mapTheaterName === theaterName) {
+                                    return {
+                                        ...theater,
+                                        rooms: this.cinemaLayout[
+                                            theaterName
+                                        ].rooms
+                                            .filter((roomName) => {
+                                                // Check if this room exists in the theater's rooms Map
+                                                for (let [
+                                                    mapRoomName,
+                                                ] of theater.rooms) {
+                                                    if (
+                                                        mapRoomName === roomName
+                                                    )
+                                                        return true;
+                                                }
+                                                return false;
+                                            })
+                                            .map((roomName) => {
+                                                // Find the room in the Map
+                                                for (let [
+                                                    mapRoomName,
+                                                    room,
+                                                ] of theater.rooms) {
+                                                    if (
+                                                        mapRoomName === roomName
+                                                    ) {
+                                                        return {
+                                                            ...room,
+                                                            showings:
+                                                                room.showings.sort(
+                                                                    (a, b) =>
+                                                                        a.time.localeCompare(
+                                                                            b.time,
+                                                                        ),
+                                                                ),
+                                                        };
+                                                    }
+                                                }
+                                            }),
+                                    };
+                                }
+                            }
                         }),
-                    ),
                 }))
                 .sort((a, b) => a.date.localeCompare(b.date)),
         }));
