@@ -69,9 +69,6 @@ const DatePage = () => {
     // ADD THIS CHECK: Wait for selectedDate to be set
     if (!selectedDate) return <div>Loading...</div>;
 
-    console.log("Data from context in DatePage:", data);
-    console.log("Selected date:", selectedDate);
-
     const dateViewData = data.dateView;
 
     // Filter out dates before today
@@ -83,8 +80,6 @@ const DatePage = () => {
     const filteredDateData = dateViewData.find(
         (date) => date.date === selectedDate,
     );
-
-    console.log("Filtered date data:", filteredDateData);
 
     // Add error handling for when date is not found or is in the past
     if (!filteredDateData || selectedDate < TODAY_FORMATTED) {

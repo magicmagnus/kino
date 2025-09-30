@@ -64,15 +64,11 @@ const MoviePage = () => {
     if (!selectedMovie) return <div>Loading...</div>;
 
     const movieViewData = data.movieView;
-    console.log("Movie View Data:", movieViewData);
-    console.log("Selected movie:", selectedMovie);
 
     // Find the data for the selected movie
     const movieData = movieViewData.find(
         (movie) => movie.slug === selectedMovie,
     );
-
-    console.log("Movie data:", movieData);
 
     // Add error handling for when movie is not found
     if (!movieData) {

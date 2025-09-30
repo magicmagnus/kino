@@ -75,8 +75,6 @@ const RoomPage = () => {
     if (!selectedRoom) return <div>Loading...</div>;
 
     const roomViewData = data.roomView;
-    console.log("Room View Data:", roomViewData);
-    console.log("Selected room:", selectedRoom);
 
     // Filter and Find - Updated to work with both slug and name
     const filteredRoomData = roomViewData.reduce(
@@ -104,8 +102,6 @@ const RoomPage = () => {
         },
         [],
     );
-
-    console.log("Filtered room data:", filteredRoomData);
 
     // Add error handling for when room is not found
     if (selectedRoom && filteredRoomData.length === 0) {

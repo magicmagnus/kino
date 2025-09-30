@@ -63,15 +63,11 @@ const EventPage = () => {
     if (!selectedEvent) return <div>Loading...</div>;
 
     const eventViewData = data.eventView;
-    console.log("Event View Data:", eventViewData);
-    console.log("Selected event:", selectedEvent);
 
     // Find the data for the selected event
     const eventData = eventViewData.find(
         (event) => event.slug === selectedEvent,
     );
-
-    console.log("Event data:", eventData);
 
     // Add error handling for when event is not found
     if (!eventData) {
