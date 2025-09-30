@@ -81,6 +81,7 @@ const MovieCard = (props) => {
 
     const handleAllShowsClick = () => {
         // Navigate immediately (will be hidden behind the modal)
+        console.log("Navigating to /movies/" + showCard.movieInfo.slug);
         navigate(`/movies/${showCard.movieInfo.slug}`);
 
         // Then start the fade out animation

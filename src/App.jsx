@@ -12,6 +12,7 @@ import RoomPage from "./pages/RoomPage";
 import MoviePage from "./pages/MoviePage";
 import EventPage from "./pages/EventPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import { DataProvider } from "./contexts/DataContext";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,7 +32,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-    return <RouterProvider router={router} />;
+    return (
+        <DataProvider>
+            <RouterProvider router={router} />
+        </DataProvider>
+    );
 };
 
 export default App;

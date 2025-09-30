@@ -1,4 +1,4 @@
-import movieViewData from "../data/movie-view.json";
+import { useData } from "../contexts/DataContext";
 import TopSection from "../components/TopSection";
 import TimelineGroup from "../components/TimelineGroup";
 import { Listbox } from "@headlessui/react";
@@ -18,30 +18,61 @@ const MoviePage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
         useOutletContext();
     const { movieSlug } = useParams();
+    const { data, loading, error } = useData();
     const navigate = useNavigate();
 
-    const [selectedMovie, setSelectedMovie] = useState(
-        movieSlug || movieViewData[0].slug,
-    );
+    // ALL HOOKS MUST BE AT THE TOP - BEFORE ANY CONDITIONAL RETURNS
+    const [selectedMovie, setSelectedMovie] = useState(null);
 
-    // Update URL when selectedMovie changes
+    // 1. Initialize selectedMovie after we have data
+    useEffect(() => {
+        if (data && data.movieView) {
+            // If we have a movieSlug from URL, validate and use it
+            if (movieSlug) {
+                const validMovie = data.movieView.find(
+                    (movie) => movie.slug === movieSlug,
+                );
+                if (validMovie) {
+                    setSelectedMovie(movieSlug);
+                } else {
+                    // If movieSlug is invalid, redirect to first available movie
+                    setSelectedMovie(data.movieView[0]?.slug);
+                }
+            } else {
+                // If no movieSlug, use first available
+                setSelectedMovie(data.movieView[0]?.slug);
+            }
+        }
+    }, [data, movieSlug]);
+
+    // 2. Update URL when selectedMovie changes
     useEffect(() => {
         if (selectedMovie && selectedMovie !== movieSlug) {
             navigate(`/movies/${selectedMovie}`, { replace: true });
         }
     }, [selectedMovie, movieSlug, navigate]);
 
-    // Update selectedMovie when URL changes
-    useEffect(() => {
-        if (movieSlug && movieSlug !== selectedMovie) {
-            setSelectedMovie(movieSlug);
-        }
-    }, [movieSlug]);
+    // 4. Call useScrollToEarliest hook here (before any returns)
+    useScrollToEarliest([selectedMovie]);
+
+    // NOW you can have conditional returns AFTER all hooks
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!data || !data.movieView) return <div>No data available</div>;
+
+    // ADD THIS CHECK: Wait for selectedMovie to be set
+    if (!selectedMovie) return <div>Loading...</div>;
+
+    const movieViewData = data.movieView;
+    console.log("Movie View Data:", movieViewData);
+    console.log("Selected movie:", selectedMovie);
 
     // Find the data for the selected movie
     const movieData = movieViewData.find(
         (movie) => movie.slug === selectedMovie,
     );
+
+    console.log("Movie data:", movieData);
 
     // Add error handling for when movie is not found
     if (!movieData) {
@@ -53,14 +84,6 @@ const MoviePage = () => {
         ...movieData,
         dates: movieData.dates.filter((date) => date.date >= TODAY_FORMATTED),
     };
-
-    useEffect(() => {
-        if (filteredMovieData.dates.length > 0) {
-            setFirstDate(filteredMovieData.dates[0].date);
-        }
-    }, [filteredMovieData.dates, setFirstDate]);
-
-    useScrollToEarliest([selectedMovie]);
 
     return (
         <>

@@ -1,10 +1,12 @@
 import { timeToPixels, containsOmdu, getOtherAttribute } from "../utils/utils";
-import movieReference from "../data/movies-reference.json";
+//import movieReference from "../data/movies-reference.json";
+import { useData } from "../contexts/DataContext";
 
 const MovieBlock = (props) => {
     const { show, showIdx, setShowCard, date } = props;
 
-    const movieInfo = movieReference[show.movieId];
+    const { data } = useData();
+    const movieInfo = data.moviesReference[show.movieId];
 
     const isOmdu = containsOmdu(show.attributes);
 

@@ -1,4 +1,4 @@
-import roomViewData from "../data/room-view.json";
+import { useData } from "../contexts/DataContext";
 import TopSection from "../components/TopSection";
 import SelectionButton from "../components/SelectionButton";
 import Timeline from "../components/Timeline";
@@ -17,35 +17,66 @@ const RoomPage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
         useOutletContext();
     const { roomSlug } = useParams();
+    const { data, loading, error } = useData();
     const navigate = useNavigate();
 
-    // Get first available room as default
-    const getFirstAvailableRoom = () => {
+    // ALL HOOKS MUST BE AT THE TOP - BEFORE ANY CONDITIONAL RETURNS
+    const [selectedRoom, setSelectedRoom] = useState(null);
+
+    // Helper function to get first available room
+    const getFirstAvailableRoom = (roomViewData) => {
         for (const theater of roomViewData) {
             for (const room of theater.rooms) {
-                return room.slug || room.name; // Use slug if available, fallback to name
+                return room.slug || room.name;
             }
         }
         return null;
     };
 
-    const [selectedRoom, setSelectedRoom] = useState(
-        roomSlug || getFirstAvailableRoom(),
-    );
+    // 1. Initialize selectedRoom after we have data
+    useEffect(() => {
+        if (data && data.roomView) {
+            // If we have a roomSlug from URL, validate and use it
+            if (roomSlug) {
+                const validRoom = data.roomView.some((theater) =>
+                    theater.rooms.some(
+                        (room) => (room.slug || room.name) === roomSlug,
+                    ),
+                );
+                if (validRoom) {
+                    setSelectedRoom(roomSlug);
+                } else {
+                    // If roomSlug is invalid, redirect to first available room
+                    setSelectedRoom(getFirstAvailableRoom(data.roomView));
+                }
+            } else {
+                // If no roomSlug, use first available
+                setSelectedRoom(getFirstAvailableRoom(data.roomView));
+            }
+        }
+    }, [data, roomSlug]);
 
-    // Update URL when selectedRoom changes
+    // 2. Update URL when selectedRoom changes (but not on initial load with roomSlug)
     useEffect(() => {
         if (selectedRoom && selectedRoom !== roomSlug) {
             navigate(`/rooms/${selectedRoom}`, { replace: true });
         }
     }, [selectedRoom, roomSlug, navigate]);
 
-    // Update selectedRoom when URL changes
-    useEffect(() => {
-        if (roomSlug && roomSlug !== selectedRoom) {
-            setSelectedRoom(roomSlug);
-        }
-    }, [roomSlug]);
+    // 4. Call useScrollToEarliest hook here (before any returns)
+    useScrollToEarliest([selectedRoom]);
+
+    // NOW you can have conditional returns AFTER all hooks
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!data || !data.roomView) return <div>No data available</div>;
+
+    // ADD THIS CHECK: Wait for selectedRoom to be set
+    if (!selectedRoom) return <div>Loading...</div>;
+
+    const roomViewData = data.roomView;
+    console.log("Room View Data:", roomViewData);
+    console.log("Selected room:", selectedRoom);
 
     // Filter and Find - Updated to work with both slug and name
     const filteredRoomData = roomViewData.reduce(
@@ -74,19 +105,12 @@ const RoomPage = () => {
         [],
     );
 
+    console.log("Filtered room data:", filteredRoomData);
+
     // Add error handling for when room is not found
     if (selectedRoom && filteredRoomData.length === 0) {
         return <Navigate to={"/404/"} />;
     }
-
-    // Add useEffect to handle firstDate update
-    useEffect(() => {
-        if (filteredRoomData.length > 0) {
-            setFirstDate(filteredRoomData[0].rooms[0].dates[0].date);
-        }
-    }, [filteredRoomData, setFirstDate]);
-
-    useScrollToEarliest([selectedRoom]);
 
     return (
         <>

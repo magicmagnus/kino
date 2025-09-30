@@ -1,4 +1,4 @@
-import eventViewData from "../data/event-view.json";
+import { useData } from "../contexts/DataContext";
 import TopSection from "../components/TopSection";
 import SelectionButton from "../components/SelectionButton";
 import TimelineGroup from "../components/TimelineGroup";
@@ -17,30 +17,61 @@ const EventPage = () => {
     const { showCard, setShowCard, firstDate, setFirstDate } =
         useOutletContext();
     const { eventSlug } = useParams();
+    const { data, loading, error } = useData();
     const navigate = useNavigate();
 
-    const [selectedEvent, setSelectedEvent] = useState(
-        eventSlug || (eventViewData.length > 0 ? eventViewData[0].slug : null),
-    );
+    // ALL HOOKS MUST BE AT THE TOP - BEFORE ANY CONDITIONAL RETURNS
+    const [selectedEvent, setSelectedEvent] = useState(null);
 
-    // Update URL when selectedEvent changes
+    // 1. Initialize selectedEvent after we have data
+    useEffect(() => {
+        if (data && data.eventView) {
+            // If we have an eventSlug from URL, validate and use it
+            if (eventSlug) {
+                const validEvent = data.eventView.find(
+                    (event) => event.slug === eventSlug,
+                );
+                if (validEvent) {
+                    setSelectedEvent(eventSlug);
+                } else {
+                    // If eventSlug is invalid, redirect to first available event
+                    setSelectedEvent(data.eventView[0]?.slug);
+                }
+            } else {
+                // If no eventSlug, use first available
+                setSelectedEvent(data.eventView[0]?.slug);
+            }
+        }
+    }, [data, eventSlug]);
+
+    // 2. Update URL when selectedEvent changes
     useEffect(() => {
         if (selectedEvent && selectedEvent !== eventSlug) {
             navigate(`/events/${selectedEvent}`, { replace: true });
         }
     }, [selectedEvent, eventSlug, navigate]);
 
-    // Update selectedEvent when URL changes
-    useEffect(() => {
-        if (eventSlug && eventSlug !== selectedEvent) {
-            setSelectedEvent(eventSlug);
-        }
-    }, [eventSlug]);
+    // 4. Call useScrollToEarliest hook here (before any returns)
+    useScrollToEarliest([selectedEvent]);
+
+    // NOW you can have conditional returns AFTER all hooks
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>Error: {error}</div>;
+    if (!data || !data.eventView) return <div>No data available</div>;
+
+    // ADD THIS CHECK: Wait for selectedEvent to be set
+    if (!selectedEvent) return <div>Loading...</div>;
+
+    const eventViewData = data.eventView;
+    console.log("Event View Data:", eventViewData);
+    console.log("Selected event:", selectedEvent);
 
     // Find the data for the selected event
     const eventData = eventViewData.find(
         (event) => event.slug === selectedEvent,
     );
+
+    console.log("Event data:", eventData);
 
     // Add error handling for when event is not found
     if (!eventData) {
@@ -52,14 +83,6 @@ const EventPage = () => {
         ...eventData,
         dates: eventData.dates.filter((date) => date.date >= TODAY_FORMATTED),
     };
-
-    useEffect(() => {
-        if (filteredEventData.dates.length > 0) {
-            setFirstDate(filteredEventData.dates[0].date);
-        }
-    }, [filteredEventData.dates, setFirstDate]);
-
-    useScrollToEarliest([selectedEvent]);
 
     return (
         <>
