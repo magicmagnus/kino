@@ -198,15 +198,44 @@ export class KinoheldDataTransformer {
     }
 
     static transformToMovieView(apiData) {
-        const { shows, movies } = apiData;
+        const { shows, movies, groupIds } = apiData;
         const movieView = {};
+
+        // Create a mapping of titles to their groupId order
+        const titleOrderMap = new Map();
+        let orderIndex = 0;
+
+        if (
+            groupIds &&
+            Array.isArray(groupIds) &&
+            shows &&
+            Array.isArray(shows)
+        ) {
+            groupIds.forEach((groupId) => {
+                const showsForGroup = shows.filter(
+                    (show) => show.groupId === groupId,
+                );
+                const uniqueTitles = [
+                    ...new Set(showsForGroup.map((show) => show.name)),
+                ];
+
+                // Assign order index to each unique title
+                uniqueTitles.forEach((title) => {
+                    if (!titleOrderMap.has(title)) {
+                        titleOrderMap.set(title, orderIndex++);
+                    }
+                });
+            });
+        }
 
         // Initialize movie structure
         Object.entries(movies).forEach(([movieId, movie]) => {
+            const movieTitle = movie.title || movie.name || "Unknown Title";
+
             movieView[movieId] = {
                 id: parseInt(movieId),
-                title: movie.title || movie.name || "Unknown Title",
-                slug: this.createSlug(movie.title || movie.name),
+                title: movieTitle,
+                slug: this.createSlug(movieTitle),
                 duration: movie.duration ? `${movie.duration} min` : "Unknown",
                 fsk: movie.ageClassificationRating?.value || "Unknown",
                 genre:
@@ -228,8 +257,10 @@ export class KinoheldDataTransformer {
                     movie.largeImage || movie.lazyImage || "Unknown Poster URL",
                 trailerUrl: this.extractTrailerUrl(movie.trailers),
                 actors: movie.actors?.map((actor) => actor.name) || [],
-                attributes: movie.attributes || [],
+                attributes: this.getUniqueAttributes(apiData, movieId),
                 dates: {},
+                // Add the order index for sorting
+                _orderIndex: titleOrderMap.get(movieTitle) ?? 999999, // Use high number for titles not found in groupIds
             };
         });
 
@@ -294,48 +325,68 @@ export class KinoheldDataTransformer {
         });
 
         // Sort and structure the data with consistent ordering
-        const movieViewArray = Object.values(movieView).map((movie) => {
-            // Convert dates object to sorted array
-            const sortedDates = Object.values(movie.dates)
-                .map((date) => {
-                    // Order theaters according to theaterOrder
-                    const sortedTheaters = this.theaterOrder
-                        .filter((theaterName) => date.theaters[theaterName]) // Only include theaters that have shows
-                        .map((theaterName) => {
-                            const theater = date.theaters[theaterName];
-                            // Order rooms according to cinemaLayout
-                            const orderedRooms = this.cinemaLayout[
-                                theaterName
-                            ].rooms
-                                .filter((roomName) => theater.rooms[roomName]) // Only include rooms that have showings
-                                .map((roomName) => {
-                                    const room = theater.rooms[roomName];
-                                    return {
-                                        ...room,
-                                        showings: room.showings.sort((a, b) =>
-                                            a.time.localeCompare(b.time),
-                                        ),
-                                    };
-                                });
+        const movieViewArray = Object.values(movieView)
+            .map((movie) => {
+                // Convert dates object to sorted array
+                const sortedDates = Object.values(movie.dates)
+                    .map((date) => {
+                        // Order theaters according to theaterOrder
+                        const sortedTheaters = this.theaterOrder
+                            .filter((theaterName) => date.theaters[theaterName]) // Only include theaters that have shows
+                            .map((theaterName) => {
+                                const theater = date.theaters[theaterName];
+                                // Order rooms according to cinemaLayout
+                                const orderedRooms = this.cinemaLayout[
+                                    theaterName
+                                ].rooms
+                                    .filter(
+                                        (roomName) => theater.rooms[roomName],
+                                    ) // Only include rooms that have showings
+                                    .map((roomName) => {
+                                        const room = theater.rooms[roomName];
+                                        return {
+                                            ...room,
+                                            showings: room.showings.sort(
+                                                (a, b) =>
+                                                    a.time.localeCompare(
+                                                        b.time,
+                                                    ),
+                                            ),
+                                        };
+                                    });
 
-                            return {
-                                name: theaterName,
-                                rooms: orderedRooms,
-                            };
-                        });
+                                return {
+                                    name: theaterName,
+                                    rooms: orderedRooms,
+                                };
+                            });
 
-                    return {
-                        date: date.date,
-                        theaters: sortedTheaters,
-                    };
-                })
-                .sort((a, b) => a.date.localeCompare(b.date));
+                        return {
+                            date: date.date,
+                            theaters: sortedTheaters,
+                        };
+                    })
+                    .sort((a, b) => a.date.localeCompare(b.date));
 
-            return {
-                ...movie,
-                dates: sortedDates,
-            };
-        });
+                // Remove the internal _orderIndex from the final output
+                const { _orderIndex, ...movieWithoutOrderIndex } = movie;
+                return {
+                    ...movieWithoutOrderIndex,
+                    dates: sortedDates,
+                };
+            })
+            // Sort movies by their groupId order (based on title order from groupIds)
+            .sort((a, b) => {
+                const orderA = movieView[a.id]?._orderIndex ?? 999999;
+                const orderB = movieView[b.id]?._orderIndex ?? 999999;
+
+                // If order indices are the same, fall back to alphabetical title sorting
+                if (orderA === orderB) {
+                    return a.title.localeCompare(b.title);
+                }
+
+                return orderA - orderB;
+            });
 
         return movieViewArray;
     }
@@ -685,13 +736,15 @@ export class KinoheldDataTransformer {
         const attributeSet = new Set();
 
         // Find all shows for this movie and collect unique attributes
+        console.log("Finding attributes for movieId:", movieId);
         shows
             .filter((show) => show.movieId === movieId)
             .forEach((show) => {
                 const attributes = this.extractAttributes(show.flags);
+
                 attributes.forEach((attr) => attributeSet.add(attr));
             });
-
+        console.log("Attributes found:", Array.from(attributeSet));
         return Array.from(attributeSet);
     }
 

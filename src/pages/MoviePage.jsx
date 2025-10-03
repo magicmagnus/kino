@@ -81,6 +81,8 @@ const MoviePage = () => {
         dates: movieData.dates.filter((date) => date.date >= TODAY_FORMATTED),
     };
 
+    console.log("Movie data in MoviePage:", movieData);
+
     return (
         <>
             <SEOHead

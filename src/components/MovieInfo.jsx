@@ -4,6 +4,7 @@ import MovieAttributes from "./MovieAttributes";
 const MovieInfo = (props) => {
     const { movieData } = props;
     const [isExpanded, setIsExpanded] = useState(false);
+    console.log("Movie data in MovieInfo:", movieData);
 
     return (
         <div className="sticky left-0 top-0 flex w-screen flex-col justify-end bg-zinc-950 text-white">

@@ -43,6 +43,7 @@ const MovieAttributes = (props) => {
 
     const isOmdu = containsOmdu(attributes);
     const otherAttribute = getOtherAttribute(attributes);
+    console.log("Attributes in MovieAttributes:", attributes);
 
     // Add event navigation handler
     const handleEventClick = (e) => {

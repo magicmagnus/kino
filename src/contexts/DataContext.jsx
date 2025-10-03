@@ -29,7 +29,6 @@ export const DataProvider = ({ children }) => {
             }
 
             const rawData = await response.json();
-            //console.log("Raw API data:", rawData);
 
             // Transform the data to match your current structure
             const transformedData = {
@@ -46,6 +45,7 @@ export const DataProvider = ({ children }) => {
             };
 
             console.log("Transformed data:", transformedData);
+
             setData(transformedData);
             setLastUpdated(new Date());
             console.log("Live data fetched and transformed successfully");
