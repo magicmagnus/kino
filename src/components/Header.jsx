@@ -12,7 +12,7 @@ const Header = () => {
         );
     };
     return (
-        <div className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between bg-zinc-950 px-3 py-3 text-white sm:p-4">
+        <header className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between bg-zinc-950 px-3 py-3 text-white sm:p-4">
             <Link
                 to="/"
                 className="flex w-auto flex-1 items-center justify-start gap-1.5 sm:gap-3"
@@ -26,7 +26,7 @@ const Header = () => {
                     Kino<span className="text-rose-600">Schurke</span>
                 </h1>
             </Link>
-            <div className="flex gap-1.5 text-sm">
+            <nav className="flex gap-1.5 text-sm">
                 <NavLink to="/dates" className={linkClass}>
                     Datum
                 </NavLink>
@@ -42,8 +42,8 @@ const Header = () => {
                 >
                     Event
                 </NavLink>
-            </div>
-        </div>
+            </nav>
+        </header>
     );
 };
 

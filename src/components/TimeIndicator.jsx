@@ -55,7 +55,7 @@ const TimeIndicator = (props) => {
     return (
         <div
             className={
-                "absolute bottom-0 w-1 bg-rose-600 opacity-100 shadow-2xl" +
+                "absolute bottom-0 w-1 bg-rose-600 opacity-90 shadow-2xl" +
                 (isFirst
                     ? " bottom-0 h-36"
                     : isTop

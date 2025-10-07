@@ -37,7 +37,7 @@ const Timeline = (props) => {
             {/* Timeline container - now with fixed width */}
             <div
                 className={
-                    "relative ml-6 h-28 overflow-x-hidden bg-zinc-900" +
+                    "relative ml-6 h-28 bg-zinc-900" +
                     (isLast ? "" : " border-b-2 border-zinc-700")
                 }
                 style={{
