@@ -464,7 +464,7 @@ async function scrapeMovieSchedules(page) {
 
         for (const movieItem of movieItems) {
             counter++;
-            if (counter < 50) {
+            if (counter < 500) {
                 const title =
                     movieItem.querySelector(".title")?.textContent.trim() ||
                     "Unknown Title";
