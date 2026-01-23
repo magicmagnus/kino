@@ -1,36 +1,18 @@
 import { timeToPixels, containsOmdu, getOtherAttribute } from "../utils/utils";
 import movieReference from "../data/movies-reference.json";
+import { openShowModal } from "../hooks/useShowParameter";
 
 const MovieBlock = (props) => {
-    const { show, showIdx, setShowCard, date } = props;
+    const { show, showIdx, date } = props;
 
     const movieInfo = movieReference[show.movieId];
-
     const isOmdu = containsOmdu(show.attributes);
-
     const otherAttribute = getOtherAttribute(show.attributes);
 
-    // when clickineg on a movie block, show the movie card
-    const handleClick = (e) => {
-        const showId =
-            show.iframeUrl.split("showId=")[1]?.split("&")[0] || show.movieId;
-        const showParam = `${showId}-${show.time.split(":").join("-")}`;
-        // Update the URL with the show parameter
-
-        const url = new URL(window.location);
-        url.searchParams.set("show", showParam);
-        window.history.pushState(null, null, url.toString());
-
-        console.log("MovieBlock clicked:", { show, movieInfo, date });
-
-        setShowCard({
-            show: show,
-            movieInfo: movieInfo,
-            date: date,
-            top: e.clientY,
-            left: e.clientX,
-        });
+    const handleClick = () => {
+        openShowModal(show, show.movieId);
     };
+
     return (
         <button
             onClick={handleClick}
@@ -83,7 +65,6 @@ const MovieBlock = (props) => {
                             </div>
                         )}
                     </div>
-
                     <p className="line-clamp-1 text-xs">
                         {show.time} - {show.endTime}
                     </p>

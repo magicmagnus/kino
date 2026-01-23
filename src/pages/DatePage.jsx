@@ -17,8 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const DatePage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
-        useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
     const { dateSlug } = useParams();
     const navigate = useNavigate();
 
@@ -77,6 +76,7 @@ const DatePage = () => {
             <SEOHead
                 date={formatDateString(selectedDate)}
                 url={`https://kinoschurke.de/dates/${selectedDate}`}
+                showData={showDate}
             />
             <TopSection date={selectedDate}>
                 {/* Date buttons for Date View */}
@@ -89,8 +89,6 @@ const DatePage = () => {
                     groupElement={theater}
                     groupElementIdx={theaterIdx}
                     parentGroupType="theater"
-                    showCard={showCard}
-                    setShowCard={setShowCard}
                     date={selectedDate}
                 />
             ))}

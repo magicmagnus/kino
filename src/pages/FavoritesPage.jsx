@@ -14,8 +14,7 @@ import movieViewData from "../data/movie-view.json";
 import movieReference from "../data/movies-reference.json";
 
 const FavoritesPage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
-        useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
 
     const favoriteFilterButtons = null;
 

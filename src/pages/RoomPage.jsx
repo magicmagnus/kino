@@ -17,8 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const RoomPage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
-        useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
     const { roomSlug } = useParams();
     const navigate = useNavigate();
 
@@ -111,6 +110,7 @@ const RoomPage = () => {
             <SEOHead
                 roomName={filteredRoomData[0]?.rooms[0]?.name}
                 url={`https://kinoschurke.de/rooms/${selectedRoom}`}
+                showDate={showDate}
             />
             <TopSection date={firstDate}>
                 {/* Room buttons for Room View */}
@@ -127,8 +127,6 @@ const RoomPage = () => {
                             isFirst={dateIdx === 0}
                             isLast={dateIdx === room.dates.length - 1}
                             title={formatDateString(date.date, true)}
-                            showCard={showCard}
-                            setShowCard={setShowCard}
                             date={date.date}
                         />
                     )),

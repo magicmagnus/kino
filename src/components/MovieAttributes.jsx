@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { containsOmdu, getOtherAttribute } from "../utils/utils";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
+import { closeShowModal } from "../hooks/useShowParameter";
 
 const MovieAttributes = (props) => {
     const {
@@ -19,56 +20,46 @@ const MovieAttributes = (props) => {
         attributes,
         description,
         isCard,
-        setShowCard, // Add this prop
-        setIsVisible, // Add this prop
     } = props;
 
     const [isAttributesExpanded, setIsExpanded] = useState(false);
     const navigate = useNavigate();
 
-    // Add these styles in your CSS or styled-components
+    // ...existing code for imageStyles, placeholderStyles...
     const imageStyles = {
         transition: "opacity 0.3s ease-in-out",
     };
 
     const placeholderStyles = {
-        backgroundColor: "#2c2c2c", // Dark placeholder
+        backgroundColor: "#2c2c2c",
         width: "100%",
         height: "100%",
     };
 
-    // Update the image element
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageError, setImageError] = useState(false);
 
     const isOmdu = containsOmdu(attributes);
     const otherAttribute = getOtherAttribute(attributes);
 
-    // Add event navigation handler
+    // Simplified event navigation handler
     const handleEventClick = (e) => {
-        e.preventDefault(); // Prevent default link behavior
+        e.preventDefault();
 
-        if (isCard && setShowCard && setIsVisible) {
-            // Navigate immediately (will be hidden behind the modal)
+        if (isCard) {
+            // Close modal first, then navigate
+            closeShowModal();
             navigate(
                 `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
             );
-
-            // Then start the fade out animation
-            setIsVisible(false);
-
-            // Finally remove the card from DOM after animation
-            setTimeout(() => {
-                setShowCard(null);
-            }, 200);
         } else {
-            // If not in card or no handlers provided, use normal navigation
             navigate(
                 `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
             );
         }
     };
 
+    // ...rest of component remains the same...
     let omduExplainer = "";
     if (isOmdu) {
         if (isOmdu === "OmdU") {

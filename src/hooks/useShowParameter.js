@@ -11,11 +11,16 @@ export const useShowParameter = () => {
 
             if (showParam) {
                 const foundShowData = findShowById(showParam);
-                // console.log(
-                //     "useShowParameter showData changed:",
-                //     foundShowData,
-                // );
-                setShowData(foundShowData);
+
+                if (foundShowData) {
+                    setShowData(foundShowData);
+                } else {
+                    // Invalid show param - remove it from URL
+                    const url = new URL(window.location);
+                    url.searchParams.delete("show");
+                    window.history.replaceState(null, null, url.toString());
+                    setShowData(null);
+                }
             } else {
                 setShowData(null);
             }
@@ -54,4 +59,21 @@ export const useShowParameter = () => {
     }, []);
 
     return showData;
+};
+
+// Helper function to open a show modal (updates URL)
+export const openShowModal = (show, movieId) => {
+    const showId = show.iframeUrl.split("showId=")[1]?.split("&")[0] || movieId;
+    const showParam = `${showId}-${show.time.split(":").join("-")}`;
+
+    const url = new URL(window.location);
+    url.searchParams.set("show", showParam);
+    window.history.pushState(null, null, url.toString());
+};
+
+// Helper function to close the show modal (updates URL)
+export const closeShowModal = () => {
+    const url = new URL(window.location);
+    url.searchParams.delete("show");
+    window.history.pushState(null, null, url.toString());
 };

@@ -3,14 +3,7 @@ import Timeline from "./Timeline";
 import { formatDateString } from "../utils/utils";
 
 const TimelineGroup = (props) => {
-    const {
-        groupElement,
-        groupElementIdx,
-        parentGroupType,
-        showCard,
-        setShowCard,
-        date,
-    } = props;
+    const { groupElement, groupElementIdx, parentGroupType, date } = props;
 
     let groupedList = [];
     // groupElement is either a room or a date
@@ -44,8 +37,6 @@ const TimelineGroup = (props) => {
                         isFirst={scheduleIdx === 0}
                         isLast={scheduleIdx === groupedList.length - 1}
                         title={schedule.name}
-                        showCard={showCard}
-                        setShowCard={setShowCard}
                         date={date}
                     />
                 ))
@@ -65,8 +56,6 @@ const TimelineGroup = (props) => {
                                 theaterIdx === groupedList.length - 1
                             }
                             title={room.name}
-                            showCard={showCard}
-                            setShowCard={setShowCard}
                             date={date}
                         />
                     )),

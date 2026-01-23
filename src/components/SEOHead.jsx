@@ -6,16 +6,13 @@ const SEOHead = ({
     title = "Kinoschurke",
     description = "Das Programm der Tübinger Kinos, in Timelines für einen schnellen Überblick.",
     image = "https://kinoschurke.de/preview_image.png",
-    url,
+    showData,
     movieTitle,
     movieSlug,
     eventName,
     roomName,
     date,
 }) => {
-    // Get show data from URL parameter
-    const showData = useShowParameter();
-
     // Generate dynamic content based on props
     let pageTitle = title;
     let pageDescription = description;

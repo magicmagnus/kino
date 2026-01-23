@@ -5,16 +5,7 @@ import { TIMELINE_WIDTH } from "../utils/utils";
 import TimeIndicator from "./TimeIndicator";
 
 const Timeline = (props) => {
-    const {
-        schedule,
-        scheduleIdx,
-        isFirst,
-        isLast,
-        title,
-        showCard,
-        setShowCard,
-        date,
-    } = props;
+    const { schedule, scheduleIdx, isFirst, isLast, title, date } = props;
     return (
         <div
             key={scheduleIdx}
@@ -54,7 +45,6 @@ const Timeline = (props) => {
                         key={showIdx}
                         show={show}
                         showIdx={showIdx}
-                        setShowCard={setShowCard}
                         date={date}
                     />
                 ))}

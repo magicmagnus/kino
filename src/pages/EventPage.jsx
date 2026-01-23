@@ -17,8 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const EventPage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
-        useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
     const { eventSlug } = useParams();
     const navigate = useNavigate();
 
@@ -82,6 +81,7 @@ const EventPage = () => {
             <SEOHead
                 eventName={eventData.name}
                 url={`https://kinoschurke.de/events/${selectedEvent}`}
+                showData={showDate}
             />
             <TopSection date={firstDate} eventData={eventData}>
                 {/* Event buttons for Event View */}
@@ -94,8 +94,6 @@ const EventPage = () => {
                     groupElement={date}
                     groupElementIdx={dateIdx}
                     parentGroupType="date"
-                    showCard={showCard}
-                    setShowCard={setShowCard}
                     date={date.date}
                 />
             ))}

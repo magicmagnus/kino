@@ -18,8 +18,7 @@ import MovieSelectionButton from "../components/MovieSelectionButton";
 import SEOHead from "../components/SEOHead";
 
 const MoviePage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
-        useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
     const { movieSlug } = useParams();
     const navigate = useNavigate();
 
@@ -85,6 +84,7 @@ const MoviePage = () => {
                 movieTitle={movieData.title}
                 url={`https://kinoschurke.de/movies/${selectedMovie}`}
                 movieSlug={selectedMovie}
+                showData={showDate}
             />
             <TopSection date={firstDate} movieData={movieData}>
                 {/* Movie selection buttons */}
@@ -97,8 +97,6 @@ const MoviePage = () => {
                     groupElement={date}
                     groupElementIdx={dateIdx}
                     parentGroupType="date"
-                    showCard={showCard}
-                    setShowCard={setShowCard}
                     date={date.date}
                 />
             ))}
