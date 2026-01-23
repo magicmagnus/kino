@@ -10,11 +10,7 @@ const TopSection = (props) => {
         <>
             {/* sticky-left (but not top) button container */}
             <div className="sticky left-0 z-30 flex w-screen flex-col items-center justify-start gap-0 bg-zinc-900">
-                <div className="w-screen py-2">
-                    <div className="no-scrollbar flex gap-1.5 overflow-auto px-2">
-                        {children}
-                    </div>
-                </div>
+                {children && children}
                 <div className="flex w-screen justify-center bg-zinc-900">
                     {movieData && <MovieInfo movieData={movieData} />}
                 </div>

@@ -73,10 +73,11 @@ export const containsOmdu = (attributes) => {
 };
 
 export const getOtherAttribute = (attributes) => {
+    // return the first attribute that is not a 'technical' attribute
     return attributes.filter(
         (attribute) =>
             attribute !== "2D" &&
-            attribute !== "3D" &&
+            attribute !== "Dolby Atmos" &&
             attribute !== "OmdU" &&
             attribute !== "OmeU" &&
             attribute !== "OmU" &&

@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import InstallPWA from "./InstallPWA";
 
-const Header = () => {
+const Header = ({ isMobile }) => {
     const linkClass = ({ isActive }) => {
         return (
             "px-2.5 py-1.5 rounded-full font-semibold transition-all duration-200 sm:px-3 hover:bg-rose-500 hover:text-rose-50 " +
@@ -26,23 +25,28 @@ const Header = () => {
                     Kino<span className="text-rose-600">Schurke</span>
                 </h1>
             </Link>
-            <div className="flex gap-1.5 text-sm">
-                <NavLink to="/dates" className={linkClass}>
-                    Datum
-                </NavLink>
-                <NavLink to="/rooms" className={linkClass}>
-                    Saal
-                </NavLink>
-                <NavLink to="/movies" className={linkClass}>
-                    Film
-                </NavLink>
-                <NavLink
-                    to="/events"
-                    className={linkClass + " hidden sm:block"}
-                >
-                    Event
-                </NavLink>
-            </div>
+            {!isMobile && (
+                <div className="flex gap-1.5 text-sm">
+                    <NavLink to="/dates" className={linkClass}>
+                        Datum
+                    </NavLink>
+                    <NavLink to="/rooms" className={linkClass}>
+                        Saal
+                    </NavLink>
+                    <NavLink to="/movies" className={linkClass}>
+                        Film
+                    </NavLink>
+                    <NavLink
+                        to="/events"
+                        className={linkClass + " hidden sm:block"}
+                    >
+                        Event
+                    </NavLink>
+                    <NavLink to="/favorites" className={linkClass}>
+                        Favoriten
+                    </NavLink>
+                </div>
+            )}
         </div>
     );
 };

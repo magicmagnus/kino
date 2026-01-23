@@ -21,6 +21,8 @@ const MovieBlock = (props) => {
         url.searchParams.set("show", showParam);
         window.history.pushState(null, null, url.toString());
 
+        console.log("MovieBlock clicked:", { show, movieInfo, date });
+
         setShowCard({
             show: show,
             movieInfo: movieInfo,

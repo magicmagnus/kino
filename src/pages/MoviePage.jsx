@@ -1,5 +1,8 @@
 import movieViewData from "../data/movie-view.json";
 import TopSection from "../components/TopSection";
+import BottomNavBar from "../components/BottomNavBar";
+import SelectionButtonContainer from "../components/SelectionButtonContainer";
+import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
 import { Listbox } from "@headlessui/react";
 import { useState, useEffect } from "react";
@@ -15,7 +18,7 @@ import MovieSelectionButton from "../components/MovieSelectionButton";
 import SEOHead from "../components/SEOHead";
 
 const MoviePage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate } =
+    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
         useOutletContext();
     const { movieSlug } = useParams();
     const navigate = useNavigate();
@@ -62,6 +65,20 @@ const MoviePage = () => {
 
     useScrollToEarliest([selectedMovie]);
 
+    const movieSelectionButtons = (
+        <SelectionButtonContainer>
+            {movieViewData.map((movie, movieIndex) => (
+                <MovieSelectionButton
+                    key={movieIndex}
+                    onClick={() => setSelectedMovie(movie.slug)}
+                    selected={selectedMovie === movie.slug}
+                    text={movie.title}
+                    img={movie.posterUrl}
+                />
+            ))}
+        </SelectionButtonContainer>
+    );
+
     return (
         <>
             <SEOHead
@@ -71,15 +88,7 @@ const MoviePage = () => {
             />
             <TopSection date={firstDate} movieData={movieData}>
                 {/* Movie selection buttons */}
-                {movieViewData.map((movie, movieIndex) => (
-                    <MovieSelectionButton
-                        key={movieIndex}
-                        onClick={() => setSelectedMovie(movie.slug)}
-                        selected={selectedMovie === movie.slug}
-                        text={movie.title}
-                        img={movie.posterUrl}
-                    />
-                ))}
+                {!isMobile && movieSelectionButtons}
             </TopSection>
             {/* All Timeline Groups */}
             {filteredMovieData.dates.map((date, dateIdx) => (
@@ -93,6 +102,10 @@ const MoviePage = () => {
                     date={date.date}
                 />
             ))}
+
+            <Footer />
+
+            {isMobile && <BottomNavBar>{movieSelectionButtons}</BottomNavBar>}
         </>
     );
 };

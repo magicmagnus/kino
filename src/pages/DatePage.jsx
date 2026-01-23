@@ -1,6 +1,9 @@
 import dateViewData from "../data/date-view.json";
 import TopSection from "../components/TopSection";
+import BottomNavBar from "../components/BottomNavBar";
+import SelectionButtonContainer from "../components/SelectionButtonContainer";
 import SelectionButton from "../components/SelectionButton";
+import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
 import { useState, useEffect } from "react";
 import {
@@ -14,7 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const DatePage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate } =
+    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
         useOutletContext();
     const { dateSlug } = useParams();
     const navigate = useNavigate();
@@ -54,6 +57,21 @@ const DatePage = () => {
 
     useScrollToEarliest([selectedDate]);
 
+    const dateSelectionButtons = (
+        <SelectionButtonContainer>
+            {upcomingDateData
+                .slice(0, 7) // Show only the next 7 days
+                .map((date, dateIndex) => (
+                    <SelectionButton
+                        onClick={() => setSelectedDate(date.date)}
+                        key={dateIndex}
+                        selected={date.date === selectedDate}
+                        text={formatDateString(date.date, true)}
+                    />
+                ))}
+        </SelectionButtonContainer>
+    );
+
     return (
         <>
             <SEOHead
@@ -62,14 +80,7 @@ const DatePage = () => {
             />
             <TopSection date={selectedDate}>
                 {/* Date buttons for Date View */}
-                {upcomingDateData.slice(0, 7).map((date, dateIndex) => (
-                    <SelectionButton
-                        onClick={() => setSelectedDate(date.date)}
-                        key={dateIndex}
-                        selected={date.date === selectedDate}
-                        text={formatDateString(date.date, true)}
-                    />
-                ))}
+                {!isMobile && dateSelectionButtons}
             </TopSection>
             {/* All Timeline Groups */}
             {filteredDateData.theaters.map((theater, theaterIdx) => (
@@ -83,6 +94,10 @@ const DatePage = () => {
                     date={selectedDate}
                 />
             ))}
+
+            <Footer />
+
+            {isMobile && <BottomNavBar>{dateSelectionButtons}</BottomNavBar>}
         </>
     );
 };

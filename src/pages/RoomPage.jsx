@@ -1,6 +1,9 @@
 import roomViewData from "../data/room-view.json";
 import TopSection from "../components/TopSection";
+import BottomNavBar from "../components/BottomNavBar";
 import SelectionButton from "../components/SelectionButton";
+import SelectionButtonContainer from "../components/SelectionButtonContainer";
+import Footer from "../components/Footer";
 import Timeline from "../components/Timeline";
 import { useState, useEffect } from "react";
 import {
@@ -14,7 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const RoomPage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate } =
+    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
         useOutletContext();
     const { roomSlug } = useParams();
     const navigate = useNavigate();
@@ -88,6 +91,21 @@ const RoomPage = () => {
 
     useScrollToEarliest([selectedRoom]);
 
+    const roomsSelectionButtons = (
+        <SelectionButtonContainer>
+            {roomViewData.map((theater, theaterIdx) =>
+                theater.rooms.map((room, roomIdx) => (
+                    <SelectionButton
+                        key={`${theaterIdx}-${roomIdx}`}
+                        onClick={() => setSelectedRoom(room.slug || room.name)}
+                        selected={(room.slug || room.name) === selectedRoom}
+                        text={room.name}
+                    />
+                )),
+            )}
+        </SelectionButtonContainer>
+    );
+
     return (
         <>
             <SEOHead
@@ -96,18 +114,7 @@ const RoomPage = () => {
             />
             <TopSection date={firstDate}>
                 {/* Room buttons for Room View */}
-                {roomViewData.map((theater, theaterIdx) =>
-                    theater.rooms.map((room, roomIdx) => (
-                        <SelectionButton
-                            key={`${theaterIdx}-${roomIdx}`}
-                            onClick={() =>
-                                setSelectedRoom(room.slug || room.name)
-                            }
-                            selected={(room.slug || room.name) === selectedRoom}
-                            text={room.name}
-                        />
-                    )),
-                )}
+                {!isMobile && roomsSelectionButtons}
             </TopSection>
             {/* All Timelines */}
             {filteredRoomData.map((theater, theaterIdx) =>
@@ -127,6 +134,10 @@ const RoomPage = () => {
                     )),
                 ),
             )}
+
+            <Footer />
+
+            {isMobile && <BottomNavBar>{roomsSelectionButtons}</BottomNavBar>}
         </>
     );
 };

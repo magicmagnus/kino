@@ -11,6 +11,7 @@ import DatePage from "./pages/DatePage";
 import RoomPage from "./pages/RoomPage";
 import MoviePage from "./pages/MoviePage";
 import EventPage from "./pages/EventPage";
+import FavoritesPage from "./pages/FavoritesPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter(
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
             <Route path="/movies" element={<MoviePage />} />
             <Route path="/events/:eventSlug" element={<EventPage />} />
             <Route path="/events" element={<EventPage />} />
+            <Route path="/favorites" element={<FavoritesPage />} />
             <Route path="*" element={<NotFoundPage />} />
         </Route>,
     ),

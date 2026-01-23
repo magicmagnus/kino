@@ -1,6 +1,9 @@
 import eventViewData from "../data/event-view.json";
 import TopSection from "../components/TopSection";
+import BottomNavBar from "../components/BottomNavBar";
+import SelectionButtonContainer from "../components/SelectionButtonContainer";
 import SelectionButton from "../components/SelectionButton";
+import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
 import { useState, useEffect } from "react";
 import {
@@ -14,7 +17,7 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const EventPage = () => {
-    const { showCard, setShowCard, firstDate, setFirstDate } =
+    const { showCard, setShowCard, firstDate, setFirstDate, isMobile } =
         useOutletContext();
     const { eventSlug } = useParams();
     const navigate = useNavigate();
@@ -61,6 +64,19 @@ const EventPage = () => {
 
     useScrollToEarliest([selectedEvent]);
 
+    const eventSelectionButtons = (
+        <SelectionButtonContainer>
+            {eventViewData.map((event, eventIndex) => (
+                <SelectionButton
+                    key={eventIndex}
+                    onClick={() => setSelectedEvent(event.slug)}
+                    selected={selectedEvent === event.slug}
+                    text={event.name}
+                />
+            ))}
+        </SelectionButtonContainer>
+    );
+
     return (
         <>
             <SEOHead
@@ -69,14 +85,7 @@ const EventPage = () => {
             />
             <TopSection date={firstDate} eventData={eventData}>
                 {/* Event buttons for Event View */}
-                {eventViewData.map((event, eventIndex) => (
-                    <SelectionButton
-                        key={eventIndex}
-                        onClick={() => setSelectedEvent(event.slug)}
-                        selected={selectedEvent === event.slug}
-                        text={event.name}
-                    />
-                ))}
+                {!isMobile && eventSelectionButtons}
             </TopSection>
             {/* All Timeline Groups grouped by date */}
             {filteredEventData.dates.map((date, dateIdx) => (
@@ -90,6 +99,10 @@ const EventPage = () => {
                     date={date.date}
                 />
             ))}
+
+            <Footer />
+
+            {isMobile && <BottomNavBar>{eventSelectionButtons}</BottomNavBar>}
         </>
     );
 };

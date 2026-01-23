@@ -11,6 +11,10 @@ export const useShowParameter = () => {
 
             if (showParam) {
                 const foundShowData = findShowById(showParam);
+                // console.log(
+                //     "useShowParameter showData changed:",
+                //     foundShowData,
+                // );
                 setShowData(foundShowData);
             } else {
                 setShowData(null);

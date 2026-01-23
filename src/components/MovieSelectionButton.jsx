@@ -6,10 +6,8 @@ const MovieSelectionButton = (props) => {
         <button
             onClick={onClick}
             className={
-                "flex h-10 min-w-32 rounded-lg text-xs font-semibold transition-all duration-200 hover:bg-rose-500 hover:text-rose-50 sm:min-w-44" +
-                (selected
-                    ? " bg-rose-600 text-rose-50"
-                    : " bg-rose-900 text-gray-200")
+                "flex h-10 min-w-32 rounded-lg text-xs font-semibold transition-all duration-200 hover:bg-zinc-700 hover:text-white sm:min-w-44" +
+                (selected ? " bg-zinc-700 text-white" : " text-gray-200")
             }
         >
             <div className="h-10 shrink-0">
