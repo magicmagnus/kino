@@ -9,6 +9,33 @@ export const useViewportHeight = () => {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+            // Detect iOS
+            const isIOS =
+                /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === "MacIntel" &&
+                    navigator.maxTouchPoints > 1);
+
+            // Detect if running as standalone PWA
+            const isStandalone =
+                window.matchMedia("(display-mode: standalone)").matches ||
+                navigator.standalone === true;
+
+            // Detect iOS PWA specifically
+            const isIOSPWA = isIOS && isStandalone;
+
+            // Set CSS custom properties for platform-specific adjustments
+            document.documentElement.style.setProperty(
+                "--safe-area-bottom",
+                isIOSPWA ? "0px" : "env(safe-area-inset-bottom, 0px)",
+            );
+
+            // Add class to html element for CSS targeting
+            if (isIOSPWA) {
+                document.documentElement.classList.add("ios-pwa");
+            } else {
+                document.documentElement.classList.remove("ios-pwa");
+            }
+
             // Debug info
             setDebugInfo({
                 windowInnerHeight: window.innerHeight,
@@ -17,8 +44,9 @@ export const useViewportHeight = () => {
                 screenHeight: window.screen.height,
                 availHeight: window.screen.availHeight,
                 visualViewportHeight: window.visualViewport?.height,
-                isStandalone: window.matchMedia("(display-mode: standalone)")
-                    .matches,
+                isStandalone,
+                isIOS,
+                isIOSPWA,
                 isPWA:
                     navigator.standalone ||
                     window.matchMedia("(display-mode: standalone)").matches,

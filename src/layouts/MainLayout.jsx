@@ -19,7 +19,7 @@ const MainLayout = () => {
     // Get show data from URL parameter - THIS IS THE SINGLE SOURCE OF TRUTH
     const showData = useShowParameter();
 
-    // Fix viewport height for PWA - sets --vh CSS variable
+    // Fix viewport height for PWA - sets --vh and --safe-area-bottom CSS variables
     const debugInfo = useViewportHeight();
 
     // Show debug panel in development
@@ -63,8 +63,8 @@ const MainLayout = () => {
             style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
         >
             {/* Debug panel - remove in production */}
-            {showDebug && process.env.NODE_ENV === "development" && (
-                <div className="fixed left-2 top-16 z-[100] max-w-[200px] rounded bg-black/80 p-2 text-xs text-white">
+            {showDebug && (
+                <div className="fixed left-2 top-16 z-[100] max-w-[250px] rounded bg-black/90 p-2 text-xs text-white">
                     <pre>{JSON.stringify(debugInfo, null, 2)}</pre>
                 </div>
             )}
@@ -111,7 +111,7 @@ const MainLayout = () => {
                 className="fixed right-4 z-50 flex flex-col items-end"
                 style={{
                     bottom: isMobile
-                        ? "calc(6rem + env(safe-area-inset-bottom, 0px))"
+                        ? "calc(6rem + var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)))"
                         : "1rem",
                 }}
             >

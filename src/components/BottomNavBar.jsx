@@ -22,7 +22,10 @@ const BottomNavBar = ({ children }) => {
     return (
         <div
             className="fixed bottom-0 left-0 z-40 h-fit w-screen bg-neutral-800"
-            style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+            style={{
+                paddingBottom:
+                    "var(--safe-area-bottom, env(safe-area-inset-bottom, 0px))",
+            }}
         >
             {children}
             <div className="flex w-screen items-center justify-around bg-neutral-800 p-1 text-white backdrop-blur-md">

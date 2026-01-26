@@ -1,15 +1,18 @@
 import React from "react";
 
 const Footer = ({ isMobile, isMoviePage }) => {
-    const marginBottom = isMoviePage ? 6 : 5.5;
+    // Calculate bottom margin based on mobile and movie page status
+    const getMarginBottom = () => {
+        if (!isMobile) return "0";
+        const baseMargin = isMoviePage ? "6rem" : "5.5rem";
+        return `calc(${baseMargin} + var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)))`;
+    };
 
     return (
         <div
             className="sticky left-0 z-10 mt-auto h-fit w-screen border-t-8 border-neutral-900 bg-neutral-800 p-2 text-center text-white"
             style={{
-                marginBottom: isMobile
-                    ? `calc(${marginBottom}rem + env(safe-area-inset-bottom, 0px))`
-                    : "0",
+                marginBottom: getMarginBottom(),
             }}
         >
             <div className="flex items-center justify-center gap-2 text-[0.65rem] text-gray-400 lg:text-sm">

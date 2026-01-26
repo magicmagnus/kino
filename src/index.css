@@ -5,6 +5,7 @@
 /* PWA Viewport Height Fix */
 :root {
   --vh: 1vh;
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /* Ensure html and body take full height */
@@ -26,6 +27,17 @@ body,
     height: calc(var(--vh, 1vh) * 100);
     overflow: hidden;
   }
+}
+
+/* iOS PWA specific - remove extra safe area when iOS handles it */
+html.ios-pwa {
+  --safe-area-bottom: 0px;
+}
+
+/* iOS PWA - ensure no white bar at bottom */
+html.ios-pwa body {
+  background-color: #262626;
+  /* neutral-800 - matches BottomNavBar */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
