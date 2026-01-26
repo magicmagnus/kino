@@ -11,7 +11,12 @@ const Header = ({ isMobile }) => {
         );
     };
     return (
-        <div className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between border-b border-neutral-700 bg-neutral-900 p-3 text-white lg:p-4 2xl:p-6">
+        <div
+            className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between border-b border-neutral-700 bg-neutral-900 px-3 pb-3 text-white lg:px-4 lg:pb-4 2xl:px-6 2xl:pb-6"
+            style={{
+                paddingTop: "calc(0.75rem + env(safe-area-inset-top, 0px))",
+            }}
+        >
             <Link
                 to="/"
                 className="flex w-auto flex-1 items-center justify-start gap-1.5 sm:gap-3"
