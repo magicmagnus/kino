@@ -3,8 +3,14 @@ import MovieCard from "../components/MovieCard";
 import InstallPWA from "../components/InstallPWA";
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { TIMELINE_WIDTH } from "../utils/utils";
+import {
+    HOUR_WIDTH,
+    HOUR_WIDTH_LARGE,
+    HOUR_WIDTH_XL,
+    TOTAL_HOURS,
+} from "../utils/utils";
 import { useShowParameter } from "../hooks/useShowParameter";
+import { useViewportHeight } from "../hooks/useViewportHeight";
 
 const MainLayout = () => {
     const [firstDate, setFirstDate] = useState(new Date());
@@ -12,6 +18,12 @@ const MainLayout = () => {
 
     // Get show data from URL parameter - THIS IS THE SINGLE SOURCE OF TRUTH
     const showData = useShowParameter();
+
+    // Fix viewport height for PWA - sets --vh CSS variable
+    const debugInfo = useViewportHeight();
+
+    // Show debug panel in development
+    const showDebug = false; // Set to true to debug
 
     // Update mobile state based on window size
     useEffect(() => {
@@ -46,7 +58,17 @@ const MainLayout = () => {
     }, [showData]);
 
     return (
-        <div className="flex min-h-[100dvh] flex-col bg-zinc-950">
+        <div
+            className="flex flex-col bg-neutral-900"
+            style={{ minHeight: "calc(var(--vh, 1vh) * 100)" }}
+        >
+            {/* Debug panel - remove in production */}
+            {showDebug && process.env.NODE_ENV === "development" && (
+                <div className="fixed left-2 top-16 z-[100] max-w-[200px] rounded bg-black/80 p-2 text-xs text-white">
+                    <pre>{JSON.stringify(debugInfo, null, 2)}</pre>
+                </div>
+            )}
+
             <Header isMobile={isMobile} />
 
             {/* Main content wrapper */}
@@ -54,11 +76,13 @@ const MainLayout = () => {
                 {/* Scrollable content */}
                 <div className="no-scrollbar absolute inset-0 w-full overflow-y-auto">
                     <div
-                        className="relative flex min-h-full flex-col"
                         style={{
-                            width: `${TIMELINE_WIDTH + 24 + 24}px`,
-                            minWidth: `${TIMELINE_WIDTH + 24 + 24}px`,
+                            "--hour-width": `${HOUR_WIDTH}px`,
+                            "--hour-width-lg": `${HOUR_WIDTH_LARGE}px`,
+                            "--hour-width-xl": `${HOUR_WIDTH_XL}px`,
+                            "--total-hours": TOTAL_HOURS,
                         }}
+                        className="relative mr-auto flex min-h-full w-[calc(var(--hour-width)*var(--total-hours)+4rem)] flex-col lg:w-[calc(var(--hour-width-lg)*var(--total-hours)+4rem)] 2xl:w-[calc(var(--hour-width-xl)*var(--total-hours)+4rem)]"
                     >
                         <Outlet
                             context={{
@@ -73,7 +97,10 @@ const MainLayout = () => {
 
                 {/* Movie card - shown when showData exists */}
                 {showData && (
-                    <div className="fixed inset-0 z-50 h-[100dvh]">
+                    <div
+                        className="fixed inset-0 z-50"
+                        style={{ height: "calc(var(--vh, 1vh) * 100)" }}
+                    >
                         <MovieCard showData={showData} />
                     </div>
                 )}

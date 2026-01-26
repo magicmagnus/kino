@@ -14,7 +14,10 @@ import movieViewData from "../data/movie-view.json";
 import movieReference from "../data/movies-reference.json";
 
 const FavoritesPage = () => {
-    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
+
+    // Call all hooks before any conditional returns
+    useScrollToEarliest([]);
 
     const favoriteFilterButtons = null;
 
@@ -24,19 +27,20 @@ const FavoritesPage = () => {
                 title="Favoriten - Kinoschurke"
                 description="Deine favorisierten Filme und Vorstellungen."
                 url="https://kinoschurke.de/favorites"
+                showData={showData}
             />
             <TopSection date={firstDate}>
-                {/* Favorite filter buttons */}
                 {!isMobile && favoriteFilterButtons}
             </TopSection>
-
-            {/* Timeline Groups */}
 
             <div className="sticky left-0 flex min-h-[40vh] w-screen items-center justify-center">
                 <div className="mx-10 text-center text-gray-400">
                     <i className="fa-regular fa-bookmark mb-4 text-6xl"></i>
-                    <h3 className="mb-2 text-xl font-semibold">
+                    {/* <h3 className="mb-2 text-xl font-semibold">
                         Keine bevorstehenden Vorstellungen
+                    </h3> */}
+                    <h3 className="mb-2 text-xl font-semibold">
+                        Coming Soon: Favoriten-Funktion
                     </h3>
                     <p>
                         Wähle Filme oder einzelne Vorstellungen aus, um sie zu
@@ -44,8 +48,6 @@ const FavoritesPage = () => {
                     </p>
                 </div>
             </div>
-
-            <Footer />
 
             {isMobile && <BottomNavBar>{favoriteFilterButtons}</BottomNavBar>}
         </>

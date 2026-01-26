@@ -92,7 +92,7 @@ const InstallPWA = () => {
     return (
         <div>
             {/* {process.env.NODE_ENV === "development" && (
-                <div className="rounded-lg bg-zinc-800 p-4 shadow-lg">
+                <div className="rounded-lg bg-neutral-800 p-4 shadow-lg">
                     <h3 className="mb-2 font-semibold text-white">
                         PWA Debug Panel
                     </h3>

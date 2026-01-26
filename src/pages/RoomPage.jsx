@@ -17,34 +17,48 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const RoomPage = () => {
-    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
     const { roomSlug } = useParams();
     const navigate = useNavigate();
 
-    // Get first available room as default
-    const getFirstAvailableRoom = () => {
+    // Get all available room slugs
+    const getAllRoomSlugs = () => {
+        const slugs = [];
         for (const theater of roomViewData) {
             for (const room of theater.rooms) {
-                return room.slug || room.name; // Use slug if available, fallback to name
+                slugs.push(room.slug || room.name);
             }
         }
-        return null;
+        return slugs;
     };
 
-    const [selectedRoom, setSelectedRoom] = useState(
-        roomSlug || getFirstAvailableRoom(),
-    );
+    const allRoomSlugs = getAllRoomSlugs();
 
-    // Update URL when selectedRoom changes
+    // Check if the roomSlug from URL is valid
+    const isValidRoom = (slug) => {
+        if (!slug) return false;
+        return allRoomSlugs.includes(slug);
+    };
+
+    // Determine the valid room to use - validate BEFORE setting state
+    const validatedRoom = isValidRoom(roomSlug) ? roomSlug : allRoomSlugs[0];
+
+    const [selectedRoom, setSelectedRoom] = useState(validatedRoom);
+
+    // Sync URL with selectedRoom
     useEffect(() => {
-        if (selectedRoom && selectedRoom !== roomSlug) {
+        if (
+            selectedRoom &&
+            selectedRoom !== roomSlug &&
+            isValidRoom(selectedRoom)
+        ) {
             navigate(`/rooms/${selectedRoom}`, { replace: true });
         }
-    }, [selectedRoom, roomSlug, navigate]);
+    }, [selectedRoom]);
 
-    // Update selectedRoom when URL changes
+    // Sync selectedRoom with URL
     useEffect(() => {
-        if (roomSlug && roomSlug !== selectedRoom) {
+        if (roomSlug && roomSlug !== selectedRoom && isValidRoom(roomSlug)) {
             setSelectedRoom(roomSlug);
         }
     }, [roomSlug]);
@@ -52,7 +66,6 @@ const RoomPage = () => {
     // Filter and Find - Updated to work with both slug and name
     const filteredRoomData = roomViewData.reduce(
         (filteredTheaters, theater) => {
-            // Filter room and dates in one pass
             const filteredRooms = theater.rooms
                 .filter((room) => (room.slug || room.name) === selectedRoom)
                 .map((room) => ({
@@ -63,7 +76,6 @@ const RoomPage = () => {
                 }))
                 .filter((room) => room.dates.length > 0);
 
-            // Only include theaters that have matching rooms with valid dates
             if (filteredRooms.length > 0) {
                 filteredTheaters.push({
                     ...theater,
@@ -76,12 +88,7 @@ const RoomPage = () => {
         [],
     );
 
-    // Add error handling for when room is not found
-    if (selectedRoom && filteredRoomData.length === 0) {
-        return <Navigate to={"/404/"} />;
-    }
-
-    // Add useEffect to handle firstDate update
+    // Update firstDate when data changes
     useEffect(() => {
         if (filteredRoomData.length > 0) {
             setFirstDate(filteredRoomData[0].rooms[0].dates[0].date);
@@ -89,6 +96,20 @@ const RoomPage = () => {
     }, [filteredRoomData, setFirstDate]);
 
     useScrollToEarliest([selectedRoom]);
+
+    // Redirect if we landed on an invalid URL
+    if (!isValidRoom(roomSlug) && roomSlug !== undefined) {
+        if (allRoomSlugs.length > 0) {
+            return <Navigate to={`/rooms/${allRoomSlugs[0]}`} replace />;
+        } else {
+            return <Navigate to={`/rooms/`} replace />;
+        }
+    }
+
+    // Safety check - no data for valid room (all dates in past)
+    if (filteredRoomData.length === 0) {
+        return <Navigate to={`/rooms/`} replace />;
+    }
 
     const roomsSelectionButtons = (
         <SelectionButtonContainer>
@@ -110,13 +131,11 @@ const RoomPage = () => {
             <SEOHead
                 roomName={filteredRoomData[0]?.rooms[0]?.name}
                 url={`https://kinoschurke.de/rooms/${selectedRoom}`}
-                showDate={showDate}
+                showData={showData}
             />
             <TopSection date={firstDate}>
-                {/* Room buttons for Room View */}
                 {!isMobile && roomsSelectionButtons}
             </TopSection>
-            {/* All Timelines */}
             {filteredRoomData.map((theater, theaterIdx) =>
                 theater.rooms.map((room, roomIdx) =>
                     room.dates.map((date, dateIdx) => (
@@ -133,7 +152,10 @@ const RoomPage = () => {
                 ),
             )}
 
-            <Footer />
+            {/* cause we dont have a TimelineGroup that does the margin */}
+            <div className="mb-5 lg:mb-8 2xl:mb-10" />
+
+            <Footer isMobile={isMobile} />
 
             {isMobile && <BottomNavBar>{roomsSelectionButtons}</BottomNavBar>}
         </>

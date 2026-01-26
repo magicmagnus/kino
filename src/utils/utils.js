@@ -1,7 +1,9 @@
-export const HOUR_WIDTH = 112; // w-32 = 128px
+export const HOUR_WIDTH = 112; // 7rem = 112px = w-28 until breakpoint lg
+export const HOUR_WIDTH_LARGE = 128; // 8rem = 128px = w-32 from breakpoint lg
+export const HOUR_WIDTH_XL = 144; // 9rem = 144px = w-36 from breakpoint 2xl
 export const START_HOUR = 9; // 9 AM
 export const END_HOUR = 25; // 1 AM next day
-export const TOTAL_HOURS = END_HOUR - START_HOUR + 1;
+export const TOTAL_HOURS = END_HOUR - START_HOUR + 1; // 17 hours
 export const TIMELINE_WIDTH = TOTAL_HOURS * HOUR_WIDTH;
 // export today as YYYY-MM-DD
 export const TODAY_FORMATTED = new Date().toISOString().split("T")[0];
@@ -12,11 +14,11 @@ export const HOURS = Array.from({ length: 17 }, (_, i) => {
     return `${hour.toString().padStart(2, "0")}:00`;
 });
 
-export const timeToPixels = (time) => {
+export const timeToPixels = (time, hourWidth = HOUR_WIDTH) => {
     const [hours, minutes] = time.split(":").map(Number);
     const hoursFromStart =
         hours >= START_HOUR ? hours - START_HOUR : hours + 24 - START_HOUR;
-    return (hoursFromStart * 60 + minutes) * (HOUR_WIDTH / 60);
+    return (hoursFromStart * 60 + minutes) * (hourWidth / 60);
 };
 
 export const isDateTodayOrTomorrow = (date) => {

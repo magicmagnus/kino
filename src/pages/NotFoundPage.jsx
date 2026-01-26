@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NotFoundPage = () => {
     return (
         <div className="flex min-h-[80dvh] w-screen items-center justify-center">
-            <section className="flex h-fit max-w-[80%] flex-col items-center justify-center rounded-3xl bg-zinc-800 p-6 text-center text-white shadow-xl shadow-black">
+            <section className="flex h-fit max-w-[80%] flex-col items-center justify-center rounded-3xl p-6 text-center text-white">
                 {/* <i className="fas fa-exclamation-triangle mb-4 text-9xl text-rose-400"></i> */}
                 <h1 className="mb-4 text-4xl font-bold">404</h1>
                 <h2 className="mb-5 text-2xl">

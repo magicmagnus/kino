@@ -49,7 +49,7 @@ const ShareButton = ({
     return (
         <>
             <button onClick={handleShare} className={classNameBtn}>
-                <i className="fa-solid fa-share"></i>
+                <i className="fa-solid fa-share-nodes 0"></i>
                 {children}
             </button>
             {/* Show copied message for 2 seconds after copying */}

@@ -22,7 +22,7 @@ const MovieAttributes = (props) => {
         isCard,
     } = props;
 
-    const [isAttributesExpanded, setIsExpanded] = useState(false);
+    const [isAttributesExpanded, setIsExpanded] = useState(true);
     const navigate = useNavigate();
 
     // ...existing code for imageStyles, placeholderStyles...
@@ -100,19 +100,21 @@ const MovieAttributes = (props) => {
 
     return (
         <>
-            {/* container poster, title, attributes, descripction*/}
+            {/* container poster, title, attributes, descripction */}
             <div
                 className={
-                    "relative flex h-full w-fit flex-col overflow-auto sm:flex-row " +
-                    (isCard ? " justify-start rounded-3xl" : " ")
+                    "relative flex h-full w-fit flex-col overflow-auto portrait:flex-col landscape:flex-row" +
+                    (isCard
+                        ? " justify-start rounded-3xl landscape:before:absolute landscape:before:bottom-0 landscape:before:left-0 landscape:before:h-28 landscape:before:w-full landscape:before:bg-gradient-to-t landscape:before:from-neutral-950 landscape:before:to-transparent"
+                        : " ")
                 }
             >
                 {/* poster  */}
-                <div className="w-full bg-zinc-800 sm:h-full sm:w-auto">
-                    <div className="relative w-full pb-[150%] sm:aspect-[2/3] sm:h-full sm:w-auto sm:pb-0">
+                <div className="w-full bg-neutral-800 landscape:h-full landscape:w-auto">
+                    <div className="relative w-full pb-[150%] landscape:aspect-[2/3] landscape:h-full landscape:w-auto landscape:pb-0">
                         {!imageLoaded && !imageError && (
                             <div
-                                className="absolute left-0 top-0 h-full w-full bg-zinc-800"
+                                className="absolute left-0 top-0 h-full w-full bg-neutral-800"
                                 style={placeholderStyles}
                             />
                         )}
@@ -128,34 +130,51 @@ const MovieAttributes = (props) => {
                             alt={title}
                             className="absolute left-0 top-0 h-full w-full object-cover"
                         />
+                        {/* trailer and favorite buttons */}
+                        {children}
                     </div>
                 </div>
-
                 {/* title, attributes, descripction */}
                 <div
                     className={
-                        "flex flex-1 flex-col justify-start gap-4 p-4 sm:overflow-scroll " +
+                        "flex flex-1 flex-col justify-start gap-4 p-4 lg:p-6 landscape:overflow-scroll landscape:2xl:p-8" +
                         (isCard
-                            ? " sm:mb-[118px] lg:mb-[68px]"
-                            : "max-w-[800px]")
+                            ? " portrait:mb-28 landscape:mb-20 landscape:lg:mb-24"
+                            : " max-w-[750px]")
                     }
                 >
                     {/* title */}
-                    <h2 className="text-left text-3xl font-semibold sm:mr-10">
+                    <h2 className="mb-2 text-left text-3xl font-semibold lg:text-4xl 2xl:text-5xl landscape:mr-12">
                         {title}
                     </h2>
 
                     {/* just attributes */}
-                    <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-zinc-800 px-2 py-2 text-left text-sm">
+                    <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-neutral-800 px-2 py-2 text-left text-sm lg:text-base 2xl:text-base portrait:pb-2 landscape:block landscape:columns-2 landscape:gap-x-6 landscape:px-3">
                         {/* Always visible content */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
                             <div className="flex w-4 items-center justify-center">
                                 <i className="fa-solid fa-clock"></i>
                             </div>
                             <p>{durationText}</p>
                         </div>
+                        {director != "Unknown Director" && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-clapperboard"></i>
+                                </div>
+                                <p>{director}</p>
+                            </div>
+                        )}
+                        {actors.length > 0 && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-users"></i>
+                                </div>
+                                <p>{actors.join(", ")}</p>
+                            </div>
+                        )}
                         {genre != "Unknown Genre" ? (
-                            <div className="flex items-center gap-2">
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-masks-theater"></i>
                                 </div>
@@ -164,76 +183,43 @@ const MovieAttributes = (props) => {
                         ) : (
                             <> </>
                         )}
-
-                        {/* Expandable content wrapper */}
-                        <div
-                            className={`grid transition-all duration-300 ease-in-out ${isAttributesExpanded ? "grid-rows-[1fr]" : "-mt-3 grid-rows-[0fr]"}`}
-                        >
-                            <div className="overflow-hidden">
-                                {fsk != "Unknown" && (
-                                    <div className="flex items-center gap-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-shield-halved"></i>
-                                        </div>
-                                        <p>FSK: {fsk}</p>
-                                    </div>
-                                )}
-                                {director != "Unknown Director" && (
-                                    <div className="flex items-center gap-2 pt-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-clapperboard"></i>
-                                        </div>
-                                        <p>{director}</p>
-                                    </div>
-                                )}
-                                {actors.length > 0 && (
-                                    <div className="flex items-center gap-2 pt-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-users"></i>
-                                        </div>
-                                        <p>{actors.join(", ")}</p>
-                                    </div>
-                                )}
-                                {releaseDate != "Unknown Release Date" && (
-                                    <div className="flex items-center gap-2 pt-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-calendar-day"></i>
-                                        </div>
-                                        <p>Erschienen: {releaseDate}</p>
-                                    </div>
-                                )}
-                                {originalTitle != "Unknown Original Title" && (
-                                    <div className="flex items-center gap-2 pt-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-book"></i>
-                                        </div>
-                                        <p>Original Titel: "{originalTitle}"</p>
-                                    </div>
-                                )}
-                                {production != "Unknown Production" && (
-                                    <div className="flex items-center gap-2 pt-2">
-                                        <div className="flex w-4 items-center justify-center">
-                                            <i className="fa-solid fa-film"></i>
-                                        </div>
-                                        <p>Produktion: {production}</p>
-                                    </div>
-                                )}
+                        {fsk != "Unknown" && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <p>FSK: {fsk}</p>
                             </div>
-                        </div>
-                        {/* Expand button */}
-                        <button
-                            onClick={() => setIsExpanded(!isAttributesExpanded)}
-                            className="flex h-4 w-full items-center justify-center rounded-md"
-                        >
-                            <i
-                                className={`fa-solid ${isAttributesExpanded ? "fa-chevron-up" : "fa-chevron-down text-white"} text-base transition-all duration-300 ease-in-out hover:scale-[1.3] hover:text-rose-500`}
-                            ></i>
-                        </button>
+                        )}
+                        {releaseDate != "Unknown Release Date" && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-calendar-day"></i>
+                                </div>
+                                <p>Erschienen: {releaseDate}</p>
+                            </div>
+                        )}
+                        {originalTitle != "Unknown Original Title" && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-book"></i>
+                                </div>
+                                <p>Original Titel: "{originalTitle}"</p>
+                            </div>
+                        )}
+                        {production != "Unknown Production" && (
+                            <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
+                                <div className="flex w-4 items-center justify-center">
+                                    <i className="fa-solid fa-film"></i>
+                                </div>
+                                <p>Produktion: {production}</p>
+                            </div>
+                        )}
                     </div>
                     <div className="flex flex-col gap-2">
                         {/* omdu tag */}
                         {isOmdu && (
-                            <div className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200">
+                            <div className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base">
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-earth-americas"></i>
                                 </div>
@@ -245,7 +231,7 @@ const MovieAttributes = (props) => {
                             <button
                                 onClick={handleEventClick}
                                 className={
-                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 " +
+                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 2xl:text-base " +
                                     (otherAttribute === "Apéro Film"
                                         ? " bg-[#fe5e08] text-[#fef2e6] hover:bg-[#e54f07]"
                                         : " bg-pink-700 text-pink-200 hover:bg-pink-600")
@@ -269,15 +255,13 @@ const MovieAttributes = (props) => {
                                         }
                                     ></i>
                                 </div>
-                                <p className="truncate font-medium">
-                                    {otherAttribute}
-                                </p>
+                                <p className="truncate">{otherAttribute}</p>
                             </button>
                         )}
                     </div>
 
                     {/* description */}
-                    <p className="text-left text-sm">
+                    <p className="text-left text-sm lg:text-base 2xl:text-base">
                         {description.split("<br>").map((line, index) => (
                             <React.Fragment key={index}>
                                 {line}
@@ -286,8 +270,6 @@ const MovieAttributes = (props) => {
                         ))}
                     </p>
                 </div>
-
-                {children}
             </div>
         </>
     );

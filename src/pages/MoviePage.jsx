@@ -4,7 +4,6 @@ import BottomNavBar from "../components/BottomNavBar";
 import SelectionButtonContainer from "../components/SelectionButtonContainer";
 import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
-import { Listbox } from "@headlessui/react";
 import { useState, useEffect } from "react";
 import {
     useOutletContext,
@@ -18,24 +17,44 @@ import MovieSelectionButton from "../components/MovieSelectionButton";
 import SEOHead from "../components/SEOHead";
 
 const MoviePage = () => {
-    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
     const { movieSlug } = useParams();
     const navigate = useNavigate();
 
-    const [selectedMovie, setSelectedMovie] = useState(
-        movieSlug || movieViewData[0].slug,
-    );
+    // Get all available movie slugs
+    const allMovieSlugs = movieViewData.map((movie) => movie.slug);
 
-    // Update URL when selectedMovie changes
+    // Check if the movieSlug from URL is valid
+    const isValidMovie = (slug) => {
+        if (!slug) return false;
+        return allMovieSlugs.includes(slug);
+    };
+
+    // Determine the valid movie to use - validate BEFORE setting state
+    const validatedMovie = isValidMovie(movieSlug)
+        ? movieSlug
+        : allMovieSlugs[0];
+
+    const [selectedMovie, setSelectedMovie] = useState(validatedMovie);
+
+    // Sync URL with selectedMovie
     useEffect(() => {
-        if (selectedMovie && selectedMovie !== movieSlug) {
+        if (
+            selectedMovie &&
+            selectedMovie !== movieSlug &&
+            isValidMovie(selectedMovie)
+        ) {
             navigate(`/movies/${selectedMovie}`, { replace: true });
         }
-    }, [selectedMovie, movieSlug, navigate]);
+    }, [selectedMovie]);
 
-    // Update selectedMovie when URL changes
+    // Sync selectedMovie with URL
     useEffect(() => {
-        if (movieSlug && movieSlug !== selectedMovie) {
+        if (
+            movieSlug &&
+            movieSlug !== selectedMovie &&
+            isValidMovie(movieSlug)
+        ) {
             setSelectedMovie(movieSlug);
         }
     }, [movieSlug]);
@@ -45,24 +64,38 @@ const MoviePage = () => {
         (movie) => movie.slug === selectedMovie,
     );
 
-    // Add error handling for when movie is not found
-    if (!movieData) {
-        return <Navigate to={"/404/"} />;
-    }
-
     // Filter out dates before today
-    const filteredMovieData = {
-        ...movieData,
-        dates: movieData.dates.filter((date) => date.date >= TODAY_FORMATTED),
-    };
+    const filteredMovieData = movieData
+        ? {
+              ...movieData,
+              dates: movieData.dates.filter(
+                  (date) => date.date >= TODAY_FORMATTED,
+              ),
+          }
+        : null;
 
+    // Update firstDate when data changes
     useEffect(() => {
-        if (filteredMovieData.dates.length > 0) {
+        if (filteredMovieData && filteredMovieData.dates.length > 0) {
             setFirstDate(filteredMovieData.dates[0].date);
         }
-    }, [filteredMovieData.dates, setFirstDate]);
+    }, [filteredMovieData?.dates, setFirstDate]);
 
     useScrollToEarliest([selectedMovie]);
+
+    // Redirect if we landed on an invalid URL
+    if (!isValidMovie(movieSlug) && movieSlug !== undefined) {
+        if (allMovieSlugs.length > 0) {
+            return <Navigate to={`/movies/${allMovieSlugs[0]}`} replace />;
+        } else {
+            return <Navigate to={`/movies/`} replace />;
+        }
+    }
+
+    // Safety check - no data found
+    if (!filteredMovieData) {
+        return <Navigate to={`/movies/`} replace />;
+    }
 
     const movieSelectionButtons = (
         <SelectionButtonContainer>
@@ -84,13 +117,11 @@ const MoviePage = () => {
                 movieTitle={movieData.title}
                 url={`https://kinoschurke.de/movies/${selectedMovie}`}
                 movieSlug={selectedMovie}
-                showData={showDate}
+                showData={showData}
             />
             <TopSection date={firstDate} movieData={movieData}>
-                {/* Movie selection buttons */}
                 {!isMobile && movieSelectionButtons}
             </TopSection>
-            {/* All Timeline Groups */}
             {filteredMovieData.dates.map((date, dateIdx) => (
                 <TimelineGroup
                     key={dateIdx}
@@ -101,7 +132,7 @@ const MoviePage = () => {
                 />
             ))}
 
-            <Footer />
+            <Footer isMobile={isMobile} isMoviePage={true} />
 
             {isMobile && <BottomNavBar>{movieSelectionButtons}</BottomNavBar>}
         </>

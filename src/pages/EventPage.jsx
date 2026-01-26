@@ -17,24 +17,44 @@ import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
 
 const EventPage = () => {
-    const { firstDate, setFirstDate, isMobile, showDate } = useOutletContext();
+    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
     const { eventSlug } = useParams();
     const navigate = useNavigate();
 
-    const [selectedEvent, setSelectedEvent] = useState(
-        eventSlug || (eventViewData.length > 0 ? eventViewData[0].slug : null),
-    );
+    // Get all available event slugs
+    const allEventSlugs = eventViewData.map((event) => event.slug);
 
-    // Update URL when selectedEvent changes
+    // Check if the eventSlug from URL is valid
+    const isValidEvent = (slug) => {
+        if (!slug) return false;
+        return allEventSlugs.includes(slug);
+    };
+
+    // Determine the valid event to use - validate BEFORE setting state
+    const validatedEvent = isValidEvent(eventSlug)
+        ? eventSlug
+        : allEventSlugs[0];
+
+    const [selectedEvent, setSelectedEvent] = useState(validatedEvent);
+
+    // Sync URL with selectedEvent
     useEffect(() => {
-        if (selectedEvent && selectedEvent !== eventSlug) {
+        if (
+            selectedEvent &&
+            selectedEvent !== eventSlug &&
+            isValidEvent(selectedEvent)
+        ) {
             navigate(`/events/${selectedEvent}`, { replace: true });
         }
-    }, [selectedEvent, eventSlug, navigate]);
+    }, [selectedEvent]);
 
-    // Update selectedEvent when URL changes
+    // Sync selectedEvent with URL
     useEffect(() => {
-        if (eventSlug && eventSlug !== selectedEvent) {
+        if (
+            eventSlug &&
+            eventSlug !== selectedEvent &&
+            isValidEvent(eventSlug)
+        ) {
             setSelectedEvent(eventSlug);
         }
     }, [eventSlug]);
@@ -44,24 +64,38 @@ const EventPage = () => {
         (event) => event.slug === selectedEvent,
     );
 
-    // Add error handling for when event is not found
-    if (!eventData) {
-        return <Navigate to={"/404/"} />;
-    }
-
     // Filter out dates before today
-    const filteredEventData = {
-        ...eventData,
-        dates: eventData.dates.filter((date) => date.date >= TODAY_FORMATTED),
-    };
+    const filteredEventData = eventData
+        ? {
+              ...eventData,
+              dates: eventData.dates.filter(
+                  (date) => date.date >= TODAY_FORMATTED,
+              ),
+          }
+        : null;
 
+    // Update firstDate when data changes
     useEffect(() => {
-        if (filteredEventData.dates.length > 0) {
+        if (filteredEventData && filteredEventData.dates.length > 0) {
             setFirstDate(filteredEventData.dates[0].date);
         }
-    }, [filteredEventData.dates, setFirstDate]);
+    }, [filteredEventData?.dates, setFirstDate]);
 
     useScrollToEarliest([selectedEvent]);
+
+    // Redirect if we landed on an invalid URL
+    if (!isValidEvent(eventSlug) && eventSlug !== undefined) {
+        if (allEventSlugs.length > 0) {
+            return <Navigate to={`/events/${allEventSlugs[0]}`} replace />;
+        } else {
+            return <Navigate to={`/events/`} replace />;
+        }
+    }
+
+    // Safety check - no data found
+    if (!filteredEventData) {
+        return <Navigate to={`/events/`} replace />;
+    }
 
     const eventSelectionButtons = (
         <SelectionButtonContainer>
@@ -81,13 +115,11 @@ const EventPage = () => {
             <SEOHead
                 eventName={eventData.name}
                 url={`https://kinoschurke.de/events/${selectedEvent}`}
-                showData={showDate}
+                showData={showData}
             />
             <TopSection date={firstDate} eventData={eventData}>
-                {/* Event buttons for Event View */}
                 {!isMobile && eventSelectionButtons}
             </TopSection>
-            {/* All Timeline Groups grouped by date */}
             {filteredEventData.dates.map((date, dateIdx) => (
                 <TimelineGroup
                     key={dateIdx}
@@ -98,7 +130,7 @@ const EventPage = () => {
                 />
             ))}
 
-            <Footer />
+            <Footer isMobile={isMobile} />
 
             {isMobile && <BottomNavBar>{eventSelectionButtons}</BottomNavBar>}
         </>

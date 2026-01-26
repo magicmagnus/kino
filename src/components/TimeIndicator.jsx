@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import {
-    HOUR_WIDTH,
     START_HOUR,
     END_HOUR,
+    HOUR_WIDTH,
+    HOUR_WIDTH_LARGE,
+    HOUR_WIDTH_XL,
     timeToPixels,
     TODAY_FORMATTED,
 } from "../utils/utils";
@@ -21,6 +23,15 @@ const TimeIndicator = (props) => {
                 return;
             }
 
+            let width;
+            if (window.innerWidth < 1024) {
+                width = HOUR_WIDTH;
+            } else if (window.innerWidth < 1536) {
+                width = HOUR_WIDTH_LARGE;
+            } else {
+                width = HOUR_WIDTH_XL;
+            }
+
             const now = new Date();
             const hours = now.getHours();
             const minutes = now.getMinutes();
@@ -32,9 +43,9 @@ const TimeIndicator = (props) => {
                 (hours >= 0 && hours < END_HOUR - 24)
             ) {
                 setIsVisible(true);
-                setPosition(timeToPixels(timeString));
+                setPosition(timeToPixels(timeString, width));
                 if (isTop) {
-                    setPosition(timeToPixels(timeString));
+                    setPosition(timeToPixels(timeString, width));
                 }
             } else {
                 setIsVisible(false);
@@ -55,17 +66,20 @@ const TimeIndicator = (props) => {
     return (
         <div
             className={
-                "absolute bottom-0 w-1 bg-rose-600 opacity-100 shadow-2xl" +
-                (isFirst
-                    ? " bottom-0 h-36"
-                    : isTop
-                      ? " z-[0] h-6"
-                      : " z-[11] h-32") +
+                "indicator absolute bottom-0 h-[calc(var(--hour-width))] w-1 bg-rose-600 shadow-2xl lg:h-[calc(var(--hour-width-lg))] 2xl:h-[calc(var(--hour-width-xl))] " +
+                (isTop
+                    ? " z-[20] h-8 lg:h-10 2xl:h-12"
+                    : isFirst
+                      ? " h-[calc(var(--hour-width)+5rem)] overflow-y-visible lg:h-[calc(var(--hour-width-lg)+6rem)] 2xl:h-[calc(var(--hour-width-xl)+7rem)]" // higher to cover the group name area
+                      : " z-[11]") +
                 " "
             }
             style={{
                 left: `${position - 2}px`, // minus 2 px to align with the hour markers, center-aligned
                 // boxShadow: "0 0 4px rgba(225, 29, 72, 0.99)",
+                "--hour-width": `${HOUR_WIDTH}px`,
+                "--hour-width-lg": `${HOUR_WIDTH_LARGE}px`,
+                "--hour-width-xl": `${HOUR_WIDTH_XL}px`,
             }}
         />
     );

@@ -17,15 +17,17 @@ const TimelineGroup = (props) => {
     }
 
     return (
-        <div key={groupElementIdx}>
+        <div key={groupElementIdx} className="mb-5 lg:mb-8 2xl:mb-10">
             {/* sticky header */}
-            <div className="sticky left-0 z-[12] flex h-fit w-screen items-center justify-start text-left">
-                <h1 className="mx-0 w-fit text-nowrap rounded-r-full bg-zinc-950 py-1 pl-2 pr-2 text-base font-semibold text-white shadow-[4px_0_4px_-4px_rgba(0,0,0,0.9)]">
+            <div className="sticky left-0 z-[12] flex h-fit w-screen items-center justify-start text-center">
+                {/* <div className="g-neutral-700 mr-2 h-1.5 w-full rounded-r-sm"></div> */}
+                <h1 className="flex-shrink-0 text-nowrap rounded-r-lg bg-neutral-800 px-8 py-1 text-lg font-semibold text-white lg:px-10 lg:py-2 lg:text-2xl 2xl:px-12 2xl:py-2 2xl:text-2xl">
                     {/* could be theater name or date name */}
                     {parentGroupType === "theater"
                         ? groupElement.name
                         : formatDateString(groupElement.date, true, "long")}
                 </h1>
+                <div className="g-neutral-700 ml-2 h-1.5 w-full rounded-l-sm"></div>
             </div>
             {/* loop over all schedules of the elements */}
             {parentGroupType === "theater" ? (
@@ -50,7 +52,7 @@ const TimelineGroup = (props) => {
                             key={roomIdx}
                             schedule={room}
                             scheduleIdx={roomIdx}
-                            isFirst={roomIdx === 0}
+                            isFirst={theaterIdx === 0 && roomIdx === 0}
                             isLast={
                                 roomIdx === theater.rooms.length - 1 &&
                                 theaterIdx === groupedList.length - 1

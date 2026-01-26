@@ -78,7 +78,7 @@ const MovieCard = (props) => {
         >
             <div
                 onClick={(e) => e.stopPropagation()}
-                className={`absolute left-1/2 top-1/2 h-[95%] w-[90%] max-w-[900px] rounded-3xl bg-zinc-900 text-white shadow-lg transition-all duration-300 ease-in-out sm:h-[90%] sm:max-h-[500px] sm:w-[90%] ${
+                className={`absolute left-1/2 top-1/2 h-[95%] w-[90%] rounded-3xl bg-neutral-900 text-white shadow-lg transition-all duration-300 ease-in-out md:max-w-[800px] lg:max-h-[650px] portrait:max-w-[500px] landscape:lg:max-w-[1000px] landscape:2xl:max-h-[750px] landscape:2xl:max-w-[1200px] ${
                     isVisible
                         ? "-translate-x-1/2 -translate-y-1/2 scale-100 opacity-100"
                         : "-translate-x-1/2 -translate-y-[45%] scale-95 opacity-0"
@@ -87,7 +87,7 @@ const MovieCard = (props) => {
                 {/* close button */}
                 <button
                     onClick={handleClose}
-                    className="absolute right-0 top-0 z-20 m-2 flex h-10 w-10 items-center justify-center rounded-full bg-zinc-950 p-4 text-rose-700 transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-zinc-700"
+                    className="absolute right-0 top-0 z-20 m-2 flex h-10 w-10 items-center justify-center rounded-full bg-neutral-950 p-4 text-rose-700 transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-neutral-700 lg:m-4"
                     style={{ boxShadow: "0 0 10px 2px rgba(0,0,0,0.5)" }}
                 >
                     <i className="fa-solid fa-xmark text-2xl"></i>
@@ -109,61 +109,74 @@ const MovieCard = (props) => {
                     description={showData.movieInfo.description}
                     isCard={true}
                 >
-                    {/* sticky button container */}
-                    <div className="sticky bottom-0 flex h-fit w-full flex-col justify-between rounded-t-3xl bg-zinc-800 px-0 sm:absolute sm:bottom-0 sm:left-auto sm:right-0 sm:w-fit sm:flex-col sm:gap-0 sm:bg-transparent sm:shadow-transparent lg:flex-row lg:items-end">
-                        {/* "All shows" and Trailer buttons */}
-                        <div className="flex h-fit w-full items-center justify-center gap-2 px-2 py-2 opacity-100 lg:mb-[0px] lg:mr-[-2px]">
-                            <button
-                                onClick={handleAllShowsClick}
-                                className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-rose-950 p-2 px-2 py-2 text-xs font-semibold text-rose-500 hover:opacity-80"
-                            >
-                                <i className="fa-solid fa-bars"></i>
-                                <p className="pl-0">Alle Vorstellungen</p>
-                            </button>
+                    {/* mini buttons for Trailer, Favorite,  */}
 
-                            <button
-                                className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-rose-950 p-2 px-2 py-2 text-xs font-semibold text-rose-500 hover:opacity-80"
-                                onClick={() =>
-                                    openYouTube(showData.movieInfo.trailerUrl)
-                                }
-                            >
-                                <i className="fa-brands fa-youtube"></i>
-                                <p className="pl-0">Trailer</p>
-                            </button>
-                        </div>
-
-                        <div className="flex h-fit w-full flex-col justify-center gap-1.5 rounded-3xl border-[1.5x] border-neutral-400 bg-zinc-900 py-2 pt-1.5 sm:bg-zinc-800">
-                            <div>
-                                <p className="text-xs font-semibold text-neutral-100">
-                                    Vorstellung:{" "}
-                                    {formatDateString(showData.date, true)} -{" "}
-                                    {showData.show.time}h:
-                                </p>
-                            </div>
-                            <div className="flex w-full items-center justify-between gap-2 px-2 sm:flex-row lg:gap-2">
-                                <ShareButton
-                                    title={`${showData.movieInfo.title} - ${showData.show.time}`}
-                                    text={`Schau dir "${showData.movieInfo.title}" um ${showData.show.time}h mit mir an!`}
-                                    isMovieCard={true}
-                                    classNameBtn="flex h-fit w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
-                                >
-                                    <div>
-                                        <p className="pl-1">Einladen</p>
-                                    </div>
-                                </ShareButton>
-                                <a
-                                    href={showData.show.iframeUrl}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="flex h-fit w-full items-center justify-center text-nowrap rounded-full bg-rose-600 px-2 py-2 text-xs font-semibold text-white hover:opacity-80"
-                                >
-                                    <i className="fa-solid fa-ticket"></i>
-                                    <p className="pl-1">Tickets kaufen</p>
-                                </a>
-                            </div>
-                        </div>
+                    <div className="absolute bottom-0 left-auto right-0 flex items-center justify-center gap-2 portrait:m-2 landscape:m-4">
+                        {/* Trailer button */}
+                        <button
+                            onClick={() =>
+                                openYouTube(showData.movieInfo.trailerUrl)
+                            }
+                            className="flex items-center justify-center gap-1 rounded-full bg-rose-950 p-2 text-xs font-semibold text-rose-500 hover:opacity-80 lg:px-4 lg:text-base 2xl:px-4 2xl:text-base"
+                        >
+                            <i className="fa-brands fa-youtube"></i>
+                            <p className="pl-0">Trailer</p>
+                        </button>
+                        {/* Favorite button */}
+                        <button
+                            className="flex items-center justify-center gap-1 rounded-full bg-rose-950 p-2 text-xs font-semibold text-rose-500 hover:opacity-80 lg:px-4 lg:text-base 2xl:px-4 2xl:text-base"
+                            S
+                        >
+                            <i className="fa-solid fa-heart"></i>
+                            <p className="pl-0">Favorit</p>
+                        </button>
                     </div>
                 </MovieAttributes>
+                {/* sticky button container (bottom on mobile, bottom right on larger screens) */}
+                <div className="absolute bottom-0 left-auto right-0 flex h-fit w-full flex-col justify-center gap-1.5 rounded-b-3xl border-t-2 border-neutral-700 bg-neutral-800 p-2 pt-1 landscape:w-fit landscape:rounded-bl-none landscape:rounded-tl-3xl landscape:border-t-0 landscape:bg-transparent landscape:p-4">
+                    {/* wrapper with show information */}
+
+                    <div>
+                        <p className="text-sm font-semibold text-gray-100 landscape:lg:text-base">
+                            Vorstellung: {formatDateString(showData.date, true)}{" "}
+                            - {showData.show.time}h:
+                        </p>
+                    </div>
+
+                    {/* button container */}
+                    <div className="flex h-full gap-2">
+                        {/* All shows and Share buttons */}
+                        <div className="flex flex-1 flex-col gap-2 landscape:flex-row">
+                            <ShareButton
+                                title={`${showData.movieInfo.title} - ${showData.show.time}`}
+                                text={`Schau dir "${showData.movieInfo.title}" um ${showData.show.time}h mit mir an!`}
+                                isMovieCard={true}
+                                classNameBtn="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:opacity-80 landscape:px-2 landscape:py-1 landscape:lg:py-2 landscape:lg:text-base"
+                            >
+                                <div>
+                                    <p className="pl-1">Einladen</p>
+                                </div>
+                            </ShareButton>
+                            <button
+                                onClick={handleAllShowsClick}
+                                className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-full bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:opacity-80 landscape:px-2 landscape:py-1 landscape:lg:py-2 landscape:lg:text-base"
+                            >
+                                <i className="fa-solid fa-film"></i>
+                                <p className="pl-1">Alle Vorstellungen</p>
+                            </button>
+                        </div>
+                        {/* Ticket button MAIN */}
+                        <a
+                            href={showData.show.iframeUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="flex h-auto w-full flex-1 items-center justify-center text-nowrap rounded-2xl bg-rose-600 p-2 text-xs font-semibold text-rose-50 hover:opacity-80 landscape:rounded-full landscape:px-2 landscape:py-1 landscape:lg:py-2 landscape:lg:text-base"
+                        >
+                            <i className="fa-solid fa-ticket -rotate-45 transform text-lg landscape:text-base"></i>
+                            <p className="pl-2">Tickets kaufen</p>
+                        </a>
+                    </div>
+                </div>
             </div>
         </button>
     );
