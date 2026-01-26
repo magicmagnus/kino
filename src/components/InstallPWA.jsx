@@ -1,75 +1,66 @@
-// src/components/InstallPWA.jsx
 import { useState, useEffect } from "react";
 
 const InstallPWA = () => {
     const [deferredPrompt, setDeferredPrompt] = useState(null);
     const [showInstallButton, setShowInstallButton] = useState(false);
-    const [debugState, setDebugState] = useState({});
+    const [isStandalone, setIsStandalone] = useState(false);
 
-    const resetInstallState = async () => {
-        if ("serviceWorker" in navigator) {
-            const registrations =
-                await navigator.serviceWorker.getRegistrations();
-            for (let registration of registrations) {
-                await registration.unregister();
-            }
-        }
-        if ("caches" in window) {
-            const cacheKeys = await caches.keys();
-            await Promise.all(cacheKeys.map((key) => caches.delete(key)));
-        }
-        window.location.reload();
-    };
+    const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
-        const updateDebugState = () => {
-            setDebugState({
-                isStandalone: window.matchMedia("(display-mode: standalone)")
-                    .matches,
-                isPWA:
-                    navigator.standalone ||
-                    window.matchMedia("(display-mode: standalone)").matches,
-                userAgent: navigator.userAgent,
-                timestamp: new Date().toISOString(),
-                promptAvailable: !!deferredPrompt,
-                // Add these new checks
-                serviceWorkerSupported: "serviceWorker" in navigator,
-                serviceWorkerRegistered: false,
-                manifestLoaded: !!document.querySelector(
-                    'link[rel="manifest"]',
-                ),
-                isHttps: window.location.protocol === "https:",
-            });
+        // Check if already running as PWA
+        const standalone =
+            window.matchMedia("(display-mode: standalone)").matches ||
+            navigator.standalone === true;
+        setIsStandalone(standalone);
 
-            // Check service worker registration
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker
-                    .getRegistrations()
-                    .then((registrations) => {
-                        setDebugState((prev) => ({
-                            ...prev,
-                            serviceWorkerRegistered: registrations.length > 0,
-                        }));
-                    });
-            }
-        };
-
-        window.addEventListener("beforeinstallprompt", (e) => {
+        const handleBeforeInstallPrompt = (e) => {
             e.preventDefault();
             setDeferredPrompt(e);
             setShowInstallButton(true);
-            updateDebugState();
-        });
+            console.log("beforeinstallprompt fired");
+        };
 
-        window.addEventListener("appinstalled", () => {
+        const handleAppInstalled = () => {
             setDeferredPrompt(null);
             setShowInstallButton(false);
-            updateDebugState();
             console.log("PWA installed successfully");
-        });
+        };
 
-        updateDebugState();
-    }, [deferredPrompt]);
+        window.addEventListener(
+            "beforeinstallprompt",
+            handleBeforeInstallPrompt,
+        );
+        window.addEventListener("appinstalled", handleAppInstalled);
+
+        return () => {
+            window.removeEventListener(
+                "beforeinstallprompt",
+                handleBeforeInstallPrompt,
+            );
+            window.removeEventListener("appinstalled", handleAppInstalled);
+        };
+    }, []);
+
+    // Periodic animation trigger
+    useEffect(() => {
+        const triggerAnimation = () => {
+            setIsAnimating(true);
+            // Stop animating after the animation completes (600ms)
+            setTimeout(() => setIsAnimating(false), 600);
+        };
+
+        // Initial animation after 2 seconds
+        const initialTimeout = setTimeout(triggerAnimation, 2000);
+
+        // Then repeat every 5 seconds
+        const interval = setInterval(triggerAnimation, 5000);
+
+        return () => {
+            clearTimeout(initialTimeout);
+            clearInterval(interval);
+        };
+    }, []);
 
     const handleInstallClick = async () => {
         if (!deferredPrompt) return;
@@ -89,41 +80,25 @@ const InstallPWA = () => {
         }
     };
 
+    // Don't render anything if already in standalone mode (PWA)
+    if (isStandalone) return null;
+
+    // Don't render if no install prompt available
+    if (!showInstallButton) return null;
+
     return (
-        <div>
-            {/* {process.env.NODE_ENV === "development" && (
-                <div className="rounded-lg bg-neutral-800 p-4 shadow-lg">
-                    <h3 className="mb-2 font-semibold text-white">
-                        PWA Debug Panel
-                    </h3>
-                    <pre className="max-h-40 overflow-auto text-xs text-gray-300">
-                        {JSON.stringify(debugState, null, 2)}
-                    </pre>
-                    <button
-                        onClick={resetInstallState}
-                        className="mt-2 rounded bg-red-600 px-3 py-1 text-sm text-white transition-colors hover:bg-red-700"
-                    >
-                        Reset Installation
-                    </button>
-                </div>
-            )} */}
-
-            {showInstallButton && (
-                <button
-                    onClick={handleInstallClick}
-                    className="text-md mt-2 flex items-center gap-2 rounded-full bg-rose-600 px-4 py-1 font-semibold text-white shadow-lg transition-colors hover:bg-rose-700"
-                >
-                    <i className="fas fa-download"></i>
-                    App Laden
-                </button>
-            )}
-
-            {/* Dummy */}
-            {/* <button className="text-md mt-2 flex items-center gap-2 rounded-full bg-rose-600 px-4 py-1 font-semibold text-white shadow-lg transition-colors hover:bg-rose-700">
-                <i className="fas fa-download"></i>
-                App Laden
-            </button> */}
-        </div>
+        <button
+            onClick={handleInstallClick}
+            className="text-md flex items-center justify-between gap-2 rounded-full border-2 border-rose-700 bg-neutral-900 px-4 py-2.5 font-semibold text-white shadow-lg lg:px-5 lg:py-3 lg:text-lg 2xl:gap-4 2xl:px-7 2xl:py-4 2xl:text-xl"
+        >
+            <img
+                src="/web-app-manifest-512x512-maskable.png"
+                alt="KinoSchurke"
+                className={`size-6 transition-transform lg:size-8 2xl:size-9 ${isAnimating ? "animate-wiggle" : ""}`}
+            />
+            <p>App Laden</p>
+            <i className="fas fa-download"></i>
+        </button>
     );
 };
 

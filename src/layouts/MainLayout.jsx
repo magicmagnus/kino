@@ -106,8 +106,15 @@ const MainLayout = () => {
                 )}
             </div>
 
-            {/* Install PWA button */}
-            <div className="fixed bottom-4 right-4 z-20 flex flex-col items-end">
+            {/* Install PWA button - positioned above BottomNavBar on mobile */}
+            <div
+                className="fixed right-4 z-50 flex flex-col items-end"
+                style={{
+                    bottom: isMobile
+                        ? "calc(6rem + env(safe-area-inset-bottom, 0px))"
+                        : "1rem",
+                }}
+            >
                 <InstallPWA />
             </div>
         </div>
