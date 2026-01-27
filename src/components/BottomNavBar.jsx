@@ -11,9 +11,9 @@ const NavButton = ({ to, label, iconClassName }) => {
     return (
         <NavLink to={to} className={({ isActive }) => linkClass({ isActive })}>
             {iconClassName && (
-                <i className={iconClassName + " pt-1 text-xs"}></i>
+                <i className={iconClassName + " pt-2 text-xs"}></i>
             )}
-            <p className="pb-1 text-xs">{label}</p>
+            <p className="pb-2 text-xs">{label}</p>
         </NavLink>
     );
 };
@@ -28,7 +28,7 @@ const BottomNavBar = ({ children }) => {
             }}
         >
             {children}
-            <div className="flex w-screen items-center justify-around bg-neutral-800 px-2 py-1 text-white backdrop-blur-md">
+            <div className="flex w-screen items-center justify-around bg-neutral-800 px-2 py-0 text-white backdrop-blur-md">
                 <NavButton
                     to="/dates"
                     label="Datum"
