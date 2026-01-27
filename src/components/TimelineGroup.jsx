@@ -20,14 +20,12 @@ const TimelineGroup = (props) => {
         <div key={groupElementIdx} className="mb-5 lg:mb-8 2xl:mb-10">
             {/* sticky header */}
             <div className="sticky left-0 z-[12] flex h-fit w-screen items-center justify-start text-center">
-                {/* <div className="g-neutral-700 mr-2 h-1.5 w-full rounded-r-sm"></div> */}
-                <h1 className="flex-shrink-0 text-nowrap rounded-r-lg bg-neutral-800 px-8 py-1 text-lg font-semibold text-white lg:px-10 lg:py-2 lg:text-2xl 2xl:px-12 2xl:py-2 2xl:text-2xl">
+                <h1 className="mb-1 flex-shrink-0 text-nowrap rounded-r-lg bg-[rgba(47,47,47,1)] px-8 py-1 text-lg font-semibold text-white lg:px-10 lg:py-2 lg:text-2xl 2xl:px-12 2xl:py-2 2xl:text-2xl">
                     {/* could be theater name or date name */}
                     {parentGroupType === "theater"
                         ? groupElement.name
                         : formatDateString(groupElement.date, true, "long")}
                 </h1>
-                <div className="g-neutral-700 ml-2 h-1.5 w-full rounded-l-sm"></div>
             </div>
             {/* loop over all schedules of the elements */}
             {parentGroupType === "theater" ? (

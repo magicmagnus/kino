@@ -37,7 +37,7 @@ const MovieInfo = (props) => {
                 className={`relative flex w-full items-center justify-center bg-neutral-900 before:absolute before:bottom-0 before:left-0 before:w-full before:-translate-y-2 before:bg-gradient-to-t before:from-neutral-900 before:to-transparent before:transition-all before:duration-500 before:ease-in-out ${
                     !isExpanded
                         ? "h-0 before:h-12 before:opacity-100 lg:before:h-24"
-                        : "h-12 before:h-12 before:opacity-0"
+                        : "h-10 before:h-12 before:opacity-0 lg:h-12"
                 } `}
             >
                 <p

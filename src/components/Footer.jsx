@@ -4,7 +4,7 @@ const Footer = ({ isMobile, isMoviePage }) => {
     // Calculate bottom margin based on mobile and movie page status
     const getMarginBottom = () => {
         if (!isMobile) return "0";
-        const baseMargin = isMoviePage ? "6rem" : "5.5rem";
+        const baseMargin = isMoviePage ? "7rem" : "6.5rem";
         return `calc(${baseMargin} + var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)))`;
     };
 

@@ -25,12 +25,9 @@ const Timeline = (props) => {
         >
             {/* children are Room name or Date as name - sticky left column  */}
             {/* Room name - sticky left column */}
-            <div className="bg-pink sticky left-0 z-[12] flex h-[calc(var(--hour-width))] w-8 items-center justify-center text-center lg:h-[calc(var(--hour-width-lg))] lg:w-10 2xl:h-[calc(var(--hour-width-xl))] 2xl:w-12">
+            <div className="sticky left-0 z-[12] flex h-[calc(var(--hour-width))] w-8 items-center justify-center text-center lg:h-[calc(var(--hour-width-lg))] lg:w-10 2xl:h-[calc(var(--hour-width-xl))] 2xl:w-12">
                 <div
-                    className={
-                        "flex h-[calc(var(--hour-width))] w-8 flex-col items-center justify-center border-t-2 border-neutral-800 bg-neutral-800 shadow-[4px_0_4px_-4px_rgba(0,0,0,0.9)] lg:h-[calc(var(--hour-width-lg))] lg:w-10 2xl:h-[calc(var(--hour-width-xl))] 2xl:w-12" +
-                        (isLast ? " rounded-br-md" : " ")
-                    }
+                    className={`flex h-[calc(var(--hour-width))] w-8 flex-col items-center justify-center border-t-2 border-[rgba(47,47,47,1)] bg-[rgba(47,47,47,1)] shadow-[4px_0_4px_-4px_rgba(0,0,0,0.9)] lg:h-[calc(var(--hour-width-lg))] lg:w-10 2xl:h-[calc(var(--hour-width-xl))] 2xl:w-12 ${isFirst ? "rounded-tr-md" : ""} ${isLast ? "rounded-br-md" : ""}`}
                 >
                     <p className="-translate-x-0.5 -rotate-90 transform text-nowrap text-sm text-white lg:text-base 2xl:text-base">
                         {title}
