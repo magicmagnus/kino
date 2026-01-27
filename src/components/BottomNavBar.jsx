@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const NavButton = ({ to, label, iconClassName }) => {
     const linkClass = ({ isActive }) => {
         return (
-            "flex-1 h-fit flex flex-col items-center justify-center rounded-xl font-semibold transition-all duration-200 gap-0.25 " +
+            "flex-1 h-fit flex flex-col items-center justify-center rounded-full font-semibold transition-all duration-200 gap-0.25 " +
             (isActive ? "text-rose-600 bg-neutral-100" : "text-neutral-200")
         );
     };
