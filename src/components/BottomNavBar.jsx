@@ -2,18 +2,30 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 const NavButton = ({ to, label, iconClassName }) => {
-    const linkClass = ({ isActive }) => {
-        return (
-            "flex-1 h-fit flex flex-col items-center justify-center rounded-full font-semibold transition-all duration-200 gap-0.25 " +
-            (isActive ? "text-rose-600 bg-neutral-100" : "text-neutral-200")
-        );
-    };
     return (
-        <NavLink to={to} className={({ isActive }) => linkClass({ isActive })}>
-            {iconClassName && (
-                <i className={iconClassName + " pt-2 text-xs"}></i>
+        <NavLink
+            to={to}
+            className={({ isActive }) =>
+                "flex h-fit flex-1 flex-col items-center justify-center gap-1 rounded-full font-semibold transition-all duration-200 " +
+                (isActive ? "" : "")
+            }
+        >
+            {({ isActive }) => (
+                <>
+                    {iconClassName && (
+                        <div
+                            className={`flex w-[70%] items-center justify-center rounded-full py-2 text-lg ${isActive ? "bg-neutral-200 text-rose-600" : "text-neutral-300"}`}
+                        >
+                            <i className={`${iconClassName} `} />
+                        </div>
+                    )}
+                    <p
+                        className={`text-xs ${isActive ? "text-white" : "text-neutral-300"}`}
+                    >
+                        {label}
+                    </p>
+                </>
             )}
-            <p className="pb-2 text-xs">{label}</p>
         </NavLink>
     );
 };
@@ -28,7 +40,7 @@ const BottomNavBar = ({ children }) => {
             }}
         >
             {children}
-            <div className="flex w-screen items-center justify-around bg-neutral-800 px-2 py-0 text-white backdrop-blur-md">
+            <div className="flex w-screen items-center justify-around bg-neutral-800 px-2 py-1 text-white backdrop-blur-md">
                 <NavButton
                     to="/dates"
                     label="Datum"
