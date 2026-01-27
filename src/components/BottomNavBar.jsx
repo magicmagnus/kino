@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const NavButton = ({ to, label, iconClassName }) => {
     const linkClass = ({ isActive }) => {
         return (
-            "flex-1 h-fit flex flex-col items-center justify-center rounded-lg font-semibold transition-all duration-200 gap-0.25 " +
+            "flex-1 h-fit flex flex-col items-center justify-center rounded-xl font-semibold transition-all duration-200 gap-0.25 " +
             (isActive ? "text-rose-600 bg-neutral-100" : "text-neutral-200")
         );
     };
@@ -28,7 +28,7 @@ const BottomNavBar = ({ children }) => {
             }}
         >
             {children}
-            <div className="flex w-screen items-center justify-around bg-neutral-800 p-1 text-white backdrop-blur-md">
+            <div className="flex w-screen items-center justify-around bg-neutral-800 px-2 py-1 text-white backdrop-blur-md">
                 <NavButton
                     to="/dates"
                     label="Datum"
