@@ -39,12 +39,11 @@ const FavoritesPage = () => {
                     {/* <h3 className="mb-2 text-xl font-semibold">
                         Keine bevorstehenden Vorstellungen
                     </h3> */}
-                    <h3 className="mb-2 text-xl font-semibold">
+                    <h3 className="mb-2 font-notoSans text-xl font-semibold">
                         Coming Soon: Favoriten-Funktion
                     </h3>
-                    <p>
-                        Wähle Filme oder einzelne Vorstellungen aus, um sie zu
-                        Favoriten hinzuzufügen!
+                    <p className="font-notoSans">
+                        Wähle Filme aus, um sie zu Favoriten hinzuzufügen!
                     </p>
                 </div>
             </div>

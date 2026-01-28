@@ -43,19 +43,13 @@ const MovieAttributes = (props) => {
     const otherAttribute = getOtherAttribute(attributes);
 
     // Simplified event navigation handler
-    const handleEventClick = (e) => {
-        e.preventDefault();
-
+    const handleEventClick = (slug) => {
         if (isCard) {
             // Close modal first, then navigate
             closeShowModal();
-            navigate(
-                `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
-            );
+            navigate(`/events/${slug}`);
         } else {
-            navigate(
-                `/events/${slugify(otherAttribute, { lower: true, strict: true })}`,
-            );
+            navigate(`/events/${slug}`);
         }
     };
 
@@ -66,7 +60,7 @@ const MovieAttributes = (props) => {
             omduExplainer = (
                 <p>
                     OmdU{" "}
-                    <span className="text-xs">
+                    <span className="font-notoSans text-xs">
                         (Original mit deutschen Untertiteln)
                     </span>
                 </p>
@@ -75,7 +69,7 @@ const MovieAttributes = (props) => {
             omduExplainer = (
                 <p>
                     OmeU{" "}
-                    <span className="text-xs">
+                    <span className="font-notoSans text-xs">
                         (Original mit englischen Untertiteln)
                     </span>
                 </p>
@@ -84,7 +78,7 @@ const MovieAttributes = (props) => {
             omduExplainer = (
                 <p>
                     OV{" "}
-                    <span className="text-xs">
+                    <span className="font-notoSans text-xs">
                         (Original Version ohne Untertitel)
                     </span>
                 </p>
@@ -103,9 +97,9 @@ const MovieAttributes = (props) => {
             {/* container poster, title, attributes, descripction */}
             <div
                 className={
-                    "relative flex h-full w-fit flex-col overflow-auto portrait:flex-col landscape:flex-row" +
+                    "relative flex h-full w-full flex-col overflow-auto portrait:flex-col landscape:flex-row" +
                     (isCard
-                        ? " justify-start rounded-3xl landscape:before:absolute landscape:before:bottom-0 landscape:before:left-0 landscape:before:h-28 landscape:before:w-full landscape:before:bg-gradient-to-t landscape:before:from-neutral-950 landscape:before:to-transparent"
+                        ? " justify-start rounded-2xl landscape:before:absolute landscape:before:bottom-0 landscape:before:left-0 landscape:before:h-28 landscape:before:w-full landscape:before:bg-gradient-to-t landscape:before:from-neutral-950 landscape:before:to-transparent"
                         : " ")
                 }
             >
@@ -137,14 +131,14 @@ const MovieAttributes = (props) => {
                 {/* title, attributes, descripction */}
                 <div
                     className={
-                        "flex flex-1 flex-col justify-start gap-4 p-4 lg:p-6 landscape:overflow-scroll landscape:2xl:p-8" +
+                        "flex w-full flex-1 flex-col justify-start gap-4 p-4 lg:p-6 landscape:overflow-scroll landscape:2xl:p-8" +
                         (isCard
                             ? " portrait:mb-28 landscape:mb-20 landscape:lg:mb-24"
                             : " max-w-[750px]")
                     }
                 >
                     {/* title */}
-                    <h2 className="mb-2 text-left text-3xl font-semibold lg:text-4xl 2xl:text-5xl landscape:mr-12">
+                    <h2 className="mb-0 text-left font-bungee text-4xl lg:mb-1 lg:text-5xl 2xl:mb-4 2xl:text-6xl landscape:mr-12">
                         {title}
                     </h2>
 
@@ -155,14 +149,14 @@ const MovieAttributes = (props) => {
                             <div className="flex w-4 items-center justify-center">
                                 <i className="fa-solid fa-clock"></i>
                             </div>
-                            <p>{durationText}</p>
+                            <p className="font-notoSans">{durationText}</p>
                         </div>
                         {director != "Unknown Director" && (
                             <div className="flex break-inside-avoid items-center gap-2 landscape:mb-2">
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-clapperboard"></i>
                                 </div>
-                                <p>{director}</p>
+                                <p className="font-notoSans">{director}</p>
                             </div>
                         )}
                         {actors.length > 0 && (
@@ -170,7 +164,9 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-users"></i>
                                 </div>
-                                <p>{actors.join(", ")}</p>
+                                <p className="font-notoSans">
+                                    {actors.join(", ")}
+                                </p>
                             </div>
                         )}
                         {genre != "Unknown Genre" ? (
@@ -178,7 +174,7 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-masks-theater"></i>
                                 </div>
-                                <p>{genre}</p>
+                                <p className="font-notoSans">{genre}</p>
                             </div>
                         ) : (
                             <> </>
@@ -188,7 +184,7 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-shield-halved"></i>
                                 </div>
-                                <p>FSK: {fsk}</p>
+                                <p className="font-notoSans">FSK: {fsk}</p>
                             </div>
                         )}
                         {releaseDate != "Unknown Release Date" && (
@@ -196,7 +192,9 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-calendar-day"></i>
                                 </div>
-                                <p>Erschienen: {releaseDate}</p>
+                                <p className="font-notoSans">
+                                    Erschienen: {releaseDate}
+                                </p>
                             </div>
                         )}
                         {originalTitle != "Unknown Original Title" && (
@@ -204,7 +202,9 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-book"></i>
                                 </div>
-                                <p>Original Titel: "{originalTitle}"</p>
+                                <p className="font-notoSans">
+                                    Original Titel: "{originalTitle}"
+                                </p>
                             </div>
                         )}
                         {production != "Unknown Production" && (
@@ -212,24 +212,45 @@ const MovieAttributes = (props) => {
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-film"></i>
                                 </div>
-                                <p>Produktion: {production}</p>
+                                <p className="font-notoSans">
+                                    Produktion: {production}
+                                </p>
                             </div>
                         )}
                     </div>
                     <div className="flex flex-col gap-2">
                         {/* omdu tag */}
                         {isOmdu && (
-                            <div className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base">
+                            <button
+                                onClick={(e) => (
+                                    e.preventDefault(),
+                                    handleEventClick(
+                                        slugify(isOmdu, {
+                                            lower: true,
+                                            strict: true,
+                                        }),
+                                    )
+                                )}
+                                className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base"
+                            >
                                 <div className="flex w-4 items-center justify-center">
                                     <i className="fa-solid fa-earth-americas"></i>
                                 </div>
                                 {omduExplainer}
-                            </div>
+                            </button>
                         )}
                         {/* other attribute */}
                         {otherAttribute && (
                             <button
-                                onClick={handleEventClick}
+                                onClick={(e) => (
+                                    e.preventDefault(),
+                                    handleEventClick(
+                                        slugify(otherAttribute, {
+                                            lower: true,
+                                            strict: true,
+                                        }),
+                                    )
+                                )}
                                 className={
                                     "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 2xl:text-base " +
                                     (otherAttribute === "Apéro Film"
@@ -261,7 +282,7 @@ const MovieAttributes = (props) => {
                     </div>
 
                     {/* description */}
-                    <p className="text-left text-sm lg:text-base 2xl:text-base">
+                    <p className="text-left font-notoSans text-sm lg:text-base 2xl:text-base">
                         {description.split("<br>").map((line, index) => (
                             <React.Fragment key={index}>
                                 {line}

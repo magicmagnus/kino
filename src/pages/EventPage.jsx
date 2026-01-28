@@ -1,109 +1,76 @@
+import { Navigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+
+// Data
 import eventViewData from "../data/event-view.json";
+
+// Components
 import TopSection from "../components/TopSection";
 import BottomNavBar from "../components/BottomNavBar";
 import SelectionButtonContainer from "../components/SelectionButtonContainer";
 import SelectionButton from "../components/SelectionButton";
 import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
-import { useState, useEffect } from "react";
-import {
-    useOutletContext,
-    useParams,
-    Navigate,
-    useNavigate,
-} from "react-router-dom";
-import { TODAY_FORMATTED } from "../utils/utils";
-import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
 import SEOHead from "../components/SEOHead";
+import NoShowingsMessage from "../components/NoShowingsMessage";
+
+// Hooks
+import { usePageData } from "../hooks/usePageData";
+import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
+
+// Utils
+import { formatDateString } from "../utils/utils";
 
 const EventPage = () => {
-    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
-    const { eventSlug } = useParams();
-    const navigate = useNavigate();
+    // Get shared state from MainLayout
+    const { isMobile, showData, filterAttributes, setFilterAttributes } =
+        useOutletContext();
 
-    // Get all available event slugs
-    const allEventSlugs = eventViewData.map((event) => event.slug);
+    // Use the unified data hook
+    const {
+        upcomingData,
+        selectedOption,
+        displayData,
+        hasShowings,
+        firstDate,
+        setSelectedOption,
+        shouldRedirect,
+        redirectPath,
+    } = usePageData({
+        rawData: eventViewData,
+        pageType: "eventpage",
+        basePath: "/events",
+        filterAttributes,
+    });
 
-    // Check if the eventSlug from URL is valid
-    const isValidEvent = (slug) => {
-        if (!slug) return false;
-        return allEventSlugs.includes(slug);
-    };
+    // Scroll to earliest showing when selection or filters change
+    useScrollToEarliest([selectedOption, filterAttributes]);
 
-    // Determine the valid event to use - validate BEFORE setting state
-    const validatedEvent = isValidEvent(eventSlug)
-        ? eventSlug
-        : allEventSlugs[0];
-
-    const [selectedEvent, setSelectedEvent] = useState(validatedEvent);
-
-    // Sync URL with selectedEvent
-    useEffect(() => {
-        if (
-            selectedEvent &&
-            selectedEvent !== eventSlug &&
-            isValidEvent(selectedEvent)
-        ) {
-            navigate(`/events/${selectedEvent}`, { replace: true });
-        }
-    }, [selectedEvent]);
-
-    // Sync selectedEvent with URL
-    useEffect(() => {
-        if (
-            eventSlug &&
-            eventSlug !== selectedEvent &&
-            isValidEvent(eventSlug)
-        ) {
-            setSelectedEvent(eventSlug);
-        }
-    }, [eventSlug]);
-
-    // Find the data for the selected event
-    const eventData = eventViewData.find(
-        (event) => event.slug === selectedEvent,
-    );
-
-    // Filter out dates before today
-    const filteredEventData = eventData
-        ? {
-              ...eventData,
-              dates: eventData.dates.filter(
-                  (date) => date.date >= TODAY_FORMATTED,
-              ),
-          }
-        : null;
-
-    // Update firstDate when data changes
-    useEffect(() => {
-        if (filteredEventData && filteredEventData.dates.length > 0) {
-            setFirstDate(filteredEventData.dates[0].date);
-        }
-    }, [filteredEventData?.dates, setFirstDate]);
-
-    useScrollToEarliest([selectedEvent]);
-
-    // Redirect if we landed on an invalid URL
-    if (!isValidEvent(eventSlug) && eventSlug !== undefined) {
-        if (allEventSlugs.length > 0) {
-            return <Navigate to={`/events/${allEventSlugs[0]}`} replace />;
-        } else {
-            return <Navigate to={`/events/`} replace />;
-        }
+    // Handle redirect for invalid URLs
+    if (shouldRedirect) {
+        return <Navigate to={redirectPath} replace />;
     }
 
-    // Safety check - no data found
-    if (!filteredEventData) {
-        return <Navigate to={`/events/`} replace />;
+    // Handle case where no data is available at all
+    if (!displayData && upcomingData.length === 0) {
+        return (
+            <div className="flex min-h-screen items-center justify-center text-gray-400">
+                <p>Keine Events verfügbar.</p>
+            </div>
+        );
     }
 
+    // Selection buttons for events
     const eventSelectionButtons = (
-        <SelectionButtonContainer>
-            {eventViewData.map((event, eventIndex) => (
+        <SelectionButtonContainer
+            filterAttributes={filterAttributes}
+            setFilterAttributes={setFilterAttributes}
+        >
+            {upcomingData.map((event, index) => (
                 <SelectionButton
-                    key={eventIndex}
-                    onClick={() => setSelectedEvent(event.slug)}
-                    selected={selectedEvent === event.slug}
+                    key={index}
+                    onClick={() => setSelectedOption(event.slug)}
+                    selected={event.slug === selectedOption}
                     text={event.name}
                 />
             ))}
@@ -113,22 +80,34 @@ const EventPage = () => {
     return (
         <>
             <SEOHead
-                eventName={eventData.name}
-                url={`https://kinoschurke.de/events/${selectedEvent}`}
+                eventName={displayData?.name}
+                eventSlug={selectedOption}
+                url={`https://kinoschurke.de/events/${selectedOption}`}
                 showData={showData}
             />
-            <TopSection date={firstDate} eventData={eventData}>
+
+            <TopSection date={firstDate} eventData={displayData}>
                 {!isMobile && eventSelectionButtons}
             </TopSection>
-            {filteredEventData.dates.map((date, dateIdx) => (
-                <TimelineGroup
-                    key={dateIdx}
-                    groupElement={date}
-                    groupElementIdx={dateIdx}
-                    parentGroupType="date"
-                    date={date.date}
+
+            {/* Main Content */}
+            {hasShowings ? (
+                displayData.dates.map((date, dateIdx) => (
+                    <TimelineGroup
+                        key={dateIdx}
+                        groupElement={date}
+                        groupElementIdx={dateIdx}
+                        parentGroupType="date"
+                        date={date.date}
+                    />
+                ))
+            ) : (
+                <NoShowingsMessage
+                    selectedOption={displayData?.name || selectedOption}
+                    filterAttributes={filterAttributes}
+                    onClearFilters={() => setFilterAttributes([])}
                 />
-            ))}
+            )}
 
             <Footer isMobile={isMobile} />
 

@@ -12,22 +12,24 @@ const Header = ({ isMobile }) => {
     };
     return (
         <div
-            className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between border-b border-neutral-700 bg-neutral-900 px-3 pb-3 text-white lg:px-4 lg:pb-4 2xl:px-6 2xl:pb-6"
             style={{
-                paddingTop: "calc(0.75rem + env(safe-area-inset-top, 0px))",
+                //paddingTop: "calc(0.75rem + env(safe-area-inset-top, 0px))",
+                "--padding-top-env": "env(safe-area-inset-top, 0px)",
             }}
+            className="sticky top-0 z-40 flex h-fit w-full min-w-full items-center justify-between border-b border-neutral-700 bg-neutral-900 px-3 pb-3 pt-[calc(0.75rem+var(--padding-top-env))] text-white lg:px-4 lg:pb-4 lg:pt-[calc(1rem+var(--padding-top-env))] 2xl:px-6 2xl:pb-6 2xl:pt-[calc(1.5rem+var(--padding-top-env))]"
         >
             <Link
                 to="/"
-                className="flex w-auto flex-1 items-center justify-start gap-1.5 sm:gap-3"
+                className="flex h-7 w-auto flex-1 items-center justify-start gap-3 lg:h-12 2xl:h-16"
             >
                 <img
                     src="/web-app-manifest-512x512-maskable.png"
                     alt="KinoSchurke"
-                    className="size-6 lg:size-12 2xl:size-16"
+                    className="size-7 lg:size-12 2xl:size-16"
                 />
-                <h1 className="text-xl font-bold text-white md:text-2xl lg:pl-2 lg:text-4xl 2xl:text-5xl">
-                    Kino<span className="text-rose-600">Schurke</span>
+                <h1 className="-mt-0.5 font-jaro text-3xl text-white md:text-4xl lg:-mt-1 lg:pl-2 lg:text-6xl 2xl:-mt-1.5 2xl:text-7xl">
+                    Kino
+                    <span className="font-jaro text-rose-600">Schurke</span>
                 </h1>
             </Link>
             {!isMobile && (
@@ -45,7 +47,7 @@ const Header = ({ isMobile }) => {
                         <p className="pl-1.5">Film</p>
                     </NavLink>
                     <NavLink to="/events" className={linkClass}>
-                        <i className="fas fa-calendar hidden md:block"></i>
+                        <i className="fas fa-tag hidden md:block"></i>
                         <p className="pl-1.5">Event</p>
                     </NavLink>
                     <NavLink to="/favorites" className={linkClass}>

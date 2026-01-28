@@ -15,6 +15,7 @@ import { useViewportHeight } from "../hooks/useViewportHeight";
 const MainLayout = () => {
     const [firstDate, setFirstDate] = useState(new Date());
     const [isMobile, setIsMobile] = useState(false);
+    const [filterAttributes, setFilterAttributes] = useState([]);
 
     // Get show data from URL parameter - THIS IS THE SINGLE SOURCE OF TRUTH
     const showData = useShowParameter();
@@ -90,6 +91,8 @@ const MainLayout = () => {
                                 setFirstDate,
                                 isMobile,
                                 showData,
+                                filterAttributes,
+                                setFilterAttributes,
                             }}
                         />
                     </div>

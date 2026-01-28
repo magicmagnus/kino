@@ -1,109 +1,76 @@
+import { Navigate } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
+
+// Data
 import movieViewData from "../data/movie-view.json";
+
+// Components
 import TopSection from "../components/TopSection";
 import BottomNavBar from "../components/BottomNavBar";
 import SelectionButtonContainer from "../components/SelectionButtonContainer";
+import MovieSelectionButton from "../components/MovieSelectionButton";
 import Footer from "../components/Footer";
 import TimelineGroup from "../components/TimelineGroup";
-import { useState, useEffect } from "react";
-import {
-    useOutletContext,
-    useParams,
-    Navigate,
-    useNavigate,
-} from "react-router-dom";
-import { TODAY_FORMATTED } from "../utils/utils";
-import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
-import MovieSelectionButton from "../components/MovieSelectionButton";
 import SEOHead from "../components/SEOHead";
+import NoShowingsMessage from "../components/NoShowingsMessage";
+
+// Hooks
+import { usePageData } from "../hooks/usePageData";
+import { useScrollToEarliest } from "../hooks/useScrollToEarliest";
+
+// Utils
+import { formatDateString } from "../utils/utils";
 
 const MoviePage = () => {
-    const { firstDate, setFirstDate, isMobile, showData } = useOutletContext();
-    const { movieSlug } = useParams();
-    const navigate = useNavigate();
+    // Get shared state from MainLayout
+    const { isMobile, showData, filterAttributes, setFilterAttributes } =
+        useOutletContext();
 
-    // Get all available movie slugs
-    const allMovieSlugs = movieViewData.map((movie) => movie.slug);
+    // Use the unified data hook
+    const {
+        upcomingData,
+        selectedOption,
+        displayData,
+        hasShowings,
+        firstDate,
+        setSelectedOption,
+        shouldRedirect,
+        redirectPath,
+    } = usePageData({
+        rawData: movieViewData,
+        pageType: "moviepage",
+        basePath: "/movies",
+        filterAttributes,
+    });
 
-    // Check if the movieSlug from URL is valid
-    const isValidMovie = (slug) => {
-        if (!slug) return false;
-        return allMovieSlugs.includes(slug);
-    };
+    // Scroll to earliest showing when selection or filters change
+    useScrollToEarliest([selectedOption, filterAttributes]);
 
-    // Determine the valid movie to use - validate BEFORE setting state
-    const validatedMovie = isValidMovie(movieSlug)
-        ? movieSlug
-        : allMovieSlugs[0];
-
-    const [selectedMovie, setSelectedMovie] = useState(validatedMovie);
-
-    // Sync URL with selectedMovie
-    useEffect(() => {
-        if (
-            selectedMovie &&
-            selectedMovie !== movieSlug &&
-            isValidMovie(selectedMovie)
-        ) {
-            navigate(`/movies/${selectedMovie}`, { replace: true });
-        }
-    }, [selectedMovie]);
-
-    // Sync selectedMovie with URL
-    useEffect(() => {
-        if (
-            movieSlug &&
-            movieSlug !== selectedMovie &&
-            isValidMovie(movieSlug)
-        ) {
-            setSelectedMovie(movieSlug);
-        }
-    }, [movieSlug]);
-
-    // Find the data for the selected movie
-    const movieData = movieViewData.find(
-        (movie) => movie.slug === selectedMovie,
-    );
-
-    // Filter out dates before today
-    const filteredMovieData = movieData
-        ? {
-              ...movieData,
-              dates: movieData.dates.filter(
-                  (date) => date.date >= TODAY_FORMATTED,
-              ),
-          }
-        : null;
-
-    // Update firstDate when data changes
-    useEffect(() => {
-        if (filteredMovieData && filteredMovieData.dates.length > 0) {
-            setFirstDate(filteredMovieData.dates[0].date);
-        }
-    }, [filteredMovieData?.dates, setFirstDate]);
-
-    useScrollToEarliest([selectedMovie]);
-
-    // Redirect if we landed on an invalid URL
-    if (!isValidMovie(movieSlug) && movieSlug !== undefined) {
-        if (allMovieSlugs.length > 0) {
-            return <Navigate to={`/movies/${allMovieSlugs[0]}`} replace />;
-        } else {
-            return <Navigate to={`/movies/`} replace />;
-        }
+    // Handle redirect for invalid URLs
+    if (shouldRedirect) {
+        return <Navigate to={redirectPath} replace />;
     }
 
-    // Safety check - no data found
-    if (!filteredMovieData) {
-        return <Navigate to={`/movies/`} replace />;
+    // Handle case where no data is available at all
+    if (!displayData && upcomingData.length === 0) {
+        return (
+            <div className="flex min-h-screen items-center justify-center text-gray-400">
+                <p>Keine Filme verfügbar.</p>
+            </div>
+        );
     }
 
+    // Selection buttons for movies
     const movieSelectionButtons = (
-        <SelectionButtonContainer>
-            {movieViewData.map((movie, movieIndex) => (
+        <SelectionButtonContainer
+            filterAttributes={filterAttributes}
+            setFilterAttributes={setFilterAttributes}
+        >
+            {upcomingData.map((movie, index) => (
                 <MovieSelectionButton
-                    key={movieIndex}
-                    onClick={() => setSelectedMovie(movie.slug)}
-                    selected={selectedMovie === movie.slug}
+                    key={index}
+                    onClick={() => setSelectedOption(movie.slug)}
+                    selected={movie.slug === selectedOption}
                     text={movie.title}
                     img={movie.posterUrl}
                 />
@@ -114,23 +81,34 @@ const MoviePage = () => {
     return (
         <>
             <SEOHead
-                movieTitle={movieData.title}
-                url={`https://kinoschurke.de/movies/${selectedMovie}`}
-                movieSlug={selectedMovie}
+                movieTitle={displayData?.title}
+                movieSlug={selectedOption}
+                url={`https://kinoschurke.de/movies/${selectedOption}`}
                 showData={showData}
             />
-            <TopSection date={firstDate} movieData={movieData}>
+
+            <TopSection date={firstDate} movieData={displayData}>
                 {!isMobile && movieSelectionButtons}
             </TopSection>
-            {filteredMovieData.dates.map((date, dateIdx) => (
-                <TimelineGroup
-                    key={dateIdx}
-                    groupElement={date}
-                    groupElementIdx={dateIdx}
-                    parentGroupType="date"
-                    date={date.date}
+
+            {/* Main Content */}
+            {hasShowings ? (
+                displayData.dates.map((date, dateIdx) => (
+                    <TimelineGroup
+                        key={dateIdx}
+                        groupElement={date}
+                        groupElementIdx={dateIdx}
+                        parentGroupType="date"
+                        date={date.date}
+                    />
+                ))
+            ) : (
+                <NoShowingsMessage
+                    selectedOption={displayData?.title || selectedOption}
+                    filterAttributes={filterAttributes}
+                    onClearFilters={() => setFilterAttributes([])}
                 />
-            ))}
+            )}
 
             <Footer isMobile={isMobile} isMoviePage={true} />
 

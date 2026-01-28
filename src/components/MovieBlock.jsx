@@ -46,7 +46,7 @@ const MovieBlock = (props) => {
                 "--left-xl": `${leftXl}px`,
                 "--width-xl": `${widthXl}px`,
             }}
-            className={`movieblock absolute left-[var(--left)] top-0 mt-[3px] flex h-[calc(var(--hour-width)-0.5rem)] w-[var(--width)] items-center rounded-lg bg-neutral-700 text-white transition-all duration-200 hover:scale-110 hover:bg-neutral-700 lg:left-[var(--left-lg)] lg:mt-[6px] lg:h-[calc(var(--hour-width-lg)-0.75rem)] lg:w-[var(--width-lg)] lg:rounded-lg 2xl:left-[var(--left-xl)] 2xl:mt-[8px] 2xl:h-[calc(var(--hour-width-xl)-1rem)] 2xl:w-[var(--width-xl)]`}
+            className={`movieblock mt-px] absolute left-[var(--left)] top-0 flex h-[calc(var(--hour-width)-0.75rem)] w-[var(--width)] items-center rounded-lg bg-neutral-700 text-white transition-all duration-200 hover:scale-110 hover:bg-neutral-700 lg:left-[var(--left-lg)] lg:mt-[6px] lg:h-[calc(var(--hour-width-lg)-0.75rem)] lg:w-[var(--width-lg)] lg:rounded-lg 2xl:left-[var(--left-xl)] 2xl:mt-[8px] 2xl:h-[calc(var(--hour-width-xl)-1rem)] 2xl:w-[var(--width-xl)]`}
             // style={{
             //     left: `${timeToPixels(show.time)}px`,
             //     width: `${timeToPixels(show.endTime) - timeToPixels(show.time)}px`,
@@ -66,7 +66,7 @@ const MovieBlock = (props) => {
             <div className="flex h-full flex-grow flex-col justify-between overflow-hidden px-3 py-2 text-left">
                 <h1
                     className={
-                        "text-sm font-semibold lg:text-base 2xl:text-lg" +
+                        "text-sm font-semibold lg:text-base 2xl:-mt-0.5 2xl:text-lg" +
                         (isOmdu || otherAttribute
                             ? " line-clamp-2"
                             : " line-clamp-3")
@@ -96,7 +96,7 @@ const MovieBlock = (props) => {
                             </div>
                         )}
                     </div>
-                    <p className="line-clamp-1">
+                    <p className="line-clamp-1 font-notoSans">
                         {show.time} - {show.endTime}
                     </p>
                 </div>

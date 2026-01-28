@@ -4,7 +4,7 @@ const Footer = ({ isMobile, isMoviePage }) => {
     // Calculate bottom margin based on mobile and movie page status
     const getMarginBottom = () => {
         if (!isMobile) return "0";
-        const baseMargin = isMoviePage ? "7rem" : "6.5rem";
+        const baseMargin = isMoviePage ? "6.75rem" : "6.25rem";
         return `calc(${baseMargin} + var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)))`;
     };
 
@@ -16,20 +16,20 @@ const Footer = ({ isMobile, isMoviePage }) => {
             }}
         >
             <div className="flex items-center justify-center gap-2 text-[0.65rem] text-gray-400 lg:text-sm">
-                <p className="">
+                <p className="font-notoSans">
                     &copy; 2026{" "}
                     <a
                         href="https://kinoschurke.de"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-rose-600"
+                        className="font-notoSans text-rose-600"
                     >
                         Kinoschurke
                     </a>
                 </p>
 
-                <p className="">|</p>
-                <p className="">
+                <p className="font-notoSans">|</p>
+                <p className="font-notoSans">
                     Made with{" "}
                     <span role="img" aria-label="heart">
                         ❤️
@@ -39,7 +39,7 @@ const Footer = ({ isMobile, isMoviePage }) => {
                         href="https://github.com/magicmagnus/"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-rose-600"
+                        className="font-notoSans text-rose-600"
                     >
                         magicmagnus
                     </a>

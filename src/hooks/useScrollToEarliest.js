@@ -36,8 +36,8 @@ export const useScrollToEarliest = (dependencies = []) => {
                     earliestLeft = left;
                 }
             });
-            console.log("--- Scrolling to earliest showing ---");
-            console.log("Earliest left position:", earliestLeft);
+            // console.log("--- Scrolling to earliest showing ---");
+            // console.log("Earliest left position:", earliestLeft);
 
             const timeIndicator = container.querySelector(".indicator");
             if (timeIndicator) {
@@ -48,19 +48,19 @@ export const useScrollToEarliest = (dependencies = []) => {
                 // if the indicatorLeft is later than the earliestLeft, scroll to indicatorLeft instead
                 if (indicatorLeft > earliestLeft) {
                     earliestLeft = indicatorLeft;
-                    console.log(
-                        "Scrolling to indicator left position:",
-                        indicatorLeft,
-                    );
+                    // console.log(
+                    //     "Scrolling to indicator left position:",
+                    //     indicatorLeft,
+                    // );
                 }
             }
 
             if (earliestLeft !== Infinity) {
                 const hourOfShow =
                     Math.floor(earliestLeft / width) + START_HOUR;
-                console.log("rounded hour of show:", hourOfShow);
+                // console.log("rounded hour of show:", hourOfShow);
                 const scrollPosition = (hourOfShow - START_HOUR) * width;
-                console.log("scroll position:", scrollPosition);
+                // console.log("scroll position:", scrollPosition);
 
                 container.scrollTo({
                     left: scrollPosition,

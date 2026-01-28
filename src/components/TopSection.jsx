@@ -26,7 +26,7 @@ const HourMarkersText = ({ date }) => {
                     }}
                     className="absolute left-[calc(var(--i)*var(--hour-width)-3px)] h-full w-12 text-right lg:left-[calc(var(--i)*var(--hour-width-lg)-3px)] lg:w-16 2xl:left-[calc(var(--i)*var(--hour-width-xl)-3px)] 2xl:w-20"
                 >
-                    <p className="translate-x-[-50%] pt-1 text-sm text-white lg:translate-x-[-55%] lg:text-lg 2xl:translate-x-[-60%] 2xl:pt-2 2xl:text-xl">
+                    <p className="translate-x-[-50%] pt-1 font-notoSans text-sm text-white lg:translate-x-[-55%] lg:text-lg 2xl:translate-x-[-60%] 2xl:pt-2 2xl:text-xl">
                         {hour}
                     </p>
                     <div className="absolute bottom-0 h-4 w-1.5 bg-neutral-800"></div>
