@@ -111,22 +111,9 @@ const MovieCard = (props) => {
                 >
                     {/* mini buttons for Trailer, Favorite,  */}
 
-                    <div className="absolute bottom-0 left-auto right-0 flex items-center justify-center gap-2 portrait:m-2 landscape:m-4">
-                        {/* Trailer button */}
-                        <button
-                            onClick={() =>
-                                openYouTube(showData.movieInfo.trailerUrl)
-                            }
-                            className="flex items-center justify-center gap-1 rounded-lg bg-rose-950 p-2 px-3 text-xs font-semibold text-rose-500 hover:opacity-80 lg:px-4 lg:text-base 2xl:px-5 2xl:text-base"
-                        >
-                            <i className="fa-brands fa-youtube"></i>
-                            <p className="pl-0">Trailer</p>
-                        </button>
+                    <div className="absolute bottom-0 left-auto right-0 flex justify-center gap-2 portrait:m-2 landscape:m-4">
                         {/* Favorite button */}
-                        <button
-                            className="flex items-center justify-center gap-1 rounded-lg bg-rose-950 p-2 px-3 text-xs font-semibold text-rose-500 hover:opacity-80 lg:px-4 lg:text-base 2xl:px-5 2xl:text-base"
-                            S
-                        >
+                        <button className="flex items-center justify-center gap-2 rounded-lg bg-rose-950 p-2 px-3 text-xs font-semibold text-rose-500 lg:px-4 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base">
                             <i className="fa-solid fa-heart"></i>
                             <p className="pl-0">Favorit</p>
                         </button>

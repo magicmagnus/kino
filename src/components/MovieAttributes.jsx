@@ -1,5 +1,9 @@
-import React, { useState } from "react";
-import { containsOmdu, getOtherAttribute } from "../utils/utils";
+import React, { useState, useEffect } from "react";
+import {
+    containsOmdu,
+    getOtherAttribute,
+    getMovieIMDBID,
+} from "../utils/utils";
 import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
 import { closeShowModal } from "../hooks/useShowParameter";
@@ -91,6 +95,22 @@ const MovieAttributes = (props) => {
     let hours = Math.floor(duration / 60);
     let minutes = duration % 60;
     let durationText = `${hours}h ${minutes}min`;
+
+    const [imdbUrl, setImdbUrl] = useState("");
+    const [letterboxdUrl, setLetterboxdUrl] = useState("");
+
+    useEffect(() => {
+        const fetchMovieIds = async () => {
+            const id = await getMovieIMDBID(title);
+
+            if (id) {
+                setImdbUrl(`https://www.imdb.com/title/${id}`);
+                setLetterboxdUrl(`https://letterboxd.com/imdb/${id}/`);
+            }
+        };
+
+        fetchMovieIds();
+    }, [title]);
 
     return (
         <>
@@ -218,68 +238,124 @@ const MovieAttributes = (props) => {
                             </div>
                         )}
                     </div>
-                    <div className="flex flex-col gap-2">
-                        {/* omdu tag */}
-                        {isOmdu && (
-                            <button
-                                onClick={(e) => (
-                                    e.preventDefault(),
-                                    handleEventClick(
-                                        slugify(isOmdu, {
-                                            lower: true,
-                                            strict: true,
-                                        }),
-                                    )
-                                )}
-                                className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base"
+                    {/* Button container for external links */}
+                    <div className="flex gap-2">
+                        {/* IMDB button */}
+                        {imdbUrl && (
+                            <a
+                                href={imdbUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex h-auto items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
+                                title="IMDb"
                             >
-                                <div className="flex w-4 items-center justify-center">
-                                    <i className="fa-solid fa-earth-americas"></i>
-                                </div>
-                                {omduExplainer}
-                            </button>
+                                <img
+                                    src="/public/IMDB_Logo_2016.svg"
+                                    alt="IMDb"
+                                    className="h-4 lg:h-4 2xl:h-4"
+                                />
+                                <p className="pl-0">IMDb</p>
+                            </a>
                         )}
-                        {/* other attribute */}
-                        {otherAttribute && (
-                            <button
-                                onClick={(e) => (
-                                    e.preventDefault(),
-                                    handleEventClick(
-                                        slugify(otherAttribute, {
-                                            lower: true,
-                                            strict: true,
-                                        }),
-                                    )
-                                )}
-                                className={
-                                    "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 2xl:text-base " +
-                                    (otherAttribute === "Apéro Film"
-                                        ? " bg-[#fe5e08] text-[#fef2e6] hover:bg-[#e54f07]"
-                                        : " bg-pink-700 text-pink-200 hover:bg-pink-600")
-                                }
+                        {/* Letterboxd button */}
+                        {letterboxdUrl && (
+                            <a
+                                href={letterboxdUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex h-auto items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
+                                title="Letterboxd"
                             >
-                                <div className="flex w-4 items-center justify-center">
-                                    <i
-                                        className={
-                                            "fa-solid " +
-                                            (otherAttribute === "Apéro Film"
-                                                ? " fa-wine-glass"
-                                                : otherAttribute
-                                                        .toLowerCase()
-                                                        .includes("film")
-                                                  ? "fa-film"
-                                                  : otherAttribute
-                                                          .toLowerCase()
-                                                          .includes("sneak")
-                                                    ? "fa-film"
-                                                    : "fa-tag")
-                                        }
-                                    ></i>
-                                </div>
-                                <p className="truncate">{otherAttribute}</p>
-                            </button>
+                                {/* Letterboxd doesn't have a FontAwesome icon, use custom SVG or text */}
+                                <img
+                                    src="/public/letterboxd-decal-dots-pos-rgb.svg"
+                                    alt="Letterboxd"
+                                    className="-mx-0.5 h-5 lg:h-5 2xl:-mx-1 2xl:h-6"
+                                />
+                                <p className="pl-0">Letterboxd</p>
+                            </a>
                         )}
+                        {/* Trailer button */}
+                        <button
+                            onClick={() =>
+                                openYouTube(showData.movieInfo.trailerUrl)
+                            }
+                            className="flex items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
+                        >
+                            {/* <i className="fa-brands fa-youtube text-base text-[rgba(255,0,0,1)]"></i> */}
+                            <img
+                                src="/public/YouTube_Logo_2017.svg"
+                                alt="YouTube"
+                                className="h-4 lg:h-4"
+                            />
+                            <p className="pl-0">YouTube</p>
+                        </button>
                     </div>
+                    {/* tags omdu, otherAttribute */}
+                    {(isOmdu || otherAttribute) && (
+                        <div className="flex flex-col gap-2">
+                            {/* omdu tag */}
+                            {isOmdu && (
+                                <button
+                                    onClick={(e) => (
+                                        e.preventDefault(),
+                                        handleEventClick(
+                                            slugify(isOmdu, {
+                                                lower: true,
+                                                strict: true,
+                                            }),
+                                        )
+                                    )}
+                                    className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base"
+                                >
+                                    <div className="flex w-4 items-center justify-center">
+                                        <i className="fa-solid fa-earth-americas"></i>
+                                    </div>
+                                    {omduExplainer}
+                                </button>
+                            )}
+                            {/* other attribute */}
+                            {otherAttribute && (
+                                <button
+                                    onClick={(e) => (
+                                        e.preventDefault(),
+                                        handleEventClick(
+                                            slugify(otherAttribute, {
+                                                lower: true,
+                                                strict: true,
+                                            }),
+                                        )
+                                    )}
+                                    className={
+                                        "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 2xl:text-base " +
+                                        (otherAttribute === "Apéro Film"
+                                            ? " bg-[#fe5e08] text-[#fef2e6] hover:bg-[#e54f07]"
+                                            : " bg-pink-700 text-pink-200 hover:bg-pink-600")
+                                    }
+                                >
+                                    <div className="flex w-4 items-center justify-center">
+                                        <i
+                                            className={
+                                                "fa-solid " +
+                                                (otherAttribute === "Apéro Film"
+                                                    ? " fa-wine-glass"
+                                                    : otherAttribute
+                                                            .toLowerCase()
+                                                            .includes("film")
+                                                      ? "fa-film"
+                                                      : otherAttribute
+                                                              .toLowerCase()
+                                                              .includes("sneak")
+                                                        ? "fa-film"
+                                                        : "fa-tag")
+                                            }
+                                        ></i>
+                                    </div>
+                                    <p className="truncate">{otherAttribute}</p>
+                                </button>
+                            )}
+                        </div>
+                    )}
 
                     {/* description */}
                     <p className="text-left font-notoSans text-sm lg:text-base 2xl:text-base">

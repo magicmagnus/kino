@@ -86,3 +86,44 @@ export const getOtherAttribute = (attributes) => {
             attribute !== "OV",
     )[0];
 };
+
+export const getMovieIMDBID = async (movieTitle) => {
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNjE1NzhlM2FhMzZkYzcyMmU0YjUzNTg4ZDg2MmEyZCIsIm5iZiI6MTczODE4MjE1NC4xNDIwMDAyLCJzdWIiOiI2NzlhOGUwYTQ0NDhkYTNkMmFiZDZiOTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.K80Jolgl8n4_PGAsJh-K07b4ZnhfzSXVEGcY2wOcqkg",
+        },
+    };
+
+    try {
+        // Search for the movie
+        const searchResponse = await fetch(
+            `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+                movieTitle,
+            )}&include_adult=false&language=en-US&page=1`,
+            options,
+        );
+        const searchData = await searchResponse.json();
+
+        // Return null if no results
+        if (!searchData.results || searchData.results.length === 0) {
+            return null;
+        }
+
+        const tmdbId = searchData.results[0].id;
+
+        // Fetch the IMDB ID using the TMDB movie ID
+        const movieResponse = await fetch(
+            `https://api.themoviedb.org/3/movie/${tmdbId}?append_to_response=external_ids`,
+            options,
+        );
+        const movieData = await movieResponse.json();
+
+        return movieData.imdb_id || null;
+    } catch (err) {
+        console.error("TMDB fetch error:", err);
+        return null;
+    }
+};

@@ -5,8 +5,8 @@ const AVAILABLE_FILTERS = [
     { key: "OmdU", label: "OmdU", explained: "deutschen Untertiteln" },
     { key: "OmeU", label: "OmeU", explained: "englischen Untertiteln" },
     { key: "OV", label: "OV", explained: "keinen Untertiteln" },
-    { key: "3D", label: "3D", explained: "" },
-    { key: "Dolby Atmos", label: "Dolby Atmos", explained: "" },
+    // { key: "3D", label: "3D", explained: "" },
+    // { key: "Dolby Atmos", label: "Dolby Atmos", explained: "" },
 ];
 
 const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
@@ -75,7 +75,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
 
                     {/* Modal content */}
                     <div className="absolute bottom-full right-0 z-50 mb-3 h-fit w-64 rounded-xl bg-neutral-800 p-3 shadow-xl md:top-full md:mt-3 lg:mt-5 lg:w-80 lg:p-4 2xl:mt-6 2xl:w-96 2xl:p-5">
-                        <div className="-mt-0.5 mb-3 ml-1 mr-1 flex items-center justify-between text-base lg:text-lg 2xl:text-xl">
+                        <div className="-mt-0.5 mb-3 ml-1 mr-1 flex items-center justify-between text-base lg:text-lg 2xl:text-2xl">
                             <h3 className="font-semibold text-white">Filter</h3>
                             <button
                                 onClick={() => setIsModalOpen(false)}
@@ -87,7 +87,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
 
                         {/* Filter options */}
                         <div className="flex flex-col gap-2">
-                            <p className="ml-1 mt-2 text-xs text-neutral-200 lg:mt-3 lg:text-base 2xl:mt-4 2xl:text-lg">
+                            <p className="ml-1 mt-0 text-xs text-neutral-200 lg:mt-0 lg:text-base 2xl:mt-2 2xl:text-lg">
                                 Original Version mit
                             </p>
                             {AVAILABLE_FILTERS.slice(0, 3).map((filter) => (
@@ -114,7 +114,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                                     )}
                                 </button>
                             ))}
-                            <p className="ml-1 mt-2 text-xs text-neutral-200 lg:mt-3 lg:text-base 2xl:mt-4 2xl:text-lg">
+                            {/* <p className="ml-1 mt-2 text-xs text-neutral-200 lg:mt-3 lg:text-base 2xl:mt-4 2xl:text-lg">
                                 Technologie
                             </p>
                             {AVAILABLE_FILTERS.slice(3).map((filter) => (
@@ -132,7 +132,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                                         <i className="fas fa-check" />
                                     )}
                                 </button>
-                            ))}
+                            ))} */}
                         </div>
 
                         {/* Action buttons */}
