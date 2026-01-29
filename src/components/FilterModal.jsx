@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 // All available filter options
 const AVAILABLE_FILTERS = [
-    { key: "OmdU", label: "OmdU" },
-    { key: "OmeU", label: "OmeU" },
-    { key: "OV", label: "OV" },
-    { key: "3D", label: "3D" },
-    { key: "Dolby Atmos", label: "Dolby Atmos" },
+    { key: "OmdU", label: "OmdU", explained: "deutschen Untertiteln" },
+    { key: "OmeU", label: "OmeU", explained: "englischen Untertiteln" },
+    { key: "OV", label: "OV", explained: "keinen Untertiteln" },
+    { key: "3D", label: "3D", explained: "" },
+    { key: "Dolby Atmos", label: "Dolby Atmos", explained: "" },
 ];
 
 const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
@@ -74,8 +74,8 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                     />
 
                     {/* Modal content */}
-                    <div className="absolute bottom-full right-0 z-50 mb-3 h-fit w-60 rounded-xl bg-neutral-800 p-3 shadow-xl md:top-full md:mt-3 lg:mt-5 lg:w-72 lg:p-4 2xl:mt-6 2xl:w-96 2xl:p-5">
-                        <div className="-mt-0.5 mb-3 ml-1 flex items-center justify-between text-base lg:text-lg 2xl:text-xl">
+                    <div className="absolute bottom-full right-0 z-50 mb-3 h-fit w-64 rounded-xl bg-neutral-800 p-3 shadow-xl md:top-full md:mt-3 lg:mt-5 lg:w-80 lg:p-4 2xl:mt-6 2xl:w-96 2xl:p-5">
+                        <div className="-mt-0.5 mb-3 ml-1 mr-1 flex items-center justify-between text-base lg:text-lg 2xl:text-xl">
                             <h3 className="font-semibold text-white">Filter</h3>
                             <button
                                 onClick={() => setIsModalOpen(false)}
@@ -87,7 +87,37 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
 
                         {/* Filter options */}
                         <div className="flex flex-col gap-2">
-                            {AVAILABLE_FILTERS.map((filter) => (
+                            <p className="ml-1 mt-2 text-xs text-neutral-200 lg:mt-3 lg:text-base 2xl:mt-4 2xl:text-lg">
+                                Original Version mit
+                            </p>
+                            {AVAILABLE_FILTERS.slice(0, 3).map((filter) => (
+                                <button
+                                    key={filter.key}
+                                    onClick={() => toggleFilter(filter.key)}
+                                    className={`flex items-center justify-between rounded-lg px-3 py-2 text-left text-xs transition-colors lg:text-base 2xl:text-lg ${
+                                        isFilterActive(filter.key)
+                                            ? "bg-rose-600 text-white"
+                                            : "bg-neutral-700 text-neutral-200 hover:bg-neutral-600"
+                                    }`}
+                                >
+                                    <span>
+                                        {filter.explained}
+                                        <span
+                                            className={`ml-1 ${isFilterActive(filter.key) ? "text-rose-300" : "text-neutral-400"}`}
+                                        >
+                                            - {filter.label}
+                                        </span>
+                                    </span>
+
+                                    {isFilterActive(filter.key) && (
+                                        <i className="fas fa-check" />
+                                    )}
+                                </button>
+                            ))}
+                            <p className="ml-1 mt-2 text-xs text-neutral-200 lg:mt-3 lg:text-base 2xl:mt-4 2xl:text-lg">
+                                Technologie
+                            </p>
+                            {AVAILABLE_FILTERS.slice(3).map((filter) => (
                                 <button
                                     key={filter.key}
                                     onClick={() => toggleFilter(filter.key)}
@@ -106,18 +136,18 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                         </div>
 
                         {/* Action buttons */}
-                        <div className="mt-4 flex gap-2 text-xs lg:text-base 2xl:text-lg">
+                        <div className="mt-5 flex gap-2 text-xs lg:mt-6 lg:text-base 2xl:mt-7 2xl:text-lg">
                             <button
                                 onClick={clearFilters}
-                                className="flex-1 rounded-lg bg-neutral-700 px-3 py-2 text-neutral-200 hover:bg-neutral-600"
+                                className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-neutral-700 px-3 py-2 text-neutral-200 hover:bg-neutral-600"
                             >
-                                Alle löschen
+                                <i className="fas fa-times" /> Alle löschen
                             </button>
                             <button
                                 onClick={selectAllFilters}
-                                className="flex-1 rounded-lg bg-neutral-700 px-3 py-2 text-neutral-200 hover:bg-neutral-600"
+                                className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-neutral-700 px-3 py-2 text-neutral-200 hover:bg-neutral-600"
                             >
-                                Alle wählen
+                                <i className="fas fa-check" /> Alle wählen
                             </button>
                         </div>
                     </div>

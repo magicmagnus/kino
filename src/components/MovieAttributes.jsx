@@ -138,7 +138,7 @@ const MovieAttributes = (props) => {
                     }
                 >
                     {/* title */}
-                    <h2 className="mb-0 text-left font-bungee text-4xl lg:mb-1 lg:text-5xl 2xl:mb-4 2xl:text-6xl landscape:mr-12">
+                    <h2 className="mb-0 text-left font-antonsc text-4xl lg:mb-1 lg:text-5xl 2xl:mb-4 2xl:text-6xl landscape:mr-12">
                         {title}
                     </h2>
 

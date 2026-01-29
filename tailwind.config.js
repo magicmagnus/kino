@@ -13,6 +13,7 @@ module.exports = {
                 figtree: ["Figtree", "sans-serif"],
                 lexend: ["Lexend", "sans-serif"],
                 outfit: ["Outfit", "sans-serif"],
+                antonsc: ["Anton SC", "sans-serif"],
             },
             screens: {
                 tall: {
