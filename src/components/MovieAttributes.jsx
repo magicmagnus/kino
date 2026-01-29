@@ -250,7 +250,7 @@ const MovieAttributes = (props) => {
                                 title="IMDb"
                             >
                                 <img
-                                    src="/public/IMDB_Logo_2016.svg"
+                                    src="/IMDB_Logo_2016.svg"
                                     alt="IMDb"
                                     className="h-4 lg:h-4 2xl:h-4"
                                 />
@@ -268,7 +268,7 @@ const MovieAttributes = (props) => {
                             >
                                 {/* Letterboxd doesn't have a FontAwesome icon, use custom SVG or text */}
                                 <img
-                                    src="/public/letterboxd-decal-dots-pos-rgb.svg"
+                                    src="/letterboxd-decal-dots-pos-rgb.svg"
                                     alt="Letterboxd"
                                     className="-mx-0.5 h-5 lg:h-5 2xl:-mx-1 2xl:h-6"
                                 />
@@ -284,7 +284,7 @@ const MovieAttributes = (props) => {
                         >
                             {/* <i className="fa-brands fa-youtube text-base text-[rgba(255,0,0,1)]"></i> */}
                             <img
-                                src="/public/YouTube_Logo_2017.svg"
+                                src="/YouTube_Logo_2017.svg"
                                 alt="YouTube"
                                 className="h-4 lg:h-4"
                             />
