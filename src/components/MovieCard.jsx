@@ -87,8 +87,8 @@ const MovieCard = (props) => {
                 {/* close button */}
                 <button
                     onClick={handleClose}
-                    className="absolute right-0 top-0 z-20 m-2 flex size-6 items-center justify-center rounded-full bg-neutral-950 p-4 text-rose-500 transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-neutral-700 lg:m-4"
-                    style={{ boxShadow: "0 0 10px 2px rgba(0,0,0,0.5)" }}
+                    className="absolute right-0 top-0 z-20 m-2 flex size-6 items-center justify-center rounded-full bg-neutral-800 p-4 text-rose-600 shadow shadow-black transition-all duration-300 ease-in-out hover:scale-[1.2] hover:bg-neutral-700 lg:m-4"
+                    // style={{ boxShadow: "0 0 10px 2px rgba(0,0,0,0.5)" }}
                 >
                     <i className="fa-solid fa-xmark text-xl"></i>
                 </button>
@@ -113,8 +113,8 @@ const MovieCard = (props) => {
 
                     <div className="absolute bottom-0 left-auto right-0 flex justify-center gap-2 portrait:m-2 landscape:m-4">
                         {/* Favorite button */}
-                        <button className="flex items-center justify-center gap-2 rounded-lg bg-rose-950 p-2 px-3 text-xs font-semibold text-rose-500 lg:px-4 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base">
-                            <i className="fa-solid fa-heart"></i>
+                        <button className="flex items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-semibold text-neutral-400 hover:bg-neutral-600 lg:px-4 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base">
+                            <i className="fa-regular fa-heart"></i>
                             <p className="pl-0">Favorit</p>
                         </button>
                     </div>
@@ -138,7 +138,7 @@ const MovieCard = (props) => {
                                 title={`${showData.movieInfo.title} - ${showData.show.time}`}
                                 text={`Schau dir "${showData.movieInfo.title}" um ${showData.show.time}h mit mir an!`}
                                 isMovieCard={true}
-                                classNameBtn="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-lg bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:opacity-80 landscape:px-3 landscape:py-1 landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
+                                classNameBtn="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-lg bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:bg-neutral-600 landscape:px-3 landscape:py-1 landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
                             >
                                 <div>
                                     <p className="pl-1">Einladen</p>
@@ -146,7 +146,7 @@ const MovieCard = (props) => {
                             </ShareButton>
                             <button
                                 onClick={handleAllShowsClick}
-                                className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-lg bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:opacity-80 landscape:px-3 landscape:py-1 landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
+                                className="flex flex-1 items-center justify-center gap-1 text-nowrap rounded-lg bg-neutral-700 p-2 text-xs font-semibold text-neutral-200 hover:bg-neutral-600 landscape:px-3 landscape:py-1 landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
                             >
                                 <i className="fa-solid fa-film"></i>
                                 <p className="pl-1">Alle Vorstellungen</p>
@@ -157,7 +157,7 @@ const MovieCard = (props) => {
                             href={showData.show.iframeUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex h-auto w-full flex-1 items-center justify-center text-nowrap rounded-lg bg-rose-600 p-2 text-base font-bold text-rose-50 hover:opacity-80 landscape:px-3 landscape:py-1 landscape:text-xs landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
+                            className="flex h-auto w-full flex-1 items-center justify-center text-nowrap rounded-lg bg-rose-600 p-2 text-base font-bold text-rose-50 hover:bg-rose-500 landscape:px-3 landscape:py-1 landscape:text-xs landscape:lg:px-4 landscape:lg:py-2 landscape:lg:text-base landscape:2xl:px-5 landscape:2xl:text-lg"
                         >
                             <i className="fa-solid fa-ticket -rotate-45 transform text-lg landscape:text-base"></i>
                             <p className="pl-2">Tickets kaufen</p>

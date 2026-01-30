@@ -63,27 +63,30 @@ const MovieAttributes = (props) => {
         if (isOmdu === "OmdU") {
             omduExplainer = (
                 <p>
-                    OmdU{" "}
-                    <span className="font-notoSans text-xs">
-                        (Original mit deutschen Untertiteln)
+                    Original mit deutschen Untertiteln
+                    <span className="text-xs text-rose-300 2xl:text-base">
+                        {" "}
+                        - OmdU
                     </span>
                 </p>
             );
         } else if (isOmdu === "OmeU") {
             omduExplainer = (
                 <p>
-                    OmeU{" "}
-                    <span className="font-notoSans text-xs">
-                        (Original mit englischen Untertiteln)
+                    Original mit englischen Untertiteln
+                    <span className="text-xs text-rose-300 2xl:text-base">
+                        {" "}
+                        - OmeU
                     </span>
                 </p>
             );
         } else if (isOmdu === "OV") {
             omduExplainer = (
                 <p>
-                    OV{" "}
-                    <span className="font-notoSans text-xs">
-                        (Original Version ohne Untertitel)
+                    Originalversion ohne Untertitel
+                    <span className="text-xs text-rose-300 2xl:text-base">
+                        {" "}
+                        - OV
                     </span>
                 </p>
             );
@@ -111,6 +114,9 @@ const MovieAttributes = (props) => {
 
         fetchMovieIds();
     }, [title]);
+
+    const classNameExternalButton =
+        "flex h-auto flex-shrink-0 items-center justify-center gap-1.5 rounded-lg bg-neutral-700 p-2 px-2.5 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 lg:gap-2 2xl:px-4 2xl:text-lg hover:bg-neutral-600";
 
     return (
         <>
@@ -239,57 +245,57 @@ const MovieAttributes = (props) => {
                         )}
                     </div>
                     {/* Button container for external links */}
-                    <div className="flex gap-2">
-                        {/* IMDB button */}
-                        {imdbUrl && (
-                            <a
-                                href={imdbUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex h-auto items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
-                                title="IMDb"
+                    <div className="flex h-fit w-full">
+                        <div className="flex gap-2 overflow-y-scroll">
+                            {/* IMDB button */}
+                            {imdbUrl && (
+                                <a
+                                    href={imdbUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={classNameExternalButton}
+                                    title="IMDb"
+                                >
+                                    <img
+                                        src="/IMDB_Logo_2016.svg"
+                                        alt="IMDb"
+                                        className="w-5 lg:w-5 2xl:w-6"
+                                    />
+                                    <p className="pl-0">IMDb</p>
+                                </a>
+                            )}
+                            {/* Letterboxd button */}
+                            {letterboxdUrl && (
+                                <a
+                                    href={letterboxdUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className={classNameExternalButton}
+                                    title="Letterboxd"
+                                >
+                                    <img
+                                        src="/letterboxd-decal-dots-pos-rgb copy.svg"
+                                        alt="Letterboxd"
+                                        className="w-5 lg:w-5 2xl:w-6"
+                                    />
+                                    <p className="pl-0">Letterboxd</p>
+                                </a>
+                            )}
+                            {/* Trailer button */}
+                            <button
+                                onClick={() =>
+                                    openYouTube(showData.movieInfo.trailerUrl)
+                                }
+                                className={classNameExternalButton}
                             >
                                 <img
-                                    src="/IMDB_Logo_2016.svg"
-                                    alt="IMDb"
-                                    className="h-4 lg:h-4 2xl:h-4"
+                                    src="/YouTube_Logo_2017.svg"
+                                    alt="YouTube"
+                                    className="w-4 lg:w-5 2xl:w-6"
                                 />
-                                <p className="pl-0">IMDb</p>
-                            </a>
-                        )}
-                        {/* Letterboxd button */}
-                        {letterboxdUrl && (
-                            <a
-                                href={letterboxdUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="flex h-auto items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
-                                title="Letterboxd"
-                            >
-                                {/* Letterboxd doesn't have a FontAwesome icon, use custom SVG or text */}
-                                <img
-                                    src="/letterboxd-decal-dots-pos-rgb.svg"
-                                    alt="Letterboxd"
-                                    className="-mx-0.5 h-5 lg:h-5 2xl:-mx-1 2xl:h-6"
-                                />
-                                <p className="pl-0">Letterboxd</p>
-                            </a>
-                        )}
-                        {/* Trailer button */}
-                        <button
-                            onClick={() =>
-                                openYouTube(showData.movieInfo.trailerUrl)
-                            }
-                            className="flex items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-medium text-neutral-200 lg:px-3 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base"
-                        >
-                            {/* <i className="fa-brands fa-youtube text-base text-[rgba(255,0,0,1)]"></i> */}
-                            <img
-                                src="/YouTube_Logo_2017.svg"
-                                alt="YouTube"
-                                className="h-4 lg:h-4"
-                            />
-                            <p className="pl-0">YouTube</p>
-                        </button>
+                                <p className="pl-0">YouTube</p>
+                            </button>
+                        </div>
                     </div>
                     {/* tags omdu, otherAttribute */}
                     {(isOmdu || otherAttribute) && (
@@ -306,10 +312,10 @@ const MovieAttributes = (props) => {
                                             }),
                                         )
                                     )}
-                                    className="flex w-fit items-center gap-1 rounded-full bg-rose-700 py-0.5 pl-[5px] pr-2 text-sm font-medium text-rose-200 2xl:text-base"
+                                    className="flex w-fit items-center gap-1 rounded-full bg-rose-700 px-2 py-1 text-xs font-medium text-rose-200 hover:bg-rose-600 2xl:gap-2 2xl:px-3 2xl:text-base"
                                 >
                                     <div className="flex w-4 items-center justify-center">
-                                        <i className="fa-solid fa-earth-americas"></i>
+                                        <i className="fa-solid fa-language"></i>
                                     </div>
                                     {omduExplainer}
                                 </button>
@@ -327,7 +333,7 @@ const MovieAttributes = (props) => {
                                         )
                                     )}
                                     className={
-                                        "flex w-fit items-center gap-1 rounded-full px-1.5 py-0.5 pr-2 text-sm font-medium transition-all duration-200 hover:scale-105 2xl:text-base " +
+                                        "flex w-fit items-center gap-1 rounded-full px-2 py-1 text-xs font-medium transition-all duration-200 2xl:gap-2 2xl:px-3 2xl:text-base " +
                                         (otherAttribute === "Apéro Film"
                                             ? " bg-[#fe5e08] text-[#fef2e6] hover:bg-[#e54f07]"
                                             : " bg-pink-700 text-pink-200 hover:bg-pink-600")
@@ -347,7 +353,11 @@ const MovieAttributes = (props) => {
                                                               .toLowerCase()
                                                               .includes("sneak")
                                                         ? "fa-film"
-                                                        : "fa-tag")
+                                                        : otherAttribute
+                                                                .toLowerCase()
+                                                                .includes("3d")
+                                                          ? "fa-eye"
+                                                          : "fa-tag")
                                             }
                                         ></i>
                                     </div>

@@ -51,8 +51,8 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                 onClick={() => setIsModalOpen(!isModalOpen)}
                 className={`flex h-full items-center gap-2 rounded-lg px-3 py-2 text-xs transition-colors lg:px-3 lg:py-2 lg:text-lg 2xl:px-5 2xl:py-3 2xl:text-xl ${
                     filterAttributes.length > 0
-                        ? "bg-rose-600 text-white"
-                        : "bg-neutral-700 text-neutral-200"
+                        ? "bg-rose-600 text-white hover:bg-rose-500"
+                        : "bg-neutral-700 text-neutral-200 hover:bg-neutral-600"
                 }`}
             >
                 <i className="fas fa-filter" />
@@ -88,7 +88,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                         {/* Filter options */}
                         <div className="flex flex-col gap-2">
                             <p className="ml-1 mt-0 text-xs text-neutral-200 lg:mt-0 lg:text-base 2xl:mt-2 2xl:text-lg">
-                                Original Version mit
+                                Originalversion mit
                             </p>
                             {AVAILABLE_FILTERS.slice(0, 3).map((filter) => (
                                 <button
@@ -96,7 +96,7 @@ const FilterModal = ({ filterAttributes, setFilterAttributes }) => {
                                     onClick={() => toggleFilter(filter.key)}
                                     className={`flex items-center justify-between rounded-lg px-3 py-2 text-left text-xs transition-colors lg:text-base 2xl:text-lg ${
                                         isFilterActive(filter.key)
-                                            ? "bg-rose-600 text-white"
+                                            ? "bg-rose-600 text-white hover:bg-rose-500"
                                             : "bg-neutral-700 text-neutral-200 hover:bg-neutral-600"
                                     }`}
                                 >
