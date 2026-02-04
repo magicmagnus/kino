@@ -1,20 +1,8 @@
 # Kinoschurke
 
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="public/screenshot.png" alt="Kinoschurke Desktop Screenshot" height="350">
-      <br>
-      <em style="font-size: 12px; min-height: 350px;">Desktop view with timeline overview</em>
-    </td>
-    <td align="center">
-      <img src="public/screenshot2.png" alt="Kinoschurke Mobile Screenshot" height="350">
-      <br>
-      <em style="font-size: 12px; min-height: 350px;">Mobile view with bottom navigation</em>
-    </td>
-  </tr>
-</table>
-
+<p align="center">
+  <img src="public/screenshot.png" alt="Kinoschurke Desktop Screenshot" height="350">&nbsp;&nbsp;<img src="public/screenshot2.png" alt="Kinoschurke Mobile Screenshot" height="350">
+</p>
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e635cda5-0016-4568-b957-362f616d33c7/deploy-status)](https://app.netlify.com/projects/kinoschurke/deploys)
 
