@@ -15,7 +15,11 @@ const MovieSelectionButton = (props) => {
             <div className="h-10 shrink-0 lg:h-12 2xl:h-14">
                 <img
                     className="h-full w-auto rounded-l-lg object-cover"
-                    src={img}
+                    src={
+                        img === "Unknown Poster URL"
+                            ? "/placeholder-poster.png"
+                            : img
+                    }
                     alt="movie"
                 />
             </div>
