@@ -4,6 +4,8 @@ import {
     getOtherAttribute,
     getMovieIMDBID,
 } from "../utils/utils";
+
+import FavoriteButton from "./FavoriteButton";
 import { useNavigate } from "react-router-dom";
 import slugify from "slugify";
 import { closeShowModal } from "../hooks/useShowParameter";
@@ -150,21 +152,23 @@ const MovieAttributes = (props) => {
                             alt={title}
                             className="absolute left-0 top-0 h-full w-full object-cover"
                         />
-                        {/* trailer and favorite buttons */}
-                        {children}
                     </div>
                 </div>
                 {/* title, attributes, descripction */}
                 <div
                     className={
-                        "flex w-full flex-1 flex-col justify-start gap-4 p-4 lg:p-6 landscape:overflow-scroll landscape:2xl:p-8" +
+                        "flex w-full flex-1 flex-col justify-start gap-4 p-4 pt-0 lg:p-6 lg:pt-0 landscape:overflow-scroll landscape:2xl:p-8 landscape:2xl:pt-0 " +
                         (isCard
                             ? " portrait:mb-28 landscape:mb-20 landscape:lg:mb-24"
                             : " max-w-[750px]")
                     }
                 >
                     {/* title */}
-                    <h2 className="mb-0 text-left font-antonsc text-4xl lg:mb-1 lg:text-5xl 2xl:mb-4 2xl:text-6xl landscape:mr-12">
+
+                    <h2 className="mb-0 text-left font-antonsc text-4xl leading-tight lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight landscape:mr-12">
+                        <span className="mr-2 inline-flex align-text-top lg:mr-3 2xl:mr-4">
+                            {children}
+                        </span>{" "}
                         {title}
                     </h2>
 

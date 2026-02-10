@@ -51,7 +51,7 @@ const Header = ({ isMobile }) => {
                         <p className="pl-1.5">Event</p>
                     </NavLink>
                     <NavLink to="/favorites" className={linkClass}>
-                        <i className="fas fa-heart hidden md:block"></i>
+                        <i className="fas fa-bookmark hidden md:block"></i>
                         <p className="pl-1.5">Favoriten</p>
                     </NavLink>
                 </div>

@@ -13,22 +13,25 @@ const NoShowingsMessage = ({
 
     return (
         <div className="sticky left-0 flex min-h-[500px] w-screen flex-col items-center justify-center gap-4 px-8 text-center">
-            <i className="fas fa-filter text-4xl text-gray-500" />
-            <p className="font-notoSans text-base text-gray-400 lg:text-lg 2xl:text-xl">
-                Keine Vorstellungen für "{selectedOption}"{" "}
-                {hasFilters && "mit den ausgewählten Filtern"} gefunden.
+            <i
+                className={`fas text-5xl text-neutral-600 ${hasFilters ? "fa-filter-circle-xmark" : "fa-calendar-xmark"}`}
+            />
+            <p className="font-notoSans text-xl font-semibold text-neutral-300">
+                Keine Vorstellungen {!hasFilters ? "mehr" : ""} für "
+                {selectedOption}" {hasFilters && "mit den ausgewählten Filtern"}{" "}
+                gefunden.
             </p>
             {hasFilters && (
                 <>
-                    <p className="font-notoSans text-base text-gray-500 lg:text-lg 2xl:text-xl">
+                    <p className="max-w-md font-notoSans text-neutral-500">
                         Aktive Filter: {filterAttributes.join(", ")}
                     </p>
 
                     <button
                         onClick={onClearFilters}
-                        className="mt-2 rounded-lg bg-rose-600 px-4 py-2 text-base text-white transition-colors hover:bg-rose-700 lg:text-lg 2xl:text-xl"
+                        className="rounded-lg bg-rose-600 px-4 py-2 text-base text-white transition-colors hover:bg-rose-700 lg:text-lg 2xl:text-xl"
                     >
-                        <i className="fas fa-times mr-2" />
+                        <i className="fas fa-filter-circle-xmark mr-2" />
                         Filter zurücksetzen
                     </button>
                 </>

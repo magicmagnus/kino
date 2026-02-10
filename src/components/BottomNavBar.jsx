@@ -65,7 +65,7 @@ const BottomNavBar = ({ children }) => {
                 <NavButton
                     to="/favorites"
                     label="Favoriten"
-                    iconClassName="fas fa-heart"
+                    iconClassName="fas fa-bookmark"
                 />
             </div>
         </div>

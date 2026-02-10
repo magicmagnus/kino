@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MovieAttributes from "./MovieAttributes";
+import FavoriteButton from "./FavoriteButton";
 
 const MovieInfo = (props) => {
     const { movieData } = props;
@@ -29,7 +30,10 @@ const MovieInfo = (props) => {
                     attributes={movieData.attributes}
                     description={movieData.description}
                     isCard={false}
-                />
+                >
+                    {/* Favorite button */}
+                    <FavoriteButton movieId={movieData.id} isCard={false} />
+                </MovieAttributes>
             </div>
 
             <button

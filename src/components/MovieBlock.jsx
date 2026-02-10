@@ -11,12 +11,29 @@ import {
 import movieReference from "../data/movies-reference.json";
 import { openShowModal } from "../hooks/useShowParameter";
 
+import { useFavorites } from "../context/FavoritesContext";
+import { getShowHash } from "../utils/favoritesUtils";
+
 const MovieBlock = (props) => {
     const { show, showIdx, date } = props;
+
+    const {
+        isMovieFavorite,
+        isShowFavorite,
+        isFavorited,
+        toggleMovieFavorite,
+        toggleShowFavorite,
+    } = useFavorites();
 
     const movieInfo = movieReference[show.movieId];
     const isOmdu = containsOmdu(show.attributes);
     const otherAttribute = getOtherAttribute(show.attributes);
+
+    const showHash = show ? getShowHash(show) : null;
+    const isAnyFavorite = isFavorited(show.movieId, showHash);
+    const bookmarkSource = isAnyFavorite
+        ? "/bookmark-solid-full.svg"
+        : "/bookmark-regular-full.svg";
 
     const handleClick = () => {
         openShowModal(show, show.movieId);
@@ -46,12 +63,9 @@ const MovieBlock = (props) => {
                 "--left-xl": `${leftXl}px`,
                 "--width-xl": `${widthXl}px`,
             }}
-            className={`movieblock absolute left-[var(--left)] top-0 mt-[6px] flex h-[calc(var(--hour-width)-0.75rem)] w-[var(--width)] items-center rounded-lg bg-neutral-700 text-white transition-all duration-200 hover:scale-105 hover:bg-neutral-600 lg:left-[var(--left-lg)] lg:mt-[6px] lg:h-[calc(var(--hour-width-lg)-0.75rem)] lg:w-[var(--width-lg)] lg:rounded-lg 2xl:left-[var(--left-xl)] 2xl:mt-[8px] 2xl:h-[calc(var(--hour-width-xl)-1rem)] 2xl:w-[var(--width-xl)]`}
-            // style={{
-            //     left: `${timeToPixels(show.time)}px`,
-            //     width: `${timeToPixels(show.endTime) - timeToPixels(show.time)}px`,
-            // }}
+            className={`movieblock absolute left-[var(--left)] top-0 mt-[5px] flex h-[calc(var(--hour-width)-0.75rem)] w-[var(--width)] items-center rounded-lg bg-neutral-700 text-white transition-all duration-200 hover:scale-105 hover:bg-neutral-600 lg:left-[var(--left-lg)] lg:mt-[6px] lg:h-[calc(var(--hour-width-lg)-0.75rem)] lg:w-[var(--width-lg)] lg:rounded-lg 2xl:left-[var(--left-xl)] 2xl:mt-[8px] 2xl:h-[calc(var(--hour-width-xl)-1rem)] 2xl:w-[var(--width-xl)]`}
         >
+            {/* poster */}
             <div className="h-full shrink-0">
                 <img
                     src={
@@ -63,7 +77,22 @@ const MovieBlock = (props) => {
                     className="h-full w-auto rounded-l-lg object-cover lg:rounded-l-lg 2xl:rounded-l-lg"
                 />
             </div>
-            <div className="flex h-full flex-grow flex-col justify-between overflow-hidden px-3 py-2 text-left">
+            {/* wrapper for title, tags, time */}
+            <div className="relative flex h-full flex-grow flex-col justify-between overflow-hidden px-3 py-2 text-left">
+                {/* Bookmark Icon */}
+                {isAnyFavorite && (
+                    <div className="absolute right-2 top-0 lg:right-2.5 2xl:right-3">
+                        <img
+                            src={bookmarkSource}
+                            alt="Bookmark"
+                            className="h-6 drop-shadow-lg lg:h-7 2xl:h-8"
+                            style={{
+                                filter: "drop-shadow(0 0 1px rgba(0, 0, 0, 0.7))",
+                            }}
+                        />
+                    </div>
+                )}
+                {/* title */}
                 <h1
                     className={
                         "text-sm font-semibold lg:text-base 2xl:-mt-0.5 2xl:text-lg" +
@@ -74,6 +103,7 @@ const MovieBlock = (props) => {
                 >
                     {movieInfo.title}
                 </h1>
+                {/* tags, time */}
                 <div className="flex flex-col gap-1 text-xs lg:text-sm 2xl:text-base">
                     <div className="mx-[-0.2rem] flex max-w-full items-center gap-1.5 overflow-hidden">
                         {otherAttribute && (

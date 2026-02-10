@@ -1,10 +1,14 @@
 import React from "react";
 
-const Footer = ({ isMobile, isMoviePage }) => {
+const Footer = ({ isMobile, isMoviePage, isFavoritePage }) => {
     // Calculate bottom margin based on mobile and movie page status
     const getMarginBottom = () => {
         if (!isMobile) return "0";
-        const baseMargin = isMoviePage ? "6.75rem" : "6.25rem";
+        const baseMargin = isMoviePage
+            ? "6.75rem"
+            : isFavoritePage
+              ? "9.5rem"
+              : "6.25rem";
         return `calc(${baseMargin} + var(--safe-area-bottom, env(safe-area-inset-bottom, 0px)))`;
     };
 

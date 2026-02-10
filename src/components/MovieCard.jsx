@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MovieAttributes from "./MovieAttributes";
 import ShareButton from "./ShareButton";
+import FavoriteButton from "./FavoriteButton";
 import { useNavigate } from "react-router-dom";
 import { formatDateString } from "../utils/utils";
 import { closeShowModal } from "../hooks/useShowParameter";
@@ -111,22 +112,20 @@ const MovieCard = (props) => {
                 >
                     {/* mini buttons for Trailer, Favorite,  */}
 
-                    <div className="absolute bottom-0 left-auto right-0 flex justify-center gap-2 portrait:m-2 landscape:m-4">
-                        {/* Favorite button */}
-                        <button className="flex items-center justify-center gap-2 rounded-lg bg-neutral-700 p-2 px-3 text-xs font-semibold text-neutral-400 hover:bg-neutral-600 lg:px-4 lg:text-base 2xl:gap-3 2xl:px-4 2xl:text-base">
-                            <i className="fa-regular fa-heart"></i>
-                            <p className="pl-0">Favorit</p>
-                        </button>
-                    </div>
+                    <FavoriteButton
+                        movieId={showData.movieInfo.id}
+                        showData={showData}
+                        isCard={true}
+                    />
                 </MovieAttributes>
-                {/* sticky button container (bottom on mobile, bottom right on larger screens) */}
+                {/* sticky button container (bottom full-width on mobile, bottom right on larger screens) */}
                 <div className="absolute bottom-0 left-auto right-0 flex h-fit w-full flex-col justify-center gap-1.5 rounded-b-2xl border-t-2 border-neutral-700 bg-neutral-900 p-3 pt-1 landscape:w-fit landscape:rounded-bl-none landscape:rounded-tl-2xl landscape:border-t-0 landscape:bg-transparent landscape:p-4">
                     {/* wrapper with show information */}
 
                     <div>
                         <p className="font-notoSans text-sm font-semibold text-gray-100 landscape:lg:text-base">
-                            Vorstellung: {formatDateString(showData.date, true)}{" "}
-                            - {showData.show.time}h:
+                            {formatDateString(showData.date, true)} -{" "}
+                            {showData.show.time}h:
                         </p>
                     </div>
 
