@@ -108,14 +108,14 @@ const FavoriteButton = ({ movieId, showData, isCard = false }) => {
                 <img
                     src={bookmarkSource}
                     alt="Bookmark"
-                    className="h-[2.6rem] lg:h-[3.6rem] 2xl:h-[4.5rem]"
+                    className="h-[3.4rem] lg:h-[4.4rem] 2xl:h-[5.5rem]"
                 />
             </button>
 
             {/* Dropdown Menu (only for MovieCard) */}
             {showDropdown && isCard && showData && (
                 <div
-                    className="absolute z-50 flex h-fit w-64 flex-col gap-2 rounded-xl bg-neutral-800 p-3 shadow-xl shadow-black/40 lg:w-80 lg:p-4 2xl:w-96 2xl:p-5 portrait:bottom-full portrait:left-0 portrait:mb-4 landscape:left-full landscape:top-0 landscape:ml-2 landscape:mt-2 landscape:lg:ml-3 landscape:lg:mt-3 landscape:2xl:ml-4 landscape:2xl:mt-4"
+                    className="absolute z-50 flex h-fit w-64 flex-col gap-2 rounded-xl bg-neutral-800 p-3 shadow-xl shadow-black/40 lg:w-80 lg:p-4 2xl:w-96 2xl:p-5 portrait:bottom-full portrait:right-0 portrait:mb-4 landscape:right-full landscape:top-0 landscape:mr-2 landscape:mt-2 landscape:lg:mr-3 landscape:lg:mt-3 landscape:2xl:mr-4 landscape:2xl:mt-4"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Movie Favorite Option */}

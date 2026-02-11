@@ -163,14 +163,15 @@ const MovieAttributes = (props) => {
                             : " max-w-[750px]")
                     }
                 >
-                    {/* title */}
+                    {/* title and bookmark */}
 
-                    <h2 className="mb-0 text-left font-antonsc text-4xl leading-tight lg:text-5xl lg:leading-tight 2xl:text-6xl 2xl:leading-tight landscape:mr-12">
-                        <span className="mr-2 inline-flex align-text-top lg:mr-3 2xl:mr-4">
-                            {children}
-                        </span>{" "}
-                        {title}
-                    </h2>
+                    <div className="mx-1 flex items-start justify-between gap-1 landscape:mr-10">
+                        <h2 className="-mb-1 mt-3 text-left font-antonsc text-4xl leading-tight lg:-mb-0 lg:mt-4 lg:text-5xl lg:leading-tight 2xl:mb-2 2xl:mt-5 2xl:text-6xl 2xl:leading-tight landscape:mr-12">
+                            {title}
+                        </h2>
+
+                        <div className="flex-shrink-0">{children}</div>
+                    </div>
 
                     {/* just attributes */}
                     <div className="flex flex-col items-start justify-center gap-2 rounded-xl bg-neutral-800 px-2 py-2 text-left text-sm lg:text-base 2xl:text-base portrait:pb-2 landscape:block landscape:columns-2 landscape:gap-x-6 landscape:px-3">

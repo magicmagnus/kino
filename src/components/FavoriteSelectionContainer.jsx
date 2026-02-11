@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import FavoriteSelectionButton from "./FavoriteSelectionButton";
 import FilterModal from "./FilterModal";
 
@@ -15,76 +14,40 @@ const FavoriteSelectionContainer = ({
     setFilterAttributes,
     availableAttributes,
 }) => {
-    const [activeTab, setActiveTab] = useState("all"); // "all", "movies", "shows"
-
     const totalCount = movieFavorites.length + showFavorites.length;
     const hiddenCount = hiddenFavorites.size;
-
-    const displayedMovies = activeTab === "shows" ? [] : movieFavorites;
-    const displayedShows = activeTab === "movies" ? [] : showFavorites;
 
     return (
         <div className="sticky left-0 top-0 z-30 w-screen">
             <div className="flex h-fit w-screen flex-col border-b border-neutral-700 bg-neutral-900">
-                {/* Tab bar and controls */}
+                {/* controls and filter modal */}
                 <div className="flex items-center justify-between border-b border-neutral-800 px-2 py-1.5 lg:px-3 lg:py-2">
-                    {/* Tabs */}
-                    {/* <div className="flex gap-1 lg:gap-2">
-                        <button
-                            onClick={() => setActiveTab("all")}
-                            className={`rounded-lg px-2 py-1 text-xs transition-colors lg:px-3 lg:text-sm ${
-                                activeTab === "all"
-                                    ? "bg-rose-600 text-white"
-                                    : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
-                            }`}
-                        >
-                            Alle ({totalCount})
-                        </button>
-                        <button
-                            onClick={() => setActiveTab("movies")}
-                            className={`rounded-lg px-2 py-1 text-xs transition-colors lg:px-3 lg:text-sm ${
-                                activeTab === "movies"
-                                    ? "bg-rose-600 text-white"
-                                    : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
-                            }`}
-                        >
-                            <i className="fa-solid fa-film mr-1"></i>
-                            Filme ({movieFavorites.length})
-                        </button>
-                        <button
-                            onClick={() => setActiveTab("shows")}
-                            className={`rounded-lg px-2 py-1 text-xs transition-colors lg:px-3 lg:text-sm ${
-                                activeTab === "shows"
-                                    ? "bg-rose-600 text-white"
-                                    : "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
-                            }`}
-                        >
-                            <i className="fa-solid fa-clock mr-1"></i>
-                            Vorstellungen ({showFavorites.length})
-                        </button>
-                    </div> */}
-
                     {/* Bulk actions */}
                     <div className="flex h-fit gap-1 lg:gap-2">
-                        {totalCount > 0 && (
-                            <button
-                                onClick={onClearAll}
-                                className="flex items-center gap-2 rounded-lg bg-neutral-800 px-3 py-2 text-xs text-rose-400 transition-colors hover:bg-rose-600 hover:text-white lg:px-3 lg:py-2 lg:text-lg 2xl:px-5 2xl:py-3 2xl:text-xl"
-                            >
-                                <i className="fa-solid fa-trash"></i>
-                                <span className="inline">Alle löschen</span>
-                            </button>
-                        )}
-                        {hiddenCount > 0 && (
-                            <button
-                                onClick={onShowAll}
-                                className="flex h-full items-center gap-2 rounded-lg bg-neutral-800 px-3 py-2 text-xs text-neutral-300 transition-colors hover:bg-neutral-700 lg:px-3 lg:py-2 lg:text-lg 2xl:px-5 2xl:py-3 2xl:text-xl"
-                            >
-                                <i className="fa-solid fa-eye"></i>
-                                <span className="inline">Alle einblenden</span>
-                                <span className="">({hiddenCount})</span>
-                            </button>
-                        )}
+                        <button
+                            onClick={onClearAll}
+                            className={`flex items-center gap-2 rounded-lg px-3 py-2 text-xs transition-colors lg:px-3 lg:py-2 lg:text-lg 2xl:px-5 2xl:py-3 2xl:text-xl ${
+                                totalCount > 0
+                                    ? "bg-neutral-800 text-rose-500 hover:bg-rose-600 hover:text-white"
+                                    : "cursor-not-allowed bg-neutral-800 text-neutral-500 opacity-50"
+                            }`}
+                        >
+                            <i className="fa-solid fa-trash"></i>
+                            <span className="inline">Alle löschen</span>
+                        </button>
+
+                        <button
+                            onClick={onShowAll}
+                            className={`flex h-full items-center gap-2 rounded-lg px-3 py-2 text-xs transition-colors lg:px-3 lg:py-2 lg:text-lg 2xl:px-5 2xl:py-3 2xl:text-xl ${
+                                hiddenCount > 0
+                                    ? "bg-neutral-800 text-neutral-300 hover:bg-neutral-700"
+                                    : "cursor-not-allowed bg-neutral-800 text-neutral-500 opacity-50"
+                            }`}
+                        >
+                            <i className="fa-solid fa-eye"></i>
+                            <span className="inline">Alle einblenden</span>
+                            <span className="">({hiddenCount})</span>
+                        </button>
                     </div>
                     {/* Filter Modal */}
                     <FilterModal
@@ -97,7 +60,7 @@ const FavoriteSelectionContainer = ({
                 {/* Favorites list */}
                 <div className="no-scrollbar flex gap-1.5 overflow-x-auto px-2 py-1.5 lg:gap-2 lg:px-3 lg:py-2">
                     {/* Movie favorites */}
-                    {displayedMovies.map((fav) => (
+                    {movieFavorites.map((fav) => (
                         <FavoriteSelectionButton
                             key={`movie-${fav.movieId}`}
                             favorite={fav}
@@ -113,7 +76,7 @@ const FavoriteSelectionContainer = ({
                     ))}
 
                     {/* Show favorites */}
-                    {displayedShows.map((fav) => (
+                    {showFavorites.map((fav) => (
                         <FavoriteSelectionButton
                             key={`show-${fav.showHash}`}
                             favorite={fav}

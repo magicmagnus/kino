@@ -89,7 +89,7 @@ const FavoriteSelectionButton = ({
                     className="flex h-7 w-7 items-center justify-center rounded-md bg-neutral-700 text-rose-500 transition-colors hover:bg-rose-600 hover:text-white lg:h-8 lg:w-8"
                     title="Entfernen"
                 >
-                    <i className="fa-solid fa-times text-xs lg:text-sm"></i>
+                    <i className="fa-solid fa-trash text-xs lg:text-sm"></i>
                 </button>
             </div>
         </div>
