@@ -119,7 +119,7 @@ const MovieCard = (props) => {
                     />
                 </MovieAttributes>
                 {/* sticky button container (bottom full-width on mobile, bottom right on larger screens) */}
-                <div className="absolute bottom-0 left-auto right-0 flex h-fit w-full flex-col justify-center gap-1.5 rounded-b-2xl border-t-2 border-neutral-700 bg-neutral-900 p-3 pt-1 landscape:w-fit landscape:rounded-bl-none landscape:rounded-tl-2xl landscape:border-t-0 landscape:bg-transparent landscape:p-4">
+                <div className="absolute bottom-0 left-auto right-0 flex h-auto w-full flex-col justify-center gap-1.5 rounded-b-2xl border-t-2 border-neutral-700 bg-neutral-900 p-3 pt-1 landscape:w-fit landscape:rounded-bl-none landscape:rounded-tl-2xl landscape:border-t-0 landscape:bg-transparent landscape:p-4">
                     {/* wrapper with show information */}
 
                     <div>
@@ -132,7 +132,7 @@ const MovieCard = (props) => {
                     {/* button container */}
                     <div className="flex h-full gap-2">
                         {/* All shows and Share buttons */}
-                        <div className="flex flex-1 flex-col gap-2 landscape:flex-row">
+                        <div className="flex h-auto flex-1 flex-col gap-2 landscape:flex-row">
                             <ShareButton
                                 title={`${showData.movieInfo.title} - ${showData.show.time}`}
                                 text={`Schau dir "${showData.movieInfo.title}" um ${showData.show.time}h mit mir an!`}
