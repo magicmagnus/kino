@@ -77,9 +77,14 @@ const MovieCard = (props) => {
             onClick={handleClose}
             className={`absolute left-0 top-0 z-40 flex h-full w-full items-center justify-center bg-black/50 transition-all duration-300 ease-in-out ${isVisible ? "opacity-100" : "opacity-0"}`}
         >
+            {/* actual modal content/card */}
             <div
                 onClick={(e) => e.stopPropagation()}
-                className={`absolute left-1/2 top-1/2 h-[95%] w-[90%] rounded-2xl bg-neutral-900 text-white shadow-lg transition-all duration-300 ease-in-out md:max-w-[800px] lg:max-h-[650px] portrait:max-w-[500px] landscape:lg:max-w-[1000px] landscape:2xl:max-h-[750px] landscape:2xl:max-w-[1200px] ${
+                style={{
+                    top: "calc(50% + env(safe-area-inset-top, 0px) / 2)",
+                    maxHeight: "calc(95% - env(safe-area-inset-top, 0px))",
+                }}
+                className={`absolute left-1/2 h-[95%] w-[90%] rounded-2xl bg-neutral-900 text-white shadow-lg transition-all duration-300 ease-in-out md:max-w-[800px] lg:max-h-[650px] portrait:max-w-[500px] landscape:lg:max-w-[1000px] landscape:2xl:max-h-[750px] landscape:2xl:max-w-[1200px] ${
                     isVisible
                         ? "-translate-x-1/2 -translate-y-1/2 scale-100 opacity-100"
                         : "-translate-x-1/2 -translate-y-[45%] scale-95 opacity-0"
