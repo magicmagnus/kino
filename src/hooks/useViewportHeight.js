@@ -24,9 +24,13 @@ export const useViewportHeight = () => {
             const isIOSPWA = isIOS && isStandalone;
 
             // Set CSS custom properties for platform-specific adjustments
+            // Add a small offset (e.g., 8px) to extend content slightly into the safe area
+            const safeAreaOffset = 20; // Adjust this value as needed
             document.documentElement.style.setProperty(
                 "--safe-area-bottom",
-                isIOSPWA ? "0px" : "env(safe-area-inset-bottom, 0px)",
+                isIOSPWA
+                    ? "0px"
+                    : `calc(env(safe-area-inset-bottom, 0px) - ${safeAreaOffset}px)`,
             );
 
             // Add class to html element for CSS targeting
