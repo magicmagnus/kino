@@ -4,81 +4,96 @@ export const useViewportHeight = () => {
     const [debugInfo, setDebugInfo] = useState({});
 
     useEffect(() => {
+        // Detect iOS
+        const isIOS =
+            /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+        // Detect if running as standalone PWA
+        const isStandalone =
+            window.matchMedia("(display-mode: standalone)").matches ||
+            navigator.standalone === true;
+
+        // Detect iOS PWA specifically
+        const isIOSPWA = isIOS && isStandalone;
+
+        // Add class for CSS targeting
+        if (isIOSPWA) {
+            document.documentElement.classList.add("ios-pwa");
+        } else {
+            document.documentElement.classList.remove("ios-pwa");
+        }
+
         const updateHeight = () => {
-            // Set CSS custom property for actual viewport height
-            const vh = window.innerHeight * 0.01;
+            const visualViewport = window.visualViewport;
+
+            let fullHeight;
+            let safeAreaBottom = 20;
+
+            if (isIOSPWA) {
+                // On iOS PWA, use screen.height to get the FULL screen including safe areas
+                fullHeight = window.screen.height;
+                // Calculate the safe area as the difference between screen and inner height
+                safeAreaBottom = window.screen.height - window.innerHeight;
+            } else if (visualViewport) {
+                fullHeight = visualViewport.height;
+            } else {
+                fullHeight = window.innerHeight;
+            }
+
+            const vh = fullHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-            // Detect iOS
-            const isIOS =
-                /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-                (navigator.platform === "MacIntel" &&
-                    navigator.maxTouchPoints > 1);
-
-            // Detect if running as standalone PWA
-            const isStandalone =
-                window.matchMedia("(display-mode: standalone)").matches ||
-                navigator.standalone === true;
-
-            // Detect iOS PWA specifically
-            const isIOSPWA = isIOS && isStandalone;
-
-            // Set CSS custom properties for platform-specific adjustments
             document.documentElement.style.setProperty(
-                "--safe-area-bottom",
-                isIOSPWA ? "0px" : "env(safe-area-inset-bottom, 0px)",
+                "--full-height",
+                `${fullHeight}px`,
             );
 
-            // Add class to html element for CSS targeting
+            // Set safe area bottom - calculated for iOS PWA, env() for others
             if (isIOSPWA) {
-                document.documentElement.classList.add("ios-pwa");
+                document.documentElement.style.setProperty(
+                    "--safe-area-bottom",
+                    `${safeAreaBottom}px`,
+                );
             } else {
-                document.documentElement.classList.remove("ios-pwa");
+                // Let CSS handle it via env() - remove the property so CSS fallback works
+                document.documentElement.style.removeProperty(
+                    "--safe-area-bottom",
+                );
             }
 
             // Debug info
             setDebugInfo({
                 windowInnerHeight: window.innerHeight,
-                windowOuterHeight: window.outerHeight,
-                documentHeight: document.documentElement.clientHeight,
+                visualViewportHeight: visualViewport?.height,
                 screenHeight: window.screen.height,
-                availHeight: window.screen.availHeight,
-                visualViewportHeight: window.visualViewport?.height,
+                safeAreaBottom,
+                vh: vh,
+                fullHeight,
                 isStandalone,
                 isIOS,
                 isIOSPWA,
-                isPWA:
-                    navigator.standalone ||
-                    window.matchMedia("(display-mode: standalone)").matches,
             });
         };
 
-        // Initial update
         updateHeight();
 
-        // Update on resize
-        window.addEventListener("resize", updateHeight);
-
-        // Update on orientation change
-        window.addEventListener("orientationchange", () => {
-            // Delay to allow browser to settle
-            setTimeout(updateHeight, 100);
-        });
-
-        // Update when visual viewport changes (important for mobile)
         if (window.visualViewport) {
             window.visualViewport.addEventListener("resize", updateHeight);
         }
+        window.addEventListener("resize", updateHeight);
+        window.addEventListener("orientationchange", () =>
+            setTimeout(updateHeight, 100),
+        );
 
         return () => {
-            window.removeEventListener("resize", updateHeight);
-            window.removeEventListener("orientationchange", updateHeight);
             if (window.visualViewport) {
                 window.visualViewport.removeEventListener(
                     "resize",
                     updateHeight,
                 );
             }
+            window.removeEventListener("resize", updateHeight);
+            window.removeEventListener("orientationchange", updateHeight);
         };
     }, []);
 
