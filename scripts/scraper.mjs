@@ -402,6 +402,7 @@ async function scrapeMovieSchedules(page) {
 
     await page.goto("https://tuebinger-kinos.de/programmuebersicht/", {
         waitUntil: "networkidle0",
+        timeout: 600000, // Increase timeout to 10 minutes for slow loading pages
     });
 
     // scroll to the bottom of the page to load all movies,
@@ -521,7 +522,7 @@ async function scrapeMovieSchedules(page) {
                     ) {
                         const performanceWrappers = timeGrids[
                             gridIndex
-                        ].querySelectorAll(".performances-wrapper");
+                        ].querySelectorAll(".showtime-container");
                         // Get the performance wrapper for this date index
                         const performanceWrapper =
                             performanceWrappers[dateIndex];
