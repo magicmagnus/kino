@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import MovieCard from "../components/MovieCard";
 import InstallPWA from "../components/InstallPWA";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Outlet } from "react-router-dom";
 import {
     HOUR_WIDTH,
@@ -24,6 +24,8 @@ const MainLayout = () => {
 
     // Fix viewport height for PWA - sets --vh and --safe-area-bottom CSS variables
     const debugInfo = useViewportHeight();
+
+    const scrollRef = useRef(null);
 
     // Show debug panel in development
     const showDebug = false; // Set to true to debug
@@ -60,6 +62,133 @@ const MainLayout = () => {
         };
     }, [showData]);
 
+    // Handle scroll handoff to parent Astro page when at top or bottom of scrollable content
+    useEffect(() => {
+        const IFRAME_HANDOFF_DEBUG = true;
+        const scroller = scrollRef.current;
+        if (!scroller) return;
+
+        let parentOrigin = "";
+        try {
+            parentOrigin = document.referrer
+                ? new URL(document.referrer).origin
+                : "";
+        } catch {}
+
+        if (IFRAME_HANDOFF_DEBUG) {
+            console.log("[Iframe] handoff init", {
+                iframeOrigin: window.location.origin,
+                href: window.location.href,
+                referrer: document.referrer,
+                parentOrigin,
+            });
+        }
+
+        if (!parentOrigin) {
+            if (IFRAME_HANDOFF_DEBUG) {
+                console.warn(
+                    "[Iframe] no parentOrigin (referrer empty/invalid)",
+                );
+            }
+            return;
+        }
+
+        const atTop = () => scroller.scrollTop <= 0;
+        const atBottom = () =>
+            scroller.scrollTop + scroller.clientHeight >=
+            scroller.scrollHeight - 1;
+
+        const sendHandoff = (deltaY) => {
+            const payload = {
+                type: "iframe-scroll-handoff",
+                deltaY,
+                direction: deltaY > 0 ? "down" : "up",
+            };
+
+            if (IFRAME_HANDOFF_DEBUG) {
+                console.log("[Iframe] postMessage -> parent", {
+                    payload,
+                    targetOrigin: parentOrigin,
+                    scrollTop: scroller.scrollTop,
+                    clientHeight: scroller.clientHeight,
+                    scrollHeight: scroller.scrollHeight,
+                });
+            }
+
+            window.parent.postMessage(payload, parentOrigin);
+        };
+
+        const onWheel = (event) => {
+            const down = event.deltaY > 0;
+            const up = event.deltaY < 0;
+            const hitBoundary = (down && atBottom()) || (up && atTop());
+
+            if (IFRAME_HANDOFF_DEBUG && hitBoundary) {
+                console.log("[Iframe] wheel boundary reached", {
+                    deltaY: event.deltaY,
+                    top: atTop(),
+                    bottom: atBottom(),
+                });
+            }
+
+            if (hitBoundary) {
+                sendHandoff(event.deltaY);
+                event.preventDefault();
+            }
+        };
+
+        let lastTouchY = null;
+
+        const onTouchStart = (event) => {
+            if (event.touches.length !== 1) return;
+            lastTouchY = event.touches[0].clientY;
+        };
+
+        const onTouchMove = (event) => {
+            if (event.touches.length !== 1 || lastTouchY == null) return;
+            const currentY = event.touches[0].clientY;
+            const deltaY = lastTouchY - currentY;
+            lastTouchY = currentY;
+
+            const down = deltaY > 0;
+            const up = deltaY < 0;
+            const hitBoundary = (down && atBottom()) || (up && atTop());
+
+            if (IFRAME_HANDOFF_DEBUG && hitBoundary) {
+                console.log("[Iframe] touch boundary reached", {
+                    deltaY,
+                    top: atTop(),
+                    bottom: atBottom(),
+                });
+            }
+
+            if (hitBoundary) {
+                sendHandoff(deltaY * 1.3);
+                event.preventDefault();
+            }
+        };
+
+        const onTouchEnd = () => {
+            lastTouchY = null;
+        };
+
+        scroller.addEventListener("wheel", onWheel, { passive: false });
+        scroller.addEventListener("touchstart", onTouchStart, {
+            passive: true,
+        });
+        scroller.addEventListener("touchmove", onTouchMove, { passive: false });
+        scroller.addEventListener("touchend", onTouchEnd, { passive: true });
+        scroller.addEventListener("touchcancel", onTouchEnd, { passive: true });
+
+        return () => {
+            scroller.removeEventListener("wheel", onWheel);
+            scroller.removeEventListener("touchstart", onTouchStart);
+            scroller.removeEventListener("touchmove", onTouchMove);
+            scroller.removeEventListener("touchend", onTouchEnd);
+            scroller.removeEventListener("touchcancel", onTouchEnd);
+        };
+    }, []);
+
     return (
         <FavoritesProvider>
             <div
@@ -78,7 +207,10 @@ const MainLayout = () => {
                 {/* Main content wrapper */}
                 <div className="relative flex-1">
                     {/* Scrollable content */}
-                    <div className="no-scrollbar absolute inset-0 w-full overflow-y-auto">
+                    <div
+                        ref={scrollRef}
+                        className="no-scrollbar absolute inset-0 w-full overflow-y-auto"
+                    >
                         <div
                             style={{
                                 "--hour-width": `${HOUR_WIDTH}px`,
