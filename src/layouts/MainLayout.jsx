@@ -64,7 +64,7 @@ const MainLayout = () => {
 
     // Handle scroll handoff to parent Astro page when at top or bottom of scrollable content
     useEffect(() => {
-        const IFRAME_HANDOFF_DEBUG = true;
+        const IFRAME_HANDOFF_DEBUG = false;
         const scroller = scrollRef.current;
         if (!scroller) return;
 
