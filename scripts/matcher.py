@@ -105,6 +105,35 @@ def find_best_match(title, list2, model, threshold):
         return None, best_score
 
 
+def find_best_match_attribute(title, attributes, model, threshold):
+    """Match a schedule title against each attribute's title AND origTitle,
+    keeping whichever field scores higher per attribute, then returning the
+    best-scoring attribute overall."""
+    best_score, best_attr, best_field, best_matched = 0, None, None, None
+
+    for attr in attributes:
+        score_title = compute_match_score(title, attr["title"], model)
+        score_orig = compute_match_score(title, attr["origTitle"], model)
+
+        if score_title >= score_orig:
+            score, field, matched = score_title, "title", attr["title"]
+        else:
+            score, field, matched = score_orig, "origTitle", attr["origTitle"]
+
+        if score > best_score:
+            best_score, best_attr, best_field, best_matched = (
+                score,
+                attr,
+                field,
+                matched,
+            )
+
+    if best_score >= threshold:
+        return best_attr, best_score, best_field, best_matched
+    else:
+        return None, best_score, None, None
+
+
 def find_best_match_per_similarity_metric(title, list2, model, threshold):
     best_scores = {
         "string": 0,
@@ -156,13 +185,15 @@ def test_schedules_and_attributes(schedules, attributes, model, threshold):
 def merge_schedules_and_attributes(schedules, attributes, model, threshold):
     merged = []
     for idx, sched in enumerate(schedules):
-        match, score = find_best_match(
-            sched["title"], [a["title"] for a in attributes], model, threshold
+        info, score, field, matched = find_best_match_attribute(
+            sched["title"], attributes, model, threshold
         )
-        print(f"Matching '{sched['title']}' -> '{match}' (score: {score:.3f})")
-        if match:
 
-            info = next(a for a in attributes if a["title"] == match)
+        if info:
+            print(
+                f"\nMatching '{sched['title']}' -> '{matched}' "
+                f"(via {field}, score: {score:.3f})"
+            )
             merged.append(
                 {
                     "id": idx,
@@ -172,7 +203,10 @@ def merge_schedules_and_attributes(schedules, attributes, model, threshold):
                 }
             )
         else:
-            print(f"No matching attribute found for schedule '{sched['title']}'")
+            print(
+                f"\nNo matching attribute found for schedule '{sched['title']}' "
+                f"(best score: {score:.3f})"
+            )
             # fallback defaults (like your JS version)
             merged.append(
                 {
@@ -218,9 +252,9 @@ if __name__ == "__main__":
     attributes = json.loads(
         Path("src/data/movieAttributes.json").read_text(encoding="utf-8")
     )
-    posters = json.loads(
-        Path("src/data/moviePosterUrls.json").read_text(encoding="utf-8")
-    )
+    # posters = json.loads(
+    #     Path("src/data/moviePosterUrls.json").read_text(encoding="utf-8")
+    # )
 
     model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 
@@ -228,10 +262,10 @@ if __name__ == "__main__":
 
     # test_schedules_and_attributes(schedules, attributes, model, THRESHOLD)
     merged1 = merge_schedules_and_attributes(schedules, attributes, model, THRESHOLD)
-    merged2 = merge_with_posters(merged1, posters, model, THRESHOLD)
+    # merged2 = merge_with_posters(merged1, posters, model, THRESHOLD)
 
     Path("src/data/source_movie_data.json").write_text(
-        json.dumps(merged2, indent=2, ensure_ascii=False), encoding="utf-8"
+        json.dumps(merged1, indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
-    print(f"Saved {len(merged2)} merged movies to src/data/source_movie_data.json")
+    print(f"Saved {len(merged1)} merged movies to src/data/source_movie_data.json")
