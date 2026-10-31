@@ -30,7 +30,7 @@ async function scrapeAllSites() {
     // create a new browser instance and a new page
     const browser = await puppeteer.launch({
         defaultViewport: { width: 1920, height: 1080 },
-        headless: false,
+        headless: true,
         devtools: false,
         executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
         args: ["--no-sandbox", "--disable-setuid-sandbox"], // args: ['--start-maximized'],
@@ -411,17 +411,31 @@ async function scrapeMovieSchedules(page) {
     debugger;
 
     // prepare the page for scraping - revised implementation
-    await page.evaluate(() => {
+    // Accepting cookies may reload the page; on slow runners (GitHub Actions) a fixed
+    // sleep is not enough and the next evaluate dies with "Execution context was destroyed".
+    const navigation = page
+        .waitForNavigation({ waitUntil: "networkidle0", timeout: 30000 })
+        .catch(() => null); // no navigation happened -> fine
+    const clickedAccept = await page.evaluate(() => {
         // Click accept button for cookies
         const acceptButton = document.querySelector(".brlbs-btn-accept-all");
         if (acceptButton) {
             acceptButton.click();
+            return true;
         }
+        return false;
     });
+    if (clickedAccept) {
+        await navigation;
+    }
 
-    // Wait 2 seconds after clicking the accept button
-    // Wait 2 seconds using Promise and setTimeout
+    // Wait until the list view button exists in the (possibly reloaded) page
+    await page.waitForSelector(
+        ".overview-filter-header .overview-view-button-list",
+        { timeout: 60000 },
+    );
     await new Promise((resolve) => setTimeout(resolve, 2000));
+
     debugger;
     // Click on list view button
     await page.evaluate(() => {
@@ -435,8 +449,8 @@ async function scrapeMovieSchedules(page) {
     });
 
     // Wait 2 seconds after clicking the list view button
-    // Wait 2 seconds using Promise and setTimeout
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
     debugger;
     // Find and click all "more dates" buttons
     await page.evaluate(async () => {
