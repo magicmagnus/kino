@@ -251,10 +251,16 @@ async function scrapeMovieAttributes(page) {
                         .map((desc) => desc.textContent.trim())
                         .join("<br><br>");
                 }
+                debugger;
 
-                const posterUrl =
-                    movieItem.querySelector(".movie__image img")?.src ||
-                    "Unknown Poster URL";
+                let posterUrl = "Unknown Poster URL";
+                const posterEl = movieItem.querySelector(".movie__image img")?.src 
+
+                if (posterEl) {
+                    posterUrl = 'https://static.kinoheld.de/images/film/' + posterEl.split('images%2Ffilm%2F')[1];
+                }
+    
+                debugger;
                 // const title = movieItem.querySelector('.movie__title')?.textContent.trim() || 'Unknown Title';
                 // some infos are nested in the short and long info sections
                 const movieInfoShort = movieItem.querySelector(
